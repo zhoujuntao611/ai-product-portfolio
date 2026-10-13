@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-13",
+  "engine": "Microsoft Edge headless",
+  "results": [
+    {
+      "app": "SupportFlow",
+      "desktop": "pass",
+      "flow": [
+        "generate",
+        "citations",
+        "export",
+        "approve",
+        "audit",
+        "conflict",
+        "knowledge"
+      ],
+      "mobile": "pass"
+    },
+    {
+      "app": "MetricPilot",
+      "desktop": "pass",
+      "flow": [
+        "analyze",
+        "citations",
+        "trace",
+        "export",
+        "clarify",
+        "source",
+        "history"
+      ],
+      "mobile": "pass"
+    }
+  ]
+}

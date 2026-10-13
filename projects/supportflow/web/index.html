@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SupportFlow 可核验的客服回复草稿作品集 MVP"><title>SupportFlow · 客服工单工作台</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="SupportFlow 首页"><span class="brand-icon">S</span><span>SupportFlow<small>Evidence before answers.</small></span></a>
+    <div class="workspace-pill"><span class="workspace-icon">云</span><div>云桥协作<small>虚构 SaaS 演示工作区</small></div></div>
+    <nav aria-label="主导航"><button class="nav-item selected" data-page="desk"><span>▤</span>工单工作台</button><button class="nav-item" data-page="knowledge"><span>▧</span>知识库与版本</button><button class="nav-item" data-page="about"><span>◎</span>作品说明</button></nav>
+    <div class="sidebar-heading">最近工单 <button id="refresh-history" aria-label="刷新最近工单">↻</button></div>
+    <div id="history" class="history"><p class="muted">暂无本地工单</p></div>
+    <div class="sidebar-foot"><span class="online-dot"></span> 仅在本机保存<small>草稿、审核与审计记录保存在 SQLite。不会向客户发送消息。</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><span class="crumb">工作空间</span><span class="slash">/</span><span id="page-title">工单工作台</span></div><div class="header-right"><span class="mode-tag">离线演示 · 规则引擎</span><span class="avatar" title="本地评审者">我</span></div></header>
+    <div class="main-content">
+      <section id="page-desk" class="page">
+        <div class="intro"><div class="eyebrow">SUPPORT OPERATIONS</div><h1>让每一条回复，都有依据。</h1><p>检索当前政策，保留证据，再由你决定如何处理。</p></div>
+        <div class="stats"><div><span>知识库当前版本</span><strong>9 <small>份有效文档</small></strong></div><div><span>本地工单</span><strong id="count-total">0</strong></div><div><span>已批准的本地草稿</span><strong id="count-approved">0</strong></div><div><span>知识快照日期</span><strong class="date">2026.10.13</strong></div></div>
+        <div class="steps" aria-label="处理流程"><div class="current"><b>1</b>理解工单</div><i></i><div id="step-2"><b>2</b>检索与草稿</div><i></i><div id="step-3"><b>3</b>人工审核</div></div>
+        <div class="workbench">
+          <section class="panel input-panel"><div class="panel-title"><h2>新工单</h2><span class="subtle">中文 / English</span></div>
+            <form id="ticket-form">
+              <label for="example">快速体验</label><select id="example"><option value="invoice">开票流程 · 有据可答</option><option value="refund">退款地区未知 · 政策冲突</option><option value="export">数据导出 · 限制与步骤</option><option value="webhook">Webhook 异常 · 技术问题</option><option value="impact">立即删除 · 转人工核验</option><option value="injection">提示注入 · 拒绝不安全请求</option><option value="unknown">未知产品能力 · 停止猜测</option></select>
+              <label for="title">工单标题</label><input id="title" maxlength="100" required value="想申请发票，不知道在哪里操作">
+              <div class="label-row"><label for="content">客户问题</label><span id="char-count" class="subtle">0 / 4000</span></div><textarea id="content" rows="7" minlength="5" maxlength="4000" required>我们是云桥协作的管理员，上周支付了订单，请问在哪里申请发票，多久可以处理？</textarea>
+              <div class="form-grid"><div><label for="region">工作区地区</label><select id="region"><option value="unknown">尚未确认</option><option value="mainland">中国大陆</option><option value="overseas">海外</option></select></div><div><label for="engine">生成模式</label><select id="engine"><option value="demo">演示规则引擎</option><option value="model" disabled>真实模型（未配置）</option></select></div></div>
+              <div id="engine-note" class="input-note">当前模式不调用大模型。它使用关键词检索和原文摘录，让证据与审核流程可以独立验证。</div>
+              <p class="privacy-note">请使用演示工单；邮箱、手机号和常见密钥格式会被部分隐藏，不能替代完整的脱敏系统。</p>
+              <button id="generate" class="button primary full" type="submit"><span>✦</span>检索并生成草稿</button><span class="shortcut">Ctrl / ⌘ + Enter</span>
+            </form>
+          </section>
+          <section class="panel output-panel"><div class="panel-title"><h2>回复工作区</h2><span id="ticket-id" class="subtle">等待新工单</span></div>
+            <div id="empty-state" class="empty-state"><div class="empty-icon">▤</div><h3>从一个客户问题开始</h3><p>生成后，可在这里核对回复、查看来源，<br>并完成本地审核。</p><div class="empty-badges"><span>版本可查</span><span>逐条引用</span><span>人工把关</span></div></div>
+            <div id="result" hidden>
+              <div id="status-box" class="status-box"><div><span id="status-label" class="status-tag"></span><span id="state-label" class="subtle"></span></div><p id="reason"></p></div>
+              <div class="result-meta"><span id="result-engine"></span><span id="latency"></span></div><p id="coverage-notice" class="evidence-note">草稿只覆盖检索到的主题；关键词命中不能保证完整回答，请人工检查每一个问题及证据相关性。</p>
+              <div class="tabs" role="tablist"><button class="tab active" data-tab="draft" role="tab" aria-selected="true">回复草稿</button><button class="tab" data-tab="evidence" role="tab" aria-selected="false">检索证据 <span id="source-count"></span></button><button class="tab" data-tab="audit" role="tab" aria-selected="false">审计记录</button></div>
+              <div id="tab-draft" class="tab-content"><label class="sr-only" for="draft">回复草稿</label><textarea id="draft" class="draft-editor" rows="12" maxlength="12000"></textarea><div id="edit-warning" class="warning" hidden>你已修改草稿。修改内容未自动验证，请重新核对事实与引用。</div><div class="draft-note">引用格式：[文档编号 §条目编号]。所有政策为虚构演示内容。</div><div class="draft-tools"><button id="copy-draft" class="button secondary">复制草稿</button><button id="export-draft" class="button secondary">导出带来源的 Markdown</button></div>
+                <div class="review"><h3>人工审核</h3><label for="review-note" class="sr-only">审核备注</label><input id="review-note" maxlength="1000" placeholder="审核备注（可选）"><label class="checkbox-row"><input type="checkbox" id="review-check"><span>我已检查事实、地区适用性及引用来源。</span></label><div class="review-actions"><button id="approve" class="button primary" disabled>批准并保存本地</button><button id="escalate" class="button secondary">转人工</button><button id="reject" class="button ghost">拒绝草稿</button></div><p id="review-help" class="subtle">审核仅保存到本地，不发送给客户。</p></div>
+              </div>
+              <div id="tab-evidence" class="tab-content" hidden><p class="evidence-note">仅检索有效版本。以下是检索到的候选证据；地区冲突时不会生成确定的政策答复。</p><div id="sources"></div></div>
+              <div id="tab-audit" class="tab-content" hidden><p class="evidence-note">记录状态变化、证据编号、内容指纹与人工修改标记。时间按浏览器所在时区显示。</p><div id="audit"></div></div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="page-knowledge" class="page" hidden><div class="intro"><div class="eyebrow">KNOWLEDGE GOVERNANCE</div><h1>先管理事实，再生成答案。</h1><p>版本、更新时间、地区和归档状态都可检查。当前政策是作品集演示构造。</p></div><div class="panel knowledge-panel"><div class="panel-title"><h2>文档清单</h2><span class="subtle">9 份有效 · 1 份归档</span></div><div id="knowledge-list"></div></div></section>
+      <section id="page-about" class="page" hidden><div class="intro"><div class="eyebrow">PRODUCT CASE STUDY</div><h1>一个可以解释决策的 AI 产品原型。</h1><p>从问题定义到证据策略，再到验收与评测。</p></div><div class="about-grid"><article class="panel"><h2>产品假设</h2><p>知识分散、政策变化与重复问题可能增加客服回复成本。这是尚未经过真实用户访谈验证的假设。</p><p>目标用户是处理重复工单的一线客服。MVP 聚焦起草与审核，不处理支付、删除或外部发送。</p></article><article class="panel"><h2>实现边界</h2><p>Python 标准库、SQLite 与原生网页。默认关键词检索 + 规则路由 + 原文摘录；不是向量检索或自主 Agent。</p><p>可选真实模型只选择已有证据条目，回复仍使用知识原文。未提供密钥时不调用模型，也不会显示模型效果数据。</p></article><article class="panel"><h2>质量验证</h2><p>项目包含独立列出的合成工单案例、离线评估脚本、服务接口测试和评估报告。评估验证工程行为，不代表真实客服效果。</p><p>真实模型质量、实际采纳率、节省工时与用户满意度尚未测量。请阅读项目 docs/EVALUATION.md。</p></article><article class="panel"><h2>产品体验路径</h2><p>先展示有据可答的发票问题，再展示地区未知的退款问题和不安全请求，最后打开审核记录。</p><p>体验时可核对：停止作答的条件、人工确认后的状态变化，以及草稿与有效版本的引用关系。</p></article></div></section>
+    </div>
+  </main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="/app.js" defer></script></body></html>

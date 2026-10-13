@@ -1,0 +1,27 @@
+name: Verify portfolio projects
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: SupportFlow engineering checks
+        working-directory: projects/supportflow
+        run: python -m unittest discover -s tests -v
+      - name: SupportFlow synthetic regression
+        working-directory: projects/supportflow
+        run: python evaluate.py
+      - name: MetricPilot offline checks
+        working-directory: projects/metricpilot
+        run: python evaluate.py

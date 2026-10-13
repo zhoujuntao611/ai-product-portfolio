@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.sqlite3
+*.sqlite
+*.db
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
+.local-runtime/
+projects/supportflow/work/
+projects/metricpilot/data/sessions.json
+**/INTERVIEW.md
+/private/
+/interview-prep/

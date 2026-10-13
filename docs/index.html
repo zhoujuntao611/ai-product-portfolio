@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12243b">
+  <meta name="description" content="周俊涛的 AI / Agent 产品实习作品集：SupportFlow 客服知识与审核流程、MetricPilot 只读数据分析与证据追溯。">
+  <title>周俊涛 · AI / Agent 产品作品集</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.PORTFOLIO_CONFIG = {
+      repoUrl: "https://github.com/zhoujuntao611/ai-product-portfolio",
+      branch: "main",
+      projectPaths: { supportflow: "projects/supportflow", metricpilot: "projects/metricpilot" },
+      docs: { supportflow: "", metricpilot: "" },
+      metrics: { supportflow: "31 条合成回归＋32 项工程测试通过 · 离线验证", metricpilot: "72 项离线检查通过 · 数值／权限／模拟接口" }
+    };
+  </script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="identity" href="#top" aria-label="周俊涛，返回首页顶部">
+        <span class="monogram" aria-hidden="true">JT<span>.</span></span>
+        <span class="identity-name">周俊涛<span>PRODUCT PORTFOLIO</span></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#work">作品</a>
+        <a href="#method">能力与方法</a>
+        <a href="#about">关于</a>
+        <a class="nav-source" data-repo-url="" href="#source">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI / AGENT 产品经理实习</p>
+        <h1 id="hero-title">把复杂任务，<br>做成<span class="title-emphasis">可核验</span>的产品。</h1>
+        <p class="hero-description">我是周俊涛，北航信息与通信工程硕士在读。<br class="desktop-break">关注 AI 工作流、数据分析与人机协作，<br class="desktop-break">用可运行的作品解释产品判断。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">查看两份作品 <span aria-hidden="true">↓</span></a>
+          <span class="availability">北京 · 每周 5 天<br>可连续实习 6 个月以上</span>
+        </div>
+      </div>
+      <aside class="hero-note" aria-label="作品的设计原则">
+        <div class="note-topline"><span>PRODUCT NOTES</span><span>2026 / 10</span></div>
+        <p class="note-title">能力之外，<br>还有产品的边界。</p>
+        <ol class="principle-path">
+          <li><span class="path-number">01</span><div><strong>任务说清楚</strong><p>先定义流程与验收，再选择实现方式。</p></div></li>
+          <li><span class="path-number">02</span><div><strong>结论有出处</strong><p>政策引用与查询结果，保留可追溯的证据。</p></div></li>
+          <li><span class="path-number">03</span><div><strong>异常可接管</strong><p>信息不足就澄清，需要判断就交还给人。</p></div></li>
+        </ol>
+        <div class="note-foot"><span class="small-square" aria-hidden="true"></span> 两个 AI 协作个人作品 · 合成数据演示</div>
+      </aside>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">让判断落在具体流程里。</h2></div>
+          <p class="section-intro">2026 年 10 月新建的 AI 协作个人项目。<br>展示问题拆解、产品设计与可复现交付。</p>
+        </div>
+        <p class="scope-note"><span class="scope-label">当前范围</span> 合成数据 · 离线规则演示 · 真实模型效果尚未实测；评测结果只说明已执行的验收用例。</p>
+
+        <article class="project" id="supportflow" aria-labelledby="supportflow-title">
+          <div class="project-topline"><span>CASE 01</span><span>知识工作流 / 人工审核</span></div>
+          <div class="project-layout">
+            <div class="project-copy">
+              <h3 id="supportflow-title">SupportFlow<span>客服知识与工单助手</span></h3>
+              <p class="project-thesis">给回复草稿，<br>一条可审阅的证据链。</p>
+              <p class="project-description">将知识查询、引用草稿与人工确认连接起来。信息不足和地区政策冲突有明确出口，审核决定与修改留在本地记录中。</p>
+              <div class="project-tags"><span>证据引用</span><span>工单状态</span><span>人工接管</span></div>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="supportflow">31 条合成回归＋32 项工程测试通过 · 离线验证</span></p>
+              <div class="project-actions"><button class="button secondary" type="button" data-case="supportflow">展开案例 <span aria-hidden="true">↗</span></button><a class="text-link" data-doc-url="supportflow" href="#source">产品文档 <span aria-hidden="true">↗</span></a></div>
+              <a class="source-link" data-repo-url="supportflow" href="#source">查看项目源码 <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="project-media">
+              <div class="screen-chrome" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>SupportFlow / 本地演示</span><span class="window-status">DRAFT → REVIEW</span></div>
+              <img src="assets/supportflow.png" alt="SupportFlow 应用界面：工单草稿、政策引用与人工审核流程" width="1440" height="960" loading="lazy">
+              <figcaption>应用实拍。回复与审核均为本地演示，不向外部客服系统发送。</figcaption>
+            </figure>
+          </div>
+          <div class="workflow" data-workflow="supportflow">
+            <div class="workflow-tabs" role="tablist" aria-label="SupportFlow 关键流程">
+              <button type="button" role="tab" id="supportflow-tab-0" aria-controls="supportflow-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 知识检索</button>
+              <button type="button" role="tab" id="supportflow-tab-1" aria-controls="supportflow-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 引用草稿</button>
+              <button type="button" role="tab" id="supportflow-tab-2" aria-controls="supportflow-panel" aria-selected="false" tabindex="-1" data-step="2"><span>03</span> 人工审核</button>
+            </div>
+            <div class="workflow-panel" role="tabpanel" id="supportflow-panel" aria-labelledby="supportflow-tab-0" tabindex="0"><h4>先确认知识能回答什么。</h4><p>关键词检索当前有效知识，保留来源编号与政策地区。知识未覆盖或退款地区不明确时，停止直接答复并提示补充信息。</p><span class="workflow-detail">产品取舍：完整回答之前，先避免把不适用的政策合并。</span></div>
+          </div>
+        </article>
+
+        <article class="project project-second" id="metricpilot" aria-labelledby="metricpilot-title">
+          <div class="project-topline"><span>CASE 02</span><span>数据分析 / 只读工具</span></div>
+          <div class="project-layout">
+            <div class="project-copy">
+              <h3 id="metricpilot-title">MetricPilot<span>业务数据分析助手</span></h3>
+              <p class="project-thesis">让每一个数字，<br>回到它的查询结果。</p>
+              <p class="project-description">围绕收入、渠道与产品分析，先明确期间和指标口径，再执行只读查询。报告关联 SQL、原始结果与任务轨迹，便于核对和复盘。</p>
+              <div class="project-tags"><span>口径澄清</span><span>只读 SQL</span><span>查询追溯</span></div>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="metricpilot">72 项离线检查通过 · 数值／权限／模拟接口</span></p>
+              <div class="project-actions"><button class="button secondary" type="button" data-case="metricpilot">展开案例 <span aria-hidden="true">↗</span></button><a class="text-link" data-doc-url="metricpilot" href="#source">产品文档 <span aria-hidden="true">↗</span></a></div>
+              <a class="source-link" data-repo-url="metricpilot" href="#source">查看项目源码 <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="project-media">
+              <div class="screen-chrome" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>MetricPilot / 本地演示</span><span class="window-status">QUESTION → EVIDENCE</span></div>
+              <img src="assets/metricpilot.png" alt="MetricPilot 应用界面：指标分析报告、只读 SQL 与数据证据" width="1440" height="960" loading="lazy">
+              <figcaption>应用实拍。分析使用固定合成订单，展示流程与数据口径。</figcaption>
+            </figure>
+          </div>
+          <div class="workflow" data-workflow="metricpilot">
+            <div class="workflow-tabs" role="tablist" aria-label="MetricPilot 关键流程">
+              <button type="button" role="tab" id="metricpilot-tab-0" aria-controls="metricpilot-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 口径澄清</button>
+              <button type="button" role="tab" id="metricpilot-tab-1" aria-controls="metricpilot-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 只读查询</button>
+              <button type="button" role="tab" id="metricpilot-tab-2" aria-controls="metricpilot-panel" aria-selected="false" tabindex="-1" data-step="2"><span>03</span> 结论追溯</button>
+            </div>
+            <div class="workflow-panel" role="tabpanel" id="metricpilot-panel" aria-labelledby="metricpilot-tab-0" tabindex="0"><h4>先对齐问题，再计算数字。</h4><p>明确期间、分析维度与指标。净收入使用“毛收入 − 关联退款”；退款金额占比与退款订单占比分别保留分母，缺少信息时先澄清。</p><span class="workflow-detail">产品取舍：不把模糊期间或不同退款率静默解释成同一个问题。</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="method-section container" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / HOW I WORK</p><h2 id="method-title">用作品说明能力。</h2></div><p class="section-intro">把能力放到任务里，<br>把判断落实到验收里。</p></div>
+      <div class="capability-row"><span class="capability-number">01</span><h3>任务拆解与产品边界</h3><p>定义正常流程、澄清条件与人工出口，写清 MVP 范围和验收标准。</p><a href="#supportflow">看客服工作流 <span aria-hidden="true">↗</span></a></div>
+      <div class="capability-row"><span class="capability-number">02</span><h3>数据口径与结果追溯</h3><p>先确认指标和分母，再关联查询结果；通过合成用例核对计算与权限限制。</p><a href="#metricpilot">看数据分析流程 <span aria-hidden="true">↗</span></a></div>
+      <div class="capability-row"><span class="capability-number">03</span><h3>原型交付与验证</h3><p>使用 Python 与 AI 协作实现可运行应用，保留产品文档、失败用例与回归记录。</p><a href="#source">看源码与文档 <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div><p class="eyebrow">03 / A LITTLE ABOUT ME</p><h2 id="about-title">工程基础，<br>产品视角。</h2></div>
+        <div class="about-content"><p class="about-lead">希望从具体任务出发，做能被理解、被使用、被验证的 AI 产品。</p><div class="education"><div><span class="education-date">2026.09 — 2029.06（预计）</span><h3>北京航空航天大学</h3><p>信息与通信工程 · 硕士</p></div><div><span class="education-date">2022.09 入学</span><h3>吉林大学</h3><p>电子信息工程 · 本科</p></div></div><p class="about-skills">Python / MATLAB <span>·</span> 英文资料研究 <span>·</span> AI 协作产品原型</p></div>
+      </div>
+    </section>
+
+    <section class="source-section container" id="source" aria-labelledby="source-title">
+      <div><p class="eyebrow">04 / EXPLORE THE WORK</p><h2 id="source-title">从界面，走到设计与验证。</h2><p class="source-description">项目的范围、实现与验收记录，一起构成作品。<br>欢迎从产品文档开始，或者直接阅读源码。</p><p class="source-status" id="source-status">源码与文档链接将在仓库配置后显示。</p></div>
+      <div class="source-list"><a data-doc-url="supportflow" href="#source"><span><small>CASE 01 / PRODUCT DOCUMENT</small>SupportFlow 产品文档</span><span aria-hidden="true">↗</span></a><a data-doc-url="metricpilot" href="#source"><span><small>CASE 02 / PRODUCT DOCUMENT</small>MetricPilot 产品文档</span><span aria-hidden="true">↗</span></a><a data-repo-url="" href="#source"><span><small>SOURCE / RUN / EVALUATION</small>完整项目仓库</span><span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span>周俊涛 <span class="footer-separator">/</span> AI &amp; Agent Product Portfolio</span><span>AI 协作个人作品 · 2026.10</span><a href="#top">回到顶部 <span aria-hidden="true">↑</span></a></div></footer>
+
+  <dialog class="case-dialog" id="case-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-topline"><span id="dialog-kicker">CASE STUDY</span><button class="close-dialog" type="button" aria-label="关闭案例详情">关闭 <span aria-hidden="true">×</span></button></div>
+    <div class="dialog-content" id="dialog-content"></div>
+  </dialog>
+</body>
+</html>

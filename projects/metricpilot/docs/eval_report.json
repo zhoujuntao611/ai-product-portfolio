@@ -1,0 +1,396 @@
+{
+  "project": "MetricPilot",
+  "generated_at_utc": "2026-10-13T04:11:23.157862+00:00",
+  "scope": "Offline deterministic parser, independent 4-order business fixture, synthetic dataset invariants, SQLite attack/limit cases, local HTTP model stub and local app HTTP boundary. These are regression checks, not business task or live model samples. No live external provider or real user evaluation.",
+  "tests_run": 72,
+  "passed": 72,
+  "failed": 0,
+  "errors": 0,
+  "elapsed_seconds": 10.165,
+  "categories": {
+    "clarification_and_input": {
+      "total": 14,
+      "passed": 14
+    },
+    "local_http_boundary": {
+      "total": 8,
+      "passed": 8
+    },
+    "local_model_protocol_mock": {
+      "total": 11,
+      "passed": 11
+    },
+    "numeric_and_domain": {
+      "total": 23,
+      "passed": 23
+    },
+    "sql_guard_and_resources": {
+      "total": 16,
+      "passed": 16
+    }
+  },
+  "live_provider_tested": false,
+  "real_users_tested": false,
+  "cases": [
+    {
+      "case": "test_metricpilot.ClarificationTests.test_22_recent_date",
+      "status": "passed",
+      "elapsed_ms": 12.57
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_23_month_without_year",
+      "status": "passed",
+      "elapsed_ms": 10.43
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_24_ambiguous_revenue",
+      "status": "passed",
+      "elapsed_ms": 11.28
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_25_ambiguous_refund_rate",
+      "status": "passed",
+      "elapsed_ms": 10.78
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_26_omitted_year_comparison",
+      "status": "passed",
+      "elapsed_ms": 10.75
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_27_implicit_previous_month",
+      "status": "passed",
+      "elapsed_ms": 10.69
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_28_outside_dataset",
+      "status": "passed",
+      "elapsed_ms": 10.56
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_29_reverse_dates",
+      "status": "passed",
+      "elapsed_ms": 10.55
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_30_invalid_date",
+      "status": "passed",
+      "elapsed_ms": 10.71
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_31_multiple_main_metrics",
+      "status": "passed",
+      "elapsed_ms": 10.73
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_32_explicit_filter_dates",
+      "status": "passed",
+      "elapsed_ms": 13.27
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_33_filter_denominator_resolution",
+      "status": "passed",
+      "elapsed_ms": 13.37
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_34_empty_question",
+      "status": "passed",
+      "elapsed_ms": 10.61
+    },
+    {
+      "case": "test_metricpilot.ClarificationTests.test_35_invalid_channel",
+      "status": "passed",
+      "elapsed_ms": 10.96
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_63_health_identity",
+      "status": "passed",
+      "elapsed_ms": 516.68
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_64_host_rebinding",
+      "status": "passed",
+      "elapsed_ms": 511.38
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_65_missing_origin",
+      "status": "passed",
+      "elapsed_ms": 522.0
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_66_foreign_origin",
+      "status": "passed",
+      "elapsed_ms": 516.37
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_67_csrf_missing",
+      "status": "passed",
+      "elapsed_ms": 518.41
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_68_http_run_and_session",
+      "status": "passed",
+      "elapsed_ms": 579.99
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_69_content_type_required",
+      "status": "passed",
+      "elapsed_ms": 516.57
+    },
+    {
+      "case": "test_metricpilot.HttpBoundaryTests.test_70_http_sql_write_guard",
+      "status": "passed",
+      "elapsed_ms": 518.34
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_52_model_tool_call",
+      "status": "passed",
+      "elapsed_ms": 540.82
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_53_model_reverse_order",
+      "status": "passed",
+      "elapsed_ms": 539.52
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_54_model_tool_results_roundtrip",
+      "status": "passed",
+      "elapsed_ms": 551.73
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_55_model_unexecuted_claim_rejected",
+      "status": "passed",
+      "elapsed_ms": 564.36
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_56_repeated_tool_bounded",
+      "status": "passed",
+      "elapsed_ms": 583.59
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_57_invalid_tool_scope",
+      "status": "passed",
+      "elapsed_ms": 569.8
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_58_malformed_arguments",
+      "status": "passed",
+      "elapsed_ms": 579.63
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_59_timeout_no_report",
+      "status": "passed",
+      "elapsed_ms": 25.69
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_60_http_remote_refused",
+      "status": "passed",
+      "elapsed_ms": 27.12
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_61_missing_config",
+      "status": "passed",
+      "elapsed_ms": 22.41
+    },
+    {
+      "case": "test_metricpilot.ModelAdapterTests.test_62_redirect_not_followed",
+      "status": "passed",
+      "elapsed_ms": 538.03
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_01_exact_net",
+      "status": "passed",
+      "elapsed_ms": 35.35
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_02_exact_gross",
+      "status": "passed",
+      "elapsed_ms": 24.99
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_03_exact_refunds",
+      "status": "passed",
+      "elapsed_ms": 33.32
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_04_order_count",
+      "status": "passed",
+      "elapsed_ms": 31.49
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_05_units_count",
+      "status": "passed",
+      "elapsed_ms": 26.61
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_06_amount_rate_denominator",
+      "status": "passed",
+      "elapsed_ms": 28.76
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_07_order_rate_denominator",
+      "status": "passed",
+      "elapsed_ms": 30.78
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_08_product_group_exact",
+      "status": "passed",
+      "elapsed_ms": 33.67
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_09_channel_group_exact",
+      "status": "passed",
+      "elapsed_ms": 26.71
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_10_groups_equal_total",
+      "status": "passed",
+      "elapsed_ms": 31.16
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_11_quarter_boundary",
+      "status": "passed",
+      "elapsed_ms": 36.88
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_12_comparison_exact",
+      "status": "passed",
+      "elapsed_ms": 28.96
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_13_product_filter_exact",
+      "status": "passed",
+      "elapsed_ms": 26.05
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_14_channel_filter_exact",
+      "status": "passed",
+      "elapsed_ms": 25.53
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_15_date_range_inclusive",
+      "status": "passed",
+      "elapsed_ms": 26.93
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_16_zero_denominator",
+      "status": "passed",
+      "elapsed_ms": 36.1
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_17_empty_group_result",
+      "status": "passed",
+      "elapsed_ms": 30.87
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_18_evidence_exists",
+      "status": "passed",
+      "elapsed_ms": 30.72
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_19_source_tables_bound",
+      "status": "passed",
+      "elapsed_ms": 28.7
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_20_seed_expected_total",
+      "status": "passed",
+      "elapsed_ms": 79.91
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_21_seed_month_literal",
+      "status": "passed",
+      "elapsed_ms": 71.42
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_71_count_comparison_not_currency",
+      "status": "passed",
+      "elapsed_ms": 33.22
+    },
+    {
+      "case": "test_metricpilot.NumericTests.test_72_rate_comparison_percentage_points",
+      "status": "passed",
+      "elapsed_ms": 32.27
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_36_update",
+      "status": "passed",
+      "elapsed_ms": 26.89
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_37_delete",
+      "status": "passed",
+      "elapsed_ms": 24.44
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_38_insert",
+      "status": "passed",
+      "elapsed_ms": 22.3
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_39_drop",
+      "status": "passed",
+      "elapsed_ms": 22.95
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_40_with_write",
+      "status": "passed",
+      "elapsed_ms": 25.54
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_41_attach",
+      "status": "passed",
+      "elapsed_ms": 22.38
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_42_pragma",
+      "status": "passed",
+      "elapsed_ms": 26.56
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_43_multi_statement",
+      "status": "passed",
+      "elapsed_ms": 31.85
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_44_system_schema",
+      "status": "passed",
+      "elapsed_ms": 28.87
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_45_readfile",
+      "status": "passed",
+      "elapsed_ms": 39.24
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_46_load_extension",
+      "status": "passed",
+      "elapsed_ms": 26.01
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_47_recursion",
+      "status": "passed",
+      "elapsed_ms": 38.41
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_48_blob_resource",
+      "status": "passed",
+      "elapsed_ms": 36.34
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_49_row_limit",
+      "status": "passed",
+      "elapsed_ms": 26.55
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_50_parameterized_quote",
+      "status": "passed",
+      "elapsed_ms": 25.24
+    },
+    {
+      "case": "test_metricpilot.SecurityTests.test_51_sql_timeout",
+      "status": "passed",
+      "elapsed_ms": 24.48
+    }
+  ]
+}
