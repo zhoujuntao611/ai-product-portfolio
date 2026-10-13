@@ -5,7 +5,7 @@
     supportflow: [
       { title: '先确认知识能回答什么。', text: '关键词检索当前有效知识，保留来源编号与政策地区。知识未覆盖或退款地区不明确时，停止直接答复并提示补充信息。', detail: '产品取舍：完整回答之前，先避免把不适用的政策合并。' },
       { title: '每条草稿，都能回到具体来源。', text: '回复草稿组合已有知识陈述，并逐条显示来源编号。可选模型接口只选择已有证据编号，不直接接受模型编写的新事实；真实供应商模型尚未调用评测。', detail: '产品取舍：先建立可检查的引用关系，再扩展生成能力。' },
-      { title: '最后一步，留给有权限的人。', text: '审核人可以批准本地草稿、驳回或转人工。工单保存审核轨迹；人工修改与自动验证区分标记，不向外部系统发送回复。', detail: '产品取舍：自动生成与审核决定分开，异常任务有清楚出口。' }
+      { title: '最后一步，由人工审核。', text: '审核人可以批准本地草稿、驳回或转人工。工单保存审核轨迹；人工修改与自动验证区分标记，不向外部系统发送回复。', detail: '产品取舍：自动生成与审核决定分开，异常任务有清楚出口。' }
     ],
     metricpilot: [
       { title: '先对齐问题，再计算数字。', text: '明确期间、分析维度与指标。净收入使用“毛收入 − 关联退款”；退款金额占比与退款订单占比分别保留分母，缺少信息时先澄清。', detail: '产品取舍：不把模糊期间或不同退款率静默解释成同一个问题。' },
@@ -100,9 +100,11 @@
   const dialog = document.getElementById('case-dialog');
   let dialogTrigger = null;
   document.querySelectorAll('[data-case]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
+    trigger.addEventListener('click', event => {
+      if (typeof dialog.showModal !== 'function') return;
       const project = trigger.dataset.case, item = cases[project];
       if (!item) return;
+      event.preventDefault();
       dialogTrigger = trigger;
       document.getElementById('dialog-kicker').textContent = item.kicker;
       const content = document.getElementById('dialog-content');
@@ -136,4 +138,5 @@
     source.classList.add('source-attention');
     document.getElementById('source-status').textContent = '仓库链接尚未配置；产品详情与流程仍可在此页面展开查看。';
   });
+  document.documentElement.classList.remove('no-js');
 })();
