@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "project": "ClimbAI",
+  "verified_at": "2026-10-14T18:02:56+08:00",
+  "updated_at": "2026-10-14T18:10:09+08:00",
+  "timezone": "Asia/Shanghai",
+  "status": "passed_with_disclosed_demo_scope",
+  "automated_tests": {
+    "verified_at": "2026-10-14T18:10:09+08:00",
+    "command": ".venv/Scripts/python.exe -m pytest tests/backend -q",
+    "passed": 35,
+    "failed": 0,
+    "exit_code": 0,
+    "duration_seconds": 6.09,
+    "scope": [
+      "Anonymous workspace isolation and malformed bearer IDs",
+      "Adult confirmation before plan generation",
+      "20/30/60/120-minute budgets, exercise limits, equipment and knowledge IDs",
+      "Actual workflow node sequence and zero model calls in rule demo mode",
+      "Independent training completion, delayed feedback and duplicate prevention",
+      "Zero-minute sessions persist as skipped, emit training_skipped rather than training_completed, and retain skipped status through adjustments and pain pause",
+      "Pending changes, accept/keep decisions and versioned persistence",
+      "Global plan version increments and stale confirmation/adjustment rejection",
+      "Acceptance cannot restore a task completed after a proposal was created",
+      "Pain pause, conservative negations, sticky paused recommendations and LLM bypass",
+      "Selected out-of-library questions and injury advice routing",
+      "Profile correction snapshots and unmeasured capabilities remain unknown",
+      "SQLite restart persistence, export and owner-scoped deletion",
+      "Configured LLM failure retains prior business state and records sanitized failed runs",
+      "Invented exercise IDs rejected after at most one repair",
+      "Invented knowledge citation IDs rejected",
+      "Optional feedback semantic summarization with mocked structured model response",
+      "Footwork/time-short/pain sample loading performs no paid model calls",
+      "Changed generation constraints update profile and plan evidence versions"
+    ],
+    "chroma_scope": "Unit tests explicitly use the local hash fallback to isolate business logic. Actual Chroma startup and native queries were verified separately below."
+  },
+  "real_local_http_smoke": {
+    "base_url": "http://127.0.0.1:8000",
+    "health_status": 200,
+    "provider": "demo",
+    "orchestrator": "langgraph",
+    "retrieval_backend": "chroma_hash_demo",
+    "index_status": "ready",
+    "index_warning": null,
+    "knowledge_question": "脚点滑应该观察什么",
+    "knowledge_status": 200,
+    "returned_citation_ids": ["K01", "K03"],
+    "answer_provider": "demo",
+    "cleanup_delete_status": 200,
+    "identity_scope": "Fresh disposable anonymous UUID; workspace deleted after smoke test"
+  },
+  "default_app_integration": {
+    "method": "Default create_app import plus FastAPI TestClient, with actual Chroma enabled",
+    "profile_save_status": 200,
+    "plan_generation_status": 200,
+    "plan_validation_valid": true,
+    "knowledge_query_status": 200,
+    "delete_status": 200,
+    "repeated_process_start_and_query": "passed"
+  },
+  "native_dependency_resolution": {
+    "observed_failures": [
+      "Chroma 1.5.9 on this Windows environment terminated the interpreter during native vector add/upsert; reproduced with a minimal two-vector EphemeralClient.",
+      "Chroma 0.6.3 with the initially installed ONNX runtime terminated during import of the optional default embedding runtime. No model download was requested."
+    ],
+    "verified_native_versions": {
+      "chromadb": "0.6.3",
+      "onnxruntime": "1.20.1",
+      "numpy": "1.26.4",
+      "posthog": "5.4.0"
+    },
+    "mitigations": [
+      "Fixed compatible native dependency versions in requirements.txt",
+      "Isolated native Chroma in a private JSON-line worker",
+      "A native query must succeed before reporting index readiness",
+      "Runtime-version-specific index directories and immutable content-addressed collections",
+      "Explicit local hash fallback and health/state warning if the worker cannot start or query"
+    ],
+    "final_native_result": "Actual default Chroma startup, repeated startup and native queries passed",
+    "embedding_method": "Deterministic character unigram/bigram hashing; retrieval demo, not model semantic embeddings"
+  },
+  "llm_verification": {
+    "live_llm_calls": 0,
+    "paid_model_quality_evaluated": false,
+    "api_adapter": "Optional HTTPX adapter for Responses text.format or compatible Chat Completions response_format",
+    "mocked_scope": [
+      "Feedback classification and hypothesis synthesis",
+      "Provider failures preserve confirmed plans and independent completion events",
+      "Invalid exercise IDs are rejected with at most one repair",
+      "Invalid citation IDs are rejected",
+      "Pain and sample loading bypass model calls"
+    ],
+    "resource_bounds": {
+      "request_timeout_seconds": 25,
+      "default_max_output_tokens": 1800,
+      "max_plan_repair_attempts": 1
+    },
+    "secret_scope": "No real API key was sought or supplied; provider response bodies and credentials are excluded from persisted run errors"
+  },
+  "evidence_limits": {
+    "professional_coach_review_completed": false,
+    "real_user_interviews_completed": false,
+    "real_user_trial_metrics_available": false,
+    "training_effectiveness_validated": false,
+    "notes": "This report verifies software behavior and the stated demo boundaries. It contains no invented activation, satisfaction, retention or climbing improvement metrics."
+  }
+}

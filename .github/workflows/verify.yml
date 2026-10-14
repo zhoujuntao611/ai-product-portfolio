@@ -25,3 +25,20 @@ jobs:
       - name: MetricPilot offline checks
         working-directory: projects/metricpilot
         run: python evaluate.py
+      - name: Install ClimbAI backend dependencies
+        working-directory: projects/climbai
+        run: python -m pip install -r requirements.txt
+      - name: ClimbAI backend checks
+        working-directory: projects/climbai
+        run: python -m pytest tests/backend -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: projects/climbai/package-lock.json
+      - name: Install ClimbAI frontend dependencies
+        working-directory: projects/climbai
+        run: npm ci
+      - name: Build ClimbAI frontend
+        working-directory: projects/climbai
+        run: npm run build

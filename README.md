@@ -1,8 +1,8 @@
 # 周俊涛 AI 产品作品集
 
-面向 AI 应用／Agent 产品经理实习的两个可运行作品：客服知识审核与业务数据分析。项目于 2026 年 10 月由 AI 协作搭建，默认使用规则引擎与合成数据。产品文档、交互、错误状态、测试和评测结果均随代码提供。
+面向 AI 应用／Agent 产品经理实习的三个可运行作品：客服知识审核、业务数据分析与 ToC 攀岩训练反馈。项目于 2026 年 10 月由 AI 协作搭建，默认使用规则引擎与合成数据。产品文档、交互、错误状态、测试和评测记录均随代码提供。
 
-**[个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/)** · [SupportFlow 源码](projects/supportflow) · [MetricPilot 源码](projects/metricpilot)
+**[个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/)** · **[ClimbAI 在线演示](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/)** · [SupportFlow 源码](projects/supportflow) · [MetricPilot 源码](projects/metricpilot) · [ClimbAI 源码](projects/climbai)
 
 ## SupportFlow 智能客服工单助手
 
@@ -24,9 +24,23 @@
 
 [产品需求](projects/metricpilot/docs/PRD.md) · [指标与数据定义](projects/metricpilot/docs/DATASET.md) · [评测方法](projects/metricpilot/docs/EVALUATION.md) · [72 项离线检查的实际结果](projects/metricpilot/eval_report.json)
 
+## ClimbAI AI 攀岩训练助手
+
+面向室内抱石初阶用户的 ToC AI Coach 产品：根据目标、可用时间和训练记录建立有依据的能力画像，通过知识检索与规划生成计划，并将训练反馈转成用户可确认的调整。四节点工作流由画像、知识检索、训练规划、反馈优化组成。
+
+关键取舍是先建立可执行、可回查的训练闭环。未测量的能力保留未知；计划保留版本；训练结束与反馈提交分别保存；用户可以接受调整或保持原计划。知识回答附来源，出现不适暂停相关训练推荐。首版没有视频动作纠错。
+
+![ClimbAI 工作区](docs/assets/climbai.png)
+
+[在线体验](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/) · [产品需求](projects/climbai/docs/PRD.md) · [源码与运行说明](projects/climbai)
+
+在线体验是可交互浏览器演示，使用本地规则与示例数据，记录保存在当前浏览器。它不调用远程 LLM，也不连接常驻后端。下载源码后可运行 FastAPI、SQLite 和知识检索后端，可选接入 LLM API；真实供应商模型效果尚未实测。真实用户洞察与训练效果均有待验证。
+
 ## 一键启动
 
-需要 Python 3.10 或更新版本；运行演示不需要安装第三方包或模型密钥。
+### SupportFlow / MetricPilot
+
+两个原有项目需要 Python 3.10 或更新版本；运行它们的演示不需要安装第三方包或模型密钥。
 
 Windows 下载仓库后，双击 `start-projects.cmd`。结束时双击 `stop-projects.cmd`，关闭启动器创建的本机服务。
 
@@ -39,14 +53,46 @@ python projects/metricpilot/app.py
 
 打开 http://127.0.0.1:8765 和 http://127.0.0.1:8766。模型配置与端口参数见各项目 README。
 
+### ClimbAI
+
+后端推荐 Python 3.11，固定依赖支持 3.11 / 3.12；前端构建需要 Node.js 22 或更新版本。默认模式不需要模型密钥。先进入 `projects/climbai`，创建虚拟环境并安装依赖。
+
+Windows PowerShell：
+
+```powershell
+cd projects/climbai
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -r requirements.txt
+.\.venv\Scripts\python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+macOS / Linux：
+
+```bash
+cd projects/climbai
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+
+在另一个终端进入 `projects/climbai`，安装并启动前端：
+
+```bash
+npm ci
+npm run dev
+```
+
+前端源码位于 `web/`，`npm run build` 输出 `dist/`。GitHub Pages 发布仓库中的 `docs/climbai/` 构建结果。前端模式切换、模型配置与数据存储说明见 [ClimbAI README](projects/climbai/README.md)。
+
 ## 已验证结果与范围
 
 - SupportFlow：31/31 条合成工单回归与 32 项工程测试通过。引用一致性检查覆盖有事实条目的案例；数据集与实现一同编写，不是独立盲测。
 - MetricPilot：72/72 项离线检查通过。其中 23 项数值／业务、14 项澄清输入、16 项 SQL 防护／资源、11 项本地模型协议模拟、8 项 HTTP 边界；不是 72 次真实模型业务任务。
-- 两个应用已完成桌面与 390px 手机宽度的浏览器交互检查，包含正常任务、异常分支、证据查看、记录与导出。记录见 [浏览器检查](verification/browser-qa.json)。
+- SupportFlow 与 MetricPilot 已完成桌面与 390px 手机宽度的浏览器交互检查，包含正常任务、异常分支、证据查看、记录与导出。记录见 [浏览器检查](verification/browser-qa.json)。
+- ClimbAI：35/35 项后端测试、32 个浏览器场景及 1 个直接 HTTP 回归通过，包含画像依据、时间约束、知识引用、独立完成、反馈与版本。结果见 [验证记录](projects/climbai/docs/VALIDATION.md)。合成用例只能验证已覆盖流程，不能证明运动效果或留存提升。
 - **真实供应商模型调用、真实用户测试与商业上线均未完成。** 尚无采纳率、节省工时或真实模型准确率；它们需要单独采集证据。
 
-网页是项目案例展示。Python 应用在本机运行；GitHub Pages 不承担 Python 后端服务。应用包含明确演示模式，不将静态截图称为在线 Agent。
+个人主页展示项目案例，ClimbAI 提供明确标注的可交互浏览器演示。Python 应用在本机运行；GitHub Pages 不承担 Python 后端服务。截图、规则演示和可选模型接口分别说明，不将离线规则通过率解释为模型效果。
 
 ## 运行验证
 
@@ -61,8 +107,16 @@ cd projects/metricpilot
 python evaluate.py
 ```
 
+```bash
+cd projects/climbai
+python -m pip install -r requirements.txt
+python -m pytest tests/backend -q
+npm ci
+npm run build
+```
+
 评测脚本会重新生成报告及工程耗时；数字只代表该版本上的已列出场景。后续修改应重新验证。
 
 ## 资料与许可
 
-代码从零搭建，使用 Python 标准库、SQLite 与原生网页；各项目按随附 MIT LICENSE 许可。API 格式参考官方文档，相关链接见项目说明。仓库不包含私人简历、联系方式、真实业务数据、密钥或运行中数据库。
+代码从零搭建；SupportFlow 与 MetricPilot 使用 Python 标准库、SQLite 与原生网页，ClimbAI 使用 Python / FastAPI、SQLite、知识检索及 React 前端。各项目按随附 MIT LICENSE 许可。API 格式参考官方文档，相关链接见项目说明。仓库不包含私人简历、联系方式、真实业务数据、密钥或运行中数据库。

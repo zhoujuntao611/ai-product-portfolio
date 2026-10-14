@@ -1,0 +1,28 @@
+{
+  "version": "demo-kb-1.0",
+  "review_status": "开发者整理的 Demo 示例库；专业教练审核待完成",
+  "knowledge": [
+    {"id":"K01","title":"脚点选择与落脚观察","summary":"先观察可用脚点，落脚后尽量保持稳定，再观察下一步移动。脚点选择应服务于平衡。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["脚","脚法","脚点","滑","footwork"],"tags":["footwork"]},
+    {"id":"K02","title":"身体位置与平衡","summary":"移动方向改变时，身体位置与脚的受力方向也需要配合；同一种站位并不适用于所有线路。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["身体","重心","平衡","姿势","body_position"],"tags":["body_position"]},
+    {"id":"K03","title":"观察线路与休息位置","summary":"攀爬时观察手脚点以及能够短暂休息的位置，有助于理解动作选择与能量使用。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["读线","路线","线路","观察","route_reading"],"tags":["route_reading"]},
+    {"id":"K04","title":"抱石入门与等级背景","summary":"抱石线路考察多种技术。等级可帮助描述线路背景，初学者也可以通过入门课程学习技巧。","url":"https://www.rei.com/learn/expert-advice/bouldering.html","source_type":"参考资料的中文摘要","keywords":["攀岩入门","攀岩等级","抱石","攀岩新手"],"tags":["consistency"]},
+    {"id":"K05","title":"训练复盘记录","summary":"Demo 建议每次记录时间、任务完成情况、主观难度与一个卡点；这些记录用于后续决策，不构成能力测量。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["记录","复盘","反馈","习惯","consistency"],"tags":["consistency"]},
+    {"id":"K06","title":"时间预算与内容缩减","summary":"Demo 按可用时间缩减任务数量，保留准备与复盘时间。示例时长用于展示约束校验，尚未经过效果验证。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["时间","分钟","安排","计划","预算"],"tags":["consistency","footwork","route_reading","body_position"]},
+    {"id":"K07","title":"单次反馈的不确定性","summary":"一次失败不足以认定能力下降。记录线路难度、疲劳与时间限制，有助于区分后续需要验证的假设。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["失败","难度","卡点","疲劳","调整"],"tags":["footwork","route_reading","body_position","consistency"]},
+    {"id":"K08","title":"现场指导与安全规则","summary":"图文说明不能替代实际指导。首次到馆应了解现场规则，并向工作人员学习适用的攀爬与安全方法。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["安全","教练","岩馆","现场","准备"],"tags":["consistency"]},
+    {"id":"K09","title":"不适反馈的暂停规则","summary":"ClimbAI Demo 在出现疼痛或不适反馈后暂停攀爬建议；不生成诊断、用药或康复处方。重新训练前应寻求适当的专业意见。","url":null,"source_type":"ClimbAI 开发者自编产品边界","keywords":["疼","痛","不适","伤","恢复","诊断","药"],"tags":["safety"]},
+    {"id":"K10","title":"画像纠正与证据来源","summary":"初始画像源于自评。训练记录可增加事实观察，能力推断仍待验证；用户可纠正推断，历史版本保留。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["画像","依据","能力","证据","纠正"],"tags":["consistency"]}
+  ],
+  "exercises": [
+    {"id":"E01","title":"到馆准备与轻松适应","focus":"preparation","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":10,"max_minutes":15,"steps":["确认岩馆规则和落地区域，首次训练请工作人员指导。","按现场教学完成准备，在本人能轻松完成的线路上逐步适应。"],"citation_ids":["K08"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E02","title":"脚点观察练习","focus":"footwork","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选本人能轻松完成的线路，先从地面观察脚点。","攀爬时留意落脚是否稳定，结束后记一个具体观察。","每次尝试间按需要休息，不追求连续次数。"],"citation_ids":["K01","K07"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E03","title":"读线与实际动作对照","focus":"route_reading","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["在轻松线路下先描述可能的手脚点顺序。","正常攀爬，比较实际动作与预想哪里不同。","记录一个判断变化；不确定时向现场教练请教。"],"citation_ids":["K03","K07"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E04","title":"轻松线路的身体位置观察","focus":"body_position","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选择舒适且熟悉的线路。","留意不同脚点下身体是否稳定，不强行尝试复杂动作。","记录一个站位变化，必要时请教现场教练。"],"citation_ids":["K02"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E05","title":"熟悉线路与规律练习","focus":"consistency","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选择熟悉且本人舒适的线路。","按本人状态练习与休息，记录到馆和完成情况。","不将等级或尝试次数当作必须完成的任务。"],"citation_ids":["K04","K05"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E06","title":"同一线路的观察对比","focus":"footwork","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["在舒适线路上比较前后两次的脚点选择。","只记录差异，不根据单次滑落判断能力。","出现疲劳或不适时结束。"],"citation_ids":["K01","K07"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E07","title":"地面线路观察","focus":"route_reading","requires":["climbing_wall"],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["站在安全位置观察一条线路。","标记可能的手脚点与休息位置。","将不确定的动作作为请教问题，不在落地区域停留。"],"citation_ids":["K03","K08"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E08","title":"尝试间休息与状态检查","focus":"rest","requires":[],"min_minutes":5,"default_minutes":10,"max_minutes":25,"steps":["离开落地区域，按需要休息。","检查疲劳与不适情况，感觉异常时结束本次训练。"],"citation_ids":["K06","K09"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E09","title":"一分钟训练复盘","focus":"review","requires":[],"min_minutes":2,"default_minutes":5,"max_minutes":10,"steps":["记录实际时长、完成状态与主观难度。","补充一个卡点与是否不适，查看下一次调整建议。"],"citation_ids":["K05","K07"],"review_status":"Demo 示例，专业审核待完成"},
+    {"id":"E10","title":"训练目标与记录整理","focus":"consistency","requires":[],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["查看已有训练记录，选一个下次想观察的问题。","确认时间与场地限制；缺少合适场地时只整理目标。"],"citation_ids":["K05","K06"],"review_status":"Demo 示例，专业审核待完成"}
+  ]
+}

@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-10-14T10:07:19.796Z",
+  "client_timezone": "Asia/Shanghai",
+  "local_started_at": "2026年10月14日星期三 GMT+8 18:07:19",
+  "frontend_url": "http://127.0.0.1:4173/",
+  "backend_url": "http://127.0.0.1:8000",
+  "method": "Headless browser actions against the real interface; demo assertions read saved browser state, API assertions read the actual backend state.",
+  "scope": "Synthetic test profiles only. This verifies interface behavior, not real user satisfaction, coaching validity, or live LLM quality.",
+  "checks": [
+    {
+      "name": "Empty state and onboarding",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 1184,
+      "evidence": {
+        "profile_version": 1,
+        "unknown_or_unmeasured_fields": 2
+      }
+    },
+    {
+      "name": "Generate and confirm a source-bound plan",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 665,
+      "evidence": {
+        "version": 1,
+        "sessions": 2,
+        "citations": 2
+      }
+    },
+    {
+      "name": "Training completion persists independently of feedback",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 848,
+      "evidence": {
+        "log_id": "log_90e678c0-9262-489c-9138-3e3cdfddf5f3",
+        "minutes": 30,
+        "feedback_submitted": false
+      }
+    },
+    {
+      "name": "Feedback and explicit adjustment decision",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 1438,
+      "evidence": {
+        "decision": "accept",
+        "original_version": 1,
+        "resulting_version": 2,
+        "completion_count": 1,
+        "feedback_count": 1
+      }
+    },
+    {
+      "name": "Keeping a later adjustment retains the current plan",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 3501,
+      "evidence": {
+        "plan_versions": [
+          1,
+          2,
+          3
+        ],
+        "kept_version": 3
+      }
+    },
+    {
+      "name": "Knowledge sources and out-of-library refusal",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 1198,
+      "evidence": {
+        "covered_citations": [
+          "demo-footwork"
+        ],
+        "uncovered_question_refused": true
+      }
+    },
+    {
+      "name": "JSON export of saved records",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 728,
+      "evidence": {
+        "file": "downloads\\demo-1440.json",
+        "exported_logs": 2
+      }
+    },
+    {
+      "name": "All primary pages and responsive layout",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 1238,
+      "evidence": [
+        {
+          "page": "today",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "profile",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "plan",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "training",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "report",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "knowledge",
+          "width": 1440,
+          "scroll_width": 1440
+        },
+        {
+          "page": "account",
+          "width": 1440,
+          "scroll_width": 1440
+        }
+      ]
+    },
+    {
+      "name": "Pain feedback immediately pauses training",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 2765,
+      "evidence": {
+        "paused": true,
+        "session_statuses": [
+          "completed",
+          "paused"
+        ]
+      }
+    },
+    {
+      "name": "Reload preserves profile, plans, logs and pause state",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 669,
+      "evidence": {
+        "logs": 3,
+        "feedback_reports": 3,
+        "paused": true
+      }
+    },
+    {
+      "name": "Delete/reset clears the current browser records",
+      "suite": "demo-1440",
+      "mode": "demo_rules",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 1000,
+      "evidence": {
+        "profile_cleared": true,
+        "completion_count_before_delete": 3,
+        "feedback_count_before_delete": 3
+      }
+    },
+    {
+      "name": "Empty state and onboarding",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 1399,
+      "evidence": {
+        "profile_version": 1,
+        "unknown_or_unmeasured_fields": 2
+      }
+    },
+    {
+      "name": "Generate and confirm a source-bound plan",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 688,
+      "evidence": {
+        "version": 1,
+        "sessions": 2,
+        "citations": 2
+      }
+    },
+    {
+      "name": "Training completion persists independently of feedback",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 1015,
+      "evidence": {
+        "log_id": "log_ed8a31c3-438c-499d-b4dc-c79ff39fcb8c",
+        "minutes": 30,
+        "feedback_submitted": false
+      }
+    },
+    {
+      "name": "Feedback and explicit adjustment decision",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 1575,
+      "evidence": {
+        "decision": "keep",
+        "original_version": 1,
+        "resulting_version": 1,
+        "completion_count": 1,
+        "feedback_count": 1
+      }
+    },
+    {
+      "name": "Knowledge sources and out-of-library refusal",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 1340,
+      "evidence": {
+        "covered_citations": [
+          "demo-footwork"
+        ],
+        "uncovered_question_refused": true
+      }
+    },
+    {
+      "name": "JSON export of saved records",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 733,
+      "evidence": {
+        "file": "downloads\\demo-375.json",
+        "exported_logs": 1
+      }
+    },
+    {
+      "name": "All primary pages and responsive layout",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 1649,
+      "evidence": [
+        {
+          "page": "today",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "profile",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "plan",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "training",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "report",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "knowledge",
+          "width": 375,
+          "scroll_width": 375
+        },
+        {
+          "page": "account",
+          "width": 375,
+          "scroll_width": 375
+        }
+      ]
+    },
+    {
+      "name": "Reload preserves profile, plans, logs and pause state",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 635,
+      "evidence": {
+        "logs": 1,
+        "feedback_reports": 1,
+        "paused": false
+      }
+    },
+    {
+      "name": "Delete/reset clears the current browser records",
+      "suite": "demo-375",
+      "mode": "demo_rules",
+      "viewport_width": 375,
+      "status": "passed",
+      "elapsed_ms": 969,
+      "evidence": {
+        "profile_cleared": true,
+        "completion_count_before_delete": 1,
+        "feedback_count_before_delete": 1
+      }
+    },
+    {
+      "name": "Backend connection failure has a visible recovery state",
+      "suite": "backend",
+      "viewport_width": 1440,
+      "status": "passed",
+      "elapsed_ms": 256,
+      "evidence": {
+        "error": "无法连接后端，请检查服务地址、网络和跨域设置。",
+        "observed_failure": true
+      }
+    },
+    {
+      "name": "Actual backend profile, confirmed plan and feedback loop",
+      "suite": "backend",
+      "viewport_width": 1440,
+      "mode": "api",
+      "status": "passed",
+      "elapsed_ms": 2829,
+      "evidence": {
+        "engine": "demo",
+        "profile_version": 1,
+        "plan_version": 1,
+        "persisted_logs": 1,
+        "feedback_reports": 1,
+        "provider_runs": [
+          {
+            "provider": "demo",
+            "status": "completed",
+            "model_calls": 0
+          },
+          {
+            "provider": "demo",
+            "status": "completed",
+            "model_calls": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Editing an API profile preserves logs and renders every history version",
+      "suite": "backend",
+      "viewport_width": 1440,
+      "mode": "api",
+      "status": "passed",
+      "elapsed_ms": 1668,
+      "evidence": {
+        "updated_nickname": "API更新档案用户",
+        "plan_versions": [
+          "v2",
+          "v1"
+        ],
+        "profile_versions": [
+          "v3",
+          "v2",
+          "v1"
+        ],
+        "original_logs_retained": 1
+      }
+    },
+    {
+      "name": "Actual backend export and deletion",
+      "suite": "backend",
+      "viewport_width": 1440,
+      "mode": "api",
+      "status": "passed",
+      "elapsed_ms": 858,
+      "evidence": {
+        "file": "downloads\\backend.json",
+        "exported_logs": 1,
+        "api_records_deleted": true
+      }
+    },
+    {
+      "name": "Pain mentioned only in free text pauses training",
+      "suite": "text-pain-boundary",
+      "mode": "demo_rules",
+      "status": "passed",
+      "elapsed_ms": 4403,
+      "evidence": {
+        "notes": "手指不太疼但想继续练",
+        "pain_checkbox_selected": false,
+        "paused": true,
+        "original_completed_status_retained": true
+      }
+    },
+    {
+      "name": "Explicitly negated pain statement does not trigger a pause",
+      "suite": "text-pain-boundary",
+      "mode": "demo_rules",
+      "status": "passed",
+      "elapsed_ms": 4283,
+      "evidence": {
+        "notes": "今天无疼痛，休息后继续记录",
+        "pain_checkbox_selected": false,
+        "paused": false,
+        "original_completed_status_retained": true
+      }
+    },
+    {
+      "name": "Public screenshot from the built-in simulated example",
+      "suite": "presentation-1440",
+      "status": "passed",
+      "elapsed_ms": 2360,
+      "evidence": {
+        "screenshot": "climbai-desktop.png",
+        "sample_data": true,
+        "viewport_width": 1440,
+        "scroll_y": 0
+      }
+    },
+    {
+      "name": "Public screenshot from the built-in simulated example",
+      "suite": "presentation-375",
+      "status": "passed",
+      "elapsed_ms": 2269,
+      "evidence": {
+        "screenshot": "climbai-mobile.png",
+        "sample_data": true,
+        "viewport_width": 375,
+        "scroll_y": 0
+      }
+    },
+    {
+      "name": "No uncaught application JavaScript errors",
+      "suite": "all",
+      "status": "passed",
+      "elapsed_ms": 1,
+      "evidence": {
+        "count": 0
+      }
+    },
+    {
+      "name": "Goal text indicating pain saves a paused profile without generating a plan",
+      "suite": "targeted-revision",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "mode": "demo_rules",
+      "status": "passed",
+      "elapsed_ms": 1892,
+      "evidence": {
+        "goal": "手指不太疼但想继续训练",
+        "pain_checkbox_selected": false,
+        "paused": true,
+        "page": "profile",
+        "generated_plans": 0,
+        "error_toasts": 0,
+        "served_assets": [
+          "./assets/index-CVyA3M1b.js"
+        ]
+      }
+    },
+    {
+      "name": "Non-integer and out-of-range duration is rejected before saving or sending; integer still works",
+      "suite": "targeted-revision",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "mode": "demo",
+      "status": "passed",
+      "elapsed_ms": 4701,
+      "evidence": {
+        "rejected": [
+          {
+            "value": "30.5",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          },
+          {
+            "value": "-1",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          },
+          {
+            "value": "241",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          }
+        ],
+        "message": "实际训练时长必须是 0–240 的整数分钟。0 表示跳过本次训练。",
+        "accepted_integer": 30,
+        "logs_added_for_integer": 1,
+        "completion_requests_for_integer": 0
+      }
+    },
+    {
+      "name": "Non-integer and out-of-range duration is rejected before saving or sending; integer still works",
+      "suite": "targeted-revision",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "mode": "api",
+      "status": "passed",
+      "elapsed_ms": 4730,
+      "evidence": {
+        "rejected": [
+          {
+            "value": "30.5",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          },
+          {
+            "value": "-1",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          },
+          {
+            "value": "241",
+            "logs_added": 0,
+            "completion_requests_sent": 0
+          }
+        ],
+        "message": "实际训练时长必须是 0–240 的整数分钟。0 表示跳过本次训练。",
+        "accepted_integer": 30,
+        "logs_added_for_integer": 1,
+        "completion_requests_for_integer": 1
+      }
+    },
+    {
+      "name": "Actual restarted backend stores zero-minute completion as skipped in log, session and event",
+      "suite": "zero-minute-backend-revision",
+      "mode": "api",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "status": "passed",
+      "elapsed_ms": 286,
+      "evidence": {
+        "provider": "demo",
+        "actual_minutes": 0,
+        "log_status": "skipped",
+        "session_status": "skipped",
+        "event_type": "training_skipped",
+        "feedback_submitted": false
+      }
+    }
+  ],
+  "page_errors": [],
+  "screenshots": [
+    {
+      "file": "climbai-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "page": "today",
+      "fixture": "Built-in simulated Xiaolin example loaded through the interface",
+      "sample_data": true,
+      "completed_logs": 1,
+      "feedback_reports": 1,
+      "scroll_y": 0
+    },
+    {
+      "file": "climbai-mobile.png",
+      "width": 375,
+      "height": 844,
+      "page": "today",
+      "fixture": "Built-in simulated Xiaolin example loaded through the interface",
+      "sample_data": true,
+      "completed_logs": 1,
+      "feedback_reports": 1,
+      "scroll_y": 0
+    }
+  ],
+  "finished_at": "2026-10-14T10:14:00.835Z",
+  "summary": {
+    "attempted": 33,
+    "passed": 33,
+    "failed": 0,
+    "skipped": 0,
+    "denominator": "Attempted product verification scenarios: browser interactions plus explicitly labeled direct HTTP regression checks; not people, sessions or LLM tasks."
+  },
+  "revisions": [
+    {
+      "kind": "full_baseline",
+      "tested_bundle": "index-0SlgHe32.js",
+      "started_at": "2026-10-14T10:07:19.796Z",
+      "finished_at": "2026-10-14T10:08:07.360Z",
+      "checks": 29,
+      "scope": "Full desktop/mobile/API browser suite and public simulated-example screenshots."
+    },
+    {
+      "kind": "targeted_frontend_regression",
+      "started_at": "2026-10-14T10:12:32.994Z",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "previous_check_count": 29,
+      "scope": "Text-only pain in onboarding; integer duration validation in local and API modes. Existing screenshots and baseline checks retained.",
+      "finished_at": "2026-10-14T10:12:44.982Z",
+      "new_check_count": 3,
+      "failed_checks": 0
+    },
+    {
+      "kind": "zero_minute_backend_regression",
+      "started_at": "2026-10-14T10:14:00.145Z",
+      "tested_bundle": "index-CVyA3M1b.js",
+      "previous_check_count": 32,
+      "scope": "Direct HTTP check against the restarted backend: zero minutes is skipped in the log, session and event.",
+      "finished_at": "2026-10-14T10:14:00.835Z",
+      "new_check_count": 1,
+      "failed_checks": 0
+    }
+  ]
+}

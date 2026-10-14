@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#12243b">
-  <meta name="description" content="周俊涛的 AI / Agent 产品实习作品集：SupportFlow 客服知识与审核流程、MetricPilot 只读数据分析与证据追溯。">
+  <meta name="description" content="周俊涛的 AI / Agent 产品实习作品集：SupportFlow 客服知识审核、MetricPilot 数据分析、ClimbAI ToC 攀岩训练与反馈闭环。">
   <title>周俊涛 · AI / Agent 产品作品集</title>
   <link rel="stylesheet" href="style.css">
   <script>
     window.PORTFOLIO_CONFIG = {
       repoUrl: "https://github.com/zhoujuntao611/ai-product-portfolio",
       branch: "main",
-      projectPaths: { supportflow: "projects/supportflow", metricpilot: "projects/metricpilot" },
-      docs: { supportflow: "", metricpilot: "" },
-      metrics: { supportflow: "31 条合成回归＋32 项工程测试通过 · 离线验证", metricpilot: "72 项离线检查通过 · 数值／权限／模拟接口" }
+      projectPaths: { supportflow: "projects/supportflow", metricpilot: "projects/metricpilot", climbai: "projects/climbai" },
+      docs: { supportflow: "", metricpilot: "", climbai: "" },
+      metrics: { supportflow: "31 条合成回归＋32 项工程测试通过 · 离线验证", metricpilot: "72 项离线检查通过 · 数值／权限／模拟接口", climbai: "训练闭环 / 版本与引用 / 演示模式" }
     };
   </script>
   <script src="app.js" defer></script>
@@ -42,7 +42,7 @@
         <h1 id="hero-title">把复杂任务，<br>做成<span class="title-emphasis">可核验</span>的产品。</h1>
         <p class="hero-description">我是周俊涛，北航信息与通信工程硕士在读。<br class="desktop-break">关注 AI 工作流、数据分析与人机协作，<br class="desktop-break">用可运行的作品解释产品判断。</p>
         <div class="hero-actions">
-          <a class="button primary" href="#work">查看两份作品 <span aria-hidden="true">↓</span></a>
+          <a class="button primary" href="#work">查看三份作品 <span aria-hidden="true">↓</span></a>
           <span class="availability">北京 · 每周 5 天<br>可连续实习 6 个月以上</span>
         </div>
       </div>
@@ -54,7 +54,7 @@
           <li><span class="path-number">02</span><div><strong>结论有出处</strong><p>政策引用与查询结果，保留可追溯的证据。</p></div></li>
           <li><span class="path-number">03</span><div><strong>异常可接管</strong><p>信息不足就澄清，需要判断就交还给人。</p></div></li>
         </ol>
-        <div class="note-foot"><span class="small-square" aria-hidden="true"></span> 两个 AI 协作个人作品 · 合成数据演示</div>
+        <div class="note-foot"><span class="small-square" aria-hidden="true"></span> 三个 AI 协作个人作品 · 合成数据演示</div>
       </aside>
     </section>
 
@@ -122,6 +122,34 @@
             <div class="workflow-panel" role="tabpanel" id="metricpilot-panel" aria-labelledby="metricpilot-tab-0" tabindex="0"><h4>先对齐问题，再计算数字。</h4><p>明确期间、分析维度与指标。净收入使用“毛收入 − 关联退款”；退款金额占比与退款订单占比分别保留分母，缺少信息时先澄清。</p><span class="workflow-detail">产品取舍：不把模糊期间或不同退款率静默解释成同一个问题。</span></div>
           </div>
         </article>
+
+        <article class="project project-second" id="climbai" aria-labelledby="climbai-title">
+          <div class="project-topline"><span>CASE 03</span><span>ToC AI Coach / 个性化与反馈</span></div>
+          <div class="project-layout">
+            <div class="project-copy">
+              <h3 id="climbai-title">ClimbAI<span>AI 攀岩训练助手</span></h3>
+              <p class="project-thesis">让每一次训练，<br>成为下一次的依据。</p>
+              <p class="project-description">面向室内抱石初阶用户，把个人档案、知识来源、训练计划和反馈连接起来。画像显示依据，计划保留版本；训练结束与反馈提交分开记录，调整交由用户确认。</p>
+              <div class="project-tags"><span>ToC 个性化</span><span>Coach Agent</span><span>反馈闭环</span></div>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="climbai">训练闭环 / 版本与引用 / 演示模式</span></p>
+              <div class="project-actions"><a class="button primary" href="climbai/">体验演示 <span aria-hidden="true">↗</span></a><a class="button secondary" data-case="climbai" data-doc-url="climbai" aria-haspopup="dialog" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer">展开案例 <span aria-hidden="true">↗</span></a><a class="text-link" data-doc-url="climbai" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档 <span aria-hidden="true">↗</span></a></div>
+              <a class="source-link" data-repo-url="climbai" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/climbai" target="_blank" rel="noopener noreferrer">查看项目源码 <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="project-media">
+              <div class="screen-chrome" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>ClimbAI / 可交互演示</span><span class="window-status">TRAIN → REFLECT → ADAPT</span></div>
+              <a class="screen-preview" href="assets/climbai.png" target="_blank" rel="noopener noreferrer" aria-label="打开 ClimbAI 完整界面截图"><img src="assets/climbai.png" alt="ClimbAI 应用界面：有依据的能力画像、个性化训练计划与反馈调整" width="1440" height="1000" loading="lazy"></a>
+              <figcaption>应用实拍。在线体验使用本地规则与示例数据；可选后端模型尚未实测。<a href="climbai/">体验训练闭环 ↗</a></figcaption>
+            </figure>
+          </div>
+          <div class="workflow" data-workflow="climbai">
+            <div class="workflow-tabs" role="tablist" aria-label="ClimbAI 关键流程">
+              <button type="button" role="tab" id="climbai-tab-0" aria-controls="climbai-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 画像与依据</button>
+              <button type="button" role="tab" id="climbai-tab-1" aria-controls="climbai-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 检索与规划</button>
+              <button type="button" role="tab" id="climbai-tab-2" aria-controls="climbai-panel" aria-selected="false" tabindex="-1" data-step="2"><span>03</span> 反馈与调整</button>
+            </div>
+            <div class="workflow-panel" role="tabpanel" id="climbai-panel" aria-labelledby="climbai-tab-0" tabindex="0"><h4>让训练重点，有可回查的依据。</h4><p>画像节点读取档案和训练记录，区分已知事实、用户自评与待验证判断。未测量的能力保留未知；用户可以修正档案和目标。</p><span class="workflow-detail">产品取舍：用可解释的观察建立信任，避免未经测量的能力分数。</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -129,7 +157,8 @@
       <div class="section-heading"><div><p class="eyebrow">02 / HOW I WORK</p><h2 id="method-title">用作品说明能力。</h2></div><p class="section-intro">把能力放到任务里，<br>把判断落实到验收里。</p></div>
       <div class="capability-row"><span class="capability-number">01</span><h3>任务拆解与产品边界</h3><p>定义正常流程、澄清条件与人工出口，写清 MVP 范围和验收标准。</p><a href="#supportflow">看客服工作流 <span aria-hidden="true">↗</span></a></div>
       <div class="capability-row"><span class="capability-number">02</span><h3>数据口径与结果追溯</h3><p>先确认指标和分母，再关联查询结果；通过合成用例核对计算与权限限制。</p><a href="#metricpilot">看数据分析流程 <span aria-hidden="true">↗</span></a></div>
-      <div class="capability-row"><span class="capability-number">03</span><h3>原型交付与验证</h3><p>使用 Python 与 AI 协作实现可运行应用，保留产品文档、失败用例与回归记录。</p><a href="#source">看源码与文档 <span aria-hidden="true">↗</span></a></div>
+      <div class="capability-row"><span class="capability-number">03</span><h3>ToC 个性化与反馈</h3><p>把目标、可用时间与训练反馈转成下一次安排，记录用户是否接受调整及完整任务分母。</p><a href="#climbai">看训练反馈闭环 <span aria-hidden="true">↗</span></a></div>
+      <div class="capability-row"><span class="capability-number">04</span><h3>原型交付与验证</h3><p>使用 Python 与 AI 协作实现可运行应用，保留产品文档、失败用例与回归记录。</p><a href="#source">看源码与文档 <span aria-hidden="true">↗</span></a></div>
     </section>
 
     <section class="about-section" id="about" aria-labelledby="about-title">
@@ -140,8 +169,8 @@
     </section>
 
     <section class="source-section container" id="source" aria-labelledby="source-title">
-      <div><p class="eyebrow">04 / EXPLORE THE WORK</p><h2 id="source-title">从界面，走到设计与验证。</h2><p class="source-description">项目的范围、实现与验收记录，一起构成作品。<br>欢迎从产品文档开始，或者直接阅读源码。</p><p class="source-status" id="source-status">源码、运行说明与离线验收记录均在项目仓库中。</p><p class="source-description">本页展示产品案例。下载源码后，使用 Python 3.10 或以上版本在本机运行；<a class="run-link" href="https://github.com/zhoujuntao611/ai-product-portfolio#一键启动" target="_blank" rel="noopener noreferrer">查看启动说明 ↗</a></p></div>
-      <div class="source-list"><a data-doc-url="supportflow" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" target="_blank" rel="noopener noreferrer"><span><small>CASE 01 / PRODUCT DOCUMENT</small>SupportFlow 产品文档</span><span aria-hidden="true">↗</span></a><a data-doc-url="metricpilot" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/PRD.md" target="_blank" rel="noopener noreferrer"><span><small>CASE 02 / PRODUCT DOCUMENT</small>MetricPilot 产品文档</span><span aria-hidden="true">↗</span></a><a data-repo-url="" href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer"><span><small>SOURCE / RUN / EVALUATION</small>完整项目仓库</span><span aria-hidden="true">↗</span></a></div>
+      <div><p class="eyebrow">04 / EXPLORE THE WORK</p><h2 id="source-title">从界面，走到设计与验证。</h2><p class="source-description">项目的范围、实现与验收记录，一起构成作品。<br>欢迎从产品文档开始，或者直接阅读源码。</p><p class="source-status" id="source-status">源码、运行说明与离线验收记录均在项目仓库中。</p><p class="source-description">ClimbAI 可直接体验浏览器演示。三个项目的 Python 后端均可在本机运行；ClimbAI 需要 Python 3.11 及项目依赖。<a class="run-link" href="https://github.com/zhoujuntao611/ai-product-portfolio#一键启动" target="_blank" rel="noopener noreferrer">查看启动说明 ↗</a></p></div>
+      <div class="source-list"><a data-doc-url="supportflow" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" target="_blank" rel="noopener noreferrer"><span><small>CASE 01 / PRODUCT DOCUMENT</small>SupportFlow 产品文档</span><span aria-hidden="true">↗</span></a><a data-doc-url="metricpilot" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/PRD.md" target="_blank" rel="noopener noreferrer"><span><small>CASE 02 / PRODUCT DOCUMENT</small>MetricPilot 产品文档</span><span aria-hidden="true">↗</span></a><a data-doc-url="climbai" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer"><span><small>CASE 03 / PRODUCT DOCUMENT</small>ClimbAI 产品文档</span><span aria-hidden="true">↗</span></a><a href="climbai/"><span><small>TRY / TRAIN / REFLECT</small>ClimbAI 在线演示</span><span aria-hidden="true">↗</span></a><a data-repo-url="" href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer"><span><small>SOURCE / RUN / EVALUATION</small>完整项目仓库</span><span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 

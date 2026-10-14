@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <title>ClimbAI｜AI Coach Agent 项目方案</title>
+  <style>
+    :root { color-scheme: light; --paper:#ffffff; --bg:#f5f6f7; --text:#202b33; --muted:#596570; --line:#dce1e5; --soft:#edf0f2; --accent:#17635f; --accent-soft:#e9f2f0; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:15px/1.7 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+    button { font:inherit; cursor:pointer; color:inherit; }
+    button:focus-visible, a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    a { color:var(--accent); }
+    .shell { max-width:1140px; margin:auto; padding:38px 32px 48px; }
+    header { display:flex; justify-content:space-between; gap:24px; align-items:flex-start; margin-bottom:22px; }
+    h1 { font-size:24px; line-height:1.4; margin:4px 0 8px; font-weight:650; }
+    h2 { font-size:20px; line-height:1.5; margin:0 0 14px; font-weight:650; }
+    h3 { font-size:16px; margin:0 0 8px; font-weight:650; }
+    p { margin:0 0 12px; }
+    p:last-child { margin-bottom:0; }
+    .eyebrow { font-size:12px; letter-spacing:.08em; color:var(--accent); font-weight:650; }
+    .subtitle,.muted { color:var(--muted); }
+    .small { font-size:13px; }
+    .label { font-size:12px; letter-spacing:.04em; color:var(--muted); font-weight:600; }
+    .stamp { flex:0 0 auto; text-align:right; font-size:12px; color:var(--muted); padding-top:7px; }
+    .status { padding:12px 16px; background:var(--accent-soft); font-size:13px; margin-bottom:24px; }
+    nav { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:26px; border-bottom:1px solid var(--line); }
+    .tab { border:0; background:transparent; padding:12px 18px; border-bottom:3px solid transparent; color:var(--muted); }
+    .tab[aria-selected="true"] { border-bottom-color:var(--accent); color:var(--accent); font-weight:650; }
+    .panel { background:var(--paper); border:1px solid var(--line); padding:28px; }
+    [hidden] { display:none !important; }
+    .lead { font-size:19px; line-height:1.8; max-width:720px; }
+    .split { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:32px; }
+    .equal { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+    .section { margin-top:28px; padding-top:26px; border-top:1px solid var(--line); }
+    .side { padding-left:24px; border-left:1px solid var(--line); }
+    .facts { margin:0; }
+    .facts div { display:grid; grid-template-columns:80px minmax(0,1fr); gap:12px; margin:0 0 10px; }
+    dt { color:var(--muted); }
+    dd { margin:0; }
+    ul,ol { margin:8px 0 0; padding-left:22px; }
+    li { margin-bottom:7px; }
+    .row-list { list-style:none; padding:0; margin:0; }
+    .feature { display:grid; grid-template-columns:36px minmax(0,1fr) minmax(0,1.05fr); gap:16px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .feature:last-child { border-bottom:0; padding-bottom:0; }
+    .num { color:var(--accent); font-weight:650; }
+    .callout { background:var(--soft); padding:18px 20px; margin-top:20px; }
+    .flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:18px 0 22px; }
+    .node { position:relative; padding:16px; border:1px solid var(--line); background:var(--paper); }
+    .node h3 { margin-top:4px; }
+    .node p { font-size:13px; }
+    .path { margin:0; padding:14px 18px; background:var(--soft); }
+    .path p { font-size:14px; }
+    .controls { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+    .choice,.page-choice,.print-button { padding:8px 14px; border:1px solid var(--line); background:var(--paper); border-radius:4px; }
+    .choice[aria-pressed="true"] { background:var(--accent); color:var(--paper); border-color:var(--accent); }
+    .scenario { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:28px; }
+    .scenario-output { padding:20px; background:var(--accent-soft); }
+    .scenario dl { margin:0; }
+    .scenario dt { margin:12px 0 5px; font-size:12px; font-weight:650; }
+    .scenario dd { font-size:14px; }
+    .mini-state { display:inline-block; color:var(--accent); font-size:12px; font-weight:650; padding:2px 8px; background:var(--paper); margin-bottom:10px; }
+    .prototype { display:grid; grid-template-columns:245px minmax(0,1fr); gap:28px; }
+    .page-list { display:grid; gap:6px; align-content:start; }
+    .page-choice { text-align:left; border:0; border-left:3px solid transparent; border-radius:0; padding:10px 12px; }
+    .page-choice[aria-pressed="true"] { background:var(--accent-soft); color:var(--accent); border-left-color:var(--accent); font-weight:650; }
+    .page-choice .page-no { display:inline-block; width:27px; color:var(--muted); font-weight:400; }
+    .preview { border:1px solid var(--line); padding:22px; }
+    .preview-title { display:flex; justify-content:space-between; gap:16px; margin-bottom:20px; border-bottom:1px solid var(--line); padding-bottom:14px; }
+    .wire { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:14px 0 20px; }
+    .wire div { background:var(--soft); padding:16px; font-size:14px; }
+    .wire div:first-child { grid-column:1/-1; background:var(--accent-soft); }
+    .preview .facts div { grid-template-columns:84px minmax(0,1fr); }
+    .table-wrap { overflow-x:auto; }
+    table { border-collapse:collapse; width:100%; font-size:14px; margin:16px 0; }
+    th,td { padding:12px 13px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { font-size:12px; background:var(--soft); color:var(--muted); font-weight:650; }
+    td:last-child { width:29%; }
+    .target { font-weight:650; color:var(--accent); }
+    .source { font-size:12px; color:var(--muted); overflow-wrap:anywhere; }
+    footer { display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:12px; color:var(--muted); margin-top:22px; }
+    .print-only { display:none; }
+    @media (max-width:800px) { .shell { padding:24px 18px; } .panel { padding:22px; } .split,.equal,.scenario,.prototype { grid-template-columns:1fr; gap:22px; } .side { border-left:0; border-top:1px solid var(--line); padding:18px 0 0; } .flow { grid-template-columns:repeat(2,minmax(0,1fr)); } .page-list { grid-template-columns:repeat(2,minmax(0,1fr)); } .feature { grid-template-columns:28px minmax(0,1fr); } .feature>div:last-child { grid-column:2; } }
+    @media (max-width:480px) { .shell { padding:20px 12px; } header { display:block; } .stamp { text-align:left; padding-top:10px; } .panel { padding:18px; } .tab { padding:10px 12px; font-size:14px; } .flow,.wire { grid-template-columns:1fr; } .wire div:first-child { grid-column:auto; } .facts div,.preview .facts div { grid-template-columns:1fr; gap:2px; } .preview { padding:16px; } footer { display:block; } .print-button { margin-top:12px; } }
+    @media print { @page { size:A4; margin:16mm; } :root { --bg:#ffffff; } body { font-size:11px; } .shell { padding:0; max-width:none; } header { margin-bottom:12px; } nav,.controls,.page-list,.print-button,.interactive-only { display:none !important; } .panel,.panel[hidden] { display:block !important; border:0; padding:0; margin-top:26px; break-before:page; } .panel:first-of-type { break-before:auto; } .print-only { display:block; } .section { margin-top:18px; padding-top:16px; } .split,.equal,.scenario { gap:20px; } .flow { grid-template-columns:repeat(2,minmax(0,1fr)); } .node,.feature,.path,.callout,tr { break-inside:avoid; } .prototype { display:block; } .status { margin-bottom:0; } footer { margin-top:18px; } h1 { font-size:20px; } h2 { font-size:17px; } h3 { font-size:13px; } .lead { font-size:15px; } .source { font-size:10px; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div><div class="eyebrow">TOC AI PRODUCT PORTFOLIO</div><h1>ClimbAI —— AI 攀岩训练助手</h1><p class="subtitle">把每次训练，转化为下一次可执行的改进。</p></div>
+      <div class="stamp">AI Coach Agent 项目方案<br>2026 年 10 月 14 日 · 规划版</div>
+    </header>
+    <div class="status" role="note">当前是交互式方案展示，所有画像与反馈示例均为模拟；未接入模型、真实用户或训练数据，尚未开展用户实验。</div>
+    <nav role="tablist" aria-label="项目方案页签">
+      <button class="tab" id="tab-product" role="tab" aria-selected="true" aria-controls="panel-product" tabindex="0">产品 / MVP</button>
+      <button class="tab" id="tab-agent" role="tab" aria-selected="false" aria-controls="panel-agent" tabindex="-1">Agent 与反馈分支</button>
+      <button class="tab" id="tab-prototype" role="tab" aria-selected="false" aria-controls="panel-prototype" tabindex="-1">8 页原型映射</button>
+      <button class="tab" id="tab-evaluation" role="tab" aria-selected="false" aria-controls="panel-evaluation" tabindex="-1">评测与验证</button>
+    </nav>
+    <main>
+      <section class="panel" id="panel-product" role="tabpanel" aria-labelledby="tab-product" tabindex="0">
+        <div class="split">
+          <div><div class="label">产品一句话</div><h2>今天练什么，为什么练，练完如何调整。</h2><p class="lead">面向室内抱石初阶爱好者的 AI Coach Agent：根据训练记录、可用时间与主观反馈，建立有证据的能力画像，制定计划并持续调整。</p><p class="muted small">作品集补充：SupportFlow 与 MetricPilot 展示企业工作流；ClimbAI 展示个人动机、输入负担、训练执行和持续使用。</p></div>
+          <aside class="side"><h3>首批目标用户 · 待验证假设</h3><dl class="facts"><div><dt>范围</dt><dd>18 岁以上，约 0–12 个月攀岩经历，室内抱石</dd></div><div><dt>习惯</dt><dd>每周约 1–2 次，希望进步但缺少系统训练</dd></div><div><dt>场景</dt><dd>到馆前决定重点，训练后快速复盘</dd></div><div><dt>排除</dt><dd>伤后康复、竞技周期、户外及绳索安全指导</dd></div></dl></aside>
+        </div>
+        <div class="section equal"><div><h3>需要验证的用户痛点</h3><ul><li>到馆后随机刷线，不知道当天应练什么。</li><li>记录了失败，却不能把经历转化为下一步练习。</li><li>疲劳、加班或中断后，不知道原计划如何调整。</li></ul></div><div><h3>研究先行</h3><p>先访谈 6–8 位目标用户和 1 位教练，复盘最近一次真实训练；检验上述痛点、记录意愿与调整需求。</p><p class="small muted">以上是研究假设，不能写成已访谈结论。Demo 首先证明“有依据、能执行、能调整”，不承诺短期提升等级。</p></div></div>
+        <div class="section"><h2>四项核心功能，完成一次训练闭环</h2><ol class="row-list">
+          <li class="feature"><span class="num">01</span><div><h3>AI 能力画像</h3><p>展示已知事实、可能训练重点、判断依据与待补数据；用户可纠正。</p></div><div><p><strong>AI：</strong>理解反馈并形成待验证的瓶颈假设。</p><p class="small muted">规则统计完攀与尝试次数；缺乏测试的指力和体能标为未知，不生成精确能力分数。</p></div></li>
+          <li class="feature"><span class="num">02</span><div><h3>个性化训练计划 Agent</h3><p>生成周计划与当次训练卡，说明时间、训练目的、准备条件和来源。</p></div><div><p><strong>AI：</strong>根据目标与证据选择训练重点并解释。</p><p class="small muted">从教练审核的模板组装；排程和负荷边界由规则校验，用户确认后才成为有效计划。</p></div></li>
+          <li class="feature"><span class="num">03</span><div><h3>攀岩知识 RAG 助手</h3><p>围绕当前训练回答“为什么练、如何做”，附可追溯出处。</p></div><div><p><strong>AI：</strong>结合上下文检索并解释可信知识。</p><p class="small muted">只回答已审核知识库可支持的问题；证据不足时说明不足，不把网络碎片当成训练依据。</p></div></li>
+          <li class="feature"><span class="num">04</span><div><h3>训练反馈与计划调整</h3><p>记录完成情况、主观难度、卡点与不适；展示原计划、修改项和原因。</p></div><div><p><strong>AI：</strong>归纳多次反馈，提出下一次修改建议。</p><p class="small muted">统计、改时间和保存版本用代码；出现疼痛先由规则拦截，暂停训练规划。</p></div></li>
+        </ol></div>
+        <div class="section equal"><div><h3>降低输入负担</h3><p>首次仅收经历、稳定完成范围、可用时间、目标和近期不适；性别、身高、体重不作启动门槛。</p><p>训练后以选择项为主，文字补充可选；体验目标为建档约 3 分钟、反馈约 1 分钟，均待测试。</p><p class="small muted">等级保留体系、岩馆和日期，避免跨馆直接比较。</p></div><div><h3>视觉分析延至 V2</h3><p>视频涉及机位、遮挡、墙角度、岩点与动作映射、专家标注及评测；快速摘要不能证明动作纠错可靠。</p><p class="small muted">MVP 不做视频上传或动作评分；文本闭环验证有效后，再评估由用户标记卡点的视频辅助复盘。</p></div></div>
+        <div class="callout"><h3>差异化是待验证的选择</h3><p>Crimpd+ 已有专家训练库、弱项模板与可调整计划；KAYA 已有尝试／完攀记录、进展统计和 beta 视频。ClimbAI 的假设是：中文初阶抱石用户需要<strong>低负担反馈、有证据的训练重点、解释清楚的计划调整</strong>。</p><p class="source">官方核验：crimpd.com/crimpd-plus/；kayaclimb.com/；kayaclimb.com/support-articles/logging-your-climbs-on-kaya。核验日期：2026-10-14。不据此声称市场无同类功能。</p></div>
+      </section>
+      <section class="panel" id="panel-agent" role="tabpanel" aria-labelledby="tab-agent" tabindex="0" hidden>
+        <h2>一个工作流，四个逻辑节点</h2><p class="muted">同一个 Coach Agent 按顺序调用职责模块。Demo 使用明确状态和结构化输出，无需四个独立自主对话体。</p>
+        <div class="flow">
+          <article class="node"><span class="num">01</span><h3>用户画像 Agent</h3><p>读取档案与日志，区分事实、用户自评和模型假设；标记缺失信息。</p><p class="small muted">输出：画像版本、候选重点、证据 ID。</p></article>
+          <article class="node"><span class="num">02</span><h3>知识检索 Agent</h3><p>根据目标与限制检索已审核资料和模板，验证来源是否支持建议。</p><p class="small muted">输出：证据片段、出处、适用边界。</p></article>
+          <article class="node"><span class="num">03</span><h3>训练规划 Agent</h3><p>选择合适模板，生成任务与解释；经过时间、适用性和安全校验。</p><p class="small muted">输出：计划草稿、理由、检查结果。</p></article>
+          <article class="node"><span class="num">04</span><h3>反馈优化 Agent</h3><p>结合反馈与旧计划生成修改建议；用户确认后保存新版本。</p><p class="small muted">输出：反馈报告、计划差异、确认状态。</p></article>
+        </div>
+        <div class="equal"><div class="path"><h3>首次进入</h3><p>建档 + 目标 → 画像 → 检索 → 规划 → 规则校验 → 用户确认</p><p class="muted small">反馈节点等待训练数据，不虚构历史反馈。缺少关键输入时先追问。</p></div><div class="path"><h3>训练后返回</h3><p>反馈输入 → 不适规则检查 → 反馈优化 → 更新画像 → 必要时检索和重规划 → 校验 → 用户确认</p><p class="muted small">已有证据仍适用时可复用；时间不足只改排程，无需重新调用全部节点。</p></div></div>
+        <div class="section"><h2>点击查看三种演示反馈</h2><p class="small muted">假设用户：室内抱石初阶、周二／周六可训练、已有一份已确认计划。下列均为写死的演示数据，不是模型输出或训练处方。</p>
+          <div class="controls" role="group" aria-label="演示反馈情景"><button class="choice" data-scenario="normal" aria-pressed="true">正常完成</button><button class="choice" data-scenario="time" aria-pressed="false">时间不足</button><button class="choice" data-scenario="pain" aria-pressed="false">出现疼痛</button></div>
+          <div id="scenario-view" class="interactive-only" aria-live="polite"></div><div id="scenario-print" class="print-only"></div>
+        </div>
+        <div class="section equal"><div><h3>模型负责理解与解释</h3><p>把“脚没踩稳就急着伸手”等反馈归纳为可能的训练重点；向用户说明证据不足及下次观察内容。</p><p class="small muted">一次反馈不等于能力诊断；难度增加也不能由一次“完成”自动触发。</p></div><div><h3>规则负责控制与落地</h3><p>管理计时、统计、时间冲突、模板适用条件、用户确认、版本与异常回退。</p><p class="small muted">疼痛分支停止负荷建议并提示寻求专业评估；不做诊断、康复或“忍痛训练”。</p></div></div>
+      </section>
+      <section class="panel" id="panel-prototype" role="tabpanel" aria-labelledby="tab-prototype" tabindex="0" hidden>
+        <h2>8 页 Figma 原型映射</h2><p class="muted">点击页面查看信息层级、核心动作与异常状态。此处是原型规划示意，不是已制作完成的 Figma 文件。</p>
+        <div class="prototype"><div class="page-list" id="page-list" role="group" aria-label="原型页面选择"></div><div id="page-preview" class="interactive-only" aria-live="polite"></div></div><div id="prototype-print" class="print-only"></div>
+        <div class="section"><h3>首次使用到持续训练</h3><p>首次进入 → 建档 → 设定可执行目标 → 确认计划 → 开始训练 → 完成反馈 → 查看建议 → 确认调整 → 下一次训练。</p><p class="small muted">关键异常：资料不足可补充；计划失败可重试或读取已保存版本；无证据问答明确拒答；疼痛反馈进入暂停状态；拒绝调整保留已确认计划。</p></div>
+      </section>
+      <section class="panel" id="panel-evaluation" role="tabpanel" aria-labelledby="tab-evaluation" tabindex="0" hidden>
+        <h2>先证明建议可靠，再验证用户愿意使用</h2><p class="target">本页所有阈值均为待验证的验收目标；当前没有实测结果。</p>
+        <div class="equal"><div><h3>离线评测集</h3><p>60 个固定场景：40 个开发集 + 20 个隐藏验收集。隐藏集包含 10 个 RAG 问题（8 库内、2 库外）、6 个规划场景、4 个反馈场景。</p></div><div><h3>安全与异常评测</h3><p>另加 12 个用例，每个运行 3 次，共 36 次。覆盖疼痛、关键信息缺失、提示注入、检索失败和生成失败等情况。</p></div></div>
+        <div class="table-wrap"><table><caption class="label" style="text-align:left;padding-top:20px">模型与流程验收目标 · 人工核对证据与教练评审</caption><thead><tr><th scope="col">维度</th><th scope="col">核验口径</th><th scope="col">待验证目标</th></tr></thead><tbody><tr><td>检索质量</td><td>8 个库内题是否找到支持答案的证据</td><td class="target">至少 7 / 8 命中</td></tr><tr><td>回答／拒答</td><td>10 个问题的答案或无依据拒答是否正确</td><td class="target">至少 9 / 10 正确</td></tr><tr><td>引用支持</td><td>来源确实支持的带引用陈述 / 全部带引用的可核验陈述</td><td class="target">≥ 90%</td></tr><tr><td>关键事实证据覆盖</td><td>有可靠证据支持的关键事实 / 全部关键事实</td><td class="target">≥ 90%；严重错误直接失败</td></tr><tr><td>计划硬约束</td><td>时间、场景、适用条件及明确禁忌全部符合的计划数</td><td class="target">6 / 6 通过</td></tr><tr><td>计划合理性</td><td>教练认为无需重大修改的计划数</td><td class="target">至少 5 / 6</td></tr><tr><td>反馈调整</td><td>修改有依据、方向正确且保留确认机制</td><td class="target">4 / 4 通过</td></tr><tr><td>安全与异常</td><td>36 次运行均无不当建议、无越权写入，异常可回退</td><td class="target">36 / 36 无违规</td></tr></tbody></table></div>
+        <div class="section"><h2>8 人 × 14 天探索性试用</h2><p>验证任务完成、闭环执行和满意度。中途退出仍计入 8 人分母；展示人数与分子／分母，不把小样本比例解释为市场结论。</p>
+          <div class="table-wrap"><table><thead><tr><th scope="col">指标</th><th scope="col">计算方式</th><th scope="col">待验证目标</th></tr></thead><tbody><tr><td>首次任务成功</td><td>10 分钟内、无主持人代操作完成建档 + 确认计划人数 / 8</td><td class="target">≥ 6 / 8</td></tr><tr><td>14 天有效闭环</td><td>至少完成一次训练记录 → 反馈 → 确认下一次安排的人数 / 8；接受修改或保持计划均计入</td><td class="target">≥ 6 / 8</td></tr><tr><td>24 小时反馈率</td><td>24 小时内反馈的训练次数 / 由独立完成事件或试用日记确认的已完成训练次数</td><td class="target">≥ 70%</td></tr><tr><td>调整可执行率</td><td>评价“可执行”的有效评分次数 / 全部有效评分次数</td><td class="target">≥ 75%</td></tr><tr><td>评分覆盖率</td><td>有效评分次数 / 已查看建议次数，同时列出未评分数</td><td>报告实际分子 / 分母</td></tr><tr><td>满意度</td><td>1–5 分问卷的中位数，同时报告响应人数与退出反馈</td><td class="target">中位数 ≥ 4 / 5</td></tr></tbody></table></div>
+          <p class="small muted">建档约 3 分钟、反馈约 1 分钟是额外体验目标，与“10 分钟首次任务成功”口径分开。分母为 0 时标记 N/A，不当作通过。</p>
+        </div>
+        <div class="section"><h3>对照与执行率</h3><p>与同一模型的“通用聊天 + 静态模板”比较建计划和改时间任务；4 人先体验 ClimbAI，4 人先体验对照，报告每人的完成、耗时和评分。</p><p class="small muted">执行率冻结各周首份确认计划的唯一 session ID 分母；取消、改期不删除，新增任务另外报告，避免通过删任务提高执行率。对照属于小样本探索，不宣称统计显著。</p></div>
+        <div class="callout"><h3>怎样解释结果</h3><p>当前阶段能检验“回答有据、计划合理、用户能完成闭环”。14 天小样本不能证明体能或攀岩水平提升，也不能做因果效果宣称。</p><p class="small muted">保存失败案例、教练修改、用户中断原因和每次计划版本；真实结果出来后再写简历数据。此前只写方案设计与验证计划。</p></div>
+      </section>
+    </main>
+    <footer><span>离线展示 · 无远程资源 · 所有交互仅改变本页示例 · 打印将展开四个页签</span><button type="button" class="print-button" id="print">打印方案</button></footer>
+  </div>
+  <script>
+    'use strict';
+    const scenarios = {
+      normal: { title:'正常完成：把反馈转化为下一次观察重点', state:'建议草稿 · 等待确认', input:'完成了计划中的抱石练习；主观难度适中，无不适。文字反馈：“脚没踩稳就急着伸手。”', rule:'日志统计完成状态；通过不适检查；一次完成不自动加量。', ai:'画像暂记为“脚点稳定性可能需要关注”，注明只有一次自述，尚未验证。检索已有的教练审核脚法模板。', change:'保持已确认计划的总时长与难度范围；建议把下次一个已有练习替换为模板中的脚法观察任务，记录是否能在出手前稳定踩点。', confirmation:'展示修改前后与依据，用户确认才保存新版本；也可拒绝，继续原计划。', evidence:'示例依据：本次日志、用户自述、审核模板 ID 占位。此画布未接入真实知识库。' },
+      time: { title:'时间不足：缩小任务，保留必要准备', state:'排程建议 · 等待确认', input:'原计划到馆时间 60 分钟；用户改为只有 30 分钟，无疲劳或疼痛反馈。', rule:'时间预算触发压缩规则；保持模板规定的准备条件，先删可选任务，不能通过挤掉准备或休息“完成全部”。', ai:'只解释减少哪些任务及原因。没有新的能力证据，画像不变，也无需重新推断瓶颈。', change:'使用已审核的短时版本；保留一个核心练习，移除可选辅助任务。若找不到满足条件的 30 分钟版本，提示改期而不编造方案。', confirmation:'用户选择接受短时版本、改期或保留原计划；确认后更新排程与版本。', evidence:'示例依据：用户的新时间约束、现有计划、模板的短时适用条件。' },
+      pain: { title:'出现疼痛：暂停训练规划', state:'规则拦截 · 计划暂停', input:'用户反馈：“今天手指疼，但我想继续冲线。”', rule:'在调用训练规划前检查到疼痛；暂停训练与自动加量建议，记录暂停状态。', ai:'仅说明无法根据文字判断原因，建议停止当次相关训练并寻求合格专业人员评估；不输出诊断或康复练习。', change:'不生成替代负荷方案；展示计划暂停原因和寻求帮助提示。不能由模型推断疼痛已恢复。', confirmation:'此处不提供“确认继续训练”操作。后续恢复条件需在专业指导和正式产品规则中定义。', evidence:'示例依据：用户明确报告疼痛。安全分支来自产品规则，不靠模型自由判断。' }
+    };
+    const pages = [
+      { name:'建档与目标', goal:'用最少输入形成可规划的起点', modules:['经历、稳定完成范围与等级体系','每周可用时间、目标','近期不适检查、可选补充信息'], action:'确认档案并生成计划草稿', agent:'画像 → 检索 → 规划', state:'关键输入缺失时明确追问；不适时进入暂停提示。' },
+      { name:'首页 / 今日训练', goal:'让用户知道下一步做什么', modules:['今日训练重点与开始入口','已确认计划、预计用时','待查看反馈和待确认修改'], action:'开始今天的训练', agent:'读取已保存计划与工作流状态', state:'无计划时引导建档；生成失败可重试或查看已有版本。' },
+      { name:'能力画像', goal:'把判断依据和不确定性展示清楚', modules:['已知事实与训练历史摘要','候选训练重点及证据','待补数据、用户纠正入口'], action:'确认或纠正画像', agent:'画像 Agent；指标由规则计算', state:'缺乏测量的能力标为未知；等级变化说明岩馆与体系。' },
+      { name:'AI 周计划', goal:'把训练意图变成可执行任务', modules:['周日历与当次训练卡','目的、时间、准备条件','建议来源、计划版本与修改理由'], action:'确认计划 / 更改可用时间', agent:'检索 → 规划 → 规则校验', state:'时间冲突需重排；硬约束失败不发布草稿。' },
+      { name:'训练执行与记录', goal:'训练现场能用，结束后记录轻', modules:['训练卡与注意事项','完成 / 部分完成 / 跳过','主观难度、卡点、不适与可选文字'], action:'结束并提交反馈', agent:'记录服务；不适规则检查', state:'中途退出保存草稿；疼痛反馈暂停相关规划。' },
+      { name:'AI 反馈报告', goal:'用清楚的差异说明为什么调整', modules:['本次事实与反馈摘要','可能原因与证据不足说明','原计划 → 修改项 → 调整原因'], action:'接受或拒绝调整', agent:'反馈 → 画像 → 必要时检索和重规划', state:'用户拒绝则保留旧计划；反馈不足时追问或保持计划。' },
+      { name:'知识助手', goal:'解决执行当前训练时的具体疑问', modules:['与当前练习关联的快捷问题','有出处的答案','来源卡片、适用条件与不足说明'], action:'提问 / 查看出处', agent:'知识检索 Agent', state:'库外问题或无支持证据时说明不能可靠回答。' },
+      { name:'个人中心与历史', goal:'管理目标、档案与训练连续性', modules:['目标、时间安排与档案编辑','训练日志、反馈、计划版本','数据导出 / 删除与隐私说明'], action:'修改目标或查看历史', agent:'档案和日志服务；变更后按需重规划', state:'无记录显示下一步；删除需确认并说明影响。' }
+    ];
+    function scenarioMarkup(s) { return `<div class="scenario"><div><h3>${s.title}</h3><dl><dt>用户输入 · 模拟</dt><dd>${s.input}</dd><dt>规则检查</dt><dd>${s.rule}</dd><dt>AI 的作用</dt><dd>${s.ai}</dd></dl></div><div class="scenario-output"><span class="mini-state">${s.state}</span><h3>系统下一步 · 演示</h3><p>${s.change}</p><p>${s.confirmation}</p><p class="small muted">${s.evidence}</p></div></div>`; }
+    function setScenario(key) { document.querySelectorAll('[data-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scenario===key))); document.getElementById('scenario-view').innerHTML = scenarioMarkup(scenarios[key]); }
+    document.querySelectorAll('[data-scenario]').forEach(b=>b.addEventListener('click',()=>setScenario(b.dataset.scenario)));
+    setScenario('normal');
+    document.getElementById('scenario-print').innerHTML = Object.values(scenarios).map(s=>`<div style="margin-top:20px">${scenarioMarkup(s)}</div>`).join('');
+    function setPage(index) { document.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.page)===index))); const p=pages[index]; document.getElementById('page-preview').innerHTML = `<article class="preview"><div class="preview-title"><div><span class="label">PAGE ${String(index+1).padStart(2,'0')} · 规划示意</span><h3>${p.name}</h3></div><span class="label">移动端优先</span></div><p>${p.goal}</p><div class="wire">${p.modules.map(m=>`<div>${m}</div>`).join('')}</div><dl class="facts"><div><dt>核心动作</dt><dd>${p.action}</dd></div><div><dt>关联流程</dt><dd>${p.agent}</dd></div><div><dt>异常状态</dt><dd>${p.state}</dd></div></dl></article>`; }
+    document.getElementById('page-list').innerHTML=pages.map((p,i)=>`<button type="button" class="page-choice" data-page="${i}" aria-pressed="${i===0}"><span class="page-no">${String(i+1).padStart(2,'0')}</span>${p.name}</button>`).join('');
+    document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>setPage(Number(b.dataset.page))));
+    setPage(0);
+    document.getElementById('prototype-print').innerHTML=pages.map((p,i)=>`<article style="margin:18px 0;break-inside:avoid"><h3>${String(i+1).padStart(2,'0')} ${p.name}</h3><p>${p.goal}。展示：${p.modules.join('；')}。</p><p>核心动作：${p.action}。关联流程：${p.agent}。</p><p class="muted">异常：${p.state}</p></article>`).join('');
+    const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
+    function setTab(button,focus=false) { tabs.forEach(t=>{const active=t===button;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!active;});if(focus)button.focus(); }
+    tabs.forEach((button,index)=>{button.addEventListener('click',()=>setTab(button));button.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();setTab(tabs[next],true);});});
+    document.getElementById('print').addEventListener('click',()=>window.print());
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"""ClimbAI Coach backend."""
