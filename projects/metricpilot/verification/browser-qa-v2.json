@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-10-19T04:46:53.314Z",
+  "base": "http://127.0.0.1:18876",
+  "fixture": "tests/fixtures/hand-check-orders.csv",
+  "records": [
+    {
+      "name": "CSV-first landing; empty confirmations",
+      "status": "passed",
+      "elapsed_ms": 457
+    },
+    {
+      "name": "Upload actual CSV; preview and mapping",
+      "status": "passed",
+      "elapsed_ms": 302
+    },
+    {
+      "name": "Changing import decisions invalidates prior check",
+      "status": "passed",
+      "elapsed_ms": 290
+    },
+    {
+      "name": "Confirm definitions; exact channel result",
+      "status": "passed",
+      "elapsed_ms": 342
+    },
+    {
+      "name": "Citation opens exact query and raw result",
+      "status": "passed",
+      "elapsed_ms": 27
+    },
+    {
+      "name": "Markdown and JSON downloads retain definitions and provenance",
+      "status": "passed",
+      "elapsed_ms": 1320
+    },
+    {
+      "name": "Narrow-screen report stays within viewport",
+      "status": "passed",
+      "elapsed_ms": 140
+    },
+    {
+      "name": "Ambiguous denominator performs no query",
+      "status": "passed",
+      "elapsed_ms": 163
+    },
+    {
+      "name": "Refund-date event ratio displays over 100 percent correctly",
+      "status": "passed",
+      "elapsed_ms": 93
+    },
+    {
+      "name": "Abnormal CSV is explained; no silent duplicate removal",
+      "status": "passed",
+      "elapsed_ms": 110
+    },
+    {
+      "name": "Missing optional fields remain unknown; original BOM hash preserved",
+      "status": "passed",
+      "elapsed_ms": 1094
+    },
+    {
+      "name": "No browser runtime errors",
+      "status": "passed",
+      "elapsed_ms": 0
+    }
+  ],
+  "errors": []
+}

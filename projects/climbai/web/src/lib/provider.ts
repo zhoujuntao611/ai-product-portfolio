@@ -1,4 +1,6 @@
 import type { Answer, AppState, Citation, Dimension, FeedbackInput, Focus, Plan, Profile, ProfileInput, Provider, Report } from './types';
+import { isKnowledgeMedicalQuestion, knowledgeMetadata, knowledgeSources, searchKnowledge } from './knowledge';
+export { knowledgeSources } from './knowledge';
 
 const key = 'climbai.session';
 export function sessionId() {
@@ -15,15 +17,8 @@ const delay = () => new Promise(resolve => setTimeout(resolve, 350));
 const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value));
 export const focusLabels: Record<Focus, string> = { footwork: '脚点控制', route_reading: '读线与动作选择', consistency: '建立训练习惯', body_position: '身体协调' };
 export const defaultProfile: ProfileInput = { nickname: '', experience_months: 3, grade: '暂不清楚', grade_system: 'V 等级', gym: '', sessions_per_week: 2, available_minutes: 60, equipment: ['climbing_wall', 'mat'], goal: '建立每周到馆与复盘习惯，练习脚点控制', focus: 'footwork', recent_pain: false, adult_confirmed: false };
-export const knowledgeSources: Citation[] = [
-  { id: 'demo-footwork', title: '脚点观察练习', summary: 'ClimbAI 自编示例条目：选择熟悉的容易线路，观察落脚位置，并记录何时出现脚点滑落。', source_type: '自编示例 · 待专业审阅' },
-  { id: 'demo-reading', title: '上墙前的读线记录', summary: 'ClimbAI 自编示例条目：上墙前描述计划动作，下墙后比较计划与实际差异。', source_type: '自编示例 · 待专业审阅' },
-  { id: 'demo-planning', title: '时间预算与训练记录', summary: 'ClimbAI 自编示例条目：优先把计划限制在实际可用时间内；完成事件与训练反馈分别记录。', source_type: '自编示例 · 待专业审阅' },
-  { id: 'demo-coordination', title: '熟悉线路中的动作观察', summary: 'ClimbAI 自编示例条目：选择已能稳定完成的线路，观察身体位置与动作顺序，不从单次尝试推断力量水平。', source_type: '自编示例 · 待专业审阅' },
-];
-
 export function emptyState(): AppState {
-  return { profile: null, profile_versions: [], current_plan: null, current_plan_id: null, plans: [], sessions: [], logs: [], reports: [], answers: [], runs: [], paused: false, engine: 'demo_rules', events: [] };
+  return { profile: null, profile_versions: [], current_plan: null, current_plan_id: null, plans: [], sessions: [], logs: [], reports: [], answers: [], runs: [], paused: false, engine: 'demo_rules', knowledge_meta: knowledgeMetadata, events: [] };
 }
 
 function normalize(value: Partial<AppState>): AppState {
@@ -36,7 +31,7 @@ function normalize(value: Partial<AppState>): AppState {
 function loadLocal(): AppState {
   const raw = localStorage.getItem(stateKey());
   if (!raw) return emptyState();
-  try { return normalize(JSON.parse(raw)); } catch { throw new Error('本地记录读取失败。请在个人中心导出或重置此浏览器的演示数据。'); }
+  try { return normalize({ ...JSON.parse(raw), knowledge_meta: knowledgeMetadata }); } catch { throw new Error('本地记录读取失败。请在个人中心导出或重置此浏览器的演示数据。'); }
 }
 function saveLocal(state: AppState) {
   try { localStorage.setItem(stateKey(), JSON.stringify(state)); } catch { throw new Error('浏览器无法保存记录。请检查存储空间与隐私模式。'); }
@@ -102,7 +97,7 @@ function createPlan(state: AppState, budget?: number): Plan {
   const technique = Math.floor((duration - warmup - review) * .6);
   const familiar = duration - warmup - review - technique;
   const focus = focusLabels[p.focus];
-  const sourceId = p.focus === 'footwork' ? 'demo-footwork' : p.focus === 'route_reading' ? 'demo-reading' : p.focus === 'body_position' ? 'demo-coordination' : 'demo-planning';
+  const sourceId = p.focus === 'footwork' ? 'K01' : p.focus === 'route_reading' ? 'K03' : p.focus === 'body_position' ? 'K02' : 'K05';
   const specificSteps: Record<Focus, string[]> = {
     footwork: ['选择你已能稳定完成的容易线路。', '每次落脚前看清目标脚点，按自己的节奏攀爬。', '下墙后记录：滑落发生在什么动作？容易线路与困难线路有何差异？'],
     route_reading: ['选择熟悉的容易线路，上墙前描述一条可能的动作顺序。', '按自己的节奏尝试，允许随时调整动作。', '下墙后比较：实际在哪一步与预想不同？'],
@@ -113,16 +108,16 @@ function createPlan(state: AppState, budget?: number): Plan {
     id: uid('plan'), version: Math.max(0, ...state.plans.map(x => x.version)) + 1, status: 'draft', title: `${focus} · 一周训练计划`, focus: p.focus, goal: p.goal,
     provider: 'demo_rules', summary: `${p.sessions_per_week} 次到馆，每次 ${duration} 分钟。先建立可观察的训练过程，再根据反馈调整。`,
     rationale: `依据你填写的「${focus}」重点、每周 ${p.sessions_per_week} 次和单次 ${p.available_minutes} 分钟预算，选择熟悉线路中的观察练习。当前依据主要来自自评。`,
-    citations: knowledgeSources.filter(s => [sourceId, 'demo-planning'].includes(s.id)), created_at: now(), profile_version: p.version,
+    citations: knowledgeSources.filter(s => [sourceId, 'K05', 'K06', 'K08'].includes(s.id)), created_at: now(), profile_version: p.version,
     sessions: Array.from({ length: p.sessions_per_week }, (_, i) => ({
       id: uid('session'), day: `第 ${i + 1} 次到馆`, title: i === 0 ? `${focus} · 观察与练习` : `${focus} · 复习与比较`, focus: p.focus, duration_minutes: duration, status: 'planned',
       rationale: i === 0 ? '先记录一条具体观察，避免把困难线路失败直接归因于能力。' : '在熟悉场景中复习，再比较上一次的观察。',
       stop_condition: '出现疼痛或明显不适时立即停止相关活动，向现场专业人员咨询。',
       exercises: [
-        { id: 'easy-start', title: '轻松活动与状态检查', duration_minutes: warmup, steps: ['按岩馆指导做轻松活动。', '从容易且熟悉的动作开始，观察今天的状态。', '如果出现疼痛或不适，停止本次攀爬。'], rationale: '先观察状态，不直接进入困难尝试。', citation_ids: ['demo-planning'] },
+        { id: 'easy-start', title: '轻松活动与状态检查', duration_minutes: warmup, steps: ['按岩馆指导做轻松活动。', '从容易且熟悉的动作开始，观察今天的状态。', '如果出现疼痛或不适，停止本次攀爬。'], rationale: '先观察状态，不直接进入困难尝试。', citation_ids: ['K08'] },
         { id: `observe-${p.focus}`, title: `${focus}主题练习`, duration_minutes: technique, steps: specificSteps[p.focus], rationale: `回应你选择的「${focus}」目标。`, citation_ids: [sourceId] },
         { id: 'familiar-routes', title: '熟悉线路自主练习', duration_minutes: familiar, steps: ['选择符合当前状态的熟悉线路，允许休息或减少内容。', '观察主题练习是否影响了动作选择。', '不要因为一次顺利完成就提高强度。'], rationale: '把观察放回真实攀爬场景，保留休息与选择空间。', citation_ids: [sourceId] },
-        { id: 'quick-review', title: '收尾与一句话复盘', duration_minutes: review, steps: ['结束本次攀爬并记录实际时长。', '用一句话描述最值得关注的动作或卡点。'], rationale: '独立保存训练完成事件，反馈可稍后补充。', citation_ids: ['demo-planning'] },
+        { id: 'quick-review', title: '收尾与一句话复盘', duration_minutes: review, steps: ['结束本次攀爬并记录实际时长。', '用一句话描述最值得关注的动作或卡点。'], rationale: '独立保存训练完成事件，反馈可稍后补充。', citation_ids: ['K05', 'K06'] },
       ],
     })),
   };
@@ -233,14 +228,20 @@ export class LocalProvider implements Provider {
   }
   async ask(question: string) {
     await delay(); const state = loadLocal(); const q = question.trim(); if (!q) throw new Error('请输入一个问题。');
-    let answer = '当前示例知识库没有足够资料回答这个问题。你可以问脚点观察、读线、时间安排或如何记录训练；我不会编造库外知识。'; let citations: Citation[] = []; let insufficient = true;
-    if (/疼|痛|受伤|伤病|诊断|康复|手指肿|骨折/.test(q)) answer = '现有资料不能判断伤病或不适原因，也不能生成康复处方。如果出现疼痛，请停止引发不适的活动，并向专业人员咨询；你可以在训练反馈中记录不适，相关任务会立即暂停。';
-    else if (/脚|踩|滑落/.test(q)) { answer = '先把“脚点滑落”变成一条可观察的记录：在熟悉的容易线路里，记下滑落发生在哪个动作、是否只出现在更困难的线路。当前信息不能证明你的脚法或力量不足。下一次计划可保留脚点观察主题，再比较记录。'; citations = [knowledgeSources[0]]; insufficient = false; }
-    else if (/读线|路线|动作顺序/.test(q)) { answer = '可以先在上墙前描述自己准备采用的动作顺序，下墙后记一个与预想不同的动作。重点是比较“计划与实际”，不要求一开始就找出最佳动作。请选择熟悉的容易线路，这只是示例观察练习。'; citations = [knowledgeSources[1]]; insufficient = false; }
-    else if (/时间|安排|计划|记录|反馈|为什么|练什么|恢复|休息/.test(q)) { answer = `这份计划先适配你能执行的时间${state.profile ? `（目前每次 ${state.profile.available_minutes} 分钟）` : ''}，每次保留一个主题重点。结束训练会先独立保存完成事件，反馈可以稍后补充；单次未完成不会直接判定能力下降。训练中允许休息或减少内容，出现不适应停止相关活动。`; citations = [knowledgeSources[2]]; insufficient = false; }
-    else if (/身体|协调|重心|平衡/.test(q)) { answer = '先在熟悉线路里观察失去平衡发生在哪个动作，并记录身体位置变化。单次困难尝试不能证明力量或协调能力不足；这份画像不会生成没有测量依据的能力分数。'; citations = [knowledgeSources[3]]; insufficient = false; }
+    let answer = '当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。'; let citations: Citation[] = []; let insufficient = true;
+    if (isKnowledgeMedicalQuestion(q)) {
+      answer = '现有资料不能判断伤病或不适原因，也不能生成诊断、用药或康复处方。如果出现疼痛，请停止引发不适的活动，并向专业人员咨询；你可以在训练反馈中记录不适，相关任务会暂停。';
+      citations = knowledgeSources.filter(item => item.id === 'K09');
+    } else {
+      citations = searchKnowledge(q);
+      if (citations.length) {
+        answer = citations.map(item => `${item.title} [${item.id}]\n${item.summary}`).join('\n\n');
+        if (state.profile && citations.some(item => item.id === 'K06')) answer += `\n\n你当前填写的单次时间预算是 ${state.profile.available_minutes} 分钟；这是用户填写的约束，不是训练效果结论。`;
+        insufficient = false;
+      }
+    }
     const result: Answer = { id: uid('answer'), question: q, answer, citations, provider: 'demo_rules', insufficient_evidence: insufficient, run_id: uid('run'), created_at: now() };
-    state.answers.push(result); run(state, '知识问答', ['问题范围检查', '示例关键词检索', insufficient ? '资料不足说明' : '来源绑定与回答']); event(state, 'knowledge_answer_viewed'); saveLocal(state); return result;
+    state.answers.push(result); run(state, '知识问答', ['问题范围检查', '共享知识库词法检索', insufficient ? '资料不足与边界说明' : '来源绑定与摘要回答']); event(state, 'knowledge_answer_viewed'); saveLocal(state); return result;
   }
   async exportData() { return { exported_at: now(), mode: 'demo_rules', session_id: sessionId(), data: loadLocal() }; }
   async clearData() { localStorage.removeItem(stateKey()); return emptyState(); }

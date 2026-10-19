@@ -1,0 +1,77 @@
+{
+  "stage": "before_fix",
+  "cases": [
+    {
+      "question": "2026年1月organic渠道毛收入",
+      "status": "completed",
+      "plan": {
+        "periods": [
+          [
+            "2026-01-01",
+            "2026-01-31"
+          ]
+        ],
+        "metric": "gross_cents",
+        "dimension": "channel",
+        "channel": null
+      },
+      "query_count": 2,
+      "gross_cents": 35000
+    },
+    {
+      "question": "2026年1月退款金额占比和退款订单占比",
+      "status": "completed",
+      "plan": {
+        "periods": [
+          [
+            "2026-01-01",
+            "2026-01-31"
+          ]
+        ],
+        "metric": "refund_amount_rate",
+        "dimension": "summary",
+        "channel": null
+      },
+      "query_count": 1,
+      "gross_cents": 35000
+    },
+    {
+      "question": "2026年1月退款金额占订单数比例",
+      "status": "completed",
+      "plan": {
+        "periods": [
+          [
+            "2026-01-01",
+            "2026-01-31"
+          ]
+        ],
+        "metric": "refund_amount_rate",
+        "dimension": "summary",
+        "channel": null
+      },
+      "query_count": 1,
+      "gross_cents": 35000
+    },
+    {
+      "question": "2026年1月至2026年3月毛收入",
+      "status": "completed",
+      "plan": {
+        "periods": [
+          [
+            "2026-01-01",
+            "2026-01-31"
+          ],
+          [
+            "2026-03-01",
+            "2026-03-31"
+          ]
+        ],
+        "metric": "gross_cents",
+        "dimension": "period",
+        "channel": null
+      },
+      "query_count": 2,
+      "gross_cents": 35000
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+order_id,order_date,gross_amount,refund_amount,refund_date,channel,status,currency
+A0,2025-12-31,20.00,20.00,2026-02-01,organic,completed,CNY
+A1,2026-01-01,100.00,20.00,2026-02-03,organic,completed,CNY
+A2,2026-01-15,200.00,50.00,2026-02-02,paid,completed,CNY
+A3,2026-01-31,50.00,50.00,2026-01-31,paid,refunded,CNY
+A4,2026-01-31,80.00,80.00,2026-02-01,organic,cancelled,CNY
+A5,2026-02-01,120.00,30.00,2026-02-10,organic,completed,CNY
+A6,2026-02-28,0.00,0.00,,paid,completed,CNY
+A7,2026-02-28,0.10,0.00,,paid,completed,CNY
+A8,2026-03-01,0.20,0.00,,organic,completed,CNY

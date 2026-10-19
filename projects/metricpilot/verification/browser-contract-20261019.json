@@ -1,0 +1,1317 @@
+{
+  "generated_at_utc": "2026-10-19T04:46:53.996Z",
+  "scope": "Local browser interactions with synthetic CSV; no external model or real user",
+  "checks": [
+    {
+      "name": "Upload, map, check and commit independent nine-order CSV",
+      "passed": true,
+      "evidence": {
+        "fixture": "tests/fixtures/hand-check-orders.csv",
+        "rows": 9
+      }
+    },
+    {
+      "name": "Question refund-date basis conflicts with confirmed order-date basis; no query",
+      "passed": true,
+      "evidence": {
+        "id": "run_0a8925778e6a",
+        "question": "2026年2月按退款发生日统计退款金额",
+        "created_at": "2026-10-19T04:46:55.928489+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "order_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "needs_clarification",
+        "queries": [],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.06
+          },
+          {
+            "stage": "clarification",
+            "detail": "问题中的退款日期归属与已确认口径不同；请统一为原订单日或退款发生日后重新分析。",
+            "at_ms": 0.2
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "clarification": "问题中的退款日期归属与已确认口径不同；请统一为原订单日或退款发生日后重新分析。",
+          "kind": "contract"
+        },
+        "clarification": "问题中的退款日期归属与已确认口径不同；请统一为原订单日或退款发生日后重新分析。",
+        "elapsed_ms": 0.21
+      }
+    },
+    {
+      "name": "User explicitly changes basis; February refunds are exactly CNY120",
+      "passed": true,
+      "evidence": {
+        "id": "run_649be7b2a174",
+        "question": "2026年2月按退款发生日统计退款金额",
+        "created_at": "2026-10-19T04:46:56.004329+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "refund_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "completed",
+        "queries": [
+          {
+            "tool": "query_orders",
+            "params": {
+              "period": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "dimension": "summary",
+              "channel": null
+            },
+            "sql": "SELECT '全部' AS label,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN gross_cents ELSE 0 END),0) AS gross_cents,COALESCE(SUM(CASE WHEN refund_date BETWEEN ? AND ? THEN refund_cents ELSE 0 END),0) AS refund_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN 1 ELSE 0 END),0) AS orders,COALESCE(SUM(CASE WHEN refund_date BETWEEN ? AND ? AND refund_cents>0 THEN 1 ELSE 0 END),0) AS refund_orders FROM orders WHERE (order_date BETWEEN ? AND ? OR (refund_date BETWEEN ? AND ? AND refund_cents>0)) AND COALESCE(status,'') NOT IN (?)",
+            "sql_params": [
+              "2026-02-01",
+              "2026-02-28",
+              "2026-02-01",
+              "2026-02-28",
+              "2026-02-01",
+              "2026-02-28",
+              "2026-02-01",
+              "2026-02-28",
+              "2026-02-01",
+              "2026-02-28",
+              "2026-02-01",
+              "2026-02-28",
+              "cancelled"
+            ],
+            "rows": [
+              {
+                "label": "全部",
+                "gross_cents": 12010,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 4,
+                "net_cents": 10,
+                "refund_amount_rate": 0.9991673605328892,
+                "refund_order_rate": 1.3333333333333333
+              }
+            ],
+            "raw_rows": [
+              {
+                "label": "全部",
+                "gross_cents": 12010,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 4
+              }
+            ],
+            "columns": [
+              "label",
+              "gross_cents",
+              "refund_cents",
+              "orders",
+              "refund_orders",
+              "net_cents",
+              "refund_amount_rate",
+              "refund_order_rate"
+            ],
+            "source_tables": [
+              "orders"
+            ],
+            "source_rows": [
+              2,
+              3,
+              4,
+              7,
+              8,
+              9
+            ],
+            "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+            "dataset_id": "dataset_1bacdd7dad2b",
+            "filters": {
+              "period": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "channel": null,
+              "refund_basis": "refund_date",
+              "cancelled": "exclude",
+              "cancelled_values": [
+                "cancelled"
+              ]
+            },
+            "elapsed_ms": 0.38,
+            "id": "Q1",
+            "label": "期间总览"
+          }
+        ],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.04
+          },
+          {
+            "stage": "plan",
+            "detail": "{\"periods\": [[\"2026-02-01\", \"2026-02-28\"]], \"metric\": \"refund_cents\", \"dimension\": \"summary\", \"channel\": null}",
+            "at_ms": 0.15
+          },
+          {
+            "stage": "evidence",
+            "detail": "Q1：query_orders 返回 1 行，已绑定筛选、源行与文件指纹。",
+            "at_ms": 0.57
+          },
+          {
+            "stage": "complete",
+            "detail": "结论由本次查询结果生成；口径、筛选与原始结果可随报告导出。",
+            "at_ms": 0.59
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "periods": [
+            [
+              "2026-02-01",
+              "2026-02-28"
+            ]
+          ],
+          "metric": "refund_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "report": {
+          "title": "退款金额分析",
+          "metric": "refund_cents",
+          "metric_label": "退款金额",
+          "period": "2026-02-01 至 2026-02-28",
+          "rows": [
+            {
+              "label": "全部",
+              "gross_cents": 12010,
+              "refund_cents": 12000,
+              "orders": 3,
+              "refund_orders": 4,
+              "net_cents": 10,
+              "refund_amount_rate": 0.9991673605328892,
+              "refund_order_rate": 1.3333333333333333,
+              "evidence": "Q1"
+            }
+          ],
+          "totals": {
+            "label": "全部",
+            "gross_cents": 12010,
+            "refund_cents": 12000,
+            "orders": 3,
+            "refund_orders": 4,
+            "net_cents": 10,
+            "refund_amount_rate": 0.9991673605328892,
+            "refund_order_rate": 1.3333333333333333,
+            "evidence": "Q1"
+          },
+          "findings": [
+            {
+              "text": "当前期间 3 笔订单，毛收入 CNY 120.10，退款 CNY 120.00，净收入 CNY 0.10。",
+              "evidence": [
+                "Q1"
+              ]
+            }
+          ],
+          "definitions": [
+            "币种 CNY；输入单位 major；内部整数最小单位，1 主单位 = 100 最小单位。金额为表内订单总额，不自动叠加税费或扣除折扣。",
+            "毛收入 = 期间内订单金额之和；净收入 = 毛收入 − 按所选日期归属的退款金额。",
+            "退款金额占比 = 退款金额 / 毛收入；退款订单占比 = 有正退款金额的订单数 / 订单数。零分母为不可计算。",
+            "退款按退款发生日期归属：毛收入/订单数按订单日，退款金额/退款订单数按退款日。分子可能来自更早订单，两种占比可能超过 100%，不等同订单队列退款率。",
+            "日期按日粒度、起止日均包含；退款为单笔订单累计退款，只支持一行一单和一个退款归属日。取消订单：排除；取消状态值：[\"cancelled\"]（精确匹配）。"
+          ],
+          "limitations": [
+            "数据覆盖范围仅代表导入文件，不能据此证明期间订单完整或退款已全部发生。",
+            "当前字段支持描述性统计；没有成本、流量和用户行为字段，无法判断渠道效率或收入变化原因。"
+          ]
+        },
+        "elapsed_ms": 0.59
+      }
+    },
+    {
+      "name": "Quarter/month mixed comparison requires clarification; no partial query",
+      "passed": true,
+      "evidence": {
+        "id": "run_dfdf2e41d8f2",
+        "question": "2026年第一季度对比2026年2月净收入",
+        "created_at": "2026-10-19T04:46:56.093085+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "refund_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "needs_clarification",
+        "queries": [],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.04
+          },
+          {
+            "stage": "clarification",
+            "detail": "检测到混合的日期、月份或季度条件；请统一为两个带年份的月份比较，或一组完整起止日期，避免遗漏期间。",
+            "at_ms": 0.09
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "clarification": "检测到混合的日期、月份或季度条件；请统一为两个带年份的月份比较，或一组完整起止日期，避免遗漏期间。",
+          "kind": "date"
+        },
+        "clarification": "检测到混合的日期、月份或季度条件；请统一为两个带年份的月份比较，或一组完整起止日期，避免遗漏期间。",
+        "elapsed_ms": 0.1
+      }
+    },
+    {
+      "name": "Explicit unsupported net-revenue denominator requires clarification",
+      "passed": true,
+      "evidence": {
+        "id": "run_52137dc4b356",
+        "question": "2026年1月退款金额占净收入比例",
+        "created_at": "2026-10-19T04:46:56.145040+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "refund_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "needs_clarification",
+        "queries": [],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.05
+          },
+          {
+            "stage": "clarification",
+            "detail": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+            "at_ms": 0.71
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+          "kind": "metric"
+        },
+        "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+        "elapsed_ms": 0.71
+      }
+    },
+    {
+      "name": "Two named channels are not silently reduced to the last one",
+      "passed": true,
+      "evidence": {
+        "id": "run_54c06824cf46",
+        "question": "2026年1月比较organic和paid两个渠道净收入",
+        "created_at": "2026-10-19T04:46:56.204705+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "refund_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "needs_clarification",
+        "queries": [],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.05
+          },
+          {
+            "stage": "clarification",
+            "detail": "检测到多个指定渠道；首版请比较全部渠道，或在渠道筛选中选择一个。",
+            "at_ms": 0.15
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "clarification": "检测到多个指定渠道；首版请比较全部渠道，或在渠道筛选中选择一个。",
+          "kind": "channel"
+        },
+        "clarification": "检测到多个指定渠道；首版请比较全部渠道，或在渠道筛选中选择一个。",
+        "elapsed_ms": 0.15
+      }
+    },
+    {
+      "name": "Supported all-channel question remains correct after contract change",
+      "passed": true,
+      "evidence": {
+        "id": "run_8fc1b06ef3d4",
+        "question": "2026年1月各渠道净收入",
+        "created_at": "2026-10-19T04:46:56.272902+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "order_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "completed",
+        "queries": [
+          {
+            "tool": "query_orders",
+            "params": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "dimension": "channel",
+              "channel": null
+            },
+            "sql": "SELECT channel AS label,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN gross_cents ELSE 0 END),0) AS gross_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN refund_cents ELSE 0 END),0) AS refund_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN 1 ELSE 0 END),0) AS orders,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? AND refund_cents>0 THEN 1 ELSE 0 END),0) AS refund_orders FROM orders WHERE (order_date BETWEEN ? AND ? OR (order_date BETWEEN ? AND ? AND refund_cents>0)) AND COALESCE(status,'') NOT IN (?) GROUP BY channel ORDER BY channel",
+            "sql_params": [
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "cancelled"
+            ],
+            "rows": [
+              {
+                "label": "organic",
+                "gross_cents": 10000,
+                "refund_cents": 2000,
+                "orders": 1,
+                "refund_orders": 1,
+                "net_cents": 8000,
+                "refund_amount_rate": 0.2,
+                "refund_order_rate": 1
+              },
+              {
+                "label": "paid",
+                "gross_cents": 25000,
+                "refund_cents": 10000,
+                "orders": 2,
+                "refund_orders": 2,
+                "net_cents": 15000,
+                "refund_amount_rate": 0.4,
+                "refund_order_rate": 1
+              }
+            ],
+            "raw_rows": [
+              {
+                "label": "organic",
+                "gross_cents": 10000,
+                "refund_cents": 2000,
+                "orders": 1,
+                "refund_orders": 1
+              },
+              {
+                "label": "paid",
+                "gross_cents": 25000,
+                "refund_cents": 10000,
+                "orders": 2,
+                "refund_orders": 2
+              }
+            ],
+            "columns": [
+              "label",
+              "gross_cents",
+              "refund_cents",
+              "orders",
+              "refund_orders",
+              "net_cents",
+              "refund_amount_rate",
+              "refund_order_rate"
+            ],
+            "source_tables": [
+              "orders"
+            ],
+            "source_rows": [
+              3,
+              4,
+              5
+            ],
+            "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+            "dataset_id": "dataset_1bacdd7dad2b",
+            "filters": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "channel": null,
+              "refund_basis": "order_date",
+              "cancelled": "exclude",
+              "cancelled_values": [
+                "cancelled"
+              ]
+            },
+            "elapsed_ms": 0.38,
+            "id": "Q1",
+            "label": "渠道比较"
+          },
+          {
+            "tool": "query_orders",
+            "params": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "dimension": "summary",
+              "channel": null
+            },
+            "sql": "SELECT '全部' AS label,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN gross_cents ELSE 0 END),0) AS gross_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN refund_cents ELSE 0 END),0) AS refund_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN 1 ELSE 0 END),0) AS orders,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? AND refund_cents>0 THEN 1 ELSE 0 END),0) AS refund_orders FROM orders WHERE (order_date BETWEEN ? AND ? OR (order_date BETWEEN ? AND ? AND refund_cents>0)) AND COALESCE(status,'') NOT IN (?)",
+            "sql_params": [
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "cancelled"
+            ],
+            "rows": [
+              {
+                "label": "全部",
+                "gross_cents": 35000,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 3,
+                "net_cents": 23000,
+                "refund_amount_rate": 0.34285714285714286,
+                "refund_order_rate": 1
+              }
+            ],
+            "raw_rows": [
+              {
+                "label": "全部",
+                "gross_cents": 35000,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 3
+              }
+            ],
+            "columns": [
+              "label",
+              "gross_cents",
+              "refund_cents",
+              "orders",
+              "refund_orders",
+              "net_cents",
+              "refund_amount_rate",
+              "refund_order_rate"
+            ],
+            "source_tables": [
+              "orders"
+            ],
+            "source_rows": [
+              3,
+              4,
+              5
+            ],
+            "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+            "dataset_id": "dataset_1bacdd7dad2b",
+            "filters": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "channel": null,
+              "refund_basis": "order_date",
+              "cancelled": "exclude",
+              "cancelled_values": [
+                "cancelled"
+              ]
+            },
+            "elapsed_ms": 0.22,
+            "id": "Q2",
+            "label": "当前期间总览"
+          }
+        ],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.04
+          },
+          {
+            "stage": "plan",
+            "detail": "{\"periods\": [[\"2026-01-01\", \"2026-01-31\"]], \"metric\": \"net_cents\", \"dimension\": \"channel\", \"channel\": null}",
+            "at_ms": 0.15
+          },
+          {
+            "stage": "evidence",
+            "detail": "Q1：query_orders 返回 2 行，已绑定筛选、源行与文件指纹。",
+            "at_ms": 0.57
+          },
+          {
+            "stage": "complete",
+            "detail": "结论由本次查询结果生成；口径、筛选与原始结果可随报告导出。",
+            "at_ms": 0.86
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "net_cents",
+          "dimension": "channel",
+          "channel": null
+        },
+        "report": {
+          "title": "净收入分析",
+          "metric": "net_cents",
+          "metric_label": "净收入",
+          "period": "2026-01-01 至 2026-01-31",
+          "rows": [
+            {
+              "label": "organic",
+              "gross_cents": 10000,
+              "refund_cents": 2000,
+              "orders": 1,
+              "refund_orders": 1,
+              "net_cents": 8000,
+              "refund_amount_rate": 0.2,
+              "refund_order_rate": 1,
+              "evidence": "Q1"
+            },
+            {
+              "label": "paid",
+              "gross_cents": 25000,
+              "refund_cents": 10000,
+              "orders": 2,
+              "refund_orders": 2,
+              "net_cents": 15000,
+              "refund_amount_rate": 0.4,
+              "refund_order_rate": 1,
+              "evidence": "Q1"
+            }
+          ],
+          "totals": {
+            "label": "全部",
+            "gross_cents": 35000,
+            "refund_cents": 12000,
+            "orders": 3,
+            "refund_orders": 3,
+            "net_cents": 23000,
+            "refund_amount_rate": 0.34285714285714286,
+            "refund_order_rate": 1,
+            "evidence": "Q2"
+          },
+          "findings": [
+            {
+              "text": "paid 的净收入最高，为 CNY 150.00。",
+              "evidence": [
+                "Q1"
+              ]
+            },
+            {
+              "text": "当前期间 3 笔订单，毛收入 CNY 350.00，退款 CNY 120.00，净收入 CNY 230.00。",
+              "evidence": [
+                "Q2"
+              ]
+            }
+          ],
+          "definitions": [
+            "币种 CNY；输入单位 major；内部整数最小单位，1 主单位 = 100 最小单位。金额为表内订单总额，不自动叠加税费或扣除折扣。",
+            "毛收入 = 期间内订单金额之和；净收入 = 毛收入 − 按所选日期归属的退款金额。",
+            "退款金额占比 = 退款金额 / 毛收入；退款订单占比 = 有正退款金额的订单数 / 订单数。零分母为不可计算。",
+            "退款按原订单日期归属：期间订单队列中已记录的全部退款，不区分实际退款日；结果是当前表快照的队列口径。",
+            "日期按日粒度、起止日均包含；退款为单笔订单累计退款，只支持一行一单和一个退款归属日。取消订单：排除；取消状态值：[\"cancelled\"]（精确匹配）。"
+          ],
+          "limitations": [
+            "数据覆盖范围仅代表导入文件，不能据此证明期间订单完整或退款已全部发生。",
+            "当前字段支持描述性统计；没有成本、流量和用户行为字段，无法判断渠道效率或收入变化原因。"
+          ]
+        },
+        "elapsed_ms": 0.86
+      }
+    },
+    {
+      "name": "Denominator arithmetic is not accepted by matching its gross-revenue prefix",
+      "passed": true,
+      "evidence": {
+        "id": "run_c23e5dd8a36f",
+        "question": "2026年1月退款金额占毛收入减退款金额后的比例",
+        "created_at": "2026-10-19T04:46:56.334874+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "order_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "needs_clarification",
+        "queries": [],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.05
+          },
+          {
+            "stage": "clarification",
+            "detail": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+            "at_ms": 0.12
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+          "kind": "metric"
+        },
+        "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；分母中的运算、附加条件或其他定义尚未支持，请确认。",
+        "elapsed_ms": 0.12
+      }
+    },
+    {
+      "name": "Standard denominator with a normal question ending stays supported",
+      "passed": true,
+      "evidence": {
+        "id": "run_036f3421e9a5",
+        "question": "2026年1月退款金额占毛收入的比例是多少？",
+        "created_at": "2026-10-19T04:46:56.383285+00:00",
+        "mode": "demo",
+        "engine": "订单分析引擎",
+        "dataset": {
+          "id": "dataset_1bacdd7dad2b",
+          "name": "hand-check-orders.csv",
+          "row_count": 9,
+          "date_start": "2025-12-31",
+          "date_end": "2026-03-01",
+          "channels": [
+            "organic",
+            "paid"
+          ],
+          "currency": "CNY",
+          "currency_scale": 100,
+          "amount_unit": "major",
+          "mapping": {
+            "order_id": "order_id",
+            "order_date": "order_date",
+            "gross_amount": "gross_amount",
+            "refund_amount": "refund_amount",
+            "refund_date": "refund_date",
+            "channel": "channel",
+            "status": "status",
+            "currency": "currency"
+          },
+          "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+          "decisions": {
+            "duplicate_policy": "reject",
+            "missing_refund": "reject",
+            "missing_channel": "reject",
+            "invalid_rows": "reject",
+            "assume_no_refunds": false,
+            "date_format": "iso",
+            "amount_unit": "major",
+            "currency": "CNY",
+            "excluded_rows": [],
+            "duplicate_rows": [],
+            "parsing": "UTF-8 BOM only removed at file start; dates/amounts/currency strip surrounding whitespace; order IDs/channel/status preserved; integers represent the declared currency's minor units (JPY scale 1; other supported currencies scale 100); no rounding or exchange conversion.",
+            "notices": [
+              {
+                "code": "amount_interpretation",
+                "severity": "info",
+                "message": "金额按已确认单位解析为币种最小单位整数；CNY/USD/EUR/GBP 的 major 输入乘 100，JPY 的 major 输入直接保存且必须为整数，minor 输入直接保存。不执行四舍五入或汇率转换。"
+              }
+            ]
+          },
+          "capabilities": {
+            "refunds": true,
+            "refund_dates": true,
+            "channel": true,
+            "status": true
+          }
+        },
+        "contract": {
+          "confirmed": true,
+          "refund_basis": "order_date",
+          "cancelled": "exclude",
+          "cancelled_values": [
+            "cancelled"
+          ]
+        },
+        "status": "completed",
+        "queries": [
+          {
+            "tool": "query_orders",
+            "params": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "dimension": "summary",
+              "channel": null
+            },
+            "sql": "SELECT '全部' AS label,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN gross_cents ELSE 0 END),0) AS gross_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN refund_cents ELSE 0 END),0) AS refund_cents,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? THEN 1 ELSE 0 END),0) AS orders,COALESCE(SUM(CASE WHEN order_date BETWEEN ? AND ? AND refund_cents>0 THEN 1 ELSE 0 END),0) AS refund_orders FROM orders WHERE (order_date BETWEEN ? AND ? OR (order_date BETWEEN ? AND ? AND refund_cents>0)) AND COALESCE(status,'') NOT IN (?)",
+            "sql_params": [
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "2026-01-01",
+              "2026-01-31",
+              "cancelled"
+            ],
+            "rows": [
+              {
+                "label": "全部",
+                "gross_cents": 35000,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 3,
+                "net_cents": 23000,
+                "refund_amount_rate": 0.34285714285714286,
+                "refund_order_rate": 1
+              }
+            ],
+            "raw_rows": [
+              {
+                "label": "全部",
+                "gross_cents": 35000,
+                "refund_cents": 12000,
+                "orders": 3,
+                "refund_orders": 3
+              }
+            ],
+            "columns": [
+              "label",
+              "gross_cents",
+              "refund_cents",
+              "orders",
+              "refund_orders",
+              "net_cents",
+              "refund_amount_rate",
+              "refund_order_rate"
+            ],
+            "source_tables": [
+              "orders"
+            ],
+            "source_rows": [
+              3,
+              4,
+              5
+            ],
+            "source_hash": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+            "dataset_id": "dataset_1bacdd7dad2b",
+            "filters": {
+              "period": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "channel": null,
+              "refund_basis": "order_date",
+              "cancelled": "exclude",
+              "cancelled_values": [
+                "cancelled"
+              ]
+            },
+            "elapsed_ms": 0.36,
+            "id": "Q1",
+            "label": "期间总览"
+          }
+        ],
+        "trace": [
+          {
+            "stage": "intent",
+            "detail": "识别期间、主指标与分组，复核已确认口径。",
+            "at_ms": 0.04
+          },
+          {
+            "stage": "plan",
+            "detail": "{\"periods\": [[\"2026-01-01\", \"2026-01-31\"]], \"metric\": \"refund_amount_rate\", \"dimension\": \"summary\", \"channel\": null}",
+            "at_ms": 0.17
+          },
+          {
+            "stage": "evidence",
+            "detail": "Q1：query_orders 返回 1 行，已绑定筛选、源行与文件指纹。",
+            "at_ms": 0.56
+          },
+          {
+            "stage": "complete",
+            "detail": "结论由本次查询结果生成；口径、筛选与原始结果可随报告导出。",
+            "at_ms": 0.59
+          }
+        ],
+        "data_note": "用户导入订单 CSV；源文件 SHA-256：182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "report": {
+          "title": "退款金额 / 毛收入分析",
+          "metric": "refund_amount_rate",
+          "metric_label": "退款金额 / 毛收入",
+          "period": "2026-01-01 至 2026-01-31",
+          "rows": [
+            {
+              "label": "全部",
+              "gross_cents": 35000,
+              "refund_cents": 12000,
+              "orders": 3,
+              "refund_orders": 3,
+              "net_cents": 23000,
+              "refund_amount_rate": 0.34285714285714286,
+              "refund_order_rate": 1,
+              "evidence": "Q1"
+            }
+          ],
+          "totals": {
+            "label": "全部",
+            "gross_cents": 35000,
+            "refund_cents": 12000,
+            "orders": 3,
+            "refund_orders": 3,
+            "net_cents": 23000,
+            "refund_amount_rate": 0.34285714285714286,
+            "refund_order_rate": 1,
+            "evidence": "Q1"
+          },
+          "findings": [
+            {
+              "text": "当前期间 3 笔订单，毛收入 CNY 350.00，退款 CNY 120.00，净收入 CNY 230.00。",
+              "evidence": [
+                "Q1"
+              ]
+            },
+            {
+              "text": "退款金额 / 毛收入为 34.29%；原始分子 12000，原始分母 35000（金额使用整数最小单位）。",
+              "evidence": [
+                "Q1"
+              ]
+            }
+          ],
+          "definitions": [
+            "币种 CNY；输入单位 major；内部整数最小单位，1 主单位 = 100 最小单位。金额为表内订单总额，不自动叠加税费或扣除折扣。",
+            "毛收入 = 期间内订单金额之和；净收入 = 毛收入 − 按所选日期归属的退款金额。",
+            "退款金额占比 = 退款金额 / 毛收入；退款订单占比 = 有正退款金额的订单数 / 订单数。零分母为不可计算。",
+            "退款按原订单日期归属：期间订单队列中已记录的全部退款，不区分实际退款日；结果是当前表快照的队列口径。",
+            "日期按日粒度、起止日均包含；退款为单笔订单累计退款，只支持一行一单和一个退款归属日。取消订单：排除；取消状态值：[\"cancelled\"]（精确匹配）。"
+          ],
+          "limitations": [
+            "数据覆盖范围仅代表导入文件，不能据此证明期间订单完整或退款已全部发生。",
+            "当前字段支持描述性统计；没有成本、流量和用户行为字段，无法判断渠道效率或收入变化原因。"
+          ]
+        },
+        "elapsed_ms": 0.59
+      }
+    }
+  ],
+  "page_errors": [],
+  "passed": true
+}

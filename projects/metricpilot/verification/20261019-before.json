@@ -1,0 +1,939 @@
+{
+  "generated_at_utc": "2026-10-19T04:46:01.012931+00:00",
+  "stage": "frozen_before",
+  "source": "verification\\baselines\\analytics-v2-before-20261019.py",
+  "source_sha256": "a9f00c68cf0034d754d0f24b4ea2411ea675fc9c93fb4ea703c5f1bca672b44e",
+  "import_source": "verification\\baselines\\orders-import-v2-before-20261019.py",
+  "import_source_sha256": "2052818422f7f9acd17f7975d636c303d8b533a3c51653475bfd50e26a32197d",
+  "fixture_sha256": "182f541785df8bde6beb49b6aeb72ad0a1a3f8251fc035b81f682778ef8c8c4d",
+  "scope": "22 authored offline CSV acceptance tasks; not a representative user sample or model accuracy benchmark.",
+  "external_model_calls": 0,
+  "real_users_tested": false,
+  "tasks": 22,
+  "passed": 11,
+  "groups": {
+    "new_gap": {
+      "total": 11,
+      "passed": 0
+    },
+    "previously_fixed": {
+      "total": 5,
+      "passed": 5
+    },
+    "positive_control": {
+      "total": 6,
+      "passed": 6
+    }
+  },
+  "cases": [
+    {
+      "id": "mixed-quarter-month",
+      "group": "new_gap",
+      "question": "2026年第一季度对比2026年2月净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "date",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-03-31"
+            ]
+          ],
+          "metric": "net_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 47030,
+          "refund_cents": 15000,
+          "orders": 7,
+          "refund_orders": 4,
+          "net_cents": 32030,
+          "refund_amount_rate": 0.318945354029343,
+          "refund_order_rate": 0.5714285714285714,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "mixed-range-month",
+      "group": "new_gap",
+      "question": "2026-01-01至2026-01-31对比2026年2月净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "date",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "net_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "refund-basis-conflict",
+      "group": "new_gap",
+      "question": "2026年2月按退款发生日统计退款金额",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "contract",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-02-01",
+              "2026-02-28"
+            ]
+          ],
+          "metric": "refund_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 12010,
+          "refund_cents": 3000,
+          "orders": 3,
+          "refund_orders": 1,
+          "net_cents": 9010,
+          "refund_amount_rate": 0.2497918401332223,
+          "refund_order_rate": 0.3333333333333333,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "order-basis-conflict",
+      "group": "new_gap",
+      "question": "2026年2月按原订单日统计退款金额",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "refund_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "contract",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-02-01",
+              "2026-02-28"
+            ]
+          ],
+          "metric": "refund_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 12010,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 4,
+          "net_cents": 10,
+          "refund_amount_rate": 0.9991673605328892,
+          "refund_order_rate": 1.3333333333333333,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "unknown-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占已收款比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "ambiguous-income-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占收入比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "arithmetic-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占毛收入减退款金额后的比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "spaced-arithmetic-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占毛收入 减 退款金额后的比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "conditional-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占毛收入中线上部分的比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "multiplied-denominator",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占毛收入乘2的比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "punctuated-denominator-condition",
+      "group": "new_gap",
+      "question": "2026年1月退款金额占毛收入，减退款金额后的比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": false
+    },
+    {
+      "id": "known-net-denominator",
+      "group": "previously_fixed",
+      "question": "2026年1月退款金额占净收入比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "needs_clarification",
+        "plan": {
+          "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；请确认所需分母。",
+          "kind": "metric"
+        },
+        "query_count": 0,
+        "totals": null
+      },
+      "passed": true
+    },
+    {
+      "id": "known-multiple-channel",
+      "group": "previously_fixed",
+      "question": "2026年1月比较organic与paid两个渠道净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "channel",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "needs_clarification",
+        "plan": {
+          "clarification": "检测到多个指定渠道；首版请比较全部渠道，或在渠道筛选中选择一个。",
+          "kind": "channel"
+        },
+        "query_count": 0,
+        "totals": null
+      },
+      "passed": true
+    },
+    {
+      "id": "known-product-scope",
+      "group": "previously_fixed",
+      "question": "2026年1月比较基础版与团队版两个产品净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "scope",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "needs_clarification",
+        "plan": {
+          "clarification": "当前订单表只支持收入概览、渠道金额比较和退款分析。原因、渠道效率或用户行为需要成本、流量、用户等相关字段；请改为明确指标的描述性统计。",
+          "kind": "scope"
+        },
+        "query_count": 0,
+        "totals": null
+      },
+      "passed": true
+    },
+    {
+      "id": "known-two-quarter",
+      "group": "previously_fixed",
+      "question": "2026年第一季度对比2026年第二季度净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "date",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "needs_clarification",
+        "plan": {
+          "clarification": "季度比较请先换成两个带年份的明确月份，或分别查询完整起止日期，避免遗漏比较期间。",
+          "kind": "date"
+        },
+        "query_count": 0,
+        "totals": null
+      },
+      "passed": true
+    },
+    {
+      "id": "known-multiple-metric",
+      "group": "previously_fixed",
+      "question": "2026年1月净收入和退款金额",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "kind": "metric",
+        "query_count": 0
+      },
+      "actual": {
+        "status": "needs_clarification",
+        "plan": {
+          "clarification": "请选择一个主指标；报告总览会同时列出收入、退款和订单数供核对。",
+          "kind": "metric"
+        },
+        "query_count": 0,
+        "totals": null
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-refund-basis",
+      "group": "positive_control",
+      "question": "2026年2月按退款发生日统计退款金额",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "refund_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "refund_cents",
+        "value": 12000
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-02-01",
+              "2026-02-28"
+            ]
+          ],
+          "metric": "refund_cents",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 12010,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 4,
+          "net_cents": 10,
+          "refund_amount_rate": 0.9991673605328892,
+          "refund_order_rate": 1.3333333333333333,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-month-comparison",
+      "group": "positive_control",
+      "question": "2026年2月对比2026年1月净收入",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "net_cents",
+        "value": 9010
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-02-01",
+              "2026-02-28"
+            ],
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "net_cents",
+          "dimension": "period",
+          "channel": null
+        },
+        "query_count": 2,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 12010,
+          "refund_cents": 3000,
+          "orders": 3,
+          "refund_orders": 1,
+          "net_cents": 9010,
+          "refund_amount_rate": 0.2497918401332223,
+          "refund_order_rate": 0.3333333333333333,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-denominator",
+      "group": "positive_control",
+      "question": "2026年1月退款金额占毛收入比例",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "refund_amount_rate",
+        "value": 0.34285714285714286
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-denominator-question",
+      "group": "positive_control",
+      "question": "2026年1月退款金额占毛收入的比例是多少？",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "refund_amount_rate",
+        "value": 0.34285714285714286
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-denominator-spaces",
+      "group": "positive_control",
+      "question": "2026年1月退款金额 / 毛收入 是多少呢？",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "refund_amount_rate",
+        "value": 0.34285714285714286
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_amount_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "positive-order-denominator-question",
+      "group": "positive_control",
+      "question": "2026年1月退款订单数占订单数的比例是多少？",
+      "contract": {
+        "confirmed": true,
+        "refund_basis": "order_date",
+        "cancelled": "exclude",
+        "cancelled_values": [
+          "cancelled"
+        ]
+      },
+      "expected": {
+        "status": "completed",
+        "metric": "refund_order_rate",
+        "value": 1
+      },
+      "actual": {
+        "status": "completed",
+        "plan": {
+          "periods": [
+            [
+              "2026-01-01",
+              "2026-01-31"
+            ]
+          ],
+          "metric": "refund_order_rate",
+          "dimension": "summary",
+          "channel": null
+        },
+        "query_count": 1,
+        "totals": {
+          "label": "全部",
+          "gross_cents": 35000,
+          "refund_cents": 12000,
+          "orders": 3,
+          "refund_orders": 3,
+          "net_cents": 23000,
+          "refund_amount_rate": 0.34285714285714286,
+          "refund_order_rate": 1.0,
+          "evidence": "Q1"
+        }
+      },
+      "passed": true
+    }
+  ]
+}

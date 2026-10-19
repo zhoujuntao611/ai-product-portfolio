@@ -1,0 +1,3 @@
+order_id,order_date,gross_amount,refund_amount,currency
+C1,2026-01-01,10.00,0.00,CNY
+C2,2026-01-02,20.00,0.00,USD

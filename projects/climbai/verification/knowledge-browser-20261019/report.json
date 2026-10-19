@@ -1,0 +1,197 @@
+{
+  "generated_at_utc": "2026-10-19T05:32:42.197Z",
+  "frontend_url": "http://127.0.0.1:4189/climbai/#knowledge",
+  "model_calls": 0,
+  "method": "Headless browser against the deployed static build; fixed developer-authored regression questions, not user or live-model quality evaluation.",
+  "results": [
+    {
+      "question": "踩边 edging 和摩擦 smearing 有什么区别？",
+      "expected_id": "K11",
+      "expected_insufficient": false,
+      "ids": [
+        "[K11] 踩边与摩擦踏点术语"
+      ],
+      "pill": "依据已列出",
+      "answer": "踩边与摩擦踏点术语 [K11]\n踩边（edging）借助鞋边接触脚点；摩擦踏点（smearing）利用鞋底与没有明显脚点的表面接触。两者描述不同落脚方式。",
+      "urls": [
+        "https://www.rei.com/learn/expert-advice/climbing-techniques.html"
+      ],
+      "passed": true
+    },
+    {
+      "question": "旗式 flagging 是什么意思？",
+      "expected_id": "K12",
+      "expected_insufficient": false,
+      "ids": [
+        "[K12] 旗式与背步术语"
+      ],
+      "pill": "依据已列出",
+      "answer": "旗式与背步术语 [K12]\n旗式（flagging）通过四肢位置平衡身体；背步（back step）涉及鞋外侧与转体。术语帮助理解动作，不表示每条线路都适用。",
+      "urls": [
+        "https://www.rei.com/learn/expert-advice/climbing-techniques.html"
+      ],
+      "passed": true
+    },
+    {
+      "question": "抱石的 V 和 Font 等级能直接比较吗？",
+      "expected_id": "K17",
+      "expected_insufficient": false,
+      "ids": [
+        "[K17] V 与 Font 抱石等级"
+      ],
+      "pill": "依据已列出",
+      "answer": "V 与 Font 抱石等级 [K17]\nV 与 Font 是不同的抱石分级体系，Font 起源于法国枫丹白露。理解标注前先确认采用的体系，避免只比较数字。",
+      "urls": [
+        "https://www.rei.com/learn/expert-advice/climbing-bouldering-rating.html"
+      ],
+      "passed": true
+    },
+    {
+      "question": "第一次买攀岩鞋要看什么？",
+      "expected_id": "K19",
+      "expected_insufficient": false,
+      "ids": [
+        "[K19] 攀岩鞋合脚与基础选择"
+      ],
+      "pill": "依据已列出",
+      "answer": "攀岩鞋合脚与基础选择 [K19]\n试穿不同鞋楦和尺码，关注贴合但不疼痛。同码不同品牌未必相同；初学者可优先了解较平直、舒适的鞋型。",
+      "urls": [
+        "https://www.rei.com/learn/expert-advice/rock-shoes.html"
+      ],
+      "passed": true
+    },
+    {
+      "question": "在岩馆，等待位置与落地区域有什么要求？",
+      "expected_id": "K21",
+      "expected_insufficient": false,
+      "ids": [
+        "[K21] 落地区域保持净空",
+        "[K22] 相邻线路与等待位置"
+      ],
+      "pill": "依据已列出",
+      "answer": "落地区域保持净空 [K21]\n不要在攀爬者下方停留或穿行；潜在坠落区不放包、水瓶等物品。垫面不是等待、休息或玩耍的位置。\n\n相邻线路与等待位置 [K22]\n避免紧挨他人或在他人上方攀爬。开始前留意邻线与可能坠落范围；等待和休息应离开落地区域。",
+      "urls": [
+        "https://www.alpenverein.de/artikel/bouldern-indoor-5-dav-empfehlungen_402d77e9-ab58-4992-a11c-01ad237601d7",
+        "https://www.alpenverein.de/artikel/bouldern-indoor-5-dav-empfehlungen_402d77e9-ab58-4992-a11c-01ad237601d7"
+      ],
+      "passed": true
+    },
+    {
+      "question": "今天只有 30 分钟怎么办？",
+      "expected_id": "K06",
+      "expected_insufficient": false,
+      "ids": [
+        "[K06] 时间预算与内容缩减",
+        "[K27] 时间减少后的计划调整"
+      ],
+      "pill": "依据已列出",
+      "answer": "时间预算与内容缩减 [K06]\nDemo 按可用时间缩减任务数量，保留准备与复盘时间。示例时长用于展示约束校验，尚未经过效果验证。\n\n时间减少后的计划调整 [K27]\nDemo 在时间减少时更新可用预算，展示缩减项并由用户确认；调整面向后续安排，原始训练记录与历史版本保留。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "训练结束后还能补交反馈吗？",
+      "expected_id": "K25",
+      "expected_insufficient": false,
+      "ids": [
+        "[K25] 训练完成与反馈分别记录"
+      ],
+      "pill": "依据已列出",
+      "answer": "训练完成与反馈分别记录 [K25]\nDemo 先保存结束训练事件，反馈可以随后补交；未提交反馈不等于没有训练。0 分钟记录为跳过，不记为已完成。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "如何写 Python 脚本？",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "为什么天空是蓝色？",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "font 字体怎么改？",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "painting 教程",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "股票交易只有 30 分钟应该怎么安排？",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "会议只有 30 分钟怎么安排？",
+      "expected_id": null,
+      "expected_insufficient": true,
+      "ids": [],
+      "pill": "资料不足 / 超出范围",
+      "answer": "当前知识库没有足够资料回答这个问题。可以询问脚点与身体位置、读线、抱石等级、装备、岩馆规则或训练记录；请补充具体的攀岩场景。未命中来源时，不会用相近条目拼出结论。",
+      "urls": [],
+      "passed": true
+    },
+    {
+      "question": "攀岩后手指疼痛该吃什么药？",
+      "expected_id": "K09",
+      "expected_insufficient": true,
+      "ids": [
+        "[K09] 不适反馈的暂停规则"
+      ],
+      "pill": "资料不足 / 超出范围",
+      "answer": "现有资料不能判断伤病或不适原因，也不能生成诊断、用药或康复处方。如果出现疼痛，请停止引发不适的活动，并向专业人员咨询；你可以在训练反馈中记录不适，相关任务会暂停。",
+      "urls": [],
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "width": 1440,
+      "height": 1100,
+      "horizontal_overflow": false,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "horizontal_overflow": false,
+      "passed": true
+    }
+  ],
+  "summary": {
+    "passed": 14,
+    "total": 14,
+    "layout_passed": 2
+  }
+}

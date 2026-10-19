@@ -1,0 +1,5 @@
+order_id,order_date,gross_amount,refund_amount,refund_date,channel,status,currency
+DEMO-001,2026-01-01,100.00,0.00,,organic,completed,CNY
+DEMO-002,2026-01-15,200.00,50.00,2026-02-02,paid,completed,CNY
+DEMO-003,2026-01-31,50.00,50.00,2026-01-31,paid,refunded,CNY
+DEMO-004,2026-02-01,120.00,0.00,,organic,completed,CNY

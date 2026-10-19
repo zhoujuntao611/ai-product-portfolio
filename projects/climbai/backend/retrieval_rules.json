@@ -1,0 +1,29 @@
+{
+  "version": "lexical-demo-2.0",
+  "generic_terms": ["观察", "安排", "计划", "时间", "预算", "记录", "反馈", "习惯", "失败", "难度", "调整", "安全", "教练", "现场", "准备", "恢复", "依据", "能力", "证据", "纠正", "身体", "姿势", "休息", "训练", "分钟", "font", "face", "beta", "起点", "终点", "颜色标识", "动作顺序", "水瓶", "背包", "垫面", "排队", "买鞋", "鞋码", "合脚", "衣着", "工作人员", "加班", "失败原因", "进步判断", "能力分数"],
+  "context_terms": ["攀岩", "抱石", "岩馆", "到馆", "训练", "这份计划", "我的计划", "当前计划", "这样安排"],
+  "excluded_context_terms": ["天气", "股票", "投资", "数据库", "脚本", "编程", "浏览器", "字体", "会议", "烹饪", "painting", "javascript", "python"],
+  "alias_groups": [
+    ["脚点", "脚法", "落脚", "踩点", "脚滑", "掉脚", "脱脚", "踩不稳", "footwork", "foot work"],
+    ["读线", "读路线", "线路阅读", "路线阅读", "观察线路", "线路观察", "route reading", "route_reading"],
+    ["身体位置", "身体协调", "身体平衡", "重心", "平衡", "body position", "body_position", "balance"],
+    ["训练记录", "攀岩记录", "抱石记录", "训练日记", "training log", "training_log", "session log"],
+    ["攀岩等级", "抱石等级", "难度等级", "v级", "v 级", "v等级", "v 等级", "v-scale", "v scale", "v grade", "v grades"],
+    ["岩鞋", "攀岩鞋", "climbing shoes", "climbing shoe"],
+    ["攀岩粉", "镁粉", "chalk"],
+    ["摩擦踩点", "摩擦踩", "摩擦蹬", "smearing", "smear"],
+    ["脚尖踩点", "脚尖踩", "踩边", "edging"],
+    ["换脚", "交换脚", "foot swap", "foot swapping"],
+    ["旗式", "旗式平衡", "flagging"],
+    ["背步", "后踩", "back step", "backstep"],
+    ["下攀", "向下攀爬", "downclimbing", "down climbing", "down-climbing"],
+    ["落地区域", "落地区", "fall zone", "falling zone", "垫子上坐", "坐在垫子上", "坐在保护垫"],
+    ["等待位置", "等别人攀爬", "岩馆排队", "等线"],
+    ["刷点", "刷岩点", "岩点清洁", "brushing", "brush holds"],
+    ["热身", "到馆准备", "warm up", "warm-up", "warmup"],
+    ["训练复盘", "攀岩复盘", "抱石复盘", "复盘", "session review"],
+    ["时间预算", "可用时间", "计划时长", "训练安排", "为什么这样安排训练", "缩减内容", "时间减少", "时间不够", "时间不足", "只有二十分钟", "缩减计划", "改时间", "改期", "半小时"]
+  ],
+  "medical_terms": ["疼", "痛", "不适", "受伤", "损伤", "扭伤", "拉伤", "骨折", "肿", "麻木", "诊断", "康复", "用药", "吃药", "服药", "治疗", "止痛", "消炎药", "pain", "injury", "injuries", "injured", "diagnosis", "rehabilitation", "medication"],
+  "medical_negations": ["没有疼痛", "没有不适", "无疼痛", "无不适", "no pain"]
+}

@@ -1,0 +1,27 @@
+{
+  "base": "http://127.0.0.1:8876",
+  "fixture": "tests/fixtures/hand-check-orders.csv",
+  "records": [
+    {
+      "name": "CSV-first landing; empty confirmations",
+      "status": "passed",
+      "elapsed_ms": 653
+    },
+    {
+      "name": "Upload actual CSV; preview and mapping",
+      "status": "passed",
+      "elapsed_ms": 410
+    },
+    {
+      "name": "Changing import decisions invalidates prior check",
+      "status": "passed",
+      "elapsed_ms": 310
+    },
+    {
+      "name": "Confirm definitions; exact channel result",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'needs_clarification'\n- 'completed'\n"
+    }
+  ],
+  "errors": []
+}

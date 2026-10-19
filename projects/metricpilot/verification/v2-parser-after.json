@@ -1,0 +1,52 @@
+{
+  "stage": "after_fix",
+  "cases": [
+    {
+      "question": "2026年1月organic渠道毛收入",
+      "status": "completed",
+      "plan": {
+        "periods": [
+          [
+            "2026-01-01",
+            "2026-01-31"
+          ]
+        ],
+        "metric": "gross_cents",
+        "dimension": "channel",
+        "channel": "organic"
+      },
+      "query_count": 2,
+      "gross_cents": 10000
+    },
+    {
+      "question": "2026年1月退款金额占比和退款订单占比",
+      "status": "needs_clarification",
+      "plan": {
+        "clarification": "两种退款占比的分母不同，请一次选择退款金额 / 毛收入，或退款订单数 / 订单数。",
+        "kind": "metric"
+      },
+      "query_count": 0,
+      "gross_cents": null
+    },
+    {
+      "question": "2026年1月退款金额占订单数比例",
+      "status": "needs_clarification",
+      "plan": {
+        "clarification": "首版只支持退款金额 / 毛收入，或退款订单数 / 订单数；请确认所需分母。",
+        "kind": "metric"
+      },
+      "query_count": 0,
+      "gross_cents": null
+    },
+    {
+      "question": "2026年1月至2026年3月毛收入",
+      "status": "needs_clarification",
+      "plan": {
+        "clarification": "月份区间请转换成完整起止日期；两个期间比较请明确写出“对比”。",
+        "kind": "date"
+      },
+      "query_count": 0,
+      "gross_cents": null
+    }
+  ]
+}

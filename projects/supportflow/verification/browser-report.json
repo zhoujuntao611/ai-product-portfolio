@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-19T04:43:27.183Z",
+  "base": "http://127.0.0.1:18875",
+  "data": "Synthetic policies and tickets; disposable database and knowledge store",
+  "checks": [
+    {
+      "check": "Configured state: rule mode available and model without key disabled",
+      "passed": true
+    },
+    {
+      "check": "Invoice draft, per-claim source/version/support and question coverage rendered",
+      "passed": true
+    },
+    {
+      "check": "Save edits, escalation, review reasons and Markdown/JSON exports preserve history and mask test emails",
+      "passed": true
+    },
+    {
+      "check": "Missing metadata has an explicit field validation error",
+      "passed": true
+    },
+    {
+      "check": "Downloaded JSON sample imports through file picker and appears in the knowledge list",
+      "passed": true
+    },
+    {
+      "check": "New version replaces current policy; both original and latest versions are inspectable",
+      "passed": true
+    },
+    {
+      "check": "Imported current version is retrieved and cited in the generated reply",
+      "passed": true
+    },
+    {
+      "check": "Deactivated policy is excluded from later drafts",
+      "passed": true
+    },
+    {
+      "check": "Unknown refund region routes to clarification and cannot be approved",
+      "passed": true
+    },
+    {
+      "check": "390 px mobile workbench and knowledge screens fit viewport without horizontal scrolling",
+      "passed": true
+    },
+    {
+      "check": "No browser JavaScript runtime errors",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "passed": true
+}

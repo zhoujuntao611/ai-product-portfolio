@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-10-19T04:49:45.833008+00:00",
+  "scope": "Local code review, fixes and synthetic development regressions; no external model or real-user outcomes.",
+  "supportflow": {
+    "engineering_passed": 118,
+    "engineering_total": 118,
+    "review_before": 14,
+    "review_after": 26,
+    "review_total": 26,
+    "v1_same_set_passed": 33,
+    "v2_same_set_passed": 60,
+    "same_set_total": 60
+  },
+  "metricpilot": {
+    "engineering_current": 90,
+    "engineering_legacy": 72,
+    "engineering_total": 162,
+    "acceptance_before": 11,
+    "acceptance_first_fix": 17,
+    "acceptance_after": 22,
+    "acceptance_total": 22,
+    "fixed_tasks_passed": 24,
+    "fixed_tasks_total": 24
+  },
+  "browser_checks": {
+    "supportflow_workflow": {
+      "passed": 11,
+      "total": 11,
+      "report": "projects/supportflow/verification/browser-report.json"
+    },
+    "supportflow_review": {
+      "passed": 9,
+      "total": 9,
+      "report": "projects/supportflow/verification/browser-review-20261019.json"
+    },
+    "metricpilot_workflow": {
+      "passed": 12,
+      "total": 12,
+      "report": "projects/metricpilot/verification/browser-qa-v2.json"
+    },
+    "metricpilot_review": {
+      "passed": 9,
+      "total": 9,
+      "report": "projects/metricpilot/verification/browser-contract-20261019.json"
+    }
+  },
+  "external_model_calls": 0,
+  "real_users_tested": false,
+  "remote_publication": "Publication status is recorded by the unified release commit and GitHub Pages deployment history.",
+  "source_hashes": {
+    "supportflow": {
+      "core.py": "34747e18954f0ec0ea6ca2b5ba7f419974bcbe15725ff03aa3580f4cbcfaf2d2",
+      "server.py": "6c738f7d2f7fc5feaf5a975af58a15ca5721e66fc462d55d5e7a871e96d4936b",
+      "knowledge.py": "d247cd127cee4a23b11f12fe31c6121ef013b6c58e5159ad86ba6d43c2175ce1",
+      "eval/review_cases_v2_1.json": "0b35c07bdf37dad480ac193615cfb384d5d6cf01e307b01116fd6ed33a64e190",
+      "verification/review_regression.py": "01a9a94eadb85ae59364ba7c2c9e327ff7df95a6e0b3384a8ec468d89f6da021"
+    },
+    "metricpilot_analytics.py": "71172af0005f649647e0161947cd49a637f21b1c5fb1e58d75ee388d9911a990",
+    "metricpilot_orders_import.py": "2052818422f7f9acd17f7975d636c303d8b533a3c51653475bfd50e26a32197d"
+  }
+}

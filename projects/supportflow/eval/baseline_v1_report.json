@@ -1,0 +1,621 @@
+{
+  "project": "SupportFlow",
+  "evaluated_at_utc": "2026-10-13T04:06:45+00:00",
+  "mode": "offline_rule_engine",
+  "real_model_calls": 0,
+  "dataset": "Manually specified synthetic regression cases; authored alongside the implementation; not held-out user traffic",
+  "knowledge_snapshot": "2026-10-13",
+  "case_count": 31,
+  "passed_count": 31,
+  "metrics": {
+    "routing_exact_match": {
+      "numerator": 31,
+      "denominator": 31
+    },
+    "retrieval_doc_set_exact_match": {
+      "numerator": 31,
+      "denominator": 31
+    },
+    "claim_source_integrity": {
+      "numerator": 20,
+      "denominator": 20
+    },
+    "offline_latency_ms": {
+      "median": 0.03,
+      "max": 1.57
+    }
+  },
+  "limitations": [
+    "No live LLM evaluation; no measured user adoption, handling-time reduction or satisfaction.",
+    "Regex risk routing is finite and bypassable, not a general prompt-injection defense.",
+    "Exact quotes prevent invented policy text but do not establish semantic relevance or policy truth.",
+    "Synthetic scenario expectations are inspectable and not independent human ratings."
+  ],
+  "results": [
+    {
+      "id": "C01",
+      "scenario": "常见发票入口",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "actual_sources": [
+        "KB-002"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 1.57,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C02",
+      "scenario": "发票资料修改",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "actual_sources": [
+        "KB-002"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.05,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C03",
+      "scenario": "英文登录问题",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-001"
+      ],
+      "actual_sources": [
+        "KB-001"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.05,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C04",
+      "scenario": "收不到验证码邮件",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-001"
+      ],
+      "actual_sources": [
+        "KB-001"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.04,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C05",
+      "scenario": "已知大陆退款",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.18,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C06",
+      "scenario": "已知海外退款",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-004"
+      ],
+      "actual_sources": [
+        "KB-004"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 2,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C07",
+      "scenario": "正文推断大陆",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C08",
+      "scenario": "正文推断海外",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-004"
+      ],
+      "actual_sources": [
+        "KB-004"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 2,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C09",
+      "scenario": "UI样例地区未确认冲突",
+      "expected_status": "conflict",
+      "actual_status": "conflict",
+      "expected_sources": [
+        "KB-003",
+        "KB-004"
+      ],
+      "actual_sources": [
+        "KB-003",
+        "KB-004"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C10",
+      "scenario": "UI地区与正文矛盾",
+      "expected_status": "needs_context",
+      "actual_status": "needs_context",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C11",
+      "scenario": "企业退款不能套用标准",
+      "expected_status": "needs_context",
+      "actual_status": "needs_context",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C12",
+      "scenario": "旧政策不参与检索",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C13",
+      "scenario": "大量导出",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "actual_sources": [
+        "KB-005"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C14",
+      "scenario": "导出链接失效",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "actual_sources": [
+        "KB-005"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C15",
+      "scenario": "Webhook超时重试",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-006"
+      ],
+      "actual_sources": [
+        "KB-006"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C16",
+      "scenario": "签名密钥指引",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-006"
+      ],
+      "actual_sources": [
+        "KB-006"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C17",
+      "scenario": "频率限制",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-007"
+      ],
+      "actual_sources": [
+        "KB-007"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 2,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C18",
+      "scenario": "英文限流",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-007"
+      ],
+      "actual_sources": [
+        "KB-007"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 2,
+      "latency_ms": 0.04,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C19",
+      "scenario": "取消续费指引",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-008"
+      ],
+      "actual_sources": [
+        "KB-008"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C20",
+      "scenario": "到期保留",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-008"
+      ],
+      "actual_sources": [
+        "KB-008"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.04,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C21",
+      "scenario": "故障和SLA",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-009"
+      ],
+      "actual_sources": [
+        "KB-009"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 2,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C22",
+      "scenario": "未知产品能力",
+      "expected_status": "unknown",
+      "actual_status": "unknown",
+      "expected_sources": [],
+      "actual_sources": [],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C23",
+      "scenario": "注入系统指令",
+      "expected_status": "refused",
+      "actual_status": "refused",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "actual_sources": [
+        "KB-002"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.03,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C24",
+      "scenario": "绕过权限",
+      "expected_status": "refused",
+      "actual_status": "refused",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "actual_sources": [
+        "KB-005"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.02,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C25",
+      "scenario": "获取他人密码",
+      "expected_status": "refused",
+      "actual_status": "refused",
+      "expected_sources": [
+        "KB-001"
+      ],
+      "actual_sources": [
+        "KB-001"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.02,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C26",
+      "scenario": "立即退款操作",
+      "expected_status": "escalate",
+      "actual_status": "escalate",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "actual_sources": [
+        "KB-003"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.02,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C27",
+      "scenario": "删除数据操作",
+      "expected_status": "escalate",
+      "actual_status": "escalate",
+      "expected_sources": [],
+      "actual_sources": [],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.02,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C28",
+      "scenario": "未经核实承诺赔偿",
+      "expected_status": "escalate",
+      "actual_status": "escalate",
+      "expected_sources": [
+        "KB-009"
+      ],
+      "actual_sources": [
+        "KB-009"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.02,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C29",
+      "scenario": "多意图支持",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-002",
+        "KB-005"
+      ],
+      "actual_sources": [
+        "KB-005",
+        "KB-002"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 6,
+      "latency_ms": 0.04,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C30",
+      "scenario": "敏感信息隐藏",
+      "expected_status": "ready",
+      "actual_status": "ready",
+      "expected_sources": [
+        "KB-001"
+      ],
+      "actual_sources": [
+        "KB-001"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 3,
+      "latency_ms": 0.04,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "id": "C31",
+      "scenario": "已知与未知主题混合",
+      "expected_status": "needs_context",
+      "actual_status": "needs_context",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "actual_sources": [
+        "KB-002"
+      ],
+      "route_ok": true,
+      "source_exact_match": true,
+      "claim_source_integrity": true,
+      "claim_count": 0,
+      "latency_ms": 0.05,
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

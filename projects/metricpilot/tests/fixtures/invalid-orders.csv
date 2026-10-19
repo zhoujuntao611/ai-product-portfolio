@@ -1,0 +1,5 @@
+order_id,order_date,gross_amount,refund_amount,channel
+I1,2026-01-01,10.00,0.00,organic
+I2,2026-02-30,20.00,0.00,paid
+I3,2026-01-03,not-money,0.00,paid
+,2026-01-04,40.00,0.00,organic

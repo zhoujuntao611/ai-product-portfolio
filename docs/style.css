@@ -6,6 +6,7 @@
 .screen-preview{display:block;cursor:zoom-in}
 .project-media figcaption a,.run-link{color:#2557c8;text-decoration:underline;text-underline-offset:3px}
 .workflow-detail,.project-media figcaption,.source-link{color:#677487}
+.case-sections a{color:#2557c8;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:760px){
  .project-description,.workflow-panel p,.source-description{font-size:12px}
  .workflow-detail,.project-media figcaption,.source-link,.metric-line,.scope-note{font-size:11px}

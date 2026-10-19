@@ -1,0 +1,64 @@
+test_channel_parameter_must_match_an_imported_channel (test_orders_workflow.ConstrainedOrderToolTests.test_channel_parameter_must_match_an_imported_channel) ... ok
+test_dimensions_are_whitelisted (test_orders_workflow.ConstrainedOrderToolTests.test_dimensions_are_whitelisted) ... ok
+test_period_structure_and_real_dates_are_validated (test_orders_workflow.ConstrainedOrderToolTests.test_period_structure_and_real_dates_are_validated) ... ok
+test_sql_and_unknown_parameters_are_rejected (test_orders_workflow.ConstrainedOrderToolTests.test_sql_and_unknown_parameters_are_rejected) ... ok
+test_absent_refund_field_is_an_explicit_capability (test_orders_workflow.CsvAcceptanceTests.test_absent_refund_field_is_an_explicit_capability) ... ok
+test_ambiguous_dates_need_explicit_format (test_orders_workflow.CsvAcceptanceTests.test_ambiguous_dates_need_explicit_format) ... ok
+test_conflicting_order_ids_never_become_line_item_sums (test_orders_workflow.CsvAcceptanceTests.test_conflicting_order_ids_never_become_line_item_sums) ... ok
+test_csv_shape_errors_are_explained (test_orders_workflow.CsvAcceptanceTests.test_csv_shape_errors_are_explained) ... ok
+test_exact_duplicate_never_silently_dropped (test_orders_workflow.CsvAcceptanceTests.test_exact_duplicate_never_silently_dropped) ... ok
+test_import_and_independent_analytics_join_end_to_end (test_orders_workflow.CsvAcceptanceTests.test_import_and_independent_analytics_join_end_to_end) ... ok
+test_import_requires_explicit_date_unit_and_currency (test_orders_workflow.CsvAcceptanceTests.test_import_requires_explicit_date_unit_and_currency) ... ok
+test_invalid_rows_require_explicit_exclusion_and_keep_audit (test_orders_workflow.CsvAcceptanceTests.test_invalid_rows_require_explicit_exclusion_and_keep_audit) ... FAIL
+test_major_units_do_not_round_away_fractional_cents (test_orders_workflow.CsvAcceptanceTests.test_major_units_do_not_round_away_fractional_cents) ... ok
+test_mapping_is_user_reviewable_and_required (test_orders_workflow.CsvAcceptanceTests.test_mapping_is_user_reviewable_and_required) ... ok
+test_minor_unit_integer_is_not_multiplied_by_one_hundred (test_orders_workflow.CsvAcceptanceTests.test_minor_unit_integer_is_not_multiplied_by_one_hundred) ... ok
+test_minor_units_need_integral_values (test_orders_workflow.CsvAcceptanceTests.test_minor_units_need_integral_values) ... ok
+test_missing_refund_is_not_silently_zeroed (test_orders_workflow.CsvAcceptanceTests.test_missing_refund_is_not_silently_zeroed) ... ok
+test_mixed_currency_blocks_instead_of_adding_unlike_amounts (test_orders_workflow.CsvAcceptanceTests.test_mixed_currency_blocks_instead_of_adding_unlike_amounts) ... ok
+test_money_stays_exact_and_source_rows_are_preserved (test_orders_workflow.CsvAcceptanceTests.test_money_stays_exact_and_source_rows_are_preserved) ... ok
+test_negative_nonfinite_and_over_refunded_amounts_block (test_orders_workflow.CsvAcceptanceTests.test_negative_nonfinite_and_over_refunded_amounts_block) ... ok
+test_preview_detects_fields_without_changing_source (test_orders_workflow.CsvAcceptanceTests.test_preview_detects_fields_without_changing_source) ... ok
+test_template_is_downloadable_valid_single_order_example (test_orders_workflow.CsvAcceptanceTests.test_template_is_downloadable_valid_single_order_example) ... ok
+test_unknown_mapping_column_is_rejected (test_orders_workflow.CsvAcceptanceTests.test_unknown_mapping_column_is_rejected) ... ok
+test_both_date_boundaries_are_inclusive (test_orders_workflow.ImportedAnalyticsTests.test_both_date_boundaries_are_inclusive) ... ok
+test_cancelled_inclusion_is_explicit (test_orders_workflow.ImportedAnalyticsTests.test_cancelled_inclusion_is_explicit) ... ok
+test_channel_counts_and_amounts_add_to_total_for_both_date_bases (test_orders_workflow.ImportedAnalyticsTests.test_channel_counts_and_amounts_add_to_total_for_both_date_bases) ... ok
+test_channel_hand_totals (test_orders_workflow.ImportedAnalyticsTests.test_channel_hand_totals) ... ok
+test_contract_definition_survives_report_serialization (test_orders_workflow.ImportedAnalyticsTests.test_contract_definition_survives_report_serialization) ... ok
+test_empty_day_zero_denominators (test_orders_workflow.ImportedAnalyticsTests.test_empty_day_zero_denominators) ... ok
+test_every_finding_and_row_has_a_query_and_exact_result (test_orders_workflow.ImportedAnalyticsTests.test_every_finding_and_row_has_a_query_and_exact_result) ... ok
+test_february_cohort_includes_zero_orders_and_exact_ten_cents (test_orders_workflow.ImportedAnalyticsTests.test_february_cohort_includes_zero_orders_and_exact_ten_cents) ... ok
+test_january_order_cohort_amounts_and_denominators (test_orders_workflow.ImportedAnalyticsTests.test_january_order_cohort_amounts_and_denominators) ... ok
+test_refund_date_event_ledger_includes_older_orders (test_orders_workflow.ImportedAnalyticsTests.test_refund_date_event_ledger_includes_older_orders) ... ok
+test_refund_only_day_keeps_negative_net_and_undefined_ratios (test_orders_workflow.ImportedAnalyticsTests.test_refund_only_day_keeps_negative_net_and_undefined_ratios) ... ok
+test_single_day_zero_gross_denominator (test_orders_workflow.ImportedAnalyticsTests.test_single_day_zero_gross_denominator) ... ok
+test_tool_is_read_only_and_does_not_mutate_uploaded_orders (test_orders_workflow.ImportedAnalyticsTests.test_tool_is_read_only_and_does_not_mutate_uploaded_orders) ... ok
+test_explicit_filter_supplies_denominator (test_orders_workflow.ImportedClarificationTests.test_explicit_filter_supplies_denominator) ... ok
+test_explicit_filter_supplies_period (test_orders_workflow.ImportedClarificationTests.test_explicit_filter_supplies_period) ... ok
+test_missing_and_unconfirmed_contract (test_orders_workflow.ImportedClarificationTests.test_missing_and_unconfirmed_contract) ... ok
+test_missing_channel_cannot_compare_channels (test_orders_workflow.ImportedClarificationTests.test_missing_channel_cannot_compare_channels) ... ok
+test_missing_period_is_not_inferred_from_dataset (test_orders_workflow.ImportedClarificationTests.test_missing_period_is_not_inferred_from_dataset) ... ok
+test_missing_refund_cannot_claim_refund_analysis (test_orders_workflow.ImportedClarificationTests.test_missing_refund_cannot_claim_refund_analysis) ... ok
+test_missing_refund_rate_denominator (test_orders_workflow.ImportedClarificationTests.test_missing_refund_rate_denominator) ... ok
+test_missing_year (test_orders_workflow.ImportedClarificationTests.test_missing_year) ... ok
+test_question_filter_denominator_conflict (test_orders_workflow.ImportedClarificationTests.test_question_filter_denominator_conflict) ... ok
+test_question_filter_period_conflict (test_orders_workflow.ImportedClarificationTests.test_question_filter_period_conflict) ... ok
+test_recent_period_is_not_guessed (test_orders_workflow.ImportedClarificationTests.test_recent_period_is_not_guessed) ... ok
+test_refund_and_cancel_choices_are_mandatory (test_orders_workflow.ImportedClarificationTests.test_refund_and_cancel_choices_are_mandatory) ... ok
+test_refund_date_without_refund_date_field (test_orders_workflow.ImportedClarificationTests.test_refund_date_without_refund_date_field) ... ok
+test_revenue_without_gross_or_net (test_orders_workflow.ImportedClarificationTests.test_revenue_without_gross_or_net) ... ok
+test_unsupported_causal_roi_and_behavior_requests (test_orders_workflow.ImportedClarificationTests.test_unsupported_causal_roi_and_behavior_requests) ... ok
+
+======================================================================
+FAIL: test_invalid_rows_require_explicit_exclusion_and_keep_audit (test_orders_workflow.CsvAcceptanceTests.test_invalid_rows_require_explicit_exclusion_and_keep_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\02_��������\���˵���\��ְ����\����\ni\outputs\github-public\projects\metricpilot\tests\test_orders_workflow.py", line 358, in test_invalid_rows_require_explicit_exclusion_and_keep_audit
+    self.assertEqual(result["stats"]["excluded_rows"], 3)
+AssertionError: [3, 4, 5] != 3
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.038s
+
+FAILED (failures=1)

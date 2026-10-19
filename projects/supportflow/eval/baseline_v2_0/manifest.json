@@ -1,0 +1,11 @@
+{
+  "frozen_at_utc": "2026-10-19T04:37:01+00:00",
+  "scope": "Local v2.0 visible on 2026-10-19, before this review fix; not the original v1 GitHub baseline. Bytes copied unchanged.",
+  "files": {
+    "core.py": "01b937212419deb8ac8b722058136299964def18f6c17e12ece8e390a4b25be8",
+    "server.py": "d5040e3c29699d687835ed143b19671486917a29ab85cdfff11fe38cecbb38cf",
+    "knowledge.py": "d247cd127cee4a23b11f12fe31c6121ef013b6c58e5159ad86ba6d43c2175ce1",
+    "data/knowledge.json": "c22f7dbbb3beffc533f2c337249c725f42e856ea2772a09a7cf40bcf8c08f8ea",
+    "data/retrieval_config.json": "e274155c50b2d3624f9c0b661421ddeef7da7336d45dab13fbdeb8e2e65dd15f"
+  }
+}

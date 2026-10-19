@@ -1,5 +1,31 @@
 # 验证记录
 
+## 2026-10-19 统一发布副本复验
+
+本次在待发布的统一目录复跑，未用旧报告替代实际执行结果：
+
+- 后端 `python -m pytest tests/backend -q`：116/116 通过。
+- 固定知识检索验收：50/50 通过，知识版本 demo-kb-1.1、30 条；这 50 条也属于后端测试覆盖，不将分母相加。见 [逐题结果](../verification/knowledge-retrieval-20261019.json)。
+- 从现有 package-lock.json 安装锁定依赖后，TypeScript 检查与 Vite 构建通过。新构建的 index.html、favicon.svg 和两个资源文件与发布目录 docs/climbai 逐文件 SHA-256 相同。
+- 对 docs/climbai 静态发布文件实际运行浏览器测试：14/14 个固定知识问题通过；1440px 和 390px 页面无横向溢出，未捕获应用 JavaScript 异常。见 [逐题结果与布局截图](../verification/knowledge-browser-20261019/report.json)。
+- 浏览器复验脚本已入库：`node scripts/knowledge-browser-qa.mjs --url <ClimbAI地址>`。可使用 `PLAYWRIGHT_MODULE` 和 `QA_BROWSER_PATH` 指定本地浏览器工具。
+
+采用默认规则模式，真实供应商模型调用数为 0；本轮未重新验证原生 Chroma 索引、专业教练审核或真实用户训练效果。上方结果仍是开发者编写的固定回归，不是独立盲测或用户成功率。
+
+## 2026-10-15 知识库扩充回归
+
+知识版本 demo-kb-1.1：30 个知识条目，10 个原有练习模板；浏览器和后端共享知识内容与词法检索规则。外部参考页和条目支持范围见 [SOURCES](SOURCES.md)。
+
+- 后端 tests/backend：116 项通过，包含原有 35 项与新增 81 项；新增检查中的 50 条固定检索验收同时见 [逐题报告](../verification/knowledge-retrieval-20261015.json)。50 条已包含在 116 项中，不重复计数。
+- 固定检索集：50/50 通过，覆盖基础术语、等级、装备、到馆规则、训练记录、别名、库外问题及医疗边界；报告保存期望来源 ID、实际来源、问题路由和知识版本。
+- 前端：TypeScript 检查及 Vite 构建通过；14 项定向浏览器验收通过，覆盖共享知识内容、新主题、无关问题、医疗边界及来源，另检查桌面和 390px 界面。
+
+本次采用默认规则模式和本地检索，未安装或重新验证原生 Chroma，也未调用真实供应商模型。固定问题由开发者编写并用于迭代，不是独立盲测；这些结果不能解释为真实用户成功率、通用检索准确率或训练效果。
+
+复跑检索验收：`python -m backend.evaluate_knowledge --output verification/knowledge-retrieval-20261015.json`。
+
+以下保留 2026-10-14 原版本的工程记录，涉及的测试分母和依赖环境按当时记录解释。
+
 验证日期：2026-10-14，Asia/Shanghai。全部使用合成档案和模拟训练，不包含真实参与者成效。
 
 ## 已执行：后端工程回归

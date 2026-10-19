@@ -1,0 +1,50 @@
+{
+  "tested_at_local": "2026-10-19 Asia/Shanghai",
+  "scope": "Unified publication copy, ClimbAI source backend and actual docs/climbai static frontend",
+  "backend": {
+    "command": "python -m pytest tests/backend -q",
+    "passed": 116,
+    "failed": 0,
+    "seconds": 5.47
+  },
+  "knowledge": {
+    "command": "python -m backend.evaluate_knowledge --output verification/knowledge-retrieval-20261019.json",
+    "version": "demo-kb-1.1",
+    "records": 30,
+    "passed": 50,
+    "total": 50,
+    "report": "projects/climbai/verification/knowledge-retrieval-20261019.json",
+    "denominator_note": "Fixed developer-authored regression cases already covered within backend test coverage; do not add them to 116."
+  },
+  "build": {
+    "typescript": "passed",
+    "vite": "passed",
+    "vite_version": "6.4.4",
+    "dependency_source": "Existing package-lock.json imported temporarily for bundled pnpm installation; package-lock.json unmodified",
+    "javascript_asset": "index-D41MQmHW.js",
+    "stylesheet_asset": "index-CtCCda9Y.css",
+    "source_dist_matches_public_docs_by_sha256": true,
+    "compared_files": ["index.html", "favicon.svg", "assets/index-D41MQmHW.js", "assets/index-CtCCda9Y.css"]
+  },
+  "browser": {
+    "command": "node scripts/knowledge-browser-qa.mjs --url http://127.0.0.1:4189/climbai/#knowledge",
+    "passed": 14,
+    "total": 14,
+    "layout_widths": [1440, 390],
+    "horizontal_overflow": false,
+    "uncaught_application_errors": 0,
+    "report": "projects/climbai/verification/knowledge-browser-20261019/report.json"
+  },
+  "package_hygiene": {
+    "checked": "Git-tracked and candidate publication paths, ignored runtime folders, common credential markers",
+    "private_resume_or_document_files_in_publication_paths": 0,
+    "non_example_env_files_in_publication_paths": 0,
+    "credential_marker_findings": "README example placeholder only; no actual credential found in scoped check",
+    "limitations": "Targeted publication hygiene check, not a comprehensive security assessment"
+  },
+  "limitations": [
+    "No real model call; no professional coach validation or user outcome study.",
+    "Native Chroma integration not re-exercised in this publication check.",
+    "SupportFlow and MetricPilot checked separately by the coordinating agent."
+  ]
+}

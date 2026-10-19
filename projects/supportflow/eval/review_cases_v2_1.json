@@ -1,0 +1,28 @@
+{
+  "version": "supportflow.review-regression.v2.1",
+  "as_of": "2026-10-19",
+  "provenance": "Synthetic questions independently proposed during the 2026-10-19 review of the local v2.0. Used to diagnose and fix v2.1, therefore a development regression set, not a blind test or user study.",
+  "cases": [
+    {"id":"R01","category":"region_alias","question":"大陆工作区标准订阅退款的申请期限是多少天？","region":"unknown","status":"ready","expected_region":"mainland","sources":["KB-003"],"fragments":["7 个自然日"]},
+    {"id":"R02","category":"region_alias","question":"大陆用户标准订阅退款的申请期限是多少天？","region":"unknown","status":"ready","expected_region":"mainland","sources":["KB-003"],"fragments":["7 个自然日"]},
+    {"id":"R03","category":"region_alias","question":"国内用户标准订阅退款的申请期限是多少天？","region":"unknown","status":"ready","expected_region":"mainland","sources":["KB-003"],"fragments":["7 个自然日"]},
+    {"id":"R04","category":"region_alias","question":"中国内地标准订阅退款的申请期限是多少天？","region":"unknown","status":"ready","expected_region":"mainland","sources":["KB-003"],"fragments":["7 个自然日"]},
+    {"id":"R05","category":"region_conflict","question":"大陆工作区标准订阅退款的申请期限是多少天？","region":"overseas","status":"needs_context"},
+    {"id":"R06","category":"region_conflict","question":"大陆工作区和海外工作区的退款条件分别是什么？","region":"mainland","status":"needs_context"},
+    {"id":"R07","category":"region_negation","question":"不是海外的工作区退款申请期限是多少天？","region":"unknown","status":"needs_context","expected_region":"unknown"},
+    {"id":"T01","category":"time_predicate","question":"中国大陆标准订阅退款多久会到账？","region":"mainland","status":"needs_context"},
+    {"id":"T02","category":"time_predicate","question":"中国大陆标准订阅退款审核要几天？","region":"mainland","status":"needs_context"},
+    {"id":"T03","category":"time_predicate","question":"导出任务多久能完成？","region":"unknown","status":"needs_context"},
+    {"id":"T04","category":"quota_period","question":"API 频率限制为每月多少次？","region":"unknown","status":"needs_context"},
+    {"id":"C01","category":"supported_control","question":"中国大陆标准订阅退款申请窗口是多少天？","region":"unknown","status":"ready","expected_region":"mainland","sources":["KB-003"],"fragments":["7 个自然日"]},
+    {"id":"C02","category":"supported_control","question":"海外标准订阅退款申请窗口是多少天？","region":"unknown","status":"ready","expected_region":"overseas","sources":["KB-004"],"fragments":["14 个自然日"]},
+    {"id":"C03","category":"supported_control","question":"导出文件保留多久？","region":"unknown","status":"ready","sources":["KB-005"],"fragments":["24 小时"]},
+    {"id":"C04","category":"supported_control","question":"API 频率限制为每分钟多少次？","region":"unknown","status":"ready","sources":["KB-007"],"fragments":["每分钟 60 次"]},
+    {"id":"C05","category":"supported_control","question":"开票申请通常多久处理？","region":"unknown","status":"ready","sources":["KB-002"],"fragments":["3 个工作日"]},
+    {"id":"C06","category":"supported_custom_timing","question":"导出任务多久能完成？","region":"unknown","status":"ready","sources":["KB-005"],"append":{"KB-005":"导出任务通常在 2 小时内完成。"},"fragments":["2 小时内完成"]},
+    {"id":"C07","category":"supported_custom_timing","question":"中国大陆标准订阅退款多久会到账？","region":"mainland","status":"ready","sources":["KB-003"],"append":{"KB-003":"通过审核的退款通常在 5 个工作日内到账。"},"fragments":["5 个工作日内到账"]},
+    {"id":"C08","category":"supported_custom_timing","question":"中国大陆标准订阅退款审核要几天？","region":"mainland","status":"ready","sources":["KB-003"],"append":{"KB-003":"退款审核通常在 2 个工作日内完成。"},"fragments":["退款审核通常在 2 个工作日内完成"]},
+    {"id":"M01","category":"model_time_selection","question":"中国大陆标准订阅退款多久会到账？","region":"mainland","status":"needs_context","append":{"KB-003":"通过审核的退款通常在 5 个工作日内到账。"},"selector_ids":["KB-003:1"]},
+    {"id":"M02","category":"model_time_selection","question":"中国大陆标准订阅退款多久会到账？","region":"mainland","status":"ready","sources":["KB-003"],"append":{"KB-003":"通过审核的退款通常在 5 个工作日内到账。"},"selector_ids":["KB-003:4"],"fragments":["5 个工作日内到账"]}
+  ]
+}

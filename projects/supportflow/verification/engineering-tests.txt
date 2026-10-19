@@ -1,0 +1,181 @@
+test_all_frontend_examples_follow_intended_routes (test_core.CoreTests.test_all_frontend_examples_follow_intended_routes) ... ok
+test_archived_doc_excluded (test_core.CoreTests.test_archived_doc_excluded) ... ok
+test_invalid_input (test_core.CoreTests.test_invalid_input) ... ok
+test_masking (test_core.CoreTests.test_masking) ... ok
+test_model_bad_json_handled (test_core.CoreTests.test_model_bad_json_handled) ... ok
+test_model_empty_selection_abstains (test_core.CoreTests.test_model_empty_selection_abstains) ... ok
+test_model_existing_evidence_only_and_redacted_input (test_core.CoreTests.test_model_existing_evidence_only_and_redacted_input) ... ok
+test_model_fabricated_fact_rejected (test_core.CoreTests.test_model_fabricated_fact_rejected) ... ok
+test_model_http_error_does_not_echo_secret (test_core.CoreTests.test_model_http_error_does_not_echo_secret) ... ok
+test_model_irrelevant_source_rejected (test_core.CoreTests.test_model_irrelevant_source_rejected) ... ok
+test_model_missing_config_explicit_error (test_core.CoreTests.test_model_missing_config_explicit_error) ... ok
+test_model_non_https_not_called (test_core.CoreTests.test_model_non_https_not_called) ... ok
+test_model_timeout_handled (test_core.CoreTests.test_model_timeout_handled) ... ok
+test_model_truncated_output_rejected (test_core.CoreTests.test_model_truncated_output_rejected) ... ok
+test_model_unknown_source_rejected (test_core.CoreTests.test_model_unknown_source_rejected) ... ok
+test_region_conflict (test_core.CoreTests.test_region_conflict) ... ok
+test_unknown_enum (test_core.CoreTests.test_unknown_enum) ... ok
+test_unsafe_request_never_calls_model (test_core.CoreTests.test_unsafe_request_never_calls_model) ... ok
+test_forged_citation_is_rejected_even_when_it_appears_in_draft (test_evaluation.EvaluationOracleTests.test_forged_citation_is_rejected_even_when_it_appears_in_draft) ... ok
+test_missing_or_forged_source_version_is_rejected (test_evaluation.EvaluationOracleTests.test_missing_or_forged_source_version_is_rejected) ... ok
+test_ready_without_claims_cannot_escape_the_support_denominator (test_evaluation.EvaluationOracleTests.test_ready_without_claims_cannot_escape_the_support_denominator) ... ok
+test_valid_answer_passes (test_evaluation.EvaluationOracleTests.test_valid_answer_passes) ... ok
+test_all_missing_fields_reported_without_partial_write (test_knowledge.KnowledgeTests.test_all_missing_fields_reported_without_partial_write) ... ok
+test_backdated_update_rejected_but_different_ids_can_conflict (test_knowledge.KnowledgeTests.test_backdated_update_rejected_but_different_ids_can_conflict) ... ok
+test_batch_with_invalid_second_document_is_atomic (test_knowledge.KnowledgeTests.test_batch_with_invalid_second_document_is_atomic) ... ok
+test_concurrent_imports_keep_both_changes_and_distinct_revisions (test_knowledge.KnowledgeTests.test_concurrent_imports_keep_both_changes_and_distinct_revisions) ... ok
+test_corrupt_store_does_not_fall_back_to_seed_or_overwrite (test_knowledge.KnowledgeTests.test_corrupt_store_does_not_fall_back_to_seed_or_overwrite) ... ok
+test_date_window_inclusive_and_snapshot_changes_without_revision (test_knowledge.KnowledgeTests.test_date_window_inclusive_and_snapshot_changes_without_revision) ... ok
+test_duplicate_id_in_batch_and_reused_version_rejected (test_knowledge.KnowledgeTests.test_duplicate_id_in_batch_and_reused_version_rejected) ... ok
+test_explicit_status_region_dates_and_lists_required (test_knowledge.KnowledgeTests.test_explicit_status_region_dates_and_lists_required) ... ok
+test_failed_atomic_replace_preserves_prior_file_and_cleans_temp (test_knowledge.KnowledgeTests.test_failed_atomic_replace_preserves_prior_file_and_cleans_temp) ... ok
+test_full_version_update_retires_old_and_preserves_text (test_knowledge.KnowledgeTests.test_full_version_update_retires_old_and_preserves_text) ... ok
+test_future_replacement_does_not_fall_back_to_retired_policy (test_knowledge.KnowledgeTests.test_future_replacement_does_not_fall_back_to_retired_policy) ... ok
+test_import_order_defines_latest_not_version_string_order (test_knowledge.KnowledgeTests.test_import_order_defines_latest_not_version_string_order) ... ok
+test_import_persists_source_scope_and_revision (test_knowledge.KnowledgeTests.test_import_persists_source_scope_and_revision) ... ok
+test_manual_deactivation_preserves_history_and_requires_new_version (test_knowledge.KnowledgeTests.test_manual_deactivation_preserves_history_and_requires_new_version) ... ok
+test_published_import_example_passes_same_validator (test_knowledge.KnowledgeTests.test_published_import_example_passes_same_validator) ... ok
+test_read_seed_is_isolated_and_does_not_create_database (test_knowledge.KnowledgeTests.test_read_seed_is_isolated_and_does_not_create_database) ... ok
+test_unknown_or_mismatched_update_does_not_create_document (test_knowledge.KnowledgeTests.test_unknown_or_mismatched_update_does_not_create_document) ... ok
+test_changed_source_version_region_or_active_invalidates_saved_claim (test_retrieval.EvidenceApplicabilityTests.test_changed_source_version_region_or_active_invalidates_saved_claim) ... ok
+test_effective_dates_include_boundaries_but_exclude_outside_days (test_retrieval.EvidenceApplicabilityTests.test_effective_dates_include_boundaries_but_exclude_outside_days) ... ok
+test_exact_citation_and_current_applicable_source_are_supported (test_retrieval.EvidenceApplicabilityTests.test_exact_citation_and_current_applicable_source_are_supported) ... ok
+test_future_dated_update_and_retired_policy_are_not_retrieved (test_retrieval.EvidenceApplicabilityTests.test_future_dated_update_and_retired_policy_are_not_retrieved) ... ok
+test_source_version_is_required_for_auditable_support (test_retrieval.EvidenceApplicabilityTests.test_source_version_is_required_for_auditable_support) ... ok
+test_tampered_text_statement_number_citation_or_version_are_rejected (test_retrieval.EvidenceApplicabilityTests.test_tampered_text_statement_number_citation_or_version_are_rejected) ... ok
+test_chinese_number_conflict_is_not_missed (test_retrieval.RetrievalBoundaryTests.test_chinese_number_conflict_is_not_missed) ... ok
+test_custom_refund_clarification_does_not_invent_seed_policy_windows (test_retrieval.RetrievalBoundaryTests.test_custom_refund_clarification_does_not_invent_seed_policy_windows) ... ok
+test_five_topics_preserve_each_question_and_its_evidence (test_retrieval.RetrievalBoundaryTests.test_five_topics_preserve_each_question_and_its_evidence) ... ok
+test_imported_custom_keywords_and_category_are_retrievable (test_retrieval.RetrievalBoundaryTests.test_imported_custom_keywords_and_category_are_retrievable) ... ok
+test_known_and_unknown_questions_stop_the_entire_draft (test_retrieval.RetrievalBoundaryTests.test_known_and_unknown_questions_stop_the_entire_draft) ... ok
+test_model_cannot_answer_invoice_turnaround_with_entry_only (test_retrieval.RetrievalBoundaryTests.test_model_cannot_answer_invoice_turnaround_with_entry_only) ... ok
+test_model_cannot_answer_row_limit_with_link_retention (test_retrieval.RetrievalBoundaryTests.test_model_cannot_answer_row_limit_with_link_retention) ... ok
+test_model_cannot_answer_signature_regeneration_with_ack_deadline (test_retrieval.RetrievalBoundaryTests.test_model_cannot_answer_signature_regeneration_with_ack_deadline) ... ok
+test_model_cannot_answer_turnaround_paraphrase_with_entry_only (test_retrieval.RetrievalBoundaryTests.test_model_cannot_answer_turnaround_paraphrase_with_entry_only) ... ok
+test_model_must_cover_each_question_across_topics (test_retrieval.RetrievalBoundaryTests.test_model_must_cover_each_question_across_topics) ... ok
+test_model_must_cover_each_question_within_one_topic (test_retrieval.RetrievalBoundaryTests.test_model_must_cover_each_question_within_one_topic) ... ok
+test_model_must_cover_entry_and_turnaround_in_one_question (test_retrieval.RetrievalBoundaryTests.test_model_must_cover_entry_and_turnaround_in_one_question) ... ok
+test_model_must_cover_two_dimensions_in_one_question (test_retrieval.RetrievalBoundaryTests.test_model_must_cover_two_dimensions_in_one_question) ... ok
+test_model_must_keep_relevant_role_condition (test_retrieval.RetrievalBoundaryTests.test_model_must_keep_relevant_role_condition) ... ok
+test_model_must_not_omit_separate_mandatory_limit (test_retrieval.RetrievalBoundaryTests.test_model_must_not_omit_separate_mandatory_limit) ... ok
+test_model_wrong_numeric_fact_cannot_answer_expiry (test_retrieval.RetrievalBoundaryTests.test_model_wrong_numeric_fact_cannot_answer_expiry) ... ok
+test_opposite_body_and_dropdown_region_need_clarification (test_retrieval.RetrievalBoundaryTests.test_opposite_body_and_dropdown_region_need_clarification) ... ok
+test_opposite_permission_for_same_operation_is_a_conflict (test_retrieval.RetrievalBoundaryTests.test_opposite_permission_for_same_operation_is_a_conflict) ... ok
+test_region_specific_policies_never_mix_in_explicit_scope (test_retrieval.RetrievalBoundaryTests.test_region_specific_policies_never_mix_in_explicit_scope) ... ok
+test_same_category_independent_numeric_facts_are_not_policy_conflicts (test_retrieval.RetrievalBoundaryTests.test_same_category_independent_numeric_facts_are_not_policy_conflicts) ... ok
+test_same_document_conflicting_retry_count_is_still_blocked (test_retrieval.RetrievalBoundaryTests.test_same_document_conflicting_retry_count_is_still_blocked) ... ok
+test_same_document_different_facts_scopes_and_formats_do_not_conflict (test_retrieval.RetrievalBoundaryTests.test_same_document_different_facts_scopes_and_formats_do_not_conflict) ... ok
+test_same_document_numeric_contradiction_stops_reply (test_retrieval.RetrievalBoundaryTests.test_same_document_numeric_contradiction_stops_reply) ... ok
+test_same_document_permission_contradiction_is_not_approved (test_retrieval.RetrievalBoundaryTests.test_same_document_permission_contradiction_is_not_approved) ... ok
+test_same_document_retry_intervals_are_a_schedule_not_a_conflict (test_retrieval.RetrievalBoundaryTests.test_same_document_retry_intervals_are_a_schedule_not_a_conflict) ... ok
+test_same_document_single_statement_contradiction_stops_reply (test_retrieval.RetrievalBoundaryTests.test_same_document_single_statement_contradiction_stops_reply) ... ok
+test_same_scope_same_predicate_numeric_conflict_stops_reply (test_retrieval.RetrievalBoundaryTests.test_same_scope_same_predicate_numeric_conflict_stops_reply) ... ok
+test_seconds_conflict_is_not_missed (test_retrieval.RetrievalBoundaryTests.test_seconds_conflict_is_not_missed) ... ok
+test_support_for_different_formats_is_not_a_polarity_conflict (test_retrieval.RetrievalBoundaryTests.test_support_for_different_formats_is_not_a_polarity_conflict) ... ok
+test_synonyms_retrieve_the_correct_policy_without_literal_seed_keyword (test_retrieval.RetrievalBoundaryTests.test_synonyms_retrieve_the_correct_policy_without_literal_seed_keyword) ... ok
+test_two_regions_in_body_cannot_be_overridden_by_region_dropdown (test_retrieval.RetrievalBoundaryTests.test_two_regions_in_body_cannot_be_overridden_by_region_dropdown) ... ok
+test_unknown_region_cannot_choose_a_local_policy (test_retrieval.RetrievalBoundaryTests.test_unknown_region_cannot_choose_a_local_policy) ... ok
+test_body_limit (test_server.ServerTests.test_body_limit) ... ok
+test_changed_knowledge_revision_blocks_approval (test_server.ServerTests.test_changed_knowledge_revision_blocks_approval) ... ok
+test_conflicting_policy_cannot_approve (test_server.ServerTests.test_conflicting_policy_cannot_approve) ... ok
+test_content_security_policy (test_server.ServerTests.test_content_security_policy) ... ok
+test_create_read_approve_and_persistence (test_server.ServerTests.test_create_read_approve_and_persistence) ... ok
+test_current_evidence_region_rechecked_at_approval (test_server.ServerTests.test_current_evidence_region_rechecked_at_approval) ... ok
+test_deactivated_policy_blocks_existing_draft (test_server.ServerTests.test_deactivated_policy_blocks_existing_draft) ... ok
+test_dns_rebinding_host_rejected (test_server.ServerTests.test_dns_rebinding_host_rejected) ... ok
+test_escalate_unknown (test_server.ServerTests.test_escalate_unknown) ... ok
+test_external_origin_rejected (test_server.ServerTests.test_external_origin_rejected) ... ok
+test_full_length_chinese_review_and_note_fit_json_request (test_server.ServerTests.test_full_length_chinese_review_and_note_fit_json_request) ... ok
+test_health (test_server.ServerTests.test_health) ... ok
+test_human_edit_recorded (test_server.ServerTests.test_human_edit_recorded) ... ok
+test_json_non_object_rejected (test_server.ServerTests.test_json_non_object_rejected) ... ok
+test_knowledge_mutations_require_csrf_and_missing_ids_return_404 (test_server.ServerTests.test_knowledge_mutations_require_csrf_and_missing_ids_return_404) ... ok
+test_legacy_database_migrates_without_losing_ticket (test_server.ServerTests.test_legacy_database_migrates_without_losing_ticket) ... ok
+test_missing_csrf_rejected (test_server.ServerTests.test_missing_csrf_rejected) ... ok
+test_non_ascii_csrf_rejected_without_disconnecting (test_server.ServerTests.test_non_ascii_csrf_rejected_without_disconnecting) ... ok
+test_policy_import_validation_update_history_and_deactivation (test_server.ServerTests.test_policy_import_validation_update_history_and_deactivation) ... ok
+test_repeated_review_rejected (test_server.ServerTests.test_repeated_review_rejected) ... ok
+test_review_export_preserves_versions_and_redacts_text (test_server.ServerTests.test_review_export_preserves_versions_and_redacts_text) ... ok
+test_review_reason_validation_and_terminal_save_rejected (test_server.ServerTests.test_review_reason_validation_and_terminal_save_rejected) ... ok
+test_same_revision_expired_source_blocks_approval (test_server.ServerTests.test_same_revision_expired_source_blocks_approval) ... ok
+test_save_edits_and_multiple_review_events_persist (test_server.ServerTests.test_save_edits_and_multiple_review_events_persist) ... ok
+test_sensitive_inputs_not_saved_raw (test_server.ServerTests.test_sensitive_inputs_not_saved_raw) ... ok
+test_static_allowlist (test_server.ServerTests.test_static_allowlist) ... ok
+test_directly_supported_questions_in_the_same_topics_remain_answerable (test_support_guards.SupportGuardTests.test_directly_supported_questions_in_the_same_topics_remain_answerable) ... ok
+test_existing_export_topic_does_not_imply_deleted_data_recovery (test_support_guards.SupportGuardTests.test_existing_export_topic_does_not_imply_deleted_data_recovery) ... ok
+test_existing_export_topic_does_not_imply_deleted_records_are_included (test_support_guards.SupportGuardTests.test_existing_export_topic_does_not_imply_deleted_records_are_included) ... ok
+test_existing_invoice_topic_does_not_imply_paper_delivery (test_support_guards.SupportGuardTests.test_existing_invoice_topic_does_not_imply_paper_delivery) ... ok
+test_existing_synonym_acceptance_examples_remain_answerable (test_support_guards.SupportGuardTests.test_existing_synonym_acceptance_examples_remain_answerable) ... ok
+test_valid_long_policy_returns_a_short_handoff_draft_that_can_be_saved (test_support_guards.SupportGuardTests.test_valid_long_policy_returns_a_short_handoff_draft_that_can_be_saved) ... ok
+
+----------------------------------------------------------------------
+Ran 109 tests in 2.333s
+
+OK
+POST /api/tickets 413
+POST /api/tickets 200
+POST /api/knowledge/KB-002/versions 200
+POST /api/tickets/9dc3b5a058de/review 400
+POST /api/tickets 200
+POST /api/tickets/231ce6d09e22/review 200
+POST /api/tickets 200
+POST /api/tickets/6224319451f9/review 400
+GET / 200
+POST /api/tickets 200
+POST /api/tickets/e9625b0b8575/review 200
+GET /api/tickets/e9625b0b8575 200
+POST /api/tickets 200
+POST /api/tickets 200
+POST /api/knowledge/KB-002/deactivate 200
+POST /api/tickets/713d87a190f8/review 400
+POST /api/tickets 200
+GET /api/session 403
+POST /api/tickets 200
+POST /api/tickets/3772ce958dd1/review 200
+POST /api/tickets 403
+POST /api/tickets 200
+POST /api/tickets/3b8a133f9a7c/review 200
+POST /api/tickets/3b8a133f9a7c/review 400
+POST /api/tickets/3b8a133f9a7c/review 413
+GET /api/health 200
+POST /api/tickets 200
+POST /api/tickets/9619bbf086db/review 200
+POST /api/tickets 400
+POST /api/knowledge/import 403
+POST /api/knowledge/KB-002/deactivate 403
+POST /api/knowledge/KB-002/versions 403
+GET /api/knowledge/MISSING/history 404
+POST /api/knowledge/MISSING/deactivate 404
+POST /api/tickets 403
+POST /api/tickets 403
+GET /api/knowledge 200
+POST /api/knowledge/import 400
+POST /api/knowledge/import 200
+POST /api/tickets 200
+POST /api/knowledge/CUSTOM-001/versions 200
+POST /api/tickets 200
+GET /api/knowledge/CUSTOM-001/history 200
+POST /api/knowledge/CUSTOM-001/deactivate 200
+POST /api/tickets 200
+POST /api/tickets 200
+POST /api/tickets/2d9b23216f0a/review 200
+POST /api/tickets/2d9b23216f0a/review 400
+POST /api/tickets 200
+POST /api/tickets/c90e6e2ba129/review 200
+GET /api/review-examples 200
+POST /api/tickets 200
+POST /api/tickets/0512e84c2fc6/review 400
+POST /api/tickets/0512e84c2fc6/review 400
+POST /api/tickets/0512e84c2fc6/review 400
+POST /api/tickets/0512e84c2fc6/review 400
+POST /api/tickets/0512e84c2fc6/review 200
+POST /api/tickets/0512e84c2fc6/review 400
+POST /api/tickets 200
+POST /api/tickets 200
+POST /api/tickets/0f33e821e184/review 200
+POST /api/tickets/0f33e821e184/review 200
+POST /api/tickets/0f33e821e184/review 200
+POST /api/tickets 200
+GET /server.py 404
+GET /work/supportflow.sqlite3 404
+GET /../data/knowledge.json 404

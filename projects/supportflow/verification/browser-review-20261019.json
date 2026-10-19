@@ -1,0 +1,1435 @@
+{
+  "generated_at_utc": "2026-10-19T04:43:32.571Z",
+  "scope": "Synthetic questions, disposable policy and ticket storage; browser interactions, no external model",
+  "checks": [
+    {
+      "name": "Common mainland-workspace wording resolves the supplied region",
+      "passed": true,
+      "evidence": {
+        "id": "44900481847a",
+        "title": "审阅专项验收 1792385013800",
+        "input_redacted": "大陆工作区标准订阅退款的申请期限是多少天？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，关于您的问题，当前政策说明如下：\n\n• 大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。 [KB-003 §1]\n• 重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。 [KB-003 §2]\n• 企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。 [KB-003 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+        "result": {
+          "status": "ready",
+          "status_label": "待人工审核",
+          "reason": "已检索到当前有效政策，仍需人工审核。",
+          "region": "mainland",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-003",
+              "title": "大陆地区标准订阅退款规则",
+              "category": "refund",
+              "region": "mainland",
+              "version": "3.0",
+              "updated": "2026-10-01",
+              "active": true,
+              "keywords": [
+                "退款",
+                "退费",
+                "返款",
+                "refund",
+                "重复扣款"
+              ],
+              "statements": [
+                "大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+                "重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。",
+                "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 大陆地区标准订阅退款规则",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "退款"
+              ],
+              "score": 16.6718,
+              "citation": "[KB-003]"
+            }
+          ],
+          "claims": [
+            {
+              "id": "KB-003:1",
+              "text": "大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+              "citation": "[KB-003 §1]",
+              "source_id": "KB-003",
+              "source_version": "3.0"
+            },
+            {
+              "id": "KB-003:2",
+              "text": "重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。",
+              "citation": "[KB-003 §2]",
+              "source_id": "KB-003",
+              "source_version": "3.0"
+            },
+            {
+              "id": "KB-003:3",
+              "text": "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。",
+              "citation": "[KB-003 §3]",
+              "source_id": "KB-003",
+              "source_version": "3.0"
+            }
+          ],
+          "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。 [KB-003 §1]\n• 重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。 [KB-003 §2]\n• 企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。 [KB-003 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+          "next_actions": [],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "大陆工作区标准订阅退款的申请期限是多少天",
+              "topics": [
+                "refund"
+              ],
+              "status": "covered",
+              "reason": "所选原文支持该问题，条件保留在完整条款中"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-003:1",
+              "citation": "[KB-003 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:2",
+              "citation": "[KB-003 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:3",
+              "citation": "[KB-003 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": true,
+            "checks": [
+              {
+                "claim_id": "KB-003:1",
+                "citation": "[KB-003 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:2",
+                "citation": "[KB-003 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:3",
+                "citation": "[KB-003 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": true,
+          "human_review_required": true,
+          "latency_ms": 2.23,
+          "input_redacted": "大陆工作区标准订阅退款的申请期限是多少天？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "a2abbfe6c3d5342b95ca6f088eedc30d28d699b562a17c3f20f083758f47a88a"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 7,
+            "ticket_id": "44900481847a",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "ready",
+              "source_versions": [
+                {
+                  "id": "KB-003",
+                  "version": "3.0"
+                }
+              ],
+              "source_ids": [
+                "KB-003"
+              ],
+              "content_hash": "a2abbfe6c3d5342b95ca6f088eedc30d28d699b562a17c3f20f083758f47a88a"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Explicit overseas selector conflicts with mainland wording; approval disabled",
+      "passed": true,
+      "evidence": {
+        "id": "7ef091a168dc",
+        "title": "审阅专项验收 1792385014269",
+        "input_redacted": "大陆工作区标准订阅退款的申请期限是多少天？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，无法从正文唯一确认工作区地区，或正文与已选择地区不一致，不能确定政策适用范围。\n\n• 请确认实际工作区地区，并修正工单正文或地区选择后重新生成。",
+        "result": {
+          "status": "needs_context",
+          "status_label": "需要补充信息",
+          "reason": "无法从正文唯一确认工作区地区，或正文与已选择地区不一致，不能确定政策适用范围。",
+          "region": "overseas",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-004",
+              "title": "海外地区标准订阅退款规则",
+              "category": "refund",
+              "region": "overseas",
+              "version": "2.2",
+              "updated": "2026-10-01",
+              "active": true,
+              "keywords": [
+                "退款",
+                "退费",
+                "refund",
+                "重复扣款"
+              ],
+              "statements": [
+                "海外地区标准订阅可在首次付款后 14 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+                "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 海外地区标准订阅退款规则",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "退款"
+              ],
+              "score": 15.2216,
+              "citation": "[KB-004]"
+            }
+          ],
+          "claims": [],
+          "draft": "您好，无法从正文唯一确认工作区地区，或正文与已选择地区不一致，不能确定政策适用范围。\n\n• 请确认实际工作区地区，并修正工单正文或地区选择后重新生成。",
+          "next_actions": [
+            "请确认实际工作区地区，并修正工单正文或地区选择后重新生成。"
+          ],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "大陆工作区标准订阅退款的申请期限是多少天",
+              "topics": [
+                "refund"
+              ],
+              "status": "needs_context",
+              "reason": "无法从正文唯一确认工作区地区，或正文与已选择地区不一致，不能确定政策适用范围。"
+            }
+          ],
+          "evidence_checks": [],
+          "evidence_validation": {
+            "passed": false,
+            "checks": []
+          },
+          "policy_conflicts": [],
+          "can_approve": false,
+          "human_review_required": true,
+          "latency_ms": 2.21,
+          "input_redacted": "大陆工作区标准订阅退款的申请期限是多少天？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "90f98d7872a795071328d35415a5135108a2d88610f93daa80507d4aaba05fc7"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 8,
+            "ticket_id": "7ef091a168dc",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "needs_context",
+              "source_versions": [
+                {
+                  "id": "KB-004",
+                  "version": "2.2"
+                }
+              ],
+              "source_ids": [
+                "KB-004"
+              ],
+              "content_hash": "90f98d7872a795071328d35415a5135108a2d88610f93daa80507d4aaba05fc7"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Refund receipt time cannot be answered by the application window",
+      "passed": true,
+      "evidence": {
+        "id": "18259b578d94",
+        "title": "审阅专项验收 1792385014407",
+        "input_redacted": "中国大陆标准订阅退款多久会到账？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 中国大陆标准订阅退款多久会到账：引用存在，但所选条款未覆盖该问题",
+        "result": {
+          "status": "needs_context",
+          "status_label": "需要补充信息",
+          "reason": "引用存在，但依据未完整支持问题，请补充资料或转交人工核验。",
+          "region": "mainland",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-003",
+              "title": "大陆地区标准订阅退款规则",
+              "category": "refund",
+              "region": "mainland",
+              "version": "3.0",
+              "updated": "2026-10-01",
+              "active": true,
+              "keywords": [
+                "退款",
+                "退费",
+                "返款",
+                "refund",
+                "重复扣款"
+              ],
+              "statements": [
+                "大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+                "重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。",
+                "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 大陆地区标准订阅退款规则",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "退款"
+              ],
+              "score": 13.2424,
+              "citation": "[KB-003]"
+            }
+          ],
+          "claims": [],
+          "draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 中国大陆标准订阅退款多久会到账：引用存在，但所选条款未覆盖该问题",
+          "next_actions": [
+            "中国大陆标准订阅退款多久会到账：引用存在，但所选条款未覆盖该问题"
+          ],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "中国大陆标准订阅退款多久会到账",
+              "topics": [
+                "refund"
+              ],
+              "status": "missing",
+              "reason": "引用存在，但所选条款未覆盖该问题"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-003:1",
+              "citation": "[KB-003 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:2",
+              "citation": "[KB-003 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:3",
+              "citation": "[KB-003 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": false,
+            "checks": [
+              {
+                "claim_id": "KB-003:1",
+                "citation": "[KB-003 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:2",
+                "citation": "[KB-003 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:3",
+                "citation": "[KB-003 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": false,
+          "human_review_required": true,
+          "latency_ms": 3.1,
+          "input_redacted": "中国大陆标准订阅退款多久会到账？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "2a21303947fefa002b8fb45140efc327f53d81b709f8e0d4b0068f21d7415854"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 9,
+            "ticket_id": "18259b578d94",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "needs_context",
+              "source_versions": [
+                {
+                  "id": "KB-003",
+                  "version": "3.0"
+                }
+              ],
+              "source_ids": [
+                "KB-003"
+              ],
+              "content_hash": "2a21303947fefa002b8fb45140efc327f53d81b709f8e0d4b0068f21d7415854"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Refund approval time cannot be answered by the application window",
+      "passed": true,
+      "evidence": {
+        "id": "36dfcfd4ffa3",
+        "title": "审阅专项验收 1792385014527",
+        "input_redacted": "中国大陆标准订阅退款审核要几天？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 中国大陆标准订阅退款审核要几天：引用存在，但所选条款未覆盖该问题",
+        "result": {
+          "status": "needs_context",
+          "status_label": "需要补充信息",
+          "reason": "引用存在，但依据未完整支持问题，请补充资料或转交人工核验。",
+          "region": "mainland",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-003",
+              "title": "大陆地区标准订阅退款规则",
+              "category": "refund",
+              "region": "mainland",
+              "version": "3.0",
+              "updated": "2026-10-01",
+              "active": true,
+              "keywords": [
+                "退款",
+                "退费",
+                "返款",
+                "refund",
+                "重复扣款"
+              ],
+              "statements": [
+                "大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+                "重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。",
+                "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 大陆地区标准订阅退款规则",
+              "effective_from": "2026-10-01",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "退款"
+              ],
+              "score": 13.2424,
+              "citation": "[KB-003]"
+            }
+          ],
+          "claims": [],
+          "draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 中国大陆标准订阅退款审核要几天：引用存在，但所选条款未覆盖该问题",
+          "next_actions": [
+            "中国大陆标准订阅退款审核要几天：引用存在，但所选条款未覆盖该问题"
+          ],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "中国大陆标准订阅退款审核要几天",
+              "topics": [
+                "refund"
+              ],
+              "status": "missing",
+              "reason": "引用存在，但所选条款未覆盖该问题"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-003:1",
+              "citation": "[KB-003 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:2",
+              "citation": "[KB-003 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-003:3",
+              "citation": "[KB-003 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": false,
+            "checks": [
+              {
+                "claim_id": "KB-003:1",
+                "citation": "[KB-003 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:2",
+                "citation": "[KB-003 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-003:3",
+                "citation": "[KB-003 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": false,
+          "human_review_required": true,
+          "latency_ms": 2.79,
+          "input_redacted": "中国大陆标准订阅退款审核要几天？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "bdfe4a21322576e5cef4591d2f7bbc33d1b2f0f6c47256a49df10d61377679ce"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 10,
+            "ticket_id": "36dfcfd4ffa3",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "needs_context",
+              "source_versions": [
+                {
+                  "id": "KB-003",
+                  "version": "3.0"
+                }
+              ],
+              "source_ids": [
+                "KB-003"
+              ],
+              "content_hash": "bdfe4a21322576e5cef4591d2f7bbc33d1b2f0f6c47256a49df10d61377679ce"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Export completion time cannot be answered by file retention",
+      "passed": true,
+      "evidence": {
+        "id": "4c5cc61cd259",
+        "title": "审阅专项验收 1792385014660",
+        "input_redacted": "导出任务多久能完成？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 导出任务多久能完成：引用存在，但所选条款未覆盖该问题",
+        "result": {
+          "status": "needs_context",
+          "status_label": "需要补充信息",
+          "reason": "引用存在，但依据未完整支持问题，请补充资料或转交人工核验。",
+          "region": "unknown",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-005",
+              "title": "数据导出说明",
+              "category": "export",
+              "version": "2.0",
+              "updated": "2026-09-22",
+              "active": true,
+              "keywords": [
+                "导出",
+                "下载数据",
+                "备份",
+                "export",
+                "csv",
+                "导出失败"
+              ],
+              "statements": [
+                "工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。",
+                "单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。",
+                "导出文件保留 24 小时；下载链接过期后需要重新创建任务。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 数据导出说明",
+              "region": "all",
+              "effective_from": "2026-09-22",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "导出",
+                "导出"
+              ],
+              "score": 11.397,
+              "citation": "[KB-005]"
+            }
+          ],
+          "claims": [],
+          "draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• 导出任务多久能完成：引用存在，但所选条款未覆盖该问题",
+          "next_actions": [
+            "导出任务多久能完成：引用存在，但所选条款未覆盖该问题"
+          ],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "导出任务多久能完成",
+              "topics": [
+                "export"
+              ],
+              "status": "missing",
+              "reason": "引用存在，但所选条款未覆盖该问题"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-005:1",
+              "citation": "[KB-005 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-005:2",
+              "citation": "[KB-005 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-005:3",
+              "citation": "[KB-005 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": false,
+            "checks": [
+              {
+                "claim_id": "KB-005:1",
+                "citation": "[KB-005 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-005:2",
+                "citation": "[KB-005 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-005:3",
+                "citation": "[KB-005 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": false,
+          "human_review_required": true,
+          "latency_ms": 3.13,
+          "input_redacted": "导出任务多久能完成？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "13f90dd3d55492bb5606165a2a0d1ac2849176464be654fde621ce388bc0bb21"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 11,
+            "ticket_id": "4c5cc61cd259",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "needs_context",
+              "source_versions": [
+                {
+                  "id": "KB-005",
+                  "version": "2.0"
+                }
+              ],
+              "source_ids": [
+                "KB-005"
+              ],
+              "content_hash": "13f90dd3d55492bb5606165a2a0d1ac2849176464be654fde621ce388bc0bb21"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Monthly API quota cannot be answered by a per-minute rate limit",
+      "passed": true,
+      "evidence": {
+        "id": "61f37f9e2257",
+        "title": "审阅专项验收 1792385014785",
+        "input_redacted": "API 频率限制为每月多少次？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• API 频率限制为每月多少次：引用存在，但所选条款未覆盖该问题",
+        "result": {
+          "status": "needs_context",
+          "status_label": "需要补充信息",
+          "reason": "引用存在，但依据未完整支持问题，请补充资料或转交人工核验。",
+          "region": "unknown",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-007",
+              "title": "开放 API 频率限制",
+              "category": "rate_limit",
+              "version": "1.3",
+              "updated": "2026-10-02",
+              "active": true,
+              "keywords": [
+                "429",
+                "限流",
+                "频率",
+                "rate limit",
+                "rate_limit",
+                "too many requests"
+              ],
+              "statements": [
+                "标准工作区 API 限制为每分钟 60 次请求；超出时返回 HTTP 429。",
+                "收到 HTTP 429 后按 Retry-After 响应头等待，并使用指数退避；提升额度需要人工评估。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 开放 API 频率限制",
+              "region": "all",
+              "effective_from": "2026-10-02",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "频率"
+              ],
+              "score": 17.2399,
+              "citation": "[KB-007]"
+            }
+          ],
+          "claims": [],
+          "draft": "您好，引用存在，但依据未完整支持问题，请补充资料或转交人工核验。\n\n• API 频率限制为每月多少次：引用存在，但所选条款未覆盖该问题",
+          "next_actions": [
+            "API 频率限制为每月多少次：引用存在，但所选条款未覆盖该问题"
+          ],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "API 频率限制为每月多少次",
+              "topics": [
+                "rate_limit"
+              ],
+              "status": "missing",
+              "reason": "引用存在，但所选条款未覆盖该问题"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-007:1",
+              "citation": "[KB-007 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-007:2",
+              "citation": "[KB-007 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": false,
+            "checks": [
+              {
+                "claim_id": "KB-007:1",
+                "citation": "[KB-007 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-007:2",
+                "citation": "[KB-007 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": false,
+          "human_review_required": true,
+          "latency_ms": 3.15,
+          "input_redacted": "API 频率限制为每月多少次？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "dbd2aba498a869104cd0872f0b37bd164855da8d3d0e97f6f8c38d6bb14c5ae5"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 12,
+            "ticket_id": "61f37f9e2257",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "needs_context",
+              "source_versions": [
+                {
+                  "id": "KB-007",
+                  "version": "1.3"
+                }
+              ],
+              "source_ids": [
+                "KB-007"
+              ],
+              "content_hash": "dbd2aba498a869104cd0872f0b37bd164855da8d3d0e97f6f8c38d6bb14c5ae5"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supported file-retention question remains answerable",
+      "passed": true,
+      "evidence": {
+        "id": "daaf0018a2af",
+        "title": "审阅专项验收 1792385014906",
+        "input_redacted": "导出文件保留多久？",
+        "state": "DRAFT",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:34+00:00",
+        "updated_at": "2026-10-19T04:43:34+00:00",
+        "current_draft": "您好，关于您的问题，当前政策说明如下：\n\n• 工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。 [KB-005 §1]\n• 单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。 [KB-005 §2]\n• 导出文件保留 24 小时；下载链接过期后需要重新创建任务。 [KB-005 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+        "result": {
+          "status": "ready",
+          "status_label": "待人工审核",
+          "reason": "已检索到当前有效政策，仍需人工审核。",
+          "region": "unknown",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-005",
+              "title": "数据导出说明",
+              "category": "export",
+              "version": "2.0",
+              "updated": "2026-09-22",
+              "active": true,
+              "keywords": [
+                "导出",
+                "下载数据",
+                "备份",
+                "export",
+                "csv",
+                "导出失败"
+              ],
+              "statements": [
+                "工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。",
+                "单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。",
+                "导出文件保留 24 小时；下载链接过期后需要重新创建任务。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 数据导出说明",
+              "region": "all",
+              "effective_from": "2026-09-22",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "导出",
+                "导出"
+              ],
+              "score": 14.1606,
+              "citation": "[KB-005]"
+            }
+          ],
+          "claims": [
+            {
+              "id": "KB-005:1",
+              "text": "工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。",
+              "citation": "[KB-005 §1]",
+              "source_id": "KB-005",
+              "source_version": "2.0"
+            },
+            {
+              "id": "KB-005:2",
+              "text": "单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。",
+              "citation": "[KB-005 §2]",
+              "source_id": "KB-005",
+              "source_version": "2.0"
+            },
+            {
+              "id": "KB-005:3",
+              "text": "导出文件保留 24 小时；下载链接过期后需要重新创建任务。",
+              "citation": "[KB-005 §3]",
+              "source_id": "KB-005",
+              "source_version": "2.0"
+            }
+          ],
+          "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。 [KB-005 §1]\n• 单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。 [KB-005 §2]\n• 导出文件保留 24 小时；下载链接过期后需要重新创建任务。 [KB-005 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+          "next_actions": [],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "导出文件保留多久",
+              "topics": [
+                "export"
+              ],
+              "status": "covered",
+              "reason": "所选原文支持该问题，条件保留在完整条款中"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-005:1",
+              "citation": "[KB-005 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-005:2",
+              "citation": "[KB-005 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-005:3",
+              "citation": "[KB-005 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": true,
+            "checks": [
+              {
+                "claim_id": "KB-005:1",
+                "citation": "[KB-005 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-005:2",
+                "citation": "[KB-005 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-005:3",
+                "citation": "[KB-005 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": true,
+          "human_review_required": true,
+          "latency_ms": 2.64,
+          "input_redacted": "导出文件保留多久？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "00df719864228795b849fab8f1c26bf51a56862cb88d1d8853047f1bb91d53b4"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 13,
+            "ticket_id": "daaf0018a2af",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:34+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "ready",
+              "source_versions": [
+                {
+                  "id": "KB-005",
+                  "version": "2.0"
+                }
+              ],
+              "source_ids": [
+                "KB-005"
+              ],
+              "content_hash": "00df719864228795b849fab8f1c26bf51a56862cb88d1d8853047f1bb91d53b4"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unsaved edits survive escalate and history reload",
+      "passed": true,
+      "evidence": {
+        "id": "79e8ff8097bc",
+        "title": "审阅专项验收 1792385015029",
+        "input_redacted": "请问在哪里申请发票？",
+        "state": "ESCALATED",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:35+00:00",
+        "updated_at": "2026-10-19T04:43:35+00:00",
+        "current_draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。\n人工交接说明：请核对订单资料。escalate",
+        "result": {
+          "status": "ready",
+          "status_label": "待人工审核",
+          "reason": "已检索到当前有效政策，仍需人工审核。",
+          "region": "unknown",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-002",
+              "title": "开票流程与处理时效",
+              "category": "invoice",
+              "version": "1.4",
+              "updated": "2026-09-10",
+              "active": true,
+              "keywords": [
+                "发票",
+                "开票",
+                "invoice",
+                "抬头",
+                "税号"
+              ],
+              "statements": [
+                "管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。",
+                "开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。",
+                "发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 开票流程与处理时效",
+              "region": "all",
+              "effective_from": "2026-09-10",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "发票"
+              ],
+              "score": 8.5778,
+              "citation": "[KB-002]"
+            }
+          ],
+          "claims": [
+            {
+              "id": "KB-002:1",
+              "text": "管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。",
+              "citation": "[KB-002 §1]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            },
+            {
+              "id": "KB-002:2",
+              "text": "开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。",
+              "citation": "[KB-002 §2]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            },
+            {
+              "id": "KB-002:3",
+              "text": "发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。",
+              "citation": "[KB-002 §3]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            }
+          ],
+          "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+          "next_actions": [],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "请问在哪里申请发票",
+              "topics": [
+                "invoice"
+              ],
+              "status": "covered",
+              "reason": "所选原文支持该问题，条件保留在完整条款中"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-002:1",
+              "citation": "[KB-002 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-002:2",
+              "citation": "[KB-002 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-002:3",
+              "citation": "[KB-002 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": true,
+            "checks": [
+              {
+                "claim_id": "KB-002:1",
+                "citation": "[KB-002 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-002:2",
+                "citation": "[KB-002 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-002:3",
+                "citation": "[KB-002 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": true,
+          "human_review_required": true,
+          "latency_ms": 1.9,
+          "input_redacted": "请问在哪里申请发票？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "b3a23a12d69e6dd486baecf42140c5f44b6ee0a7436171db29473ff216714ded"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 14,
+            "ticket_id": "79e8ff8097bc",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:35+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "ready",
+              "source_versions": [
+                {
+                  "id": "KB-002",
+                  "version": "1.4"
+                }
+              ],
+              "source_ids": [
+                "KB-002"
+              ],
+              "content_hash": "b3a23a12d69e6dd486baecf42140c5f44b6ee0a7436171db29473ff216714ded"
+            }
+          },
+          {
+            "seq": 15,
+            "ticket_id": "79e8ff8097bc",
+            "event": "ESCALATED",
+            "created_at": "2026-10-19T04:43:35+00:00",
+            "details": {
+              "note": "",
+              "human_edited": true,
+              "automatically_validated": false,
+              "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。\n人工交接说明：请核对订单资料。escalate",
+              "reasons": [],
+              "action": "escalate",
+              "knowledge_revision": 4,
+              "engine_version": "supportflow-v2.1",
+              "content_hash": "78aca8538426ed4ffbe80f3c52f531f16a7c2b60ee2a6faf72775a596652d9a1",
+              "external_send": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unsaved edits survive reject and history reload",
+      "passed": true,
+      "evidence": {
+        "id": "0b5bba9affae",
+        "title": "审阅专项验收 1792385015377",
+        "input_redacted": "请问在哪里申请发票？",
+        "state": "REJECTED",
+        "final_draft": null,
+        "created_at": "2026-10-19T04:43:35+00:00",
+        "updated_at": "2026-10-19T04:43:35+00:00",
+        "current_draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。\n人工交接说明：请核对订单资料。reject",
+        "result": {
+          "status": "ready",
+          "status_label": "待人工审核",
+          "reason": "已检索到当前有效政策，仍需人工审核。",
+          "region": "unknown",
+          "mode": "demo",
+          "engine": "本地规则引擎",
+          "sources": [
+            {
+              "id": "KB-002",
+              "title": "开票流程与处理时效",
+              "category": "invoice",
+              "version": "1.4",
+              "updated": "2026-09-10",
+              "active": true,
+              "keywords": [
+                "发票",
+                "开票",
+                "invoice",
+                "抬头",
+                "税号"
+              ],
+              "statements": [
+                "管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。",
+                "开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。",
+                "发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。"
+              ],
+              "source": "合成资料：云桥协作客服政策手册 / 开票流程与处理时效",
+              "region": "all",
+              "effective_from": "2026-09-10",
+              "effective_to": null,
+              "eligible": true,
+              "current_status": "active",
+              "matches": [
+                "发票"
+              ],
+              "score": 8.5778,
+              "citation": "[KB-002]"
+            }
+          ],
+          "claims": [
+            {
+              "id": "KB-002:1",
+              "text": "管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。",
+              "citation": "[KB-002 §1]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            },
+            {
+              "id": "KB-002:2",
+              "text": "开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。",
+              "citation": "[KB-002 §2]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            },
+            {
+              "id": "KB-002:3",
+              "text": "发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。",
+              "citation": "[KB-002 §3]",
+              "source_id": "KB-002",
+              "source_version": "1.4"
+            }
+          ],
+          "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。",
+          "next_actions": [],
+          "model_info": null,
+          "knowledge_date": "2026-10-19",
+          "knowledge_revision": 4,
+          "engine_version": "supportflow-v2.1",
+          "retrieval_version": "lexical-intent-v2.0",
+          "intent_coverage": [
+            {
+              "question": "请问在哪里申请发票",
+              "topics": [
+                "invoice"
+              ],
+              "status": "covered",
+              "reason": "所选原文支持该问题，条件保留在完整条款中"
+            }
+          ],
+          "evidence_checks": [
+            {
+              "claim_id": "KB-002:1",
+              "citation": "[KB-002 §1]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-002:2",
+              "citation": "[KB-002 §2]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            },
+            {
+              "claim_id": "KB-002:3",
+              "citation": "[KB-002 §3]",
+              "supported": true,
+              "reason": "原文一致，版本、有效期和地区适用"
+            }
+          ],
+          "evidence_validation": {
+            "passed": true,
+            "checks": [
+              {
+                "claim_id": "KB-002:1",
+                "citation": "[KB-002 §1]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-002:2",
+                "citation": "[KB-002 §2]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              },
+              {
+                "claim_id": "KB-002:3",
+                "citation": "[KB-002 §3]",
+                "supported": true,
+                "reason": "原文一致，版本、有效期和地区适用"
+              }
+            ]
+          },
+          "policy_conflicts": [],
+          "can_approve": true,
+          "human_review_required": true,
+          "latency_ms": 2.76,
+          "input_redacted": "请问在哪里申请发票？",
+          "external_send": false,
+          "coverage_notice": "已按问题核对依据与政策适用性；请审核完整条款及客户具体条件。",
+          "content_hash": "b3a23a12d69e6dd486baecf42140c5f44b6ee0a7436171db29473ff216714ded"
+        },
+        "review_reasons": [],
+        "audit": [
+          {
+            "seq": 16,
+            "ticket_id": "0b5bba9affae",
+            "event": "DRAFT_CREATED",
+            "created_at": "2026-10-19T04:43:35+00:00",
+            "details": {
+              "engine": "本地规则引擎",
+              "engine_version": "supportflow-v2.1",
+              "knowledge_revision": 4,
+              "status": "ready",
+              "source_versions": [
+                {
+                  "id": "KB-002",
+                  "version": "1.4"
+                }
+              ],
+              "source_ids": [
+                "KB-002"
+              ],
+              "content_hash": "b3a23a12d69e6dd486baecf42140c5f44b6ee0a7436171db29473ff216714ded"
+            }
+          },
+          {
+            "seq": 17,
+            "ticket_id": "0b5bba9affae",
+            "event": "REJECTED",
+            "created_at": "2026-10-19T04:43:35+00:00",
+            "details": {
+              "note": "",
+              "human_edited": true,
+              "automatically_validated": false,
+              "draft": "您好，关于您的问题，当前政策说明如下：\n\n• 管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。 [KB-002 §1]\n• 开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。 [KB-002 §2]\n• 发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。 [KB-002 §3]\n\n如需进一步核验，请提供问题发生时间与相关订单号或工作区 ID，避免提供密码、验证码和令牌。\n人工交接说明：请核对订单资料。reject",
+              "reasons": [],
+              "action": "reject",
+              "knowledge_revision": 4,
+              "engine_version": "supportflow-v2.1",
+              "content_hash": "563b1a20d1b1691429b2bb479522cc6c1c13c767e548574f18c2ea3af3edc975",
+              "external_send": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "page_errors": [],
+  "passed": true
+}

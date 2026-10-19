@@ -13,7 +13,7 @@
       branch: "main",
       projectPaths: { supportflow: "projects/supportflow", metricpilot: "projects/metricpilot", climbai: "projects/climbai" },
       docs: { supportflow: "", metricpilot: "", climbai: "" },
-      metrics: { supportflow: "31 条合成回归＋32 项工程测试通过 · 离线验证", metricpilot: "72 项离线检查通过 · 数值／权限／模拟接口", climbai: "训练闭环 / 版本与引用 / 演示模式" }
+      metrics: { supportflow: "同 26 条审阅回归：14 → 26 通过 · 118 项工程检查通过", metricpilot: "同 22 项验收：11 → 22 通过 · CSV 版 90 项工程检查通过", climbai: "30 条共享知识 · 50 条固定检索验收通过 · 规则演示" }
     };
   </script>
   <script src="app.js" defer></script>
@@ -54,7 +54,7 @@
           <li><span class="path-number">02</span><div><strong>结论有出处</strong><p>政策引用与查询结果，保留可追溯的证据。</p></div></li>
           <li><span class="path-number">03</span><div><strong>异常可接管</strong><p>信息不足就澄清，需要判断就交还给人。</p></div></li>
         </ol>
-        <div class="note-foot"><span class="small-square" aria-hidden="true"></span> 三个 AI 协作个人作品 · 合成数据演示</div>
+        <div class="note-foot"><span class="small-square" aria-hidden="true"></span> 三个 AI 协作个人作品 · 可复现的离线验证</div>
       </aside>
     </section>
 
@@ -64,7 +64,7 @@
           <div><p class="eyebrow">01 / SELECTED WORK</p><h2 id="work-title">让判断落在具体流程里。</h2></div>
           <p class="section-intro">2026 年 10 月新建的 AI 协作个人项目。<br>展示问题拆解、产品设计与可复现交付。</p>
         </div>
-        <p class="scope-note"><span class="scope-label">当前范围</span> 合成数据 · 离线规则演示 · 真实模型效果尚未实测；评测结果只说明已执行的验收用例。</p>
+        <p class="scope-note"><span class="scope-label">当前范围</span> 支持知识与订单 CSV 导入；展示使用合成样例和离线规则。真实模型效果与真人试用尚未实测；数字代表已执行的开发验收。<a class="run-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/ITERATION_EVIDENCE_20261019.md" target="_blank" rel="noopener noreferrer">查看三项目迭代证据 ↗</a></p>
         <noscript><p class="scope-note">当前浏览器未启用脚本，可通过产品文档查看完整案例；源码链接和界面大图仍可正常打开。</p></noscript>
 
         <article class="project" id="supportflow" aria-labelledby="supportflow-title">
@@ -73,25 +73,25 @@
             <div class="project-copy">
               <h3 id="supportflow-title">SupportFlow<span>客服知识与工单助手</span></h3>
               <p class="project-thesis">给回复草稿，<br>一条可审阅的证据链。</p>
-              <p class="project-description">将知识查询、引用草稿与人工确认连接起来。信息不足和地区政策冲突有明确出口，审核决定与修改留在本地记录中。</p>
-              <div class="project-tags"><span>证据引用</span><span>工单状态</span><span>人工接管</span></div>
-              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="supportflow">31 条合成回归＋32 项工程测试通过 · 离线验证</span></p>
+              <p class="project-description">导入带来源与版本的政策，逐问题检索并生成引用草稿。针对“有引用却答非所问”的问题，增加条款支持检查；政策更新拦截旧稿，审核修改可回查。</p>
+              <div class="project-tags"><span>知识导入与版本</span><span>条款支持</span><span>审核反馈</span></div>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="supportflow">同 26 条审阅回归：14 → 26 通过 · 118 项工程检查通过</span></p>
               <div class="project-actions"><a class="button secondary" data-case="supportflow" data-doc-url="supportflow" aria-haspopup="dialog" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" target="_blank" rel="noopener noreferrer">展开案例 <span aria-hidden="true">↗</span></a><a class="text-link" data-doc-url="supportflow" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档 <span aria-hidden="true">↗</span></a></div>
               <a class="source-link" data-repo-url="supportflow" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">查看项目源码 <span aria-hidden="true">→</span></a>
             </div>
             <figure class="project-media">
               <div class="screen-chrome" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>SupportFlow / 本地演示</span><span class="window-status">DRAFT → REVIEW</span></div>
-              <a class="screen-preview" href="assets/supportflow.png" target="_blank" rel="noopener noreferrer" aria-label="打开 SupportFlow 完整界面截图"><img src="assets/supportflow.png" alt="SupportFlow 应用界面：工单草稿、政策引用与人工审核流程" width="1440" height="1335" loading="lazy"></a>
+              <a class="screen-preview" href="assets/supportflow.png" target="_blank" rel="noopener noreferrer" aria-label="打开 SupportFlow 完整界面截图"><img src="assets/supportflow.png" alt="SupportFlow 应用界面：政策条款、问题覆盖检查与人工审核流程" width="1440" height="1734" loading="lazy"></a>
               <figcaption>应用实拍。回复与审核均为本地演示。<a href="assets/supportflow.png" target="_blank" rel="noopener noreferrer">查看完整界面 ↗</a></figcaption>
             </figure>
           </div>
           <div class="workflow" data-workflow="supportflow">
             <div class="workflow-tabs" role="tablist" aria-label="SupportFlow 关键流程">
-              <button type="button" role="tab" id="supportflow-tab-0" aria-controls="supportflow-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 知识检索</button>
-              <button type="button" role="tab" id="supportflow-tab-1" aria-controls="supportflow-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 引用草稿</button>
+              <button type="button" role="tab" id="supportflow-tab-0" aria-controls="supportflow-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 导入与检索</button>
+              <button type="button" role="tab" id="supportflow-tab-1" aria-controls="supportflow-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 条款支持</button>
               <button type="button" role="tab" id="supportflow-tab-2" aria-controls="supportflow-panel" aria-selected="false" tabindex="-1" data-step="2"><span>03</span> 人工审核</button>
             </div>
-            <div class="workflow-panel" role="tabpanel" id="supportflow-panel" aria-labelledby="supportflow-tab-0" tabindex="0"><h4>先确认知识能回答什么。</h4><p>关键词检索当前有效知识，保留来源编号与政策地区。知识未覆盖或退款地区不明确时，停止直接答复并提示补充信息。</p><span class="workflow-detail">产品取舍：完整回答之前，先避免把不适用的政策合并。</span></div>
+            <div class="workflow-panel" role="tabpanel" id="supportflow-panel" aria-labelledby="supportflow-tab-0" tabindex="0"><h4>先让资料可用、可维护。</h4><p>导入带来源、地区、版本和有效期的知识；用同义表达与逐问题 BM25 检索。政策更新后拦截旧稿，避免旧依据继续进入审核。</p><span class="workflow-detail">产品取舍：先用可解释的词法方案建立基线，再验证更复杂检索是否必要。</span></div>
           </div>
         </article>
 
@@ -101,25 +101,25 @@
             <div class="project-copy">
               <h3 id="metricpilot-title">MetricPilot<span>业务数据分析助手</span></h3>
               <p class="project-thesis">让每一个数字，<br>回到它的查询结果。</p>
-              <p class="project-description">围绕收入、渠道与产品分析，先明确期间和指标口径，再执行只读查询。报告关联 SQL、原始结果与任务轨迹，便于核对和复盘。</p>
-              <div class="project-tags"><span>口径澄清</span><span>只读 SQL</span><span>查询追溯</span></div>
-              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="metricpilot">72 项离线检查通过 · 数值／权限／模拟接口</span></p>
+              <p class="project-description">导入订单 CSV、映射字段并确认退款归属和分母，再执行受约束统计。问题与界面口径冲突时先澄清，报告可追到源行、参数与查询结果。</p>
+              <div class="project-tags"><span>CSV 导入与映射</span><span>口径确认</span><span>源行追溯</span></div>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="metricpilot">同 22 项验收：11 → 22 通过 · CSV 版 90 项工程检查通过</span></p>
               <div class="project-actions"><a class="button secondary" data-case="metricpilot" data-doc-url="metricpilot" aria-haspopup="dialog" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/PRD.md" target="_blank" rel="noopener noreferrer">展开案例 <span aria-hidden="true">↗</span></a><a class="text-link" data-doc-url="metricpilot" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档 <span aria-hidden="true">↗</span></a></div>
               <a class="source-link" data-repo-url="metricpilot" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/metricpilot" target="_blank" rel="noopener noreferrer">查看项目源码 <span aria-hidden="true">→</span></a>
             </div>
             <figure class="project-media">
               <div class="screen-chrome" aria-hidden="true"><span class="window-dots"><i></i><i></i><i></i></span><span>MetricPilot / 本地演示</span><span class="window-status">QUESTION → EVIDENCE</span></div>
-              <a class="screen-preview" href="assets/metricpilot.png" target="_blank" rel="noopener noreferrer" aria-label="打开 MetricPilot 完整界面截图"><img src="assets/metricpilot.png" alt="MetricPilot 应用界面：指标分析报告、只读 SQL 与数据证据" width="1440" height="1751" loading="lazy"></a>
-              <figcaption>应用实拍。分析使用固定合成订单。<a href="assets/metricpilot.png" target="_blank" rel="noopener noreferrer">查看完整界面 ↗</a></figcaption>
+              <a class="screen-preview" href="assets/metricpilot.png" target="_blank" rel="noopener noreferrer" aria-label="打开 MetricPilot 完整界面截图"><img src="assets/metricpilot.png" alt="MetricPilot CSV 版界面：字段映射、口径确认、分析与源行证据" width="1440" height="3078" loading="lazy"></a>
+              <figcaption>CSV 版应用实拍，展示使用合成订单。当前为规则与统计工具流程。<a href="assets/metricpilot.png" target="_blank" rel="noopener noreferrer">查看完整界面 ↗</a></figcaption>
             </figure>
           </div>
           <div class="workflow" data-workflow="metricpilot">
             <div class="workflow-tabs" role="tablist" aria-label="MetricPilot 关键流程">
-              <button type="button" role="tab" id="metricpilot-tab-0" aria-controls="metricpilot-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 口径澄清</button>
+              <button type="button" role="tab" id="metricpilot-tab-0" aria-controls="metricpilot-panel" aria-selected="true" tabindex="0" data-step="0"><span>01</span> 导入与口径</button>
               <button type="button" role="tab" id="metricpilot-tab-1" aria-controls="metricpilot-panel" aria-selected="false" tabindex="-1" data-step="1"><span>02</span> 只读查询</button>
               <button type="button" role="tab" id="metricpilot-tab-2" aria-controls="metricpilot-panel" aria-selected="false" tabindex="-1" data-step="2"><span>03</span> 结论追溯</button>
             </div>
-            <div class="workflow-panel" role="tabpanel" id="metricpilot-panel" aria-labelledby="metricpilot-tab-0" tabindex="0"><h4>先对齐问题，再计算数字。</h4><p>明确期间、分析维度与指标。净收入使用“毛收入 − 关联退款”；退款金额占比与退款订单占比分别保留分母，缺少信息时先澄清。</p><span class="workflow-detail">产品取舍：不把模糊期间或不同退款率静默解释成同一个问题。</span></div>
+            <div class="workflow-panel" role="tabpanel" id="metricpilot-panel" aria-labelledby="metricpilot-tab-0" tabindex="0"><h4>先把自己的订单表变成可分析的数据。</h4><p>预览订单 CSV、映射字段并检查数据质量，确认退款按原订单日还是发生日统计。问题与确认口径冲突时暂停查询，由用户统一。</p><span class="workflow-detail">产品取舍：让冲突先显现，避免带完整证据回答了错误的问题。</span></div>
           </div>
         </article>
 
@@ -129,9 +129,9 @@
             <div class="project-copy">
               <h3 id="climbai-title">ClimbAI<span>AI 攀岩训练助手</span></h3>
               <p class="project-thesis">让每一次训练，<br>成为下一次的依据。</p>
-              <p class="project-description">面向室内抱石初阶用户，把个人档案、知识来源、训练计划和反馈连接起来。画像显示依据，计划保留版本；训练结束与反馈提交分开记录，调整交由用户确认。</p>
+              <p class="project-description">面向室内抱石初阶用户，把个人档案、知识来源、训练计划和反馈连接起来。30 条知识由前后端共享，补齐术语、装备与场馆常见问题；计划调整交由用户确认。</p>
               <div class="project-tags"><span>ToC 个性化</span><span>Coach Agent</span><span>反馈闭环</span></div>
-              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="climbai">训练闭环 / 版本与引用 / 演示模式</span></p>
+              <p class="metric-line"><span class="metric-mark" aria-hidden="true"></span><span data-metric="climbai">30 条共享知识 · 50 条固定检索验收通过 · 规则演示</span></p>
               <div class="project-actions"><a class="button primary" href="climbai/">体验演示 <span aria-hidden="true">↗</span></a><a class="button secondary" data-case="climbai" data-doc-url="climbai" aria-haspopup="dialog" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer">展开案例 <span aria-hidden="true">↗</span></a><a class="text-link" data-doc-url="climbai" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档 <span aria-hidden="true">↗</span></a></div>
               <a class="source-link" data-repo-url="climbai" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/climbai" target="_blank" rel="noopener noreferrer">查看项目源码 <span aria-hidden="true">→</span></a>
             </div>

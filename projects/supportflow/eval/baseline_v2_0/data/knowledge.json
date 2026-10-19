@@ -1,0 +1,255 @@
+{
+  "product": "云桥协作（虚构 SaaS）",
+  "snapshot_date": "2026-10-13",
+  "notice": "所有公司、政策、数据均为作品集演示构造，不适用于真实服务。",
+  "documents": [
+    {
+      "id": "KB-001",
+      "title": "账户登录与密码重置",
+      "category": "access",
+      "version": "2.1",
+      "updated": "2026-09-18",
+      "active": true,
+      "keywords": [
+        "密码",
+        "登录",
+        "登入",
+        "忘记",
+        "重置",
+        "password",
+        "login",
+        "验证码",
+        "邮箱收不到"
+      ],
+      "statements": [
+        "在登录页选择“忘记密码”，使用账户绑定邮箱接收重置链接；链接有效期为 30 分钟。",
+        "若收不到邮件，请检查垃圾邮件和邮箱拼写；仍未收到时向客服提供账号邮箱与问题发生时间。",
+        "客服不会索取密码、完整验证码或访问令牌。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 账户登录与密码重置",
+      "region": "all",
+      "effective_from": "2026-09-18",
+      "effective_to": null
+    },
+    {
+      "id": "KB-002",
+      "title": "开票流程与处理时效",
+      "category": "invoice",
+      "version": "1.4",
+      "updated": "2026-09-10",
+      "active": true,
+      "keywords": [
+        "发票",
+        "开票",
+        "invoice",
+        "抬头",
+        "税号"
+      ],
+      "statements": [
+        "管理员可在“账单 → 已支付订单 → 申请发票”填写发票抬头与税号。",
+        "开票申请通常在 3 个工作日内处理；资料错误时需要更正后重新提交。",
+        "发票信息变更须由账单管理员操作，客服草稿不会代替账户权限校验。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 开票流程与处理时效",
+      "region": "all",
+      "effective_from": "2026-09-10",
+      "effective_to": null
+    },
+    {
+      "id": "KB-003",
+      "title": "大陆地区标准订阅退款规则",
+      "category": "refund",
+      "region": "mainland",
+      "version": "3.0",
+      "updated": "2026-10-01",
+      "active": true,
+      "keywords": [
+        "退款",
+        "退费",
+        "返款",
+        "refund",
+        "重复扣款"
+      ],
+      "statements": [
+        "大陆地区标准订阅可在首次付款后 7 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+        "重复扣款需提供订单号和扣款时间；请勿提交完整银行卡号。",
+        "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 大陆地区标准订阅退款规则",
+      "effective_from": "2026-10-01",
+      "effective_to": null
+    },
+    {
+      "id": "KB-004",
+      "title": "海外地区标准订阅退款规则",
+      "category": "refund",
+      "region": "overseas",
+      "version": "2.2",
+      "updated": "2026-10-01",
+      "active": true,
+      "keywords": [
+        "退款",
+        "退费",
+        "refund",
+        "重复扣款"
+      ],
+      "statements": [
+        "海外地区标准订阅可在首次付款后 14 个自然日内提交退款申请，审批结果由人工核验订单、合同及使用情况后决定。",
+        "企业定制合同的退款条件以已签署合同为准，需要转交客户经理核验。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 海外地区标准订阅退款规则",
+      "effective_from": "2026-10-01",
+      "effective_to": null
+    },
+    {
+      "id": "KB-005",
+      "title": "数据导出说明",
+      "category": "export",
+      "version": "2.0",
+      "updated": "2026-09-22",
+      "active": true,
+      "keywords": [
+        "导出",
+        "下载数据",
+        "备份",
+        "export",
+        "csv",
+        "导出失败"
+      ],
+      "statements": [
+        "工作区管理员可在“设置 → 数据 → 导出”创建 CSV 导出任务。",
+        "单次导出上限为 50,000 行；超过上限时请缩小日期范围并分批导出。",
+        "导出文件保留 24 小时；下载链接过期后需要重新创建任务。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 数据导出说明",
+      "region": "all",
+      "effective_from": "2026-09-22",
+      "effective_to": null
+    },
+    {
+      "id": "KB-006",
+      "title": "Webhook 失败重试",
+      "category": "webhook",
+      "version": "1.7",
+      "updated": "2026-09-25",
+      "active": true,
+      "keywords": [
+        "webhook",
+        "回调",
+        "重试",
+        "签名",
+        "推送失败",
+        "接口超时"
+      ],
+      "statements": [
+        "Webhook 接收端应在 5 秒内返回 HTTP 2xx；超时或非 2xx 响应触发重试。",
+        "失败后按 1、5、30 分钟间隔重试，最多重试 3 次；接收端应按事件 ID 去重。",
+        "签名密钥只能在管理员控制台重新生成；不要把密钥粘贴到客服工单。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / Webhook 失败重试",
+      "region": "all",
+      "effective_from": "2026-09-25",
+      "effective_to": null
+    },
+    {
+      "id": "KB-007",
+      "title": "开放 API 频率限制",
+      "category": "rate_limit",
+      "version": "1.3",
+      "updated": "2026-10-02",
+      "active": true,
+      "keywords": [
+        "429",
+        "限流",
+        "频率",
+        "rate limit",
+        "rate_limit",
+        "too many requests"
+      ],
+      "statements": [
+        "标准工作区 API 限制为每分钟 60 次请求；超出时返回 HTTP 429。",
+        "收到 HTTP 429 后按 Retry-After 响应头等待，并使用指数退避；提升额度需要人工评估。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 开放 API 频率限制",
+      "region": "all",
+      "effective_from": "2026-10-02",
+      "effective_to": null
+    },
+    {
+      "id": "KB-008",
+      "title": "取消续费与数据保留",
+      "category": "cancel",
+      "version": "2.3",
+      "updated": "2026-09-28",
+      "active": true,
+      "keywords": [
+        "取消续费",
+        "自动续费",
+        "停止续费",
+        "取消订阅",
+        "cancel",
+        "到期",
+        "保留",
+        "数据删除"
+      ],
+      "statements": [
+        "账单管理员可在“账单 → 订阅 → 取消自动续费”操作；取消后当前已付周期仍可使用。",
+        "标准订阅到期后数据保留 30 个自然日；到期前请导出需要保留的数据。",
+        "永久删除工作区属于高影响操作，需要管理员身份校验与二次确认。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 取消续费与数据保留",
+      "region": "all",
+      "effective_from": "2026-09-28",
+      "effective_to": null
+    },
+    {
+      "id": "KB-009",
+      "title": "服务故障与 SLA 说明",
+      "category": "sla",
+      "version": "1.1",
+      "updated": "2026-09-15",
+      "active": true,
+      "keywords": [
+        "故障",
+        "打不开",
+        "宕机",
+        "不可用",
+        "sla",
+        "赔偿",
+        "补偿",
+        "可用性"
+      ],
+      "statements": [
+        "客服应先收集工作区 ID、影响范围与故障开始时间，再由值班团队核查状态。",
+        "企业版 SLA 及补偿条件以合同为准；客服不得在未核验合同与故障记录时承诺赔偿。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 服务故障与 SLA 说明",
+      "region": "all",
+      "effective_from": "2026-09-15",
+      "effective_to": null
+    },
+    {
+      "id": "KB-010",
+      "title": "旧版统一退款政策（已归档）",
+      "category": "refund",
+      "version": "1.0",
+      "updated": "2025-01-03",
+      "active": false,
+      "keywords": [
+        "退款",
+        "退费",
+        "refund"
+      ],
+      "statements": [
+        "旧版统一订阅退款申请窗口为 30 天；本条已归档，不可作为当前回复依据。"
+      ],
+      "source": "合成资料：云桥协作客服政策手册 / 旧版统一退款政策（已归档）",
+      "region": "all",
+      "effective_from": "2025-01-03",
+      "effective_to": null
+    }
+  ],
+  "schema_version": 1,
+  "revision": 1,
+  "seed_revision": "synthetic-policy-2026-10-13"
+}

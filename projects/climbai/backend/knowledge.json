@@ -1,28 +1,919 @@
 {
-  "version": "demo-kb-1.0",
-  "review_status": "开发者整理的 Demo 示例库；专业教练审核待完成",
+  "version": "demo-kb-1.1",
+  "review_status": "开发者整理的 Demo 示例库；2026-10-15 核验外部参考链接，专业教练审核待完成",
   "knowledge": [
-    {"id":"K01","title":"脚点选择与落脚观察","summary":"先观察可用脚点，落脚后尽量保持稳定，再观察下一步移动。脚点选择应服务于平衡。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["脚","脚法","脚点","滑","footwork"],"tags":["footwork"]},
-    {"id":"K02","title":"身体位置与平衡","summary":"移动方向改变时，身体位置与脚的受力方向也需要配合；同一种站位并不适用于所有线路。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["身体","重心","平衡","姿势","body_position"],"tags":["body_position"]},
-    {"id":"K03","title":"观察线路与休息位置","summary":"攀爬时观察手脚点以及能够短暂休息的位置，有助于理解动作选择与能量使用。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["读线","路线","线路","观察","route_reading"],"tags":["route_reading"]},
-    {"id":"K04","title":"抱石入门与等级背景","summary":"抱石线路考察多种技术。等级可帮助描述线路背景，初学者也可以通过入门课程学习技巧。","url":"https://www.rei.com/learn/expert-advice/bouldering.html","source_type":"参考资料的中文摘要","keywords":["攀岩入门","攀岩等级","抱石","攀岩新手"],"tags":["consistency"]},
-    {"id":"K05","title":"训练复盘记录","summary":"Demo 建议每次记录时间、任务完成情况、主观难度与一个卡点；这些记录用于后续决策，不构成能力测量。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["记录","复盘","反馈","习惯","consistency"],"tags":["consistency"]},
-    {"id":"K06","title":"时间预算与内容缩减","summary":"Demo 按可用时间缩减任务数量，保留准备与复盘时间。示例时长用于展示约束校验，尚未经过效果验证。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["时间","分钟","安排","计划","预算"],"tags":["consistency","footwork","route_reading","body_position"]},
-    {"id":"K07","title":"单次反馈的不确定性","summary":"一次失败不足以认定能力下降。记录线路难度、疲劳与时间限制，有助于区分后续需要验证的假设。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["失败","难度","卡点","疲劳","调整"],"tags":["footwork","route_reading","body_position","consistency"]},
-    {"id":"K08","title":"现场指导与安全规则","summary":"图文说明不能替代实际指导。首次到馆应了解现场规则，并向工作人员学习适用的攀爬与安全方法。","url":"https://www.rei.com/learn/expert-advice/climbing-techniques.html","source_type":"参考资料的中文摘要","keywords":["安全","教练","岩馆","现场","准备"],"tags":["consistency"]},
-    {"id":"K09","title":"不适反馈的暂停规则","summary":"ClimbAI Demo 在出现疼痛或不适反馈后暂停攀爬建议；不生成诊断、用药或康复处方。重新训练前应寻求适当的专业意见。","url":null,"source_type":"ClimbAI 开发者自编产品边界","keywords":["疼","痛","不适","伤","恢复","诊断","药"],"tags":["safety"]},
-    {"id":"K10","title":"画像纠正与证据来源","summary":"初始画像源于自评。训练记录可增加事实观察，能力推断仍待验证；用户可纠正推断，历史版本保留。","url":null,"source_type":"ClimbAI 开发者自编 Demo 规则","keywords":["画像","依据","能力","证据","纠正"],"tags":["consistency"]}
+    {
+      "id": "K01",
+      "title": "脚点选择与落脚观察",
+      "summary": "先观察可用脚点，落脚后尽量保持稳定，再观察下一步移动。脚点选择应服务于平衡。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "脚点选择",
+        "脚法",
+        "落脚稳定",
+        "脚点滑落",
+        "踩点",
+        "footwork"
+      ],
+      "tags": [
+        "footwork"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Using Your Feet：脚点位置与稳定落脚。",
+      "applicability": "成年室内抱石初阶用户；图文说明不替代现场教学。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K02",
+      "title": "身体位置与平衡",
+      "summary": "移动方向改变时，身体位置与脚的受力方向也需要配合；同一种站位并不适用于所有线路。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "身体位置",
+        "重心",
+        "身体平衡",
+        "站位",
+        "body position"
+      ],
+      "tags": [
+        "body_position"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Maintaining Balance：受力方向与身体平衡。",
+      "applicability": "成年室内抱石初阶用户；图文说明不替代现场教学。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K03",
+      "title": "观察线路与休息位置",
+      "summary": "攀爬时观察手脚点以及能够短暂休息的位置，有助于理解动作选择与能量使用。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "读线",
+        "线路观察",
+        "休息位置",
+        "手脚点顺序",
+        "route reading"
+      ],
+      "tags": [
+        "route_reading"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Climbing Efficiently：观察可用岩点与休息位置。",
+      "applicability": "成年室内抱石初阶用户；图文说明不替代现场教学。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K04",
+      "title": "抱石入门与等级背景",
+      "summary": "抱石线路考察多种技术。等级可帮助描述线路背景，初学者也可以通过入门课程学习技巧。",
+      "url": "https://www.rei.com/learn/expert-advice/bouldering.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "攀岩入门",
+        "抱石入门",
+        "攀岩等级",
+        "抱石新手",
+        "bouldering"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "REI — How to Get Started Bouldering",
+      "last_verified": "2026-10-15",
+      "support_note": "Ratings / Classes：抱石等级背景与入门课程。",
+      "applicability": "成年室内抱石初阶用户；图文说明不替代现场教学。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K05",
+      "title": "训练复盘记录",
+      "summary": "Demo 建议每次记录时间、任务完成情况、主观难度与一个卡点；这些记录用于后续决策，不构成能力测量。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编 Demo 规则",
+      "keywords": [
+        "训练记录",
+        "训练复盘",
+        "反馈记录",
+        "记录习惯",
+        "consistency"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品规则，不构成外部专家结论或训练效果证据。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K06",
+      "title": "时间预算与内容缩减",
+      "summary": "Demo 按可用时间缩减任务数量，保留准备与复盘时间。示例时长用于展示约束校验，尚未经过效果验证。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编 Demo 规则",
+      "keywords": [
+        "时间预算",
+        "可用时间",
+        "计划时长",
+        "训练安排",
+        "缩减内容"
+      ],
+      "tags": [
+        "consistency",
+        "footwork",
+        "route_reading",
+        "body_position"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品规则，不构成外部专家结论或训练效果证据。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K07",
+      "title": "单次反馈的不确定性",
+      "summary": "一次失败不足以认定能力下降。记录线路难度、疲劳与时间限制，有助于区分后续需要验证的假设。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编 Demo 规则",
+      "keywords": [
+        "单次失败",
+        "未完成",
+        "训练难度",
+        "训练卡点",
+        "疲劳反馈",
+        "调整依据"
+      ],
+      "tags": [
+        "footwork",
+        "route_reading",
+        "body_position",
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品规则，不构成外部专家结论或训练效果证据。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K08",
+      "title": "现场指导与安全规则",
+      "summary": "图文说明不能替代实际指导。首次到馆应了解现场规则，并向工作人员学习适用的攀爬与安全方法。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "入馆安全",
+        "现场指导",
+        "岩馆规则",
+        "首次到馆",
+        "准备事项"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Safety note：图文不能替代实际教学；入馆规则提醒是适用限制。",
+      "applicability": "成年室内抱石初阶用户；图文说明不替代现场教学。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K09",
+      "title": "不适反馈的暂停规则",
+      "summary": "ClimbAI Demo 在出现疼痛或不适反馈后暂停攀爬建议；不生成诊断、用药或康复处方。重新训练前应寻求适当的专业意见。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品边界",
+      "keywords": [
+        "疼痛",
+        "不适反馈",
+        "受伤",
+        "恢复训练",
+        "伤病诊断",
+        "用药"
+      ],
+      "tags": [
+        "safety"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品规则，不构成外部专家结论或训练效果证据。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K10",
+      "title": "画像纠正与证据来源",
+      "summary": "初始画像源于自评。训练记录可增加事实观察，能力推断仍待验证；用户可纠正推断，历史版本保留。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编 Demo 规则",
+      "keywords": [
+        "能力画像",
+        "画像依据",
+        "能力判断",
+        "证据来源",
+        "纠正画像"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品规则，不构成外部专家结论或训练效果证据。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K11",
+      "title": "踩边与摩擦踏点术语",
+      "summary": "踩边（edging）借助鞋边接触脚点；摩擦踏点（smearing）利用鞋底与没有明显脚点的表面接触。两者描述不同落脚方式。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "踩边",
+        "edging",
+        "摩擦踏点",
+        "摩擦踩点",
+        "smearing",
+        "鞋边",
+        "鞋底摩擦"
+      ],
+      "tags": [
+        "footwork"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Using Your Feet：edging 与 smearing 的定义。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K12",
+      "title": "旗式与背步术语",
+      "summary": "旗式（flagging）通过四肢位置平衡身体；背步（back step）涉及鞋外侧与转体。术语帮助理解动作，不表示每条线路都适用。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-techniques.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "旗式",
+        "flagging",
+        "背步",
+        "back step",
+        "外侧踩点",
+        "身体摆动"
+      ],
+      "tags": [
+        "body_position"
+      ],
+      "source_title": "REI — Climbing Techniques and Moves",
+      "last_verified": "2026-10-15",
+      "support_note": "Climbing Moves：Flagging / Back Step；不转录动作教学步骤。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K13",
+      "title": "脚部支撑与手脚协同",
+      "summary": "攀爬不只是用手向上拉。脚的位置、摩擦和腿部支撑同样重要；观察动作时可同时留意手脚，而不只看手点。",
+      "url": "https://www.rei.com/learn/expert-advice/indoor-climbing.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "手脚协同",
+        "腿部支撑",
+        "只靠手拉",
+        "手臂很累",
+        "脚部支撑",
+        "用腿"
+      ],
+      "tags": [
+        "footwork",
+        "body_position"
+      ],
+      "source_title": "REI — Indoor (Gym) Climbing Basics",
+      "last_verified": "2026-10-15",
+      "support_note": "First-Time Climber Tips：腿部、脚的位置与摩擦。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K14",
+      "title": "大把点、捏点与圆滑点",
+      "summary": "大把点（jug）可容纳较完整的手部抓握；捏点（pinch）由拇指与其余手指相对用力；圆滑点（sloper）缺少明显的正向抓握边缘。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-holds.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "岩点术语",
+        "手点类型",
+        "大把点",
+        "jug",
+        "捏点",
+        "pinch",
+        "圆滑点",
+        "sloper"
+      ],
+      "tags": [
+        "route_reading"
+      ],
+      "source_title": "REI — How to Use Rock Climbing Holds",
+      "last_verified": "2026-10-15",
+      "support_note": "Types of Climbing Holds：Jug / Pinch / Sloper 的形状与名称。",
+      "applicability": "室内岩点识别；中文译名可能随岩馆习惯不同，不含抓握强度建议。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K15",
+      "title": "缓坡、垂直面与仰角",
+      "summary": "缓坡（slab）、垂直面（face）与仰角（overhang）描述不同壁型。认识壁型有助于描述线路背景，不能据此直接判定个人能力。",
+      "url": "https://www.rei.com/learn/expert-advice/bouldering.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "壁型",
+        "缓坡",
+        "slab",
+        "垂直面",
+        "face",
+        "仰角",
+        "overhang"
+      ],
+      "tags": [
+        "route_reading",
+        "body_position"
+      ],
+      "source_title": "REI — How to Get Started Bouldering",
+      "last_verified": "2026-10-15",
+      "support_note": "Common Bouldering Problems：Faces / Slabs / Overhangs；能力判断限制为产品边界。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K16",
+      "title": "地面读线的问题清单",
+      "summary": "Demo 建议在安全位置观察起终点、手脚点及可能顺序，把不确定动作变成请教问题。可用岩点与起终点以该馆标识和工作人员说明为准。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "读线清单",
+        "起点",
+        "终点",
+        "颜色标识",
+        "线路颜色",
+        "动作顺序",
+        "beta"
+      ],
+      "tags": [
+        "route_reading"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "开发者自编观察清单，不是比赛规则或通用岩馆用点规范。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K17",
+      "title": "V 与 Font 抱石等级",
+      "summary": "V 与 Font 是不同的抱石分级体系，Font 起源于法国枫丹白露。理解标注前先确认采用的体系，避免只比较数字。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-bouldering-rating.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "V等级",
+        "V 级",
+        "V scale",
+        "Font",
+        "枫丹白露等级",
+        "抱石分级",
+        "等级体系"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "REI — Climbing and Bouldering Rating Systems",
+      "last_verified": "2026-10-15",
+      "support_note": "Bouldering Ratings：两种分级体系；不提供固定最高等级或精确换算表。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K18",
+      "title": "岩馆等级差异与记录背景",
+      "summary": "等级具有地区与个人判断差异；换到新馆可询问当地标注习惯。同一数字不能脱离场地和线路风格理解。",
+      "url": "https://www.rei.com/learn/expert-advice/climbing-bouldering-rating.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "岩馆等级差异",
+        "跨馆比较",
+        "等级偏难",
+        "等级偏软",
+        "不同岩馆",
+        "换馆"
+      ],
+      "tags": [
+        "consistency",
+        "route_reading"
+      ],
+      "source_title": "REI — Climbing and Bouldering Rating Systems",
+      "last_verified": "2026-10-15",
+      "support_note": "How to Use Climbing Ratings：regional / personal / informational。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K19",
+      "title": "攀岩鞋合脚与基础选择",
+      "summary": "试穿不同鞋楦和尺码，关注贴合但不疼痛。同码不同品牌未必相同；初学者可优先了解较平直、舒适的鞋型。",
+      "url": "https://www.rei.com/learn/expert-advice/rock-shoes.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "攀岩鞋",
+        "岩鞋",
+        "鞋码",
+        "合脚",
+        "鞋楦",
+        "买鞋",
+        "neutral shoes"
+      ],
+      "tags": [
+        "equipment"
+      ],
+      "source_title": "REI — How to Choose Rock Climbing Shoes",
+      "last_verified": "2026-10-15",
+      "support_note": "Shoe Type / Fit Tips：neutral 类型、试穿、尺码差异与非疼痛贴合。",
+      "applicability": "成年初阶室内抱石的基础选鞋信息；不作品牌、价格或强制缩码推荐。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K20",
+      "title": "初次到馆的衣着与租用装备",
+      "summary": "先了解岩馆提供或出租哪些用品。衣着应便于活动且不易挂住岩点；首次体验可先确认租用选项，再决定个人装备。",
+      "url": "https://www.rei.com/learn/expert-advice/indoor-climbing.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "初次装备",
+        "租鞋",
+        "租用装备",
+        "攀岩衣服",
+        "衣着",
+        "装备准备"
+      ],
+      "tags": [
+        "equipment"
+      ],
+      "source_title": "REI — Indoor (Gym) Climbing Basics",
+      "last_verified": "2026-10-15",
+      "support_note": "Clothing and Gear：活动便利的衣着及先查询馆内租借。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K21",
+      "title": "落地区域保持净空",
+      "summary": "不要在攀爬者下方停留或穿行；潜在坠落区不放包、水瓶等物品。垫面不是等待、休息或玩耍的位置。",
+      "url": "https://www.alpenverein.de/artikel/bouldern-indoor-5-dav-empfehlungen_402d77e9-ab58-4992-a11c-01ad237601d7",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "落地区域",
+        "落地区",
+        "坠落区",
+        "垫子上坐",
+        "垫面",
+        "水瓶",
+        "背包"
+      ],
+      "tags": [
+        "safety",
+        "etiquette"
+      ],
+      "source_title": "DAV — Sicher Bouldern indoor",
+      "last_verified": "2026-10-15",
+      "support_note": "第2条 Sturzraum freihalten 与第5条 Matte ist kein Spielplatz。",
+      "applicability": "室内抱石的场地提醒；现场划定区域和工作人员要求优先。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K22",
+      "title": "相邻线路与等待位置",
+      "summary": "避免紧挨他人或在他人上方攀爬。开始前留意邻线与可能坠落范围；等待和休息应离开落地区域。",
+      "url": "https://www.alpenverein.de/artikel/bouldern-indoor-5-dav-empfehlungen_402d77e9-ab58-4992-a11c-01ad237601d7",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "相邻线路",
+        "交叉线路",
+        "排队",
+        "等待位置",
+        "轮流攀爬",
+        "共墙",
+        "岩馆礼仪"
+      ],
+      "tags": [
+        "etiquette",
+        "safety"
+      ],
+      "source_title": "DAV — Sicher Bouldern indoor",
+      "last_verified": "2026-10-15",
+      "support_note": "第2条：不在他人下方、不贴近或叠位攀爬、宽估落地区。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K23",
+      "title": "镁粉的用途与场馆限制",
+      "summary": "镁粉用于帮助保持手指和手掌干燥。使用前查看岩馆对粉类及使用位置的要求，不把辅助用品当作防滑保证。",
+      "url": "https://www.rei.com/learn/expert-advice/indoor-climbing.html",
+      "source_type": "官方摘要与开发者场馆提示",
+      "keywords": [
+        "镁粉",
+        "攀岩粉",
+        "chalk",
+        "粉袋",
+        "液体镁粉",
+        "场馆粉类规定"
+      ],
+      "tags": [
+        "equipment",
+        "etiquette"
+      ],
+      "source_title": "REI — Indoor (Gym) Climbing Basics",
+      "last_verified": "2026-10-15",
+      "support_note": "Chalk bag and chalk 支持干燥用途；场馆限制和不保证防滑为开发者适用提示。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K24",
+      "title": "新馆指导与图文边界",
+      "summary": "首次到馆先了解现场规则并接受适用指导。图文或视频不能替代实际教学，不确定的场地和安全问题直接询问工作人员。",
+      "url": "https://www.rei.com/learn/expert-advice/indoor-climbing.html",
+      "source_type": "官方资料中文简要摘要",
+      "keywords": [
+        "新馆指导",
+        "第一次到岩馆",
+        "入门课程",
+        "工作人员",
+        "安全教学",
+        "入馆须知"
+      ],
+      "tags": [
+        "safety",
+        "consistency"
+      ],
+      "source_title": "REI — Indoor (Gym) Climbing Basics",
+      "last_verified": "2026-10-15",
+      "support_note": "Safety note 支持实际指导不可由图文替代；现场规则提醒为产品适用限制。",
+      "applicability": "成年室内抱石初阶用户；仅解释概念，具体动作请现场指导。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K25",
+      "title": "训练完成与反馈分别记录",
+      "summary": "Demo 先保存结束训练事件，反馈可以随后补交；未提交反馈不等于没有训练。0 分钟记录为跳过，不记为已完成。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "结束训练",
+        "延后反馈",
+        "补交反馈",
+        "独立完成事件",
+        "零分钟",
+        "跳过训练"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编产品计数规则；对应完成事件、反馈状态与跳过状态。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K26",
+      "title": "复盘区分事实与解释",
+      "summary": "Demo 将实际时长、完成状态与用户原话作为记录，把对失败原因的解释保留为待验证假设。一次记录不足以给能力下结论。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "复盘事实",
+        "失败原因",
+        "事实与假设",
+        "用户原话",
+        "训练解释",
+        "复盘方法"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编记录与证据分层规则，不构成运动科学测量。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K27",
+      "title": "时间减少后的计划调整",
+      "summary": "Demo 在时间减少时更新可用预算，展示缩减项并由用户确认；调整面向后续安排，原始训练记录与历史版本保留。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "时间减少",
+        "时间不够",
+        "只有二十分钟",
+        "缩减计划",
+        "改时间",
+        "改期",
+        "加班"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编计划约束与版本规则；示例时长不代表有效训练剂量。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K28",
+      "title": "保持原计划也是一种决定",
+      "summary": "Demo 允许接受修改或保持原计划；证据不足时不强制加难度。用户选择与计划版本共同保留，便于回看调整依据。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "保持原计划",
+        "拒绝调整",
+        "接受调整",
+        "不想改计划",
+        "计划确认",
+        "调整依据"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编用户确认规则，不证明哪类调整更有效。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K29",
+      "title": "对比记录先看上下文",
+      "summary": "Demo 建议比较记录前先核对岩馆、等级体系、任务、可用时间与主观状态。差异可作为追问线索，不直接换算能力分数。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "对比记录",
+        "训练上下文",
+        "进步判断",
+        "能力分数",
+        "跨次比较",
+        "记录差异"
+      ],
+      "tags": [
+        "consistency"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编记录核对清单，不声称具有测量或因果推断效力。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    },
+    {
+      "id": "K30",
+      "title": "示例知识范围与资料不足",
+      "summary": "本库限于成年室内初阶抱石的基础概念、记录和演示流程。资料不足时说明不足，不补造动作、强度、伤病结论或来源。",
+      "url": null,
+      "source_type": "ClimbAI 开发者自编产品规则",
+      "keywords": [
+        "资料不足",
+        "库外问题",
+        "知识范围",
+        "示例知识",
+        "缺少来源",
+        "训练处方"
+      ],
+      "tags": [
+        "consistency",
+        "safety"
+      ],
+      "source_title": "ClimbAI 开发者产品规则",
+      "last_verified": "2026-10-15",
+      "support_note": "自编回答范围；未验证专业训练效果，教练审核待完成。",
+      "applicability": "ClimbAI 演示流程与记录规则；不作为训练处方。",
+      "review_status": "开发者整理；专业教练审核待完成"
+    }
   ],
   "exercises": [
-    {"id":"E01","title":"到馆准备与轻松适应","focus":"preparation","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":10,"max_minutes":15,"steps":["确认岩馆规则和落地区域，首次训练请工作人员指导。","按现场教学完成准备，在本人能轻松完成的线路上逐步适应。"],"citation_ids":["K08"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E02","title":"脚点观察练习","focus":"footwork","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选本人能轻松完成的线路，先从地面观察脚点。","攀爬时留意落脚是否稳定，结束后记一个具体观察。","每次尝试间按需要休息，不追求连续次数。"],"citation_ids":["K01","K07"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E03","title":"读线与实际动作对照","focus":"route_reading","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["在轻松线路下先描述可能的手脚点顺序。","正常攀爬，比较实际动作与预想哪里不同。","记录一个判断变化；不确定时向现场教练请教。"],"citation_ids":["K03","K07"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E04","title":"轻松线路的身体位置观察","focus":"body_position","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选择舒适且熟悉的线路。","留意不同脚点下身体是否稳定，不强行尝试复杂动作。","记录一个站位变化，必要时请教现场教练。"],"citation_ids":["K02"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E05","title":"熟悉线路与规律练习","focus":"consistency","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":15,"max_minutes":25,"steps":["选择熟悉且本人舒适的线路。","按本人状态练习与休息，记录到馆和完成情况。","不将等级或尝试次数当作必须完成的任务。"],"citation_ids":["K04","K05"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E06","title":"同一线路的观察对比","focus":"footwork","requires":["climbing_wall","mat"],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["在舒适线路上比较前后两次的脚点选择。","只记录差异，不根据单次滑落判断能力。","出现疲劳或不适时结束。"],"citation_ids":["K01","K07"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E07","title":"地面线路观察","focus":"route_reading","requires":["climbing_wall"],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["站在安全位置观察一条线路。","标记可能的手脚点与休息位置。","将不确定的动作作为请教问题，不在落地区域停留。"],"citation_ids":["K03","K08"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E08","title":"尝试间休息与状态检查","focus":"rest","requires":[],"min_minutes":5,"default_minutes":10,"max_minutes":25,"steps":["离开落地区域，按需要休息。","检查疲劳与不适情况，感觉异常时结束本次训练。"],"citation_ids":["K06","K09"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E09","title":"一分钟训练复盘","focus":"review","requires":[],"min_minutes":2,"default_minutes":5,"max_minutes":10,"steps":["记录实际时长、完成状态与主观难度。","补充一个卡点与是否不适，查看下一次调整建议。"],"citation_ids":["K05","K07"],"review_status":"Demo 示例，专业审核待完成"},
-    {"id":"E10","title":"训练目标与记录整理","focus":"consistency","requires":[],"min_minutes":5,"default_minutes":10,"max_minutes":20,"steps":["查看已有训练记录，选一个下次想观察的问题。","确认时间与场地限制；缺少合适场地时只整理目标。"],"citation_ids":["K05","K06"],"review_status":"Demo 示例，专业审核待完成"}
+    {
+      "id": "E01",
+      "title": "到馆准备与轻松适应",
+      "focus": "preparation",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 10,
+      "max_minutes": 15,
+      "steps": [
+        "确认岩馆规则和落地区域，首次训练请工作人员指导。",
+        "按现场教学完成准备，在本人能轻松完成的线路上逐步适应。"
+      ],
+      "citation_ids": [
+        "K08"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E02",
+      "title": "脚点观察练习",
+      "focus": "footwork",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 15,
+      "max_minutes": 25,
+      "steps": [
+        "选本人能轻松完成的线路，先从地面观察脚点。",
+        "攀爬时留意落脚是否稳定，结束后记一个具体观察。",
+        "每次尝试间按需要休息，不追求连续次数。"
+      ],
+      "citation_ids": [
+        "K01",
+        "K07"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E03",
+      "title": "读线与实际动作对照",
+      "focus": "route_reading",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 15,
+      "max_minutes": 25,
+      "steps": [
+        "在轻松线路下先描述可能的手脚点顺序。",
+        "正常攀爬，比较实际动作与预想哪里不同。",
+        "记录一个判断变化；不确定时向现场教练请教。"
+      ],
+      "citation_ids": [
+        "K03",
+        "K07"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E04",
+      "title": "轻松线路的身体位置观察",
+      "focus": "body_position",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 15,
+      "max_minutes": 25,
+      "steps": [
+        "选择舒适且熟悉的线路。",
+        "留意不同脚点下身体是否稳定，不强行尝试复杂动作。",
+        "记录一个站位变化，必要时请教现场教练。"
+      ],
+      "citation_ids": [
+        "K02"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E05",
+      "title": "熟悉线路与规律练习",
+      "focus": "consistency",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 15,
+      "max_minutes": 25,
+      "steps": [
+        "选择熟悉且本人舒适的线路。",
+        "按本人状态练习与休息，记录到馆和完成情况。",
+        "不将等级或尝试次数当作必须完成的任务。"
+      ],
+      "citation_ids": [
+        "K04",
+        "K05"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E06",
+      "title": "同一线路的观察对比",
+      "focus": "footwork",
+      "requires": [
+        "climbing_wall",
+        "mat"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 10,
+      "max_minutes": 20,
+      "steps": [
+        "在舒适线路上比较前后两次的脚点选择。",
+        "只记录差异，不根据单次滑落判断能力。",
+        "出现疲劳或不适时结束。"
+      ],
+      "citation_ids": [
+        "K01",
+        "K07"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E07",
+      "title": "地面线路观察",
+      "focus": "route_reading",
+      "requires": [
+        "climbing_wall"
+      ],
+      "min_minutes": 5,
+      "default_minutes": 10,
+      "max_minutes": 20,
+      "steps": [
+        "站在安全位置观察一条线路。",
+        "标记可能的手脚点与休息位置。",
+        "将不确定的动作作为请教问题，不在落地区域停留。"
+      ],
+      "citation_ids": [
+        "K03",
+        "K08"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E08",
+      "title": "尝试间休息与状态检查",
+      "focus": "rest",
+      "requires": [],
+      "min_minutes": 5,
+      "default_minutes": 10,
+      "max_minutes": 25,
+      "steps": [
+        "离开落地区域，按需要休息。",
+        "检查疲劳与不适情况，感觉异常时结束本次训练。"
+      ],
+      "citation_ids": [
+        "K06",
+        "K09"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E09",
+      "title": "一分钟训练复盘",
+      "focus": "review",
+      "requires": [],
+      "min_minutes": 2,
+      "default_minutes": 5,
+      "max_minutes": 10,
+      "steps": [
+        "记录实际时长、完成状态与主观难度。",
+        "补充一个卡点与是否不适，查看下一次调整建议。"
+      ],
+      "citation_ids": [
+        "K05",
+        "K07"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    },
+    {
+      "id": "E10",
+      "title": "训练目标与记录整理",
+      "focus": "consistency",
+      "requires": [],
+      "min_minutes": 5,
+      "default_minutes": 10,
+      "max_minutes": 20,
+      "steps": [
+        "查看已有训练记录，选一个下次想观察的问题。",
+        "确认时间与场地限制；缺少合适场地时只整理目标。"
+      ],
+      "citation_ids": [
+        "K05",
+        "K06"
+      ],
+      "review_status": "Demo 示例，专业审核待完成"
+    }
   ]
 }

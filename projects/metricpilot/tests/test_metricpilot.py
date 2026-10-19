@@ -14,7 +14,7 @@ from urllib.error import HTTPError
 from urllib.request import Request,urlopen
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import app
+import legacy as app  # Archived synthetic-v1 regression; v2 is tested separately.
 
 
 class FixtureCase(unittest.TestCase):

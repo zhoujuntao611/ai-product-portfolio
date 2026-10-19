@@ -6,6 +6,7 @@
 
 ## 产品能力
 
+- 共享知识库 demo-kb-1.1：30 个知识条目、7 个官方参考页面；浏览器演示与后端读取同一份内容，支持主题入口、来源与适用条件查看。
 - 八个产品视图：今日、建档目标、能力画像、周计划、训练记录、反馈报告、知识助手、个人历史。
 - 画像分开呈现事实、自评、假设和证据充分度，支持纠正。
 - 一周计划及当次训练卡，展示时长、理由、来源、步骤和停止条件。
@@ -114,6 +115,8 @@ Windows 请将 `python` 替换成 `.\.venv\Scripts\python.exe`，或先激活虚
 - [八页与关键流程](docs/FLOWS.md)
 - [架构与 API](docs/ARCHITECTURE.md)
 - [知识来源及边界](docs/KNOWLEDGE.md)
+- [逐源核验记录](docs/SOURCES.md)
+- [微信小程序迁移建议](docs/MINIPROGRAM.md)
 - [真实工程验证与未完成验证](docs/VALIDATION.md)
 - [访谈、对照与试用计划](docs/RESEARCH_PLAN.md)
 - [简历表达与演示脚本](docs/PORTFOLIO.md)

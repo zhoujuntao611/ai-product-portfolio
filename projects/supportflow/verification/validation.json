@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-18",
+  "engine": "supportflow-v2.0",
+  "dataset": "supportflow.questions.v2.0",
+  "engineering_tests": {
+    "passed": 109,
+    "total": 109,
+    "log": "engineering-tests.txt"
+  },
+  "fixed_synthetic_comparison": {
+    "baseline_passed": 33,
+    "improved_passed": 60,
+    "total": 60,
+    "report": "../eval/comparison_v2.json"
+  },
+  "original_regression": {
+    "passed": 31,
+    "total": 31
+  },
+  "browser": {
+    "passed": 11,
+    "total": 11,
+    "report": "browser-report.json",
+    "viewports": [
+      1440,
+      390
+    ]
+  },
+  "real_model_calls": 0,
+  "code_hashes": {
+    "core.py": "01b937212419deb8ac8b722058136299964def18f6c17e12ece8e390a4b25be8",
+    "knowledge.py": "d247cd127cee4a23b11f12fe31c6121ef013b6c58e5159ad86ba6d43c2175ce1",
+    "evaluate.py": "676439de895ed81b8d25c35439afc0cb7a88ee80caa96b65a90df3f2d93355d2",
+    "data/retrieval_config.json": "e274155c50b2d3624f9c0b661421ddeef7da7336d45dab13fbdeb8e2e65dd15f",
+    "eval/cases.json": "cbc0fe98f16108e480903ee78e58e086f8f1c32335c1cd3af5c761d992c4de61",
+    "eval/challenge_cases_v2.json": "4637f4c0ceb3f94eb30738511b9d289b5d052c1a650344477243c6acf36175bf",
+    "eval/fixtures_v2.json": "41353eafb34dc892bff7981af89af0df0bb49f8d5ec0bcd6b28eec199ead0b48",
+    "eval/baseline_v1_core.py": "0d89f0e46060b028c951ccc5cf114a24e4fbedebb3b5d214d398da81b33db4da",
+    "eval/baseline_v1_knowledge.json": "6247bf29110cb47584f514fdcf00be326ca7fa0af3a5b70028b95058d4c87d29"
+  }
+}

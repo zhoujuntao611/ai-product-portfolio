@@ -1,0 +1,25 @@
+{
+  "documents": [
+    {
+      "id": "CUSTOM-001",
+      "title": "示例：项目空间归档政策",
+      "category": "archive",
+      "source": "合成资料：示例客服政策手册 / 归档章节（请替换为自己的授权资料来源）",
+      "region": "all",
+      "version": "1.0",
+      "updated": "2026-10-18",
+      "active": true,
+      "effective_from": "2026-10-18",
+      "effective_to": null,
+      "keywords": [
+        "归档",
+        "归档空间",
+        "archive"
+      ],
+      "statements": [
+        "此为合成政策样例：工作区管理员可在项目空间设置中申请归档。",
+        "归档后的项目空间只读；恢复访问需要管理员核验。"
+      ]
+    }
+  ]
+}

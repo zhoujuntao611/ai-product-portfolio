@@ -1,0 +1,404 @@
+{
+  "version": "supportflow.questions.v2.0",
+  "provenance": "Synthetic acceptance questions. Expectations specified before comparison; used during development, not a blind test.",
+  "cases": [
+    {
+      "id": "S01",
+      "scenario": "同义：报销凭证",
+      "ticket": "报销凭证在哪里开具？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "账单 → 已支付订单"
+      ]
+    },
+    {
+      "id": "S02",
+      "scenario": "同义：钱退回来",
+      "ticket": "中国大陆工作区的钱能退回来吗？",
+      "region": "mainland",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "7 个自然日"
+      ]
+    },
+    {
+      "id": "S03",
+      "scenario": "同义：请求太密集",
+      "ticket": "请求太密集被拦住了，应该怎么处理？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-007"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "Retry-After"
+      ]
+    },
+    {
+      "id": "S04",
+      "scenario": "同义：账号进不去",
+      "ticket": "我登不进去账号，应该怎么找回口令？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-001"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "忘记密码"
+      ]
+    },
+    {
+      "id": "S05",
+      "scenario": "同义：关闭下月扣费",
+      "ticket": "如何关掉下个月扣款？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-008"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "取消自动续费"
+      ]
+    },
+    {
+      "id": "S06",
+      "scenario": "同义：取出表格",
+      "ticket": "请问如何把表格拉出来？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "50,000 行"
+      ]
+    },
+    {
+      "id": "M01",
+      "scenario": "两个同义主题",
+      "ticket": "报销凭证在哪里开具？接口被节流之后应该如何处理？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-002",
+        "KB-007"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "3 个工作日",
+        "指数退避"
+      ]
+    },
+    {
+      "id": "M02",
+      "scenario": "已知与未知能力",
+      "ticket": "发票如何申请？另外产品是否支持离线编辑？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    },
+    {
+      "id": "M03",
+      "scenario": "相邻主题不代表支持新能力",
+      "ticket": "发票如何申请？另外是否支持单点登录？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-002",
+        "KB-001"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    },
+    {
+      "id": "M04",
+      "scenario": "五个问题不能被全局top4截断",
+      "ticket": "发票申请在哪里？CSV 导出最多多少行？Webhook 失败会重试几次？API 频率限制是多少？登录密码如何重置？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-001",
+        "KB-002",
+        "KB-005",
+        "KB-006",
+        "KB-007"
+      ],
+      "fixture": "default",
+      "required_fragments": [
+        "3 个工作日",
+        "50,000 行",
+        "最多重试 3 次",
+        "每分钟 60 次",
+        "30 分钟"
+      ]
+    },
+    {
+      "id": "R01",
+      "scenario": "同一正文多地区",
+      "ticket": "中国大陆和海外工作区的退款条件分别是什么？",
+      "region": "mainland",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-003"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    },
+    {
+      "id": "R02",
+      "scenario": "自导区域政策先确认地区",
+      "ticket": "电子收据在哪里下载？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "REGIONAL"
+      ],
+      "fixture": "regional",
+      "expect_no_claims": true
+    },
+    {
+      "id": "R03",
+      "scenario": "自导区域政策已确认",
+      "ticket": "电子收据在哪里下载？",
+      "region": "mainland",
+      "expected_status": "ready",
+      "expected_sources": [
+        "REGIONAL"
+      ],
+      "fixture": "regional",
+      "required_fragments": [
+        "账单 → 收据"
+      ]
+    },
+    {
+      "id": "P01",
+      "scenario": "同scope有效数值冲突",
+      "ticket": "中国大陆标准订阅退款窗口是多少天？",
+      "region": "mainland",
+      "expected_status": "conflict",
+      "expected_sources": [
+        "KB-003",
+        "CONFLICT-REFUND"
+      ],
+      "fixture": "refund_conflict",
+      "expect_no_claims": true
+    },
+    {
+      "id": "P02",
+      "scenario": "已失效政策不能使用",
+      "ticket": "冷存如何申请？",
+      "region": "unknown",
+      "expected_status": "unknown",
+      "expected_sources": [],
+      "fixture": "expiry",
+      "expect_no_claims": true
+    },
+    {
+      "id": "P03",
+      "scenario": "未来生效政策不能使用",
+      "ticket": "冷存如何申请？",
+      "region": "unknown",
+      "expected_status": "unknown",
+      "expected_sources": [],
+      "fixture": "scheduled",
+      "expect_no_claims": true
+    },
+    {
+      "id": "P04",
+      "scenario": "用户自导新主题",
+      "ticket": "磁带封存如何申请？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "CUSTOM"
+      ],
+      "fixture": "custom",
+      "required_fragments": [
+        "设置 → 磁带封存"
+      ]
+    },
+    {
+      "id": "P05",
+      "scenario": "独立数值事项不能误判冲突",
+      "ticket": "导出文件保留多久？",
+      "region": "unknown",
+      "expected_status": "ready",
+      "expected_sources": [
+        "KB-005",
+        "EXPORT-TASK"
+      ],
+      "fixture": "export_complement",
+      "required_fragments": [
+        "24 小时"
+      ]
+    },
+    {
+      "id": "P06",
+      "scenario": "秒级响应政策冲突",
+      "ticket": "Webhook 接收端应在多少秒内返回？",
+      "region": "unknown",
+      "expected_status": "conflict",
+      "expected_sources": [
+        "KB-006",
+        "HOOK-NEW"
+      ],
+      "fixture": "webhook_conflict",
+      "expect_no_claims": true
+    },
+    {
+      "id": "P07",
+      "scenario": "中文数值政策冲突",
+      "ticket": "备份文件可以保留多久？",
+      "region": "unknown",
+      "expected_status": "conflict",
+      "expected_sources": [
+        "RET-A",
+        "RET-B"
+      ],
+      "fixture": "numeric_words",
+      "expect_no_claims": true
+    },
+    {
+      "id": "P08",
+      "scenario": "同一操作许可冲突",
+      "ticket": "普通成员可以下载归档文件吗？",
+      "region": "unknown",
+      "expected_status": "conflict",
+      "expected_sources": [
+        "ALLOW",
+        "DENY"
+      ],
+      "fixture": "permission",
+      "expect_no_claims": true
+    },
+    {
+      "id": "E01",
+      "scenario": "引用存在但数值维度错",
+      "ticket": "导出文件的下载链接多久过期？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true,
+      "selector_ids": [
+        "KB-005:2"
+      ]
+    },
+    {
+      "id": "E02",
+      "scenario": "模型漏选第二个问题",
+      "ticket": "发票在哪里申请？CSV 导出上限是多少行？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-002",
+        "KB-005"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true,
+      "selector_ids": [
+        "KB-002:1"
+      ]
+    },
+    {
+      "id": "E03",
+      "scenario": "时效问题引用入口不支持",
+      "ticket": "申请发票后什么时候能拿到？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true,
+      "selector_ids": [
+        "KB-002:1"
+      ]
+    },
+    {
+      "id": "E04",
+      "scenario": "单句两个维度不能只答其一",
+      "ticket": "CSV 导出单次上限和下载链接有效期分别是多少？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true,
+      "selector_ids": [
+        "KB-005:3"
+      ]
+    },
+    {
+      "id": "E05",
+      "scenario": "独立限制不能遗漏",
+      "ticket": "归档如何申请且有什么限制？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "LIMIT"
+      ],
+      "fixture": "condition",
+      "expect_no_claims": true,
+      "selector_ids": [
+        "LIMIT:1"
+      ]
+    },
+    {
+      "id": "U01",
+      "scenario": "命中发票主题不代表支持纸质邮寄",
+      "ticket": "发票可以邮寄纸质版吗？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-002"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    },
+    {
+      "id": "U02",
+      "scenario": "命中导出主题不代表包含已删除记录",
+      "ticket": "导出数据是否包含已删除记录？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    },
+    {
+      "id": "U03",
+      "scenario": "命中CSV主题不代表支持恢复误删数据",
+      "ticket": "CSV导出如何恢复误删的数据？",
+      "region": "unknown",
+      "expected_status": "needs_context",
+      "expected_sources": [
+        "KB-005"
+      ],
+      "fixture": "default",
+      "expect_no_claims": true
+    }
+  ]
+}

@@ -21,16 +21,24 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: SupportFlow synthetic regression
         working-directory: projects/supportflow
-        run: python evaluate.py
+        run: |
+          python evaluate.py
+          python verification/review_regression.py
       - name: MetricPilot offline checks
         working-directory: projects/metricpilot
-        run: python evaluate.py
+        run: |
+          python evaluate.py
+          python evaluate_tasks.py
+          python verification/replay_20261019.py
       - name: Install ClimbAI backend dependencies
         working-directory: projects/climbai
         run: python -m pip install -r requirements.txt
       - name: ClimbAI backend checks
         working-directory: projects/climbai
         run: python -m pytest tests/backend -q
+      - name: ClimbAI knowledge acceptance
+        working-directory: projects/climbai
+        run: python -m backend.evaluate_knowledge --output verification/knowledge-retrieval-ci.json
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

@@ -1,10 +1,11 @@
 {
   "project": "SupportFlow",
-  "evaluated_at_utc": "2026-10-13T04:06:45+00:00",
+  "evaluated_at_utc": "2026-10-19T05:30:53+00:00",
   "mode": "offline_rule_engine",
   "real_model_calls": 0,
   "dataset": "Manually specified synthetic regression cases; authored alongside the implementation; not held-out user traffic",
-  "knowledge_snapshot": "2026-10-13",
+  "knowledge_snapshot": "2026-10-18",
+  "engine_version": "supportflow-v2.1",
   "case_count": 31,
   "passed_count": 31,
   "metrics": {
@@ -21,8 +22,8 @@
       "denominator": 20
     },
     "offline_latency_ms": {
-      "median": 0.03,
-      "max": 1.57
+      "median": 1.08,
+      "max": 5.44
     }
   },
   "limitations": [
@@ -47,7 +48,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 1.57,
+      "latency_ms": 5.44,
       "passed": true,
       "failures": []
     },
@@ -66,7 +67,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.05,
+      "latency_ms": 2.11,
       "passed": true,
       "failures": []
     },
@@ -85,7 +86,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.05,
+      "latency_ms": 0.95,
       "passed": true,
       "failures": []
     },
@@ -104,7 +105,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.04,
+      "latency_ms": 1.08,
       "passed": true,
       "failures": []
     },
@@ -123,7 +124,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.18,
+      "latency_ms": 1.35,
       "passed": true,
       "failures": []
     },
@@ -142,7 +143,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 2,
-      "latency_ms": 0.03,
+      "latency_ms": 0.89,
       "passed": true,
       "failures": []
     },
@@ -161,7 +162,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 0.84,
       "passed": true,
       "failures": []
     },
@@ -180,7 +181,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 2,
-      "latency_ms": 0.03,
+      "latency_ms": 1.43,
       "passed": true,
       "failures": []
     },
@@ -201,7 +202,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.03,
+      "latency_ms": 0.92,
       "passed": true,
       "failures": []
     },
@@ -220,7 +221,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.03,
+      "latency_ms": 0.89,
       "passed": true,
       "failures": []
     },
@@ -239,7 +240,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.03,
+      "latency_ms": 0.68,
       "passed": true,
       "failures": []
     },
@@ -258,7 +259,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 1.06,
       "passed": true,
       "failures": []
     },
@@ -277,7 +278,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 1.45,
       "passed": true,
       "failures": []
     },
@@ -296,7 +297,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 1.39,
       "passed": true,
       "failures": []
     },
@@ -315,7 +316,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 1.18,
       "passed": true,
       "failures": []
     },
@@ -334,7 +335,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 0.84,
       "passed": true,
       "failures": []
     },
@@ -353,7 +354,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 2,
-      "latency_ms": 0.03,
+      "latency_ms": 1.29,
       "passed": true,
       "failures": []
     },
@@ -372,7 +373,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 2,
-      "latency_ms": 0.04,
+      "latency_ms": 0.83,
       "passed": true,
       "failures": []
     },
@@ -391,7 +392,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.03,
+      "latency_ms": 1.15,
       "passed": true,
       "failures": []
     },
@@ -410,7 +411,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.04,
+      "latency_ms": 1.06,
       "passed": true,
       "failures": []
     },
@@ -429,7 +430,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 2,
-      "latency_ms": 0.03,
+      "latency_ms": 1.11,
       "passed": true,
       "failures": []
     },
@@ -444,7 +445,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.03,
+      "latency_ms": 0.96,
       "passed": true,
       "failures": []
     },
@@ -463,7 +464,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.03,
+      "latency_ms": 1.25,
       "passed": true,
       "failures": []
     },
@@ -482,7 +483,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.02,
+      "latency_ms": 1.11,
       "passed": true,
       "failures": []
     },
@@ -501,7 +502,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.02,
+      "latency_ms": 1.01,
       "passed": true,
       "failures": []
     },
@@ -520,7 +521,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.02,
+      "latency_ms": 0.92,
       "passed": true,
       "failures": []
     },
@@ -535,7 +536,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.02,
+      "latency_ms": 0.8,
       "passed": true,
       "failures": []
     },
@@ -554,7 +555,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.02,
+      "latency_ms": 0.7,
       "passed": true,
       "failures": []
     },
@@ -575,7 +576,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 6,
-      "latency_ms": 0.04,
+      "latency_ms": 1.2,
       "passed": true,
       "failures": []
     },
@@ -594,7 +595,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 3,
-      "latency_ms": 0.04,
+      "latency_ms": 1.34,
       "passed": true,
       "failures": []
     },
@@ -613,7 +614,7 @@
       "source_exact_match": true,
       "claim_source_integrity": true,
       "claim_count": 0,
-      "latency_ms": 0.05,
+      "latency_ms": 1.42,
       "passed": true,
       "failures": []
     }

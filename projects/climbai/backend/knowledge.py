@@ -7,8 +7,91 @@ import os
 import subprocess
 import sys
 import threading
+import unicodedata
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 from pathlib import Path
+
+
+RETRIEVAL_RULES = json.loads(Path(__file__).with_name("retrieval_rules.json").read_text(encoding="utf-8"))
+
+
+def normalize_text(text: str) -> str:
+    return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", text).casefold()).strip()
+
+
+def contains_term(text: str, term: str) -> bool:
+    """Chinese phrases may be embedded; English words must not match substrings."""
+    if re.fullmatch(r"[a-z0-9_ -]+", term):
+        return re.search(r"(?<![a-z0-9_])" + re.escape(term) + r"(?![a-z0-9_])", text) is not None
+    return term in text
+
+
+GENERIC_TERMS = {normalize_text(x) for x in RETRIEVAL_RULES["generic_terms"]}
+ALIAS_GROUPS = [set(map(normalize_text, group)) for group in RETRIEVAL_RULES["alias_groups"]]
+TERM_GROUPS = {term: index for index, group in enumerate(ALIAS_GROUPS) for term in group}
+
+
+def is_medical_query(query: str) -> bool:
+    """Conservative knowledge-answer boundary, not medical classification.
+
+    Keep the existing feedback/pause detector separate: an English substring
+    such as 'pain' inside 'painting' must not fabricate a medical citation.
+    """
+    text = normalize_text(query)
+    for phrase in RETRIEVAL_RULES["medical_negations"]:
+        normalized = normalize_text(phrase)
+        if re.fullmatch(r"[a-z ]+", normalized):
+            text = re.sub(r"(?<![a-z0-9_])" + re.escape(normalized) + r"(?![a-z0-9_])", "", text)
+        else:
+            text = text.replace(normalized, "")
+    text = re.sub(r"(^|[，。；、\s])不疼(?=$|[，。；、\s])", r"\1", text)
+    return any(contains_term(text, normalize_text(term)) for term in RETRIEVAL_RULES["medical_terms"])
+
+
+def lexical_scores(query: str, items: list[dict]) -> dict[str, float]:
+    """Eligible lexical evidence only; character-hash proximity is a tie-break.
+
+    A synonym group contributes its best match once. General words such as
+    '计划' cannot by themselves turn unrelated questions into grounded answers.
+    """
+    text = normalize_text(query)
+    if any(contains_term(text, normalize_text(term)) for term in RETRIEVAL_RULES["excluded_context_terms"]):
+        return {}
+    numeric_minutes = re.search(r"\d+\s*(?:分钟|minutes?\b|mins?\b)", text) is not None
+    active_groups = {index for index, group in enumerate(ALIAS_GROUPS)
+                     if any(term not in GENERIC_TERMS and contains_term(text, term) for term in group)}
+    if numeric_minutes:
+        active_groups.add(TERM_GROUPS["时间预算"])
+    rows = []
+    for item in items:
+        concepts = {}
+        generic = set()
+        title = normalize_text(item["title"])
+        for raw in item["keywords"]:
+            term = normalize_text(raw)
+            # Single Chinese characters ('脚', '伤') are too broad to be evidence.
+            if len(term) < 2:
+                continue
+            direct = contains_term(text, term)
+            group = TERM_GROUPS.get(term)
+            alias = group is not None and group in active_groups
+            if not direct and not alias:
+                continue
+            if term in GENERIC_TERMS:
+                if direct:
+                    generic.add(term)
+                continue
+            concept = ("alias", group) if group is not None else ("term", term)
+            score = 3 + min(len(term), 12) / 12 if direct else 1.5
+            if direct and contains_term(title, term):
+                score += 2
+            concepts[concept] = max(concepts.get(concept, 0), score)
+        rows.append((item["id"], concepts, generic))
+    contextual = any(contains_term(text, normalize_text(term)) for term in RETRIEVAL_RULES["context_terms"])
+    contextual = contextual or numeric_minutes
+    allow_generic = contextual or any(concepts for _, concepts, _ in rows)
+    return {item_id: sum(concepts.values()) + (len(generic) * .5 if allow_generic else 0)
+            for item_id, concepts, generic in rows if concepts or (allow_generic and generic)}
 
 
 def hash_embedding(text: str, dimensions: int = 256) -> list[float]:
@@ -74,12 +157,21 @@ class KnowledgeBase:
 
     def citation(self, item_id: str) -> dict:
         item = self.items[item_id]
-        return {key: item[key] for key in ("id","title","url","summary","source_type")}
+        citation = {key: item[key] for key in ("id","title","url","summary","source_type")}
+        for key in ("source_title","last_verified","support_note","applicability","review_status"):
+            if key in item:
+                citation[key] = item[key]
+        return citation
 
     def search(self, query: str, limit: int = 3) -> list[dict]:
-        query_lower = query.lower()
-        # Keyword eligibility prevents nearest-neighbor noise from masquerading as evidence.
-        candidates = [x for x in self.items.values() if any(k.lower() in query_lower for k in x["keywords"])]
+        if limit <= 0 or not query.strip():
+            return []
+        # Out-of-scope health questions retrieve only the existing product boundary,
+        # never a technique whose overlapping words could imply treatment support.
+        if is_medical_query(query):
+            return [self.citation("K09")]
+        scores = lexical_scores(query, list(self.items.values()))
+        candidates = [self.items[item_id] for item_id in scores]
         if not candidates:
             return []
         vector = hash_embedding(query)
@@ -97,11 +189,10 @@ class KnowledgeBase:
                         self.close();self.backend="local_hash_demo"
                         self.index_warning="Chroma查询失败；已明确降级为本地字符哈希Demo检索"
         def score(item):
-            overlap = sum(1 for k in item["keywords"] if k.lower() in query_lower)
             similarity = ranks.get(item["id"])
             if similarity is None:
                 doc = item["title"] + item["summary"] + " ".join(item["keywords"])
                 similarity = sum(a*b for a,b in zip(vector,hash_embedding(doc)))
-            return overlap + similarity
+            return scores[item["id"]], similarity
         candidates.sort(key=score,reverse=True)
         return [self.citation(x["id"]) for x in candidates[:limit]]

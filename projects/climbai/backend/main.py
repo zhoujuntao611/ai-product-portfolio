@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from .coach import Coach, FOCUS
-from .knowledge import KnowledgeBase
+from .knowledge import KnowledgeBase, is_medical_query
 from .models import CompleteInput, FeedbackInput, GenerateInput, ProfileInput, QuestionInput, ResetInput, VersionInput
 from .provider import ModelProvider, ProviderError, is_pain
 from .store import Store, empty_state, now
@@ -275,7 +275,7 @@ def create_app(db_path: str | None = None, chroma_path: str | None = None) -> Fa
         started=time.monotonic()
         citations=kb.search(body.question)
         insufficient=not citations
-        if is_pain(body.question):
+        if is_medical_query(body.question):
             answer="当前助手无法进行伤病诊断、用药或康复指导。若训练中出现疼痛或不适，请停止相关训练并寻求适当的专业意见。"
             citations=[kb.citation("K09")];insufficient=True;used_provider="demo"
         elif insufficient:

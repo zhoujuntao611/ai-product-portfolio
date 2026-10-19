@@ -1,28 +1,30 @@
 # 周俊涛 AI 产品作品集
 
-面向 AI 应用／Agent 产品经理实习的三个可运行作品：客服知识审核、业务数据分析与 ToC 攀岩训练反馈。项目于 2026 年 10 月由 AI 协作搭建，默认使用规则引擎与合成数据。产品文档、交互、错误状态、测试和评测记录均随代码提供。
+面向 AI 应用／Agent 产品经理实习的三个可运行作品：客服知识审核、订单 CSV 分析与 ToC 攀岩训练反馈。项目于 2026 年 10 月由 AI 协作搭建，默认使用规则引擎，展示与验收使用合成数据。SupportFlow 可导入结构化政策，MetricPilot 可导入订单 CSV，ClimbAI 提供浏览器演示。产品文档、交互、错误状态、测试和评测记录均随代码提供。
 
 **[个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/)** · **[ClimbAI 在线演示](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/)** · [SupportFlow 源码](projects/supportflow) · [MetricPilot 源码](projects/metricpilot) · [ClimbAI 源码](projects/climbai)
 
+**[三项目迭代证据索引（2026-10-19）](docs/ITERATION_EVIDENCE_20261019.md)**：从具体失败、备选方案和修改，追到冻结基线及逐题结果。所有通过数均为开发验收，不代表真人成功率或真实模型准确率。
+
 ## SupportFlow 智能客服工单助手
 
-从客户问题到有效政策、逐条引用草稿和人工审核。支持地区冲突澄清、知识未覆盖停止作答、高影响请求转人工、版本查看、SQLite 状态与审核记录、Markdown 导出。
+从政策导入到有效知识、逐条引用草稿和人工审核。支持来源、地区、有效期与版本治理；政策更新拦截旧稿，批准、驳回与转人工均保存编辑稿和原因，并可导出问题样例。
 
-关键取舍是先保证依据可检查，再改善措辞；本版不会自动发送或办理退款。默认是关键词检索与原文摘录；可选模型只选择已有证据编号。
+具体问题：用“7 天内申请退款”回答“退款多久会到账”，虽有引用却不支持所问事项。选择同义扩展与逐问题 BM25 检索，并在实际选中条款上检查事项、周期和覆盖；资料不足就澄清。本版不自动发送或办理退款，可选模型只选择已有证据编号，真实供应商模型尚未实测。
 
 ![SupportFlow 工作区](docs/assets/supportflow.png)
 
-[产品需求](projects/supportflow/docs/PRD.md) · [评测方法](projects/supportflow/docs/EVALUATION.md) · [31 条合成回归的实际结果](projects/supportflow/eval_report.json)
+[产品需求](projects/supportflow/docs/PRD.md) · [评测方法](projects/supportflow/docs/EVALUATION.md) · [迭代与取舍](projects/supportflow/docs/ITERATION_EVIDENCE.md) · [本轮同 26 题：14 → 26 通过](projects/supportflow/verification/review-comparison-v2.1.json) · [此前同 60 题：33 → 60 通过](projects/supportflow/eval/comparison_v2.json)
 
-## MetricPilot 业务数据分析 Agent
+## MetricPilot 订单 CSV 分析助手
 
-把限定范围的业务问题转成明确口径、只读查询和有引用的报告。支持产品／渠道／期间比较、含糊条件澄清、原始结果与 SQL 核查、运行追踪、历史回看和 Markdown／JSON 导出。
+把订单 CSV 导入、字段映射、质量检查、口径确认、受约束统计和证据报告连接起来。报告保存源文件指纹、源行号、SQL 参数及查询编号，可复核并导出。问题范围受限，遇到不支持的期间、条件和分母先澄清。
 
-关键取舍是使用受约束的统计工具，保证期间、指标与数据访问边界；它不能回答任意 SQL 或把变化解释为因果。可选模型通过 Tool Calling 选择已确认范围内的查询，最终数字来自查询结果。
+具体问题：界面确认原订单日，问题却要求退款发生日，仍静默生成订单日口径结果。同一手算样例两种口径分别为 30 元与 120 元。比较自动覆盖与冲突先确认后，选择冲突时零查询；同时修复混合期间截断和未知分母替换。本版使用规则解析与受约束统计，当前 CSV 入口没有外部模型调用，不能称为已验证真实 LLM Agent。不能运行任意 SQL 或推断经营因果。
 
 ![MetricPilot 工作区](docs/assets/metricpilot.png)
 
-[产品需求](projects/metricpilot/docs/PRD.md) · [指标与数据定义](projects/metricpilot/docs/DATASET.md) · [评测方法](projects/metricpilot/docs/EVALUATION.md) · [72 项离线检查的实际结果](projects/metricpilot/eval_report.json)
+[产品需求](projects/metricpilot/docs/PRD.md) · [指标定义](projects/metricpilot/docs/METRICS.md) · [迭代与取舍](projects/metricpilot/docs/ITERATION-20261019.md) · [修复前 11/22](projects/metricpilot/verification/20261019-before.json) · [修复后 22/22](projects/metricpilot/verification/20261019-after.json) · [CSV 版工程报告](projects/metricpilot/docs/eval_report.json)
 
 ## ClimbAI AI 攀岩训练助手
 
@@ -30,9 +32,11 @@
 
 关键取舍是先建立可执行、可回查的训练闭环。未测量的能力保留未知；计划保留版本；训练结束与反馈提交分别保存；用户可以接受调整或保持原计划。知识回答附来源，出现不适暂停相关训练推荐。首版没有视频动作纠错。
 
+知识版本 `demo-kb-1.1` 将原后端 10 条知识扩充为前后端共享的 30 条，保留原 10 个练习模板。18 条带外部参考，12 条为自编产品规则；外部参考来自已核验的 7 个官方页面。条目明确来源、支持范围、适用条件和待教练审核状态，未新增训练强度或负荷处方。
+
 ![ClimbAI 工作区](docs/assets/climbai.png)
 
-[在线体验](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/) · [产品需求](projects/climbai/docs/PRD.md) · [源码与运行说明](projects/climbai)
+[在线体验](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/) · [产品需求](projects/climbai/docs/PRD.md) · [知识治理与来源](projects/climbai/docs/KNOWLEDGE.md) · [50 条固定检索逐题结果](projects/climbai/verification/knowledge-retrieval-20261015.json) · [源码与运行说明](projects/climbai)
 
 在线体验是可交互浏览器演示，使用本地规则与示例数据，记录保存在当前浏览器。它不调用远程 LLM，也不连接常驻后端。下载源码后可运行 FastAPI、SQLite 和知识检索后端，可选接入 LLM API；真实供应商模型效果尚未实测。真实用户洞察与训练效果均有待验证。
 
@@ -86,10 +90,10 @@ npm run dev
 
 ## 已验证结果与范围
 
-- SupportFlow：31/31 条合成工单回归与 32 项工程测试通过。引用一致性检查覆盖有事实条目的案例；数据集与实现一同编写，不是独立盲测。
-- MetricPilot：72/72 项离线检查通过。其中 23 项数值／业务、14 项澄清输入、16 项 SQL 防护／资源、11 项本地模型协议模拟、8 项 HTTP 边界；不是 72 次真实模型业务任务。
-- SupportFlow 与 MetricPilot 已完成桌面与 390px 手机宽度的浏览器交互检查，包含正常任务、异常分支、证据查看、记录与导出。记录见 [浏览器检查](verification/browser-qa.json)。
-- ClimbAI：35/35 项后端测试、32 个浏览器场景及 1 个直接 HTTP 回归通过，包含画像依据、时间约束、知识引用、独立完成、反馈与版本。结果见 [验证记录](projects/climbai/docs/VALIDATION.md)。合成用例只能验证已覆盖流程，不能证明运动效果或留存提升。
+- SupportFlow：118/118 工程检查通过；本轮同 26 条审阅回归 14/26 → 26/26，此前冻结关键词基线与完整新版流程同 60 题对照 33/60 → 60/60，未做 BM25 单项消融；原有 31 条回归保持通过。[完整分母与原始结果](projects/supportflow/docs/ITERATION_EVIDENCE.md)。
+- MetricPilot：当前 CSV 版 90/90 工程检查、24/24 固定业务任务通过；本轮同 22 项验收 11/22 → 首次修复 17/22 → 最终 22/22。旧版 72 项另列，不代表新版业务效果；上述任务有重叠，不能相加扩大独立样本数。[完整记录](projects/metricpilot/docs/ITERATION-20261019.md)。
+- SupportFlow 与 MetricPilot 的 10 月 19 日本机浏览器验收分别完成原流程 11/11、12/12，专项各 9/9；原始报告入口见各项目迭代记录。均为自动化流程，不是用户人数。[版本汇总](verification/iteration-20261019.json)。
+- ClimbAI：10 月 15 日知识扩充记录为 116 项后端检查通过，其中已包含 50/50 固定检索题；另有 14 项定向浏览器验收通过。扩充回归没有安装或重新验证原生 Chroma，也未调用真实模型。[验证记录及原始报告](projects/climbai/docs/VALIDATION.md)。历史 10 月 14 日工程与浏览器记录单列，不能当作本轮重验。
 - **真实供应商模型调用、真实用户测试与商业上线均未完成。** 尚无采纳率、节省工时或真实模型准确率；它们需要单独采集证据。
 
 个人主页展示项目案例，ClimbAI 提供明确标注的可交互浏览器演示。Python 应用在本机运行；GitHub Pages 不承担 Python 后端服务。截图、规则演示和可选模型接口分别说明，不将离线规则通过率解释为模型效果。
@@ -105,6 +109,7 @@ python evaluate.py
 ```bash
 cd projects/metricpilot
 python evaluate.py
+python evaluate_tasks.py
 ```
 
 ```bash

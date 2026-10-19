@@ -2,7 +2,7 @@ export type Focus = 'footwork' | 'route_reading' | 'consistency' | 'body_positio
 export type ProviderMode = 'demo' | 'api';
 export type Page = 'today' | 'onboarding' | 'profile' | 'plan' | 'training' | 'report' | 'knowledge' | 'account';
 
-export interface Citation { id: string; title: string; url?: string | null; summary: string; source_type?: string }
+export interface Citation { id: string; title: string; url?: string | null; summary: string; source_type?: string; source_title?: string; last_verified?: string; support_note?: string; applicability?: string; review_status?: string }
 export interface Dimension { key: string; label: string; observation: string; hypothesis: string; evidence_ids: string[]; evidence_level: string; next_step: string; correction?: string }
 export interface ProfileInput { nickname: string; experience_months: number; grade: string; grade_system: string; gym: string; sessions_per_week: number; available_minutes: number; equipment: string[]; goal: string; focus: Focus; recent_pain: boolean; adult_confirmed: boolean }
 export interface Profile extends ProfileInput { version: number; created_at?: string; dimensions: Dimension[]; facts: string[]; missing_fields: string[]; constraints: string[] }
@@ -15,7 +15,8 @@ export interface Report { id: string; session_id: string; log_id?: string; creat
 export interface Answer { id?: string; question?: string; answer: string; citations: Citation[]; provider: string; insufficient_evidence: boolean; run_id?: string; created_at?: string }
 export interface Run { id: string; workflow: string; provider: string; nodes: (string | { node: string; status: string; summary: string; duration_ms: number; tool_calls: unknown[] })[]; status: string; created_at: string; duration_ms?: number; model_calls?: number }
 export interface AnalyticsEvent { id: string; type: string; created_at: string; session_id?: string; plan_version?: number }
-export interface AppState { profile: Profile | null; goal?: unknown; profile_versions: Profile[]; current_plan: Plan | null; current_plan_id: string | null; plans: Plan[]; sessions: PlannedSession[]; logs: TrainingLog[]; reports: Report[]; answers: Answer[]; runs: Run[]; paused: boolean; engine: string; knowledge_meta?: unknown; configuration_warning?: string; events?: AnalyticsEvent[] }
+export interface KnowledgeMeta { version: string; review_status: string; knowledge_count: number; exercise_count: number; retrieval?: string; reference_page_count?: number; index_warning?: string | null }
+export interface AppState { profile: Profile | null; goal?: unknown; profile_versions: Profile[]; current_plan: Plan | null; current_plan_id: string | null; plans: Plan[]; sessions: PlannedSession[]; logs: TrainingLog[]; reports: Report[]; answers: Answer[]; runs: Run[]; paused: boolean; engine: string; knowledge_meta?: KnowledgeMeta; configuration_warning?: string; events?: AnalyticsEvent[] }
 export interface Provider {
   getState(): Promise<AppState>;
   saveProfile(profile: ProfileInput): Promise<AppState>;

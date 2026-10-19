@@ -1,0 +1,79 @@
+{
+  "version": "lexical-intent-v2.0",
+  "method": "synonym expansion + per-question BM25 ranking + metadata gates",
+  "aliases": {
+    "access": [
+      "登不进去",
+      "进不了账号",
+      "登不上",
+      "进不去账户",
+      "口令找回",
+      "找回口令",
+      "重设口令",
+      "reset credentials",
+      "sign in",
+      "sign-in"
+    ],
+    "invoice": [
+      "账单凭证",
+      "报销凭证",
+      "付款凭证",
+      "开具票据",
+      "报销票据",
+      "billing receipt",
+      "tax receipt"
+    ],
+    "refund": [
+      "钱能退回来",
+      "钱退回来",
+      "退钱规则",
+      "退订退钱",
+      "money back",
+      "money-back",
+      "return my payment"
+    ],
+    "export": [
+      "把表格拉出来",
+      "把记录拷出来",
+      "取出数据",
+      "取出记录",
+      "拉取全部记录",
+      "数据搬出来",
+      "导出",
+      "下载链接过期"
+    ],
+    "webhook": [
+      "事件通知失败",
+      "事件通知没送到",
+      "事件回推",
+      "回调接口"
+    ],
+    "rate_limit": [
+      "请求太密集",
+      "请求过于频繁",
+      "请求太频繁",
+      "调用太快",
+      "接口被节流",
+      "请求配额",
+      "请求额度",
+      "throttled",
+      "throttling"
+    ],
+    "cancel": [
+      "不再扣钱",
+      "下月别扣费",
+      "停止扣钱",
+      "关掉下个月扣款",
+      "关闭下月扣费",
+      "停止下月扣费",
+      "到期后数据"
+    ],
+    "sla": [
+      "服务中断",
+      "服务瘫痪",
+      "服务挂了",
+      "系统崩了",
+      "service outage"
+    ]
+  }
+}

@@ -1,3 +1,28 @@
 * text=auto
 *.cmd -text
 *.png -text
+
+# Evidence hashes original bytes; keep inputs identical on Windows and Linux.
+projects/supportflow/core.py -text
+projects/supportflow/server.py -text
+projects/supportflow/knowledge.py -text
+projects/supportflow/evaluate.py -text
+projects/supportflow/data/retrieval_config.json -text
+projects/supportflow/eval/cases.json -text
+projects/supportflow/eval/challenge_cases_v2.json -text
+projects/supportflow/eval/fixtures_v2.json -text
+projects/supportflow/eval/review_cases_v2_1.json -text
+projects/supportflow/eval/baseline_v1_core.py -text
+projects/supportflow/eval/baseline_v1_knowledge.json -text
+projects/supportflow/eval/baseline_v2_0/core.py -text
+projects/supportflow/eval/baseline_v2_0/server.py -text
+projects/supportflow/eval/baseline_v2_0/knowledge.py -text
+projects/supportflow/eval/baseline_v2_0/data/knowledge.json -text
+projects/supportflow/eval/baseline_v2_0/data/retrieval_config.json -text
+projects/supportflow/verification/review_regression.py -text
+projects/metricpilot/analytics.py -text
+projects/metricpilot/orders_import.py -text
+projects/metricpilot/tests/fixtures/hand-check-orders.csv -text
+projects/metricpilot/verification/baselines/analytics-v2-before-20261019.py -text
+projects/metricpilot/verification/baselines/analytics-v2-first-fix-20261019.py -text
+projects/metricpilot/verification/baselines/orders-import-v2-before-20261019.py -text
