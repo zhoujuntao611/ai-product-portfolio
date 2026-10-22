@@ -1,0 +1,32 @@
+[
+  {
+    "ids": [
+      "osm-node-4583629247",
+      "kilter-22029742"
+    ],
+    "name": "GoNature Climbing Gym",
+    "city": "香港",
+    "status": "reported-closed-unconfirmed-primary",
+    "reason": "两个独立页面标为已结业/永久关闭，但尚无经营者一手公告。与厂家旧名录冲突，默认目录暂时隐藏，原始来源保留，待核实后可恢复。",
+    "sourceUrl": "https://www.school-god.com/en/item/detail/gonature",
+    "sources": [
+      "https://www.tripadvisor.co.uk/Attraction_Review-g294217-d6940158-Reviews-GoNature_Climbing_Gym-Hong_Kong.html"
+    ],
+    "checkedAt": "2026-10-21"
+  },
+  {
+    "ids": [
+      "kilter-22029877"
+    ],
+    "name": "原岩攀岩館（A19店）",
+    "city": "桃园",
+    "status": "conflicting-source-needs-review",
+    "reason": "厂家旧地址与经营者当前分店列表冲突；官网中壢店仅写城市、开放待定；社交公告镜像称2026-08-31结束。暂隐藏旧地址，未将镜像当作一手永久停业证明。",
+    "sourceUrl": "https://tupclimbing.tw/branch",
+    "sources": [
+      "https://tupclimbing.tw/branch/zhongli",
+      "https://www.localgymsandfitness.com/TW/Zhongli-District/102883368729744/原岩攀岩館-A19店-T-UP-Climbing-A19"
+    ],
+    "checkedAt": "2026-10-21"
+  }
+]

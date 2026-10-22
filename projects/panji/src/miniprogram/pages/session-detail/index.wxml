@@ -1,0 +1,45 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="notice">正在翻开这次训练…</view><view wx:if="{{error}}" class="error-box">{{error}}<button class="link" bindtap="reload">重试</button></view>
+  <block wx:if="{{session && !error}}">
+    <view class="row between"><view class="eyebrow">{{session.sessionDate}}</view><button class="link" bindtap="edit">编辑</button></view>
+    <view class="page-title detail-title">{{session.gymSnapshot.name}}</view><view class="row wrap detail-meta"><text class="badge">{{session.durationMinutes === null ? '时长未填写' : session.durationMinutes + ' 分钟'}}</text><text wx:if="{{session.perceivedEffort}}" class="badge warm">强度 {{session.perceivedEffort}} / 10</text><text class="tiny">{{session.gymSnapshot.gradeSystem}}</text></view>
+    <view wx:if="{{session.trainingNotes || session.feeling}}" class="card session-notes spaced"><view wx:if="{{session.trainingNotes}}" class="body-copy">{{session.trainingNotes}}</view><view wx:if="{{session.feeling}}" class="feeling-copy">感受 · {{session.feeling}}</view></view>
+    <view class="row between section-title"><text>每一次尝试 <text class="tiny">{{attempts.length ? attempts.length + ' 次' : ''}}</text></text><button class="link" bindtap="addAttempt">＋ 添加</button></view>
+    <view wx:if="{{!attempts.length && !formOpen}}" class="card attempt-empty"><view class="muted">从第一条线路开始。</view><button class="secondary small" bindtap="addAttempt">记录尝试</button></view>
+    <view wx:if="{{formOpen}}" class="card attempt-form" id="attempt-form">
+      <view class="row between"><view class="card-title">{{editAttempt ? '修改尝试' : '记录一次尝试'}}</view><button class="link" bindtap="closeForm" disabled="{{busy}}">取消</button></view>
+      <view class="form-columns"><view class="grow"><view class="label">线路标识 *</view><input class="input" value="{{attempt.routeLabel}}" data-field="routeLabel" bindinput="field" maxlength="80" placeholder="蓝线 / 3 号线" /></view><view class="grade-field"><view class="label">难度原标签</view><input class="input" value="{{attempt.gradeLabel}}" data-field="gradeLabel" bindinput="field" maxlength="30" placeholder="V2 / 蓝色" /></view></view>
+      <view wx:if="{{recentGrades.length}}" class="recent-grades"><text class="tiny">本馆常用</text><view class="chips"><view wx:for="{{recentGrades}}" wx:key="*this" class="chip {{attempt.gradeLabel === item ? 'active' : ''}}" data-value="{{item}}" bindtap="grade">{{item}}</view></view></view>
+      <view class="row between project-field-head"><text class="label">线路项目 <text class="tiny">· 选填</text></text><button class="link" bindtap="projects">管理项目</button></view><picker range="{{projectOptions}}" range-key="label" value="{{projectIndex}}" bindchange="selectProject"><view class="picker project-picker">{{projectOptions[projectIndex].label}} <text class="tiny">▾</text></view></picker><button wx:if="{{!attempt.projectId}}" class="link create-project" bindtap="createProject" disabled="{{busy}}">将这条线加入项目，方便下次继续</button>
+      <view class="label">本次结果</view><view class="chips result-options"><view class="chip {{attempt.result === 'completed' ? 'active' : ''}}" data-value="completed" bindtap="result">完成</view><view class="chip {{attempt.result === 'failed' ? 'active' : ''}}" data-value="failed" bindtap="result">未完成</view><view class="chip {{attempt.result === 'unknown' ? 'active' : ''}}" data-value="unknown" bindtap="result">未知</view></view>
+      <button class="fold-row" bindtap="toggleAttemptNotes"><text>{{attempt.notes ? '尝试备注' : '补充一句备注'}} <text class="tiny">· 选填</text></text><text class="fold-symbol">{{attemptNotesOpen ? '−' : '＋'}}</text></button><textarea wx:if="{{attemptNotesOpen}}" class="textarea attempt-notes" value="{{attempt.notes}}" data-field="notes" bindinput="field" maxlength="1000" placeholder="动作、感受或想回看的地方" />
+      <view class="actions"><button class="outline" bindtap="saveAttempt" loading="{{busy}}" disabled="{{busy}}">保存</button><button class="primary" bindtap="saveAndContinue" disabled="{{busy}}">保存并继续</button></view>
+    </view>
+    <view wx:for="{{attempts}}" wx:key="_id" class="card attempt-card">
+      <view class="row"><view class="attempt-number">{{item.ordinal}}</view><view class="grow"><view class="card-title">{{item.routeLabel}}</view><view class="muted">{{item.gradeLabel || '未填难度'}} · {{item.gradeSystem}}</view></view><text class="badge {{item.result === 'failed' ? 'warm' : ''}}">{{item.resultLabel}}</text></view>
+      <view wx:if="{{item.notes}}" class="body-copy spaced">{{item.notes}}</view><view wx:if="{{item.linkedProjectId}}" class="project-tag" data-id="{{item.linkedProjectId}}" bindtap="openProject">↗ {{item.projectLabel}} · 查看项目</view>
+      <view wx:if="{{item.clips.length}}" class="inline-clips">
+        <view wx:for="{{item.clips}}" wx:for-item="clip" wx:key="_id" class="inline-clip">
+          <video wx:if="{{clip.url}}" class="inline-video" id="{{clip.playerId}}" data-id="{{clip._id}}" src="{{clip.url}}" controls autoplay="{{false}}" show-center-play-btn enable-progress-gesture object-fit="contain" bindplay="inlinePlay" binderror="inlineError" />
+          <view wx:elif="{{clip.loading}}" class="inline-placeholder">正在准备视频…</view>
+          <view wx:else class="inline-placeholder inline-error"><text>{{clip.error}}</text><button class="link" bindtap="reload">重试播放</button></view>
+          <view class="inline-meta"><text class="tiny">{{clip.durationLabel}}{{item.clips.length > 1 ? ' · 第 ' + (index + 1) + ' 段' : ''}}</text><button class="link inline-tools" data-id="{{clip._id}}" bindtap="videos">慢放 / 标记 →</button></view>
+        </view>
+      </view>
+      <view class="attempt-actions"><button class="link" data-id="{{item._id}}" bindtap="editAttempt">编辑</button><button class="link" data-id="{{item._id}}" bindtap="video" disabled="{{uploading}}">＋ 视频</button><button class="link remove-link" data-id="{{item._id}}" bindtap="deleteAttempt">删除</button></view>
+    </view>
+    <view class="row between section-title"><text>{{sessionClips.length ? '本次训练的视频' : '补充视频'}}</text><button wx:if="{{videoCount}}" class="link" bindtap="videos">全部 {{videoCount}} 段 →</button></view>
+    <view class="card video-panel">
+      <view wx:if="{{sessionClips.length}}" class="tiny session-clips-hint">还未指定线路，可在视频库关联</view>
+      <view wx:for="{{sessionClips}}" wx:for-item="clip" wx:key="_id" class="inline-clip session-clip">
+        <video wx:if="{{clip.url}}" class="inline-video" id="{{clip.playerId}}" data-id="{{clip._id}}" src="{{clip.url}}" controls autoplay="{{false}}" show-center-play-btn enable-progress-gesture object-fit="contain" bindplay="inlinePlay" binderror="inlineError" />
+        <view wx:elif="{{clip.loading}}" class="inline-placeholder">正在准备视频…</view>
+        <view wx:else class="inline-placeholder inline-error"><text>{{clip.error}}</text><button class="link" bindtap="reload">重试播放</button></view>
+        <view class="inline-meta"><text class="tiny">{{clip.durationLabel}}</text><button class="link inline-tools" data-id="{{clip._id}}" bindtap="videos">慢放 / 标记 →</button></view>
+      </view>
+      <view class="row between"><view><view class="card-title">留住这次尝试</view><view class="tiny">{{videoLimitLabel}}</view></view></view><view wx:if="{{uploading}}" class="notice">正在保存 {{progress}}% · 请保持前台</view><button class="secondary full-width spaced" bindtap="video" loading="{{uploading}}" disabled="{{uploading}}">＋ 导入视频</button><view class="hint">仅当前设备，换机或清缓存可能丢失，请保留原片。</view>
+    </view>
+    <view wx:if="{{goals.length}}" class="section-title">核对上次的小目标</view><view wx:for="{{goals}}" wx:key="_id" class="card goal-panel"><view class="body-copy">{{item.text}}</view><button class="outline small spaced" data-id="{{item._id}}" bindtap="followup">用本次训练核对</button></view>
+    <button class="primary full-width spaced" bindtap="review">训练复盘 →</button><button class="link remove-training" bindtap="remove">删除这次训练</button>
+  </block>
+</view><privacy-consent />

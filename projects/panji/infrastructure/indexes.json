@@ -1,0 +1,8 @@
+{
+  "note": "在文档数据库模式创建；所有集合拒绝客户端直连。若环境不是文档数据库模式，停止部署并调整适配器。",
+  "collections": ["pj_accounts", "pj_gyms", "pj_sessions", "pj_attempts", "pj_videos", "pj_reviews", "pj_goals"],
+  "indexes": [
+    { "collections": ["pj_gyms", "pj_sessions", "pj_attempts", "pj_videos", "pj_reviews", "pj_goals"], "fields": { "ownerId": 1, "_id": 1 } },
+    { "collection": "pj_accounts", "fields": { "maintenance": 1, "nextMaintenanceAt": 1 } }
+  ]
+}

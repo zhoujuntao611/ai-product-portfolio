@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-22",
+  "base_commit": "e4806624cb5d0d78fc5fb99cdfef9d67240b462f",
+  "scope": "Offline checks on isolated checkout after copying the 2026-10-19 model-practice changes; no live model evaluation rerun. Historical 2026-10-19 reports retained unchanged.",
+  "real_model_calls": 0,
+  "supportflow": {
+    "engineering": {
+      "passed": 123,
+      "total": 123
+    },
+    "original_regression": {
+      "passed": 31,
+      "total": 31
+    },
+    "baseline_regression": {
+      "passed": 33,
+      "total": 60
+    },
+    "improved_regression": {
+      "passed": 60,
+      "total": 60
+    },
+    "review_baseline": {
+      "passed": 14,
+      "total": 26
+    },
+    "review_improved": {
+      "passed": 26,
+      "total": 26
+    },
+    "commands": [
+      "python -m unittest discover -s tests -v",
+      "python evaluate.py",
+      "python verification/review_regression.py"
+    ]
+  },
+  "metricpilot": {
+    "engineering": {
+      "passed": 162,
+      "total": 162
+    },
+    "csv_tasks": {
+      "passed": 24,
+      "total": 24
+    },
+    "iteration_replay": {
+      "passed": 22,
+      "total": 22
+    },
+    "commands": [
+      "python -m unittest discover -s tests -v",
+      "python evaluate.py",
+      "python evaluate_tasks.py",
+      "python verification/replay_20261019.py"
+    ]
+  },
+  "climbai": {
+    "backend": {
+      "passed": 116,
+      "total": 116
+    },
+    "knowledge_retrieval": {
+      "passed": 50,
+      "total": 50
+    },
+    "commands": [
+      "python -m pytest tests/backend -q",
+      "python -m backend.evaluate_knowledge --output verification/knowledge-retrieval-20261022.json"
+    ],
+    "environment": "Existing ClimbAI Python 3.11 environment; no package installation"
+  },
+  "implementation_sha256": {
+    "projects/supportflow/core.py": "09bfd59f38c90988fe0423285d26734f2abd02f42015ed5efd60a2e2e844bb8f",
+    "projects/climbai/backend/provider.py": "2cf04345b0834dd17959e49028173f856becdf6badfdf84f9d4c8bf5c9a7112a"
+  },
+  "note": "Counts overlap across suites and should not be added as unique task samples.",
+  "publication_notes": [
+    "Personal local path prefixes in two historical MetricPilot text logs were replaced with project-relative paths in the public copy. File names, line numbers, error text and historical results were retained.",
+    "The Panji public copy anchors generated-directory ignore patterns at its project root, preserving src/miniprogram source files in Git. All 170 shared Panji files are publication candidates."
+  ],
+  "publication_review": {
+    "text_files_scanned": 364,
+    "image_metadata_inspected": 35,
+    "credential_or_private_identifier_findings": 0,
+    "scope": "Git-tracked and nonignored publication candidates, including all Panji source files and merged model-practice records; no personal resume files included."
+  }
+}

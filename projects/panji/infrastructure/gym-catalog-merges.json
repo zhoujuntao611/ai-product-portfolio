@@ -1,0 +1,14 @@
+[
+  {"from":"hylonomus-c1bfb03ca55832c7","into":"bj-rockhour-xisanqi","reason":"西三旗金隅智造工场同一岩时馆，品牌名单补充建材城中路27号门牌"},
+  {"from":"hylonomus-ee7a0d031618db2e","into":"sh-rockhour-gatem","reason":"西岸梦中心同一岩时馆，品牌名单补充龙腾大道2266号门牌"},
+  {"from":"hylonomus-23f3f35cf2c347d6","into":"gov-gz-quye-vlab","reason":"广州白云区沙太南路181号VLAB同一趣野场馆"},
+  {"from":"kilter-22423779","into":"hylonomus-8bb1a135f7ed57df","reason":"杭州石桥路51号东方时代中心3楼，同一CLIFFS馆"},
+  {"from":"kilter-22029875","into":"osm-node-12198361101","reason":"台南北区大和路121号，同一嗨翻场馆"},
+  {"from":"kilter-33848174","into":"dg-suchq-softwarepark","reason":"东莞松山湖南方软件园同一非常趣场馆"},
+  {"from":"kilter-33848175","into":"banana-zh-leshi","reason":"珠海乐士文化区香蕉攀岩乐士店，同一场馆"},
+  {"from":"kilter-33936946","into":"osm-node-7681371312","reason":"香港攀爬乐园沙田店，官网确认大涌桥路52号富豪花园二期2楼"},
+  {"from":"hylonomus-b0ba40bb8a8f626c","into":"gov-sh-youshi-chuanqiao","reason":"优石同一5幢F2室，金湘路1000号与川桥路600号为同园区两入口，五星体育与许可公示交叉证实"},
+  {"from":"osm-node-12961598957","into":"hylonomus-4f902f494df9dd17","reason":"成都大松果同名金石路239号文轩体育，OSM坐标与该馆位置约10米"},
+  {"from":"osm-way-30125898","into":"hylonomus-368dc625fc87de8a","reason":"杭州教工路49号浙体杭攀，同名OSM点与该馆位置约33米"},
+  {"from":"osm-node-12964721867","into":"hylonomus-4d0d53c816cbadf1","reason":"北京Climb On Gym同名地点在保利广场东侧约100米；北京旅游网与合作馆一致指向东座1层，OSM未提供门牌"}
+]

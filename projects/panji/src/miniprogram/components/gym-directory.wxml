@@ -1,0 +1,21 @@
+<view class="page directory-page">
+  <view class="row between"><view class="page-title">{{selectMode ? '选择岩馆' : '岩馆'}}</view><button class="link" bindtap="manual">手动添加</button></view>
+  <view class="directory-overview"><view><text class="directory-total">{{summary.total}}</text><text>{{mineOnly ? ' 家已加入' : ' 家已收录'}}</text></view><view class="directory-city-count">{{summary.cities}} 个城市 / 地区</view></view>
+  <view class="directory-categories">抱石 {{summary.bouldering}}<text>·</text>难度 {{summary.rope}}<text>·</text>K 板 {{summary.kilter}}</view>
+  <view class="directory-search"><picker range="{{cities}}" range-key="name" value="{{cityIndex}}" bindchange="city"><view class="city-button">{{cities[cityIndex].name}} ⌄</view></picker><view class="directory-search-input"><input class="input" value="{{query}}" bindinput="search" placeholder="搜索馆名、城市" confirm-type="search" /><button wx:if="{{query}}" class="directory-search-clear" bindtap="clearSearch" aria-label="清空搜索">×</button></view></view>
+  <view class="directory-scope"><view class="directory-scope-item {{!mineOnly ? 'active' : ''}}" data-scope="all" bindtap="scope">全部岩馆</view><view class="directory-scope-item {{mineOnly ? 'active' : ''}}" data-scope="mine" bindtap="scope">已加入 <text>{{personalError ? '待载入' : mineCount}}</text></view></view>
+  <view wx:if="{{personalError}}" class="directory-personal-error"><text>{{personalError}}</text><button class="link" bindtap="retry">重试</button></view>
+  <view class="chips"><view wx:for="{{filters}}" wx:key="id" class="chip {{kind === item.id ? 'active' : ''}}" data-kind="{{item.id}}" bindtap="filter">{{item.name}}</view></view>
+  <view class="directory-result"><text>{{found}} 家岩馆</text><button wx:if="{{query || cityIndex || kind || mineOnly}}" class="link directory-reset" bindtap="reset">清除筛选</button><text wx:if="{{hasMore}}">已显示 {{shown}} 家</text></view>
+  <view wx:if="{{!found}}" class="card empty"><view class="empty-title">{{mineOnly && personalError ? '我的岩馆尚未载入' : mineOnly ? '暂无匹配的已加入岩馆' : '暂无匹配岩馆'}}</view><view wx:if="{{mineOnly && !personalError}}" class="muted spaced">加入名录里的岩馆后，可在这里快速找到。</view><button class="link" bindtap="reset">查看全部岩馆</button><button wx:if="{{mineOnly}}" class="outline spaced" bindtap="manage">管理我的岩馆</button><button wx:elif="{{!personalError}}" class="outline spaced" bindtap="manual">手动添加岩馆</button></view>
+  <view wx:for="{{groups}}" wx:for-item="group" wx:key="city" class="directory-group">
+    <view class="directory-group-title"><text>{{group.city}}</text><view class="directory-city-divider"></view><text>{{group.total}} 家</text></view>
+    <view wx:for="{{group.entries}}" wx:for-item="gym" wx:key="id" class="card directory-card" data-id="{{gym.id}}" bindtap="open">
+      <view class="row between"><view class="card-title grow">{{gym.name}}</view><text class="arrow">›</text></view>
+      <view class="directory-address">{{gym.address}}</view>
+      <view class="row between"><view class="row wrap directory-tags"><text wx:for="{{gym.tags}}" wx:key="*this" class="badge">{{item}}</text><text wx:if="{{!gym.tags.length}}" class="muted">设施待补充</text></view><button class="directory-add {{gym.added ? 'added' : ''}} {{selectMode ? 'selecting' : ''}}" catchtap="choose" data-id="{{gym.id}}" disabled="{{busyId !== ''}}" loading="{{busyId === gym.id}}">{{selectMode ? '选择' : gym.added ? '记训练' : '＋'}}</button></view>
+    </view>
+  </view>
+  <button wx:if="{{hasMore}}" class="outline directory-more" bindtap="more">加载更多</button>
+  <view class="directory-foot"><view>部分收录 · 到馆前请确认开放安排</view><view>名录 {{updatedAt}} · 岩馆详情内可查看来源</view><view class="directory-attribution">{{osmAttribution}}</view><button class="link directory-export" bindtap="exportOsm" loading="{{exporting}}" disabled="{{exporting}}">导出 OSM 开放数据</button></view>
+</view>

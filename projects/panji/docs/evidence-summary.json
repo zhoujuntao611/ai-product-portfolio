@@ -1,0 +1,89 @@
+{
+  "project": "攀迹",
+  "preparedOn": "2026-10-22",
+  "status": "个人项目，AI辅助实现，微信小程序开发预览",
+  "freshFunctionalValidationRunDuringOrganization": false,
+  "release": {
+    "version": "0.2.2",
+    "build": "9f3de867"
+  },
+  "catalog": {
+    "snapshotDate": "2026-10-22",
+    "places": 228,
+    "citiesOrRegions": 71,
+    "provincialRegions": 33,
+    "placesWithExplicitKilterEvidence": 32,
+    "boundary": "部分收录；含少量公共人工攀登训练设施，不代表全国商业岩馆总数或实时营业状态"
+  },
+  "engineering": {
+    "automatedChecks": 176,
+    "nativeCompiledPages": 14,
+    "nativeCatalogChecks": 13,
+    "localFlowChecks": 16,
+    "scope": "已有开发验收记录，不代表用户测试规模、完整手机兼容性或用户效果"
+  },
+  "realModelDevelopmentValidation": {
+    "evidenceDate": "2026-10-20",
+    "provider": "腾讯混元",
+    "model": "cloudbase/hy3",
+    "syntheticScenarios": 3,
+    "developmentChecks": 7,
+    "factsPolicy": "程序生成摘要与事实观察，模型仅原样引用允许事实并提出谨慎假设和行动建议",
+    "scope": "真实模型调用的合成场景开发验证，不是用户实验、建议准确率或完整模型质量评测"
+  },
+  "video": {
+    "storage": "视频及关联仅当前微信设备保存，云端记录模式也不上传视频",
+    "aiReceivesVideo": false,
+    "perClipLimits": {
+      "seconds": 300,
+      "mebibytes": 100
+    },
+    "acceptedSyntheticSample": {
+      "seconds": 120,
+      "mebibytes": 80,
+      "modes": [
+        "本机记录",
+        "云端记录"
+      ],
+      "environment": "微信开发者工具实际相册流程"
+    },
+    "boundary": "合成样本验证不能替代原手机视频复试、编码兼容性或完整真机验收"
+  },
+  "notYetEstablished": [
+    "公开发布及长期公开体验链接",
+    "完整iPhone与Android真机验收",
+    "真实用户数量、留存、转化等运营结果",
+    "AI建议对训练水平的改善效果",
+    "AI视频动作分析、模型微调、RAG知识库"
+  ],
+  "sources": [
+    {
+      "fileName": "catalog-oct22-validation.json",
+      "sha256": "9d5e714846bcbf820aec67d51429313feb5d5cb5499086e3154d0d90f4e7a404"
+    },
+    {
+      "fileName": "build-release.json",
+      "sha256": "f3de7f74ed770db563a95eff73c4ac987756506ac4687405ef6b9dd32f69ee19"
+    },
+    {
+      "fileName": "wechat-compile.json",
+      "sha256": "c8be84cc29a6c93930f4f624d8668e87edcec2f3b74116155006f83933c81e58"
+    },
+    {
+      "fileName": "real-ai-validation.json",
+      "sha256": "1a0946a84e99a36ce0fcef5c163428e2945fa41ef4c0b868276a775eb8ed199c"
+    },
+    {
+      "fileName": "native-inline-video-local.json",
+      "sha256": "16016a76b738e4a1e9308d5c4d4580634527844e675b18ec4d7367654cf4ce7e"
+    },
+    {
+      "fileName": "native-inline-video-cloud.json",
+      "sha256": "ce0135d2e2ec4780656747572a73988502affe094a7c26cdb775eba7681836bf"
+    },
+    {
+      "fileName": "release-v021-validation.json",
+      "sha256": "450769e173f43122e56ef5c5b3ce86b24b102fea86f309227f8990fdcf6fe269"
+    }
+  ]
+}

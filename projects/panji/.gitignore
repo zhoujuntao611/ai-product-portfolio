@@ -1,0 +1,14 @@
+node_modules/
+/miniprogram/
+cloudfunctions/panji/index.js
+cloudfunctions/panji/node_modules/
+cloudfunctions/panjiV2/index.js
+cloudfunctions/panjiV2/node_modules/
+project.private.config.json
+panji.local.json
+.env
+.env.*
+*.key
+/artifacts/
+/work/
+*.log

@@ -1,0 +1,177 @@
+[
+  {
+    "id": "osm-node-5162207543",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "OSM點位在新蒲崗太子工業大廈，與官方總店相符；不另增重複場館",
+    "changes": {
+      "name": "Just Climb（新蒲崗）",
+      "brand": "Just Climb",
+      "address": "九龍新蒲崗太子道東706號（景褔街106號）太子工業大廈地下D室",
+      "facilities": [
+        "bouldering",
+        "toprope"
+      ],
+      "accessNote": "頂繩體驗限兒童；入場與課程資格按分店規則。"
+    }
+  },
+  {
+    "id": "osm-node-12513736287",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "OSM原點位位於西沙GO PARK（22.4274234,114.2648143），以官方分店資訊補名址，不與石門分店混併",
+    "changes": {
+      "name": "Just Climb（西沙 GO PARK）",
+      "brand": "Just Climb",
+      "address": "西沙海映路9號西沙GO PARK",
+      "accessNote": "活動及預約式攀爬場地；官網列周末及公眾假期時段，到訪前確認。"
+    }
+  },
+  {
+    "id": "kilter-34182437",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "官方門店頁明確地下4室，修正Kilter舊英文地址的Basement表述；K板仍保留廠家依據",
+    "changes": {
+      "address": "沙田石門安平街6號新貿中心地下4室",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "accessNote": "自助攀爬須符合分店登記及評估規定。"
+    }
+  },
+  {
+    "id": "osm-node-5162207543",
+    "sourceName": "Just Climb 官方分店設施",
+    "sourceUrl": "https://justclimb.hk/venue_facilities-4/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "官方設施頁限定新蒲崗兒童頂繩，不推廣到全品牌",
+    "changes": {
+      "facilities": [
+        "bouldering",
+        "toprope"
+      ]
+    }
+  },
+  {
+    "id": "kilter-22029876",
+    "sourceName": "原岩官方分店與設施介紹",
+    "sourceUrl": "https://tupclimbing.tw/branch/wanhua",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施",
+    "changes": {
+      "name": "原岩攀岩館（萬華店）",
+      "brand": "原岩攀岩館",
+      "address": "萬華區大理街149號",
+      "facilities": [
+        "bouldering",
+        "kilter",
+        "moon"
+      ]
+    }
+  },
+  {
+    "id": "osm-node-8330698331",
+    "sourceName": "原岩官方分店與設施介紹",
+    "sourceUrl": "https://tupclimbing.tw/branch/zhonghe",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施",
+    "changes": {
+      "name": "原岩攀岩館（中和店）",
+      "brand": "原岩攀岩館",
+      "address": "中和區立言街41號",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay",
+        "speed",
+        "fitness"
+      ]
+    }
+  },
+  {
+    "id": "osm-node-13417522409",
+    "sourceName": "原岩官方分店與設施介紹",
+    "sourceUrl": "https://tupclimbing.tw/branch/mingde",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施",
+    "changes": {
+      "name": "原岩攀岩館（明德店）",
+      "brand": "原岩攀岩館",
+      "address": "北投區文林北路222號B1",
+      "facilities": [
+        "bouldering"
+      ]
+    }
+  },
+  {
+    "id": "banana-sh-yananxi",
+    "sourceName": "上海市政府长宁室内场馆介绍",
+    "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260708/51217aacabe94adabad1fe6313f1c1c5.html",
+    "sourceDate": "2026-07-08",
+    "checkedAt": "2026-10-21",
+    "reason": "政府具体门牌补齐品牌接口的粗略文化广场地址",
+    "changes": {
+      "address": "长宁区昭化路658号海粟广场A栋104—105室"
+    }
+  },
+  {
+    "id": "hylonomus-8bb1a135f7ed57df",
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "已审厂家地址更精确；修复以字符串长度选择地址导致门牌51号被较长旧地址覆盖",
+    "changes": {
+      "address": "上城区石桥路51号东方时代中心3楼"
+    }
+  },
+  {
+    "id": "osm-node-7681371312",
+    "sourceName": "香港攀爬樂園官方地址",
+    "sourceUrl": "https://www.hkclimbingpark.com/contact-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "以经营者具体楼层修正旧地图混排地址",
+    "changes": {
+      "name": "香港攀爬樂園（沙田店）",
+      "address": "沙田大涌橋路52號富豪花園二期商場2樓"
+    }
+  },
+  {
+    "id": "regional-mo-solution-hoiseongkoi",
+    "sourceName": "澳门中华学生联合总会官方合作商户",
+    "sourceUrl": "https://aecm.org.mo/member/memberclub/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "reason": "原来源404，补充直接合作机构当前门牌证据，区分字母O与数字0",
+    "changes": {
+      "address": "友谊桥大马路196号海上居商铺地下AO座",
+      "verificationNote": "原品牌资料链接本轮返回404；澳门学联当前合作商户名录仍列本馆同一地址。到访前确认营业，不凭链接失效判断闭店。"
+    }
+  },
+  {
+    "id": "regional-nx-yinchuan-qinshui",
+    "sourceName": "宁夏体彩2026公益夏令营官方稿",
+    "sourceUrl": "https://finance.sina.com.cn/wm/2026-07-23/doc-iniiuskx1470294.shtml",
+    "sourceDate": "2026-07-23",
+    "checkedAt": "2026-10-21",
+    "reason": "补充当前可访问活动稿，明确亲水南大街；不将整个中心其他项目活动当作攀岩营业核验",
+    "changes": {
+      "address": "金凤区亲水南大街35号宁夏亲水体育中心",
+      "verificationNote": "原政府介绍及采购链接本轮返回404，保留历史来源；2026年宁夏体彩官方活动稿确认中心门牌，攀岩当日开放仍需确认。"
+    }
+  }
+]

@@ -1,0 +1,1093 @@
+{
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL-1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "exportSource": "https://openclimbing.org/export",
+  "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+  "retrievedAt": "2026-10-21",
+  "scope": "Reviewed named indoor/artificial climbing gyms in mainland cities, Hong Kong and Taiwan; no qualifying Macao venue in this source snapshot.",
+  "notice": "OSM snapshot time is not on-site or current operating verification. Missing facility tags are unknown. City labels reviewed from coordinates when absent in OSM. This adapted OSM directory is provided under ODbL 1.0, separately from other source directories and private user records.",
+  "entries": [
+    {
+      "id": "osm-node-5162048437",
+      "name": "Park Climbing Gym",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5162048437",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2054441,
+        "longitude": 121.4131364,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4603359646",
+      "name": "Pongo",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4603359646",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2018461,
+        "longitude": 121.4833349,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5163255332",
+      "name": "Ribbon Climbing",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5163255332",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2957441,
+        "longitude": 121.5200791,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4595551418",
+      "name": "上海体育场攀岩运动中心",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Shanghai Stadium Rock Climbing Centre"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4595551418",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.182942,
+        "longitude": 121.436073,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5172165421",
+      "name": "岩舞空间攀岩",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5172165421",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2729825,
+        "longitude": 121.4683826,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-8018831382",
+      "name": "攀岩工厂",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "宝山区",
+      "address": "上海宝山区长江西路",
+      "aliases": [
+        "Climbing Factor"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/8018831382",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.3474498,
+        "longitude": 121.4659347,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4874451886",
+      "name": "蜘蛛侠攀岩馆",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Zhizhuxia Climbing Gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4874451886",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.0642387,
+        "longitude": 121.3973243,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5162245472",
+      "name": "魔岩攀岩馆",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Magic Rock Climbing",
+        "North Face Gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5162245472",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2379004,
+        "longitude": 121.4792088,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12964721867",
+      "name": "Climb On Gym攀岩馆",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "COG"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12964721867",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 40.0152918,
+        "longitude": 116.4598062,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-625655040",
+      "name": "ET攀岩俱乐部",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "E.T. Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/625655040",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 40.0396655,
+        "longitude": 116.503492,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6781842595",
+      "name": "O’le 798 Climbing Gym",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6781842595",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.9911718,
+        "longitude": 116.4982785,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6784065056",
+      "name": "Rock Hour",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "岩时攀岩馆"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6784065056",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8858416,
+        "longitude": 116.4759348,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6784095879",
+      "name": "人人攀岩",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6784095879",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8571612,
+        "longitude": 116.516474,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12979842810",
+      "name": "奥攀攀岩(角门店)",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12979842810",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8424922,
+        "longitude": 116.3808464,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4915834033",
+      "name": "首体首攀壁虎王攀岩俱乐部",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "Vertigo Gecko Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4915834033",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.9387402,
+        "longitude": 116.3205113,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4930237711",
+      "name": "Dyno Climbing",
+      "brand": "",
+      "city": "南京",
+      "province": "江苏",
+      "district": "",
+      "address": "南京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4930237711",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 32.0544677,
+        "longitude": 118.7600143,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-way-659878780",
+      "name": "The little rock",
+      "brand": "",
+      "city": "台北",
+      "province": "台湾",
+      "district": "",
+      "address": "台北",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/way/659878780",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1088442,
+        "longitude": 121.52980685,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-13417522409",
+      "name": "原岩攀岩館-明德店",
+      "brand": "",
+      "city": "台北",
+      "province": "台湾",
+      "district": "北投區",
+      "address": "112臺北市北投區文林北路222號B1樓",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/13417522409",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1082592,
+        "longitude": 121.5142392,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12198361101",
+      "name": "嗨翻",
+      "brand": "",
+      "city": "台南",
+      "province": "台湾",
+      "district": "北區",
+      "address": "臺南市北區大和路121號",
+      "aliases": [
+        "High fun"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12198361101",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.011325,
+        "longitude": 120.1900737,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-7282088085",
+      "name": "久淘攀岩館",
+      "brand": "",
+      "city": "宜兰",
+      "province": "台湾",
+      "district": "宜蘭市",
+      "address": "宜蘭縣宜蘭市健康路三段66號",
+      "aliases": [
+        "JT Climbing"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7282088085",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.7527054,
+        "longitude": 121.7496109,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104508293",
+      "name": "凯乐石攀岩馆",
+      "brand": "",
+      "city": "广州",
+      "province": "广东",
+      "district": "",
+      "address": "广州",
+      "aliases": [
+        "Kailas"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104508293",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.154851,
+        "longitude": 113.3284782,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-11841864843",
+      "name": "BLACKBOOM黑爆攀岩",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "district": "锦江区",
+      "address": "成都市锦江区水碾河南三街37号U37号10栋",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/11841864843",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.6491807,
+        "longitude": 104.0965403,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104714628",
+      "name": "Survivor Indoor Rock Climbing",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "district": "",
+      "address": "成都",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104714628",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.6181949,
+        "longitude": 104.0523773,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12961598957",
+      "name": "大松果攀岩馆",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "district": "",
+      "address": "成都",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12961598957",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.5922821,
+        "longitude": 104.0852527,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-8330698331",
+      "name": "原岩中和店",
+      "brand": "",
+      "city": "新北",
+      "province": "台湾",
+      "district": "中和區",
+      "address": "23557新北市中和區立言街41號",
+      "aliases": [
+        "T-UP Climbing"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/8330698331",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.0062525,
+        "longitude": 121.4860912,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-13295191398",
+      "name": "BABO PAPAK",
+      "brand": "",
+      "city": "新竹",
+      "province": "台湾",
+      "district": "東區",
+      "address": "新竹市東區南大路300號",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/13295191398",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.8032873,
+        "longitude": 120.9786617,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-9594057843",
+      "name": "Dot Lot",
+      "brand": "",
+      "city": "无锡",
+      "province": "江苏",
+      "district": "",
+      "address": "无锡",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9594057843",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.5630344,
+        "longitude": 120.2587405,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-14055656902",
+      "name": "那岩0871攀岩俱乐部",
+      "brand": "",
+      "city": "昆明",
+      "province": "云南",
+      "district": "",
+      "address": "昆明",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/14055656902",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1370299,
+        "longitude": 102.7353288,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-14040771840",
+      "name": "CLIFFS颗粒攀岩",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "district": "",
+      "address": "杭州",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/14040771840",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.1803841,
+        "longitude": 120.2583933,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-way-30125898",
+      "name": "浙体·杭州攀岩馆",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "district": "",
+      "address": "杭州",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/way/30125898",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.280118299999998,
+        "longitude": 120.1305935,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-9316739471",
+      "name": "passion climbing爬森攀岩館",
+      "brand": "",
+      "city": "桃园",
+      "province": "台湾",
+      "district": "桃園區",
+      "address": "桃園市桃園區新埔七街139-1號",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9316739471",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.0216119,
+        "longitude": 121.3004947,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-way-1016526111",
+      "name": "原岩攀岩館-楊梅店",
+      "brand": "",
+      "city": "桃园",
+      "province": "台湾",
+      "district": "楊梅區",
+      "address": "326桃園市楊梅區梅高路99巷20號",
+      "aliases": [
+        "T-UP bouldering gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/way/1016526111",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.9200421,
+        "longitude": 121.14517434999999,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104552398",
+      "name": "博昇攀岩馆",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "district": "",
+      "address": "深圳",
+      "aliases": [
+        "Bosheng Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104552398",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.5039846,
+        "longitude": 113.9183709,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-7596936848",
+      "name": "崩岩館",
+      "brand": "",
+      "city": "花莲",
+      "province": "台湾",
+      "district": "花蓮市",
+      "address": "花蓮縣花蓮市國民一街38號三樓",
+      "aliases": [
+        "Bonus Bouldering Gym"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7596936848",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.9877651,
+        "longitude": 121.6018246,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4583627411",
+      "name": "Attic V",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4583627411",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.2494652,
+        "longitude": 114.167718,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4583629247",
+      "name": "GoNature Climbing Gym",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4583629247",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3089564,
+        "longitude": 114.2246935,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12513736287",
+      "name": "Just Climb",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12513736287",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.4274234,
+        "longitude": 114.2648143,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5162207543",
+      "name": "Just Climb",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5162207543",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3342376,
+        "longitude": 114.199088,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5023761143",
+      "name": "Verm City Climbing Club",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5023761143",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.2925318,
+        "longitude": 114.2071098,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5132063921",
+      "name": "YMCA Climbing Wall",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5132063921",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.2950149,
+        "longitude": 114.1711676,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-9883215571",
+      "name": "尚山岩舘",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "大南街 Tai Nan Street234",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9883215571",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3278238,
+        "longitude": 114.1626214,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-7681371312",
+      "name": "香港攀爬樂園 (沙田店)",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "沙田 Sha Tin大涌橋路 Tai Chung Kiu Road52",
+      "aliases": [
+        "香港攀爬樂園 Hong Kong Climbing Park (沙田店 Sha Tin)",
+        "Hong Kong Climbing Park (Sha Tin)"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7681371312",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3856493,
+        "longitude": 114.19938,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-11121831487",
+      "name": "香港攀爬樂園（元朗）",
+      "brand": "香港攀爬樂園",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "康業街朗壹廣場",
+      "aliases": [
+        "香港攀爬樂園 Hong Kong Climbing Park",
+        "香港攀爬樂園",
+        "Hong Kong Climbing Park"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/11121831487",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.4510362,
+        "longitude": 114.0292992,
+        "system": "wgs84"
+      }
+    }
+  ]
+}

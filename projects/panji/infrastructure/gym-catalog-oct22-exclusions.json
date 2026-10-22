@@ -1,0 +1,26 @@
+[
+  {
+    "ids": ["osm-node-5023761143"],
+    "name": "Verm City Climbing Club",
+    "city": "香港",
+    "status": "reported-closed-unconfirmed-primary",
+    "reason": "Time Out現行頁標為已結業，Little Steps獨立頁亦明確標已關閉，與OSM舊收錄衝突。僅暫隱藏預設目錄，保留原始資料；尚未取得經營者一手結業公告，不稱永久結業、不推斷結業日期、不把Proxy或Vita Beta其他地址當作原館改名。原官網超時不是排除理由。",
+    "sourceUrl": "https://www.timeout.com.hk/hong-kong/hk/%E5%A5%BD%E5%8E%BB%E8%99%95/verm-city",
+    "sources": ["https://www.littlestepsasia.com/hong-kong/play/indoor-activities/verm-city-indoor-rock-climbing/"],
+    "checkedAt": "2026-10-22"
+  },
+  {
+    "ids": ["osm-node-5162048437"],
+    "name": "Park Climbing Gym（舊OSM點位）",
+    "city": "上海",
+    "status": "conflicting-source-needs-review",
+    "reason": "舊OSM點位31.2054441,121.4131364位於東華大學楊宅路周邊，原地址僅上海。2026上海政府英文指南將Park Climbing Gym列在長寧路88號King88商場三樓；2023長寧體育局列該址爬客攀岩館，2026政府中文活動列該址無界攀岩。地址與舊點衝突，暫隱藏舊點以免錯導；保留OSM原始座標及歷史ID，不判舊址閉館、不推斷搬遷或經營權延續。同址政府異名僅收錄一處現場館，待經營者確認。",
+    "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+    "sources": [
+      "https://www.shcn.gov.cn/col7415/20230809/1241795.html",
+      "https://www.shanghai.gov.cn/nw17239/20260714/8251ea473d0c4feb831e00257544adc6.html",
+      "https://www.openstreetmap.org/node/5162048437"
+    ],
+    "checkedAt": "2026-10-22"
+  }
+]

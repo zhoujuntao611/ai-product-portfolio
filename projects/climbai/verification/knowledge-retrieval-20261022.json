@@ -1,0 +1,965 @@
+{
+  "report_type": "developer_authored_lexical_retrieval_acceptance",
+  "generated_at_utc": "2026-10-22T10:17:51.195958+00:00",
+  "knowledge_version": "demo-kb-1.1",
+  "retrieval_rules_version": "lexical-demo-2.0",
+  "knowledge_count": 30,
+  "retrieval_backend": "local_hash_demo",
+  "model_calls": 0,
+  "method": "Fixed developer-authored questions; required IDs within top 3, specific-topic first ID where declared, empty results for unsupported questions, K09-only medical boundary, all source IDs resolve.",
+  "limitations": [
+    "Known regression set authored while implementing lexical rules, not a blind or held-out benchmark.",
+    "Checks retrieval and deterministic boundary routing only; not real-model answer correctness or medical classification accuracy.",
+    "No real user adoption, task-value, coaching quality, or training outcomes measured.",
+    "Native Chroma and real embedding/model services not exercised; local character-hash tie-break used."
+  ],
+  "cases_path": "tests/backend/knowledge_cases.json",
+  "passed": 50,
+  "total": 50,
+  "categories": {
+    "original_topic": {
+      "passed": 9,
+      "total": 9
+    },
+    "medical_boundary": {
+      "passed": 2,
+      "total": 2
+    },
+    "added_topic": {
+      "passed": 20,
+      "total": 20
+    },
+    "synonym": {
+      "passed": 6,
+      "total": 6
+    },
+    "mixed_topic": {
+      "passed": 2,
+      "total": 2
+    },
+    "implicit_context": {
+      "passed": 3,
+      "total": 3
+    },
+    "out_of_scope": {
+      "passed": 8,
+      "total": 8
+    }
+  },
+  "results": [
+    {
+      "id": "topic-01",
+      "category": "original_topic",
+      "query": "脚点选择和落脚稳定需要观察什么？",
+      "expected_ids": [
+        "K01"
+      ],
+      "expected_first_id": "K01",
+      "actual_ids": [
+        "K01"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-02",
+      "category": "original_topic",
+      "query": "身体位置与重心有什么关系？",
+      "expected_ids": [
+        "K02"
+      ],
+      "expected_first_id": "K02",
+      "actual_ids": [
+        "K02"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-03",
+      "category": "original_topic",
+      "query": "读线时怎样观察休息位置和手脚点顺序？",
+      "expected_ids": [
+        "K03"
+      ],
+      "expected_first_id": "K03",
+      "actual_ids": [
+        "K03",
+        "K01"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-04",
+      "category": "original_topic",
+      "query": "抱石入门和攀岩等级应如何理解？",
+      "expected_ids": [
+        "K04"
+      ],
+      "expected_first_id": "K04",
+      "actual_ids": [
+        "K04",
+        "K17"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-05",
+      "category": "original_topic",
+      "query": "训练复盘与训练记录应该保存什么？",
+      "expected_ids": [
+        "K05"
+      ],
+      "expected_first_id": "K05",
+      "actual_ids": [
+        "K05"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-06",
+      "category": "original_topic",
+      "query": "训练安排的时间预算和可用时间怎么说明？",
+      "expected_ids": [
+        "K06"
+      ],
+      "expected_first_id": "K06",
+      "actual_ids": [
+        "K06",
+        "K27"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-07",
+      "category": "original_topic",
+      "query": "一次未完成和疲劳反馈能判断能力下降吗？",
+      "expected_ids": [
+        "K07"
+      ],
+      "expected_first_id": "K07",
+      "actual_ids": [
+        "K07"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-08",
+      "category": "original_topic",
+      "query": "首次到馆有哪些岩馆规则？",
+      "expected_ids": [
+        "K08"
+      ],
+      "expected_first_id": "K08",
+      "actual_ids": [
+        "K08"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-09",
+      "category": "medical_boundary",
+      "query": "手指疼痛应该如何治疗？",
+      "expected_ids": [
+        "K09"
+      ],
+      "expected_exact_ids": [
+        "K09"
+      ],
+      "expected_route": "medical_boundary",
+      "actual_ids": [
+        "K09"
+      ],
+      "actual_route": "medical_boundary",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-10",
+      "category": "original_topic",
+      "query": "能力画像的证据来源如何纠正画像？",
+      "expected_ids": [
+        "K10"
+      ],
+      "expected_first_id": "K10",
+      "actual_ids": [
+        "K10"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-11",
+      "category": "added_topic",
+      "query": "EDGING 和 SMEARING 是什么术语？",
+      "expected_ids": [
+        "K11"
+      ],
+      "expected_first_id": "K11",
+      "actual_ids": [
+        "K11"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-12",
+      "category": "added_topic",
+      "query": "FLAGGING 与 BACK STEP 分别指什么？",
+      "expected_ids": [
+        "K12"
+      ],
+      "expected_first_id": "K12",
+      "actual_ids": [
+        "K12"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-13",
+      "category": "added_topic",
+      "query": "只靠手拉和手脚协同是什么区别？",
+      "expected_ids": [
+        "K13"
+      ],
+      "expected_first_id": "K13",
+      "actual_ids": [
+        "K13"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-14",
+      "category": "added_topic",
+      "query": "大把点 JUG、捏点 PINCH 和圆滑点 SLOPER 怎么区分？",
+      "expected_ids": [
+        "K14"
+      ],
+      "expected_first_id": "K14",
+      "actual_ids": [
+        "K14"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-15",
+      "category": "added_topic",
+      "query": "缓坡 SLAB 与仰角 OVERHANG 是什么壁型？",
+      "expected_ids": [
+        "K15"
+      ],
+      "expected_first_id": "K15",
+      "actual_ids": [
+        "K15"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-16",
+      "category": "added_topic",
+      "query": "地面读线清单应该观察线路颜色和动作顺序吗？",
+      "expected_ids": [
+        "K16"
+      ],
+      "expected_first_id": "K16",
+      "actual_ids": [
+        "K16",
+        "K03"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-17",
+      "category": "added_topic",
+      "query": "抱石 V 等级和 FONT 等级体系怎么理解？",
+      "expected_ids": [
+        "K17"
+      ],
+      "expected_first_id": "K17",
+      "actual_ids": [
+        "K17",
+        "K04"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-18",
+      "category": "added_topic",
+      "query": "不同岩馆的等级偏软和跨馆比较怎么记录？",
+      "expected_ids": [
+        "K18"
+      ],
+      "expected_first_id": "K18",
+      "actual_ids": [
+        "K18"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-19",
+      "category": "added_topic",
+      "query": "攀岩鞋合脚与鞋楦怎么理解？",
+      "expected_ids": [
+        "K19"
+      ],
+      "expected_first_id": "K19",
+      "actual_ids": [
+        "K19"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-20",
+      "category": "added_topic",
+      "query": "初次装备和租用装备包含哪些准备？",
+      "expected_ids": [
+        "K20"
+      ],
+      "expected_first_id": "K20",
+      "actual_ids": [
+        "K20"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-21",
+      "category": "added_topic",
+      "query": "岩馆落地区域为什么要保持净空？",
+      "expected_ids": [
+        "K21"
+      ],
+      "expected_first_id": "K21",
+      "actual_ids": [
+        "K21"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-22",
+      "category": "added_topic",
+      "query": "岩馆相邻线路和交叉线路的等待位置怎么选？",
+      "expected_ids": [
+        "K22"
+      ],
+      "expected_first_id": "K22",
+      "actual_ids": [
+        "K22"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-23",
+      "category": "added_topic",
+      "query": "镁粉 CHALK 和液体镁粉的场馆规定是什么？",
+      "expected_ids": [
+        "K23"
+      ],
+      "expected_first_id": "K23",
+      "actual_ids": [
+        "K23"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-24",
+      "category": "added_topic",
+      "query": "第一次到岩馆的新馆指导和入门课程有什么意义？",
+      "expected_ids": [
+        "K24"
+      ],
+      "expected_first_id": "K24",
+      "actual_ids": [
+        "K24"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-25",
+      "category": "added_topic",
+      "query": "结束训练后能延后反馈和补交反馈吗？",
+      "expected_ids": [
+        "K25"
+      ],
+      "expected_first_id": "K25",
+      "actual_ids": [
+        "K25"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-26",
+      "category": "added_topic",
+      "query": "复盘方法怎样区分事实与假设并保留用户原话？",
+      "expected_ids": [
+        "K26"
+      ],
+      "expected_first_id": "K26",
+      "actual_ids": [
+        "K26",
+        "K05"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-27",
+      "category": "added_topic",
+      "query": "到馆时间不够，怎么改期并缩减计划？",
+      "expected_ids": [
+        "K27"
+      ],
+      "expected_first_id": "K27",
+      "actual_ids": [
+        "K27",
+        "K06"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-28",
+      "category": "added_topic",
+      "query": "我不想改计划，可以拒绝调整并保持原计划吗？",
+      "expected_ids": [
+        "K28"
+      ],
+      "expected_first_id": "K28",
+      "actual_ids": [
+        "K28"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-29",
+      "category": "added_topic",
+      "query": "对比记录和跨次比较为什么要看训练上下文？",
+      "expected_ids": [
+        "K29"
+      ],
+      "expected_first_id": "K29",
+      "actual_ids": [
+        "K29"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "topic-30",
+      "category": "added_topic",
+      "query": "缺少来源时知识范围和资料不足怎么说明？",
+      "expected_ids": [
+        "K30"
+      ],
+      "expected_first_id": "K30",
+      "actual_ids": [
+        "K30"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true,
+        "first_id_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-01",
+      "category": "synonym",
+      "query": "掉脚该怎么观察？",
+      "expected_ids": [
+        "K01"
+      ],
+      "actual_ids": [
+        "K01"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-02",
+      "category": "synonym",
+      "query": "落脚不稳要记录什么？",
+      "expected_ids": [
+        "K01"
+      ],
+      "actual_ids": [
+        "K01"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-03",
+      "category": "synonym",
+      "query": "路线阅读有哪些观察内容？",
+      "expected_ids": [
+        "K03"
+      ],
+      "actual_ids": [
+        "K03"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-04",
+      "category": "synonym",
+      "query": "ＢＯＤＹ＿ＰＯＳＩＴＩＯＮ 是什么？",
+      "expected_ids": [
+        "K02"
+      ],
+      "actual_ids": [
+        "K02"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-05",
+      "category": "synonym",
+      "query": "BACKSTEP 和后踩是什么意思？",
+      "expected_ids": [
+        "K12"
+      ],
+      "actual_ids": [
+        "K12"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "synonym-06",
+      "category": "synonym",
+      "query": "买攀岩鞋时怎么选鞋码？",
+      "expected_ids": [
+        "K19"
+      ],
+      "actual_ids": [
+        "K19"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "mixed-01",
+      "category": "mixed_topic",
+      "query": "脚法与训练记录怎么关联？",
+      "expected_ids": [
+        "K01",
+        "K05"
+      ],
+      "actual_ids": [
+        "K05",
+        "K01"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "mixed-02",
+      "category": "mixed_topic",
+      "query": "攀岩鞋和镁粉有什么区别？",
+      "expected_ids": [
+        "K19",
+        "K23"
+      ],
+      "actual_ids": [
+        "K19",
+        "K23"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "context-01",
+      "category": "implicit_context",
+      "query": "今天只有30分钟怎么办？",
+      "expected_any_ids": [
+        "K06",
+        "K27"
+      ],
+      "actual_ids": [
+        "K27",
+        "K06"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "one_expected_id_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "context-02",
+      "category": "implicit_context",
+      "query": "为什么这样安排训练？",
+      "expected_ids": [
+        "K06"
+      ],
+      "actual_ids": [
+        "K06",
+        "K27"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "context-03",
+      "category": "implicit_context",
+      "query": "等别人时可以坐在垫子上吗？",
+      "expected_ids": [
+        "K21"
+      ],
+      "actual_ids": [
+        "K21"
+      ],
+      "actual_route": "grounded_demo",
+      "checks": {
+        "citation_ids_valid": true,
+        "required_ids_in_top3": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-01",
+      "category": "out_of_scope",
+      "query": "明天上海天气如何？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-02",
+      "category": "out_of_scope",
+      "query": "NVIDIA 股票投资预算怎么安排？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-03",
+      "category": "out_of_scope",
+      "query": "Python 脚本怎么编写？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-04",
+      "category": "out_of_scope",
+      "query": "网页 FONT 和 FACE 字体怎么设置？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-05",
+      "category": "out_of_scope",
+      "query": "A painting workshop 的时间怎么安排？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-06",
+      "category": "out_of_scope",
+      "query": "会议只有30分钟怎么安排？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-07",
+      "category": "out_of_scope",
+      "query": "这个背包怎么清洗？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "unknown-08",
+      "category": "out_of_scope",
+      "query": "去火车站怎么排队？",
+      "expected_exact_ids": [],
+      "expected_route": "insufficient_evidence",
+      "actual_ids": [],
+      "actual_route": "insufficient_evidence",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    },
+    {
+      "id": "medical-02",
+      "category": "medical_boundary",
+      "query": "I have an INJURY; what medication should I take?",
+      "expected_exact_ids": [
+        "K09"
+      ],
+      "expected_route": "medical_boundary",
+      "actual_ids": [
+        "K09"
+      ],
+      "actual_route": "medical_boundary",
+      "checks": {
+        "citation_ids_valid": true,
+        "exact_ids_match": true,
+        "route_matches": true
+      },
+      "passed": true
+    }
+  ]
+}

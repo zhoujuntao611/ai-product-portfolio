@@ -1,0 +1,7 @@
+{
+  "name": "panji-cloud",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": { "wx-server-sdk": "3.0.4", "@cloudbase/node-sdk": "2.10.0" }
+}

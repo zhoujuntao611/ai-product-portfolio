@@ -1,0 +1,3 @@
+<view wx:if="{{visible}}" class="privacy-mask" catchtouchmove="stop">
+  <view class="privacy-dialog"><view class="privacy-title">导入训练视频</view><view class="privacy-copy">从相册选择视频，保存在当前设备供你回看。</view><view class="privacy-contract" bindtap="contract">{{contractName}} ›</view><view class="privacy-actions"><button class="privacy-decline" bindtap="decline">暂不使用</button><button id="panji-privacy-agree" class="privacy-agree" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="agree">同意</button></view></view>
+</view>

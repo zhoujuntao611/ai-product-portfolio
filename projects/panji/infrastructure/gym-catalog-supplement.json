@@ -1,0 +1,555 @@
+[
+  {
+    "id": "lcsd-tsingyi",
+    "name": "青衣西南體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "新界青衣涌美路70號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-shunlee",
+    "name": "順利邨體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "九龍觀塘順利邨道33號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-powing",
+    "name": "保榮路體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "新界上水百和路19號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-tiukengleng",
+    "name": "調景嶺體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "將軍澳翠嶺路2號",
+    "facilities": [
+      "rope",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-shekkipmei",
+    "name": "石硤尾公園體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "九龍深水埗南昌街290號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-yuenchaukok",
+    "name": "圓洲角體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "新界沙田銀城街35號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-tsuenwan",
+    "name": "荃灣體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "新界荃灣永順街53號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-siulun",
+    "name": "兆麟體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "屯門兆麟街19號屯門兆麟政府綜合大樓",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-tinfai",
+    "name": "天暉路體育館攀登場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "天水圍天瑞路63號",
+    "facilities": [
+      "rope",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署戶外運動攀登設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+  },
+  {
+    "id": "lcsd-taikoktsui",
+    "name": "大角咀體育館攀石場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "九龍大角咀福全街63號大角咀體育館7樓",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署室內運動攀石設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=536",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+  },
+  {
+    "id": "lcsd-eastkaitak",
+    "name": "東啟德體育館攀石場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "九龍新蒲崗六合街30號",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署室內運動攀石設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=726",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+  },
+  {
+    "id": "lcsd-leiyuemun",
+    "name": "鯉魚門體育館攀石場",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "九龍油塘鯉魚門市政大廈2樓至5樓",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "香港康文署室內運動攀石設施",
+    "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=980",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+  },
+  {
+    "id": "justclimb-taikoo",
+    "name": "Just Climb（太古）",
+    "brand": "Just Climb",
+    "city": "香港",
+    "province": "香港",
+    "address": "香港鰂魚涌英皇道1001號6樓01室",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "sources": [
+      {
+        "name": "Just Climb 官方分店設施",
+        "url": "https://justclimb.hk/venue_facilities-4/"
+      }
+    ],
+    "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+  },
+  {
+    "id": "justclimb-tseungkwano",
+    "name": "Just Climb（將軍澳）",
+    "brand": "Just Climb",
+    "city": "香港",
+    "province": "香港",
+    "address": "將軍澳唐俊街28號海天晉滙120C及120D號舖",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "sources": [
+      {
+        "name": "Just Climb 官方分店設施",
+        "url": "https://justclimb.hk/venue_facilities-4/"
+      }
+    ],
+    "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+  },
+  {
+    "id": "justclimb-tsuenwan",
+    "name": "Just Climb（荃灣）",
+    "brand": "Just Climb",
+    "city": "香港",
+    "province": "香港",
+    "address": "新界荃灣楊屋道88號Plaza 88八樓802號舖",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "sources": [
+      {
+        "name": "Just Climb 官方分店設施",
+        "url": "https://justclimb.hk/venue_facilities-4/"
+      }
+    ],
+    "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+  },
+  {
+    "id": "justclimb-kaitak",
+    "name": "Just Climb（啟德體育園）",
+    "brand": "Just Climb",
+    "city": "香港",
+    "province": "香港",
+    "address": "啟德體育園啟德體育大道啟德體藝館外攀岩牆",
+    "facilities": [
+      "lead",
+      "toprope",
+      "autobelay",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "Just Climb 官方場館地址",
+    "sourceUrl": "https://justclimb.hk/visit-us/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "sources": [
+      {
+        "name": "Just Climb 官方分店設施",
+        "url": "https://justclimb.hk/venue_facilities-4/"
+      }
+    ],
+    "accessNote": "入場、課程及自助攀爬資格按該分店規則；啟德為有蓋室外攀登牆。"
+  },
+  {
+    "id": "tup-nangang",
+    "name": "原岩攀岩館（南港店）",
+    "brand": "原岩攀岩館",
+    "city": "台北",
+    "province": "台湾",
+    "address": "南港區南港路二段147號",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "",
+    "sourceName": "原岩官方分店與設施介紹",
+    "sourceUrl": "https://tupclimbing.tw/branch/nangang",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "未成年人、裝備及保護資格按分店入場規則。"
+  },
+  {
+    "id": "tup-xindian",
+    "name": "原岩攀岩館（新店店）",
+    "brand": "原岩攀岩館",
+    "city": "新北",
+    "province": "台湾",
+    "address": "新店區中興路三段70號YES!LIFE裕隆城7樓",
+    "facilities": [
+      "bouldering",
+      "toprope",
+      "autobelay"
+    ],
+    "summary": "",
+    "sourceName": "原岩官方分店與設施介紹",
+    "sourceUrl": "https://tupclimbing.tw/branch/xindian",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "未成年人、裝備及保護資格按分店入場規則。"
+  },
+  {
+    "id": "regional-qh-xining-fitness",
+    "name": "青海省全民健身中心攀岩馆",
+    "brand": "",
+    "city": "西宁",
+    "province": "青海",
+    "address": "城中区体育巷9号青海省全民健身中心",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "南方体育工程场馆项目资料",
+    "sourceUrl": "https://www.basketball-stands.cn/index.php?a=index&aid=12671&c=View&m=home",
+    "sourceDate": "2026-04-30",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "综合体育中心内，攀岩场的当前开放时段、所在楼层及预约规则待确认。",
+    "verificationNote": "工程方资料明确中心地址及攀岩馆；未将综合中心地址细化为未经核实的具体楼层。"
+  },
+  {
+    "id": "regional-bj-thismountain-yizhuang",
+    "name": "此山攀岩（亦庄信万广场店）",
+    "brand": "此山攀岩",
+    "city": "北京",
+    "province": "北京",
+    "address": "亦庄信万广场",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "北京亦庄官方发布",
+    "sourceUrl": "https://peking.bjd.com.cn/content/s6a8d6d4ee4b0e45f3fd67b8b.html",
+    "sourceDate": "2026-08-25",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "regional-bj-aosen",
+    "name": "北顶奥森攀岩生态园",
+    "brand": "",
+    "city": "北京",
+    "province": "北京",
+    "address": "朝阳区奥林西路奥林匹克森林公园南园西门",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "北京市体育局官方赛事场馆信息",
+    "sourceUrl": "https://www.beijing.gov.cn/fwcj/calendar/tyss/69095799091e1a7398401295.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "到访前确认园区入口及攀爬预约。",
+    "verificationNote": "来源是2025年赛事场馆地址；2026年3月市政府春游信息仍列本馆，不代表核实当天营业。",
+    "sources": [
+      {
+        "name": "北京市政府2026年奥森公园信息",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202603/t20260316_4557641.html",
+        "date": "2026-03-16"
+      }
+    ]
+  },
+  {
+    "id": "regional-bj-huairou-national",
+    "name": "国家登山训练基地（怀柔）攀岩场",
+    "brand": "",
+    "city": "北京",
+    "province": "北京",
+    "address": "怀柔区环湖路1号国家登山训练基地",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "国家体育总局登山中心2026年裁判培训通知",
+    "sourceUrl": "https://www.sport.gov.cn/dszx/n5414/c29778076/content.html",
+    "sourceDate": "2026-07-16",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "训练基地，公众开放及预约规则未确认；培训通知不等于对外营业公告。"
+  },
+  {
+    "id": "regional-sh-qidao",
+    "name": "起道体育攀岩教室",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "金山区南阳港东路438号",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "上海市政府2026市民日校招生公告",
+    "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260305/2b09afa94cc94d01ab4ba437155643ba.html",
+    "sourceDate": "2026-03-05",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "教学点，课程及自由攀爬开放安排需另行确认。"
+  },
+  {
+    "id": "regional-qz-fengze",
+    "name": "攀猩攀岩馆（丰泽广场）",
+    "brand": "",
+    "city": "泉州",
+    "province": "福建",
+    "address": "丰泽区丰泽广场一楼",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+    "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+    "sourceDate": "2026-08-26",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "district": "丰泽区",
+    "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+  },
+  {
+    "id": "regional-qz-jinjiang",
+    "name": "攀猩攀岩（晋江丰龙广场）",
+    "brand": "",
+    "city": "泉州",
+    "province": "福建",
+    "address": "晋江市世纪大道518号丰龙广场CD-L1-011",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+    "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+    "sourceDate": "2026-08-26",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "district": "晋江市",
+    "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+  },
+  {
+    "id": "regional-qz-nanan",
+    "name": "骑士攀岩（南安中骏世界城馆）",
+    "brand": "",
+    "city": "泉州",
+    "province": "福建",
+    "address": "南安市美林街道江北大道40号南安中骏世界城外广场",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+    "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+    "sourceDate": "2026-08-26",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "district": "南安市",
+    "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+  },
+  {
+    "id": "regional-cd-cdsu",
+    "name": "成都体育学院攀岩馆（东部新区校区）",
+    "brand": "",
+    "city": "成都",
+    "province": "四川",
+    "address": "东部新区环湖北路1942号成都体育学院",
+    "facilities": [
+      "bouldering",
+      "rope",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "成都体育学院官方场馆介绍",
+    "sourceUrl": "https://yjs.cdsu.edu.cn/info/1049/38229.htm",
+    "sourceDate": "2024-10-08",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "校内训练场馆，对外开放、入校与预约规则需向学校确认。"
+  },
+  {
+    "id": "regional-nb-rockplus-huanyu",
+    "name": "RockPlus攀岩馆（中海环宇城店）",
+    "brand": "",
+    "city": "宁波",
+    "province": "浙江",
+    "address": "鄞州区中海环宇城",
+    "facilities": [
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "鄞州融媒体记者现场报道",
+    "sourceUrl": "https://www.nbyznews.cn/ldnews/202508/t20250827_6317362.shtml",
+    "sourceDate": "2025-08-27",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "verificationNote": "报道仅明确所在商场，未据其他分店推断门牌、楼层或K板。"
+  },
+  {
+    "id": "regional-sz-yantian-school",
+    "name": "盐田外国语学校攀岩馆",
+    "brand": "",
+    "city": "深圳",
+    "province": "广东",
+    "address": "盐田区梅沙街道环碧路69号盐田外国语学校",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "深圳盐田区文化广电旅游体育局公示",
+    "sourceUrl": "https://www.yantian.gov.cn/cn/zwgk/zfcg/ytqzxcg/content/post_12555657.html",
+    "sourceDate": "2025-12-18",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "accessNote": "校内攀岩馆，历史公示列2026年公益开放项目；公众开放日期与预约需确认，不默认随时入校。"
+  }
+]

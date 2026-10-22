@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="page-title">隐私与 AI</view><view class="subtitle">说明版本 {{version}}</view>
+  <view class="card spaced"><view class="card-title">记录哪些信息</view><view class="body-copy spaced">你主动填写的岩馆、训练日期与时长、训练内容、尝试结果、感受、目标和反馈；以及你主动选择保存的视频。云端模式使用微信提供的身份标识区分数据归属，不需要手机号、头像昵称、精确定位或通讯录。</view></view>
+  <view class="card"><view class="card-title">数据保存在哪里</view><view class="body-copy spaced">本机模式保存在当前微信设备，不会调用模型或上传训练。清理缓存或更换设备可能丢失，请主动导出备份。云端模式将训练、岩馆、尝试、复盘和目标保存到本项目云开发环境，按微信身份访问；视频及其关联信息仅保存在当前微信设备，不会云同步。本机和云端是独立的两份记录，切换不会自动迁移。</view></view>
+  <view class="card"><view class="card-title">相册与视频</view><view class="body-copy spaced">只有你主动选择相册视频并确认后才保存副本，不拍摄、不扫描相册、不分析视频动作。视频不会上传或交给 AI。换手机或清理微信数据可能丢失，请保留相册原片。请先征得片中旁人的同意。拒绝相册授权仍可记录训练。删除攀迹中的副本不会删除手机相册原片。</view></view>
+  <view class="card"><view class="card-title">AI 单独确认</view><view class="body-copy spaced">AI 复盘仅处理你确认范围内的去标识训练数据。不会发送视频、微信身份或岩馆名称；本人备注与目标反馈默认不发送，开启后可以在输入预览中检查。自由文本可能包含你自行填写的个人信息。模型结果需由你判断、修改和确认。</view><view wx:if="{{capabilities.aiAvailable}}" class="notice">服务方：{{capabilities.provider}}<br/>模型：{{capabilities.model}}<br/>处理说明：{{capabilities.privacyUrl}}<br/>留存说明：{{capabilities.retention}}</view><view wx:else class="notice">当前 AI 服务未开通，没有模型调用。数据摘要由固定规则生成，会明确标注。</view><view class="body-copy spaced">可在“我的”撤回后续调用授权，排队任务会停止；已发送数据按服务方条款处理，不承诺服务方零留存。训练或尝试内容修改后，引用它的旧复盘会失效；删除来源记录后会清除相关复盘快照与内容。</view></view>
+  <view class="card"><view class="card-title">导出与删除</view><view class="body-copy spaced">可导出训练、岩馆、尝试、复盘和目标的 JSON 数据，视频只导出元信息，不包含原文件或播放地址。可删除单条记录、单段视频，或删除当前记录位置的全部数据。文件删除失败时保留待清理状态并支持重试，不显示为已完成。删除云端全部数据时也清理当前设备对应的视频副本；其他设备的本机副本无法远程即时删除，需要在对应设备中处理。</view></view>
+  <view class="card"><view class="card-title">使用边界与问题反馈</view><view class="body-copy spaced">统计只说明记录过的训练，不对跨馆等级做换算。复盘不提供动作诊断、伤病诊断或治疗建议。当前为开发体验版，公开发布前还需完成主体、隐私声明、平台要求和真机验收。试用问题请直接反馈给邀请你体验的开发者；本版本没有收集额外联系信息的反馈表。</view><button class="outline small spaced" bindtap="platform">查看微信平台隐私指引</button></view>
+</view>

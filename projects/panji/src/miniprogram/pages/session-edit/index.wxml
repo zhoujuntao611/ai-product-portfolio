@@ -1,0 +1,24 @@
+<view class="page editor-page">
+  <view class="page-title">{{edit ? '编辑训练' : '记录训练'}}</view><view class="subtitle">先记下来，细节可以慢慢补。</view>
+  <view wx:if="{{error}}" class="error-box">{{error}}</view><view wx:if="{{loading}}" class="notice">正在准备记录…</view>
+  <view wx:if="{{recovered}}" class="notice">已恢复未保存的草稿。</view>
+  <view wx:if="{{projectHint}}" class="hint">{{projectHint}}</view>
+  <block wx:if="{{!loading && !error}}">
+    <view wx:if="{{!edit && reuseSource}}" class="quick-reuse">
+      <view class="grow"><view class="quick-title">沿用上次安排</view><view class="tiny">{{reuseSource.date}} · {{reuseSource.gym}}</view></view><button class="outline small" bindtap="reuseLast" disabled="{{busy}}">复用上次</button>
+    </view>
+    <view wx:if="{{!edit && reused}}" class="tiny reuse-explanation">已带入岩馆、时长和训练内容；日期为今天，感受与强度请重新填写。</view>
+    <view class="card spaced">
+      <view class="form-columns"><view class="grow"><view class="label">训练日期</view><picker mode="date" value="{{form.sessionDate}}" end="{{today}}" bindchange="pickDate"><view class="picker">{{form.sessionDate}} ⌄</view></picker></view><view class="duration-field"><view class="label">时长 · 分钟</view><input class="input" type="number" value="{{form.durationMinutes}}" data-field="durationMinutes" bindinput="field" maxlength="4" placeholder="选填" /></view></view>
+      <view class="row between"><view class="label">岩馆 <text class="required-dot">*</text></view><button class="link" bindtap="addGym">我的岩馆</button></view>
+      <view class="gym-picker-row"><picker wx:if="{{gyms.length}}" class="grow" mode="selector" range="{{gyms}}" range-key="displayName" value="{{gymIndex}}" bindchange="pickGym"><view class="picker gym-name">{{gymName || '请选择岩馆'}} ⌄</view></picker><button class="outline {{gyms.length ? 'small' : 'grow'}}" bindtap="catalog">{{gyms.length ? '换一家' : '从岩馆库选择'}}</button></view>
+      <view wx:if="{{!edit && recentGyms.length > 1}}" class="recent-gym-row"><text class="tiny">最近去过</text><button wx:for="{{recentGyms}}" wx:key="_id" class="gym-chip {{form.gymId === item._id ? 'selected' : ''}}" data-id="{{item._id}}" bindtap="recentGym">{{item.name}}</button></view>
+      <view class="label">这次练了什么</view><textarea class="textarea training-notes" value="{{form.trainingNotes}}" data-field="trainingNotes" bindinput="field" maxlength="2000" placeholder="热身、线路、想练的动作……选填" />
+      <button class="fold-row" bindtap="toggleExtras"><text>感受与强度 <text class="tiny">· 选填</text></text><text class="fold-symbol">{{showExtras ? '−' : '＋'}}</text></button>
+      <view wx:if="{{showExtras}}" class="extras-panel">
+        <view class="label">训练感受</view><textarea class="textarea feeling-notes" value="{{form.feeling}}" data-field="feeling" bindinput="field" maxlength="1000" placeholder="状态、进步或卡点" />
+        <view class="row between effort-row"><view><view class="label">主观训练强度</view><view class="tiny">1 很轻松 · 10 非常吃力</view></view><input class="input effort-input" type="number" value="{{form.perceivedEffort}}" data-field="perceivedEffort" bindinput="field" maxlength="2" placeholder="1–10" /></view>
+      </view>
+    </view><button class="primary full-width" bindtap="save" loading="{{busy}}" disabled="{{busy}}">保存训练 →</button>
+  </block>
+</view>

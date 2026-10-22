@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="eyebrow">REPLAY</view>
+  <view class="page-title">{{scopeLabel ? '线路视频' : '视频库'}}</view>
+  <view wx:if="{{scopeLabel}}" class="subtitle">{{scopeLabel}} · 跨次回看与对比</view>
+  <view class="actions"><button class="primary" bindtap="add" disabled="{{uploading || loading || !uploadsAvailable}}" loading="{{uploading}}">＋ 相册导入</button><button wx:if="{{!scoped}}" class="outline" bindtap="toggle" disabled="{{uploading}}">{{unlinkedOnly ? '查看全部' : '只看待整理'}}</button></view>
+  <button class="link" bindtap="addEdited" disabled="{{uploading || loading || !uploadsAvailable}}">裁剪 / 压缩导入</button>
+  <view wx:if="{{importHint}}" class="hint">{{importHint}}</view>
+  <view class="notice">仅存在当前设备，请保留相册原片。{{videoLimitLabel}}。</view>
+  <view wx:if="{{uploading}}" class="notice">正在保存 {{progress}}% · 请保持前台，失败后可重新选择。</view>
+  <view wx:if="{{error}}" class="error-box">{{error}}<button class="link" bindtap="reload">重试</button></view><view wx:if="{{loading}}" class="notice">正在整理视频…</view>
+  <view wx:if="{{linkId}}" class="card spaced"><view class="card-title">关联到哪次训练？</view><view class="label">训练</view><picker range="{{sessions}}" range-key="label" value="{{sessionIndex}}" bindchange="selectSession"><view class="picker">{{sessions[sessionIndex].label}} ⌄</view></picker><view class="label">具体尝试 · 可选</view><picker range="{{targets}}" range-key="routeLabel" value="{{attemptIndex}}" bindchange="selectAttempt"><view class="picker">{{targets[attemptIndex].routeLabel}} ⌄</view></picker><view class="actions"><button class="outline" bindtap="closeLink" disabled="{{busy}}">取消</button><button class="primary" bindtap="saveLink" disabled="{{busy}}" loading="{{busy}}">保存关联</button></view></view>
+  <view wx:if="{{compareIds.length}}" class="compare-toolbar card" id="video-comparison">
+    <view class="row between"><view class="card-title">选两段，看看哪里不同</view><text class="badge">{{compareIds.length}} / 2</text></view>
+    <view class="actions"><button class="primary small" bindtap="startCompare" disabled="{{compareIds.length !== 2 || comparing}}" loading="{{comparing}}">逐段对比</button><button class="outline small" bindtap="clearCompare">清空选择</button></view>
+    <view wx:if="{{compareOpen}}" class="hint">两个播放器独立控制。建议暂停一段，再慢放另一段；不自动同步。</view>
+    <view wx:for="{{compareItems}}" wx:for-item="clip" wx:key="_id" class="comparison-clip">
+      <view class="comparison-heading">{{index + 1}} · {{clip.sessionLabel}} · {{clip.attemptLabel || '整次训练'}}</view>
+      <video id="panji-compare-{{clip.slot}}" class="video compare-video" src="{{clip.url}}" controls="{{true}}" autoplay="{{false}}" object-fit="contain" data-player="compare" binderror="playbackError" />
+      <view class="rate-row"><text class="tiny">速度</text><button wx:for="{{rates}}" wx:for-item="speed" wx:key="*this" class="rate-button {{clip.rate === speed ? 'active' : ''}}" data-slot="{{clip.slot}}" data-rate="{{speed}}" bindtap="rate">{{speed}}×</button></view>
+      <view wx:if="{{clip.marks.length}}" class="marker-jumps"><button wx:for="{{clip.marks}}" wx:for-item="mark" wx:key="id" class="marker-jump" data-slot="{{clip.slot}}" data-time="{{mark.timeSec}}" bindtap="seekCompare">{{mark.timeLabel}} · {{mark.note}}</button></view>
+    </view>
+  </view>
+  <view class="gap"></view>
+  <view wx:if="{{!loading && !error && !videos.length}}" class="card empty"><view class="empty-mark">▷</view><view class="empty-title">暂无视频</view><view class="empty-copy">{{scopeLabel ? '这条线路的视频会按关联的尝试汇集在这里。' : '导入一段尝试，慢放回看，也记下关键片段。'}}</view></view>
+  <view wx:for="{{videos}}" wx:key="_id" id="video-card-{{item._id}}" class="card video-card {{item.compareSelected ? 'selected' : ''}}">
+    <view class="row between"><view class="card-title">{{item.sessionLabel}}</view><text class="badge {{item.status === 'ready' ? '' : 'warm'}}">{{item.statusLabel}}</text></view>
+    <view class="muted spaced">{{item.attemptLabel || '未关联具体尝试'}} · {{item.durationLabel}} · {{item.sizeLabel}} MB</view>
+    <block wx:if="{{playingId === item._id}}">
+      <video id="panji-main-video" class="video" src="{{playingUrl}}" controls="{{true}}" autoplay="{{false}}" show-center-play-btn="{{true}}" object-fit="contain" bindtimeupdate="timeUpdate" binderror="playbackError" />
+      <view class="rate-row"><text class="tiny">速度</text><button wx:for="{{rates}}" wx:for-item="speed" wx:key="*this" class="rate-button {{playbackRate === speed ? 'active' : ''}}" data-rate="{{speed}}" bindtap="rate">{{speed}}×</button></view>
+      <view class="row between marker-heading"><text class="muted">当前 {{currentTimeLabel}}</text><button class="link" bindtap="addMarker" disabled="{{markerBusy}}">＋ 标记此刻</button></view>
+      <view wx:if="{{markerVideoId === item._id}}" class="sheet marker-editor">
+        <view class="card-title">{{markerId ? '编辑关键片段' : '记下关键片段'}}</view>
+        <view class="label">时间 · 秒</view><input class="input" type="digit" value="{{markerTime}}" data-field="markerTime" bindinput="markerField" placeholder="例如 12.5" />
+        <view class="label">这一刻发生了什么？</view><textarea class="textarea marker-note" value="{{markerNote}}" maxlength="120" data-field="markerNote" bindinput="markerField" placeholder="例如：换脚后重心更稳，下次试着提前转髋" />
+        <view class="quick-notes"><button class="note-chip" data-note="掉落位置" bindtap="quickMarker">掉落</button><button class="note-chip" data-note="换脚动作" bindtap="quickMarker">换脚</button><button class="note-chip" data-note="这次成功的动作" bindtap="quickMarker">成功动作</button></view>
+        <view class="actions"><button class="outline small" bindtap="closeMarker" disabled="{{markerBusy}}">取消</button><button class="primary small" bindtap="saveMarker" disabled="{{markerBusy}}" loading="{{markerBusy}}">保存标记</button></view>
+      </view>
+      <view wx:if="{{item.marks.length}}" class="markers">
+        <view wx:for="{{item.marks}}" wx:for-item="mark" wx:key="id" class="marker-row">
+          <button class="marker-main" data-id="{{mark.id}}" bindtap="seekMarker"><text class="marker-time">{{mark.timeLabel}}</text><text class="marker-copy">{{mark.note}}</text></button>
+          <view class="marker-actions"><button class="link" data-id="{{mark.id}}" bindtap="editMarker" disabled="{{markerBusy}}">编辑</button><button class="link muted" data-id="{{mark.id}}" bindtap="removeMarker" disabled="{{markerBusy}}">删除</button></view>
+        </view>
+        <view class="tiny">点时间点可暂停并跳到对应画面。</view>
+      </view>
+    </block>
+    <view wx:elif="{{item.status === 'ready'}}" class="actions"><button class="secondary small" data-id="{{item._id}}" bindtap="play">▷ 回看{{item.marks.length ? ' · ' + item.marks.length + ' 个标记' : ''}}</button><button class="outline small {{item.compareSelected ? 'compare-picked' : ''}}" data-id="{{item._id}}" bindtap="toggleCompare">{{item.compareSelected ? '已选 ' + item.compareOrder : '加入对比'}}</button></view>
+    <button wx:if="{{playingId === item._id}}" class="link" data-id="{{item._id}}" bindtap="toggleCompare">{{item.compareSelected ? '取消对比选择' : '将这段加入对比'}}</button>
+    <view class="actions video-actions"><button wx:if="{{item.status === 'ready'}}" class="outline small" data-id="{{item._id}}" bindtap="openLink">关联训练</button><button wx:if="{{item.sessionId && item.status === 'ready'}}" class="outline small" data-id="{{item._id}}" bindtap="unlink">解除关联</button><button class="link small delete-link" data-id="{{item._id}}" bindtap="remove">{{item.status === 'deleting' ? '重试删除' : '删除'}}</button></view>
+  </view>
+  <button class="link" bindtap="cleanup">重试清理待删除和已过期文件</button>
+</view>
+<privacy-consent />

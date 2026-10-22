@@ -54,7 +54,7 @@ test_unsupported_causal_roi_and_behavior_requests (test_orders_workflow.Imported
 FAIL: test_invalid_rows_require_explicit_exclusion_and_keep_audit (test_orders_workflow.CsvAcceptanceTests.test_invalid_rows_require_explicit_exclusion_and_keep_audit)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\02_��������\���˵���\��ְ����\����\ni\outputs\github-public\projects\metricpilot\tests\test_orders_workflow.py", line 358, in test_invalid_rows_require_explicit_exclusion_and_keep_audit
+  File "projects/metricpilot/tests/test_orders_workflow.py", line 358, in test_invalid_rows_require_explicit_exclusion_and_keep_audit
     self.assertEqual(result["stats"]["excluded_rows"], 3)
 AssertionError: [3, 4, 5] != 3
 

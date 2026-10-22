@@ -1,0 +1,172 @@
+[
+  {
+    "id": "osm-node-4583627411",
+    "sourceName": "Attic V 官方聯絡地址",
+    "sourceUrl": "https://www.atticv.com.hk/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "原記錄地址僅有香港；按經營方現行聯絡頁補足門牌及地下舖位，不採用第三方仍保留的舊址。",
+    "changes": {
+      "name": "Attic V Climbing Gym",
+      "brand": "Attic V",
+      "address": "香港黃竹坑道49號得力工業大廈地下E舖",
+      "facilities": ["bouldering"],
+      "verificationNote": "地址採經營方現行官網；沒有據舊網頁補錄訓練板品牌或票價。"
+    }
+  },
+  {
+    "id": "osm-node-5132063921",
+    "sourceName": "YMCA of Hong Kong 官方室內攀石設施頁",
+    "sourceUrl": "https://www.ymcahk.org.hk/ms/en/our_facilities/tst_headquater/indoor_climbing_wall/index.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "原記錄地址僅有香港；經營方頁面列梳士巴利道41號及二樓攀石櫃台，並說明評核、課程或持卡人陪同要求。",
+    "changes": {
+      "name": "港青 YMCA（尖沙咀）室內攀石場",
+      "brand": "YMCA of Hong Kong",
+      "address": "九龍尖沙咀梳士巴利道41號港青2樓",
+      "facilities": ["toprope"],
+      "accessNote": "自行攀爬須先符合場館評核或認可課程要求；兒童須按規定由持評核卡成人陪同。體驗課須預約。"
+    }
+  },
+  {
+    "id": "osm-node-5132063921",
+    "sourceName": "YMCA of Hong Kong 2026年首季攀登課程官方章程",
+    "sourceUrl": "https://www.ymcahk.org.hk/snr/filemanager/en/content_437/YMCA_Climbing_2026Q1_Version%2016122025.pdf",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "官方課程章程確認尖沙咀二樓室內攀石場及日票使用者須通過頂繩評核；與油麻地京士柏戶外場不同，不能混為一處。",
+    "changes": {
+      "facilities": ["toprope"]
+    }
+  },
+  {
+    "id": "kilter-22029743",
+    "sourceName": "The Player Climbingym 官方到訪資訊",
+    "sourceUrl": "https://www.theplayerclimbing.com/visit-us",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "官方明確美孚店位於 Upper Ground Floor，補足舊廠家名錄未列的UG層，保留原場館ID。",
+    "changes": {
+      "name": "The Player Climbingym（美孚店）",
+      "brand": "The Player Climbingym",
+      "address": "九龍荔景山路272號荔灣花園UG層6B及6B1號舖"
+    }
+  },
+  {
+    "id": "kilter-22029743",
+    "sourceName": "The Player Climbingym 官方設施頁",
+    "sourceUrl": "https://www.theplayerclimbing.com/facilities",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "官方逐項列抱石、Kilter Board、Moon Board、Gym Area及兒童課程專用4.5米頂繩牆，補足只有K板的舊資料。",
+    "changes": {
+      "facilities": ["bouldering", "kilter", "moon", "toprope", "fitness"],
+      "accessNote": "4.5米頂繩牆限兒童攀登課程；一般入場以抱石及訓練設施為主，初次到訪須按場館規定填寫免責登記。"
+    }
+  },
+  {
+    "id": "kilter-22029744",
+    "sourceName": "Vita Beta 官方分店與交通頁",
+    "sourceUrl": "https://www.vitabeta.hk/getting-here/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "官方目前分列荃灣與鰂魚涌兩店；此ID廠家地址對應荃灣，補分店名及中文地址，避免兩店混查。",
+    "changes": {
+      "name": "Vita Beta Climbing Gym（荃灣店）",
+      "brand": "Vita Beta",
+      "address": "新界荃灣沙咀道29–35號科技中心1樓2室",
+      "accessNote": "初次到訪前須填寫場館免責及登記表；分店與開放時段以官方當日公告為準。"
+    }
+  },
+  {
+    "id": "kilter-22029744",
+    "sourceName": "中國香港攀山及攀登總會官方抱石賽場地資料",
+    "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+    "sourceDate": "2023-11-21",
+    "checkedAt": "2026-10-22",
+    "reason": "協會自行主辦賽事的條款第7節列荃灣Vita Beta為抱石賽場地，地址與經營方現行頁一致；據此補抱石，不將鰂魚涌設施套到荃灣。",
+    "changes": {
+      "facilities": ["bouldering", "kilter"]
+    }
+  },
+  {
+    "id": "kilter-22029746",
+    "sourceName": "中國香港攀山及攀登總會官方抱石賽場地資料",
+    "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+    "sourceDate": "2023-11-21",
+    "checkedAt": "2026-10-22",
+    "reason": "協會主辦賽事條款第7節明列鳴琴路1號及LG126；舊廠家資料寫Shop126和Ming Jum Rd，補正樓層及道路中文，並補抱石。",
+    "changes": {
+      "name": "Top Out Climbing（山景商場）",
+      "brand": "Top Out Climbing",
+      "address": "新界屯門鳴琴路1號山景商場LG126號舖",
+      "facilities": ["bouldering", "kilter"],
+      "verificationNote": "地址及抱石設施有協會賽事一手資料交叉支持；未據此聲稱2026年當日營業已確認。"
+    }
+  },
+  {
+    "id": "kilter-22029747",
+    "sourceName": "中國香港攀山及攀登總會官方抱石賽場地資料",
+    "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+    "sourceDate": "2023-11-21",
+    "checkedAt": "2026-10-22",
+    "reason": "協會主辦賽事條款第7節列Urban Stone為抱石賽場地，中文樓名與廠家地址對應；補抱石及便於搜尋的中文地址。",
+    "changes": {
+      "brand": "Urban Stone",
+      "address": "新界葵涌葵豐街38–42號大鴻輝（葵涌）中心二期地下2號舖",
+      "facilities": ["bouldering", "kilter"]
+    }
+  },
+  {
+    "id": "kilter-33848172",
+    "sourceName": "Dapro協辦2026臺中市市長盃官方活動頁",
+    "sourceUrl": "https://2026city.dapro.j91.me/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "場館自行協辦之2026年賽事明列比賽地址及抱石V組，補中文館名及完整城市地址。",
+    "changes": {
+      "name": "Dapro 室內攀岩場",
+      "brand": "Dapro",
+      "address": "臺中市南屯區永春東七路700號",
+      "facilities": ["bouldering", "kilter"]
+    }
+  },
+  {
+    "id": "kilter-33848172",
+    "sourceName": "中華民國山岳協會2025全國先鋒抱石賽官方活動頁",
+    "sourceUrl": "https://ctaa.j91.me/race/30",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "主辦協會及承辦場館的一手活動頁同時列先鋒和抱石、Dapro館及永春東七路700號；補先鋒設施，未從旅遊文章猜測速度或自保配置。",
+    "changes": {
+      "facilities": ["bouldering", "lead", "kilter"]
+    }
+  },
+  {
+    "id": "osm-node-11121831487",
+    "sourceName": "朗壹廣場業主官方現行商戶頁",
+    "sourceUrl": "https://www.onenorth.com.hk/tc/lifestyle/shop/1807/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "2024業主刊物稱此G14–15舖為香港攀爬樂園；業主現行名錄已列First Climb。按同一鋪位更新場館展示名，保留舊名作歷史檢索，不將新舊名錄計作兩館，也不假定法律主體或會員資格延續。",
+    "changes": {
+      "name": "First Climb（朗壹廣場）",
+      "brand": "First Climb",
+      "address": "新界元朗康業街8號朗壹廣場地下G14–15號舖",
+      "accessNote": "原同址資料曾錄作香港攀爬樂園（元朗），現業主名錄列First Climb；舊會員及預約能否沿用，請向現經營者確認。",
+      "verificationNote": "名稱與舖位按業主現行名錄；不將2024舊品牌的MoonBoard或高牆配置自動轉移給現經營品牌。"
+    }
+  },
+  {
+    "id": "osm-node-11121831487",
+    "sourceName": "朗壹廣場業主官方交通資訊",
+    "sourceUrl": "https://www.onenorth.com.hk/tc/visit/transportation/",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "reason": "商戶頁僅列廣場和鋪位，交通頁明列元朗康業街8號；兩個一手頁合併補足導航地址。",
+    "changes": {
+      "address": "新界元朗康業街8號朗壹廣場地下G14–15號舖"
+    }
+  }
+]

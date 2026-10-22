@@ -1,0 +1,214 @@
+[
+  {
+    "id": "gov-cq-wanzhou-oneplayer",
+    "name": "重庆一号顽家体育文化传播有限公司攀岩场所",
+    "brand": "",
+    "city": "重庆",
+    "address": "万州区牌楼街道体育路200号附223号",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "重庆市万州区文化旅游委持证场所公示",
+    "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+    "sourceDate": "2026-03-24",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "公示截至2026-03-02取得攀岩经营许可的场所；以官方经营单位名称收录，未确认商业门头名或具体攀爬类型。"
+  },
+  {
+    "id": "gov-cq-wanzhou-baoshi",
+    "name": "万州区抱石体育场馆管理俱乐部",
+    "brand": "",
+    "city": "重庆",
+    "address": "万州区高笋塘街道太白路99号",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "重庆市万州区文化旅游委持证场所公示",
+    "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+    "sourceDate": "2026-03-24",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "公示截至2026-03-02取得攀岩经营许可的场所；名称中有抱石不作为设施判断依据，未确认具体攀爬类型。"
+  },
+  {
+    "id": "gov-cq-wanzhou-yanan",
+    "name": "重庆市万州区岩安体育发展有限公司攀岩场所",
+    "brand": "",
+    "city": "重庆",
+    "address": "万州区高笋塘街道北滨大道二段998号5幢第1层",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "重庆市万州区文化旅游委持证场所公示",
+    "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+    "sourceDate": "2026-03-24",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "公示截至2026-03-02取得攀岩经营许可的场所；以官方经营单位名称收录，未确认商业门头名或具体攀爬类型。"
+  },
+  {
+    "id": "gov-sh-thismountain-hongqiao",
+    "name": "此山攀岩（虹桥馆）",
+    "brand": "此山攀岩",
+    "city": "上海",
+    "address": "闵行区申长路869号1层127a、128b及4层414、414a",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "上海市闵行区体育局2026年6月行政许可公示",
+    "sourceUrl": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/cc3fe0a2-d9e7-4c7e-a56d-5ceb67311c0b.htm",
+    "sourceDate": "2026-07-01",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "同一地址的一楼区和四楼区合并为一个岩馆。3月公示列一楼区，6月公示列四楼区；公示许可范围未具体区分抱石、绳攀或训练板。",
+    "sources": [
+      {
+        "name": "上海市闵行区体育局2026年3月行政许可公示",
+        "url": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/a4fec188-a3a2-44aa-a723-8751ef6bda09.htm",
+        "date": "2026-03-27"
+      },
+      {
+        "name": "上海市闵行区体育局2026年6月行政许可公示",
+        "url": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/cc3fe0a2-d9e7-4c7e-a56d-5ceb67311c0b.htm",
+        "date": "2026-07-01"
+      }
+    ]
+  },
+  {
+    "id": "gov-cz-xingkong-xinghu",
+    "name": "星空攀岩馆（星湖广场）",
+    "brand": "星空攀岩",
+    "city": "常州",
+    "address": "武进区星湖广场",
+    "facilities": [
+      "bouldering",
+      "toprope"
+    ],
+    "summary": "抱石、顶绳。",
+    "sourceName": "常州市体育局2026年攀岩比赛竞赛规程",
+    "sourceUrl": "https://tyj.changzhou.gov.cn/html/tyj/2026/FMAJJNIC_0706/25452.html",
+    "sourceDate": "2026-07-06",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "赛事指定场馆；规程明确攀石赛及采用顶绳攀登的难度赛。未确认训练板或当前营业时间。"
+  },
+  {
+    "id": "gov-gz-quye-vlab",
+    "name": "趣野攀岩（VLAB翌方181）",
+    "brand": "趣野攀岩",
+    "city": "广州",
+    "address": "白云区沙太南路181、183、185号VLAB翌方181",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "抱石区。",
+    "sourceName": "广州市白云区人民政府场馆介绍",
+    "sourceUrl": "https://www.by.gov.cn/zjby/hdxx/hdyg/content/post_10497413.html",
+    "sourceDate": "2025-10-20",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "原文明确抱石区及户外岩壁，未具体说明户外岩壁保护类型；只录明确的抱石标签。"
+  },
+  {
+    "id": "gov-sh-youshi-chuanqiao",
+    "name": "优石攀岩（川桥路）",
+    "brand": "优石攀岩",
+    "city": "上海",
+    "address": "浦东新区川桥路600号5幢1层F-2室",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "浦东新区2025年4月高危险性体育项目经营许可公示",
+    "sourceUrl": "https://www.pudong.gov.cn/zwgk/14483.gkml_qt/2025/224/343387/ab15913dd58f440ca3b2614efb369af9.pdf",
+    "sourceDate": "2025-04-16",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "sourceDate为公示表内延续许可决定日期；场所地址原文记作川桥路600-5幢1层F-2室。未确认具体攀爬类型或当日营业状态。"
+  },
+  {
+    "id": "gov-sz-cube-hubei",
+    "name": "CUBE有石攀岩（湖贝店）",
+    "brand": "CUBE有石",
+    "city": "深圳",
+    "address": "罗湖区东门街道湖贝路1068号湖贝里商业二楼",
+    "facilities": [
+      "bouldering"
+    ],
+    "summary": "室内抱石。",
+    "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+    "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+    "sourceDate": "2026-07-28",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "罗湖官方发布的场馆名址与项目事实；未收录原文价格、评价或营销描述。难度标签未细分先锋、顶绳或自保。"
+  },
+  {
+    "id": "gov-sz-ale-yijing",
+    "name": "阿叻综合攀岩馆",
+    "brand": "阿叻",
+    "city": "深圳",
+    "address": "罗湖区黄贝街道怡景路2013号动漫大厦4楼401室",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "抱石、难度。",
+    "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+    "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+    "sourceDate": "2026-07-28",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "罗湖官方发布的场馆名址与项目事实；未收录原文价格、评价或营销描述。难度标签未细分先锋、顶绳或自保。"
+  },
+  {
+    "id": "gov-sz-bluesky-yitian",
+    "name": "蓝天攀岩（罗湖益田假日广场店）",
+    "brand": "蓝天攀岩",
+    "city": "深圳",
+    "address": "罗湖区翠竹街道木头龙社区爱国路1009号2楼",
+    "facilities": [
+      "bouldering",
+      "rope",
+      "speed"
+    ],
+    "summary": "抱石、难度、速度。",
+    "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+    "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+    "sourceDate": "2026-07-28",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "罗湖官方发布的场馆名址与项目事实；未收录原文价格、评价或营销描述。难度标签未细分先锋、顶绳或自保。"
+  },
+  {
+    "id": "gov-sz-bluesky-administration",
+    "name": "蓝天攀岩（罗湖行政服务中心店）",
+    "brand": "蓝天攀岩",
+    "city": "深圳",
+    "address": "罗湖区黄贝街道经二路48号罗湖区行政服务大厅二楼",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "抱石、难度。",
+    "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+    "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+    "sourceDate": "2026-07-28",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "罗湖官方发布的场馆名址与项目事实；未收录原文价格、评价或营销描述。难度标签未细分先锋、顶绳或自保。"
+  },
+  {
+    "id": "gov-sz-bluesky-cuiyuan",
+    "name": "蓝天攀岩（乐动力翠园华府体育中心店）",
+    "brand": "蓝天攀岩",
+    "city": "深圳",
+    "address": "罗湖区东盛路11号翠园华府乐动力体育中心四楼",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "抱石、难度。",
+    "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+    "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+    "sourceDate": "2026-07-28",
+    "checkedAt": "2026-10-21",
+    "verification": "source-listed",
+    "sourceNotes": "罗湖官方发布的场馆名址与项目事实；未收录原文价格、评价或营销描述。难度标签未细分先锋、顶绳或自保。"
+  }
+]

@@ -1,0 +1,519 @@
+{
+  "updatedAt": "2026-10-22",
+  "entries": [
+    {
+      "id": "banana-sz-qianhai",
+      "name": "香蕉攀岩 前海壹方汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "广东省深圳市南山区听海大道5059号前海壹方汇L1",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sh-longfeng",
+      "name": "香蕉攀岩 淮海龙凤PRSCO店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市黄浦区瑞金二路街道淮海中路728号龙凤PRSCO 4楼01-03室",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cd-youfang",
+      "name": "香蕉攀岩 悠方店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "四川省成都市武侯区交子大道悠方购物中心L3",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-zh-wangjiaohui",
+      "name": "香蕉攀岩 香洲旺角荟店",
+      "city": "珠海",
+      "brand": "香蕉攀岩",
+      "address": "广东省珠海市香洲区敬业路88号旺角荟A202",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-oct-park",
+      "name": "香蕉攀岩 华侨城欢乐时光店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区华侨城欢乐时光L1-19/20/21/22",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-zhuoyuehui",
+      "name": "香蕉攀岩 卓悦汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "广东省深圳市福田区上梅林卓悦汇2F（海底捞正对面）",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-jiale",
+      "name": "BANANA+ 嘉乐道店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区文心六路保利文化广场KALEDO嘉乐道商场四层BANANA+",
+      "facilities": [
+        "bouldering",
+        "fitness"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-houhai",
+      "name": "香蕉攀岩 后海汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区后海滨路后海汇B2-01 及下沉广场",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-incity",
+      "name": "香蕉攀岩 iN城市广场店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市福田区深南大道1095号iN城市广场L5层01/02号",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-linkplaza",
+      "name": "香蕉攀岩 领展中心城店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市福田区福田街道领展中心城1层1017号(近南大门)及东广场高墙",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-kingdee",
+      "name": "香蕉攀岩 金蝶店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区粤海街道高新区社区科技南十二路2号金蝶云大厦5层",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sz-baoan",
+      "name": "香蕉攀岩 宝安中心店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市宝安区新安街道创业一路1006号丽晶国际B栋3层304",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sh-kerry",
+      "name": "BANANA+ 嘉里合集店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市 静安区 天目西路218号嘉里合集B1层B103-104",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sh-yananxi",
+      "name": "香蕉攀岩 延安西路店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市长宁区华阳路街道海粟文化广场",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-sh-jinhongqiao",
+      "name": "香蕉攀岩 金虹桥店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市长宁区茅台路179号金虹桥国际中心商场L2 楼香蕉攀岩",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cd-cosmo",
+      "name": "BANANA+ COSMO店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "四川省成都市锦江区大业路6号 COSMO商场 5F",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cd-icd",
+      "name": "香蕉攀岩 环贸ICD店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "成都市锦江区环贸ICD二层L201 香蕉攀岩",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cd-capitaland",
+      "name": "香蕉攀岩 凯德天府店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "成都市武侯区天仁路388号凯德天府L5-15铺",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-bj-xiaoyuehe",
+      "name": "香蕉攀岩 小月河店",
+      "city": "北京",
+      "brand": "香蕉攀岩",
+      "address": "中关村东升科技园三期东畔科创中心(北沙滩桥西南)",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-bj-shangdi",
+      "name": "香蕉攀岩 上地店",
+      "city": "北京",
+      "brand": "香蕉攀岩",
+      "address": "北京市海淀区东北旺西路58号尚科办公社区西门1号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-wh-huafa",
+      "name": "BANANA+ 华发中城商都店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市江汉区中央商务区青年路299号华发中城商都B1栋1F层B1-L1-1号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-wh-qincheng",
+      "name": "香蕉攀岩 亲橙万象汇店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市武昌区徐东大街66号武汉亲橙万象汇5层L501",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-wh-hanglung",
+      "name": "香蕉攀岩 恒隆广场店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市硚口区京汉大道668号恒隆广场（西区）5楼L501B",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-wh-guanggu-k11",
+      "name": "香蕉攀岩 光谷K11店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市东湖新技术开发区关山大道355号武汉光谷K11购物艺术中心香蕉攀岩",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cs-zhujiang",
+      "name": "香蕉攀岩 珠江星环店",
+      "city": "长沙",
+      "brand": "香蕉攀岩",
+      "address": "长沙市开福区福元西路109号珠江星环购物中心L3层25A",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-cs-yuefang",
+      "name": "香蕉攀岩 悦方ID MALL店",
+      "city": "长沙",
+      "brand": "香蕉攀岩",
+      "address": "湖南省长沙市天心区坡子街216号悦方购物中心L4层L455香蕉攀岩",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-hz-raffles",
+      "name": "香蕉攀岩 来福士店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "浙江省杭州市上城区新业路228号来福士广场 4F-01/38/39",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-hz-xixi",
+      "name": "香蕉攀岩 西溪天街店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "杭州市西湖区余杭塘路杭州龙湖西溪天街4层46、47号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-hz-aoti",
+      "name": "香蕉攀岩 奥体印象城店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "浙江省杭州市萧山区盈丰街道汇德隆印象城L6-01a",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-gz-junchao",
+      "name": "香蕉攀岩 君超店",
+      "city": "广州",
+      "brand": "香蕉攀岩",
+      "address": "广东省广州市天河区黄埔大道中652号(地铁科韵路站B出口旁)",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "banana-zh-leshi",
+      "name": "香蕉攀岩 乐士店",
+      "city": "珠海",
+      "brand": "香蕉攀岩",
+      "address": "珠海市香洲区前山街道乐士文化区",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    }
+  ]
+}

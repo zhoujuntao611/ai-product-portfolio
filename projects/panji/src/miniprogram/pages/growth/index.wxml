@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="row between"><view class="page-title">成长统计</view><button class="link" bindtap="toggleFilters">{{showFilters ? '收起筛选 −' : '筛选 ＋'}}</button></view>
+  <view class="chips"><view wx:for="{{[7,28,90]}}" wx:key="*this" class="chip {{period === item ? 'active' : ''}}" data-days="{{item}}" bindtap="range">近 {{item}} 天</view></view>
+  <view class="filter-caption">{{from}} — {{to}}<text wx:if="{{gymIndex}}"> · {{gyms[gymIndex].name}}</text></view><view wx:if="{{showFilters}}" class="filter-panel"><view class="row date-range"><picker mode="date" value="{{from}}" end="{{today}}" data-field="from" bindchange="date"><view class="date-picker">{{from}} ⌄</view></picker><text class="tiny">至</text><picker mode="date" value="{{to}}" end="{{today}}" data-field="to" bindchange="date"><view class="date-picker">{{to}} ⌄</view></picker></view>
+  <picker range="{{gyms}}" range-key="name" value="{{gymIndex}}" bindchange="gym"><view class="gym-filter">{{gyms[gymIndex].name}} <text>⌄</text></view></picker></view>
+  <view wx:if="{{loading}}" class="notice">正在整理统计…</view><view wx:if="{{error}}" class="error-box">{{error}}<button class="link" bindtap="reload">重新读取</button></view>
+  <block wx:if="{{metrics && !error && !loading}}">
+    <view wx:if="{{!metrics.sessions}}" class="card empty"><view class="empty-mark">↗</view><view class="empty-title">所选范围暂无记录</view><button class="outline" bindtap="record">去记录</button></view>
+    <block wx:else>
+      <view class="stat-grid"><view class="stat-box"><view class="metric">{{metrics.sessions}}<text class="metric-unit">次</text></view><view class="stat-label">训练记录</view></view><view class="stat-box"><view class="metric">{{metrics.minutes}}<text class="metric-unit">分钟</text></view><view class="stat-label">已记录时长</view></view><view class="stat-box"><view class="metric">{{metrics.attempts}}<text class="metric-unit">次</text></view><view class="stat-label">尝试</view></view><view class="stat-box"><view class="metric accent">{{rateLabel}}</view><view class="stat-label">完成 {{metrics.completed}} / 已知结果 {{metrics.denominator}}</view></view></view>
+      <view wx:if="{{metrics.missingDuration}}" class="notice">{{metrics.missingDuration}} 次时长未填</view>
+      <view class="section-title">每周训练</view><view class="card"><scroll-view scroll-x="{{true}}"><view class="weekly"><view wx:for="{{weeks}}" wx:key="week" class="week-column"><text class="week-count">{{item.sessions}}</text><view class="bar-track"><view class="week-bar" style="height:{{item.height}}rpx"></view></view><text class="tiny">{{item.label}}</text></view></view></scroll-view></view>
+      <view class="section-title">尝试结果</view><view class="card"><view wx:if="{{metrics.attempts}}" class="result-bar"><view wx:for="{{resultSegments}}" wx:key="kind" class="segment {{item.kind}}" style="width:{{item.width}}%"></view></view><view wx:else class="muted">暂无尝试记录</view><view class="result-legend"><view wx:for="{{resultSegments}}" wx:key="kind"><text class="result-dot {{item.kind}}"></text><text>{{item.label}}</text><text class="result-count">{{item.count}}</text></view></view></view>
+      <view wx:if="{{metrics.grades.length}}" class="section-title">难度分布</view><view wx:for="{{metrics.grades}}" wx:key="index" class="card grade-row"><view class="row between"><view><view class="card-title">{{item.label}}</view><view class="tiny">{{item.gym}} · {{item.system}}</view></view><view class="muted">{{item.completed}} 完成 / {{item.attempts}} 尝试</view></view></view>
+      <button class="primary spaced" bindtap="review">训练复盘 →</button>
+    </block>
+    <view class="sheet"><view class="row between" bindtap="method"><text>统计口径</text><text>{{showMethod ? '−' : '＋'}}</text></view><view wx:if="{{showMethod}}" class="muted spaced">日期按北京时间；自然周从周一开始。完成率＝完成 ÷（完成＋未完成），未知结果不计入分母。缺失时长不补零。不同岩馆、不同难度体系分别显示。</view></view>
+  </block>
+</view>

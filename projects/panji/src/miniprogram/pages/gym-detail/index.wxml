@@ -1,0 +1,13 @@
+<view class="page">
+  <view wx:if="{{error}}" class="error-box">{{error}}</view>
+  <block wx:if="{{entry}}">
+    <view class="badge">{{entry.city}}</view><view class="page-title gym-detail-title">{{entry.name}}</view>
+    <view class="card spaced"><view class="facility-grid"><view wx:for="{{tags}}" wx:key="*this" class="facility-tile"><view class="facility-dot"></view>{{item}}</view><view wx:if="{{!tags.length}}" class="muted">设施资料待补充</view></view><view wx:if="{{entry.summary}}" class="body-copy spaced">{{entry.summary}}</view></view>
+    <view class="card"><view class="row between"><view class="label">位置</view><button wx:if="{{hasAddress}}" class="link copy-address" bindtap="copyAddress">复制地址</button></view><text class="body-copy" user-select="{{true}}">{{addressText}}</text><view wx:if="{{entry.accessNote}}" class="muted spaced">{{entry.accessNote}}</view><view wx:if="{{entry.verificationNote}}" class="muted spaced">{{entry.verificationNote}}</view></view>
+    <button class="primary" bindtap="record" loading="{{busy}}" disabled="{{busy}}">用这家岩馆记录训练</button>
+    <button class="outline spaced" bindtap="add" disabled="{{busy}}">{{added ? '已在我的岩馆中' : '加入我的岩馆'}}</button>
+    <view wx:if="{{isOsm}}" class="osm-credit"><view>{{osmAttribution}}</view><button class="link" bindtap="exportOsm" loading="{{exporting}}" disabled="{{exporting}}">导出 OSM 开放数据</button></view>
+    <button class="link spaced" bindtap="sources">{{sources ? '收起资料来源' : '资料来源与更新'}}</button>
+    <view wx:if="{{sources}}" class="sheet"><view class="muted source-retrieved">获取日期 {{entry.checkedAt}}</view><view wx:for="{{sourceItems}}" wx:key="url" class="source-item"><view>{{item.name}}</view><view class="muted">{{item.dateText}}</view><text class="source-url" user-select="{{true}}">{{item.url}}</text></view><view wx:if="{{isOsm}}" class="source-item"><view>OpenStreetMap · ODbL 1.0</view><text class="source-url" user-select="{{true}}">{{osmCopyrightUrl}}</text><text class="source-url" user-select="{{true}}">{{osmLicenseUrl}}</text></view></view>
+  </block>
+</view>

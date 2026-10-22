@@ -1,0 +1,5286 @@
+{
+  "updatedAt": "2026-10-22",
+  "coverage": "partial",
+  "entries": [
+    {
+      "id": "banana-sz-qianhai",
+      "name": "香蕉攀岩 前海壹方汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "广东省深圳市南山区听海大道5059号前海壹方汇L1",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sh-longfeng",
+      "name": "香蕉攀岩 淮海龙凤PRSCO店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市黄浦区瑞金二路街道淮海中路728号龙凤PRSCO 4楼01-03室",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "上海"
+    },
+    {
+      "id": "banana-cd-youfang",
+      "name": "香蕉攀岩 悠方店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "四川省成都市武侯区交子大道悠方购物中心L3",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "四川"
+    },
+    {
+      "id": "banana-zh-wangjiaohui",
+      "name": "香蕉攀岩 香洲旺角荟店",
+      "city": "珠海",
+      "brand": "香蕉攀岩",
+      "address": "广东省珠海市香洲区敬业路88号旺角荟A202",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-oct-park",
+      "name": "香蕉攀岩 华侨城欢乐时光店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区华侨城欢乐时光L1-19/20/21/22",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-zhuoyuehui",
+      "name": "香蕉攀岩 卓悦汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "广东省深圳市福田区上梅林卓悦汇2F（海底捞正对面）",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-jiale",
+      "name": "BANANA+ 嘉乐道店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区文心六路保利文化广场KALEDO嘉乐道商场四层BANANA+",
+      "facilities": [
+        "bouldering",
+        "fitness"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-houhai",
+      "name": "香蕉攀岩 后海汇店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区后海滨路后海汇B2-01 及下沉广场",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-incity",
+      "name": "香蕉攀岩 iN城市广场店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市福田区深南大道1095号iN城市广场L5层01/02号",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-linkplaza",
+      "name": "香蕉攀岩 领展中心城店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市福田区福田街道领展中心城1层1017号(近南大门)及东广场高墙",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-kingdee",
+      "name": "香蕉攀岩 金蝶店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市南山区粤海街道高新区社区科技南十二路2号金蝶云大厦5层",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sz-baoan",
+      "name": "香蕉攀岩 宝安中心店",
+      "city": "深圳",
+      "brand": "香蕉攀岩",
+      "address": "深圳市宝安区新安街道创业一路1006号丽晶国际B栋3层304",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-sh-kerry",
+      "name": "BANANA+ 嘉里合集店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市 静安区 天目西路218号嘉里合集B1层B103-104",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "上海"
+    },
+    {
+      "id": "banana-sh-yananxi",
+      "name": "香蕉攀岩 延安西路店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "长宁区昭化路658号海粟广场A栋104—105室",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "province": "上海",
+      "alternateAddresses": [
+        "上海市长宁区华阳路街道海粟文化广场"
+      ],
+      "sources": [
+        {
+          "name": "香蕉攀岩开放门店资料",
+          "url": "https://www.bananaclimbing.com/api/v1/locations",
+          "date": "2026-10-07"
+        },
+        {
+          "name": "上海市政府长宁室内场馆介绍",
+          "url": "https://www.shanghai.gov.cn/nw17239/20260708/51217aacabe94adabad1fe6313f1c1c5.html",
+          "date": "2026-07-08"
+        }
+      ]
+    },
+    {
+      "id": "banana-sh-jinhongqiao",
+      "name": "香蕉攀岩 金虹桥店",
+      "city": "上海",
+      "brand": "香蕉攀岩",
+      "address": "上海市长宁区茅台路179号金虹桥国际中心商场L2 楼香蕉攀岩",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "上海"
+    },
+    {
+      "id": "banana-cd-cosmo",
+      "name": "BANANA+ COSMO店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "四川省成都市锦江区大业路6号 COSMO商场 5F",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "四川"
+    },
+    {
+      "id": "banana-cd-icd",
+      "name": "香蕉攀岩 环贸ICD店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "成都市锦江区环贸ICD二层L201 香蕉攀岩",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "四川"
+    },
+    {
+      "id": "banana-cd-capitaland",
+      "name": "香蕉攀岩 凯德天府店",
+      "city": "成都",
+      "brand": "香蕉攀岩",
+      "address": "成都市武侯区天仁路388号凯德天府L5-15铺",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "四川"
+    },
+    {
+      "id": "banana-bj-xiaoyuehe",
+      "name": "香蕉攀岩 小月河店",
+      "city": "北京",
+      "brand": "香蕉攀岩",
+      "address": "中关村东升科技园三期东畔科创中心(北沙滩桥西南)",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "北京"
+    },
+    {
+      "id": "banana-bj-shangdi",
+      "name": "香蕉攀岩 上地店",
+      "city": "北京",
+      "brand": "香蕉攀岩",
+      "address": "北京市海淀区东北旺西路58号尚科办公社区西门1号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "北京"
+    },
+    {
+      "id": "banana-wh-huafa",
+      "name": "BANANA+ 华发中城商都店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市江汉区中央商务区青年路299号华发中城商都B1栋1F层B1-L1-1号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖北"
+    },
+    {
+      "id": "banana-wh-qincheng",
+      "name": "香蕉攀岩 亲橙万象汇店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市武昌区徐东大街66号武汉亲橙万象汇5层L501",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖北"
+    },
+    {
+      "id": "banana-wh-hanglung",
+      "name": "香蕉攀岩 恒隆广场店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市硚口区京汉大道668号恒隆广场（西区）5楼L501B",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖北"
+    },
+    {
+      "id": "banana-wh-guanggu-k11",
+      "name": "香蕉攀岩 光谷K11店",
+      "city": "武汉",
+      "brand": "香蕉攀岩",
+      "address": "武汉市东湖新技术开发区关山大道355号武汉光谷K11购物艺术中心香蕉攀岩",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖北"
+    },
+    {
+      "id": "banana-cs-zhujiang",
+      "name": "香蕉攀岩 珠江星环店",
+      "city": "长沙",
+      "brand": "香蕉攀岩",
+      "address": "长沙市开福区福元西路109号珠江星环购物中心L3层25A",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖南"
+    },
+    {
+      "id": "banana-cs-yuefang",
+      "name": "香蕉攀岩 悦方ID MALL店",
+      "city": "长沙",
+      "brand": "香蕉攀岩",
+      "address": "湖南省长沙市天心区坡子街216号悦方购物中心L4层L455香蕉攀岩",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "湖南"
+    },
+    {
+      "id": "banana-hz-raffles",
+      "name": "香蕉攀岩 来福士店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "浙江省杭州市上城区新业路228号来福士广场 4F-01/38/39",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "浙江"
+    },
+    {
+      "id": "banana-hz-xixi",
+      "name": "香蕉攀岩 西溪天街店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "杭州市西湖区余杭塘路杭州龙湖西溪天街4层46、47号",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "浙江"
+    },
+    {
+      "id": "banana-hz-aoti",
+      "name": "香蕉攀岩 奥体印象城店",
+      "city": "杭州",
+      "brand": "香蕉攀岩",
+      "address": "浙江省杭州市萧山区盈丰街道汇德隆印象城L6-01a",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "浙江"
+    },
+    {
+      "id": "banana-gz-junchao",
+      "name": "香蕉攀岩 君超店",
+      "city": "广州",
+      "brand": "香蕉攀岩",
+      "address": "广东省广州市天河区黄埔大道中652号(地铁科韵路站B出口旁)",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "province": "广东"
+    },
+    {
+      "id": "banana-zh-leshi",
+      "name": "香蕉攀岩 乐士店",
+      "city": "珠海",
+      "brand": "香蕉攀岩",
+      "address": "珠海市香洲区前山街道乐士文化区",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "",
+      "sourceName": "香蕉攀岩开放门店资料",
+      "sourceUrl": "https://www.bananaclimbing.com/api/v1/locations",
+      "sourceDate": "2026-10-07",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "province": "广东",
+      "sources": [
+        {
+          "name": "香蕉攀岩开放门店资料",
+          "url": "https://www.bananaclimbing.com/api/v1/locations",
+          "date": "2026-10-07"
+        },
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "香蕉攀岩（乐士店）",
+        "香蕉攀岩馆 Banana Climbing Gym(乐士店)"
+      ],
+      "alternateIds": [
+        "kilter-33848175"
+      ],
+      "alternateAddresses": [
+        "香洲区前山街道岱山路74号"
+      ]
+    },
+    {
+      "id": "sh-benchmark-2",
+      "name": "Benchmark 2.0（滨港商业中心店）",
+      "brand": "Benchmark",
+      "city": "上海",
+      "address": "静安区滨港商业中心，上海火车站周边",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "抱石馆，设 Kilter 训练板。",
+      "sourceName": "SmartShanghai 场馆报道",
+      "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+      "sourceDate": "2026-08-31",
+      "checkedAt": "2026-10-20",
+      "province": "上海",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "sh-aob-hongkou",
+      "name": "AOB 攀研学院（虹口馆）",
+      "brand": "AOB",
+      "city": "上海",
+      "address": "虹口区国际客运中心地铁站周边",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "抱石馆，设 Kilter 训练板和热身区。",
+      "sourceName": "SmartShanghai 场馆报道",
+      "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+      "sourceDate": "2026-08-31",
+      "checkedAt": "2026-10-20",
+      "province": "上海",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "sh-acme-189",
+      "name": "尽峰攀岩（189弄店）",
+      "brand": "尽峰攀岩",
+      "city": "上海",
+      "address": "普陀区189弄购物中心，长寿路地铁站周边",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay",
+        "kilter"
+      ],
+      "summary": "室内抱石、室外绳攀及 Kilter 训练板。",
+      "sourceName": "SmartShanghai 场馆报道",
+      "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+      "sourceDate": "2026-08-31",
+      "checkedAt": "2026-10-20",
+      "province": "上海",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "sh-rockhour-gatem",
+      "name": "岩时攀岩（西岸梦中心店）",
+      "brand": "岩时",
+      "city": "上海",
+      "address": "上海市徐汇区龙腾大道2266号GateM西岸梦中心12号楼201室",
+      "facilities": [
+        "lead",
+        "toprope",
+        "autobelay",
+        "speed"
+      ],
+      "summary": "筒仓高墙绳攀，设速度道；无抱石区。",
+      "sourceName": "SmartShanghai 场馆报道",
+      "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+      "sourceDate": "2026-08-31",
+      "checkedAt": "2026-10-22",
+      "province": "上海",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "SmartShanghai 场馆报道",
+          "url": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+          "date": "2026-08-31"
+        },
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "岩时攀登中心"
+      ],
+      "alternateIds": [
+        "hylonomus-ee7a0d031618db2e"
+      ],
+      "district": "徐汇区",
+      "alternateAddresses": [
+        "徐汇区西岸梦中心"
+      ]
+    },
+    {
+      "id": "bj-rockhour-xisanqi",
+      "name": "岩时攀登中心（西三旗）",
+      "brand": "岩时",
+      "city": "北京",
+      "address": "北京海淀区西三旗街道建材城中路27号 金隅智造工场S1-W岩时攀登中心",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "抱石与高墙攀爬分区。",
+      "sourceName": "北京日报现场报道",
+      "sourceUrl": "https://xinwen.bjd.com.cn/content/s6a05c9ede4b0e45f3fd17bcc.html",
+      "sourceDate": "2026-05-15",
+      "checkedAt": "2026-10-22",
+      "province": "北京",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "北京日报现场报道",
+          "url": "https://xinwen.bjd.com.cn/content/s6a05c9ede4b0e45f3fd17bcc.html",
+          "date": "2026-05-15"
+        },
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "岩时攀登中心"
+      ],
+      "alternateIds": [
+        "hylonomus-c1bfb03ca55832c7"
+      ],
+      "district": "海淀区",
+      "alternateAddresses": [
+        "海淀区西三旗金隅智造工场"
+      ]
+    },
+    {
+      "id": "dg-suchq-softwarepark",
+      "name": "非常趣攀岩（南方软件园店）",
+      "brand": "非常趣攀岩",
+      "city": "东莞",
+      "address": "松山湖园区科技二路5号南方软件园A栋一楼01室",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "抱石馆，设全尺寸 Kilter 训练板。",
+      "sourceName": "南方+现场报道",
+      "sourceUrl": "https://static.nfnews.com/content/202508/06/c11591461.html",
+      "sourceDate": "2025-08-06",
+      "checkedAt": "2026-10-22",
+      "province": "广东",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "南方+现场报道",
+          "url": "https://static.nfnews.com/content/202508/06/c11591461.html",
+          "date": "2025-08-06"
+        },
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "非常趣攀岩 SuchQ Climbing"
+      ],
+      "alternateIds": [
+        "kilter-33848174"
+      ],
+      "alternateAddresses": [
+        "松山湖南方软件园"
+      ]
+    },
+    {
+      "id": "dg-suchq-youlanli",
+      "name": "非常趣攀岩（悠兰里店）",
+      "brand": "非常趣攀岩",
+      "city": "东莞",
+      "address": "松山湖悠兰里文化艺术街区",
+      "facilities": [
+        "rope",
+        "speed"
+      ],
+      "summary": "室外高墙，设难度区与标准速度道。",
+      "sourceName": "南方+现场报道",
+      "sourceUrl": "https://static.nfnews.com/content/202508/06/c11591461.html",
+      "sourceDate": "2025-08-06",
+      "checkedAt": "2026-10-20",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-cq-wanzhou-oneplayer",
+      "name": "重庆一号顽家体育文化传播有限公司攀岩场所",
+      "brand": "",
+      "city": "重庆",
+      "address": "万州区牌楼街道体育路200号附223号",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "重庆市万州区文化旅游委持证场所公示",
+      "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+      "sourceDate": "2026-03-24",
+      "checkedAt": "2026-10-21",
+      "province": "重庆",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-cq-wanzhou-baoshi",
+      "name": "万州区抱石体育场馆管理俱乐部",
+      "brand": "",
+      "city": "重庆",
+      "address": "万州区高笋塘街道太白路99号",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "重庆市万州区文化旅游委持证场所公示",
+      "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+      "sourceDate": "2026-03-24",
+      "checkedAt": "2026-10-21",
+      "province": "重庆",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-cq-wanzhou-yanan",
+      "name": "重庆市万州区岩安体育发展有限公司攀岩场所",
+      "brand": "",
+      "city": "重庆",
+      "address": "万州区高笋塘街道北滨大道二段998号5幢第1层",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "重庆市万州区文化旅游委持证场所公示",
+      "sourceUrl": "https://www.wz.gov.cn/zwxx_266/gggs/202603/t20260324_15562436.html",
+      "sourceDate": "2026-03-24",
+      "checkedAt": "2026-10-21",
+      "province": "重庆",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-sh-thismountain-hongqiao",
+      "name": "此山攀岩（虹桥馆）",
+      "brand": "此山攀岩",
+      "city": "上海",
+      "address": "闵行区申长路869号1层127a、128b及4层414、414a",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "上海市闵行区体育局2026年6月行政许可公示",
+      "sourceUrl": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/cc3fe0a2-d9e7-4c7e-a56d-5ceb67311c0b.htm",
+      "sourceDate": "2026-07-01",
+      "checkedAt": "2026-10-21",
+      "sources": [
+        {
+          "name": "上海市闵行区体育局2026年3月行政许可公示",
+          "url": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/a4fec188-a3a2-44aa-a723-8751ef6bda09.htm",
+          "date": "2026-03-27"
+        },
+        {
+          "name": "上海市闵行区体育局2026年6月行政许可公示",
+          "url": "https://zwgk.shmh.gov.cn/mh-xxgk-cms/website/mh_xxgk/xzxk23/content/cc3fe0a2-d9e7-4c7e-a56d-5ceb67311c0b.htm",
+          "date": "2026-07-01"
+        }
+      ],
+      "province": "上海",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-cz-xingkong-xinghu",
+      "name": "星空攀岩馆（星湖广场）",
+      "brand": "星空攀岩",
+      "city": "常州",
+      "address": "武进区星湖广场",
+      "facilities": [
+        "bouldering",
+        "toprope"
+      ],
+      "summary": "抱石、顶绳。",
+      "sourceName": "常州市体育局2026年攀岩比赛竞赛规程",
+      "sourceUrl": "https://tyj.changzhou.gov.cn/html/tyj/2026/FMAJJNIC_0706/25452.html",
+      "sourceDate": "2026-07-06",
+      "checkedAt": "2026-10-21",
+      "province": "江苏",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-gz-quye-vlab",
+      "name": "趣野攀岩（VLAB翌方181）",
+      "brand": "趣野攀岩",
+      "city": "广州",
+      "address": "白云区沙太南路181、183、185号VLAB翌方181",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "抱石区。",
+      "sourceName": "广州市白云区人民政府场馆介绍",
+      "sourceUrl": "https://www.by.gov.cn/zjby/hdxx/hdyg/content/post_10497413.html",
+      "sourceDate": "2025-10-20",
+      "checkedAt": "2026-10-22",
+      "province": "广东",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "广州市白云区人民政府场馆介绍",
+          "url": "https://www.by.gov.cn/zjby/hdxx/hdyg/content/post_10497413.html",
+          "date": "2025-10-20"
+        },
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "趣野攀岩"
+      ],
+      "alternateIds": [
+        "hylonomus-23f3f35cf2c347d6"
+      ],
+      "district": "白云区",
+      "alternateAddresses": [
+        "广州市白云区沙太南路181号 VLAB创意园负一层"
+      ]
+    },
+    {
+      "id": "gov-sh-youshi-chuanqiao",
+      "name": "优石攀岩（川桥路）",
+      "brand": "优石攀岩",
+      "city": "上海",
+      "address": "上海市浦东新区金湘路1000号优石攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "浦东新区2025年4月高危险性体育项目经营许可公示",
+      "sourceUrl": "https://www.pudong.gov.cn/zwgk/14483.gkml_qt/2025/224/343387/ab15913dd58f440ca3b2614efb369af9.pdf",
+      "sourceDate": "2025-04-16",
+      "checkedAt": "2026-10-22",
+      "province": "上海",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "浦东新区2025年4月高危险性体育项目经营许可公示",
+          "url": "https://www.pudong.gov.cn/zwgk/14483.gkml_qt/2025/224/343387/ab15913dd58f440ca3b2614efb369af9.pdf",
+          "date": "2025-04-16"
+        },
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "优石攀岩馆"
+      ],
+      "alternateIds": [
+        "hylonomus-b0ba40bb8a8f626c"
+      ],
+      "district": "浦东新区",
+      "alternateAddresses": [
+        "浦东新区川桥路600号5幢1层F-2室"
+      ]
+    },
+    {
+      "id": "gov-sz-cube-hubei",
+      "name": "CUBE有石攀岩（湖贝店）",
+      "brand": "CUBE有石",
+      "city": "深圳",
+      "address": "罗湖区东门街道湖贝路1068号湖贝里商业二楼",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "室内抱石。",
+      "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+      "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+      "sourceDate": "2026-07-28",
+      "checkedAt": "2026-10-21",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-sz-ale-yijing",
+      "name": "阿叻综合攀岩馆",
+      "brand": "阿叻",
+      "city": "深圳",
+      "address": "罗湖区黄贝街道怡景路2013号动漫大厦4楼401室",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "抱石、难度。",
+      "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+      "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+      "sourceDate": "2026-07-28",
+      "checkedAt": "2026-10-21",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-sz-bluesky-yitian",
+      "name": "蓝天攀岩（罗湖益田假日广场店）",
+      "brand": "蓝天攀岩",
+      "city": "深圳",
+      "address": "罗湖区翠竹街道木头龙社区爱国路1009号2楼",
+      "facilities": [
+        "bouldering",
+        "rope",
+        "speed"
+      ],
+      "summary": "抱石、难度、速度。",
+      "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+      "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+      "sourceDate": "2026-07-28",
+      "checkedAt": "2026-10-21",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-sz-bluesky-administration",
+      "name": "蓝天攀岩（罗湖行政服务中心店）",
+      "brand": "蓝天攀岩",
+      "city": "深圳",
+      "address": "罗湖区黄贝街道经二路48号罗湖区行政服务大厅二楼",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "抱石、难度。",
+      "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+      "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+      "sourceDate": "2026-07-28",
+      "checkedAt": "2026-10-21",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "gov-sz-bluesky-cuiyuan",
+      "name": "蓝天攀岩（乐动力翠园华府体育中心店）",
+      "brand": "蓝天攀岩",
+      "city": "深圳",
+      "address": "罗湖区东盛路11号翠园华府乐动力体育中心四楼",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "抱石、难度。",
+      "sourceName": "罗湖发布（罗湖区文化广电旅游体育局、罗湖文体通）",
+      "sourceUrl": "https://static.nfnews.com/content/202607/28/c12667559.html?enterColumnId=37408",
+      "sourceDate": "2026-07-28",
+      "checkedAt": "2026-10-21",
+      "province": "广东",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-823da26ed8f956e7",
+      "name": "趣野攀岩",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "朝阳区",
+      "address": "北京市朝阳区北苑东路19号龙湖北苑天街5F趣野攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-4af4a023d11fb82d",
+      "name": "几何攀岩",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "朝阳区",
+      "address": "北京市朝阳区湖景东路9号新奥购物中心地下二层几何攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-4d0d53c816cbadf1",
+      "name": "Climb on gym攀岩馆",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "朝阳区",
+      "address": "北京市朝阳区香宾路66号 保利广场东座1层 Climb on gym攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        },
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/12964721867",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        }
+      ],
+      "aliases": [
+        "Climb On Gym攀岩馆",
+        "COG"
+      ],
+      "alternateIds": [
+        "osm-node-12964721867"
+      ],
+      "alternateAddresses": [],
+      "coordinates": {
+        "latitude": 40.0152918,
+        "longitude": 116.4598062,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "hylonomus-5de5b01d5aaf9557",
+      "name": "体育大学奥攀",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "海淀区",
+      "address": "北京市海淀区信息路北京体育大学北门 东侧奥攀攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-0ef68b65cef68331",
+      "name": "博锐体育奥攀",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "丰台区",
+      "address": "北京市丰台区纪家庙博锐体育综合体 奥攀攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-b9a95940fe825d1c",
+      "name": "顽岩攀岩馆",
+      "brand": "",
+      "province": "北京",
+      "city": "北京",
+      "district": "丰台区",
+      "address": "北京市丰台区花乡郭公庄中街20号房天下大厦A座一层顽岩攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-7bb3060f92d5aaca",
+      "name": "向上攀岩",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "宝山区",
+      "address": "上海市宝山区高境镇江杨南路485号15号楼202向上攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-792958bb72c61bfb",
+      "name": "攀王攀岩馆",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "嘉定区",
+      "address": "上海嘉定区南翔镇沪宜公路1082号B区A座攀王攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-b09f5e9b3b567729",
+      "name": "红攀攀岩馆",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "闵行区",
+      "address": "上海市闵行区江月路1850弄城市生活广场1楼C座红攀攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-6cb52a46b3443094",
+      "name": "大岩悦动攀岩中心",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "普陀区",
+      "address": "上海市普陀区大渡河路196号长风大悦城5楼大岩悦动攀岩中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-e3e10c97259f9de0",
+      "name": "小树攀岩馆",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "虹口区",
+      "address": "上海市虹口区东江湾路444号虹口足球场21看台楼上小树攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-31466405e1319ffd",
+      "name": "极壁风暴攀岩馆",
+      "brand": "",
+      "province": "上海",
+      "city": "上海",
+      "district": "浦东新区",
+      "address": "上海市浦东新区杨高南路729号101室极壁风暴攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-027dc416656e6c11",
+      "name": "王者攀岩俱乐部",
+      "brand": "",
+      "province": "广东",
+      "city": "广州",
+      "district": "荔湾区",
+      "address": "广州市荔湾区动感小西关王者攀岩俱乐部404",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-7b90a5e93ba1ebcd",
+      "name": "羽石攀岩",
+      "brand": "",
+      "province": "广东",
+      "city": "广州",
+      "district": "番禺区",
+      "address": "广州市番禺区基盛万科里B区一楼&五楼",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-c49e4d95efdcff43",
+      "name": "狸石攀岩",
+      "brand": "",
+      "province": "广东",
+      "city": "中山",
+      "district": "东区",
+      "address": "广东省中山市东区银桥二横街十七号之11卡狸石攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-d909b6ab52a70d09",
+      "name": "upper攀岩馆",
+      "brand": "",
+      "province": "广东",
+      "city": "深圳",
+      "district": "福田区",
+      "address": "广东省深圳市福田区香蜜湖街道 侨城东路125号3A128号商铺 upper攀岩馆（深康地铁站C口）",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-3f1d3d275e34cc71",
+      "name": "励石攀岩",
+      "brand": "",
+      "province": "广东",
+      "city": "珠海",
+      "district": "香洲区",
+      "address": "广东省珠海市香洲区唐家湾镇香山路88号2栋104房01单元",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-3a5efe1df1c36141",
+      "name": "七喜攀岩馆",
+      "brand": "",
+      "province": "浙江",
+      "city": "温州",
+      "district": "瓯海区",
+      "address": "浙江省温州市瓯海区六虹桥路1189号梦多多小镇B幢一楼B1-09七喜攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-043f95534e18cd77",
+      "name": "芭乐攀岩",
+      "brand": "",
+      "province": "浙江",
+      "city": "温州",
+      "district": "龙湾区",
+      "address": "浙江省温州市龙湾区蒲州街道上江路85号C号楼C201室芭乐攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-f795a29fbe908e58",
+      "name": "611攀岩中心",
+      "brand": "",
+      "province": "浙江",
+      "city": "台州",
+      "district": "椒江区",
+      "address": "浙江省台州市椒江区白云街道一江山大道心海天地下沉广场611攀岩中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-368dc625fc87de8a",
+      "name": "杭攀攀岩馆",
+      "brand": "",
+      "province": "浙江",
+      "city": "杭州",
+      "district": "西湖区",
+      "address": "杭州市西湖区教工路49号杭攀攀岩馆（浙江体育职业技术学院内）",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "accessNote": "校内场馆，开放及预约规则待确认。",
+      "sources": [
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        },
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/way/30125898",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        }
+      ],
+      "aliases": [
+        "浙体·杭州攀岩馆"
+      ],
+      "alternateIds": [
+        "osm-way-30125898"
+      ],
+      "alternateAddresses": [],
+      "coordinates": {
+        "latitude": 30.280118299999998,
+        "longitude": 120.1305935,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "hylonomus-8bb1a135f7ed57df",
+      "name": "Cliffs 攀岩馆",
+      "brand": "",
+      "province": "浙江",
+      "city": "杭州",
+      "district": "上城区",
+      "address": "上城区石桥路51号东方时代中心3楼",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        },
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        }
+      ],
+      "aliases": [
+        "CLIFFS 攀岩馆（石桥路）",
+        "CLIFFS"
+      ],
+      "alternateIds": [
+        "kilter-22423779"
+      ],
+      "alternateAddresses": [
+        "浙江省杭州市上城区闸弄口街道 石桥路杭州东方时代中心番茄社区三楼cliffs 攀岩馆"
+      ]
+    },
+    {
+      "id": "hylonomus-de170981a822d9ef",
+      "name": "奥体中心攀岩场",
+      "brand": "",
+      "province": "浙江",
+      "city": "绍兴",
+      "district": "越城区",
+      "address": "浙江省绍兴市越城区镜湖奥体中心射箭射击馆攀岩场",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-88fe095e10a53904",
+      "name": "开心攀岩",
+      "brand": "",
+      "province": "浙江",
+      "city": "杭州",
+      "district": "余杭区",
+      "address": "浙江省杭州市余杭区五常街道开心攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-f475023aad31cf8a",
+      "name": "三脚猫攀岩",
+      "brand": "",
+      "province": "浙江",
+      "city": "丽水",
+      "district": "莲都区",
+      "address": "浙江省丽水市莲都区水东路东方明珠小区东门三脚猫攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-30ea48d7a1fd2b94",
+      "name": "攀健攀岩",
+      "brand": "",
+      "province": "辽宁",
+      "city": "锦州",
+      "district": "",
+      "address": "辽宁省锦州市解放路五段26号银河广场学籽都荟四楼",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-59f2d77104b2c768",
+      "name": "乐攀岩馆",
+      "brand": "",
+      "province": "辽宁",
+      "city": "大连",
+      "district": "西岗区",
+      "address": "辽宁省大连市西岗区香炉礁海达南街百年港湾B4区动能波户外运动馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-98209b1cf9d5ae31",
+      "name": "酷玩攀岩",
+      "brand": "",
+      "province": "辽宁",
+      "city": "沈阳",
+      "district": "浑南区",
+      "address": "沈阳市浑南区沈本大街28号月星动感城一楼酷玩攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-026553dad44cd0f8",
+      "name": "石猴子攀岩馆",
+      "brand": "",
+      "province": "辽宁",
+      "city": "沈阳",
+      "district": "沈河区",
+      "address": "辽宁省沈阳市沈河区百联购物中心1楼，石猴子攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-b6cb3085c91902fb",
+      "name": "老曲攀岩馆",
+      "brand": "",
+      "province": "辽宁",
+      "city": "沈阳",
+      "district": "浑南区",
+      "address": "辽宁省沈阳市浑南区浑南四路1号富腾国际b座532 老曲攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-63afe19a054749c8",
+      "name": "趣攀攀岩馆",
+      "brand": "",
+      "province": "辽宁",
+      "city": "抚顺",
+      "district": "顺城区",
+      "address": "辽宁省抚顺市顺城区新城路雷锋体育场趣攀攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-b8144116b4673c72",
+      "name": "户外梦工厂·乐动力攀岩中心",
+      "brand": "",
+      "province": "江苏",
+      "city": "南京",
+      "district": "溧水区",
+      "address": "江苏省南京市溧水区珍珠南路189号乐动力国家极限运动中心B1区",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-9281f1aae725d7c8",
+      "name": "南师附中体育馆攀岩",
+      "brand": "",
+      "province": "江苏",
+      "city": "南京",
+      "district": "栖霞区",
+      "address": "江苏省南京市栖霞区文澜路69号南师附中仙林学校初中部文澜路校区体育馆攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内场馆，开放及预约规则待确认。"
+    },
+    {
+      "id": "hylonomus-57d68dc0fc133b6c",
+      "name": "Rusher Site攀岩空间",
+      "brand": "",
+      "province": "江苏",
+      "city": "扬州",
+      "district": "广陵区",
+      "address": "江苏省扬州市广陵区运河北路77号SM扬州城市广场1F Rusher Site攀岩空间",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-8943e45bfb264bf3",
+      "name": "刘常忠攀岩馆",
+      "brand": "",
+      "province": "江苏",
+      "city": "苏州",
+      "district": "工业园区",
+      "address": "江苏省苏州市工业园区翠薇街1号独墅湖文体中心游泳馆2楼刘常忠攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-72fdac653f307ff8",
+      "name": "九星龙国际攀岩馆",
+      "brand": "",
+      "province": "江苏",
+      "city": "苏州",
+      "district": "工业园区",
+      "address": "江苏省苏州市工业园区旺墩路268号久光百货三楼九星龙国际攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-c5928b686968f4b3",
+      "name": "岩象攀岩",
+      "brand": "",
+      "province": "山东",
+      "city": "烟台",
+      "district": "莱山区",
+      "address": "山东省烟台市莱山区银海路26号飞龙科技创业园 锦函体育",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-bf313f8ab8fca532",
+      "name": "Vhibeta抱石攀岩",
+      "brand": "",
+      "province": "山东",
+      "city": "威海",
+      "district": "环翠区",
+      "address": "山东省威海市环翠区青岛路沧口路环球汇金广场106-50攀岩",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-2335ffb0ae4c66ee",
+      "name": "胖猴子攀岩馆",
+      "brand": "",
+      "province": "山东",
+      "city": "淄博",
+      "district": "张店区",
+      "address": "山东省淄博市张店区联通路与上海路交叉口东南角西边有个院 胖猴子攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-bd3c97726c0c14bf",
+      "name": "圣地攀岩体能馆",
+      "brand": "",
+      "province": "山东",
+      "city": "济宁",
+      "district": "任城区",
+      "address": "山东省济宁市任城区 吴泰闸路奥冠宾馆后院奥冠球馆北馆圣地攀岩体能馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-270a4eafa78a0565",
+      "name": "胖猴子攀岩馆",
+      "brand": "",
+      "province": "山东",
+      "city": "淄博",
+      "district": "张店区",
+      "address": "山东省淄博市张店区和平路唐库文创园内胖猴子攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-c1f024a655628623",
+      "name": "Top攀岩馆",
+      "brand": "",
+      "province": "天津",
+      "city": "天津",
+      "district": "南开区",
+      "address": "天津市南开区凌奥创意产业园2-2Top攀岩俱乐部 凌奥馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-f5b2fcbeb6185da0",
+      "name": "Top攀岩馆",
+      "brand": "",
+      "province": "天津",
+      "city": "天津",
+      "district": "南开区",
+      "address": "天津市南开区黄河道519号盛名工业园内Top攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-543bddf82145cc82",
+      "name": "趣野攀岩",
+      "brand": "",
+      "province": "天津",
+      "city": "天津",
+      "district": "西青区",
+      "address": "天津市西青区汇川路221号梅江会展中心二期三层3001趣野攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-34585e7643ceaad1",
+      "name": "五岩六色",
+      "brand": "",
+      "province": "湖北",
+      "city": "武汉",
+      "district": "江汉区",
+      "address": "武汉市江汉区欧亚达家居建材馆G2五岩六色攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-a1e8c7497a41f61f",
+      "name": "春晓攀岩馆",
+      "brand": "",
+      "province": "湖北",
+      "city": "黄石",
+      "district": "黄石港区",
+      "address": "湖北省黄石市黄石港区武汉路摩尔城中商百货四楼春晓攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-5418a92f16a8a53f",
+      "name": "雪豹攀岩",
+      "brand": "",
+      "province": "湖北",
+      "city": "武汉",
+      "district": "青山区",
+      "address": "湖北省武汉市青山区印象城雪豹攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-4a686680452855b6",
+      "name": "吉首攀岩馆",
+      "brand": "",
+      "province": "湖南",
+      "city": "吉首",
+      "district": "",
+      "address": "湖南省湘西土家族苗族自治州吉首市镇溪街道环城路85号民族中学",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内场馆，开放及预约规则待确认。"
+    },
+    {
+      "id": "hylonomus-be8f75fab888cb23",
+      "name": "V9攀岩馆",
+      "brand": "",
+      "province": "湖南",
+      "city": "长沙",
+      "district": "长沙县",
+      "address": "湖南省长沙市长沙县星沙街道凉塘路乐运魔方一楼V9攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-20172584d0bdbd9a",
+      "name": "云起攀岩馆",
+      "brand": "",
+      "province": "广西",
+      "city": "南宁",
+      "district": "良庆区",
+      "address": "广西省南宁市良庆区五象大道401号五象航洋城4楼云起攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-ae74d59ea8e50f00",
+      "name": "攀悦攀岩馆",
+      "brand": "",
+      "province": "广西",
+      "city": "梧州",
+      "district": "万秀区",
+      "address": "广西梧州市万秀区大中路19号攀悦攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-def7996fb2ffc206",
+      "name": "龙岩攀岩馆",
+      "brand": "",
+      "province": "广西",
+      "city": "柳州",
+      "district": "鱼峰区",
+      "address": "广西壮族自治区柳州市鱼峰区万象路2号柳州旅游集散中心二层龙岩攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-3f3bf2320dfe8c0e",
+      "name": "中国眉山国际攀岩中心",
+      "brand": "",
+      "province": "四川",
+      "city": "眉山",
+      "district": "",
+      "address": "四川省眉山市中国眉山国际攀岩中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-4f902f494df9dd17",
+      "name": "大松果攀岩馆",
+      "brand": "",
+      "province": "四川",
+      "city": "成都",
+      "district": "锦江区",
+      "address": "四川省成都市锦江区金石路239号文轩体育内大松果攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "Hylonomus 一手品牌合作馆名录",
+          "url": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+          "date": ""
+        },
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/12961598957",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        }
+      ],
+      "aliases": [],
+      "alternateIds": [
+        "osm-node-12961598957"
+      ],
+      "alternateAddresses": [],
+      "coordinates": {
+        "latitude": 30.5922821,
+        "longitude": 104.0852527,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "hylonomus-efd1ee378f94712b",
+      "name": "岩选攀岩",
+      "brand": "",
+      "province": "四川",
+      "city": "成都",
+      "district": "锦江区",
+      "address": "四川省成都市锦江区四川省 成都市 锦江区 二环路东五段313号域上和美3楼 岩选攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-7fa4ace0b39c0466",
+      "name": "岩道攀岩",
+      "brand": "",
+      "province": "安徽",
+      "city": "合肥",
+      "district": "蜀山区",
+      "address": "安徽省合肥市蜀山区青阳路7号体育运动学校内岩道攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内场馆，开放及预约规则待确认。"
+    },
+    {
+      "id": "hylonomus-db707706c73961d8",
+      "name": "极限攀岩馆",
+      "brand": "",
+      "province": "安徽",
+      "city": "蚌埠",
+      "district": "龙子湖区",
+      "address": "安徽省蚌埠市龙子湖区凤阳东路全民健身中心一楼大厅极限攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-c786e583a80f6aee",
+      "name": "HitBoom攀岩抱石馆",
+      "brand": "",
+      "province": "甘肃",
+      "city": "兰州",
+      "district": "城关区",
+      "address": "甘肃省兰州市城关区南滨河万达商场1F1030 (6号门旁）HitBoom攀岩抱石馆",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-ef623f3111cff053",
+      "name": "大圣攀岩馆",
+      "brand": "",
+      "province": "甘肃",
+      "city": "兰州",
+      "district": "",
+      "address": "甘肃省兰州市五泉西路73号（火车站西路与五泉西路交叉口南100米）兰州市城关区五泉小学 大圣攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内场馆，开放及预约规则待确认。"
+    },
+    {
+      "id": "hylonomus-77b4aec83f6bec73",
+      "name": "78山丘抱石",
+      "brand": "",
+      "province": "河北",
+      "city": "石家庄",
+      "district": "长安区",
+      "address": "河北省石家庄市长安区荣盛城市广场负一层花店 超市入口 78山丘抱石",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-74d84da2a50c218e",
+      "name": "趣野攀岩",
+      "brand": "",
+      "province": "河北",
+      "city": "廊坊",
+      "district": "三河市",
+      "address": "河北省廊坊市三河市燕郊经济开发区拥军路40号涂克体育趣野攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-c670bd1d656a67cd",
+      "name": "蒙攀攀岩馆",
+      "brand": "",
+      "province": "内蒙古",
+      "city": "呼和浩特",
+      "district": "玉泉区",
+      "address": "内蒙古呼和浩特市玉泉区石羊桥路蒙西文化广场少年宫负一层蒙攀攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-f247ac0a092eaa61",
+      "name": "YO&UP攀岩馆",
+      "brand": "",
+      "province": "内蒙古",
+      "city": "鄂尔多斯",
+      "district": "伊金霍洛旗",
+      "address": "内蒙古自治区鄂尔多斯市伊金霍洛旗太阳城商业中心二楼YO&UP攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-6b27ad23c15198d4",
+      "name": "龙攀岩馆",
+      "brand": "",
+      "province": "黑龙江",
+      "city": "哈尔滨",
+      "district": "南岗区",
+      "address": "黑龙江省哈尔滨市南岗区尤家街爱达壹号A区9号门旁龍攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-b3fcfdcbea5a4b45",
+      "name": "黑土攀岩",
+      "brand": "",
+      "province": "黑龙江",
+      "city": "牡丹江",
+      "district": "",
+      "address": "黑龙江省牡丹江市红博购物中心4楼黑土攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-e77e556ca03d4c0c",
+      "name": "若克攀岩俱乐部",
+      "brand": "",
+      "province": "河南",
+      "city": "郑州",
+      "district": "高新区",
+      "address": "河南省郑州市高新区朗悦公园茂1号馆4楼若克攀岩俱乐部",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-8c962ebfedb66a50",
+      "name": "乐豹攀岩馆",
+      "brand": "",
+      "province": "吉林",
+      "city": "长春",
+      "district": "宽城区",
+      "address": "吉林省长春市宽城区铁北二路与北四条交汇长春乐豹攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-1a6b7ae58d3efcda",
+      "name": "我攀攀岩馆",
+      "brand": "",
+      "province": "陕西",
+      "city": "西安",
+      "district": "雁塔区",
+      "address": "陕西省西安市雁塔区唐延南路逸翠园i都会2号楼我攀西安",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-f32df0c270ba6c7e",
+      "name": "自由落体攀岩",
+      "brand": "",
+      "province": "贵州",
+      "city": "贵阳",
+      "district": "云岩区",
+      "address": "贵州省贵阳市云岩区太平路mix空间二楼自由落体攀岩",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-662ea615e8089b89",
+      "name": "岩咖攀岩馆",
+      "brand": "",
+      "province": "新疆",
+      "city": "乌鲁木齐",
+      "district": "天山区",
+      "address": "新疆乌鲁木齐天山区新华北路小西门金谷大厦岩咖攀岩馆三楼岩咖攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-5a0d17d3536f40b4",
+      "name": "遇见攀岩馆",
+      "brand": "",
+      "province": "江西",
+      "city": "南昌",
+      "district": "红谷滩区",
+      "address": "江西省南昌市红谷滩区地铁大厦天虹遇见攀岩馆3楼季季红隔壁遇见攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "hylonomus-479678450ce0c082",
+      "name": "新途运动攀岩馆",
+      "brand": "",
+      "province": "山西",
+      "city": "太原",
+      "district": "小店区",
+      "address": "山西省太原市小店区平阳路67号平阳景苑12栋13栋之间下沉广场 新途运动攀岩馆",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "Hylonomus 一手品牌合作馆名录",
+      "sourceUrl": "https://hylonomus.com.cn/zh/contact-us-dealership/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "osm-node-4603359646",
+      "name": "Pongo",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4603359646",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2018461,
+        "longitude": 121.4833349,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5163255332",
+      "name": "Ribbon Climbing",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5163255332",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2957441,
+        "longitude": 121.5200791,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4595551418",
+      "name": "上海体育场攀岩运动中心",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Shanghai Stadium Rock Climbing Centre"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4595551418",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.182942,
+        "longitude": 121.436073,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5172165421",
+      "name": "岩舞空间攀岩",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5172165421",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2729825,
+        "longitude": 121.4683826,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-8018831382",
+      "name": "攀岩工厂",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "宝山区",
+      "address": "上海宝山区长江西路",
+      "aliases": [
+        "Climbing Factor"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/8018831382",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.3474498,
+        "longitude": 121.4659347,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4874451886",
+      "name": "蜘蛛侠攀岩馆",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Zhizhuxia Climbing Gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4874451886",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.0642387,
+        "longitude": 121.3973243,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5162245472",
+      "name": "魔岩攀岩馆",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "",
+      "address": "上海",
+      "aliases": [
+        "Magic Rock Climbing",
+        "North Face Gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5162245472",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.2379004,
+        "longitude": 121.4792088,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-625655040",
+      "name": "ET攀岩俱乐部",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "E.T. Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/625655040",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 40.0396655,
+        "longitude": 116.503492,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6781842595",
+      "name": "O’le 798 Climbing Gym",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6781842595",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.9911718,
+        "longitude": 116.4982785,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6784065056",
+      "name": "Rock Hour",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "岩时攀岩馆"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6784065056",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8858416,
+        "longitude": 116.4759348,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-6784095879",
+      "name": "人人攀岩",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/6784095879",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8571612,
+        "longitude": 116.516474,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-12979842810",
+      "name": "奥攀攀岩(角门店)",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12979842810",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.8424922,
+        "longitude": 116.3808464,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4915834033",
+      "name": "首体首攀壁虎王攀岩俱乐部",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "district": "",
+      "address": "北京",
+      "aliases": [
+        "Vertigo Gecko Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4915834033",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 39.9387402,
+        "longitude": 116.3205113,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4930237711",
+      "name": "Dyno Climbing",
+      "brand": "",
+      "city": "南京",
+      "province": "江苏",
+      "district": "",
+      "address": "南京",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4930237711",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 32.0544677,
+        "longitude": 118.7600143,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-way-659878780",
+      "name": "The little rock",
+      "brand": "",
+      "city": "台北",
+      "province": "台湾",
+      "district": "",
+      "address": "台北",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/way/659878780",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1088442,
+        "longitude": 121.52980685,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-13417522409",
+      "name": "原岩攀岩館（明德店）",
+      "brand": "原岩攀岩館",
+      "city": "台北",
+      "province": "台湾",
+      "district": "北投區",
+      "address": "北投區文林北路222號B1",
+      "aliases": [
+        "原岩攀岩館-明德店"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/13417522409",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1082592,
+        "longitude": 121.5142392,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [
+        "112臺北市北投區文林北路222號B1樓"
+      ],
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/13417522409",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "原岩官方分店與設施介紹",
+          "url": "https://tupclimbing.tw/branch/mingde",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-12198361101",
+      "name": "嗨翻",
+      "brand": "",
+      "city": "台南",
+      "province": "台湾",
+      "district": "北區",
+      "address": "臺南市北區大和路121號",
+      "aliases": [
+        "High fun",
+        "High Fun 嗨翻綜合體能館"
+      ],
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12198361101",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.011325,
+        "longitude": 120.1900737,
+        "system": "wgs84"
+      },
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/12198361101",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        }
+      ],
+      "alternateIds": [
+        "kilter-22029875"
+      ],
+      "alternateAddresses": [
+        "北區大和路121號"
+      ]
+    },
+    {
+      "id": "osm-node-7282088085",
+      "name": "久淘攀岩館",
+      "brand": "",
+      "city": "宜兰",
+      "province": "台湾",
+      "district": "宜蘭市",
+      "address": "宜蘭縣宜蘭市健康路三段66號",
+      "aliases": [
+        "JT Climbing"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7282088085",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.7527054,
+        "longitude": 121.7496109,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104508293",
+      "name": "凯乐石攀岩馆",
+      "brand": "",
+      "city": "广州",
+      "province": "广东",
+      "district": "",
+      "address": "广州",
+      "aliases": [
+        "Kailas"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104508293",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.154851,
+        "longitude": 113.3284782,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-11841864843",
+      "name": "BLACKBOOM黑爆攀岩",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "district": "锦江区",
+      "address": "成都市锦江区水碾河南三街37号U37号10栋",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/11841864843",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.6491807,
+        "longitude": 104.0965403,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104714628",
+      "name": "Survivor Indoor Rock Climbing",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "district": "",
+      "address": "成都",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104714628",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.6181949,
+        "longitude": 104.0523773,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-8330698331",
+      "name": "原岩攀岩館（中和店）",
+      "brand": "原岩攀岩館",
+      "city": "新北",
+      "province": "台湾",
+      "district": "中和區",
+      "address": "中和區立言街41號",
+      "aliases": [
+        "T-UP Climbing",
+        "原岩中和店"
+      ],
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay",
+        "speed",
+        "fitness"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/8330698331",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.0062525,
+        "longitude": 121.4860912,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [
+        "23557新北市中和區立言街41號"
+      ],
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/8330698331",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "原岩官方分店與設施介紹",
+          "url": "https://tupclimbing.tw/branch/zhonghe",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-13295191398",
+      "name": "BABO PAPAK",
+      "brand": "",
+      "city": "新竹",
+      "province": "台湾",
+      "district": "東區",
+      "address": "新竹市東區南大路300號",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/13295191398",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.8032873,
+        "longitude": 120.9786617,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-9594057843",
+      "name": "Dot Lot",
+      "brand": "",
+      "city": "无锡",
+      "province": "江苏",
+      "district": "",
+      "address": "无锡",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9594057843",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 31.5630344,
+        "longitude": 120.2587405,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-14055656902",
+      "name": "那岩0871攀岩俱乐部",
+      "brand": "",
+      "city": "昆明",
+      "province": "云南",
+      "district": "",
+      "address": "昆明",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/14055656902",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.1370299,
+        "longitude": 102.7353288,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-14040771840",
+      "name": "CLIFFS颗粒攀岩",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "district": "",
+      "address": "杭州",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/14040771840",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 30.1803841,
+        "longitude": 120.2583933,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-9316739471",
+      "name": "passion climbing爬森攀岩館",
+      "brand": "",
+      "city": "桃园",
+      "province": "台湾",
+      "district": "桃園區",
+      "address": "桃園市桃園區新埔七街139-1號",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9316739471",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 25.0216119,
+        "longitude": 121.3004947,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-way-1016526111",
+      "name": "原岩攀岩館-楊梅店",
+      "brand": "",
+      "city": "桃园",
+      "province": "台湾",
+      "district": "楊梅區",
+      "address": "326桃園市楊梅區梅高路99巷20號",
+      "aliases": [
+        "T-UP bouldering gym"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/way/1016526111",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 24.9200421,
+        "longitude": 121.14517434999999,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-5104552398",
+      "name": "博昇攀岩馆",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "district": "",
+      "address": "深圳",
+      "aliases": [
+        "Bosheng Climbing Club"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5104552398",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.5039846,
+        "longitude": 113.9183709,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-7596936848",
+      "name": "崩岩館",
+      "brand": "",
+      "city": "花莲",
+      "province": "台湾",
+      "district": "花蓮市",
+      "address": "花蓮縣花蓮市國民一街38號三樓",
+      "aliases": [
+        "Bonus Bouldering Gym"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7596936848",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 23.9877651,
+        "longitude": 121.6018246,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-4583627411",
+      "name": "Attic V Climbing Gym",
+      "brand": "Attic V",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "香港黃竹坑道49號得力工業大廈地下E舖",
+      "aliases": [
+        "Attic V"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/4583627411",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.2494652,
+        "longitude": 114.167718,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [],
+      "verificationNote": "地址採經營方現行官網；沒有據舊網頁補錄訓練板品牌或票價。",
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/4583627411",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "Attic V 官方聯絡地址",
+          "url": "https://www.atticv.com.hk/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-12513736287",
+      "name": "Just Climb（西沙 GO PARK）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "西沙海映路9號西沙GO PARK",
+      "aliases": [
+        "Just Climb"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/12513736287",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.4274234,
+        "longitude": 114.2648143,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [],
+      "accessNote": "活動及預約式攀爬場地；官網列周末及公眾假期時段，到訪前確認。",
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/12513736287",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "Just Climb 官方場館地址",
+          "url": "https://justclimb.hk/visit-us/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-5162207543",
+      "name": "Just Climb（新蒲崗）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "九龍新蒲崗太子道東706號（景褔街106號）太子工業大廈地下D室",
+      "aliases": [
+        "Just Climb"
+      ],
+      "facilities": [
+        "bouldering",
+        "toprope"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5162207543",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3342376,
+        "longitude": 114.199088,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [],
+      "accessNote": "頂繩體驗限兒童；入場與課程資格按分店規則。",
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/5162207543",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "Just Climb 官方場館地址",
+          "url": "https://justclimb.hk/visit-us/",
+          "date": ""
+        },
+        {
+          "name": "Just Climb 官方分店設施",
+          "url": "https://justclimb.hk/venue_facilities-4/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-5132063921",
+      "name": "港青 YMCA（尖沙咀）室內攀石場",
+      "brand": "YMCA of Hong Kong",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "九龍尖沙咀梳士巴利道41號港青2樓",
+      "aliases": [
+        "YMCA Climbing Wall"
+      ],
+      "facilities": [
+        "toprope"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/5132063921",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.2950149,
+        "longitude": 114.1711676,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [],
+      "accessNote": "自行攀爬須先符合場館評核或認可課程要求；兒童須按規定由持評核卡成人陪同。體驗課須預約。",
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/5132063921",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "YMCA of Hong Kong 官方室內攀石設施頁",
+          "url": "https://www.ymcahk.org.hk/ms/en/our_facilities/tst_headquater/indoor_climbing_wall/index.html",
+          "date": ""
+        },
+        {
+          "name": "YMCA of Hong Kong 2026年首季攀登課程官方章程",
+          "url": "https://www.ymcahk.org.hk/snr/filemanager/en/content_437/YMCA_Climbing_2026Q1_Version%2016122025.pdf",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "osm-node-9883215571",
+      "name": "尚山岩舘",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "大南街 Tai Nan Street234",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/9883215571",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3278238,
+        "longitude": 114.1626214,
+        "system": "wgs84"
+      }
+    },
+    {
+      "id": "osm-node-7681371312",
+      "name": "香港攀爬樂園（沙田店）",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "沙田大涌橋路52號富豪花園二期商場2樓",
+      "aliases": [
+        "香港攀爬樂園 Hong Kong Climbing Park (沙田店 Sha Tin)",
+        "Hong Kong Climbing Park (Sha Tin)",
+        "香港攀爬樂園（沙田店）",
+        "CN Climbing Park",
+        "香港攀爬樂園 (沙田店)"
+      ],
+      "facilities": [
+        "bouldering",
+        "lead",
+        "toprope",
+        "autobelay",
+        "kilter"
+      ],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/7681371312",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.3856493,
+        "longitude": 114.19938,
+        "system": "wgs84"
+      },
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/7681371312",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator"
+        },
+        {
+          "name": "香港攀爬樂園官网场馆与设施资料",
+          "url": "https://www.hkclimbingpark.com/first-visit/"
+        },
+        {
+          "name": "香港攀爬樂園官方地址",
+          "url": "https://www.hkclimbingpark.com/contact-us/",
+          "date": ""
+        }
+      ],
+      "alternateIds": [
+        "kilter-33936946"
+      ],
+      "alternateAddresses": [
+        "沙田 Sha Tin大涌橋路 Tai Chung Kiu Road52"
+      ]
+    },
+    {
+      "id": "osm-node-11121831487",
+      "name": "First Climb（朗壹廣場）",
+      "brand": "First Climb",
+      "city": "香港",
+      "province": "香港",
+      "district": "",
+      "address": "新界元朗康業街8號朗壹廣場地下G14–15號舖",
+      "aliases": [
+        "香港攀爬樂園 Hong Kong Climbing Park",
+        "香港攀爬樂園",
+        "Hong Kong Climbing Park",
+        "香港攀爬樂園（元朗）"
+      ],
+      "facilities": [],
+      "summary": "",
+      "sourceName": "OpenStreetMap 贡献者",
+      "sourceUrl": "https://www.openstreetmap.org/node/11121831487",
+      "sourceDate": "2026-10-20",
+      "sourceUpdatedAt": "2026-10-20T23:26:53Z",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sourceLicense": "ODbL-1.0",
+      "coordinates": {
+        "latitude": 22.4510362,
+        "longitude": 114.0292992,
+        "system": "wgs84"
+      },
+      "alternateAddresses": [
+        "康業街朗壹廣場"
+      ],
+      "accessNote": "原同址資料曾錄作香港攀爬樂園（元朗），現業主名錄列First Climb；舊會員及預約能否沿用，請向現經營者確認。",
+      "verificationNote": "名稱與舖位按業主現行名錄；不將2024舊品牌的MoonBoard或高牆配置自動轉移給現經營品牌。",
+      "sources": [
+        {
+          "name": "OpenStreetMap 贡献者",
+          "url": "https://www.openstreetmap.org/node/11121831487",
+          "date": "2026-10-20",
+          "license": "ODbL-1.0"
+        },
+        {
+          "name": "朗壹廣場業主官方現行商戶頁",
+          "url": "https://www.onenorth.com.hk/tc/lifestyle/shop/1807/",
+          "date": ""
+        },
+        {
+          "name": "朗壹廣場業主官方交通資訊",
+          "url": "https://www.onenorth.com.hk/tc/visit/transportation/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "kilter-34734694",
+      "name": "1778 CLIMBING",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "黄浦区海潮路133号地下一层 A801",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22423778",
+      "name": "Ascent 杭州顽攀攀岩",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "address": "滨江区江辉路376号3幢103室",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22029892",
+      "name": "Beta Boulders Gym（静安）",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "静安区昌化路667弄 S1室",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Beta Boulders Gym JingAn"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22423781",
+      "name": "Beta Boulders Gym（徐汇）",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "徐汇区凌云街道天等路400号1幢107室",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Beta Boulders Gym Xuhui"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-33905933",
+      "name": "Boulder MAD",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "26 Hung To Road, Room 302-303, Weedon Center, Ngau Tau Kok, Kowloon",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-33848171",
+      "name": "圓石空間攀岩場（左營店）",
+      "brand": "",
+      "city": "高雄",
+      "province": "台湾",
+      "address": "左營區站前北路1號3樓",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Boulder space圓石空間攀岩場-左營店"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-33848172",
+      "name": "Dapro 室內攀岩場",
+      "brand": "Dapro",
+      "city": "台中",
+      "province": "台湾",
+      "address": "臺中市南屯區永春東七路700號",
+      "facilities": [
+        "bouldering",
+        "lead",
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Dapro indoor climbing 室內攀岩場"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "南屯區永春東七路700號"
+      ],
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "Dapro協辦2026臺中市市長盃官方活動頁",
+          "url": "https://2026city.dapro.j91.me/",
+          "date": ""
+        },
+        {
+          "name": "中華民國山岳協會2025全國先鋒抱石賽官方活動頁",
+          "url": "https://ctaa.j91.me/race/30",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "kilter-35882569",
+      "name": "FLOW心流攀岩（旗舰店）",
+      "brand": "",
+      "city": "济南",
+      "province": "山东",
+      "address": "市中区",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-28891797",
+      "name": "GOAT Climbing Club",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "肇嘉浜路1117号",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22423780",
+      "name": "绿壁虎攀岩基地",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "address": "杭州汽车文化主题公园内2号馆",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Green Geckos Climbing Base"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-35296547",
+      "name": "HeyBouldering嘿抱（万象城购物中心店）",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "闵行区吴中路1599号万象城L3层 L339c",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-31920782",
+      "name": "The Board Room（湾仔）",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "1301-02 Chinachem Johnston Plaza, 178-186 Johnston Rd., Wan Chai, Hong Kong",
+      "facilities": [
+        "kilter",
+        "tension",
+        "fitness"
+      ],
+      "summary": "",
+      "aliases": [
+        "Board Room"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "district": "湾仔",
+      "accessNote": "单次入场限有工作人员时段；非值守时段仅限会员",
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator"
+        },
+        {
+          "name": "The Board Room 官网设施、地址和入场说明",
+          "url": "https://boardroom.fit/"
+        }
+      ]
+    },
+    {
+      "id": "kilter-34182437",
+      "name": "Just Climb（石門）",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "沙田石門安平街6號新貿中心地下4室",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Just Climb Shimenmen"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "Room 4, Basement, New Trade Plaza, No. 6 On Ping St, Shek Mun"
+      ],
+      "accessNote": "自助攀爬須符合分店登記及評估規定。",
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "Just Climb 官方場館地址",
+          "url": "https://justclimb.hk/visit-us/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "kilter-34913606",
+      "name": "Long Diao",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "安远路127弄",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22029879",
+      "name": "Mega STONE Climbing Gym",
+      "brand": "",
+      "city": "新北",
+      "province": "台湾",
+      "address": "No. 5, Lane 56, Zhongzheng Rd, Xinzhuang District",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22029878",
+      "name": "攀登助手嗨练室",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "address": "武侯区天府大道1700号新世纪环球中心购物中心1F B20",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "PDZS(攀登助手嗨练室)"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-35713297",
+      "name": "Tension Lab",
+      "brand": "",
+      "city": "天津",
+      "province": "天津",
+      "address": "No.92 Changjiang Road, C92 Industrial Park, Uniti402",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22029743",
+      "name": "The Player Climbingym（美孚店）",
+      "brand": "The Player Climbingym",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍荔景山路272號荔灣花園UG層6B及6B1號舖",
+      "facilities": [
+        "bouldering",
+        "kilter",
+        "moon",
+        "toprope",
+        "fitness"
+      ],
+      "summary": "",
+      "aliases": [
+        "The Player Climbing Gym"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "Shop No. 6B&6B1, Lai Chi Kok Bay Garden, 272 Lai King Hill Road, Kowloon"
+      ],
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "The Player Climbingym 官方到訪資訊",
+          "url": "https://www.theplayerclimbing.com/visit-us",
+          "date": ""
+        },
+        {
+          "name": "The Player Climbingym 官方設施頁",
+          "url": "https://www.theplayerclimbing.com/facilities",
+          "date": ""
+        }
+      ],
+      "accessNote": "4.5米頂繩牆限兒童攀登課程；一般入場以抱石及訓練設施為主，初次到訪須按場館規定填寫免責登記。"
+    },
+    {
+      "id": "kilter-22029746",
+      "name": "Top Out Climbing（山景商場）",
+      "brand": "Top Out Climbing",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界屯門鳴琴路1號山景商場LG126號舖",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "TOPOUT Climbing"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "Shop No.126, Shan King Shopping Centre, Shan King Estate, Ming Jum Rd, Tuen Mun"
+      ],
+      "verificationNote": "地址及抱石設施有協會賽事一手資料交叉支持；未據此聲稱2026年當日營業已確認。",
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "中國香港攀山及攀登總會官方抱石賽場地資料",
+          "url": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+          "date": "2023-11-21"
+        }
+      ]
+    },
+    {
+      "id": "kilter-33830519",
+      "name": "Upper Climbing Gym",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "address": "宝安区",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "kilter-22029747",
+      "name": "Urban Stone Climbing Gym",
+      "brand": "Urban Stone",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界葵涌葵豐街38–42號大鴻輝（葵涌）中心二期地下2號舖",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "G/F, Shop 2, Magnet Place, Tower 2, 38-42 Kwai Fung Crescent, Kwai Fong"
+      ],
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "中國香港攀山及攀登總會官方抱石賽場地資料",
+          "url": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+          "date": "2023-11-21"
+        }
+      ]
+    },
+    {
+      "id": "kilter-22029744",
+      "name": "Vita Beta Climbing Gym（荃灣店）",
+      "brand": "Vita Beta",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界荃灣沙咀道29–35號科技中心1樓2室",
+      "facilities": [
+        "bouldering",
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "Vita Beta Climbing Gym"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "alternateAddresses": [
+        "Unit 2, 1/F, Technology Plaza, 29-35 Sha Tsui Road, Tsuen Wan, NT"
+      ],
+      "accessNote": "初次到訪前須填寫場館免責及登記表；分店與開放時段以官方當日公告為準。",
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "Vita Beta 官方分店與交通頁",
+          "url": "https://www.vitabeta.hk/getting-here/",
+          "date": ""
+        },
+        {
+          "name": "中國香港攀山及攀登總會官方抱石賽場地資料",
+          "url": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+          "date": "2023-11-21"
+        }
+      ]
+    },
+    {
+      "id": "kilter-22029876",
+      "name": "原岩攀岩館（萬華店）",
+      "brand": "原岩攀岩館",
+      "city": "台北",
+      "province": "台湾",
+      "address": "萬華區大理街149號",
+      "facilities": [
+        "bouldering",
+        "kilter",
+        "moon"
+      ],
+      "summary": "",
+      "aliases": [
+        "原岩攀岩館 T-UP Climbing Gym"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "Kilter 官方公开训练板场馆定位器",
+          "url": "https://settercloset.com/pages/kb-locator",
+          "date": ""
+        },
+        {
+          "name": "原岩官方分店與設施介紹",
+          "url": "https://tupclimbing.tw/branch/wanhua",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "kilter-33848173",
+      "name": "老陕攀登共创俱乐部",
+      "brand": "",
+      "city": "西安",
+      "province": "陕西",
+      "address": "碑林区含光路北路96号",
+      "facilities": [
+        "kilter"
+      ],
+      "summary": "",
+      "aliases": [
+        "老陕攀登共创俱乐部 Qin Climbing Co-Creation Club"
+      ],
+      "sourceName": "Kilter 官方公开训练板场馆定位器",
+      "sourceUrl": "https://settercloset.com/pages/kb-locator",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "regional-fj-fuzhou-jinshan",
+      "name": "金山文体中心攀岩馆",
+      "brand": "",
+      "province": "福建",
+      "city": "福州",
+      "district": "仓山区",
+      "address": "仓山区闽江大道236号金山文体中心二楼",
+      "aliases": [],
+      "facilities": [],
+      "summary": "",
+      "accessNote": "文体中心内，当前开放及预约规则未确认。",
+      "sourceName": "福建省体育局2024年青少年儿童体育竞赛规程",
+      "sourceUrl": "https://tyj.fujian.gov.cn/zwgk/zfxxgkzl/gkml/gzdt/202407/t20240704_6479045.htm",
+      "sourceDate": "2024-07-04",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "verificationNote": "省体育局正式竞赛规程列出的攀岩馆及报名邮寄地址。该历史地址不等于2026年营业现场核实；设施类型未据其他门店或非一手介绍推断。"
+    },
+    {
+      "id": "regional-nx-yinchuan-qinshui",
+      "name": "宁夏亲水体育中心攀岩馆",
+      "brand": "",
+      "province": "宁夏",
+      "city": "银川",
+      "district": "金凤区",
+      "address": "金凤区亲水南大街35号宁夏亲水体育中心",
+      "aliases": [
+        "宁夏亲水攀岩馆"
+      ],
+      "facilities": [],
+      "summary": "",
+      "accessNote": "公共体育中心内，攀岩馆当日开放与预约规则需向场馆确认。",
+      "sourceName": "银川市人民政府公共体育场馆介绍",
+      "sourceUrl": "https://www.yinchuan.gov.cn/xwzx/mrdt/202305/t20230508_4055897.html",
+      "sourceDate": "2023-05-08",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "sources": [
+        {
+          "name": "银川市人民政府公共体育场馆介绍",
+          "url": "https://www.yinchuan.gov.cn/xwzx/mrdt/202305/t20230508_4055897.html",
+          "date": "2023-05-08"
+        },
+        {
+          "name": "宁夏回族自治区政府采购网：亲水体育中心场馆维修改造项目",
+          "url": "https://www.ccgp-ningxia.gov.cn/public/NXGPPNEW/dynamic/contents/CGGG/ZHBGG/content.jsp?cid=317&id=8b80b27a9e4a1564019ed4d5eb536087&sid=1&type=ZB",
+          "date": "2026-06-17"
+        },
+        {
+          "name": "宁夏文明网转载银川日报：自治区十七运攀岩比赛",
+          "url": "https://nx.wenming.cn/wmw/wmpx/wmfs/202608/t20260804_7010488.html",
+          "date": "2026-08-04"
+        },
+        {
+          "name": "宁夏体彩2026公益夏令营官方稿",
+          "url": "https://finance.sina.com.cn/wm/2026-07-23/doc-iniiuskx1470294.shtml",
+          "date": "2026-07-23"
+        }
+      ],
+      "alternateAddresses": [
+        "金凤区亲水大街35号宁夏亲水体育中心"
+      ],
+      "verificationNote": "原政府介绍及采购链接本轮返回404，保留历史来源；2026年宁夏体彩官方活动稿确认中心门牌，攀岩当日开放仍需确认。"
+    },
+    {
+      "id": "regional-hi-baisha-national-base",
+      "name": "国家体育训练南方基地（海南白沙）攀岩场",
+      "brand": "",
+      "province": "海南",
+      "city": "白沙",
+      "district": "牙叉镇",
+      "address": "白沙黎族自治县牙叉镇文体路1号国家体育训练南方基地",
+      "aliases": [
+        "海南白沙国家体育训练南方基地攀岩场"
+      ],
+      "facilities": [],
+      "summary": "",
+      "accessNote": "训练基地，公众开放规则未确认。",
+      "sourceName": "国家体育总局登山中心2026年国家攀岩队白沙转训通知",
+      "sourceUrl": "https://www.sport.gov.cn/dszx/n5414/c29521361/content.html",
+      "sourceDate": "2026-04-08",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "verificationNote": "正式通知明确国家攀岩队速度组在该基地训练及精确地址。收录为训练场所，不作为无条件对外营业岩馆；没有据速度组名称推断其他设施。"
+    },
+    {
+      "id": "regional-mo-solution-hoiseongkoi",
+      "name": "Solution Climbing Gym",
+      "brand": "Solution Climbing",
+      "province": "澳门",
+      "city": "澳门",
+      "district": "",
+      "address": "友谊桥大马路196号海上居商铺地下AO座",
+      "aliases": [
+        "Solution Climbing",
+        "Solution澳門室內攀岩館"
+      ],
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "accessNote": "到馆前确认营业及预约安排。",
+      "sourceName": "Veerix／Lab-Or品牌官方合作场馆介绍",
+      "sourceUrl": "https://veerixhk.com/pages/solution-climbing",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "cross-checked",
+      "verificationNote": "原品牌资料链接本轮返回404；澳门学联当前合作商户名录仍列本馆同一地址。到访前确认营业，不凭链接失效判断闭店。",
+      "alternateAddresses": [
+        "友谊桥大马路196号海上居地下A0座"
+      ],
+      "sources": [
+        {
+          "name": "Veerix／Lab-Or品牌官方合作场馆介绍",
+          "url": "https://veerixhk.com/pages/solution-climbing",
+          "date": ""
+        },
+        {
+          "name": "澳门中华学生联合总会官方合作商户",
+          "url": "https://aecm.org.mo/member/memberclub/",
+          "date": ""
+        }
+      ]
+    },
+    {
+      "id": "regional-mo-um-n8",
+      "name": "澳门大学综合体育馆攀岩及抱石场",
+      "brand": "澳门大学",
+      "province": "澳门",
+      "city": "澳门",
+      "district": "氹仔",
+      "address": "氹仔大学大马路澳门大学综合体育馆N8一楼",
+      "aliases": [
+        "UM Sport Climbing Wall",
+        "UM Bouldering Wall",
+        "澳大N8抱石墙"
+      ],
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "",
+      "accessNote": "校内场馆，抱石需团体预约；攀岩须经批准并符合资质及保护人员要求。",
+      "sourceName": "澳门大学体育事务部场馆官网",
+      "sourceUrl": "https://facility.osa.um.edu.mo/projects/bouldering-wall/",
+      "sourceDate": "2026-01-16",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "verificationNote": "同一N8体育馆的攀岩墙、抱石墙合为一个场所。官网明确抱石墙一楼位置及校外团体可申请但须批准；2026规则明确攀岩保护员要求，因此仅标绳攀，不推断先锋、顶绳或K板。官方通信地址写氹仔大学大马路，沿用机构地址。",
+      "sources": [
+        {
+          "name": "澳门大学体育设施使用指引2026年修订版",
+          "url": "https://facility.osa.um.edu.mo/wp-content/uploads/2026/03/the-university-of-macau-sports-facilities-guidelines-en.pdf",
+          "date": "2026-03-06"
+        }
+      ]
+    },
+    {
+      "id": "lcsd-tsingyi",
+      "name": "青衣西南體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界青衣涌美路70號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-shunlee",
+      "name": "順利邨體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍觀塘順利邨道33號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-powing",
+      "name": "保榮路體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界上水百和路19號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-tiukengleng",
+      "name": "調景嶺體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "將軍澳翠嶺路2號",
+      "facilities": [
+        "rope",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-shekkipmei",
+      "name": "石硤尾公園體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍深水埗南昌街290號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-yuenchaukok",
+      "name": "圓洲角體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界沙田銀城街35號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-tsuenwan",
+      "name": "荃灣體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界荃灣永順街53號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-siulun",
+      "name": "兆麟體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "屯門兆麟街19號屯門兆麟政府綜合大樓",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-tinfai",
+      "name": "天暉路體育館攀登場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "天水圍天瑞路63號",
+      "facilities": [
+        "rope",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署戶外運動攀登設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?ftid=51",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "戶外人工攀登牆；須預訂並符合康文署攀登資格及同行人員規定，開放受天氣和保養影響。"
+    },
+    {
+      "id": "lcsd-taikoktsui",
+      "name": "大角咀體育館攀石場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍大角咀福全街63號大角咀體育館7樓",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署室內運動攀石設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=536",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+    },
+    {
+      "id": "lcsd-eastkaitak",
+      "name": "東啟德體育館攀石場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍新蒲崗六合街30號",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署室內運動攀石設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=726",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+    },
+    {
+      "id": "lcsd-leiyuemun",
+      "name": "鯉魚門體育館攀石場",
+      "brand": "",
+      "city": "香港",
+      "province": "香港",
+      "address": "九龍油塘鯉魚門市政大廈2樓至5樓",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "香港康文署室內運動攀石設施",
+      "sourceUrl": "https://www.lcsd.gov.hk/clpss/tc/webApp/Facility/Details.do?fid=980",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "須預訂並符合康文署攀登資格及同行人員規定，並非購票後即可自行攀爬。"
+    },
+    {
+      "id": "justclimb-taikoo",
+      "name": "Just Climb（太古）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "address": "香港鰂魚涌英皇道1001號6樓01室",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Just Climb 官方場館地址",
+      "sourceUrl": "https://justclimb.hk/visit-us/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sources": [
+        {
+          "name": "Just Climb 官方分店設施",
+          "url": "https://justclimb.hk/venue_facilities-4/"
+        }
+      ],
+      "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+    },
+    {
+      "id": "justclimb-tseungkwano",
+      "name": "Just Climb（將軍澳）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "address": "將軍澳唐俊街28號海天晉滙120C及120D號舖",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Just Climb 官方場館地址",
+      "sourceUrl": "https://justclimb.hk/visit-us/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sources": [
+        {
+          "name": "Just Climb 官方分店設施",
+          "url": "https://justclimb.hk/venue_facilities-4/"
+        }
+      ],
+      "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+    },
+    {
+      "id": "justclimb-tsuenwan",
+      "name": "Just Climb（荃灣）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "address": "新界荃灣楊屋道88號Plaza 88八樓802號舖",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "Just Climb 官方場館地址",
+      "sourceUrl": "https://justclimb.hk/visit-us/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sources": [
+        {
+          "name": "Just Climb 官方分店設施",
+          "url": "https://justclimb.hk/venue_facilities-4/"
+        }
+      ],
+      "accessNote": "入場、課程及自助攀爬資格按該分店規則。"
+    },
+    {
+      "id": "justclimb-kaitak",
+      "name": "Just Climb（啟德體育園）",
+      "brand": "Just Climb",
+      "city": "香港",
+      "province": "香港",
+      "address": "啟德體育園啟德體育大道啟德體藝館外攀岩牆",
+      "facilities": [
+        "lead",
+        "toprope",
+        "autobelay",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "Just Climb 官方場館地址",
+      "sourceUrl": "https://justclimb.hk/visit-us/",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "sources": [
+        {
+          "name": "Just Climb 官方分店設施",
+          "url": "https://justclimb.hk/venue_facilities-4/"
+        }
+      ],
+      "accessNote": "入場、課程及自助攀爬資格按該分店規則；啟德為有蓋室外攀登牆。"
+    },
+    {
+      "id": "tup-nangang",
+      "name": "原岩攀岩館（南港店）",
+      "brand": "原岩攀岩館",
+      "city": "台北",
+      "province": "台湾",
+      "address": "南港區南港路二段147號",
+      "facilities": [
+        "bouldering"
+      ],
+      "summary": "",
+      "sourceName": "原岩官方分店與設施介紹",
+      "sourceUrl": "https://tupclimbing.tw/branch/nangang",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "未成年人、裝備及保護資格按分店入場規則。"
+    },
+    {
+      "id": "tup-xindian",
+      "name": "原岩攀岩館（新店店）",
+      "brand": "原岩攀岩館",
+      "city": "新北",
+      "province": "台湾",
+      "address": "新店區中興路三段70號YES!LIFE裕隆城7樓",
+      "facilities": [
+        "bouldering",
+        "toprope",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "原岩官方分店與設施介紹",
+      "sourceUrl": "https://tupclimbing.tw/branch/xindian",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "未成年人、裝備及保護資格按分店入場規則。"
+    },
+    {
+      "id": "regional-qh-xining-fitness",
+      "name": "青海省全民健身中心攀岩馆",
+      "brand": "",
+      "city": "西宁",
+      "province": "青海",
+      "address": "城中区体育巷9号青海省全民健身中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "南方体育工程场馆项目资料",
+      "sourceUrl": "https://www.basketball-stands.cn/index.php?a=index&aid=12671&c=View&m=home",
+      "sourceDate": "2026-04-30",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "综合体育中心内，攀岩场的当前开放时段、所在楼层及预约规则待确认。",
+      "verificationNote": "工程方资料明确中心地址及攀岩馆；未将综合中心地址细化为未经核实的具体楼层。"
+    },
+    {
+      "id": "regional-bj-thismountain-yizhuang",
+      "name": "此山攀岩（亦庄信万广场店）",
+      "brand": "此山攀岩",
+      "city": "北京",
+      "province": "北京",
+      "address": "亦庄信万广场",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "北京亦庄官方发布",
+      "sourceUrl": "https://peking.bjd.com.cn/content/s6a8d6d4ee4b0e45f3fd67b8b.html",
+      "sourceDate": "2026-08-25",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed"
+    },
+    {
+      "id": "regional-bj-aosen",
+      "name": "北顶奥森攀岩生态园",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "address": "朝阳区奥林西路奥林匹克森林公园南园西门",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "北京市体育局官方赛事场馆信息",
+      "sourceUrl": "https://www.beijing.gov.cn/fwcj/calendar/tyss/69095799091e1a7398401295.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "到访前确认园区入口及攀爬预约。",
+      "verificationNote": "来源是2025年赛事场馆地址；2026年3月市政府春游信息仍列本馆，不代表核实当天营业。",
+      "sources": [
+        {
+          "name": "北京市政府2026年奥森公园信息",
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202603/t20260316_4557641.html",
+          "date": "2026-03-16"
+        }
+      ]
+    },
+    {
+      "id": "regional-bj-huairou-national",
+      "name": "国家登山训练基地（怀柔）攀岩场",
+      "brand": "",
+      "city": "北京",
+      "province": "北京",
+      "address": "怀柔区环湖路1号国家登山训练基地",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "国家体育总局登山中心2026年裁判培训通知",
+      "sourceUrl": "https://www.sport.gov.cn/dszx/n5414/c29778076/content.html",
+      "sourceDate": "2026-07-16",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "训练基地，公众开放及预约规则未确认；培训通知不等于对外营业公告。"
+    },
+    {
+      "id": "regional-sh-qidao",
+      "name": "起道体育攀岩教室",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "address": "金山区南阳港东路438号",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "上海市政府2026市民日校招生公告",
+      "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260305/2b09afa94cc94d01ab4ba437155643ba.html",
+      "sourceDate": "2026-03-05",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "教学点，课程及自由攀爬开放安排需另行确认。"
+    },
+    {
+      "id": "regional-qz-fengze",
+      "name": "攀猩攀岩馆（丰泽广场）",
+      "brand": "",
+      "city": "泉州",
+      "province": "福建",
+      "address": "丰泽区丰泽广场一楼",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+      "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+      "sourceDate": "2026-08-26",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "district": "丰泽区",
+      "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+    },
+    {
+      "id": "regional-qz-jinjiang",
+      "name": "攀猩攀岩（晋江丰龙广场）",
+      "brand": "",
+      "city": "泉州",
+      "province": "福建",
+      "address": "晋江市世纪大道518号丰龙广场CD-L1-011",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+      "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+      "sourceDate": "2026-08-26",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "district": "晋江市",
+      "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+    },
+    {
+      "id": "regional-qz-nanan",
+      "name": "骑士攀岩（南安中骏世界城馆）",
+      "brand": "",
+      "city": "泉州",
+      "province": "福建",
+      "address": "南安市美林街道江北大道40号南安中骏世界城外广场",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "泉州市体育局2026年高危体育场所检查通报",
+      "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202608/t20260826_3322373.htm",
+      "sourceDate": "2026-08-26",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "district": "南安市",
+      "verificationNote": "按官方现场检查名单收录名称和地址；不将收录解释为安全认证或整改完成。"
+    },
+    {
+      "id": "regional-cd-cdsu",
+      "name": "成都体育学院攀岩馆（东部新区校区）",
+      "brand": "",
+      "city": "成都",
+      "province": "四川",
+      "address": "东部新区环湖北路1942号成都体育学院",
+      "facilities": [
+        "bouldering",
+        "rope",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "成都体育学院官方场馆介绍",
+      "sourceUrl": "https://yjs.cdsu.edu.cn/info/1049/38229.htm",
+      "sourceDate": "2024-10-08",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内训练场馆，对外开放、入校与预约规则需向学校确认。"
+    },
+    {
+      "id": "regional-nb-rockplus-huanyu",
+      "name": "RockPlus攀岩馆（中海环宇城店）",
+      "brand": "",
+      "city": "宁波",
+      "province": "浙江",
+      "address": "鄞州区中海环宇城",
+      "facilities": [
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "鄞州融媒体记者现场报道",
+      "sourceUrl": "https://www.nbyznews.cn/ldnews/202508/t20250827_6317362.shtml",
+      "sourceDate": "2025-08-27",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "verificationNote": "报道仅明确所在商场，未据其他分店推断门牌、楼层或K板。"
+    },
+    {
+      "id": "regional-sz-yantian-school",
+      "name": "盐田外国语学校攀岩馆",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "address": "盐田区梅沙街道环碧路69号盐田外国语学校",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "深圳盐田区文化广电旅游体育局公示",
+      "sourceUrl": "https://www.yantian.gov.cn/cn/zwgk/zfcg/ytqzxcg/content/post_12555657.html",
+      "sourceDate": "2025-12-18",
+      "checkedAt": "2026-10-21",
+      "verificationStatus": "source-listed",
+      "accessNote": "校内攀岩馆，历史公示列2026年公益开放项目；公众开放日期与预约需确认，不默认随时入校。"
+    },
+    {
+      "id": "oct22-sh-wujie-king88",
+      "name": "无界攀岩（长宁路88号店）",
+      "brand": "无界攀岩",
+      "city": "上海",
+      "province": "上海",
+      "district": "长宁区",
+      "address": "长宁区长宁路88号商场三楼",
+      "facilities": [
+        "bouldering",
+        "rope"
+      ],
+      "summary": "",
+      "sourceName": "长宁区人民政府2026夏日运动配送课公告",
+      "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260714/8251ea473d0c4feb831e00257544adc6.html",
+      "sourceDate": "2026-07-14",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "verificationNote": "2026中文政府公告称无界、英文指南同址称Park，2023长宁体育同址称爬客；经营主体及旧会员承继未确认，不与其他地址旧点自动合并。",
+      "aliases": [
+        "爬客攀岩馆",
+        "爬客攀岩",
+        "Park Climbing Gym"
+      ],
+      "sources": [
+        {
+          "name": "长宁区人民政府2026夏日运动配送课公告",
+          "url": "https://www.shanghai.gov.cn/nw17239/20260714/8251ea473d0c4feb831e00257544adc6.html",
+          "date": "2026-07-14"
+        },
+        {
+          "name": "上海市政府英文攀岩指南",
+          "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+        },
+        {
+          "name": "长宁区体育局攀岩联赛报道（同址爬客）",
+          "url": "https://www.shcn.gov.cn/col7415/20230809/1241795.html",
+          "date": "2023-07-25"
+        }
+      ]
+    },
+    {
+      "id": "oct22-sh-xiaoyan-huayuan",
+      "name": "啸岩馆（运动LOFT）",
+      "brand": "啸岩馆",
+      "city": "上海",
+      "province": "上海",
+      "district": "虹口区",
+      "address": "虹口区花园路128号运动LOFT创意园区一街区A座1楼105室",
+      "facilities": [
+        "bouldering",
+        "autobelay"
+      ],
+      "summary": "",
+      "sourceName": "上海市虹口区人民政府运动场馆介绍",
+      "sourceUrl": "https://www.shhk.gov.cn/xwzx/002008/002008040/20241005/cc24b9df-c257-4acd-b5a6-b90a1612d762.html",
+      "sourceDate": "2024-10-05",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "verificationNote": "官方介绍给出具体门牌、抱石区及4台自动保护器；历史介绍不等于当前营业或安全认证。"
+    },
+    {
+      "id": "oct22-sh-climbism-oriental",
+      "name": "Climbism（东方体育中心馆）",
+      "brand": "Climbism",
+      "city": "上海",
+      "province": "上海",
+      "district": "浦东新区",
+      "address": "浦东新区耀体路701号东方体育中心游泳馆13号门",
+      "facilities": [
+        "bouldering",
+        "toprope",
+        "lead",
+        "autobelay",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "上海市政府International Services Shanghai攀岩指南",
+      "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "verificationNote": "政府英文指南列Climbism；上海体育2023测评同址称攀岩主义并明确入口及设施，当前品牌称谓仍需经营者确认，不新增同址多店。",
+      "aliases": [
+        "攀岩主义（东体馆）",
+        "攀岩主义浦发东体馆"
+      ],
+      "sources": [
+        {
+          "name": "上海市政府International Services Shanghai攀岩指南",
+          "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+        },
+        {
+          "name": "上海体育政务小体CLUB场馆测评（上观）",
+          "url": "https://sghexport.shobserver.com/html/baijiahao/2023/11/17/1180516.html",
+          "date": "2023-11-17"
+        }
+      ]
+    },
+    {
+      "id": "oct22-sh-newworld-universe",
+      "name": "新世界天宇攀登",
+      "brand": "新世界天宇攀登",
+      "city": "上海",
+      "province": "上海",
+      "district": "黄浦区",
+      "address": "黄浦区南京西路2—68号新世界城3楼",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "上海市政府International Services Shanghai攀岩指南",
+      "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "verificationNote": "政府英文指南列Shanghai New World Universe Climbing Gym及3楼地址；中文名称由上海市体育局赛事报道交叉确认。",
+      "sources": [
+        {
+          "name": "上海市政府International Services Shanghai攀岩指南",
+          "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+        },
+        {
+          "name": "上海市体育局黄浦站攀岩联赛报道",
+          "url": "https://tyj.sh.gov.cn/qmjs1/20211018/4ed8329eaff541549266536b6c56e4ea.html",
+          "date": "2021-10-18"
+        }
+      ]
+    },
+    {
+      "id": "oct22-sh-fengxian-sports",
+      "name": "奉贤体育中心攀岩馆",
+      "brand": "",
+      "city": "上海",
+      "province": "上海",
+      "district": "奉贤区",
+      "address": "奉贤区古华路100号奉贤体育中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "上海市政府International Services Shanghai攀岩指南",
+      "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "公共体育中心内的攀岩馆；具体预约和开放时段请向场馆确认。",
+      "sources": [
+        {
+          "name": "上海市政府International Services Shanghai攀岩指南",
+          "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+        },
+        {
+          "name": "奉贤区南上海体育中心可研现有场馆清单",
+          "url": "https://xxgk.fengxian.gov.cn/html/static/OA/20240702161000028_28595427.pdf"
+        }
+      ]
+    },
+    {
+      "id": "oct22-sz-honghuashan",
+      "name": "红花山体育中心攀岩墙",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "district": "光明区",
+      "address": "光明区公明街道公明社区兴发路35号红花山体育中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "深圳市人民政府文体通场馆名录",
+      "sourceUrl": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/post_12364975.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "体育中心内攀岩墙；中心整体营业时间不等于攀岩开放时间，需单独确认或预约。",
+      "verificationNote": "官方场馆页列具体地址和1片国际标准攀岩墙；未把中心其他运动项目作为攀岩设施。"
+    },
+    {
+      "id": "oct22-sz-guangming-public",
+      "name": "光明区群众体育中心攀岩馆",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "district": "光明区",
+      "address": "光明区光明街道华夏路与光侨路交会处群众体育中心",
+      "facilities": [
+        "bouldering",
+        "rope",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "深圳市人民政府文体通场馆名录",
+      "sourceUrl": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/mpost_11128288.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "体育中心内攀岩馆；攀岩开放、课程与预约时段需单独确认。",
+      "verificationNote": "官方场馆页列交会处地址与攀岩馆；市文体局2021年赛事报道明确难度、攀石、速度分区。",
+      "sources": [
+        {
+          "name": "深圳市人民政府文体通场馆名录",
+          "url": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/mpost_11128288.html"
+        },
+        {
+          "name": "深圳市文化广电旅游体育局市运会场馆报道",
+          "url": "https://wtl.sz.gov.cn/ydh/xwdt/jjtyxw/content/post_9123202.html",
+          "date": "2021-09-13"
+        }
+      ]
+    },
+    {
+      "id": "oct22-sz-yuehai-center",
+      "name": "粤海街道文体中心攀岩馆",
+      "brand": "",
+      "city": "深圳",
+      "province": "广东",
+      "district": "南山区",
+      "address": "南山区高新南十一路与科技南路交会处东南角粤海街道文体中心L8—L9",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "深圳市南山区人民政府场馆介绍",
+      "sourceUrl": "https://www.szns.gov.cn/mlns/whns/tycg/content/post_12589127.html",
+      "sourceDate": "2026-01-12",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "文体中心L8—L9攀岩馆；具体运营品牌、公众开放和预约时段请向中心确认。",
+      "verificationNote": "2026年官方介绍明确L8—L9及16.5米岩墙；交会处地址由南山区发改局公示交叉确认，不沿用其他博昇旧点坐标。",
+      "sources": [
+        {
+          "name": "深圳市南山区人民政府场馆介绍",
+          "url": "https://www.szns.gov.cn/mlns/whns/tycg/content/post_12589127.html",
+          "date": "2026-01-12"
+        },
+        {
+          "name": "南山区发展和改革局文体中心地址公示",
+          "url": "https://www.szns.gov.cn/nsqfgj/gkmlpt/content/11/11261/post_11261008.html",
+          "date": "2024-04-25"
+        }
+      ]
+    },
+    {
+      "id": "oct22-qz-knight-xintian",
+      "name": "骑士攀岩（新天城市馆）",
+      "brand": "骑士攀岩",
+      "city": "泉州",
+      "province": "福建",
+      "district": "鲤城区",
+      "address": "鲤城区江南街道锦美社区笋江路新天城市广场一层外广场",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "泉州市体育局2025年高危体育场所检查通报",
+      "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202509/t20250917_3210597.htm",
+      "sourceDate": "2025-09-15",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "verificationNote": "按附件第3项名称和场所地址收录，与同主体晋江万达馆分开；未将历史检查无问题当成当前安全认证。"
+    },
+    {
+      "id": "oct22-hz-xihu-center",
+      "name": "西湖区文体中心攀岩馆",
+      "brand": "",
+      "city": "杭州",
+      "province": "浙江",
+      "district": "西湖区",
+      "address": "西湖区晴川街217号西湖区文体中心",
+      "facilities": [],
+      "summary": "",
+      "sourceName": "西湖区融媒体中心西湖报场馆报道",
+      "sourceUrl": "https://xhb.xihunet.cn/html/2025-07/11/content_9247_18700879.htm",
+      "sourceDate": "2025-07-11",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "公共文体中心内攀岩项目；运营品牌及攀岩开放时段需单独确认，不沿用中心整体时间。"
+    },
+    {
+      "id": "oct22-gy-caihu-international",
+      "name": "贵州·彩湖国际攀岩中心",
+      "brand": "",
+      "city": "贵阳",
+      "province": "贵州",
+      "district": "观山湖区",
+      "address": "观山湖区观山湖公园内贵州·彩湖国际攀岩中心",
+      "facilities": [
+        "bouldering",
+        "rope",
+        "speed"
+      ],
+      "summary": "",
+      "sourceName": "国家体育总局贵州省体育局世界杯场馆报道",
+      "sourceUrl": "https://www.sport.gov.cn/n14471/n14495/n14543/c29034225/content.html",
+      "sourceDate": "",
+      "checkedAt": "2026-10-22",
+      "verificationStatus": "source-listed",
+      "accessNote": "公园内竞赛及训练场；报道提及赛后公众开放计划，日常开放和赛事占用时段仍需确认。",
+      "verificationNote": "2025年报道明确公园位置和难度、攀石、速度岩壁，2026年体育总局亚青赛报道再次确认该场馆实际承赛。",
+      "sources": [
+        {
+          "name": "国家体育总局贵州省体育局世界杯场馆报道",
+          "url": "https://www.sport.gov.cn/n14471/n14495/n14543/c29034225/content.html"
+        },
+        {
+          "name": "国家体育总局2026亚青赛实际开赛报道",
+          "url": "https://www.sport.gov.cn/n14471/n14495/n14543/c29889088/content.html"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "sources": {
+      "infrastructure/gym-catalog-banana.json": 31,
+      "infrastructure/gym-catalog-curated.json": 7,
+      "infrastructure/gym-catalog-government.json": 12,
+      "infrastructure/gym-catalog-partners.json": 76,
+      "infrastructure/gym-catalog-osm.json": 43,
+      "infrastructure/gym-catalog-extra-official.json": 31,
+      "infrastructure/gym-catalog-regional.json": 5,
+      "infrastructure/gym-catalog-supplement.json": 29,
+      "infrastructure/gym-catalog-oct22-additions.json": 11
+    },
+    "merged": [
+      {
+        "from": "hylonomus-c1bfb03ca55832c7",
+        "into": "bj-rockhour-xisanqi",
+        "reason": "西三旗金隅智造工场同一岩时馆，品牌名单补充建材城中路27号门牌"
+      },
+      {
+        "from": "hylonomus-ee7a0d031618db2e",
+        "into": "sh-rockhour-gatem",
+        "reason": "西岸梦中心同一岩时馆，品牌名单补充龙腾大道2266号门牌"
+      },
+      {
+        "from": "hylonomus-b0ba40bb8a8f626c",
+        "into": "gov-sh-youshi-chuanqiao",
+        "reason": "优石同一5幢F2室，金湘路1000号与川桥路600号为同园区两入口，五星体育与许可公示交叉证实"
+      },
+      {
+        "from": "hylonomus-23f3f35cf2c347d6",
+        "into": "gov-gz-quye-vlab",
+        "reason": "广州白云区沙太南路181号VLAB同一趣野场馆"
+      },
+      {
+        "from": "osm-node-12964721867",
+        "into": "hylonomus-4d0d53c816cbadf1",
+        "reason": "北京Climb On Gym同名地点在保利广场东侧约100米；北京旅游网与合作馆一致指向东座1层，OSM未提供门牌"
+      },
+      {
+        "from": "osm-node-12961598957",
+        "into": "hylonomus-4f902f494df9dd17",
+        "reason": "成都大松果同名金石路239号文轩体育，OSM坐标与该馆位置约10米"
+      },
+      {
+        "from": "osm-way-30125898",
+        "into": "hylonomus-368dc625fc87de8a",
+        "reason": "杭州教工路49号浙体杭攀，同名OSM点与该馆位置约33米"
+      },
+      {
+        "from": "kilter-22423779",
+        "into": "hylonomus-8bb1a135f7ed57df",
+        "reason": "杭州石桥路51号东方时代中心3楼，同一CLIFFS馆"
+      },
+      {
+        "from": "kilter-33936946",
+        "into": "osm-node-7681371312",
+        "reason": "香港攀爬乐园沙田店，官网确认大涌桥路52号富豪花园二期2楼"
+      },
+      {
+        "from": "kilter-22029875",
+        "into": "osm-node-12198361101",
+        "reason": "台南北区大和路121号，同一嗨翻场馆"
+      },
+      {
+        "from": "kilter-33848174",
+        "into": "dg-suchq-softwarepark",
+        "reason": "东莞松山湖南方软件园同一非常趣场馆"
+      },
+      {
+        "from": "kilter-33848175",
+        "into": "banana-zh-leshi",
+        "reason": "珠海乐士文化区香蕉攀岩乐士店，同一场馆"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "osm-node-5162048437",
+        "reason": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+      },
+      {
+        "id": "osm-node-4583629247",
+        "reason": "https://www.school-god.com/en/item/detail/gonature"
+      },
+      {
+        "id": "osm-node-5023761143",
+        "reason": "https://www.timeout.com.hk/hong-kong/hk/%E5%A5%BD%E5%8E%BB%E8%99%95/verm-city"
+      },
+      {
+        "id": "kilter-22029742",
+        "reason": "https://www.school-god.com/en/item/detail/gonature"
+      },
+      {
+        "id": "kilter-22029877",
+        "reason": "https://tupclimbing.tw/branch"
+      }
+    ],
+    "rechecked": [
+      {
+        "id": "osm-node-5162207543",
+        "sourceUrl": "https://justclimb.hk/visit-us/",
+        "reason": "OSM點位在新蒲崗太子工業大廈，與官方總店相符；不另增重複場館"
+      },
+      {
+        "id": "osm-node-12513736287",
+        "sourceUrl": "https://justclimb.hk/visit-us/",
+        "reason": "OSM原點位位於西沙GO PARK（22.4274234,114.2648143），以官方分店資訊補名址，不與石門分店混併"
+      },
+      {
+        "id": "kilter-34182437",
+        "sourceUrl": "https://justclimb.hk/visit-us/",
+        "reason": "官方門店頁明確地下4室，修正Kilter舊英文地址的Basement表述；K板仍保留廠家依據"
+      },
+      {
+        "id": "osm-node-5162207543",
+        "sourceUrl": "https://justclimb.hk/venue_facilities-4/",
+        "reason": "官方設施頁限定新蒲崗兒童頂繩，不推廣到全品牌"
+      },
+      {
+        "id": "kilter-22029876",
+        "sourceUrl": "https://tupclimbing.tw/branch/wanhua",
+        "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施"
+      },
+      {
+        "id": "osm-node-8330698331",
+        "sourceUrl": "https://tupclimbing.tw/branch/zhonghe",
+        "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施"
+      },
+      {
+        "id": "osm-node-13417522409",
+        "sourceUrl": "https://tupclimbing.tw/branch/mingde",
+        "reason": "由原岩該分店專頁確認設施，補足舊地圖/廠家資料；不沿用其他分店設施"
+      },
+      {
+        "id": "banana-sh-yananxi",
+        "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260708/51217aacabe94adabad1fe6313f1c1c5.html",
+        "reason": "政府具体门牌补齐品牌接口的粗略文化广场地址"
+      },
+      {
+        "id": "hylonomus-8bb1a135f7ed57df",
+        "sourceUrl": "https://settercloset.com/pages/kb-locator",
+        "reason": "已审厂家地址更精确；修复以字符串长度选择地址导致门牌51号被较长旧地址覆盖"
+      },
+      {
+        "id": "osm-node-7681371312",
+        "sourceUrl": "https://www.hkclimbingpark.com/contact-us/",
+        "reason": "以经营者具体楼层修正旧地图混排地址"
+      },
+      {
+        "id": "regional-mo-solution-hoiseongkoi",
+        "sourceUrl": "https://aecm.org.mo/member/memberclub/",
+        "reason": "原来源404，补充直接合作机构当前门牌证据，区分字母O与数字0"
+      },
+      {
+        "id": "regional-nx-yinchuan-qinshui",
+        "sourceUrl": "https://finance.sina.com.cn/wm/2026-07-23/doc-iniiuskx1470294.shtml",
+        "reason": "补充当前可访问活动稿，明确亲水南大街；不将整个中心其他项目活动当作攀岩营业核验"
+      },
+      {
+        "id": "osm-node-4583627411",
+        "sourceUrl": "https://www.atticv.com.hk/",
+        "reason": "原記錄地址僅有香港；按經營方現行聯絡頁補足門牌及地下舖位，不採用第三方仍保留的舊址。"
+      },
+      {
+        "id": "osm-node-5132063921",
+        "sourceUrl": "https://www.ymcahk.org.hk/ms/en/our_facilities/tst_headquater/indoor_climbing_wall/index.html",
+        "reason": "原記錄地址僅有香港；經營方頁面列梳士巴利道41號及二樓攀石櫃台，並說明評核、課程或持卡人陪同要求。"
+      },
+      {
+        "id": "osm-node-5132063921",
+        "sourceUrl": "https://www.ymcahk.org.hk/snr/filemanager/en/content_437/YMCA_Climbing_2026Q1_Version%2016122025.pdf",
+        "reason": "官方課程章程確認尖沙咀二樓室內攀石場及日票使用者須通過頂繩評核；與油麻地京士柏戶外場不同，不能混為一處。"
+      },
+      {
+        "id": "kilter-22029743",
+        "sourceUrl": "https://www.theplayerclimbing.com/visit-us",
+        "reason": "官方明確美孚店位於 Upper Ground Floor，補足舊廠家名錄未列的UG層，保留原場館ID。"
+      },
+      {
+        "id": "kilter-22029743",
+        "sourceUrl": "https://www.theplayerclimbing.com/facilities",
+        "reason": "官方逐項列抱石、Kilter Board、Moon Board、Gym Area及兒童課程專用4.5米頂繩牆，補足只有K板的舊資料。"
+      },
+      {
+        "id": "kilter-22029744",
+        "sourceUrl": "https://www.vitabeta.hk/getting-here/",
+        "reason": "官方目前分列荃灣與鰂魚涌兩店；此ID廠家地址對應荃灣，補分店名及中文地址，避免兩店混查。"
+      },
+      {
+        "id": "kilter-22029744",
+        "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+        "reason": "協會自行主辦賽事的條款第7節列荃灣Vita Beta為抱石賽場地，地址與經營方現行頁一致；據此補抱石，不將鰂魚涌設施套到荃灣。"
+      },
+      {
+        "id": "kilter-22029746",
+        "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+        "reason": "協會主辦賽事條款第7節明列鳴琴路1號及LG126；舊廠家資料寫Shop126和Ming Jum Rd，補正樓層及道路中文，並補抱石。"
+      },
+      {
+        "id": "kilter-22029747",
+        "sourceUrl": "https://hkcmcu.org.hk/images/486/Terms_and_condition_HKBS2023_20231121.pdf",
+        "reason": "協會主辦賽事條款第7節列Urban Stone為抱石賽場地，中文樓名與廠家地址對應；補抱石及便於搜尋的中文地址。"
+      },
+      {
+        "id": "kilter-33848172",
+        "sourceUrl": "https://2026city.dapro.j91.me/",
+        "reason": "場館自行協辦之2026年賽事明列比賽地址及抱石V組，補中文館名及完整城市地址。"
+      },
+      {
+        "id": "kilter-33848172",
+        "sourceUrl": "https://ctaa.j91.me/race/30",
+        "reason": "主辦協會及承辦場館的一手活動頁同時列先鋒和抱石、Dapro館及永春東七路700號；補先鋒設施，未從旅遊文章猜測速度或自保配置。"
+      },
+      {
+        "id": "osm-node-11121831487",
+        "sourceUrl": "https://www.onenorth.com.hk/tc/lifestyle/shop/1807/",
+        "reason": "2024業主刊物稱此G14–15舖為香港攀爬樂園；業主現行名錄已列First Climb。按同一鋪位更新場館展示名，保留舊名作歷史檢索，不將新舊名錄計作兩館，也不假定法律主體或會員資格延續。"
+      },
+      {
+        "id": "osm-node-11121831487",
+        "sourceUrl": "https://www.onenorth.com.hk/tc/visit/transportation/",
+        "reason": "商戶頁僅列廣場和鋪位，交通頁明列元朗康業街8號；兩個一手頁合併補足導航地址。"
+      }
+    ],
+    "attribution": "OSM-derived component: © OpenStreetMap contributors, ODbL 1.0; available separately via the app export.",
+    "osmExport": "infrastructure/gym-catalog-osm.json",
+    "note": "收录数量，不是全国总数；资料收录不等于逐家核实当前营业。"
+  }
+}

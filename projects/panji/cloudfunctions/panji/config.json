@@ -1,0 +1,4 @@
+{
+  "permissions": { "openapi": [] },
+  "triggers": [{ "name": "panji-maintenance", "type": "timer", "config": "0 */15 * * * * *" }]
+}

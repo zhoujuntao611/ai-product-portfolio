@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="page-title">我的岩馆</view>
+  <button class="outline spaced" bindtap="catalog">从岩馆库添加</button>
+  <view class="actions"><button class="primary" bindtap="add">＋ 添加岩馆</button><button class="outline" bindtap="toggleArchived">{{showArchived ? '隐藏归档' : '查看归档'}}</button></view>
+  <view wx:if="{{error}}" class="error-box">{{error}}<button class="link" bindtap="reload">重试</button></view>
+  <view wx:if="{{loading}}" class="notice">正在读取岩馆…</view>
+  <view wx:if="{{formOpen}}" class="card spaced">
+    <view class="card-title">{{editId ? '编辑岩馆' : '添加一处攀爬地点'}}</view>
+    <view class="label">岩馆名称 *</view><input class="input" value="{{form.name}}" data-field="name" bindinput="field" maxlength="50" placeholder="例如：常去的抱石馆" />
+    <view class="label">城市</view><input class="input" value="{{form.city}}" data-field="city" bindinput="field" maxlength="50" placeholder="选填，用来区分同名岩馆" />
+    <view class="label">馆内难度体系 *</view><view class="chips"><view wx:for="{{['V 等级','字体等级','颜色等级']}}" wx:key="*this" class="chip {{form.gradeSystem === item ? 'active' : ''}}" data-value="{{item}}" bindtap="grade">{{item}}</view></view><input class="input" value="{{form.gradeSystem}}" data-field="gradeSystem" bindinput="field" maxlength="30" placeholder="也可填写其他体系" />
+    <view class="label">私人备注</view><textarea class="textarea" value="{{form.notes}}" data-field="notes" bindinput="field" maxlength="500" placeholder="风格、交通，或你想记住的小事" />
+    <view class="actions"><button class="outline" bindtap="close" disabled="{{busy}}">取消</button><button class="primary" bindtap="save" loading="{{busy}}" disabled="{{busy}}">保存岩馆</button></view>
+  </view>
+  <view class="gap"></view>
+  <view wx:if="{{!loading && !gyms.length && !formOpen}}" class="card empty"><view class="empty-mark">⌂</view><view class="empty-title">还没有常去的岩馆</view><button class="outline spaced" bindtap="catalog">浏览岩馆库</button><button class="link spaced" bindtap="add">手动添加</button></view>
+  <view wx:for="{{gyms}}" wx:key="_id" class="card"><view class="row between"><text class="card-title">{{item.name}}</text><text wx:if="{{item.archivedAt}}" class="badge warm">已归档</text></view><view class="muted spaced">{{item.city || '未填城市'}} · {{item.gradeSystem}}</view><view wx:if="{{item.notes}}" class="body-copy spaced">{{item.notes}}</view><view class="actions"><button class="outline small" data-id="{{item._id}}" bindtap="edit">编辑</button><button class="secondary small" data-id="{{item._id}}" bindtap="archive">{{item.archivedAt ? '恢复' : '归档'}}</button></view></view>
+</view>

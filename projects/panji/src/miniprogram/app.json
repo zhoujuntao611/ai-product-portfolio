@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/records/index", "pages/growth/index", "pages/mine/index",
+    "pages/session-edit/index", "pages/session-detail/index", "pages/gyms/index",
+    "pages/review/index", "pages/videos/index", "pages/privacy/index",
+    "pages/catalog/index", "pages/gym-picker/index", "pages/gym-detail/index",
+    "pages/projects/index", "pages/project-detail/index"
+  ],
+  "window": { "navigationBarTitleText": "攀迹", "navigationBarBackgroundColor": "#f6f5f0", "navigationBarTextStyle": "black", "backgroundColor": "#f6f5f0", "backgroundTextStyle": "dark" },
+  "tabBar": {
+    "color": "#83908a", "selectedColor": "#1e5147", "backgroundColor": "#ffffff", "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/records/index", "text": "记录", "iconPath": "assets/records.png", "selectedIconPath": "assets/records-on.png" },
+      { "pagePath": "pages/growth/index", "text": "成长", "iconPath": "assets/growth.png", "selectedIconPath": "assets/growth-on.png" },
+      { "pagePath": "pages/catalog/index", "text": "岩馆", "iconPath": "assets/catalog.png", "selectedIconPath": "assets/catalog-on.png" },
+      { "pagePath": "pages/mine/index", "text": "我的", "iconPath": "assets/mine.png", "selectedIconPath": "assets/mine-on.png" }
+    ]
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json",
+  "__usePrivacyCheck__": true
+}

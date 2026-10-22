@@ -1,5 +1,7 @@
 # ClimbAI —— AI 攀岩训练助手
 
+**最新实测：** 已完成 DeepSeek-V4-Pro 计划生成、反馈归纳及用户确认，45 分钟预算下生成 35/30 分钟安排，依据反馈将下次计划从 30 调整为 25 分钟。[完整实测](../../docs/LIVE_PRACTICE_20261019.md)。
+
 面向室内抱石初阶成年用户的 ToC AI Coach 产品作品。根据个人目标、可用时间与训练反馈，建立带证据的画像、生成计划、记录训练并确认下一次安排。
 
 **[在线体验](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/)** · [个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/) · [产品案例](docs/CASE_STUDY.md) · [完整 PRD](docs/PRD.md) · [验证记录](docs/VALIDATION.md)

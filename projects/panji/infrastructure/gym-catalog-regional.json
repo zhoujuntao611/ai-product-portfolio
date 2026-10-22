@@ -1,0 +1,120 @@
+[
+  {
+    "id": "regional-fj-fuzhou-jinshan",
+    "name": "金山文体中心攀岩馆",
+    "brand": "",
+    "province": "福建",
+    "city": "福州",
+    "district": "仓山区",
+    "address": "仓山区闽江大道236号金山文体中心二楼",
+    "aliases": [],
+    "facilities": [],
+    "summary": "",
+    "accessNote": "文体中心内，当前开放及预约规则未确认。",
+    "sourceName": "福建省体育局2024年青少年儿童体育竞赛规程",
+    "sourceUrl": "https://tyj.fujian.gov.cn/zwgk/zfxxgkzl/gkml/gzdt/202407/t20240704_6479045.htm",
+    "sourceDate": "2024-07-04",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "verificationNote": "省体育局正式竞赛规程列出的攀岩馆及报名邮寄地址。该历史地址不等于2026年营业现场核实；设施类型未据其他门店或非一手介绍推断。"
+  },
+  {
+    "id": "regional-nx-yinchuan-qinshui",
+    "name": "宁夏亲水体育中心攀岩馆",
+    "brand": "",
+    "province": "宁夏",
+    "city": "银川",
+    "district": "金凤区",
+    "address": "金凤区亲水大街35号宁夏亲水体育中心",
+    "aliases": ["宁夏亲水攀岩馆"],
+    "facilities": [],
+    "summary": "",
+    "accessNote": "公共体育中心内，攀岩馆当日开放与预约规则需向场馆确认。",
+    "sourceName": "银川市人民政府公共体育场馆介绍",
+    "sourceUrl": "https://www.yinchuan.gov.cn/xwzx/mrdt/202305/t20230508_4055897.html",
+    "sourceDate": "2023-05-08",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "additionalSources": [
+      {
+        "sourceName": "宁夏回族自治区政府采购网：亲水体育中心场馆维修改造项目",
+        "sourceUrl": "https://www.ccgp-ningxia.gov.cn/public/NXGPPNEW/dynamic/contents/CGGG/ZHBGG/content.jsp?cid=317&id=8b80b27a9e4a1564019ed4d5eb536087&sid=1&type=ZB",
+        "sourceDate": "2026-06-17",
+        "note": "采购人直接公示体育中心地址为金凤区亲水大街35号；仅提取机构场址，不收录联系人。"
+      },
+      {
+        "sourceName": "宁夏文明网转载银川日报：自治区十七运攀岩比赛",
+        "sourceUrl": "https://nx.wenming.cn/wmw/wmpx/wmfs/202608/t20260804_7010488.html",
+        "sourceDate": "2026-08-04",
+        "note": "2026年8月3日比赛实际在本馆举行，是较新的场所使用佐证；不代表所有时段对公众开放。"
+      }
+    ]
+  },
+  {
+    "id": "regional-hi-baisha-national-base",
+    "name": "国家体育训练南方基地（海南白沙）攀岩场",
+    "brand": "",
+    "province": "海南",
+    "city": "白沙",
+    "district": "牙叉镇",
+    "address": "白沙黎族自治县牙叉镇文体路1号国家体育训练南方基地",
+    "aliases": ["海南白沙国家体育训练南方基地攀岩场"],
+    "facilities": [],
+    "summary": "",
+    "accessNote": "训练基地，公众开放规则未确认。",
+    "sourceName": "国家体育总局登山中心2026年国家攀岩队白沙转训通知",
+    "sourceUrl": "https://www.sport.gov.cn/dszx/n5414/c29521361/content.html",
+    "sourceDate": "2026-04-08",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "verificationNote": "正式通知明确国家攀岩队速度组在该基地训练及精确地址。收录为训练场所，不作为无条件对外营业岩馆；没有据速度组名称推断其他设施。"
+  },
+  {
+    "id": "regional-mo-solution-hoiseongkoi",
+    "name": "Solution Climbing Gym",
+    "brand": "Solution Climbing",
+    "province": "澳门",
+    "city": "澳门",
+    "district": "",
+    "address": "友谊桥大马路196号海上居地下A0座",
+    "aliases": ["Solution Climbing", "Solution澳門室內攀岩館"],
+    "facilities": ["bouldering"],
+    "summary": "",
+    "accessNote": "到馆前确认营业及预约安排。",
+    "sourceName": "Veerix／Lab-Or品牌官方合作场馆介绍",
+    "sourceUrl": "https://veerixhk.com/pages/solution-climbing",
+    "sourceDate": "",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "verificationNote": "品牌直接场馆页面明确名称、门牌和抱石墙，页面未标更新时间。只提取事实元数据，不复制营销描述、价格或评价。澳门体育局2026年活动日历另有本馆实际活动列载，用于时效旁证。"
+  },
+  {
+    "id": "regional-mo-um-n8",
+    "name": "澳门大学综合体育馆攀岩及抱石场",
+    "brand": "澳门大学",
+    "province": "澳门",
+    "city": "澳门",
+    "district": "氹仔",
+    "address": "氹仔大学大马路澳门大学综合体育馆N8一楼",
+    "aliases": ["UM Sport Climbing Wall", "UM Bouldering Wall", "澳大N8抱石墙"],
+    "facilities": ["bouldering", "rope"],
+    "summary": "",
+    "accessNote": "校内场馆，抱石需团体预约；攀岩须经批准并符合资质及保护人员要求。",
+    "sourceName": "澳门大学体育事务部场馆官网",
+    "sourceUrl": "https://facility.osa.um.edu.mo/projects/bouldering-wall/",
+    "sourceDate": "2026-01-16",
+    "sourceDateMeaning": "场馆页面所示更新日期",
+    "checkedAt": "2026-10-21",
+    "verificationStatus": "source-listed",
+    "verificationNote": "同一N8体育馆的攀岩墙、抱石墙合为一个场所。官网明确抱石墙一楼位置及校外团体可申请但须批准；2026规则明确攀岩保护员要求，因此仅标绳攀，不推断先锋、顶绳或K板。官方通信地址写氹仔大学大马路，沿用机构地址。",
+    "additionalSources": [
+      {
+        "sourceName": "澳门大学体育设施使用指引2026年修订版",
+        "sourceUrl": "https://facility.osa.um.edu.mo/wp-content/uploads/2026/03/the-university-of-macau-sports-facilities-guidelines-en.pdf",
+        "sourceDate": "2026-03-06",
+        "sourceDateMeaning": "批准日期，2026-04-01生效",
+        "note": "第7.4节规定攀岩及抱石活动须经认可专业人员监督；绳攀须符合证书、批准和保护人员条件。"
+      }
+    ]
+  }
+]

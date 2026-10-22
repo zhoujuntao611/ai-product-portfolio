@@ -1,0 +1,620 @@
+[
+  {
+    "id": "kilter-34734694",
+    "name": "1778 CLIMBING",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "黄浦区海潮路133号地下一层 A801",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22423778",
+    "name": "Ascent 杭州顽攀攀岩",
+    "brand": "",
+    "city": "杭州",
+    "province": "浙江",
+    "address": "滨江区江辉路376号3幢103室",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029892",
+    "name": "Beta Boulders Gym（静安）",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "静安区昌化路667弄 S1室",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "Beta Boulders Gym JingAn"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22423781",
+    "name": "Beta Boulders Gym（徐汇）",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "徐汇区凌云街道天等路400号1幢107室",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "Beta Boulders Gym Xuhui"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33905933",
+    "name": "Boulder MAD",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "26 Hung To Road, Room 302-303, Weedon Center, Ngau Tau Kok, Kowloon",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33848171",
+    "name": "圓石空間攀岩場（左營店）",
+    "brand": "",
+    "city": "高雄",
+    "province": "台湾",
+    "address": "左營區站前北路1號3樓",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "Boulder space圓石空間攀岩場-左營店"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22423779",
+    "name": "CLIFFS 攀岩馆（石桥路）",
+    "brand": "",
+    "city": "杭州",
+    "province": "浙江",
+    "address": "上城区石桥路51号东方时代中心3楼",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "CLIFFS"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33936946",
+    "name": "香港攀爬樂園（沙田店）",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "沙田大涌橋路52號富豪花園二期商場2樓",
+    "facilities": [
+      "bouldering",
+      "lead",
+      "toprope",
+      "autobelay",
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "CN Climbing Park"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "cross-checked",
+    "sources": [
+      {
+        "name": "Kilter 官方公开训练板场馆定位器",
+        "url": "https://settercloset.com/pages/kb-locator"
+      },
+      {
+        "name": "香港攀爬樂園官网场馆与设施资料",
+        "url": "https://www.hkclimbingpark.com/first-visit/"
+      },
+      {
+        "name": "香港攀爬樂園官网地址",
+        "url": "https://www.hkclimbingpark.com/contact-us/"
+      }
+    ]
+  },
+  {
+    "id": "kilter-33848172",
+    "name": "Dapro indoor climbing 室內攀岩場",
+    "brand": "",
+    "city": "台中",
+    "province": "台湾",
+    "address": "南屯區永春東七路700號",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-35882569",
+    "name": "FLOW心流攀岩（旗舰店）",
+    "brand": "",
+    "city": "济南",
+    "province": "山东",
+    "address": "市中区",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029742",
+    "name": "Go Nature Climbing Gym",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "Unit C2, G/F, Wing Hing Industrial Building, 14 Hing Yip St, Kwun Tong, Kowloon",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-28891797",
+    "name": "GOAT Climbing Club",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "肇嘉浜路1117号",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22423780",
+    "name": "绿壁虎攀岩基地",
+    "brand": "",
+    "city": "杭州",
+    "province": "浙江",
+    "address": "杭州汽车文化主题公园内2号馆",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "Green Geckos Climbing Base"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-35296547",
+    "name": "HeyBouldering嘿抱（万象城购物中心店）",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "闵行区吴中路1599号万象城L3层 L339c",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-31920782",
+    "name": "The Board Room（湾仔）",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "1301-02 Chinachem Johnston Plaza, 178-186 Johnston Rd., Wan Chai, Hong Kong",
+    "facilities": [
+      "kilter",
+      "tension",
+      "fitness"
+    ],
+    "summary": "",
+    "aliases": [
+      "Board Room"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "cross-checked",
+    "district": "湾仔",
+    "accessNote": "单次入场限有工作人员时段；非值守时段仅限会员",
+    "sources": [
+      {
+        "name": "Kilter 官方公开训练板场馆定位器",
+        "url": "https://settercloset.com/pages/kb-locator"
+      },
+      {
+        "name": "The Board Room 官网设施、地址和入场说明",
+        "url": "https://boardroom.fit/"
+      }
+    ]
+  },
+  {
+    "id": "kilter-22029875",
+    "name": "High Fun 嗨翻綜合體能館",
+    "brand": "",
+    "city": "台南",
+    "province": "台湾",
+    "address": "北區大和路121號",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-34182437",
+    "name": "Just Climb（石門）",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "Room 4, Basement, New Trade Plaza, No. 6 On Ping St, Shek Mun",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "Just Climb Shimenmen"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-34913606",
+    "name": "Long Diao",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "address": "安远路127弄",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029879",
+    "name": "Mega STONE Climbing Gym",
+    "brand": "",
+    "city": "新北",
+    "province": "台湾",
+    "address": "No. 5, Lane 56, Zhongzheng Rd, Xinzhuang District",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029878",
+    "name": "攀登助手嗨练室",
+    "brand": "",
+    "city": "成都",
+    "province": "四川",
+    "address": "武侯区天府大道1700号新世纪环球中心购物中心1F B20",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "PDZS(攀登助手嗨练室)"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029877",
+    "name": "原岩攀岩館（A19店）",
+    "brand": "",
+    "city": "桃园",
+    "province": "台湾",
+    "address": "中壢區高鐵南路二段352號4樓",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "原岩A19 / T-UP Climbing A19"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-35713297",
+    "name": "Tension Lab",
+    "brand": "",
+    "city": "天津",
+    "province": "天津",
+    "address": "No.92 Changjiang Road, C92 Industrial Park, Uniti402",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029743",
+    "name": "The Player Climbing Gym",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "Shop No. 6B&6B1, Lai Chi Kok Bay Garden, 272 Lai King Hill Road, Kowloon",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029746",
+    "name": "TOPOUT Climbing",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "Shop No.126, Shan King Shopping Centre, Shan King Estate, Ming Jum Rd, Tuen Mun",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33830519",
+    "name": "Upper Climbing Gym",
+    "brand": "",
+    "city": "深圳",
+    "province": "广东",
+    "address": "宝安区",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029747",
+    "name": "Urban Stone Climbing Gym",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "G/F, Shop 2, Magnet Place, Tower 2, 38-42 Kwai Fung Crescent, Kwai Fong",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029744",
+    "name": "Vita Beta Climbing Gym",
+    "brand": "",
+    "city": "香港",
+    "province": "香港",
+    "address": "Unit 2, 1/F, Technology Plaza, 29-35 Sha Tsui Road, Tsuen Wan, NT",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-22029876",
+    "name": "原岩攀岩館（萬華店）",
+    "brand": "",
+    "city": "台北",
+    "province": "台湾",
+    "address": "萬華區大理街149號",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "原岩攀岩館 T-UP Climbing Gym"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33848173",
+    "name": "老陕攀登共创俱乐部",
+    "brand": "",
+    "city": "西安",
+    "province": "陕西",
+    "address": "碑林区含光路北路96号",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "老陕攀登共创俱乐部 Qin Climbing Co-Creation Club"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33848174",
+    "name": "非常趣攀岩（南方软件园店）",
+    "brand": "",
+    "city": "东莞",
+    "province": "广东",
+    "address": "松山湖园区科技二路5号南方软件园A栋一楼01室",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "非常趣攀岩 SuchQ Climbing"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  },
+  {
+    "id": "kilter-33848175",
+    "name": "香蕉攀岩（乐士店）",
+    "brand": "",
+    "city": "珠海",
+    "province": "广东",
+    "address": "香洲区前山街道岱山路74号",
+    "facilities": [
+      "kilter"
+    ],
+    "summary": "",
+    "aliases": [
+      "香蕉攀岩馆 Banana Climbing Gym(乐士店)"
+    ],
+    "sourceName": "Kilter 官方公开训练板场馆定位器",
+    "sourceUrl": "https://settercloset.com/pages/kb-locator",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed"
+  }
+]

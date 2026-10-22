@@ -4,7 +4,7 @@
   const workflows = {
     supportflow: [
       { title: '先让资料可用、可维护。', text: '导入带来源、地区、版本和有效期的知识；用同义表达与逐问题 BM25 检索。政策更新后拦截旧稿，避免旧依据继续进入审核。', detail: '产品取舍：先用可解释的词法方案建立基线，再验证更复杂检索是否必要。' },
-      { title: '有引用，还要回答所问事项。', text: '退款申请窗口不能证明到账时效，文件保留时间也不能证明导出耗时。对实际选中条款检查事项、周期和问题覆盖；缺少支持就澄清，可选模型只选择已有证据编号。', detail: '产品取舍：采用显式支持规则与正向对照；尚未验证开放域语义判断或真实模型效果。' },
+      { title: '有引用，还要回答所问事项。', text: '退款申请窗口不能证明到账时效，文件保留时间也不能证明导出耗时。对实际选中条款检查事项、周期和问题覆盖；缺少支持就澄清，可选模型只选择已有证据编号。', detail: '产品取舍：采用显式支持规则与正向对照；已完成限定场景的真实模型接入检查，开放域泛化与用户效果仍需验证。' },
       { title: '审核修改，成为下一轮改进依据。', text: '批准、驳回和转人工均保存编辑稿、原因及来源版本。可导出问题样例并复核；人工修改与自动验证区分标记，回复不自动外发。', detail: '产品取舍：先沉淀可回查的反馈，再决定新增知识还是修改规则。' }
     ],
     metricpilot: [
@@ -20,38 +20,80 @@
   };
 
   const cases = {
-    supportflow: {
-      kicker: 'CASE 01 / KNOWLEDGE & HUMAN REVIEW', name: 'SupportFlow', subtitle: '从知识导入到审核反馈，检查来源是否真正支持当前问题。',
-      fact: 'AI 协作个人作品 · 合成政策与开发回归 · 可选模型接口仅做本地模拟验证',
-      sections: [
-        { title: '发现的问题', content: '<p>问“退款多久会到账”，原实现用“7 天内申请退款”生成可批准草稿；导出保留时间也被当作生成耗时。来源存在，仍可能答非所问。问题来自可复现审阅输入，尚非客服访谈。</p>' },
-        { title: '比较与选择', content: '<p>比较收紧数字规则、增加事项与周期支持检查、引入模型语义判断，选择可解释的支持检查。检索沿用同义扩展与逐问题 BM25，并与冻结关键词方案同题对照；向量与真实模型方案尚未实测。</p>' },
-        { title: '交付的改进', content: '<ul><li>结构化知识导入、来源与地区版本治理；更新政策后拦截旧稿。</li><li>核对实际选中条款的事项、周期和问题覆盖；共享地区表达以发现矛盾。</li><li>各审核终态保存编辑稿、原因及来源版本，导出问题样例；修复同秒历史排序。</li></ul>' },
-        { title: '同题验证与边界', content: '<p>本轮同 26 条审阅回归由 14 条提升至 26 条通过，工程回归 118/118。此前冻结关键词基线与完整新版流程同 60 题对照为 33/60 → 60/60，未做 BM25 单项消融；两组分母分开报告。<a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/ITERATION_EVIDENCE.md" target="_blank" rel="noopener noreferrer">查看方案、冻结基线与逐题证据 ↗</a></p><p>均为参与开发的合成回归，不是盲测、真实模型准确率或客服效率收益；开放表述与真实试用仍待验证。</p>' }
-      ]
-    },
-    metricpilot: {
-      kicker: 'CASE 02 / CSV & METRIC CONTRACT', name: 'MetricPilot', subtitle: '让订单导入、字段映射、业务口径和查询证据保持一致。',
-      fact: 'AI 协作个人作品 · CSV 订单分析 · 当前为规则解析与受约束统计，未调用外部模型',
-      sections: [
-        { title: '发现的问题', content: '<p>固定数据无法接入自己的订单；CSV 版又出现“数字正确、任务错误”：混合期间只保留一段，问题要求退款发生日却沿用原订单日，未知分母被替换为毛收入。同一 9 单样例的两种日期口径分别得到 30 元与 120 元。</p>' },
-        { title: '比较与选择', content: '<p>选择受约束统计工具，限定范围并保留查询证据。对界面与问题冲突，比较两种自动覆盖与先确认，选择冲突时零查询；混合期间要求统一表达，未知分母明确澄清。尚未开展备选方案的真实模型对照。</p>' },
-        { title: '交付的改进', content: '<ul><li>订单 CSV 预览、字段映射、数据质量检查与口径确认。</li><li>阻止混合期间截断、日期归属冲突和运算分母被静默替换。</li><li>报告保留源文件指纹、源行号、参数与查询编号，支持导出。</li></ul>' },
-        { title: '同题验证与边界', content: '<p>同 22 项验收：11/22 → 首次修复 17/22 → 最终 22/22；CSV 版工程回归 90/90，固定业务任务 24/24。旧版 72 项另列，不当作新版业务效果。<a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/ITERATION-20261019.md" target="_blank" rel="noopener noreferrer">查看冻结版本、手算夹具与逐题证据 ↗</a></p><p>各组任务有重叠，不能累计为独立样本；当前不是已验证的真实 LLM Agent。不支持任意 SQL、多币种或经营因果解释，真人任务效果待测。</p>' }
-      ]
-    },
-    climbai: {
-      kicker: 'CASE 03 / TOC AI COACH & FEEDBACK LOOP', name: 'ClimbAI', subtitle: '从个人目标出发，让训练、反馈和下一次安排形成持续使用的产品闭环。',
-      demo: 'climbai/',
-      fact: '2026.10 新建 · AI 协作个人作品 · 可交互浏览器演示 / 本地规则与示例数据 · 可选后端真实模型尚未调用',
-      sections: [
-        { title: '用户场景与目标', content: '<p>聚焦室内抱石初阶用户的训练决策与复盘场景，降低“今天练什么”和“下次怎么调整”的负担。痛点与价值仍是待验证假设，尚未开展真实用户访谈或训练效果试验。</p>' },
-        { title: '知识问题与方案选择', content: '<p>原先后端 10 条知识与浏览器内置 4 条示例各自维护，覆盖有限且容易不同步。选择前后端共享一份 30 条知识，扩充术语、装备与场馆问题；保留原有 10 个练习模板，不增加未经审核的负荷处方。</p><p>18 条带外部参考、12 条为自编产品规则；外部依据来自 7 个官方页面，逐条标注支持范围、适用条件和待教练审核状态。</p>' },
-        { title: 'Agent 与交互设计', content: '<ul><li>画像、知识检索、训练规划、反馈优化四个受控节点，展示决策依据与运行轨迹。</li><li>独立保存训练结束，反馈可稍后提交；计划版本可回看。</li><li>调整建议显示原因，用户可接受或保持；不适反馈暂停相关训练推荐。</li></ul>' },
-        { title: '验证方法与当前边界', content: '<p>10 月 15 日记录：50/50 固定检索验收、14 项定向浏览器检查通过；50 条检索题已包含于 116 项后端测试，不重复计数。<a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/VALIDATION.md" target="_blank" rel="noopener noreferrer">查看原始验收及范围 ↗</a></p><p>在线为本地规则演示。知识扩充不证明训练效果；原生 Chroma 未在扩充回归中重验，真实模型、真人试用及专业教练逐条审核待完成。</p>' }
-      ]
-    }
-  };
+  "supportflow": {
+    "kicker": "CASE 02 / KNOWLEDGE & HUMAN REVIEW",
+    "name": "SupportFlow",
+    "subtitle": "把查政策、模型选证与人工审核串成可交付的客服工作流。",
+    "fact": "DeepSeek-V4-Pro · 模型选证 + 引用校验 · 24 项场景验收通过",
+    "sections": [
+      {
+        "title": "产品任务",
+        "content": "<p>面向客服查询政策、整理回复草稿和审核答复的任务，连接资料导入、有效版本检索、逐条引用、人工审核与问题回收。来源、地区、有效期和版本随草稿保存，政策变化时拦截旧稿。</p>"
+      },
+      {
+        "title": "关键判断与修复",
+        "content": "<p>真实接入后发现，“CSV 下载链接过期了，怎样重新取得数据？”被拆成丢失主语的两个问题，导致反复澄清；发票更正的同义表述也被误判为缺少依据。改进逗号拆分、主题继承与条款支持校验，保留独立问题和异常分流。</p>"
+      },
+      {
+        "title": "落地结果",
+        "content": "<p>同组 24 项模型接入场景由 16/24 提升至 24/24；完成 123 项工程检查。实测覆盖正常答复、多问题、地区矛盾、依据不足、越权请求及人工接管。<a href=\"https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/LIVE_PRACTICE_20261019.md\" target=\"_blank\" rel=\"noopener noreferrer\">查看请求记录与逐题结果 ↗</a></p>"
+      },
+      {
+        "title": "可继续验证的方向",
+        "content": "<p>已保留模型调用次数、请求 ID、用量和完整输出。下一步用目标用户任务检验采纳与审核负担，继续比较规则和模型各自适合的环节。</p>"
+      }
+    ]
+  },
+  "metricpilot": {
+    "kicker": "CASE 03 / CSV & METRIC CONTRACT",
+    "name": "MetricPilot",
+    "subtitle": "让一份订单 CSV 生成口径明确、可复核的经营简报。",
+    "fact": "CSV 自助分析 · 字段映射与指标确认 · 22 项场景验收通过",
+    "sections": [
+      {
+        "title": "产品任务",
+        "content": "<p>围绕运营与小团队整理收入、渠道、退款简报的任务，将固定数据演示升级为 CSV 预览、字段映射、质量检查、口径确认、统计和导出。</p>"
+      },
+      {
+        "title": "关键产品判断",
+        "content": "<p>同一份 9 单样例，退款按原订单日与发生日统计分别得到 30 元和 120 元。比较两种自动覆盖与先确认，选择让用户在查询前统一口径；期间和分母不明确时先澄清。</p>"
+      },
+      {
+        "title": "交付与验证",
+        "content": "<p>报告保留源文件指纹、源行号、SQL、参数与查询编号。22 项验收由 11/22 提升至 22/22；本轮重新执行 24 项 CSV 固定任务与完整 162 项测试，均通过。</p>"
+      },
+      {
+        "title": "产品价值",
+        "content": "<p>让数据接入、指标含义、计算过程与结论保持一致，支持使用者复核每一个数字，避免带着完整证据回答了错误的问题。</p>"
+      }
+    ]
+  },
+  "climbai": {
+    "kicker": "EXPLORATION / WEB TRAINING & FEEDBACK",
+    "name": "ClimbAI",
+    "subtitle": "连接这次练什么、训练后如何复盘，以及下一次如何调整。",
+    "demo": "climbai/",
+    "fact": "DeepSeek-V4-Pro 后端实测 · 计划生成与反馈归纳 · 浏览器可交互体验",
+    "sections": [
+      {
+        "title": "用户任务与产品流程",
+        "content": "<p>面向室内抱石初阶用户，设计画像、知识检索、训练规划与反馈四节点流程。训练结束与反馈分别保存，调整方案展示修改依据，由用户确认后生成新计划版本。</p>"
+      },
+      {
+        "title": "真实模型实践",
+        "content": "<p>在每次最多 45 分钟的条件下，模型生成 35 分钟和 30 分钟两次安排。反馈临时加班、实际训练 25 分钟后，模型归纳时间限制，下一次计划从 30 分钟缩至 25 分钟，用户确认后生效。</p>"
+      },
+      {
+        "title": "知识与交付",
+        "content": "<p>统一前后端 30 条知识与来源、适用条件，保留 10 个练习模板；完成 50 条检索验收和 14 项定向浏览器检查。后端本轮完成 3 次真实模型调用及 116 项测试。</p>"
+      },
+      {
+        "title": "体验入口",
+        "content": "<p>浏览器可直接体验建档、训练记录、反馈和计划版本；本地后端可接入模型。模型实测的输入、输出、请求 ID 与用量记录随源码提供。</p>"
+      }
+    ]
+  }
+};
 
   function safeUrl(value) {
     if (typeof value !== 'string' || !value.trim()) return '';
@@ -127,7 +169,7 @@
       document.getElementById('dialog-kicker').textContent = item.kicker;
       const content = document.getElementById('dialog-content');
       content.innerHTML = '<h2 id="dialog-title">' + item.name + '</h2><p class="dialog-subtitle">' + item.subtitle + '</p>' +
-        '<p class="dialog-fact">' + (item.fact || '2026.10 新建 · AI 协作个人作品 · 合成数据 / 离线规则演示 · 真实模型效果尚未实测') + '</p>' +
+        '<p class="dialog-fact">' + (item.fact || '产品设计 · 运行交付 · 场景验证') + '</p>' +
         '<div class="case-sections">' + item.sections.map(section => '<section><h3>' + section.title + '</h3>' + section.content + '</section>').join('') + '</div>' +
         '<p class="case-metric" data-metric="' + project + '">离线回归，结果待写入</p>' +
         '<div class="dialog-links">' + (item.demo ? '<a class="button primary" href="' + item.demo + '">体验演示 <span aria-hidden="true">↗</span></a>' : '') + '<a class="button ' + (item.demo ? 'secondary' : 'primary') + '" data-doc-url="' + project + '" href="#source">阅读产品文档 <span aria-hidden="true">↗</span></a><a class="text-link" data-repo-url="' + project + '" href="#source">查看源码 <span aria-hidden="true">↗</span></a></div>';

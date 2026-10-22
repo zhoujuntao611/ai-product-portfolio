@@ -1,0 +1,303 @@
+[
+  {
+    "id": "oct22-sh-wujie-king88",
+    "name": "无界攀岩（长宁路88号店）",
+    "brand": "无界攀岩",
+    "city": "上海",
+    "province": "上海",
+    "district": "长宁区",
+    "address": "长宁区长宁路88号商场三楼",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "",
+    "sourceName": "长宁区人民政府2026夏日运动配送课公告",
+    "sourceUrl": "https://www.shanghai.gov.cn/nw17239/20260714/8251ea473d0c4feb831e00257544adc6.html",
+    "sourceDate": "2026-07-14",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "verificationNote": "2026中文政府公告称无界、英文指南同址称Park，2023长宁体育同址称爬客；经营主体及旧会员承继未确认，不与其他地址旧点自动合并。",
+    "aliases": [
+      "爬客攀岩馆",
+      "爬客攀岩",
+      "Park Climbing Gym"
+    ],
+    "sources": [
+      {
+        "name": "长宁区人民政府2026夏日运动配送课公告",
+        "url": "https://www.shanghai.gov.cn/nw17239/20260714/8251ea473d0c4feb831e00257544adc6.html",
+        "date": "2026-07-14"
+      },
+      {
+        "name": "上海市政府英文攀岩指南",
+        "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+      },
+      {
+        "name": "长宁区体育局攀岩联赛报道（同址爬客）",
+        "url": "https://www.shcn.gov.cn/col7415/20230809/1241795.html",
+        "date": "2023-07-25"
+      }
+    ]
+  },
+  {
+    "id": "oct22-sh-xiaoyan-huayuan",
+    "name": "啸岩馆（运动LOFT）",
+    "brand": "啸岩馆",
+    "city": "上海",
+    "province": "上海",
+    "district": "虹口区",
+    "address": "虹口区花园路128号运动LOFT创意园区一街区A座1楼105室",
+    "facilities": [
+      "bouldering",
+      "autobelay"
+    ],
+    "summary": "",
+    "sourceName": "上海市虹口区人民政府运动场馆介绍",
+    "sourceUrl": "https://www.shhk.gov.cn/xwzx/002008/002008040/20241005/cc24b9df-c257-4acd-b5a6-b90a1612d762.html",
+    "sourceDate": "2024-10-05",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "verificationNote": "官方介绍给出具体门牌、抱石区及4台自动保护器；历史介绍不等于当前营业或安全认证。"
+  },
+  {
+    "id": "oct22-sh-climbism-oriental",
+    "name": "Climbism（东方体育中心馆）",
+    "brand": "Climbism",
+    "city": "上海",
+    "province": "上海",
+    "district": "浦东新区",
+    "address": "浦东新区耀体路701号东方体育中心游泳馆13号门",
+    "facilities": [
+      "bouldering",
+      "toprope",
+      "lead",
+      "autobelay",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "上海市政府International Services Shanghai攀岩指南",
+    "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "verificationNote": "政府英文指南列Climbism；上海体育2023测评同址称攀岩主义并明确入口及设施，当前品牌称谓仍需经营者确认，不新增同址多店。",
+    "aliases": [
+      "攀岩主义（东体馆）",
+      "攀岩主义浦发东体馆"
+    ],
+    "sources": [
+      {
+        "name": "上海市政府International Services Shanghai攀岩指南",
+        "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+      },
+      {
+        "name": "上海体育政务小体CLUB场馆测评（上观）",
+        "url": "https://sghexport.shobserver.com/html/baijiahao/2023/11/17/1180516.html",
+        "date": "2023-11-17"
+      }
+    ]
+  },
+  {
+    "id": "oct22-sh-newworld-universe",
+    "name": "新世界天宇攀登",
+    "brand": "新世界天宇攀登",
+    "city": "上海",
+    "province": "上海",
+    "district": "黄浦区",
+    "address": "黄浦区南京西路2—68号新世界城3楼",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "上海市政府International Services Shanghai攀岩指南",
+    "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "verificationNote": "政府英文指南列Shanghai New World Universe Climbing Gym及3楼地址；中文名称由上海市体育局赛事报道交叉确认。",
+    "sources": [
+      {
+        "name": "上海市政府International Services Shanghai攀岩指南",
+        "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+      },
+      {
+        "name": "上海市体育局黄浦站攀岩联赛报道",
+        "url": "https://tyj.sh.gov.cn/qmjs1/20211018/4ed8329eaff541549266536b6c56e4ea.html",
+        "date": "2021-10-18"
+      }
+    ]
+  },
+  {
+    "id": "oct22-sh-fengxian-sports",
+    "name": "奉贤体育中心攀岩馆",
+    "brand": "",
+    "city": "上海",
+    "province": "上海",
+    "district": "奉贤区",
+    "address": "奉贤区古华路100号奉贤体育中心",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "上海市政府International Services Shanghai攀岩指南",
+    "sourceUrl": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "公共体育中心内的攀岩馆；具体预约和开放时段请向场馆确认。",
+    "sources": [
+      {
+        "name": "上海市政府International Services Shanghai攀岩指南",
+        "url": "https://english.shanghai.gov.cn/en-Individuals-DailyLife-Fitness/20260813/a61d4657b1764fb8bec7dbe463482c7c.html"
+      },
+      {
+        "name": "奉贤区南上海体育中心可研现有场馆清单",
+        "url": "https://xxgk.fengxian.gov.cn/html/static/OA/20240702161000028_28595427.pdf"
+      }
+    ]
+  },
+  {
+    "id": "oct22-sz-honghuashan",
+    "name": "红花山体育中心攀岩墙",
+    "brand": "",
+    "city": "深圳",
+    "province": "广东",
+    "district": "光明区",
+    "address": "光明区公明街道公明社区兴发路35号红花山体育中心",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "深圳市人民政府文体通场馆名录",
+    "sourceUrl": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/post_12364975.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "体育中心内攀岩墙；中心整体营业时间不等于攀岩开放时间，需单独确认或预约。",
+    "verificationNote": "官方场馆页列具体地址和1片国际标准攀岩墙；未把中心其他运动项目作为攀岩设施。"
+  },
+  {
+    "id": "oct22-sz-guangming-public",
+    "name": "光明区群众体育中心攀岩馆",
+    "brand": "",
+    "city": "深圳",
+    "province": "广东",
+    "district": "光明区",
+    "address": "光明区光明街道华夏路与光侨路交会处群众体育中心",
+    "facilities": [
+      "bouldering",
+      "rope",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "深圳市人民政府文体通场馆名录",
+    "sourceUrl": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/mpost_11128288.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "体育中心内攀岩馆；攀岩开放、课程与预约时段需单独确认。",
+    "verificationNote": "官方场馆页列交会处地址与攀岩馆；市文体局2021年赛事报道明确难度、攀石、速度分区。",
+    "sources": [
+      {
+        "name": "深圳市人民政府文体通场馆名录",
+        "url": "https://www.sz.gov.cn/szzt2010/szwtt/wtcg/tycg/content/mpost_11128288.html"
+      },
+      {
+        "name": "深圳市文化广电旅游体育局市运会场馆报道",
+        "url": "https://wtl.sz.gov.cn/ydh/xwdt/jjtyxw/content/post_9123202.html",
+        "date": "2021-09-13"
+      }
+    ]
+  },
+  {
+    "id": "oct22-sz-yuehai-center",
+    "name": "粤海街道文体中心攀岩馆",
+    "brand": "",
+    "city": "深圳",
+    "province": "广东",
+    "district": "南山区",
+    "address": "南山区高新南十一路与科技南路交会处东南角粤海街道文体中心L8—L9",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "深圳市南山区人民政府场馆介绍",
+    "sourceUrl": "https://www.szns.gov.cn/mlns/whns/tycg/content/post_12589127.html",
+    "sourceDate": "2026-01-12",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "文体中心L8—L9攀岩馆；具体运营品牌、公众开放和预约时段请向中心确认。",
+    "verificationNote": "2026年官方介绍明确L8—L9及16.5米岩墙；交会处地址由南山区发改局公示交叉确认，不沿用其他博昇旧点坐标。",
+    "sources": [
+      {
+        "name": "深圳市南山区人民政府场馆介绍",
+        "url": "https://www.szns.gov.cn/mlns/whns/tycg/content/post_12589127.html",
+        "date": "2026-01-12"
+      },
+      {
+        "name": "南山区发展和改革局文体中心地址公示",
+        "url": "https://www.szns.gov.cn/nsqfgj/gkmlpt/content/11/11261/post_11261008.html",
+        "date": "2024-04-25"
+      }
+    ]
+  },
+  {
+    "id": "oct22-qz-knight-xintian",
+    "name": "骑士攀岩（新天城市馆）",
+    "brand": "骑士攀岩",
+    "city": "泉州",
+    "province": "福建",
+    "district": "鲤城区",
+    "address": "鲤城区江南街道锦美社区笋江路新天城市广场一层外广场",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "泉州市体育局2025年高危体育场所检查通报",
+    "sourceUrl": "https://tyj.quanzhou.gov.cn/xxgk/zfxxgk/fdzdgknr/fgwj/202509/t20250917_3210597.htm",
+    "sourceDate": "2025-09-15",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "verificationNote": "按附件第3项名称和场所地址收录，与同主体晋江万达馆分开；未将历史检查无问题当成当前安全认证。"
+  },
+  {
+    "id": "oct22-hz-xihu-center",
+    "name": "西湖区文体中心攀岩馆",
+    "brand": "",
+    "city": "杭州",
+    "province": "浙江",
+    "district": "西湖区",
+    "address": "西湖区晴川街217号西湖区文体中心",
+    "facilities": [],
+    "summary": "",
+    "sourceName": "西湖区融媒体中心西湖报场馆报道",
+    "sourceUrl": "https://xhb.xihunet.cn/html/2025-07/11/content_9247_18700879.htm",
+    "sourceDate": "2025-07-11",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "公共文体中心内攀岩项目；运营品牌及攀岩开放时段需单独确认，不沿用中心整体时间。"
+  },
+  {
+    "id": "oct22-gy-caihu-international",
+    "name": "贵州·彩湖国际攀岩中心",
+    "brand": "",
+    "city": "贵阳",
+    "province": "贵州",
+    "district": "观山湖区",
+    "address": "观山湖区观山湖公园内贵州·彩湖国际攀岩中心",
+    "facilities": [
+      "bouldering",
+      "rope",
+      "speed"
+    ],
+    "summary": "",
+    "sourceName": "国家体育总局贵州省体育局世界杯场馆报道",
+    "sourceUrl": "https://www.sport.gov.cn/n14471/n14495/n14543/c29034225/content.html",
+    "sourceDate": "",
+    "checkedAt": "2026-10-22",
+    "verificationStatus": "source-listed",
+    "accessNote": "公园内竞赛及训练场；报道提及赛后公众开放计划，日常开放和赛事占用时段仍需确认。",
+    "verificationNote": "2025年报道明确公园位置和难度、攀石、速度岩壁，2026年体育总局亚青赛报道再次确认该场馆实际承赛。",
+    "sources": [
+      {
+        "name": "国家体育总局贵州省体育局世界杯场馆报道",
+        "url": "https://www.sport.gov.cn/n14471/n14495/n14543/c29034225/content.html"
+      },
+      {
+        "name": "国家体育总局2026亚青赛实际开赛报道",
+        "url": "https://www.sport.gov.cn/n14471/n14495/n14543/c29889088/content.html"
+      }
+    ]
+  }
+]

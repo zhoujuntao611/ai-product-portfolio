@@ -43,10 +43,18 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: projects/climbai/package-lock.json
+          cache-dependency-path: |
+            projects/climbai/package-lock.json
+            projects/panji/package-lock.json
       - name: Install ClimbAI frontend dependencies
         working-directory: projects/climbai
         run: npm ci
       - name: Build ClimbAI frontend
         working-directory: projects/climbai
         run: npm run build
+      - name: Install Panji offline verification dependencies
+        working-directory: projects/panji
+        run: npm ci
+      - name: Panji offline checks
+        working-directory: projects/panji
+        run: npm run verify

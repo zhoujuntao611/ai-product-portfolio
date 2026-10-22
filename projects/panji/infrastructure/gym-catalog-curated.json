@@ -1,0 +1,119 @@
+[
+  {
+    "id": "sh-benchmark-2",
+    "name": "Benchmark 2.0（滨港商业中心店）",
+    "brand": "Benchmark",
+    "city": "上海",
+    "address": "静安区滨港商业中心，上海火车站周边",
+    "facilities": [
+      "bouldering",
+      "kilter"
+    ],
+    "summary": "抱石馆，设 Kilter 训练板。",
+    "sourceName": "SmartShanghai 场馆报道",
+    "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+    "sourceDate": "2026-08-31",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "sh-aob-hongkou",
+    "name": "AOB 攀研学院（虹口馆）",
+    "brand": "AOB",
+    "city": "上海",
+    "address": "虹口区国际客运中心地铁站周边",
+    "facilities": [
+      "bouldering",
+      "kilter"
+    ],
+    "summary": "抱石馆，设 Kilter 训练板和热身区。",
+    "sourceName": "SmartShanghai 场馆报道",
+    "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+    "sourceDate": "2026-08-31",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "sh-acme-189",
+    "name": "尽峰攀岩（189弄店）",
+    "brand": "尽峰攀岩",
+    "city": "上海",
+    "address": "普陀区189弄购物中心，长寿路地铁站周边",
+    "facilities": [
+      "bouldering",
+      "lead",
+      "toprope",
+      "autobelay",
+      "kilter"
+    ],
+    "summary": "室内抱石、室外绳攀及 Kilter 训练板。",
+    "sourceName": "SmartShanghai 场馆报道",
+    "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+    "sourceDate": "2026-08-31",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "sh-rockhour-gatem",
+    "name": "岩时攀岩（西岸梦中心店）",
+    "brand": "岩时",
+    "city": "上海",
+    "address": "徐汇区西岸梦中心",
+    "facilities": [
+      "lead",
+      "toprope",
+      "autobelay",
+      "speed"
+    ],
+    "summary": "筒仓高墙绳攀，设速度道；无抱石区。",
+    "sourceName": "SmartShanghai 场馆报道",
+    "sourceUrl": "https://www.smartshanghai.com/articles/sports-and-recreation/the-collection-rock-climbing-gyms",
+    "sourceDate": "2026-08-31",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "bj-rockhour-xisanqi",
+    "name": "岩时攀登中心（西三旗）",
+    "brand": "岩时",
+    "city": "北京",
+    "address": "海淀区西三旗金隅智造工场",
+    "facilities": [
+      "bouldering",
+      "rope"
+    ],
+    "summary": "抱石与高墙攀爬分区。",
+    "sourceName": "北京日报现场报道",
+    "sourceUrl": "https://xinwen.bjd.com.cn/content/s6a05c9ede4b0e45f3fd17bcc.html",
+    "sourceDate": "2026-05-15",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "dg-suchq-softwarepark",
+    "name": "非常趣攀岩（南方软件园店）",
+    "brand": "非常趣攀岩",
+    "city": "东莞",
+    "address": "松山湖南方软件园",
+    "facilities": [
+      "bouldering",
+      "kilter"
+    ],
+    "summary": "抱石馆，设全尺寸 Kilter 训练板。",
+    "sourceName": "南方+现场报道",
+    "sourceUrl": "https://static.nfnews.com/content/202508/06/c11591461.html",
+    "sourceDate": "2025-08-06",
+    "checkedAt": "2026-10-20"
+  },
+  {
+    "id": "dg-suchq-youlanli",
+    "name": "非常趣攀岩（悠兰里店）",
+    "brand": "非常趣攀岩",
+    "city": "东莞",
+    "address": "松山湖悠兰里文化艺术街区",
+    "facilities": [
+      "rope",
+      "speed"
+    ],
+    "summary": "室外高墙，设难度区与标准速度道。",
+    "sourceName": "南方+现场报道",
+    "sourceUrl": "https://static.nfnews.com/content/202508/06/c11591461.html",
+    "sourceDate": "2025-08-06",
+    "checkedAt": "2026-10-20"
+  }
+]
