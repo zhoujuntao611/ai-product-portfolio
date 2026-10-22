@@ -1,6 +1,8 @@
 # 攀迹求职作品集
 
-面向 AI 产品经理岗位的项目材料，整理于 2026-10-22。项目定位是**个人产品实践，AI 辅助实现，当前为微信小程序开发预览**。
+面向 AI 产品经理岗位的项目材料，整理于 2026-10-22。材料围绕**需求判断、流程设计、方案取舍与体验迭代**展开，当前小程序为开发预览。
+
+本项目现已同步到[个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/)、[攀迹产品案例](https://zhoujuntao611.github.io/ai-product-portfolio/panji/)及 [GitHub 公开源码](https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji)。最新一页 AIPM 简历与可编辑版位于求职材料导航，攀迹排在首位，保留 SupportFlow 和 MetricPilot；小程序本身仍为开发预览。
 
 建议先用简历中的三条描述吸引阅读，再用个人主页解释关键决策，面试时打开界面和证据说明。
 
