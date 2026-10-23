@@ -2,6 +2,10 @@
 *.cmd -text
 *.png -text
 
+# Compare the committed static demo with Vite output on every OS.
+docs/climbai/** text=auto eol=lf
+projects/climbai/web/** text=auto eol=lf
+
 # Evidence hashes original bytes; keep inputs identical on Windows and Linux.
 projects/supportflow/core.py -text
 projects/supportflow/server.py -text

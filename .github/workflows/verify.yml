@@ -52,9 +52,39 @@ jobs:
       - name: Build ClimbAI frontend
         working-directory: projects/climbai
         run: npm run build
+      - name: Verify ClimbAI Pages copy matches this build
+        run: node scripts/check-climbai-build.mjs
       - name: Install Panji offline verification dependencies
         working-directory: projects/panji
         run: npm ci
       - name: Panji offline checks
         working-directory: projects/panji
         run: npm run verify
+
+  website:
+    name: Portfolio links and browser checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Install browser and system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Check local links and Pages behavior
+        run: npm run verify:site
+      - name: Save browser report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-browser-checks
+          path: verification/site-current/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -1,4 +1,6 @@
-# ClimbAI —— AI 攀岩训练助手
+# ClimbAI · 早期训练规划与反馈原型
+
+**项目定位（2026-10-23）：** 攀岩方向的早期 Web 探索，保留可运行演示、源码和实验记录。当前主项目为[攀迹微信小程序](../panji/README.md)，新增产品功能优先在攀迹评估。ClimbAI 继续做必要的兼容性修复与回归，不再作为第四个主项目展示。[两者关系与保留范围](../../docs/CLIMBING_EVOLUTION.md)
 
 **最新实测：** 已完成 DeepSeek-V4-Pro 计划生成、反馈归纳及用户确认，45 分钟预算下生成 35/30 分钟安排，依据反馈将下次计划从 30 调整为 25 分钟。[完整实测](../../docs/LIVE_PRACTICE_20261019.md)。
 
@@ -118,7 +120,7 @@ Windows 请将 `python` 替换成 `.\.venv\Scripts\python.exe`，或先激活虚
 - [架构与 API](docs/ARCHITECTURE.md)
 - [知识来源及边界](docs/KNOWLEDGE.md)
 - [逐源核验记录](docs/SOURCES.md)
-- [微信小程序迁移建议](docs/MINIPROGRAM.md)
+- [历史小程序迁移建议（非攀迹实际路线）](docs/MINIPROGRAM.md)
 - [真实工程验证与未完成验证](docs/VALIDATION.md)
 - [访谈、对照与试用计划](docs/RESEARCH_PLAN.md)
 - [简历表达与演示脚本](docs/PORTFOLIO.md)

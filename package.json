@@ -1,0 +1,14 @@
+{
+  "name": "ai-product-portfolio-checks",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "check:links": "python scripts/check-links.py",
+    "check:site": "node scripts/check-site.mjs",
+    "check:climbai-build": "node scripts/check-climbai-build.mjs",
+    "verify:site": "npm run check:links && npm run check:site"
+  },
+  "devDependencies": { "playwright": "1.64.1" }
+}

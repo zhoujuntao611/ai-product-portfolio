@@ -17,3 +17,7 @@ projects/metricpilot/data/sessions.json
 
 projects/metricpilot/data/csv-sessions.json
 projects/metricpilot/data/imports/
+
+# Repository-level website checks; keep generated reports in Actions artifacts.
+/node_modules/
+/verification/site-current/
