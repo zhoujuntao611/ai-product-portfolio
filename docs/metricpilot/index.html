@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fcfcfa">
+  <meta name="description" content="先统一问题的含义，再让工具计算。">
+  <title>MetricPilot｜周俊涛的产品实践</title>
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261023" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=20261023-personal">
+  <link rel="stylesheet" href="../case.css?v=20261023-personal">
+</head><body>
+<a class="skip-link" href="#case-main">跳到正文</a>
+<header class="site-header"><div class="container header-inner">
+  <a class="identity" href="../" aria-label="周俊涛的主页"><img src="../assets/mark.svg" alt="" width="28" height="28"><span>俊涛<span class="identity-latin">JUNTAO</span></span></a>
+  <nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+</div></header>
+<main id="case-main">
+  <section class="reading-hero container">
+    <a class="back-link" href="../#work">← 全部项目</a>
+    <p class="project-kind">03 / 业务分析与数据口径</p>
+    <h1>MetricPilot</h1>
+    <p class="case-lead">先统一问题的含义，再让工具计算。</p>
+    <p class="case-description">我从订单 CSV 分析入手，把口径确认放在查询之前。这里记录一次很小、却足以改变整个结论的选择。</p>
+    <div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档 ↗</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/metricpilot" target="_blank" rel="noopener noreferrer">源码与运行方式 ↗</a></div>
+    <p class="case-status">本机 CSV 分析工具 · 当前入口为规则解析 · 仅执行受约束的只读统计</p>
+  </section>
+  <figure class="container case-wide-image"><a href="../assets/metricpilot.png" target="_blank" rel="noopener noreferrer" aria-label="放大 MetricPilot 完整界面"><img src="../assets/metricpilot.png" alt="MetricPilot 本机工作台截图，使用合成示例数据" width="1440" height="3078"></a><figcaption>本机工作台 · 合成数据 · 点击查看完整截图</figcaption></figure>
+  <div class="container reading-body"><section class="reading-section" id="section-1"><p class="section-label">01</p><div><h2>一份表，两种退款额</h2><p>在 9 笔合成订单中，退款按原订单日和退款发生日归属，分别得到 30 元和 120 元。两个数字都可能计算正确，却回答了不同的问题。</p><p>我比较了自动覆盖和先询问两种处理方式，选择在查询前让用户确认口径；输入问题与已选口径冲突时，暂停查询并要求统一。</p></div></section>
+<section class="reading-section" id="section-2"><p class="section-label">02</p><div><h2>把确认过程放进主流程</h2><p>产品从固定数据演示扩展到用户导入 CSV：先预览、映射字段、检查质量，再确认期间、渠道、退款归属和分母。当前 CSV 入口采用规则解析，对范围外的问题先澄清。</p><p>统计工具只执行已确认的只读任务。报告保存源文件指纹、源行号、查询参数与结果，让使用者能核对每一个数字。</p></div></section>
+<section class="reading-section" id="section-3"><p class="section-label">03</p><div><h2>分别检查计算与问题理解</h2><p>22 项固定验收场景通过项由 11 项增至 22 项。这些使用示例数据的开发验收，同时核对统计结果与口径冲突处理。</p><p>我希望避免的是：生成了一份证据完整的报告，却从一开始就理解错了问题。真实业务使用中的理解成本和报告采纳情况，还需要继续验证。</p></div></section></div>
+  <section class="container next-project"><span>下一个项目</span><a href="../panji/">攀迹 <span aria-hidden="true">→</span></a></section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><span>周俊涛 <span class="footer-date">/ 2026</span></span><span>持续做，也持续修改。</span><a href="#case-main">回到顶部 ↑</a></div></footer>
+</body></html>

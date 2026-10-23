@@ -34,7 +34,7 @@ let browser;
 try {
   browser = await chromium.launch({headless:true,
     ...(process.env.QA_BROWSER_PATH ? {executablePath:process.env.QA_BROWSER_PATH} : {})});
-  for (const pathname of ['', 'panji/']) {
+  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/']) {
     for (const width of [320, 390, 768, 1440]) {
       const page = await browser.newPage({viewport:{width, height:900}, reducedMotion:'reduce'});
       const errors = [];
@@ -66,45 +66,44 @@ try {
       assert.deepEqual(layout.brokenImages, []);
       assert.deepEqual(layout.missingAnchors, []);
       assert.deepEqual(layout.failedFonts, []);
+      assert.equal(await page.locator('h1').count(), 1);
       if (!pathname) {
-        const projectIds = await page.locator('[data-case]').evaluateAll(nodes => nodes.map(n => n.dataset.case));
-        assert.ok(projectIds.includes('supportflow') && projectIds.includes('metricpilot'));
-        for (const id of projectIds) {
-          const trigger = page.locator(`[data-case="${id}"]`);
-          const details = trigger.locator('xpath=ancestor::details');
-          if (await details.count()) await details.evaluate(node => {node.open = true;});
-          await trigger.click();
-          assert.equal(await page.locator('#case-dialog').evaluate(node => node.open), true);
-          const dialogLinks = await page.locator('#case-dialog a').evaluateAll(nodes => nodes.map(n => n.getAttribute('href')));
-          assert.ok(dialogLinks.some(url => url.includes(`/projects/${id}/docs/PRD.md`)));
-          await page.keyboard.press('Escape');
-          await page.waitForFunction(() => !document.body.classList.contains('modal-open'));
-          assert.equal(await trigger.evaluate(node => document.activeElement === node), true);
-          if (await details.count()) await details.evaluate(node => {node.open = false;});
-        }
-        for (const id of ['supportflow', 'metricpilot']) {
-          const tabs = page.locator(`[data-workflow="${id}"] [role="tab"]`);
-          await tabs.first().press('End');
-          assert.equal(await tabs.last().getAttribute('aria-selected'), 'true');
-          await tabs.last().press('Home');
-          assert.equal(await tabs.first().getAttribute('aria-selected'), 'true');
+        // A project preview must appear within the first mobile viewport.
+        const cover = await page.locator('#panji .project-cover').boundingBox();
+        assert.ok(cover.y < 650, `First project too far down at ${width}`);
+        for (const id of ['panji', 'supportflow', 'metricpilot']) {
+          assert.equal(await page.locator(`#${id} .case-link`).getAttribute('href'), `${id}/`);
         }
       }
-      await page.evaluate(() => scrollTo(0, 0));
-      await page.screenshot({path:path.join(output, `${pathname ? 'panji' : 'home'}-${width}.png`), fullPage:true});
+      if (pathname === 'panji/') {
+        const summary = page.locator('.evidence-detail summary');
+        await summary.focus();
+        await page.keyboard.press('Enter');
+        assert.equal(await page.locator('.evidence-detail').evaluate(n => n.open), true);
+        assert.ok((await page.locator('.evidence-detail').innerText()).includes('174'));
+        await page.keyboard.press('Enter');
+        assert.equal(await page.locator('.evidence-detail').evaluate(n => n.open), false);
+      }
+      await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0); });
+      await page.screenshot({path:path.join(output, `${pathname ? pathname.slice(0, -1) : 'home'}-${width}.png`), fullPage:true});
+      if (!pathname) await page.screenshot({path:path.join(output, `home-${width}-top.png`)});
       assert.deepEqual(errors, []);
       report.checks.push({page:pathname || '/', ...layout, passed:true});
       await page.close();
     }
   }
   const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
-  await nojs.goto(base);
-  assert.equal(await nojs.locator('#panji').isVisible(), true);
-  assert.equal(await nojs.locator('#panji .button.primary').getAttribute('href'), 'panji/');
-  for (const project of ['supportflow', 'metricpilot']) {
-    assert.ok((await nojs.locator(`[data-case="${project}"]`).getAttribute('href')).includes(`/projects/${project}/docs/PRD.md`));
+  for (const project of ['panji', 'supportflow', 'metricpilot']) {
+    await nojs.goto(base);
+    await nojs.locator(`#${project} .case-link`).click();
+    await nojs.waitForURL(base + project + '/');
+    assert.equal(await nojs.locator('h1').isVisible(), true);
+    assert.ok(await nojs.locator(`a[href*="/projects/${project}/docs/PRD.md"]`).count());
+    await nojs.getByRole('navigation').getByRole('link', {name:'全部项目'}).click();
+    await nojs.waitForURL(base + '#work');
+    assert.equal(await nojs.locator('#work').isVisible(), true);
+    report.checks.push({page:project, javascript:false, navigation:'home → case → home', passed:true});
   }
-  report.checks.push({page:'/', javascript:false, passed:true});
   await nojs.close();
   const demo = await browser.newPage({viewport:{width:390, height:844}});
   const demoErrors = [];

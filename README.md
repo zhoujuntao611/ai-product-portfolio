@@ -14,7 +14,7 @@
 
 **体验：** 本机运行，可导入自己的结构化政策；默认规则模式无需模型密钥。
 
-[源码与运行](projects/supportflow) · [产品需求](projects/supportflow/docs/PRD.md) · [关键取舍](projects/supportflow/docs/ITERATION_EVIDENCE.md) · [模型与规则对照](docs/LIVE_PRACTICE_20261019.md) · [界面](docs/assets/supportflow.png)
+[完整案例](https://zhoujuntao611.github.io/ai-product-portfolio/supportflow/) · [源码与运行](projects/supportflow) · [产品需求](projects/supportflow/docs/PRD.md) · [关键取舍](projects/supportflow/docs/ITERATION_EVIDENCE.md) · [模型与规则对照](docs/LIVE_PRACTICE_20261019.md) · [界面](docs/assets/supportflow.png)
 
 ### 攀迹｜攀岩训练记录与文字复盘
 
@@ -34,7 +34,7 @@
 
 **状态：** 可在本机导入订单 CSV；当前入口采用规则解析，没有外部模型调用。22 项固定合成验收由 11/22 到 22/22，属于开发回归。
 
-[源码与运行](projects/metricpilot) · [产品需求](projects/metricpilot/docs/PRD.md) · [指标定义](projects/metricpilot/docs/METRICS.md) · [迭代证据](projects/metricpilot/docs/ITERATION-20261019.md) · [界面](docs/assets/metricpilot.png)
+[完整案例](https://zhoujuntao611.github.io/ai-product-portfolio/metricpilot/) · [源码与运行](projects/metricpilot) · [产品需求](projects/metricpilot/docs/PRD.md) · [指标定义](projects/metricpilot/docs/METRICS.md) · [迭代证据](projects/metricpilot/docs/ITERATION-20261019.md) · [界面](docs/assets/metricpilot.png)
 
 ## 早期探索：ClimbAI
 
