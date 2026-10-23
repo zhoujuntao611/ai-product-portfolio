@@ -34,7 +34,7 @@ let browser;
 try {
   browser = await chromium.launch({headless:true,
     ...(process.env.QA_BROWSER_PATH ? {executablePath:process.env.QA_BROWSER_PATH} : {})});
-  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/']) {
+  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/', 'climbai-notes/']) {
     for (const width of [320, 390, 768, 1440]) {
       const page = await browser.newPage({viewport:{width, height:900}, reducedMotion:'reduce'});
       const errors = [];
@@ -67,6 +67,25 @@ try {
       assert.deepEqual(layout.missingAnchors, []);
       assert.deepEqual(layout.failedFonts, []);
       assert.equal(await page.locator('h1').count(), 1);
+      if (pathname) {
+        const sections = ['background', 'actions', 'decisions', 'limits'];
+        assert.deepEqual(await page.locator('.reading-section > h2').allTextContents(), ['背景', '动作', '关键决策', '局限']);
+        for (const id of sections) {
+          await page.locator(`.case-nav a[href="#${id}"]`).click();
+          try {
+            await page.waitForFunction(id => document.querySelector(`.case-nav a[href="#${id}"]`)?.getAttribute('aria-current') === 'location', id, {timeout:5000});
+          } catch (error) {
+            const positions = await page.evaluate(() => ({hash:location.hash, y:scrollY, viewport:innerHeight,
+              nav:document.querySelector('.case-nav').getBoundingClientRect().bottom,
+              sections:[...document.querySelectorAll('.reading-section')].map(n => ({id:n.id,top:n.getBoundingClientRect().top})),
+              current:document.querySelector('.case-nav [aria-current]')?.getAttribute('href')}));
+            throw new Error(`${pathname} at ${width}: ${id} did not become current: ${JSON.stringify(positions)}`, {cause:error});
+          }
+          const sectionTop = await page.locator(`#${id}`).evaluate(node => node.getBoundingClientRect().top);
+          const navBottom = await page.locator('.case-nav').evaluate(node => node.getBoundingClientRect().bottom);
+          assert.ok(sectionTop >= navBottom - 1, `${pathname}${id} heading is obscured`);
+        }
+      }
       if (!pathname) {
         // A project preview must appear within the first mobile viewport.
         const cover = await page.locator('#panji .project-cover').boundingBox();
@@ -93,18 +112,29 @@ try {
     }
   }
   const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
-  for (const project of ['panji', 'supportflow', 'metricpilot']) {
+  for (const project of ['panji', 'supportflow', 'metricpilot', 'climbai-notes']) {
     await nojs.goto(base);
-    await nojs.locator(`#${project} .case-link`).click();
+    await nojs.locator(project === 'climbai-notes' ? '.early-note a[href="climbai-notes/"]' : `#${project} .case-link`).click();
     await nojs.waitForURL(base + project + '/');
     assert.equal(await nojs.locator('h1').isVisible(), true);
-    assert.ok(await nojs.locator(`a[href*="/projects/${project}/docs/PRD.md"]`).count());
+    assert.ok(await nojs.locator(`a[href*="/projects/${project === 'climbai-notes' ? 'climbai' : project}/docs/PRD.md"]`).count());
+    await nojs.locator('.case-nav a[href="#limits"]').click();
+    await nojs.waitForURL(base + project + '/#limits');
+    assert.equal(await nojs.locator('#limits-title').isVisible(), true);
     await nojs.getByRole('navigation').getByRole('link', {name:'全部项目'}).click();
     await nojs.waitForURL(base + '#work');
     assert.equal(await nojs.locator('#work').isVisible(), true);
     report.checks.push({page:project, javascript:false, navigation:'home → case → home', passed:true});
   }
   await nojs.close();
+  const motion = await browser.newPage({viewport:{width:768, height:900}, reducedMotion:'no-preference'});
+  await motion.goto(base + 'panji/', {waitUntil:'networkidle'});
+  await motion.locator('.case-nav a[href="#limits"]').click();
+  await motion.waitForFunction(() => document.querySelector('.case-nav a[href="#limits"]')?.getAttribute('aria-current') === 'location');
+  await motion.emulateMedia({reducedMotion:'reduce'});
+  assert.equal(await motion.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
+  report.checks.push({page:'panji/', mode:'smooth scroll and reduced motion', passed:true});
+  await motion.close();
   const demo = await browser.newPage({viewport:{width:390, height:844}});
   const demoErrors = [];
   demo.on('pageerror', error => demoErrors.push(error.message));

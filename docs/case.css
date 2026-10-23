@@ -1,93 +1,61 @@
-/* Shared reading layout for all three product cases. */
-.back-link { display: inline-flex; min-height: 44px; align-items: center; color: var(--muted); font-size: 12px; margin-bottom: 20px; }
-.reading-hero { padding-block: 34px 36px; }
-.reading-hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 500; letter-spacing: -2px; line-height: 1.4; margin: 10px 0 16px; }
-.case-lead { font-size: 29px; line-height: 1.65; letter-spacing: -.6px; }
-.case-description { font-size: 15px; line-height: 2; color: var(--muted); max-width: 700px; margin-top: 18px; }
-.case-status { font-size: 11px; color: var(--muted); margin-top: 16px; }
-.case-wide-image { padding: 28px 28px 0; background: var(--tint); }
-.case-wide-image > a { display: block; max-height: 525px; overflow: hidden; cursor: zoom-in; }
+/* The four named sections are a reading outline, not a success-story template. */
+html { scroll-padding-top: 86px; }
+.back-link { display: inline-flex; min-height: 44px; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+.reading-hero { padding-block: 28px 34px; max-width: 900px; }
+.reading-hero h1 { font-size: clamp(36px, 5vw, 54px); font-weight: 500; letter-spacing: -1px; line-height: 1.4; margin: 10px 0 18px; }
+.case-lead { max-width: 800px; font-size: 28px; line-height: 1.65; letter-spacing: -.5px; }
+.case-description { font-size: 16px; line-height: 1.95; color: var(--muted); max-width: 740px; margin-top: 18px; }
+.case-status { font-size: 12px; color: var(--muted); margin-top: 13px; }
+.case-wide-image { max-width: 900px; padding: 24px 24px 0; background: var(--tint); margin-bottom: 28px; }
+.case-wide-image > a { display: block; max-height: 420px; overflow: hidden; cursor: zoom-in; }
 .case-wide-image img { width: 100%; height: auto; }
-.case-wide-image figcaption { font-size: 11px; color: var(--muted); padding-block: 12px; }
-.reading-body { max-width: 860px; padding-block: 25px 48px; }
-.reading-section { display: grid; grid-template-columns: 45px 1fr; gap: 30px; padding-block: 38px; border-bottom: 1px solid var(--line); }
-.section-label { font-size: 12px; color: var(--accent); letter-spacing: .5px; }
-.reading-section h2 { font-size: 24px; font-weight: 500; line-height: 1.6; margin-bottom: 19px; }
-.reading-section p:not(.section-label) { font-size: 15px; line-height: 2.1; color: var(--muted); }
-.reading-section p + p { margin-top: 15px; }
-.reading-section p a { color: var(--ink); text-decoration: underline; }
-.next-project { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 10px 42px; }
-.next-project > span { font-size: 12px; color: var(--muted); }
-.next-project > a { font-size: 24px; display: inline-flex; gap: 30px; align-items: center; }
-.case-hero { display: grid; grid-template-columns: 1.5fr .65fr; gap: 95px; align-items: center; padding-block: 52px; }
-.case-hero h1 { font-size: 58px; font-weight: 500; line-height: 1.4; letter-spacing: -1px; margin: 9px 0 15px; }
-.case-hero .case-description { max-width: 570px; }
-.hero-phone { max-width: 250px; padding: 6px; background: var(--tint); border: 1px solid var(--line); border-radius: 15px; }
-.hero-phone a { display: block; border-radius: 10px; overflow: hidden; cursor: zoom-in; }
-.hero-phone img { width: 100%; height: auto; }
-.hero-phone figcaption { padding: 10px 4px 5px; font-size: 10px; text-align: center; color: var(--muted); }
-.case-section { padding-block: 52px; }
-.case-tint { background: var(--tint); }
-.case-body { max-width: 860px; margin-inline: auto; }
-.case-body .section-label { margin-bottom: 13px; }
-.case-body h2 { font-size: 27px; line-height: 1.7; font-weight: 500; margin-bottom: 20px; }
-.case-body > p { font-size: 15px; color: var(--muted); line-height: 2.05; margin-top: 14px; }
-.training-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; list-style: none; padding: 0; margin: 30px 0 12px; }
-.training-flow li { border-top: 1px solid var(--line); padding-top: 14px; }
-.training-flow strong { font-size: 14px; font-weight: 500; }
-.training-flow p { font-size: 12px; line-height: 1.9; color: var(--muted); margin-top: 7px; }
-.decision { display: grid; grid-template-columns: .75fr 1.25fr; gap: 40px; border-top: 1px solid var(--line); padding-block: 27px; }
-.decision h3 { font-size: 19px; font-weight: 500; line-height: 1.8; }
-.decision p { font-size: 14px; line-height: 2; color: var(--muted); }
-.decision p + p { margin-top: 12px; }
-.screen-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 29px; }
-.screen-gallery a { display: block; padding: 5px; border: 1px solid var(--line); border-radius: 13px; overflow: hidden; cursor: zoom-in; }
-.screen-gallery img { width: 100%; height: auto; border-radius: 8px; }
-.screen-gallery figcaption { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; }
-.case-body .image-note { font-size: 11px; }
-.evidence-detail { margin-top: 24px; border-block: 1px solid var(--line); }
-.evidence-detail summary { padding-block: 15px; font-size: 13px; }
+.case-wide-image figcaption { font-size: 12px; color: var(--muted); padding-block: 12px; }
+.case-nav { display: flex; gap: 32px; align-items: center; position: sticky; top: 0; z-index: 5; max-width: 900px; min-height: 64px; background: var(--paper); border-block: 1px solid var(--line); }
+.case-nav a { min-width: 48px; min-height: 44px; display: flex; justify-content: center; align-items: center; font-size: 13px; border-bottom: 2px solid transparent; transition: color .16s, border-color .16s; }
+.case-nav a[aria-current="location"] { border-color: var(--accent); color: var(--accent); }
+.reading-body { max-width: 900px; padding-block: 6px 24px; }
+.reading-section { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 38px; padding-block: 34px; border-bottom: 1px solid var(--line); }
+.reading-section h2 { font-size: 17px; font-weight: 500; line-height: 1.9; }
+.reading-section h3 { font-size: 18px; font-weight: 500; line-height: 1.7; margin-bottom: 10px; }
+.reading-section p { font-size: 16px; line-height: 2; color: var(--muted); }
+.reading-section p + p { margin-top: 16px; }
+.reading-section p + h3 { margin-top: 26px; }
+.reading-section p a { text-decoration: underline; color: var(--ink); }
+.screen-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-top: 26px; }
+.screen-gallery a { display: block; padding: 4px; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; cursor: zoom-in; }
+.screen-gallery img { width: 100%; height: auto; border-radius: 5px; }
+.screen-gallery figcaption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; }
+.reading-section .image-note { font-size: 12px; margin-top: 14px; }
+.evidence-detail { border-block: 1px solid var(--line); margin-top: 22px; }
+.evidence-detail summary { display: list-item; min-height: 44px; padding-block: 12px; font-size: 13px; }
 .evidence-detail > div { padding-bottom: 18px; }
-.evidence-detail p { font-size: 13px; color: var(--muted); line-height: 2; }
-.evidence-detail p + p { margin-top: 10px; }
-@media (max-width: 1000px) {
-  .case-hero { gap: 50px; }
-  .case-body { max-width: calc(100% - 64px); }
-  .container > .case-body { max-width: 100%; }
-  .case-lead { font-size: 26px; }
-}
+.evidence-detail p { font-size: 14px; }
+.evidence-links { max-width: 900px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px; }
+.evidence-links h2 { width: 122px; font-size: 14px; font-weight: 500; }
+.evidence-links a { min-height: 44px; display: flex; align-items: center; text-decoration: underline; font-size: 13px; }
+.next-project { max-width: 900px; padding-block: 18px 32px; }
 @media (max-width: 700px) {
-  .reading-hero { padding-block: 22px 28px; }
-  .back-link { margin-bottom: 15px; }
-  .reading-hero h1 { font-size: 35px; letter-spacing: -1px; }
+  .reading-hero { padding-block: 20px 26px; }
+  .back-link { margin-bottom: 12px; }
+  .reading-hero h1 { font-size: 35px; }
   .case-lead { font-size: 23px; }
-  .case-description { font-size: 14px; margin-top: 14px; }
-  .case-status { font-size: 11px; margin-top: 12px; }
-  .case-wide-image { padding: 12px 12px 0; }
-  .case-wide-image > a { max-height: 255px; }
-  .case-wide-image figcaption { font-size: 10px; padding-block: 10px; }
-  .reading-body { padding-block: 0 25px; }
-  .reading-section { grid-template-columns: 1fr; gap: 9px; padding-block: 28px; }
-  .reading-section h2 { font-size: 21px; margin-bottom: 15px; }
-  .reading-section p:not(.section-label) { font-size: 14px; line-height: 2; }
-  .next-project { padding-bottom: 28px; }
-  .next-project > a { font-size: 21px; gap: 20px; }
-  .case-hero { grid-template-columns: 1fr; gap: 30px; padding-block: 32px; }
-  .case-hero h1 { font-size: 43px; }
-  .hero-phone { width: 210px; margin-inline: auto; }
-  .case-section { padding-block: 32px; }
-  .case-body { max-width: calc(100% - 40px); }
-  .case-body h2 { font-size: 23px; line-height: 1.7; margin-bottom: 17px; }
-  .case-body > p { font-size: 14px; line-height: 2; }
-  .training-flow { grid-template-columns: 1fr 1fr; gap: 20px; }
-  .decision { grid-template-columns: 1fr; gap: 12px; padding-block: 24px; }
-  .decision h3 { font-size: 18px; }
-  .screen-gallery { gap: 10px; }
-  .screen-gallery a { padding: 3px; border-radius: 8px; }
-  .screen-gallery img { border-radius: 5px; }
-  .screen-gallery figcaption { font-size: 10px; }
-}
-@media (max-width: 370px) {
-  .case-body { max-width: calc(100% - 32px); }
-  .case-lead, .case-body h2 { font-size: 21px; }
+  .case-description { font-size: 15px; margin-top: 14px; }
+  .case-status { font-size: 12px; }
+  .case-wide-image { padding: 12px 12px 0; margin-bottom: 20px; }
+  .case-wide-image > a { max-height: 230px; }
+  .case-wide-image figcaption { font-size: 11px; padding-block: 10px; }
+  .case-nav { justify-content: space-between; gap: 10px; min-height: 60px; }
+  .case-nav a { font-size: 12px; }
+  .reading-body { padding-block: 0 20px; }
+  .reading-section { grid-template-columns: 1fr; gap: 14px; padding-block: 27px; }
+  .reading-section h2 { font-size: 18px; }
+  .reading-section h3 { font-size: 17px; }
+  .reading-section p { font-size: 15px; line-height: 1.95; }
+  .screen-gallery { gap: 9px; margin-top: 22px; }
+  .screen-gallery a { padding: 2px; border-radius: 6px; }
+  .screen-gallery figcaption { font-size: 11px; }
+  .evidence-links { display: block; }
+  .evidence-links h2 { font-size: 14px; margin-bottom: 8px; }
+  .evidence-links a { font-size: 12px; }
+  .next-project { padding-block: 10px 23px; }
 }
