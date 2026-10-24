@@ -1,33 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fcfcfa"><meta name="description" content="一份能追溯来源的草稿，也可能把申请期限当成到账时间。这个项目主要改的是选证和校验，以及答不上来时的处理。">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#fcfcfa" name="theme-color"/><meta content="我做了一个给客服查政策、起草回复的本机工具。接入模型后，退款到账时间被答成了申请期限，后面的修改大多围绕这个问题展开。" name="description"/>
 <title>SupportFlow复盘｜周俊涛</title>
-<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=20261024-notes"><link rel="stylesheet" href="../case.css?v=20261024-notes">
-<script src="../reading.js?v=20261024" defer></script>
-</head><body><a class="skip-link" href="#case-main">跳到正文</a>
+<link href="../assets/mark.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024-studio" rel="preload" type="font/woff2"/>
+<link href="../style.css?v=20261024-studio" rel="stylesheet"/><link href="../case.css?v=20261024-studio" rel="stylesheet"/>
+<script defer="" src="../reading.js?v=20261024"></script>
+</head><body class="case-page case-supportflow"><a class="skip-link" href="#case-main">跳到正文</a>
 <header class="site-header"><div class="container header-inner">
-  <a class="identity" href="../" aria-label="周俊涛的主页"><img src="../assets/mark.svg" alt="" width="28" height="28"><span>周俊涛</span></a>
-  <nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+<a aria-label="周俊涛的主页" class="identity" href="../"><span>周俊涛</span></a>
+<nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="case-main">
-<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">客服知识与回复审核</p><h1>SupportFlow</h1><p class="case-lead">引用了政策，仍可能答错问题。</p><p class="case-description">一份能追溯来源的草稿，也可能把申请期限当成到账时间。这个项目主要改的是选证和校验，以及答不上来时的处理。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">源码与运行方式</a></div><p class="case-status">本机 Web 原型，可选模型接入；回复需要人工审核。</p></section>
-<figure class="container case-wide-image"><a href="../assets/supportflow.png" target="_blank" rel="noopener noreferrer" aria-label="查看 SupportFlow 完整界面"><img src="../assets/supportflow.png" alt="SupportFlow 界面，使用合成示例数据" width="1440" height="1734"></a><figcaption>开发界面与合成数据，点击查看原图。</figcaption></figure>
-<nav class="case-nav container" aria-label="复盘目录"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
-<div class="container reading-body"><section class="reading-section" id="background" aria-labelledby="background-title"><h2 id="background-title">背景</h2><div><p>项目用合成政策和问题模拟客服查资料、起草回复、审核的过程，没有做过真实客服访谈。最先暴露的问题是：系统找到了相关政策，却拿错了里面的事实。</p>
+<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">客服知识与回复审核</p><h1>SupportFlow</h1><p class="case-lead">客服工单的检索、起草与审核</p><p class="case-description">我做了一个给客服查政策、起草回复的本机工具。接入模型后，退款到账时间被答成了申请期限，后面的修改大多围绕这个问题展开。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/PRD.md" rel="noopener noreferrer" target="_blank">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" rel="noopener noreferrer" target="_blank">源码与运行方式</a></div><p class="case-status">本机 Web 原型，可选模型接入；回复需要人工审核。</p></section>
+<figure class="container case-wide-image"><a aria-label="查看 SupportFlow 完整界面" href="../assets/supportflow.png" rel="noopener noreferrer" target="_blank"><img alt="SupportFlow 界面，使用合成示例数据" height="1000" src="../assets/supportflow.png" width="1440"/></a><figcaption>开发界面与合成数据，点击查看原图。</figcaption></figure>
+<nav aria-label="复盘目录" class="case-nav container"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
+<div class="container reading-body"><section aria-labelledby="background-title" class="reading-section" id="background"><h2 id="background-title">背景</h2><div><p>项目用合成政策和问题模拟客服查资料、起草回复、审核的过程，没有做过真实客服访谈。最先暴露的问题是：系统找到了相关政策，却拿错了里面的事实。</p>
 <p>例如，客户问退款多久能到账，草稿却引用“付款后 7 天内申请退款”；问导出要多久，系统用“文件保留 24 小时”作答。引用和问题有关，但并不支持这个答案。</p>
-</div></section><section class="reading-section" id="actions" aria-labelledby="actions-title"><h2 id="actions-title">动作</h2><div><p>项目已有政策导入、地区和版本管理、逐问题检索及人工审核。这轮把检查落到实际选中的条款上，区分申请窗口、到账时间、生成时长和保留时长。政策更新后，旧稿也不能继续进入审核。</p>
+</div></section><section aria-labelledby="actions-title" class="reading-section" id="actions"><h2 id="actions-title">动作</h2><div><p>项目已有政策导入、地区和版本管理、逐问题检索及人工审核。这轮把检查落到实际选中的条款上，区分申请窗口、到账时间、生成时长和保留时长。政策更新后，旧稿也不能继续进入审核。</p>
 <p>接入模型又暴露了另一类错误：“CSV 下载链接过期了，怎样重新取得数据？”被拆成丢失主语的两个问题，导致反复澄清；“发票抬头填错了”也曾因为条款没有“抬头”原词，被当成缺少依据。随后调整了问句拆分、主题继承和同义表达校验。</p>
-</div></section><section class="reading-section" id="decisions" aria-labelledby="decisions-title"><h2 id="decisions-title">关键决策</h2><div><h3>先用显式规则检查条款</h3><p>只检查有没有时间数字，挡不住这些错误；让另一个模型判断条款是否支持答案，又需要额外标注、费用和验证。当前选择可复现的事项、周期规则，适合这份小型政策库。代价是规则要维护，新的表达仍可能被误拦。</p>
+</div></section><section aria-labelledby="decisions-title" class="reading-section" id="decisions"><h2 id="decisions-title">关键决策</h2><div><h3>先用显式规则检查条款</h3><p>只检查有没有时间数字，挡不住这些错误；让另一个模型判断条款是否支持答案，又需要额外标注、费用和验证。当前选择可复现的事项、周期规则，适合这份小型政策库。代价是规则要维护，新的表达仍可能被误拦。</p>
 <h3>限制模型能做的事</h3><p>模型只选择已有证据编号，回复由本地原文组装。检索使用词法匹配与 BM25，没有做过向量检索的对照实验。这套方案便于查错，但回答覆盖受资料和规则限制，资料也需要整理成结构化格式。</p>
 <h3>保留人工审核</h3><p>地区冲突和证据不足时先澄清，审核者可以修改、驳回或转人工。没有自动外发回复，因此它仍占用人工判断，不能把“能生成草稿”直接写成节省了客服工时。</p>
-</div></section><section class="reading-section" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">局限</h2><div><p>10 月 19 日的同组 24 项合成场景里，模型流程从 16 项通过变成 24 项；规则流程也从 18 项变成 24 项。这能说明已知错误被修复，不能证明模型比规则更好。</p>
+</div></section><section aria-labelledby="limits-title" class="reading-section" id="limits"><h2 id="limits-title">局限</h2><div><p>10 月 19 日的同组 24 项合成场景里，模型流程从 16 项通过变成 24 项；规则流程也从 18 项变成 24 项。这能说明已知错误被修复，不能证明模型比规则更好。</p>
 <p>这些题参与了修改后的复测，不是独立盲测。修复后 13 次模型调用场景的完整流程耗时中位数约 10.16 秒，也还不能据此判断真实客服能否接受。</p>
 <p>尚未验证真实政策的整理成本、审核者的修改量或采纳情况。后续需要留出未参与修复的问题，再观察实际审核任务，才能决定模型接入是否值得保留。</p>
 </div></section></div>
-<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/LIVE_PRACTICE_20261019.md" target="_blank" rel="noopener noreferrer">模型与规则逐题对照</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/ITERATION_EVIDENCE.md" target="_blank" rel="noopener noreferrer">问题与方案比较</a></section>
+<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/LIVE_PRACTICE_20261019.md" rel="noopener noreferrer" target="_blank">模型与规则逐题对照</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/ITERATION_EVIDENCE.md" rel="noopener noreferrer" target="_blank">问题与方案比较</a></section>
 <div class="container next-project"><a class="case-link" href="../#work">返回项目记录</a></div>
 </main><footer class="site-footer"><div class="container footer-inner"><span>周俊涛 <span class="footer-date">/ 2026</span></span><span>更新于 2026 年 10 月</span><a href="#case-main">回到顶部 ↑</a></div></footer>
 </body></html>

@@ -18,7 +18,7 @@ import knowledge
 CSRF_TOKEN = secrets.token_urlsafe(32)
 DB_PATH = ROOT / "work" / "supportflow.sqlite3"
 WRITE_LOCK = threading.Lock()
-ALLOWED_FILES = {"/":"index.html", "/index.html":"index.html", "/app.js":"app.js", "/style.css":"style.css"}
+ALLOWED_FILES = {"/":"index.html", "/index.html":"index.html", "/app.js":"app.js", "/style.css":"style.css", "/workspace.css":"workspace.css"}
 STATES = {"approve":"APPROVED_LOCAL", "escalate":"ESCALATED", "reject":"REJECTED"}
 REVIEW_REASONS = {
     "source_not_applicable":"来源不适用", "missing_condition":"遗漏条件",

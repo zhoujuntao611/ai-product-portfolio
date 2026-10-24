@@ -21,3 +21,4 @@ projects/metricpilot/data/imports/
 # Repository-level website checks; keep generated reports in Actions artifacts.
 /node_modules/
 /verification/site-current/
+/verification/workspaces-current/

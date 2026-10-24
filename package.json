@@ -7,6 +7,7 @@
   "scripts": {
     "check:links": "python scripts/check-links.py",
     "check:site": "node scripts/check-site.mjs",
+    "check:workspaces": "node scripts/check-workspaces.mjs",
     "check:climbai-build": "node scripts/check-climbai-build.mjs",
     "verify:site": "npm run check:links && npm run check:site"
   },

@@ -1,34 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fcfcfa"><meta name="description" content="从训练规划转向现场记录后，项目的重点变成了连续保存、线路关联和视频回看。文字复盘放在这些记录之后。">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#fcfcfa" name="theme-color"/><meta content="最早的 ClimbAI 想解决下一次怎么练。做攀迹时，我先把范围收到了记下一次尝试、下次找得到这件事上，训练建议留到记录之后。" name="description"/>
 <title>攀迹复盘｜周俊涛</title>
-<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=20261024-notes"><link rel="stylesheet" href="../case.css?v=20261024-notes">
-<script src="../reading.js?v=20261024" defer></script>
-</head><body><a class="skip-link" href="#case-main">跳到正文</a>
+<link href="../assets/mark.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024-studio" rel="preload" type="font/woff2"/>
+<link href="../style.css?v=20261024-studio" rel="stylesheet"/><link href="../case.css?v=20261024-studio" rel="stylesheet"/>
+<script defer="" src="../reading.js?v=20261024"></script>
+</head><body class="case-page case-panji"><a class="skip-link" href="#case-main">跳到正文</a>
 <header class="site-header"><div class="container header-inner">
-  <a class="identity" href="../" aria-label="周俊涛的主页"><img src="../assets/mark.svg" alt="" width="28" height="28"><span>周俊涛</span></a>
-  <nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+<a aria-label="周俊涛的主页" class="identity" href="../"><span>周俊涛</span></a>
+<nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="case-main">
-<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">攀岩记录小程序</p><h1>攀迹</h1><p class="case-lead">记下训练之后，还要找得到上次的尝试。</p><p class="case-description">从训练规划转向现场记录后，项目的重点变成了连续保存、线路关联和视频回看。文字复盘放在这些记录之后。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/panji/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji" target="_blank" rel="noopener noreferrer">源码与运行方式</a></div><p class="case-status">0.2.2 开发预览，尚未公开发布。</p></section>
-
-<nav class="case-nav container" aria-label="复盘目录"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
-<div class="container reading-body"><section class="reading-section" id="background" aria-labelledby="background-title"><h2 id="background-title">背景</h2><div><p>早期的 ClimbAI 围绕“下一次怎么练”做计划和反馈。到攀迹这一版，我把范围收到了更具体的事情上：记下今天的尝试，下次还能找到同一条线路的历史和视频。</p>
+<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">攀岩记录小程序</p><h1>攀迹</h1><p class="case-lead">攀岩训练记录与线路回看</p><p class="case-description">最早的 ClimbAI 想解决下一次怎么练。做攀迹时，我先把范围收到了记下一次尝试、下次找得到这件事上，训练建议留到记录之后。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/panji/docs/PRD.md" rel="noopener noreferrer" target="_blank">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji" rel="noopener noreferrer" target="_blank">源码与运行方式</a></div><p class="case-status">0.2.2 开发预览，尚未公开发布。</p></section>
+<nav aria-label="复盘目录" class="case-nav container"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
+<div class="container reading-body"><section aria-labelledby="background-title" class="reading-section" id="background"><h2 id="background-title">背景</h2><div><p>早期的 ClimbAI 围绕“下一次怎么练”做计划和反馈。到攀迹这一版，我把范围收到了更具体的事情上：记下今天的尝试，下次还能找到同一条线路的历史和视频。</p>
 <p>这条流程还没有经过系统用户研究。已有的依据主要是开发检查和手机使用反馈，不能据此判断大多数攀岩者都需要这个产品。</p>
-</div></section><section class="reading-section" id="actions" aria-labelledby="actions-title"><h2 id="actions-title">动作</h2><div><p>小程序串起了选馆、训练记录、线路项目、文字复盘和目标确认。记录支持复用上次安排、连续保存和草稿恢复，视频按尝试关联。</p>
+</div></section><section aria-labelledby="actions-title" class="reading-section" id="actions"><h2 id="actions-title">动作</h2><div><p>小程序串起了选馆、训练记录、线路项目、文字复盘和目标确认。记录支持复用上次安排、连续保存和草稿恢复，视频按尝试关联。</p>
 <p>原来的回看入口需要多次点击。根据手机使用反馈，视频被移进尝试卡片；记录表单的选填项也做了折叠。改完这些，只能说流程少了几个打断，是否更容易坚持记录还没有用户数据。</p>
 <p>视频限制从 60 秒 / 50 MB 放宽到 5 分钟 / 100 MB，并补了大小、时长和保存进度提示。但在开发者工具里跑通 120 秒 / 80 MB 合成视频，不等于已经解决了手机原片的编码兼容问题。</p>
-<div class="screen-gallery"><figure><a href="../assets/panji/quick-record.png" target="_blank" rel="noopener noreferrer"><img src="../assets/panji/quick-record.png" alt="攀迹快捷记录，复用最近训练并保存" width="500" height="859" loading="lazy"></a><figcaption>快捷记录</figcaption></figure><figure><a href="../assets/panji/inline-video.png" target="_blank" rel="noopener noreferrer"><img src="../assets/panji/inline-video.png" alt="尝试卡片内播放视频，彩条是合成测试视频" width="500" height="859" loading="lazy"></a><figcaption>尝试内回看</figcaption></figure><figure><a href="../assets/panji/route-project.png" target="_blank" rel="noopener noreferrer"><img src="../assets/panji/route-project.png" alt="线路项目关联不同日期的尝试" width="500" height="859" loading="lazy"></a><figcaption>线路历史</figcaption></figure></div><p class="image-note">开发者工具截图，训练和视频为合成数据；点击查看原图。</p></div></section><section class="reading-section" id="decisions" aria-labelledby="decisions-title"><h2 id="decisions-title">关键决策</h2><div><h3>线路由用户关联</h3><p>同名线路可能来自不同岩馆，也可能已经换线，所以没有按名字自动合并。用户需要多做一次关联，换来的是跨次记录不容易串错。删除线路项目也不会删除原始训练和视频。</p>
+<div class="screen-gallery"><figure><a href="../assets/panji/quick-record.png" rel="noopener noreferrer" target="_blank"><img alt="攀迹快捷记录，复用最近训练并保存" height="859" loading="lazy" src="../assets/panji/quick-record.png" width="500"/></a><figcaption>快捷记录</figcaption></figure><figure><a href="../assets/panji/inline-video.png" rel="noopener noreferrer" target="_blank"><img alt="尝试卡片内播放视频，彩条是合成测试视频" height="859" loading="lazy" src="../assets/panji/inline-video.png" width="500"/></a><figcaption>尝试内回看</figcaption></figure><figure><a href="../assets/panji/route-project.png" rel="noopener noreferrer" target="_blank"><img alt="线路项目关联不同日期的尝试" height="859" loading="lazy" src="../assets/panji/route-project.png" width="500"/></a><figcaption>线路历史</figcaption></figure></div><p class="image-note">开发者工具截图，训练和视频为合成数据；点击查看原图。</p></div></section><section aria-labelledby="decisions-title" class="reading-section" id="decisions"><h2 id="decisions-title">关键决策</h2><div><h3>线路由用户关联</h3><p>同名线路可能来自不同岩馆，也可能已经换线，所以没有按名字自动合并。用户需要多做一次关联，换来的是跨次记录不容易串错。删除线路项目也不会删除原始训练和视频。</p>
 <h3>视频先留在当前设备</h3><p>训练记录可以存云端，视频和关联保存在本机。这一版避开了视频云上传，但换机和清理缓存会影响回看，用户也不能把云端训练记录当成视频备份。</p>
 <h3>模型只处理文字复盘</h3><p>次数、完成率等事实由程序计算，不同岩馆的难度体系分开统计。模型根据摘要提建议，用户确认后才形成下次目标；备注默认不发，视频不发。这样保留了确认步骤，也意味着模型看不到动作细节，建议的依据有限。</p>
-</div></section><section class="reading-section" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">局限</h2><div><p>目前完成的是开发预览和限定场景检查。完整 iPhone / Android 验收、原手机原片复试、公开发布都还没完成。项目没有视频动作识别、姿态评分，也不能判断训练有没有进步。</p>
+</div></section><section aria-labelledby="limits-title" class="reading-section" id="limits"><h2 id="limits-title">局限</h2><div><p>目前完成的是开发预览和限定场景检查。完整 iPhone / Android 验收、原手机原片复试、公开发布都还没完成。项目没有视频动作识别、姿态评分，也不能判断训练有没有进步。</p>
 <p>混元文字复盘的接入记录覆盖 3 类合成场景、7 项开发检查，没有验证建议在真实训练中是否合适。下一步要观察的是：一场训练能否顺利记完、哪些建议被改掉，以及下次是否会打开旧记录。</p>
 <p>岩馆目录收录了 228 处场所、71 个城市 / 地区，来自 2026 年 10 月 22 日的部分资料快照。它需要继续核对地址和开放条件，不能当作实时营业信息，也不是用户规模。</p>
 <details class="evidence-detail"><summary>开发检查具体覆盖了什么</summary><div><p>公开副本有 174 项本地测试。原工程的 176 项还包含两项未公开的部署处理器检查，两种范围不能混算。14 页原生编译、本机流程和模型接入分别有记录，不是同一套验收，也不是用户样本。</p></div></details></div></section></div>
-<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/panji/docs/EVIDENCE.md" target="_blank" rel="noopener noreferrer">公开副本与验证范围</a></section>
+<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/panji/docs/EVIDENCE.md" rel="noopener noreferrer" target="_blank">公开副本与验证范围</a></section>
 <div class="container next-project"><a class="case-link" href="../#work">返回项目记录</a></div>
 </main><footer class="site-footer"><div class="container footer-inner"><span>周俊涛 <span class="footer-date">/ 2026</span></span><span>更新于 2026 年 10 月</span><a href="#case-main">回到顶部 ↑</a></div></footer>
 </body></html>

@@ -127,7 +127,7 @@ class Handler(BaseHTTPRequestHandler):
                 dataset = load_dataset(parse_qs(parsed.query).get("dataset_id", [""])[0])
                 rows = dataset["orders"][:30]
                 return self.respond(200, {"columns": list(rows[0]) if rows else [], "rows": rows, "total_rows": dataset["row_count"], "source_hash": dataset["source_hash"]})
-            static = {"/": "index.html", "/app.js": "app.js", "/style.css": "style.css"}.get(path)
+            static = {"/": "index.html", "/app.js": "app.js", "/style.css": "style.css", "/workspace.css": "workspace.css"}.get(path)
             if static:
                 mime = {"html": "text/html", "js": "text/javascript", "css": "text/css"}[static.rsplit(".", 1)[1]]
                 return self.send_bytes(200, (ROOT / "static" / static).read_bytes(), mime + "; charset=utf-8")

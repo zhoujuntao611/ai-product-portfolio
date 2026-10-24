@@ -1,32 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fcfcfa"><meta name="description" content="这个 Web 原型尝试把建档、计划和反馈接起来。它保留在这里，用于说明攀迹之前试过什么、哪些问题还没有答案。">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#fcfcfa" name="theme-color"/><meta content="这是攀迹之前的一次尝试：填写训练条件，生成计划，训练后再反馈。代码和浏览器演示保留着，方便回看后来为什么改了方向。" name="description"/>
 <title>ClimbAI复盘｜周俊涛</title>
-<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=20261024-notes"><link rel="stylesheet" href="../case.css?v=20261024-notes">
-<script src="../reading.js?v=20261024" defer></script>
-</head><body><a class="skip-link" href="#case-main">跳到正文</a>
+<link href="../assets/mark.svg" rel="icon" type="image/svg+xml"/>
+<link as="font" crossorigin="" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261024-studio" rel="preload" type="font/woff2"/>
+<link href="../style.css?v=20261024-studio" rel="stylesheet"/><link href="../case.css?v=20261024-studio" rel="stylesheet"/>
+<script defer="" src="../reading.js?v=20261024"></script>
+</head><body class="case-page case-climbai-notes"><a class="skip-link" href="#case-main">跳到正文</a>
 <header class="site-header"><div class="container header-inner">
-  <a class="identity" href="../" aria-label="周俊涛的主页"><img src="../assets/mark.svg" alt="" width="28" height="28"><span>周俊涛</span></a>
-  <nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+<a aria-label="周俊涛的主页" class="identity" href="../"><span>周俊涛</span></a>
+<nav aria-label="主导航"><a href="../#work">全部项目</a><a href="../#about">关于</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="case-main">
-<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">攀岩方向的早期探索</p><h1>ClimbAI</h1><p class="case-lead">先做了训练计划，后来把重点移到了记录。</p><p class="case-description">这个 Web 原型尝试把建档、计划和反馈接起来。它保留在这里，用于说明攀迹之前试过什么、哪些问题还没有答案。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" target="_blank" rel="noopener noreferrer">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/climbai" target="_blank" rel="noopener noreferrer">源码与运行方式</a><a class="text-link" href="../climbai/">打开早期演示</a></div><p class="case-status">早期原型保留。在线演示使用本地规则；模型实验来自独立后端。</p></section>
-<figure class="container case-wide-image"><a href="../assets/climbai.png" target="_blank" rel="noopener noreferrer" aria-label="查看 ClimbAI 完整界面"><img src="../assets/climbai.png" alt="ClimbAI 界面，使用合成示例数据" width="1440" height="1000"></a><figcaption>开发界面与合成数据，点击查看原图。</figcaption></figure>
-<nav class="case-nav container" aria-label="复盘目录"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
-<div class="container reading-body"><section class="reading-section" id="background" aria-labelledby="background-title"><h2 id="background-title">背景</h2><div><p>最初围绕“今天练什么，练完怎么调整”设计了一周计划、知识检索和反馈流程。面向初阶攀岩者的需求是产品假设，没有通过访谈确认，也没有专业教练逐条审核训练内容。</p>
-</div></section><section class="reading-section" id="actions" aria-labelledby="actions-title"><h2 id="actions-title">动作</h2><div><p>原型支持建档、计划确认、记录训练、补充反馈和调整版本。训练结束与反馈分开保存，不要求用户当场写完复盘。</p>
+<section class="reading-hero container"><a class="back-link" href="../#work">返回项目记录</a><p class="project-kind">攀岩方向的早期探索</p><h1>ClimbAI</h1><p class="case-lead">攀迹之前的训练计划原型</p><p class="case-description">这是攀迹之前的一次尝试：填写训练条件，生成计划，训练后再反馈。代码和浏览器演示保留着，方便回看后来为什么改了方向。</p><div class="project-actions"><a class="case-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/climbai/docs/PRD.md" rel="noopener noreferrer" target="_blank">产品文档</a><a class="text-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/climbai" rel="noopener noreferrer" target="_blank">源码与运行方式</a><a class="text-link" href="../climbai/">打开早期演示</a></div><p class="case-status">早期原型保留。在线演示使用本地规则；模型实验来自独立后端。</p></section>
+<figure class="container case-wide-image"><a aria-label="查看 ClimbAI 完整界面" href="../assets/climbai.png" rel="noopener noreferrer" target="_blank"><img alt="ClimbAI 界面，使用合成示例数据" height="1000" src="../assets/climbai.png" width="1440"/></a><figcaption>开发界面与合成数据，点击查看原图。</figcaption></figure>
+<nav aria-label="复盘目录" class="case-nav container"><a href="#background">背景</a><a href="#actions">动作</a><a href="#decisions">关键决策</a><a href="#limits">局限</a></nav>
+<div class="container reading-body"><section aria-labelledby="background-title" class="reading-section" id="background"><h2 id="background-title">背景</h2><div><p>最初围绕“今天练什么，练完怎么调整”设计了一周计划、知识检索和反馈流程。面向初阶攀岩者的需求是产品假设，没有通过访谈确认，也没有专业教练逐条审核训练内容。</p>
+</div></section><section aria-labelledby="actions-title" class="reading-section" id="actions"><h2 id="actions-title">动作</h2><div><p>原型支持建档、计划确认、记录训练、补充反馈和调整版本。训练结束与反馈分开保存，不要求用户当场写完复盘。</p>
 <p>后端的一次合成任务设置为每次最多 45 分钟，模型生成 35 分钟和 30 分钟的安排；记录只练了 25 分钟、临时加班后，下一次计划从 30 分钟改成 25 分钟，再由用户确认。</p>
 <p>这轮 9 项流程检查只达到 8 项。一道复合知识问题检索到了记录字段资料，却没有完整覆盖“怎样调整下次安排”。模型说明资料不足，并不意味着用户的任务已经完成。</p>
-</div></section><section class="reading-section" id="decisions" aria-labelledby="decisions-title"><h2 id="decisions-title">关键决策</h2><div><h3>计划可以保持不变</h3><p>反馈后先展示修改依据，用户可以接受，也可以保留原计划。这样不会为了显示“有调整”而自动改计划，但是否能帮助用户做出更好的选择，还没有真实使用验证。</p>
+</div></section><section aria-labelledby="decisions-title" class="reading-section" id="decisions"><h2 id="decisions-title">关键决策</h2><div><h3>计划可以保持不变</h3><p>反馈后先展示修改依据，用户可以接受，也可以保留原计划。这样不会为了显示“有调整”而自动改计划，但是否能帮助用户做出更好的选择，还没有真实使用验证。</p>
 <h3>把演示和模型实验分开</h3><p>公开演示用浏览器规则和本地数据，降低体验门槛；真实模型调用需要单独运行后端。两种环境的输出不能互相代替，网页里的演示也不是实时模型效果。</p>
 <h3>后续先解决记录与回看</h3><p>做攀迹时把重心放到了现场记录、同一线路的历史和视频回看。这个选择缩小了问题范围，但不能据此断言训练规划没有价值。两个项目代码和存储独立，攀迹没有继承这套知识库或规划流程。</p>
-</div></section><section class="reading-section" id="limits" aria-labelledby="limits-title"><h2 id="limits-title">局限</h2><div><p>知识库只有 30 条示例资料，复合问题覆盖不足。没有专业教练审核、持续试用、留存或训练改善结果，生成出的安排也不能被当作已验证有效的训练方案。</p>
+</div></section><section aria-labelledby="limits-title" class="reading-section" id="limits"><h2 id="limits-title">局限</h2><div><p>知识库只有 30 条示例资料，复合问题覆盖不足。没有专业教练审核、持续试用、留存或训练改善结果，生成出的安排也不能被当作已验证有效的训练方案。</p>
 <p>目前保留演示、源码和运行记录，以复现和兼容性维护为主。作品集中以攀迹为主项目，ClimbAI 不再作为另一个独立成熟产品并列展示。</p>
 <p><a href="../panji/">后来的攀迹复盘</a></p></div></section></div>
-<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/LIVE_PRACTICE_20261019.md" target="_blank" rel="noopener noreferrer">模型实测及未通过项</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/CLIMBING_EVOLUTION.md" target="_blank" rel="noopener noreferrer">与攀迹的关系</a></section>
+<section class="container evidence-links" id="evidence"><h2>相关记录</h2><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/LIVE_PRACTICE_20261019.md" rel="noopener noreferrer" target="_blank">模型实测及未通过项</a><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/docs/CLIMBING_EVOLUTION.md" rel="noopener noreferrer" target="_blank">与攀迹的关系</a></section>
 <div class="container next-project"><a class="case-link" href="../#work">返回项目记录</a></div>
 </main><footer class="site-footer"><div class="container footer-inner"><span>周俊涛 <span class="footer-date">/ 2026</span></span><span>更新于 2026 年 10 月</span><a href="#case-main">回到顶部 ↑</a></div></footer>
 </body></html>

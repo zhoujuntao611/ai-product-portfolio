@@ -1,64 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SupportFlow · 导入客服政策，生成有依据、可审核的回复草稿"><title>SupportFlow · 客服工单工作台</title><link rel="stylesheet" href="/style.css"></head>
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="SupportFlow · 导入客服政策，生成有依据、可审核的回复草稿" name="description"/><title>SupportFlow · 客服工单工作台</title><link href="/style.css" rel="stylesheet"/><link href="/workspace.css" rel="stylesheet"/></head>
 <body>
 <div class="shell">
-  <aside class="sidebar">
-    <a class="brand" href="/" aria-label="SupportFlow 首页"><span class="brand-icon">S</span><span>SupportFlow<small>Evidence before answers.</small></span></a>
-    <div class="workspace-pill"><span class="workspace-icon">云</span><div>云桥协作<small>客服政策与回复工作区</small></div></div>
-    <nav aria-label="主导航"><button class="nav-item selected" data-page="desk"><span>▤</span>工单工作台</button><button class="nav-item" data-page="knowledge"><span>▧</span>知识库与版本</button><button class="nav-item" data-page="about"><span>◎</span>作品说明</button></nav>
-    <div class="sidebar-heading">最近工单 <button id="refresh-history" aria-label="刷新最近工单">↻</button></div>
-    <div id="history" class="history"><p class="muted">正在读取工单…</p></div>
-    <div class="sidebar-foot"><span class="online-dot"></span> 本地工作区<small>保留草稿、审核与处理轨迹。批准后可复制使用。</small></div>
-  </aside>
-  <main>
-    <header class="topbar"><div><span class="crumb">工作空间</span><span class="slash">/</span><span id="page-title">工单工作台</span></div><div class="header-right"><span class="mode-tag" id="mode-tag">规则模式 · 本地工作区</span><span class="avatar" title="本地评审者">我</span></div></header>
-    <div class="main-content">
-      <section id="page-desk" class="page">
-        <div class="intro"><div class="eyebrow">SUPPORT OPERATIONS</div><h1>让每一条回复，都有依据。</h1><p>导入政策、核对来源，在一个工作区完成回复与审核。</p></div>
-        <div class="stats"><div><span>当前可用资料</span><strong><b id="count-knowledge">—</b> <small>份有效文档</small></strong></div><div><span>本地工单</span><strong id="count-total">0</strong></div><div><span>已批准的草稿</span><strong id="count-approved">0</strong></div><div><span>知识快照</span><strong id="knowledge-date" class="date">加载中</strong></div></div>
-        <div class="steps" aria-label="处理流程"><div class="current"><b>1</b>理解工单</div><i></i><div id="step-2"><b>2</b>检索与草稿</div><i></i><div id="step-3"><b>3</b>人工审核</div></div>
-        <div class="workbench">
-          <section class="panel input-panel"><div class="panel-title"><h2>新工单</h2><span class="subtle">中文 / English</span></div>
-            <form id="ticket-form">
-              <label for="example">快速体验</label><select id="example"><option value="invoice">开票流程 · 有据可答</option><option value="refund">退款地区未知 · 需要澄清</option><option value="export">数据导出 · 限制与步骤</option><option value="webhook">Webhook 异常 · 技术问题</option><option value="impact">立即删除 · 转人工核验</option><option value="injection">越权指令 · 停止处理</option><option value="unknown">未覆盖的问题 · 补充资料</option></select>
-              <label for="title">工单标题</label><input id="title" maxlength="100" required value="想申请发票，不知道在哪里操作">
-              <div class="label-row"><label for="content">客户问题</label><span id="char-count" class="subtle">0 / 4000</span></div><textarea id="content" rows="7" minlength="5" maxlength="4000" required>我们是云桥协作的管理员，上周支付了订单，请问在哪里申请发票，多久可以处理？</textarea>
-              <div class="form-grid"><div><label for="region">工作区地区</label><select id="region"><option value="unknown">尚未确认</option><option value="mainland">中国大陆</option><option value="overseas">海外</option></select></div><div><label for="engine">生成模式</label><select id="engine"><option value="demo">本地规则模式</option><option value="model" disabled>真实模型（未配置）</option></select></div></div>
-              <div id="engine-note" class="input-note">按问题检索有效政策，组合原文依据，并检查地区、引用与问题覆盖。</div>
-              <p class="privacy-note">使用合成或授权脱敏资料。系统会隐藏常见邮箱、手机号与密钥。</p>
-              <button id="generate" class="button primary full" type="submit"><span>✦</span>检索并生成草稿</button><span class="shortcut">Ctrl / ⌘ + Enter</span>
-            </form>
-          </section>
-          <section class="panel output-panel"><div class="panel-title"><h2>回复工作区</h2><span id="ticket-id" class="subtle">等待新工单</span></div>
-            <div id="empty-state" class="empty-state"><div class="empty-icon">▤</div><h3>从一个客户问题开始</h3><p>草稿、逐条依据与审核轨迹，<br>都将在这里呈现。</p><div class="empty-badges"><span>有效版本</span><span>依据检查</span><span>人工审核</span></div></div>
-            <div id="result" hidden>
-              <div id="status-box" class="status-box"><div><span id="status-label" class="status-tag"></span><span id="state-label" class="subtle"></span></div><p id="reason"></p></div>
-              <div class="result-meta"><span id="result-engine"></span><span id="latency"></span></div>
-              <div id="quality-summary" class="quality-summary" aria-live="polite"></div>
-              <div class="tabs" role="tablist"><button class="tab active" data-tab="draft" role="tab" aria-selected="true" aria-controls="tab-draft">回复草稿</button><button class="tab" data-tab="evidence" role="tab" aria-selected="false" aria-controls="tab-evidence">检索证据 <span id="source-count"></span></button><button class="tab" data-tab="audit" role="tab" aria-selected="false" aria-controls="tab-audit">处理轨迹</button></div>
-              <div id="tab-draft" class="tab-content" role="tabpanel"><label class="sr-only" for="draft">回复草稿</label><textarea id="draft" class="draft-editor" rows="12" maxlength="12000"></textarea><div id="edit-warning" class="warning" hidden>当前为人工编辑稿。依据检查对应生成时的原稿，请核对新增内容与引用。</div><div class="draft-note">引用格式：[文档编号 §条目编号]。点击“检索证据”核对原文与版本。</div><div class="draft-tools"><button id="save-draft" class="button secondary">保存编辑</button><button id="copy-draft" class="button secondary">复制草稿</button><button id="export-draft" class="button secondary">导出 Markdown</button></div>
-                <div class="review"><h3>人工审核</h3><fieldset id="review-reasons" class="review-reasons"><legend>问题标记 <span class="subtle">可多选，供下一轮改进使用</span></legend><label><input type="checkbox" value="source_not_applicable">来源不适用</label><label><input type="checkbox" value="missing_condition">遗漏条件</label><label><input type="checkbox" value="incomplete_answer">回答不完整</label><label><input type="checkbox" value="unsupported_claim">缺少依据</label><label><input type="checkbox" value="other">其他</label></fieldset><label for="review-note" class="sr-only">审核备注</label><input id="review-note" maxlength="1000" placeholder="补充审核备注（可选）"><label class="checkbox-row"><input type="checkbox" id="review-check"><span>我已检查事实、适用条件及引用依据。</span></label><div class="review-actions"><button id="approve" class="button primary" disabled>批准并保存</button><button id="escalate" class="button secondary">转人工</button><button id="reject" class="button ghost">退回草稿</button></div><p id="review-help" class="subtle">审核结果与编辑记录保存在本地。</p></div>
-              </div>
-              <div id="tab-evidence" class="tab-content" role="tabpanel" hidden><h3 class="section-label">生成草稿的逐条依据</h3><div id="claims"></div><h3 class="section-label">问题覆盖</h3><div id="coverage"></div><h3 class="section-label">检索到的资料</h3><div id="sources"></div></div>
-              <div id="tab-audit" class="tab-content" role="tabpanel" hidden><div class="audit-tools"><p class="evidence-note">保留生成、编辑、审核与处理原因。</p><button id="export-examples" class="button secondary">导出问题样例 JSON</button></div><div id="audit"></div></div>
-            </div>
-          </section>
-        </div>
-      </section>
-      <section id="page-knowledge" class="page" hidden>
-        <div class="intro"><div class="eyebrow">KNOWLEDGE GOVERNANCE</div><h1>先管理事实，再生成答案。</h1><p>导入自己的客服政策，维护适用地区、生效时间与版本。</p></div>
-        <div class="knowledge-layout">
-          <section class="panel import-panel"><div class="panel-title"><h2>导入政策资料</h2><button id="download-example" class="text-button">下载示例 JSON ↓</button></div><form id="import-form"><p class="evidence-note">粘贴结构化 JSON，或选择 .json 文件。整批校验通过后导入。</p><label for="import-file" class="file-picker">选择 JSON 文件<input id="import-file" type="file" accept=".json,application/json"><span id="import-filename" class="subtle">支持 UTF-8 编码</span></label><label for="import-json">资料内容</label><textarea id="import-json" rows="11" spellcheck="false" placeholder='{"documents": [{"id": "POLICY-001", "title": "退款政策", …}]}' required></textarea><details class="schema-help"><summary>查看资料字段</summary><p><code>id / title / category / source / version</code>：编号、标题、主题、来源、版本；<code>region</code>：all、mainland 或 overseas；<code>active</code>：true / false。</p><p><code>updated / effective_from / effective_to</code>：更新、生效及失效日期（YYYY-MM-DD），无失效日期填 null；<code>keywords / statements</code>：关键词与逐条政策原文的字符串数组。</p><p>编辑已有资料时，使用相同编号与新版本。旧版本将退出当前检索，历史记录保留。</p></details><div id="import-feedback" class="form-feedback" role="status" hidden></div><button id="import-submit" class="button primary full" type="submit">校验并导入</button></form></section>
-          <section class="panel knowledge-panel"><div class="panel-title"><h2>资料清单 <span id="knowledge-count" class="subtle"></span></h2><button id="refresh-knowledge" class="text-button">刷新</button></div><div class="knowledge-toolbar"><label class="sr-only" for="knowledge-search">搜索资料</label><input id="knowledge-search" type="search" placeholder="搜索标题、编号或来源"><label class="sr-only" for="knowledge-filter">资料状态</label><select id="knowledge-filter"><option value="all">全部状态</option><option value="active">当前有效</option><option value="inactive">已停用</option><option value="scheduled">待生效</option><option value="expired">已失效</option></select></div><div id="knowledge-list"><p class="evidence-note">正在读取资料…</p></div></section>
-        </div>
-        <section id="knowledge-editor" class="panel editor-panel" hidden><div class="panel-title"><h2 id="editor-heading">编辑新版本</h2><button id="close-editor" class="text-button">收起 ×</button></div><form id="knowledge-edit-form"><div class="form-grid"><div><label for="doc-id">资料编号</label><input id="doc-id" readonly required></div><div><label for="doc-version">新版本号</label><input id="doc-version" required maxlength="40" placeholder="例如 2.0"></div></div><label for="doc-title">标题</label><input id="doc-title" required maxlength="200"><div class="form-grid"><div><label for="doc-category">主题标识</label><input id="doc-category" required maxlength="80"></div><div><label for="doc-source">资料来源</label><input id="doc-source" required maxlength="1000" placeholder="政策文件名、内部文档名或来源地址"></div></div><div class="form-grid three"><div><label for="doc-region">适用地区</label><select id="doc-region"><option value="all">全部地区</option><option value="mainland">中国大陆</option><option value="overseas">海外</option></select></div><div><label for="doc-updated">更新日期</label><input id="doc-updated" type="date" required></div><div><label for="doc-active">生效状态</label><select id="doc-active"><option value="true">启用</option><option value="false">停用</option></select></div></div><div class="form-grid"><div><label for="doc-effective-from">生效日期</label><input id="doc-effective-from" type="date" required></div><div><label for="doc-effective-to">失效日期 <span class="subtle">可留空</span></label><input id="doc-effective-to" type="date"></div></div><label for="doc-keywords">关键词 <span class="subtle">每行一项</span></label><textarea id="doc-keywords" rows="3" required></textarea><label for="doc-statements">政策原文 <span class="subtle">每行一个完整条款，包含适用条件</span></label><textarea id="doc-statements" rows="7" required></textarea><div id="edit-feedback" class="form-feedback" role="status" hidden></div><div class="editor-footer"><p class="evidence-note">保存新版本后，旧版本退出检索；历史工单保留生成时的依据。</p><button id="save-version" class="button primary" type="submit">保存为新版本</button></div></form></section>
-      </section>
-      <section id="page-about" class="page" hidden><div class="intro"><div class="eyebrow">PRODUCT CASE STUDY</div><h1>从政策资料，到可审核的回复。</h1><p>用可维护的知识与可回收的问题，持续改进客服回复质量。</p></div><div class="about-grid"><article class="panel"><h2>知识有生命周期</h2><p>结构化 JSON 导入、必填字段校验、地区与生效时间筛选、新版本替换、停用与历史回看，避免旧政策继续参与当前回复。</p></article><article class="panel"><h2>依据可以逐条核对</h2><p>从问题检索政策、检查适用条件，展示每条回复的原文、来源与版本。多问题同时检查覆盖情况；需要补充信息或人工判断时给出下一步。</p></article><article class="panel"><h2>审核沉淀改进样例</h2><p>保留人工编辑和处理轨迹，按来源不适用、遗漏条件、回答不完整等原因标记问题，并导出脱敏样例用于下一轮评测。</p></article><article class="panel"><h2>评测与模型模式</h2><p>固定合成问题集保留原关键词方案与改进方案的逐题结果。真实模型沿用现有证据选择接口；未配置密钥时使用规则模式，模型效果与业务收益尚未测量。</p><p class="subtle">内置资料为合成政策。适合本机验证；不执行账户、资金或消息发送操作。</p></article></div></section>
-    </div>
-  </main>
+<aside class="sidebar">
+<a aria-label="SupportFlow 首页" class="brand" href="/"><span class="brand-icon">S</span><span>SupportFlow<small>客服回复审核</small></span></a>
+<div class="workspace-pill"><span class="workspace-icon">云</span><div>云桥协作<small>客服政策与回复工作区</small></div></div>
+<nav aria-label="主导航"><button class="nav-item selected" data-page="desk"><span>▤</span>工单工作台</button><button class="nav-item" data-page="knowledge"><span>▧</span>知识库与版本</button><button class="nav-item" data-page="about"><span>◎</span>作品说明</button></nav><div class="workspace-counts"><div><span>当前可用资料</span><strong><b id="count-knowledge">—</b> <small>份有效文档</small></strong></div><div><span>本地工单</span><strong id="count-total">0</strong></div><div><span>已批准的草稿</span><strong id="count-approved">0</strong></div><div><span>知识快照</span><strong class="date" id="knowledge-date">加载中</strong></div></div>
+<div class="sidebar-heading">最近工单 <button aria-label="刷新最近工单" id="refresh-history">↻</button></div>
+<div class="history" id="history"><p class="muted">正在读取工单…</p></div>
+<div class="sidebar-foot"><span class="online-dot"></span> 本地工作区<small>保留草稿、审核与处理轨迹。批准后可复制使用。</small></div>
+</aside>
+<main>
+<header class="topbar"><div><span class="crumb">工作空间</span><span class="slash">/</span><span id="page-title">工单工作台</span></div><div class="header-right"><span class="mode-tag" id="mode-tag">规则模式 · 本地工作区</span><span class="avatar" title="本地评审者">我</span></div></header>
+<div class="main-content">
+<section class="page" id="page-desk">
+<div class="intro"><h1>工单</h1><p>查看客户问题，核对草稿，再决定是否批准。</p></div>
+
+<div aria-label="处理流程" class="steps"><div class="current"><b>1</b>理解工单</div><i></i><div id="step-2"><b>2</b>检索与草稿</div><i></i><div id="step-3"><b>3</b>人工审核</div></div>
+<div class="workbench">
+<section class="panel input-panel"><div class="panel-title"><h2>客户问题</h2><span class="subtle">中文 / English</span></div>
+<form id="ticket-form">
+<label for="example">载入示例问题</label><select id="example"><option value="invoice">开票流程 · 有据可答</option><option value="refund">退款地区未知 · 需要澄清</option><option value="export">数据导出 · 限制与步骤</option><option value="webhook">Webhook 异常 · 技术问题</option><option value="impact">立即删除 · 转人工核验</option><option value="injection">越权指令 · 停止处理</option><option value="unknown">未覆盖的问题 · 补充资料</option></select>
+<label for="title">工单标题</label><input id="title" maxlength="100" required="" value="想申请发票，不知道在哪里操作"/>
+<div class="label-row"><label for="content">客户问题</label><span class="subtle" id="char-count">0 / 4000</span></div><textarea id="content" maxlength="4000" minlength="5" required="" rows="7">我们是云桥协作的管理员，上周支付了订单，请问在哪里申请发票，多久可以处理？</textarea>
+<div class="form-grid"><div><label for="region">工作区地区</label><select id="region"><option value="unknown">尚未确认</option><option value="mainland">中国大陆</option><option value="overseas">海外</option></select></div><div><label for="engine">生成模式</label><select id="engine"><option value="demo">本地规则模式</option><option disabled="" value="model">真实模型（未配置）</option></select></div></div>
+<div class="input-note" id="engine-note">按问题检索有效政策，组合原文依据，并检查地区、引用与问题覆盖。</div>
+<p class="privacy-note">使用合成或授权脱敏资料。系统会隐藏常见邮箱、手机号与密钥。</p>
+<button class="button primary full" id="generate" type="submit">生成草稿</button><span class="shortcut">Ctrl / ⌘ + Enter</span>
+</form>
+</section>
+<section class="panel output-panel"><div class="panel-title"><h2>回复与审核</h2><span class="subtle" id="ticket-id">等待新工单</span></div>
+<div class="empty-state" id="empty-state"><h3>还没有回复草稿</h3><p>填好左侧问题后生成。已有工单可以从左侧列表打开。</p></div>
+<div hidden="" id="result">
+<div class="status-box" id="status-box"><div><span class="status-tag" id="status-label"></span><span class="subtle" id="state-label"></span></div><p id="reason"></p></div>
+<div class="result-meta"><span id="result-engine"></span><span id="latency"></span></div>
+<div aria-live="polite" class="quality-summary" id="quality-summary"></div>
+<div class="tabs" role="tablist"><button aria-controls="tab-draft" aria-selected="true" class="tab active" data-tab="draft" role="tab">回复草稿</button><button aria-controls="tab-evidence" aria-selected="false" class="tab" data-tab="evidence" role="tab">检索证据 <span id="source-count"></span></button><button aria-controls="tab-audit" aria-selected="false" class="tab" data-tab="audit" role="tab">处理轨迹</button></div>
+<div class="tab-content" id="tab-draft" role="tabpanel"><div class="draft-body"><label class="sr-only" for="draft">回复草稿</label><textarea class="draft-editor" id="draft" maxlength="12000" rows="12"></textarea><div class="warning" hidden="" id="edit-warning">当前为人工编辑稿。依据检查对应生成时的原稿，请核对新增内容与引用。</div><div class="draft-note">引用格式：[文档编号 §条目编号]。点击“检索证据”核对原文与版本。</div><div class="draft-tools"><button class="button secondary" id="save-draft">保存编辑</button><button class="button secondary" id="copy-draft">复制草稿</button><button class="button secondary" id="export-draft">导出 Markdown</button></div>
+
+</div><div class="review"><h3>人工审核</h3><fieldset class="review-reasons" id="review-reasons"><legend>问题标记 <span class="subtle">可多选，供下一轮改进使用</span></legend><label><input type="checkbox" value="source_not_applicable"/>来源不适用</label><label><input type="checkbox" value="missing_condition"/>遗漏条件</label><label><input type="checkbox" value="incomplete_answer"/>回答不完整</label><label><input type="checkbox" value="unsupported_claim"/>缺少依据</label><label><input type="checkbox" value="other"/>其他</label></fieldset><label class="sr-only" for="review-note">审核备注</label><input id="review-note" maxlength="1000" placeholder="补充审核备注（可选）"/><label class="checkbox-row"><input id="review-check" type="checkbox"/><span>我已检查事实、适用条件及引用依据。</span></label><div class="review-actions"><button class="button primary" disabled="" id="approve">批准并保存</button><button class="button secondary" id="escalate">转人工</button><button class="button ghost" id="reject">退回草稿</button></div><p class="subtle" id="review-help">审核结果与编辑记录保存在本地。</p></div></div>
+<div class="tab-content" hidden="" id="tab-evidence" role="tabpanel"><h3 class="section-label">生成草稿的逐条依据</h3><div id="claims"></div><h3 class="section-label">问题覆盖</h3><div id="coverage"></div><h3 class="section-label">检索到的资料</h3><div id="sources"></div></div>
+<div class="tab-content" hidden="" id="tab-audit" role="tabpanel"><div class="audit-tools"><p class="evidence-note">保留生成、编辑、审核与处理原因。</p><button class="button secondary" id="export-examples">导出问题样例 JSON</button></div><div id="audit"></div></div>
 </div>
-<dialog id="version-dialog" aria-labelledby="version-heading"><div class="dialog-heading"><div><div class="eyebrow">VERSION HISTORY</div><h2 id="version-heading">版本历史</h2></div><button id="close-versions" class="text-button" aria-label="关闭版本历史">关闭 ×</button></div><p class="evidence-note">历史版本仅供回看。当前检索使用最新且满足生效条件的资料。</p><div id="version-list"></div></dialog>
-<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-<script src="/app.js" defer></script>
+</section>
+</div>
+</section>
+<section class="page" hidden="" id="page-knowledge">
+<div class="intro"><h1>政策资料</h1><p>导入、更新或停用政策。历史工单保留生成时的版本。</p></div>
+<div class="knowledge-layout">
+<section class="panel import-panel"><div class="panel-title"><h2>导入政策资料</h2><button class="text-button" id="download-example">下载示例 JSON ↓</button></div><form id="import-form"><p class="evidence-note">粘贴结构化 JSON，或选择 .json 文件。整批校验通过后导入。</p><label class="file-picker" for="import-file">选择 JSON 文件<input accept=".json,application/json" id="import-file" type="file"/><span class="subtle" id="import-filename">支持 UTF-8 编码</span></label><label for="import-json">资料内容</label><textarea id="import-json" placeholder='{"documents": [{"id": "POLICY-001", "title": "退款政策", …}]}' required="" rows="11" spellcheck="false"></textarea><details class="schema-help"><summary>查看资料字段</summary><p><code>id / title / category / source / version</code>：编号、标题、主题、来源、版本；<code>region</code>：all、mainland 或 overseas；<code>active</code>：true / false。</p><p><code>updated / effective_from / effective_to</code>：更新、生效及失效日期（YYYY-MM-DD），无失效日期填 null；<code>keywords / statements</code>：关键词与逐条政策原文的字符串数组。</p><p>编辑已有资料时，使用相同编号与新版本。旧版本将退出当前检索，历史记录保留。</p></details><div class="form-feedback" hidden="" id="import-feedback" role="status"></div><button class="button primary full" id="import-submit" type="submit">校验并导入</button></form></section>
+<section class="panel knowledge-panel"><div class="panel-title"><h2>资料清单 <span class="subtle" id="knowledge-count"></span></h2><button class="text-button" id="refresh-knowledge">刷新</button></div><div class="knowledge-toolbar"><label class="sr-only" for="knowledge-search">搜索资料</label><input id="knowledge-search" placeholder="搜索标题、编号或来源" type="search"/><label class="sr-only" for="knowledge-filter">资料状态</label><select id="knowledge-filter"><option value="all">全部状态</option><option value="active">当前有效</option><option value="inactive">已停用</option><option value="scheduled">待生效</option><option value="expired">已失效</option></select></div><div id="knowledge-list"><p class="evidence-note">正在读取资料…</p></div></section>
+</div>
+<section class="panel editor-panel" hidden="" id="knowledge-editor"><div class="panel-title"><h2 id="editor-heading">编辑新版本</h2><button class="text-button" id="close-editor">收起 ×</button></div><form id="knowledge-edit-form"><div class="form-grid"><div><label for="doc-id">资料编号</label><input id="doc-id" readonly="" required=""/></div><div><label for="doc-version">新版本号</label><input id="doc-version" maxlength="40" placeholder="例如 2.0" required=""/></div></div><label for="doc-title">标题</label><input id="doc-title" maxlength="200" required=""/><div class="form-grid"><div><label for="doc-category">主题标识</label><input id="doc-category" maxlength="80" required=""/></div><div><label for="doc-source">资料来源</label><input id="doc-source" maxlength="1000" placeholder="政策文件名、内部文档名或来源地址" required=""/></div></div><div class="form-grid three"><div><label for="doc-region">适用地区</label><select id="doc-region"><option value="all">全部地区</option><option value="mainland">中国大陆</option><option value="overseas">海外</option></select></div><div><label for="doc-updated">更新日期</label><input id="doc-updated" required="" type="date"/></div><div><label for="doc-active">生效状态</label><select id="doc-active"><option value="true">启用</option><option value="false">停用</option></select></div></div><div class="form-grid"><div><label for="doc-effective-from">生效日期</label><input id="doc-effective-from" required="" type="date"/></div><div><label for="doc-effective-to">失效日期 <span class="subtle">可留空</span></label><input id="doc-effective-to" type="date"/></div></div><label for="doc-keywords">关键词 <span class="subtle">每行一项</span></label><textarea id="doc-keywords" required="" rows="3"></textarea><label for="doc-statements">政策原文 <span class="subtle">每行一个完整条款，包含适用条件</span></label><textarea id="doc-statements" required="" rows="7"></textarea><div class="form-feedback" hidden="" id="edit-feedback" role="status"></div><div class="editor-footer"><p class="evidence-note">保存新版本后，旧版本退出检索；历史工单保留生成时的依据。</p><button class="button primary" id="save-version" type="submit">保存为新版本</button></div></form></section>
+</section>
+<section class="page" hidden="" id="page-about"><div class="intro"><h1>关于这个原型</h1><p>本机运行，使用合成政策；没有接入真实客服渠道。</p></div><div class="about-grid"><article class="panel"><h2>资料与版本</h2><p>结构化 JSON 导入、必填字段校验、地区与生效时间筛选、新版本替换、停用与历史回看，避免旧政策继续参与当前回复。</p></article><article class="panel"><h2>条款检索与检查</h2><p>从问题检索政策、检查适用条件，展示每条回复的原文、来源与版本。多问题同时检查覆盖情况；需要补充信息或人工判断时给出下一步。</p></article><article class="panel"><h2>审核记录</h2><p>保留人工编辑和处理轨迹，按来源不适用、遗漏条件、回答不完整等原因标记问题，并导出脱敏样例用于下一轮评测。</p></article><article class="panel"><h2>评测与模型模式</h2><p>固定合成问题集保留原关键词方案与改进方案的逐题结果。真实模型沿用现有证据选择接口；未配置密钥时使用规则模式，模型效果与业务收益尚未测量。</p><p class="subtle">内置资料为合成政策。适合本机验证；不执行账户、资金或消息发送操作。</p></article></div></section>
+</div>
+</main>
+</div>
+<dialog aria-labelledby="version-heading" id="version-dialog"><div class="dialog-heading"><div><div class="eyebrow">VERSION HISTORY</div><h2 id="version-heading">版本历史</h2></div><button aria-label="关闭版本历史" class="text-button" id="close-versions">关闭 ×</button></div><p class="evidence-note">历史版本仅供回看。当前检索使用最新且满足生效条件的资料。</p><div id="version-list"></div></dialog>
+<div aria-live="polite" class="toast" hidden="" id="toast" role="status"></div>
+<script defer="" src="/app.js"></script>
 </body></html>

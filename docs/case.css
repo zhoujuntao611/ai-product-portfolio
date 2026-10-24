@@ -1,4 +1,12 @@
 /* The four named sections are a reading outline, not a success-story template. */
+.case-page{--paper:#fff;--ink:#252a2d;--line:#e2e5e8;--muted:#5c6570;--accent:#365ac5;background:white}
+.case-panji,.case-climbai-notes{--accent:#3d654e;--tint:#e8ede1;--muted:#5e6a5c}
+.case-metricpilot{--accent:#59683e;--tint:#edf0e4;--muted:#636b58}
+.case-supportflow{--tint:#edf0f6}
+.case-page .identity{font-weight:500;font-size:16px}
+.case-page .reading-hero h1{font-size:clamp(38px,6vw,64px);letter-spacing:-1.5px}
+.case-page .case-lead{font-size:22px;color:var(--muted)}
+.case-page .case-wide-image>a{max-height:none}
 html { scroll-padding-top: 86px; }
 .back-link { display: inline-flex; min-height: 44px; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 20px; }
 .reading-hero { padding-block: 28px 34px; max-width: 900px; }

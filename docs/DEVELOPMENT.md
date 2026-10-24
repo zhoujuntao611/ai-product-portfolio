@@ -67,6 +67,7 @@ npm run build
 npm ci
 npx playwright install chromium
 npm run verify:site
+npm run check:workspaces
 ```
 
 Linux 若缺少浏览器系统依赖，使用 `npx playwright install --with-deps chromium`。本机也可以通过 `QA_BROWSER_PATH` 指定已有 Chromium 系浏览器的可执行文件；脚本默认使用 Playwright 安装的浏览器，不包含作者电脑路径。
@@ -76,6 +77,10 @@ Linux 若缺少浏览器系统依赖，使用 `npx playwright install --with-dep
 - 报告和截图写入被忽略的 `verification/site-current/`；GitHub Actions 上传检查产物，保留 14 天。截图供审阅，不使用跨平台逐像素基线，也不代表审美或用户效果已达标。
 
 检查只访问本地网页，不调用模型或用户数据库。新增页面后应同步扩展检查范围。
+
+`check:workspaces` 自动启动 SupportFlow 与 MetricPilot，使用临时数据库、合成工单和九笔订单 CSV。检查工单审核、政策历史、导出、CSV 映射、口径冲突零查询，以及两套界面的四档屏宽。退出时关闭服务并清理临时数据。截图和报告在 `verification/workspaces-current/`，也由 Actions 保存。需要刷新主页产品截图时运行 `node scripts/check-workspaces.mjs --update-previews`；普通检查不会改写发布截图。
+
+2026-10-24 的页面调整、参考站与采用理由见 [设计记录](DESIGN_NOTES.md)。
 
 ## 防止演示源码与发布文件分叉
 

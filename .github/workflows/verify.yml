@@ -80,11 +80,15 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check local links and Pages behavior
         run: npm run verify:site
+      - name: Check both local product interfaces
+        run: npm run check:workspaces
       - name: Save browser report and screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: portfolio-browser-checks
-          path: verification/site-current/
+          path: |
+            verification/site-current/
+            verification/workspaces-current/
           if-no-files-found: ignore
           retention-days: 14
