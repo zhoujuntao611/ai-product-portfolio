@@ -30,7 +30,7 @@ async function start(script,env={}){
 async function check(name,fn){await fn();report.checks.push({name,passed:true});console.log('PASS '+name);}
 async function pageFor(url){const p=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce',acceptDownloads:true});p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400&&!r.url().includes('/api/'))errors.push(`${r.status()} ${r.url()}`);});await p.goto(url);return p;}
 async function screenshot(p,name){if(await p.locator('#toast').count())await p.locator('#toast').waitFor({state:'hidden'});await p.evaluate(()=>{document.activeElement?.blur();scrollTo(0,0);});await p.screenshot({path:path.join(output,name+'.png')});}
-async function download(p,selector){const event=p.waitForEvent('download');await p.click(selector);const d=await event;return fs.readFile(await d.path(),'utf8');}
+async function download(p,selector){const [d]=await Promise.all([p.waitForEvent('download'),p.click(selector)]);return fs.readFile(await d.path(),'utf8');}
 async function fits(p,label){for(const width of [320,390,768,1440]){await p.setViewportSize({width,height:1000});await check(`${label} ${width}px`,async()=>{const layout=await p.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,over:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1).slice(0,12).map(e=>({tag:e.tagName,id:e.id,cls:e.className,right:e.getBoundingClientRect().right}))}));if(layout.scroll>width)await screenshot(p,label+'-overflow-'+width);assert.ok(layout.scroll<=width,JSON.stringify(layout));});}await screenshot(p,label);}
 try{
   const support=await start('projects/supportflow/verification/isolated_server.py');
@@ -44,6 +44,29 @@ try{
   await check('Invoice draft and exact supporting clauses',async()=>{const data=await ticket('invoice');assert.equal(data.result.status,'ready');await s.click('[data-tab=evidence]');assert.ok(await s.locator('#claims .claim-card').count()>0);assert.match(await s.locator('#claims').innerText(),/v1.4/);await s.click('[data-tab=draft]');});
   await fits(s,'supportflow');
   if(process.argv.includes('--update-previews'))await fs.copyFile(path.join(output,'supportflow.png'),path.join(root,'docs/assets/supportflow.png'));
+  await check('Draft references open the exact clause in place',async()=>{
+    await s.locator('.citation-link').first().click();
+    assert.equal(await s.locator('#citation-detail').isVisible(),true);
+    assert.match(await s.locator('#citation-detail').innerText(),/v1.4/);
+    assert.match(await s.locator('#citation-detail blockquote').innerText(),/发票/);
+    await s.locator('#citation-detail button').click();
+  });
+  await check('Reopening the same ticket retains unsaved edits',async()=>{
+    await s.fill('#draft',(await s.locator('#draft').inputValue())+'\n未保存的审核补充。');
+    await s.locator('.history-item').first().click();
+    assert.match(await s.locator('#draft').inputValue(),/未保存的审核补充/);
+    assert.match(await s.locator('#save-status').innerText(),/未保存/);
+  });
+  await check('Cancelling a ticket switch protects edits and notes',async()=>{
+    await s.fill('#review-note','需要保留的审核备注');
+    const dialog=s.waitForEvent('dialog');
+    const click=s.locator('.history-item').nth(1).click();
+    await(await dialog).dismiss();await click;
+    assert.match(await s.locator('#draft').inputValue(),/未保存的审核补充/);
+    assert.equal(await s.locator('#review-note').inputValue(),'需要保留的审核备注');
+    await s.click('#save-draft');
+    await s.waitForFunction(()=>document.querySelector('#save-status').textContent==='已保存');
+  });
   await check('Editing draft resets reviewer confirmation',async()=>{await s.check('#review-check');await s.fill('#draft',(await s.locator('#draft').inputValue())+'\n人工补充：请核对订单。');assert.equal(await s.locator('#review-check').isChecked(),false);assert.equal(await s.locator('#approve').isDisabled(),true);});
   await check('Save, approve and reopen preserved ticket',async()=>{await s.click('#save-draft');await s.waitForFunction(()=>document.querySelector('#toast').textContent.includes('编辑与问题标记已保存'));await s.check('#review-check');await s.click('#approve');await s.waitForFunction(()=>document.querySelector('#state-label').textContent==='已批准');await s.locator('.history-item').first().click();await s.waitForFunction(()=>document.querySelector('#state-label').textContent==='已批准');assert.match(await s.locator('#draft').inputValue(),/人工补充/);assert.equal(await s.locator('#draft').getAttribute('readonly'),'');});
   await check('Draft export keeps source versions',async()=>{assert.match(await download(s,'#export-draft'),/v1.4/);});
@@ -74,7 +97,14 @@ try{
   await check('Report downloads retain provenance',async()=>{for(const id of ['#exportMd','#exportJson']){const value=await download(m,id);for(const term of ['source_hash','source_rows','refund_basis','23000'])assert.ok(value.includes(term));}});
   await m.locator('#queryEditor>summary').click();await m.fill('#start','');await m.fill('#end','');
   await check('Conflicting refund basis performs zero queries',async()=>{const r=await ask('2026年2月按退款发生日统计退款金额');assert.equal(r.status,'needs_clarification');assert.equal(r.queries.length,0);assert.equal(await m.locator('#queryEditor').evaluate(e=>e.open),true);});
-  await check('Changing basis produces CNY 120',async()=>{await m.selectOption('#refundBasis','refund_date');const r=await ask('2026年2月按退款发生日统计退款金额');assert.equal(r.report.totals.refund_cents,12000);});
+  await check('Clarification action changes basis without running a query',async()=>{
+    let requests=0;const handler=request=>{if(request.url()===metric+'/api/run')requests++;};m.on('request',handler);
+    await m.getByRole('button',{name:'将条件改为退款发生日'}).click();
+    assert.equal(await m.locator('#refundBasis').inputValue(),'refund_date');
+    assert.equal(await m.locator('#confirmContract').isChecked(),false);
+    assert.equal(requests,0);m.off('request',handler);
+  });
+  await check('Changing basis produces CNY 120',async()=>{const r=await ask('2026年2月按退款发生日统计退款金额');assert.equal(r.report.totals.refund_cents,12000);assert.match(await m.locator('#querySummary').innerText(),/退款按发生日/);});
   await check('Unsupported denominator is clarified',async()=>{const r=await ask('2026年1月退款金额占净收入比例');assert.equal(r.status,'needs_clarification');assert.equal(r.queries.length,0);});
   await m.locator('.nav-item[data-view=sources]').click();await m.locator('#sourceTable table').waitFor();await fits(m,'metricpilot-source');
   await m.locator('.nav-item[data-view=history]').click();await m.locator('.history-card').first().waitFor();await fits(m,'metricpilot-history');

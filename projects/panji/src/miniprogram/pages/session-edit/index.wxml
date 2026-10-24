@@ -1,5 +1,5 @@
 <view class="page editor-page">
-  <view class="page-title">{{edit ? '编辑训练' : '记录训练'}}</view><view class="subtitle">先记下来，细节可以慢慢补。</view>
+  <view class="page-title">{{edit ? '编辑训练' : '记录训练'}}</view><view class="subtitle">日期和岩馆必填，其余内容可稍后补充。</view>
   <view wx:if="{{error}}" class="error-box">{{error}}</view><view wx:if="{{loading}}" class="notice">正在准备记录…</view>
   <view wx:if="{{recovered}}" class="notice">已恢复未保存的草稿。</view>
   <view wx:if="{{projectHint}}" class="hint">{{projectHint}}</view>

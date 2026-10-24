@@ -20,7 +20,7 @@
 
 <div aria-label="处理流程" class="steps"><div class="current"><b>1</b>理解工单</div><i></i><div id="step-2"><b>2</b>检索与草稿</div><i></i><div id="step-3"><b>3</b>人工审核</div></div>
 <div class="workbench">
-<section class="panel input-panel"><div class="panel-title"><h2>客户问题</h2><span class="subtle">中文 / English</span></div>
+<section class="panel input-panel"><div class="panel-title"><h2>客户问题</h2><span class="subtle">客户原文</span></div>
 <form id="ticket-form">
 <label for="example">载入示例问题</label><select id="example"><option value="invoice">开票流程 · 有据可答</option><option value="refund">退款地区未知 · 需要澄清</option><option value="export">数据导出 · 限制与步骤</option><option value="webhook">Webhook 异常 · 技术问题</option><option value="impact">立即删除 · 转人工核验</option><option value="injection">越权指令 · 停止处理</option><option value="unknown">未覆盖的问题 · 补充资料</option></select>
 <label for="title">工单标题</label><input id="title" maxlength="100" required="" value="想申请发票，不知道在哪里操作"/>
@@ -38,7 +38,7 @@
 <div class="result-meta"><span id="result-engine"></span><span id="latency"></span></div>
 <div aria-live="polite" class="quality-summary" id="quality-summary"></div>
 <div class="tabs" role="tablist"><button aria-controls="tab-draft" aria-selected="true" class="tab active" data-tab="draft" role="tab">回复草稿</button><button aria-controls="tab-evidence" aria-selected="false" class="tab" data-tab="evidence" role="tab">检索证据 <span id="source-count"></span></button><button aria-controls="tab-audit" aria-selected="false" class="tab" data-tab="audit" role="tab">处理轨迹</button></div>
-<div class="tab-content" id="tab-draft" role="tabpanel"><div class="draft-body"><label class="sr-only" for="draft">回复草稿</label><textarea class="draft-editor" id="draft" maxlength="12000" rows="12"></textarea><div class="warning" hidden="" id="edit-warning">当前为人工编辑稿。依据检查对应生成时的原稿，请核对新增内容与引用。</div><div class="draft-note">引用格式：[文档编号 §条目编号]。点击“检索证据”核对原文与版本。</div><div class="draft-tools"><button class="button secondary" id="save-draft">保存编辑</button><button class="button secondary" id="copy-draft">复制草稿</button><button class="button secondary" id="export-draft">导出 Markdown</button></div>
+<div class="tab-content" id="tab-draft" role="tabpanel"><div class="draft-body"><label class="sr-only" for="draft">回复草稿</label><textarea class="draft-editor" id="draft" maxlength="12000" rows="12"></textarea><div class="warning" hidden="" id="edit-warning">当前为人工编辑稿。依据检查对应生成时的原稿，请核对新增内容与引用。</div><div class="draft-note">引用格式：[文档编号 §条目编号]。点击下方引用查看原文与版本。</div><div class="inline-citations" id="citation-links" aria-label="查看引用条款"></div><aside class="citation-detail" id="citation-detail" hidden></aside><div class="draft-save-state" id="save-status" role="status"></div><div class="draft-tools"><button class="button secondary" id="save-draft">保存编辑</button><button class="button secondary" id="copy-draft">复制草稿</button><button class="button secondary" id="export-draft">导出审核记录</button></div>
 
 </div><div class="review"><h3>人工审核</h3><fieldset class="review-reasons" id="review-reasons"><legend>问题标记 <span class="subtle">可多选，供下一轮改进使用</span></legend><label><input type="checkbox" value="source_not_applicable"/>来源不适用</label><label><input type="checkbox" value="missing_condition"/>遗漏条件</label><label><input type="checkbox" value="incomplete_answer"/>回答不完整</label><label><input type="checkbox" value="unsupported_claim"/>缺少依据</label><label><input type="checkbox" value="other"/>其他</label></fieldset><label class="sr-only" for="review-note">审核备注</label><input id="review-note" maxlength="1000" placeholder="补充审核备注（可选）"/><label class="checkbox-row"><input id="review-check" type="checkbox"/><span>我已检查事实、适用条件及引用依据。</span></label><div class="review-actions"><button class="button primary" disabled="" id="approve">批准并保存</button><button class="button secondary" id="escalate">转人工</button><button class="button ghost" id="reject">退回草稿</button></div><p class="subtle" id="review-help">审核结果与编辑记录保存在本地。</p></div></div>
 <div class="tab-content" hidden="" id="tab-evidence" role="tabpanel"><h3 class="section-label">生成草稿的逐条依据</h3><div id="claims"></div><h3 class="section-label">问题覆盖</h3><div id="coverage"></div><h3 class="section-label">检索到的资料</h3><div id="sources"></div></div>
@@ -59,7 +59,7 @@
 </div>
 </main>
 </div>
-<dialog aria-labelledby="version-heading" id="version-dialog"><div class="dialog-heading"><div><div class="eyebrow">VERSION HISTORY</div><h2 id="version-heading">版本历史</h2></div><button aria-label="关闭版本历史" class="text-button" id="close-versions">关闭 ×</button></div><p class="evidence-note">历史版本仅供回看。当前检索使用最新且满足生效条件的资料。</p><div id="version-list"></div></dialog>
+<dialog aria-labelledby="version-heading" id="version-dialog"><div class="dialog-heading"><div><h2 id="version-heading">版本历史</h2></div><button aria-label="关闭版本历史" class="text-button" id="close-versions">关闭 ×</button></div><p class="evidence-note">历史版本仅供回看。当前检索使用最新且满足生效条件的资料。</p><div id="version-list"></div></dialog>
 <div aria-live="polite" class="toast" hidden="" id="toast" role="status"></div>
 <script defer="" src="/app.js"></script>
 </body></html>

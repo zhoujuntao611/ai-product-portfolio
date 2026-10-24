@@ -1,4 +1,7 @@
 /* Inbox layout. Policy lifecycle components keep their existing base styles. */
+.draft-save-state{font-size:12px;color:#596776;margin:12px 0}.draft-save-state.unsaved{color:#8b591b}
+.inline-citations{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.citation-link{font:inherit;font-size:12px;min-height:44px;border:1px solid #d6ddeb;border-radius:4px;color:#3655a6;background:#fff;padding:4px 10px}.citation-link[aria-expanded=true]{background:#edf1fc;border-color:#9baedb}
+.citation-detail{background:#f7f9fd;border-left:2px solid #9baedb;padding:14px 16px;margin:12px 0;font-size:13px}.citation-detail strong{font-weight:600}.citation-detail blockquote{margin:10px 0;line-height:1.9}.citation-detail .text-button{padding:0}
 :root{--bg:#fff;--ink:#252932;--muted:#626874;--line:#e3e5e9;--accent:#365ac5;--accent-dark:#2846a5;--accent-tint:#f0f3fc;--nav:#f5f6f8;--radius:5px}
 body{font-size:14px;color:var(--ink)}
 .sidebar{width:204px;min-width:204px;background:var(--nav);color:var(--ink);padding:23px 14px;border-right:1px solid var(--line)}

@@ -4,8 +4,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff">
 <meta name="description" content="周俊涛的个人主页。攀迹、SupportFlow、MetricPilot，以及做这些项目时留下的记录。"><title>周俊涛 — 项目与记录</title>
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261024-studio" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261024-studio"><link rel="stylesheet" href="home.css?v=20261024-studio">
+<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261025" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=20261025"><link rel="stylesheet" href="home.css?v=20261025">
 </head>
 <body class="portfolio" id="top">
 <a class="skip-link" href="#main">跳到项目</a>
@@ -17,7 +17,7 @@
     <a href="#panji"><span>攀迹</span><span>微信小程序</span></a>
     <a href="#supportflow"><span>SupportFlow</span><span>客服工具</span></a>
     <a href="#metricpilot"><span>MetricPilot</span><span>订单分析</span></a>
-    <a href="#notes"><span>做项目时的记录</span><span aria-hidden="true">↓</span></a>
+    <a href="#notes"><span>开发记录</span><span aria-hidden="true">↓</span></a>
   </nav>
   <div class="personal-links"><a href="https://github.com/zhoujuntao611" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#colophon">项目资料</a></div><p class="rail-foot">北京 · 2026</p>
 </header>
@@ -25,31 +25,32 @@
   <div class="feed-heading" id="work"><h2>项目与记录</h2><span>更新于 2026.10</span></div>
   <article class="project-entry" id="panji">
     <div class="entry-heading"><h2><a href="panji/">攀迹</a></h2><span class="entry-type">微信小程序 · 开发中</span></div>
-    <p class="entry-description">最早做的是训练计划。后来改成微信小程序，主要做记录、存视频、回看同一条线路。现在最麻烦的还是视频：存在本机方便，但换机就接不上了。</p>
+    <p class="entry-description">记录到馆训练和每次线路尝试，关联视频，下次继续看。训练记录可存云端，视频保存在当前设备。</p>
     <a class="project-cover panji-cover" href="panji/" aria-label="查看攀迹项目">
-      <div class="panji-caption"><span>攀迹</span><p>训练记录<br>与线路回看</p></div>
-      <div class="phone-pair"><img src="assets/panji/quick-record.png" alt="快捷记录：复用训练安排，保存尝试" width="500" height="859" fetchpriority="high"><img src="assets/panji/route-project.png" alt="线路项目：同一条线路的尝试与视频" width="500" height="859"></div><span class="image-caption">开发预览 · 本机截图</span>
+      <div class="panji-caption"><span>训练记录</span><p>线路尝试<br>与视频回看</p></div>
+      <div class="phone-pair"><img src="assets/panji/quick-record.png" alt="训练表单：复用上次安排，填写日期与岩馆" width="500" height="859" fetchpriority="high"><img src="assets/panji/route-project.png" alt="线路详情：查看不同日期的尝试与卡点" width="500" height="859"></div><span class="image-caption">开发界面，使用合成记录</span>
     </a>
-    <div class="entry-bottom"><a class="case-link" href="panji/">记录、视频和线路怎么放在一起 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji" target="_blank" rel="noopener noreferrer">源码</a></div>
-    <p class="early-note" id="climbai">ClimbAI 是这条线的早期尝试，保留在这里：<a href="climbai-notes/">开发记录</a><a href="climbai/">浏览器演示 ↗</a></p>
+    <div class="entry-bottom"><a class="case-link" href="panji/">查看记录与回看流程 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji" target="_blank" rel="noopener noreferrer">源码</a></div>
   </article>
+  <div class="project-grid">
   <article class="project-entry" id="supportflow">
     <div class="entry-heading"><h2><a href="supportflow/">SupportFlow</a></h2><span class="entry-type">客服回复审核 · 本机原型</span></div>
-    <p class="entry-description">给客服起草回复的小工具。测试时，客户问退款多久到账，它却答了申请期限。我把检查改到了具体条款上，也留下了人工修改和退回草稿的入口。</p>
-    <a class="project-cover tool-cover support-cover" href="supportflow/" aria-label="查看 SupportFlow 项目"><img src="assets/supportflow.png?v=20261024-studio" alt="SupportFlow：左侧工单列表，中间客户问题，右侧回复草稿与人工审核" width="1440" height="1000" loading="lazy"></a>
-    <div class="entry-bottom"><a class="case-link" href="supportflow/">退款到账时间被答成了申请期限 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">源码</a></div>
+    <p class="entry-description">起草客服回复，逐条核对政策原文。曾把退款申请期限答成到账时间，后续增加了条款检查。</p>
+    <a class="project-cover tool-cover support-cover" href="supportflow/" aria-label="查看 SupportFlow 项目"><div class="cover-crop"><img src="assets/supportflow.png?v=20261025" alt="SupportFlow 局部：回复草稿、条款引用和人工审核" width="1440" height="1000" loading="lazy"></div></a>
+    <div class="entry-bottom"><a class="case-link" href="supportflow/">查看回复与依据 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">源码</a></div>
   </article>
   <article class="project-entry" id="metricpilot">
     <div class="entry-heading"><h2><a href="metricpilot/">MetricPilot</a></h2><span class="entry-type">订单 CSV 分析 · 本机原型</span></div>
-    <p class="entry-description">导入订单表，查收入、渠道和退款。同样九笔订单，退款算出来可以是 30 元，也可以是 120 元，取决于按哪个日期归属。所以界面里要先选日期口径，再开始计算。</p>
-    <a class="project-cover tool-cover metric-cover" href="metricpilot/" aria-label="查看 MetricPilot 项目"><img src="assets/metricpilot.png?v=20261024-studio" alt="MetricPilot：横向导航、查询条件和订单分析结果" width="1440" height="1000" loading="lazy"></a>
-    <div class="entry-bottom"><a class="case-link" href="metricpilot/">九笔订单里的两种退款金额 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/metricpilot" target="_blank" rel="noopener noreferrer">源码</a></div>
+    <p class="entry-description">导入订单 CSV，计算收入、渠道和退款。同一张九笔订单表，按两种日期口径得到 30 元和 120 元。</p>
+    <a class="project-cover tool-cover metric-cover" href="metricpilot/" aria-label="查看 MetricPilot 项目"><div class="cover-crop"><img src="assets/metricpilot.png?v=20261025" alt="MetricPilot 局部：净收入结果及退款计算口径" width="1440" height="1000" loading="lazy"></div></a>
+    <div class="entry-bottom"><a class="case-link" href="metricpilot/">查看两种退款口径 <span aria-hidden="true">↗</span></a><a class="source-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/metricpilot" target="_blank" rel="noopener noreferrer">源码</a></div>
   </article>
+  </div>
   <section class="working-notes" id="notes" aria-labelledby="notes-title">
-    <h2 id="notes-title">做项目时的记录</h2>
-    <a href="panji/#decisions"><span>视频暂时存在本机，换机怎么办？</span><span>攀迹 ↗</span></a>
-    <a href="supportflow/#limits"><span>模型和规则都答对了，还要接模型吗？</span><span>SupportFlow ↗</span></a>
-    <a href="metricpilot/#actions"><span>第一次修复，漏掉了五种分母表达</span><span>MetricPilot ↗</span></a>
+    <h2 id="notes-title">开发记录</h2>
+    <a href="panji/#decisions"><span>视频存储与换机限制</span><span>攀迹 ↗</span></a>
+    <a href="supportflow/#limits"><span>模型与规则对照</span><span>SupportFlow ↗</span></a>
+    <a href="metricpilot/#actions"><span>退款比例的分母校验</span><span>MetricPilot ↗</span></a>
   </section>
   <footer class="colophon" id="colophon">
     <h2>项目资料</h2><div class="colophon-body"><p>项目源码、产品文档与开发记录。</p><a href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>

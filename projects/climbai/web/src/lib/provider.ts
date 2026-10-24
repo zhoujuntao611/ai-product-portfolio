@@ -106,7 +106,7 @@ function createPlan(state: AppState, budget?: number): Plan {
   };
   const plan: Plan = {
     id: uid('plan'), version: Math.max(0, ...state.plans.map(x => x.version)) + 1, status: 'draft', title: `${focus} · 一周训练计划`, focus: p.focus, goal: p.goal,
-    provider: 'demo_rules', summary: `${p.sessions_per_week} 次到馆，每次 ${duration} 分钟。先建立可观察的训练过程，再根据反馈调整。`,
+    provider: 'demo_rules', summary: `${focus}，本周 ${p.sessions_per_week} 次到馆，每次 ${duration} 分钟。`,
     rationale: `依据你填写的「${focus}」重点、每周 ${p.sessions_per_week} 次和单次 ${p.available_minutes} 分钟预算，选择熟悉线路中的观察练习。当前依据主要来自自评。`,
     citations: knowledgeSources.filter(s => [sourceId, 'K05', 'K06', 'K08'].includes(s.id)), created_at: now(), profile_version: p.version,
     sessions: Array.from({ length: p.sessions_per_week }, (_, i) => ({
@@ -178,7 +178,7 @@ export class LocalProvider implements Provider {
         if (completed) return { ...clone(existing), status: completed.status };
         return { ...clone(generated[Math.min(index, generated.length - 1)]), id: existing.id, day: existing.day };
       });
-      proposed.summary = `已完成的训练事实保留，下一次未完成安排适配当前时间与状态。`;
+      proposed.summary = '已记录的训练不变，待训练的安排已更新，请确认。';
       proposed.status = 'draft';
       const nextSession = proposed.sessions.find(s => !state.logs.some(l => l.session_id === s.id));
       after = short ? `下一次调整为 ${nextSession?.duration_minutes ?? state.profile!.available_minutes} 分钟，保留一个主题重点。` : '保留时间预算，下一次仅选择熟悉的容易线路继续观察。';
@@ -188,7 +188,7 @@ export class LocalProvider implements Provider {
       id: uid('report'), session_id: sessionId, log_id: log.id, created_at: now(), provider: 'demo_rules',
       observations: [`本次训练独立记录 ${log.actual_minutes} 分钟。`, `完成情况：${input.completed ? '完成主要内容' : '部分完成或跳过'}；主观难度 ${input.difficulty}/5。`, `主要卡点：${issue}。`, ...(input.notes?.trim() ? [`你补充：${input.notes.trim()}`] : [])],
       hypotheses: pain ? ['现有信息不能判断不适的医学原因。'] : [short ? '本次未完成可能与可用时间有关，不能直接推断训练能力。' : high ? '任务范围与当前体验可能不匹配，仍需后续记录验证。' : '目前没有足够证据说明能力已经提高或下降。'],
-      summary: pain ? '先暂停，照顾今天的状态。' : short ? '调整时间，让下一次更容易执行。' : high ? '收窄任务，保留一次清晰观察。' : '保持节奏，把这次观察带到下一次。',
+      summary: pain ? '相关攀爬任务已暂停' : after,
       before: `${session.title}，${session.duration_minutes} 分钟。`, after, citations: plan.citations,
       adjustment: { id: uid('adjustment'), status: 'pending', reason, changes: [after], base_plan_version: currentVersion(state), proposed_plan: proposed },
     };

@@ -1,3 +1,19 @@
+# 2026-10-25 项目编排与界面文案
+
+主页继续使用白底和个人索引。攀迹保留重点展示，SupportFlow 与 MetricPilot 在桌面并排，手机端单列；两款工具的封面裁出操作局部。项目状态与必要说明使用至少 12px 字号。
+
+ClimbAI 的入口移到攀迹的演进段落，历史演示和复盘继续可访问。三个主项目提前展示视频入口、错误回复和退款口径的具体对照；正文按各自问题展开，相关实验的范围与待办集中记录。图片支持原页放大，原图链接在无脚本时仍可用。
+
+参考实际浏览的 Valerian（https://www.valerian.studio/）的主次作品编排、Edu Cabellos 的 Triggle 案例（https://www.educabellos.com/en/portfolio/triggle-hotels-dashboard-b2b-ux-case-study/）的前后对照。MotionSites Personal Showcase（https://motionsites.org/prompts/personal-showcase）的公开预览用于研究图文比例。21st.dev Hover Preview 和 Image Comparison Slider 用于交互选型参考，未复制其代码或使用付费提示词。
+
+工作台保留各自任务布局。SupportFlow 增加草稿未保存提示、切换保护和就地引用查看。MetricPilot 在折叠的查询条件旁显示口径摘要，日期冲突提供显式修改入口，修改后仍需用户确认。ClimbAI 去掉首页宣传横幅和口号，载入案例后先显示下一次训练；演示规则与模型模式标记保留。攀迹原生页面同步精简空状态和说明文案，没有修改存储或训练规则。
+
+方法参考 Anthropic frontend-design、Vercel web-design-guidelines 与 UI/UX Pro Max 的原始说明。选择以内容和操作反馈为主，没有添加逐区块入场、滚动接管、深浅色或中英文切换。图片采用现有合成记录截图，未伪造用户或业务效果。自托管中文字体已按新文案重新生成子集。
+
+验证使用本机浏览器、临时工单和合成订单，没有调用模型或修改用户训练数据。检查覆盖响应式、键盘放大与关闭、无脚本阅读及 ClimbAI 从案例进入训练。手机真机体验仍需另行验证。
+
+---
+
 # 2026-10-24 页面调整
 
 上一版的问题不止是颜色。个人主页仍然是介绍区加三张卡片；SupportFlow 和 MetricPilot 又复用了侧栏、大标题、步骤条、左右表单，实际任务的区别没有体现在页面里。
