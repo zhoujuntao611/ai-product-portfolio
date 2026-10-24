@@ -34,3 +34,8 @@ button:focus-visible,a:focus-visible,input:focus,select:focus,textarea:focus{out
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.button:active:not(:disabled){transform:none}}
 @media(max-width:800px){.steps{gap:6px;font-size:10px}.steps i{flex:1;width:auto;min-width:4px}}
 @media(max-width:480px){.sidebar nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.nav-item{min-width:0;padding:8px 4px;white-space:normal}.nav-item>span{display:none}}
+
+/* Keep supporting copy readable beside the working draft. */
+.workspace-pill small,.workspace-counts span,.workspace-counts small,.workspace-counts .date,.sidebar-heading,.history-item small,.sidebar-foot,.sidebar-foot small,.steps,.brand small{font-size:12px}.input-note,.privacy-note,.draft-note,.draft-save-state,.draft-tools .button,.quality-chip,.result-meta{font-size:12px;line-height:1.8}.intro>p{font-size:13px}.panel-title h2{font-size:15px}.nav-item{font-size:13px}
+
+#latency,.quality-version{display:none}

@@ -8,6 +8,6 @@ Upstream sources:
 
 License: SIL Open Font License 1.1. Complete upstream license notices are included beside the font files.
 
-The current website uses only Noto Sans SC, regenerated on 2026-10-25 from the visible text in the homepage and four static case pages, plus the image viewer labels and basic Latin. Its variable weight range is 100–900. The Noto Serif SC subset is retained from the previous design but is not requested by the current pages.
+The current website uses only Noto Sans SC, regenerated on 2026-10-25 from the visible text in the homepage and three static product pages, plus the image viewer labels and basic Latin. Its variable weight range is 100–900. The Noto Serif SC subset is retained from the previous design but is not requested by the current pages.
 
 Fonts are hosted in this repository and never require a runtime request to Google Fonts. When editing copy, regenerate the Sans subset from the official source TTF with FontTools; characters outside the subset use the declared system fallback. Update the font URL version in both the stylesheet and preload links when changing the subset.

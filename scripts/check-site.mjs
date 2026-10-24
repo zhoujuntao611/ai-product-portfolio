@@ -34,7 +34,7 @@ let browser;
 try {
   browser = await chromium.launch({headless:true,
     ...(process.env.QA_BROWSER_PATH ? {executablePath:process.env.QA_BROWSER_PATH} : {})});
-  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/', 'climbai-notes/']) {
+  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/']) {
     for (const width of [320, 390, 768, 1440]) {
       const page = await browser.newPage({viewport:{width, height:900}, reducedMotion:'reduce'});
       const errors = [];
@@ -68,6 +68,13 @@ try {
       assert.deepEqual(layout.failedFonts, []);
       assert.equal(await page.locator('h1').count(), 1);
       if (pathname) {
+        // Visitors see the product and its interface before optional development notes.
+        const preview = await page.locator('.product-preview').boundingBox();
+        const notes = await page.locator('#decisions').boundingBox();
+        assert.ok(preview.y < notes.y);
+        assert.ok(preview.y < 700, 'Product interface is reachable in the first viewport');
+        assert.equal(await page.locator('.development-notes details[open]').count(), 0);
+        assert.ok((await page.locator('.product-description').innerText()).length > 20);
         const sections = ['background', 'actions', 'decisions', 'limits'];
         assert.equal(await page.locator('.reading-section > h2').count(), 4);
         for (const id of sections) {
@@ -100,17 +107,27 @@ try {
           assert.equal(await page.locator(`#${id} .case-link`).getAttribute('href'), `${id}/`);
         }
       }
-      if (pathname === 'panji/') {
-        const summary = page.locator('.evidence-detail summary');
+      if (pathname) {
+        const summary = page.locator('.development-notes summary').first();
         await summary.focus();
         await page.keyboard.press('Enter');
-        assert.equal(await page.locator('.evidence-detail').evaluate(n => n.open), true);
-        assert.ok((await page.locator('.evidence-detail').innerText()).includes('174'));
+        assert.equal(await page.locator('.development-notes details').first().evaluate(n => n.open), true);
         await page.keyboard.press('Enter');
-        assert.equal(await page.locator('.evidence-detail').evaluate(n => n.open), false);
+        assert.equal(await page.locator('.development-notes details').first().evaluate(n => n.open), false);
       }
-      if (pathname && pathname !== 'climbai-notes/') {
-        const image = page.locator('.screen-gallery a,.case-wide-image a').first();
+      if (pathname && pathname !== 'panji/') {
+        const tabs = page.locator('.preview-tabs [role=tab]');
+        await tabs.first().focus();
+        await page.keyboard.press('ArrowRight');
+        assert.equal(await tabs.nth(1).getAttribute('aria-selected'), 'true');
+        assert.equal(await page.locator('#preview-panel-1').isVisible(), true);
+        await page.keyboard.press('End');
+        assert.equal(await tabs.nth(2).getAttribute('aria-selected'), 'true');
+        await page.keyboard.press('Home');
+        assert.equal(await tabs.first().getAttribute('aria-selected'), 'true');
+      }
+      if (pathname) {
+        const image = page.locator('.screen-gallery a,.preview-panel:not([hidden]) a').first();
         await image.focus();
         await page.keyboard.press('Enter');
         await page.locator('.image-viewer[open]').waitFor();
@@ -127,15 +144,13 @@ try {
     }
   }
   const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
-  for (const project of ['panji', 'supportflow', 'metricpilot', 'climbai-notes']) {
+  for (const project of ['panji', 'supportflow', 'metricpilot']) {
     await nojs.goto(base);
-    if (project === 'climbai-notes') {
-      await nojs.locator('#panji .case-link').click();
-      await nojs.locator('#background a[href="../climbai-notes/"]').click();
-    } else await nojs.locator(`#${project} .case-link`).click();
+    await nojs.locator(`#${project} .case-link`).click();
     await nojs.waitForURL(base + project + '/');
     assert.equal(await nojs.locator('h1').isVisible(), true);
-    assert.ok(await nojs.locator(`a[href*="/projects/${project === 'climbai-notes' ? 'climbai' : project}/docs/PRD.md"]`).count());
+    assert.ok(await nojs.locator(`a[href*="/projects/${project}/docs/PRD.md"]`).count());
+    if (project !== 'panji') assert.equal(await nojs.locator('.preview-panel:visible').count(), 3);
     await nojs.locator('.case-nav a[href="#limits"]').click();
     await nojs.waitForURL(base + project + '/#limits');
     assert.equal(await nojs.locator('#limits-title').isVisible(), true);
@@ -153,28 +168,14 @@ try {
   assert.equal(await motion.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior), 'auto');
   report.checks.push({page:'panji/', mode:'smooth scroll and reduced motion', passed:true});
   await motion.close();
-  const demo = await browser.newPage({viewport:{width:390, height:844}});
-  const demoErrors = [];
-  demo.on('pageerror', error => demoErrors.push(error.message));
-  await demo.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
-  await demo.goto(base + 'climbai/#knowledge', {waitUntil:'networkidle'});
-  assert.equal(await demo.getByTestId('knowledge-count').innerText(), '30 条');
-  await demo.getByTestId('knowledge-question').fill('第一次买攀岩鞋要看什么？');
-  await demo.getByTestId('knowledge-submit').click();
-  await demo.waitForFunction(() => document.querySelector('.answer-card')?.textContent.includes('K19'));
-  assert.equal(await demo.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-  assert.deepEqual(demoErrors, []);
-  report.checks.push({page:'climbai/#knowledge', mode:'local rules', passed:true});
-  await demo.goto(base + 'climbai/', {waitUntil:'networkidle'});
-  await demo.getByRole('button', {name:'体验模拟案例', exact:true}).click();
-  await demo.locator('.next-session').waitFor();
-  const task = await demo.locator('.next-session').boundingBox();
-  assert.ok(task.y < 700, 'Next training is visible without a marketing hero');
-  await demo.screenshot({path:path.join(output,'climbai-390.png'),fullPage:true});
-  await demo.setViewportSize({width:1440,height:1000});
-  await demo.screenshot({path:path.join(output,'climbai-1440.png'),fullPage:true});
-  report.checks.push({page:'climbai/', mode:'sample → next training', passed:true});
-  await demo.close();
+  const retired = await browser.newPage();
+  for (const slug of ['climbai/', 'climbai-notes/']) {
+    await retired.goto(base + slug, {waitUntil:'networkidle'});
+    await retired.waitForURL(base + 'panji/');
+    assert.equal(await retired.locator('h1').innerText(), '\u6500\u8ff9');
+    report.checks.push({page:slug, mode:'retired route redirects to Panji', passed:true});
+  }
+  await retired.close();
   report.passed = true;
 } catch (error) {
   report.passed = false;
