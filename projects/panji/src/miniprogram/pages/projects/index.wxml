@@ -1,17 +1,17 @@
 <view class="page">
-  <view class="eyebrow">一次次靠近</view><view class="row between"><view class="page-title">线路项目</view><button class="link" bindtap="add">＋ 新线路</button></view>
-  <view class="subtitle">把想继续爬的线留下，串起每次尝试。</view>
+  <view class="row between"><view class="page-title">线路项目</view><button class="link" bindtap="add">＋ 新线路</button></view>
+  <view class="subtitle">关联同一线路的尝试，查看历史记录和视频。</view>
   <view class="row between spaced"><text class="tiny">{{gymName}}</text><button wx:if="{{gymName !== '全部岩馆'}}" class="link" bindtap="allGyms">查看全部岩馆</button></view>
   <view class="chips project-tabs"><view class="chip {{status === 'active' ? 'active' : ''}}" data-status="active" bindtap="filter">下次继续</view><view class="chip {{status === 'completed' ? 'active' : ''}}" data-status="completed" bindtap="filter">已完成</view><view class="chip {{status === 'archived' ? 'active' : ''}}" data-status="archived" bindtap="filter">已归档</view></view>
   <view wx:if="{{error}}" class="error-box">{{error}}<button class="link" bindtap="reload">重试</button></view><view wx:if="{{loading}}" class="notice">正在读取线路…</view>
   <view wx:if="{{formOpen}}" class="card" id="project-form">
-    <view class="row between"><view class="card-title">想继续哪条线？</view><button class="link" bindtap="close" disabled="{{busy}}">取消</button></view>
+    <view class="row between"><view class="card-title">新建线路</view><button class="link" bindtap="close" disabled="{{busy}}">取消</button></view>
     <view class="label">岩馆 *</view><picker range="{{gyms}}" range-key="name" value="{{gymIndex}}" bindchange="gym"><view class="picker">{{gyms[gymIndex].name}}</view></picker>
     <view class="label">线路标识 *</view><input class="input" maxlength="80" value="{{form.routeLabel}}" data-field="routeLabel" bindinput="field" placeholder="例如：左侧大屋檐蓝线" />
     <view class="label">难度原标签</view><input class="input" maxlength="30" value="{{form.gradeLabel}}" data-field="gradeLabel" bindinput="field" placeholder="V3 / 蓝色，选填" />
     <view class="label">记住的卡点</view><textarea class="textarea project-notes" maxlength="1000" value="{{form.notes}}" data-field="notes" bindinput="field" placeholder="下次想尝试的脚点或动作，选填" />
     <view class="hint">同名线路可分别建立；项目不会自动合并。</view><button class="primary full-width spaced" bindtap="save" loading="{{busy}}" disabled="{{busy}}">加入项目</button>
   </view>
-  <view wx:if="{{!loading && !error && !projects.length && !formOpen}}" class="card empty"><view class="empty-mark">↗</view><view class="empty-title">{{status === 'active' ? '下一次，接着爬' : status === 'completed' ? '这里会留下你的突破' : '暂时放下的线路会在这里'}}</view><view class="empty-copy">{{status === 'active' ? '建一个线路项目，记录卡点和每次进展。' : '在项目详情中调整状态，历史尝试一直保留。'}}</view><button wx:if="{{status === 'active'}}" class="outline" bindtap="add">记下想爬的线</button></view>
+  <view wx:if="{{!loading && !error && !projects.length && !formOpen}}" class="card empty"><view class="empty-mark">↗</view><view class="empty-title">{{status === 'active' ? '暂无进行中的线路' : status === 'completed' ? '暂无已完成线路' : '暂无归档线路'}}</view><view class="empty-copy">{{status === 'active' ? '新建线路后，可以关联不同训练中的尝试。' : '在项目详情中调整状态，历史尝试一直保留。'}}</view><button wx:if="{{status === 'active'}}" class="outline" bindtap="add">新建线路</button></view>
   <view wx:for="{{projects}}" wx:key="_id" class="card project-card" data-id="{{item._id}}" bindtap="open"><view class="row between"><view class="card-title">{{item.routeLabel}}</view><text class="arrow">→</text></view><view class="muted">{{item.gymName}} · {{item.gradeLabel || '未填难度'}}</view><view class="project-counts"><text>{{item.sessionCount}} 次训练</text><text>{{item.attemptCount}} 次尝试</text><text wx:if="{{item.videoCount}}">{{item.videoCount}} 段视频</text></view><view wx:if="{{item.notes || item.lastNotes}}" class="project-preview">{{item.notes || item.lastNotes}}</view><view class="tiny spaced">{{item.lastDate ? '最近尝试 ' + item.lastDate : '还没有关联尝试'}}</view></view>
 </view><privacy-consent />

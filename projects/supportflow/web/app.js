@@ -1,5 +1,6 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
+let savedReview = '';
 let session = null, current = null, busy = false, knowledgeBusy = false, toastTimer = null, knowledge = null;
 const stateLabels = {DRAFT:'尚未审核', APPROVED_LOCAL:'已批准', ESCALATED:'已转人工', REJECTED:'已退回'};
 const reasonLabels = {source_not_applicable:'来源不适用',missing_condition:'遗漏条件',incomplete_answer:'回答不完整',unsupported_claim:'缺少依据',other:'其他'};
@@ -35,7 +36,28 @@ function sourceCard(source,archived=false){
  if(source.matches?.length)card.append(element('div','检索线索：'+source.matches.join('、'),'match'));
  return card;
 }
-async function refreshHistory(){const data=await api('/api/tickets');$('count-total').textContent=data.total;$('count-approved').textContent=data.approved;$('history').replaceChildren();if(!data.tickets.length){$('history').append(element('p','暂无本地工单','muted'));return;}data.tickets.forEach(ticket=>{const btn=element('button',undefined,'history-item'+(current?.id===ticket.id?' active':''));btn.dataset.ticketId=ticket.id;btn.append(element('strong',ticket.title),element('small',(stateLabels[ticket.state]||ticket.state)+' · '+fmtTime(ticket.created_at)));btn.addEventListener('click',async()=>{if(busy)return;try{render(await api('/api/tickets/'+ticket.id));navigate('desk');}catch(error){toast(error.message,true);}});$('history').append(btn);});}
+function reviewSnapshot(){return JSON.stringify({draft:$('draft').value,note:$('review-note').value,reasons:selectedReasons().sort()});}
+function hasUnsaved(){return !!current && current.state==='DRAFT' && !!savedReview && reviewSnapshot()!==savedReview;}
+function updateSaveStatus(){const dirty=hasUnsaved();$('save-status').textContent=current?(dirty?'有未保存的修改':'已保存'):'';$('save-status').classList.toggle('unsaved',dirty);}
+function canLeaveDraft(next='打开其他工单'){return !hasUnsaved()||window.confirm('草稿有未保存的修改。放弃修改并'+next+'？');}
+addEventListener('beforeunload',event=>{if(hasUnsaved()){event.preventDefault();event.returnValue='';}});
+function renderCitationLinks(result){
+ $('citation-links').replaceChildren();$('citation-detail').hidden=true;
+ for(const claim of result.claims||[]){
+  const button=element('button',claim.citation||claim.id,'citation-link');button.type='button';button.setAttribute('aria-controls','citation-detail');button.setAttribute('aria-expanded','false');
+  button.addEventListener('click',()=>{
+   const source=(result.sources||[]).find(item=>item.id===claim.source_id);
+   document.querySelectorAll('.citation-link').forEach(item=>item.setAttribute('aria-expanded',String(item===button)));
+   const detail=$('citation-detail');detail.replaceChildren();
+   detail.append(element('strong',(source?.title||'政策原文')+' · v'+(claim.source_version||source?.version||'—')));
+   detail.append(element('blockquote',claim.text||''));
+   detail.append(element('p',source?.source||'来源见检索证据','source-meta'));
+   const close=element('button','收起条款','text-button');close.type='button';close.addEventListener('click',()=>{detail.hidden=true;button.setAttribute('aria-expanded','false');button.focus();});detail.append(close);detail.hidden=false;
+  });
+  $('citation-links').append(button);
+ }
+}
+async function refreshHistory(){const data=await api('/api/tickets');$('count-total').textContent=data.total;$('count-approved').textContent=data.approved;$('history').replaceChildren();if(!data.tickets.length){$('history').append(element('p','暂无本地工单','muted'));return;}data.tickets.forEach(ticket=>{const btn=element('button',undefined,'history-item'+(current?.id===ticket.id?' active':''));btn.dataset.ticketId=ticket.id;btn.append(element('strong',ticket.title),element('small',(stateLabels[ticket.state]||ticket.state)+' · '+fmtTime(ticket.created_at)));btn.addEventListener('click',async()=>{if(busy)return;if(current?.id===ticket.id){navigate('desk');tab('draft');return;}if(!canLeaveDraft())return;try{render(await api('/api/tickets/'+ticket.id));navigate('desk');}catch(error){toast(error.message,true);}});$('history').append(btn);});}
 function selectedReasons(){return [...document.querySelectorAll('#review-reasons input:checked')].map(el=>el.value);}
 function reviewEligibility(){const ready=current?.state==='DRAFT';$('approve').disabled=busy||!ready||!current?.result.can_approve||!$('review-check').checked;['escalate','reject','save-draft'].forEach(id=>$(id).disabled=busy||!ready);$('draft').readOnly=busy||!ready;$('review-check').disabled=busy||!ready;$('review-note').disabled=busy||!ready;$('review-reasons').disabled=busy||!ready;$('review-help').textContent=!current?'审核结果与编辑记录保存在本地。':!ready?'审核已完成，可在处理轨迹中查看编辑与处理原因。':current.result.can_approve?'批准、转人工或退回时，会一并保存当前编辑和问题标记。':'请补充必要信息，或转人工核验；当前草稿不能直接批准。';}
 function renderQuality(result){
@@ -66,17 +88,17 @@ function renderQuality(result){
  if(result.next_actions?.length){const actions=element('div',undefined,'next-actions');actions.append(element('strong','下一步'));(Array.isArray(result.next_actions)?result.next_actions:[result.next_actions]).forEach(action=>actions.append(element('p',typeof action==='string'?action:action.label||action.question||JSON.stringify(action))));$('coverage').append(actions);}
 }
 function renderAudit(ticket){$('audit').replaceChildren();(ticket.audit||[]).forEach(entry=>{const box=element('div',undefined,'audit-item');box.append(element('strong',({DRAFT_CREATED:'生成草稿',DRAFT_SAVED:'保存编辑',DRAFT_EDITED:'保存编辑'}[entry.event]||stateLabels[entry.event]||entry.event)),element('p',fmtTime(entry.created_at)));const d=entry.details||{};if(d.source_ids)box.append(element('p','检索证据：'+(d.source_ids.join('、')||'无')));if('human_edited' in d)box.append(element('p',d.human_edited?'已保留人工编辑':'使用原始证据草稿'));if(d.reasons?.length)box.append(element('p','问题标记：'+d.reasons.map(reason=>reasonLabels[reason]||reason).join('、')));if(d.note)box.append(element('p','备注：'+d.note));if(d.draft){const detail=element('details');detail.append(element('summary','查看当时草稿'),element('pre',d.draft));box.append(detail);}if(d.validation?.errors?.length)box.append(element('p','依据检查：'+d.validation.errors.join('；')));if(d.content_hash)box.append(element('code','SHA-256 '+d.content_hash));$('audit').append(box);});}
-function render(ticket){current=ticket;const result=ticket.result;$('empty-state').hidden=true;$('result').hidden=false;$('ticket-id').textContent='#'+ticket.id;$('status-label').textContent=result.status_label;$('state-label').textContent=stateLabels[ticket.state]||ticket.state;$('status-box').className='status-box'+(result.status==='refused'?' danger':result.status==='ready'?'':' attention');$('reason').textContent=result.reason;$('result-engine').textContent=result.engine;$('latency').textContent='处理用时 '+result.latency_ms+' ms';$('source-count').textContent=result.sources.length;$('draft').value=ticket.current_draft??ticket.final_draft??result.draft;$('edit-warning').hidden=$('draft').value===result.draft;$('review-check').checked=false;$('review-note').value=ticket.review_note??[...(ticket.audit||[])].reverse().find(entry=>entry.details?.note!==undefined)?.details.note??'';document.querySelectorAll('#review-reasons input').forEach(el=>el.checked=(ticket.review_reasons||[]).includes(el.value));$('sources').replaceChildren();if(!result.sources.length)$('sources').append(element('p','没有匹配的有效资料。可前往知识库补充政策。','evidence-note'));result.sources.forEach(source=>$('sources').append(sourceCard(source)));renderQuality(result);renderAudit(ticket);$('step-2').classList.add('current');$('step-3').classList.toggle('current',ticket.state!=='DRAFT');reviewEligibility();tab('draft');refreshHistory().catch(error=>toast(error.message,true));}
+function render(ticket){current=ticket;const result=ticket.result;$('empty-state').hidden=true;$('result').hidden=false;$('ticket-id').textContent='#'+ticket.id;$('status-label').textContent=result.status_label;$('state-label').textContent=stateLabels[ticket.state]||ticket.state;$('status-box').className='status-box'+(result.status==='refused'?' danger':result.status==='ready'?'':' attention');$('reason').textContent=result.reason;$('result-engine').textContent=result.engine;$('latency').textContent='处理用时 '+result.latency_ms+' ms';$('source-count').textContent=result.sources.length;$('draft').value=ticket.current_draft??ticket.final_draft??result.draft;$('edit-warning').hidden=$('draft').value===result.draft;$('review-check').checked=false;$('review-note').value=ticket.review_note??[...(ticket.audit||[])].reverse().find(entry=>entry.details?.note!==undefined)?.details.note??'';document.querySelectorAll('#review-reasons input').forEach(el=>el.checked=(ticket.review_reasons||[]).includes(el.value));$('sources').replaceChildren();if(!result.sources.length)$('sources').append(element('p','没有匹配的有效资料。可前往知识库补充政策。','evidence-note'));result.sources.forEach(source=>$('sources').append(sourceCard(source)));renderQuality(result);renderAudit(ticket);$('step-2').classList.add('current');$('step-3').classList.toggle('current',ticket.state!=='DRAFT');savedReview=reviewSnapshot();updateSaveStatus();renderCitationLinks(result);reviewEligibility();tab('draft');refreshHistory().catch(error=>toast(error.message,true));}
 function setBusy(value){busy=value;$('generate').disabled=value;$('generate').textContent=value?'正在检索与检查依据…':'生成草稿';reviewEligibility();}
 function updateCount(){$('char-count').textContent=$('content').value.length+' / 4000';}
-$('ticket-form').addEventListener('submit',async event=>{event.preventDefault();if(busy)return;setBusy(true);try{render(await api('/api/tickets',{title:$('title').value,content:$('content').value,region:$('region').value,mode:$('engine').value}));toast('草稿已生成，请核对依据后审核。');}catch(error){toast(error.message,true);}finally{setBusy(false);}});
+$('ticket-form').addEventListener('submit',async event=>{event.preventDefault();if(busy||!canLeaveDraft('生成新草稿'))return;setBusy(true);try{render(await api('/api/tickets',{title:$('title').value,content:$('content').value,region:$('region').value,mode:$('engine').value}));toast('草稿已生成，请核对依据后审核。');}catch(error){toast(error.message,true);}finally{setBusy(false);}});
 document.querySelectorAll('.nav-item').forEach(el=>el.addEventListener('click',()=>navigate(el.dataset.page)));
 document.querySelectorAll('.tab').forEach(el=>el.addEventListener('click',()=>tab(el.dataset.tab)));
 $('content').addEventListener('input',updateCount);
 $('example').addEventListener('change',()=>{const sample=examples[$('example').value];$('title').value=sample.title;$('content').value=sample.content;$('region').value=sample.region;updateCount();});
 $('engine').addEventListener('change',()=>{$('engine-note').textContent=$('engine').value==='model'?'模型接收已做基础脱敏的问题与候选证据，选择原文条目后检查适用性与覆盖。':'按问题检索有效政策，组合原文依据，并检查地区、引用与问题覆盖。';$('mode-tag').textContent=$('engine').value==='model'?'模型模式 · 证据选择':'规则模式 · 本地工作区';});
 $('review-check').addEventListener('change',reviewEligibility);
-$('draft').addEventListener('input',()=>{$('edit-warning').hidden=$('draft').value===current.result.draft;$('review-check').checked=false;reviewEligibility();});
+$('draft').addEventListener('input',()=>{$('edit-warning').hidden=$('draft').value===current.result.draft;$('review-check').checked=false;updateSaveStatus();reviewEligibility();});
 async function review(action){if(busy||!current)return;const body={action,draft:$('draft').value,note:$('review-note').value,reasons:selectedReasons()};setBusy(true);try{render(await api('/api/tickets/'+current.id+'/review',body));toast({save:'编辑与问题标记已保存。',approve:'批准稿已保存。',escalate:'已转人工，当前编辑与处理原因已保留。',reject:'已退回，当前编辑与处理原因已保留。'}[action]);if(action!=='save')tab('audit');}catch(error){toast(error.message,true);}finally{setBusy(false);}}
 ['approve','escalate','reject'].forEach(action=>$(action).addEventListener('click',()=>review(action)));
 $('save-draft').addEventListener('click',()=>review('save'));
@@ -103,3 +125,6 @@ $('close-versions').addEventListener('click',()=>$('version-dialog').close());
 document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key==='Enter'&&document.activeElement?.closest('#ticket-form')){event.preventDefault();$('ticket-form').requestSubmit();}});
 async function initialize(){try{session=await api('/api/session');const option=$('engine').options[1];option.disabled=!session.model_configured;option.textContent=session.model_configured?'真实模型 · 证据选择':'真实模型（未配置）';await Promise.all([refreshKnowledge(),refreshHistory()]);updateCount();reviewEligibility();}catch(error){toast(error.message,true);$('generate').disabled=true;$('history').replaceChildren(element('p','读取失败，请刷新页面重试。','muted'));$('knowledge-list').replaceChildren(element('p',error.message,'evidence-note'));}}
 initialize();
+
+$('review-note').addEventListener('input',updateSaveStatus);
+document.querySelectorAll('#review-reasons input').forEach(input=>input.addEventListener('change',updateSaveStatus));

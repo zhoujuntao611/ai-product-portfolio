@@ -166,14 +166,34 @@ function citations(ids) {
   return (Array.isArray(ids)?ids:[ids]).filter(Boolean).map(id=>`<button type="button" class="citation" data-cite="${esc(id)}" aria-label="查看查询 ${esc(id)} 的筛选条件和原始结果">${esc(id)} ↗</button>`).join('');
 }
 function periodLabel(period) { return typeof period==='object'?JSON.stringify(period):String(period || ''); }
+function querySummary(run){
+ const periods=(run.plan?.periods||[]).map(period=>period.join(' 至 ')).join('；');
+ const basis={order_date:'退款按原订单日',refund_date:'退款按发生日'}[run.contract?.refund_basis]||'';
+ const cancelled={exclude:'排除取消订单',include:'包含取消订单'}[run.contract?.cancelled]||'';
+ $('#querySummary').textContent=[periods,basis,cancelled].filter(Boolean).join(' · ');
+}
+function offerRefundChoice(run){
+ if(!String(run.clarification||'').includes('问题中的退款日期归属'))return;
+ const question=run.question||'';
+ const requested=/按退款(?:发生)?(?:日期|日)|退款(?:按|归属(?:到)?|计入)(?:发生日|退款(?:发生)?(?:日期|日))/.test(question)?'refund_date':/按(?:原)?订单(?:日期|日)|按下单(?:日期|日)|退款(?:按|归属(?:到)?|计入)(?:原)?订单(?:日期|日)/.test(question)?'order_date':null;
+ if(!requested)return;
+ const label={order_date:'原订单日',refund_date:'退款发生日'};
+ const region=$('#clarificationState');
+ const context=document.createElement('p');context.className='conflict-context';context.textContent='问题要求：'+label[requested]+'；当前选择：'+(label[run.contract?.refund_basis]||'未选择')+'。';region.append(context);
+ const action=document.createElement('button');action.type='button';action.className='secondary';action.textContent='将条件改为'+label[requested];
+ action.disabled=requested==='refund_date'&&!dataset?.capabilities?.refund_dates;
+ if(action.disabled){const note=document.createElement('p');note.textContent='本表没有可用退款日期，请先补充字段或修改问题。';region.append(note);}
+ action.addEventListener('click',()=>{$('#refundBasis').value=requested;$('#confirmContract').checked=false;$('#queryEditor').open=true;context.textContent='已改为'+label[requested]+'。核对条件后重新确认并分析。';action.disabled=true;$('#refundBasis').focus();});region.append(action);
+}
 function renderRun(run) {
   currentRun=run;
+  querySummary(run);
   $('#queryEditor').open = run.status !== 'completed';
   for (const id of ['emptyState','loadingState','errorState','clarificationState','report']) $('#'+id).classList.add('hidden');
   if (run.status==='needs_clarification' || !run.report) {
     const clarification = typeof run.clarification==='object'?JSON.stringify(run.clarification):run.clarification;
     $('#clarificationState').innerHTML=`<span class="tag">需要确认</span><h2>查询已暂停</h2><p>${esc(clarification || '请补充明确的分析期间和指标分母。')}</p><p class="prompt-tip">修改问题或上方条件后，再次开始分析。本次未生成分析结论。</p>`;
-    $('#clarificationState').classList.remove('hidden'); return;
+    $('#clarificationState').classList.remove('hidden'); offerRefundChoice(run); return;
   }
   const r=run.report, totals=r.totals || {}, rows=r.rows || [], queries=run.queries || [], metric=r.metric || 'net_cents';
   const currency=run.dataset?.currency || dataset?.currency;

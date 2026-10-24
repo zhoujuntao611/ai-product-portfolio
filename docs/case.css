@@ -1,4 +1,4 @@
-/* The four named sections are a reading outline, not a success-story template. */
+/* Case pages use actual tasks and recorded changes as their visual focus. */
 .case-page{--paper:#fff;--ink:#252a2d;--line:#e2e5e8;--muted:#5c6570;--accent:#365ac5;background:white}
 .case-panji,.case-climbai-notes{--accent:#3d654e;--tint:#e8ede1;--muted:#5e6a5c}
 .case-metricpilot{--accent:#59683e;--tint:#edf0e4;--muted:#636b58}
@@ -7,6 +7,18 @@
 .case-page .reading-hero h1{font-size:clamp(38px,6vw,64px);letter-spacing:-1.5px}
 .case-page .case-lead{font-size:22px;color:var(--muted)}
 .case-page .case-wide-image>a{max-height:none}
+.case-example{max-width:900px;background:var(--tint);padding:26px 30px;margin-bottom:30px}
+.example-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.example-heading h2{font-size:19px;line-height:1.7;font-weight:500}.example-heading>p{font-size:12px;color:var(--muted)}
+.comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.comparison-part{min-width:0}.comparison-part+.comparison-part{border-left:1px solid var(--line);padding-left:28px}
+.comparison-part h3{font-size:13px;font-weight:500;color:var(--muted);margin-bottom:12px}
+.comparison-part p{font-size:14px;line-height:1.9;color:var(--muted)}
+.comparison-part .example-main,.comparison-part blockquote{font-size:20px;line-height:1.7;color:var(--ink);margin:0 0 12px}
+.comparison-part.current .example-main{color:var(--accent)}
+.comparison-part .example-amount{font-size:48px;line-height:1.2;letter-spacing:-1.5px;font-variant-numeric:tabular-nums;color:var(--ink);margin-bottom:14px}.example-amount span{font-size:26px}
+.task-sequence{display:flex;gap:30px;flex-wrap:wrap;margin:24px 0 0;padding:18px 0 0 20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.task-sequence li{padding-left:2px;margin-right:12px}
+.example-detail{border-top:1px solid var(--line);margin-top:22px;padding-top:8px;font-size:14px}.example-detail summary{min-height:44px;padding-block:9px}.example-detail p{margin-bottom:12px;line-height:1.9;color:var(--muted)}.example-detail a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
 html { scroll-padding-top: 86px; }
 .back-link { display: inline-flex; min-height: 44px; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 20px; }
 .reading-hero { padding-block: 28px 34px; max-width: 900px; }
@@ -29,6 +41,7 @@ html { scroll-padding-top: 86px; }
 .reading-section p + p { margin-top: 16px; }
 .reading-section p + h3 { margin-top: 26px; }
 .reading-section p a { text-decoration: underline; color: var(--ink); }
+.reading-section .case-wide-image{width:100%;padding:12px 12px 0;margin:24px 0 0}.reading-section .case-wide-image>a{max-height:none}
 .screen-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-top: 26px; }
 .screen-gallery a { display: block; padding: 4px; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; cursor: zoom-in; }
 .screen-gallery img { width: 100%; height: auto; border-radius: 5px; }
@@ -42,6 +55,8 @@ html { scroll-padding-top: 86px; }
 .evidence-links h2 { width: 122px; font-size: 14px; font-weight: 500; }
 .evidence-links a { min-height: 44px; display: flex; align-items: center; text-decoration: underline; font-size: 13px; }
 .next-project { max-width: 900px; padding-block: 18px 32px; }
+.image-viewer{width:min(1100px,94vw);max-width:94vw;max-height:92dvh;padding:0;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.image-viewer::backdrop{background:rgb(20 24 22 / .7)}.viewer-toolbar{display:flex;align-items:center;gap:20px;padding:10px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper)}.viewer-toolbar h2{font-size:15px;font-weight:500;margin-right:auto}.viewer-toolbar a,.viewer-toolbar button{font-size:13px;min-height:44px;display:inline-flex;align-items:center}.viewer-toolbar button{padding:0 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}.viewer-content{padding:16px;overflow:auto}.viewer-content img{width:auto;max-width:100%;height:auto;max-height:none;margin:auto}
 @media (max-width: 700px) {
   .reading-hero { padding-block: 20px 26px; }
   .back-link { margin-bottom: 12px; }
@@ -52,6 +67,7 @@ html { scroll-padding-top: 86px; }
   .case-wide-image { padding: 12px 12px 0; margin-bottom: 20px; }
   .case-wide-image > a { max-height: 230px; }
   .case-wide-image figcaption { font-size: 11px; padding-block: 10px; }
+  .case-example{padding:22px 20px;margin-bottom:22px}.comparison-grid{grid-template-columns:1fr;gap:22px}.comparison-part+.comparison-part{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.example-heading{margin-bottom:20px}.example-heading h2{font-size:18px}.comparison-part .example-main,.comparison-part blockquote{font-size:19px}.comparison-part .example-amount{font-size:40px}.amount-comparison{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.amount-comparison .comparison-part+.comparison-part{border-top:0;border-left:1px solid var(--line);padding:0 0 0 16px}.amount-comparison h3{font-size:12px}.amount-comparison p{font-size:13px}.amount-comparison .example-amount{font-size:34px}.example-amount span{font-size:20px}.task-sequence{display:block;padding-left:20px;margin-top:18px}.task-sequence li{margin:6px 0}.example-detail{font-size:14px}.case-wide-image figcaption{font-size:12px}
   .case-nav { justify-content: space-between; gap: 10px; min-height: 60px; }
   .case-nav a { font-size: 12px; }
   .reading-body { padding-block: 0 20px; }
@@ -59,7 +75,8 @@ html { scroll-padding-top: 86px; }
   .reading-section h2 { font-size: 18px; }
   .reading-section h3 { font-size: 17px; }
   .reading-section p { font-size: 15px; line-height: 1.95; }
-  .screen-gallery { gap: 9px; margin-top: 22px; }
+  .screen-gallery { display:flex;gap:16px;margin-top:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 6px 14px; }
+  .screen-gallery figure{flex:0 0 76%;scroll-snap-align:start}.screen-gallery a:focus-visible{outline-offset:2px}
   .screen-gallery a { padding: 2px; border-radius: 6px; }
   .screen-gallery figcaption { font-size: 11px; }
   .evidence-links { display: block; }

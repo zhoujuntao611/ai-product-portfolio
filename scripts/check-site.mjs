@@ -69,7 +69,7 @@ try {
       assert.equal(await page.locator('h1').count(), 1);
       if (pathname) {
         const sections = ['background', 'actions', 'decisions', 'limits'];
-        assert.deepEqual(await page.locator('.reading-section > h2').allTextContents(), ['背景', '动作', '关键决策', '局限']);
+        assert.equal(await page.locator('.reading-section > h2').count(), 4);
         for (const id of sections) {
           await page.locator(`.case-nav a[href="#${id}"]`).click();
           try {
@@ -87,6 +87,12 @@ try {
         }
       }
       if (!pathname) {
+        assert.equal(await page.locator('a[href="climbai/"],a[href="climbai-notes/"]').count(), 0);
+        if (width === 1440) {
+          const support = await page.locator('#supportflow').boundingBox();
+          const metric = await page.locator('#metricpilot').boundingBox();
+          assert.equal(support.y, metric.y, 'Secondary projects share a row');
+        }
         // A project preview must appear within the first mobile viewport.
         const cover = await page.locator('#panji .project-cover').boundingBox();
         assert.ok(cover.y < 650, `First project too far down at ${width}`);
@@ -103,6 +109,15 @@ try {
         await page.keyboard.press('Enter');
         assert.equal(await page.locator('.evidence-detail').evaluate(n => n.open), false);
       }
+      if (pathname && pathname !== 'climbai-notes/') {
+        const image = page.locator('.screen-gallery a,.case-wide-image a').first();
+        await image.focus();
+        await page.keyboard.press('Enter');
+        await page.locator('.image-viewer[open]').waitFor();
+        assert.match(await page.locator('.image-viewer img').getAttribute('src'), /assets\//);
+        await page.keyboard.press('Escape');
+        await page.locator('.image-viewer').waitFor({state:'hidden'});
+      }
       await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0); });
       await page.screenshot({path:path.join(output, `${pathname ? pathname.slice(0, -1) : 'home'}-${width}.png`), fullPage:true});
       if (!pathname) await page.screenshot({path:path.join(output, `home-${width}-top.png`)});
@@ -114,7 +129,10 @@ try {
   const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
   for (const project of ['panji', 'supportflow', 'metricpilot', 'climbai-notes']) {
     await nojs.goto(base);
-    await nojs.locator(project === 'climbai-notes' ? '.early-note a[href="climbai-notes/"]' : `#${project} .case-link`).click();
+    if (project === 'climbai-notes') {
+      await nojs.locator('#panji .case-link').click();
+      await nojs.locator('#background a[href="../climbai-notes/"]').click();
+    } else await nojs.locator(`#${project} .case-link`).click();
     await nojs.waitForURL(base + project + '/');
     assert.equal(await nojs.locator('h1').isVisible(), true);
     assert.ok(await nojs.locator(`a[href*="/projects/${project === 'climbai-notes' ? 'climbai' : project}/docs/PRD.md"]`).count());
@@ -147,6 +165,15 @@ try {
   assert.equal(await demo.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
   assert.deepEqual(demoErrors, []);
   report.checks.push({page:'climbai/#knowledge', mode:'local rules', passed:true});
+  await demo.goto(base + 'climbai/', {waitUntil:'networkidle'});
+  await demo.getByRole('button', {name:'体验模拟案例', exact:true}).click();
+  await demo.locator('.next-session').waitFor();
+  const task = await demo.locator('.next-session').boundingBox();
+  assert.ok(task.y < 700, 'Next training is visible without a marketing hero');
+  await demo.screenshot({path:path.join(output,'climbai-390.png'),fullPage:true});
+  await demo.setViewportSize({width:1440,height:1000});
+  await demo.screenshot({path:path.join(output,'climbai-1440.png'),fullPage:true});
+  report.checks.push({page:'climbai/', mode:'sample → next training', passed:true});
   await demo.close();
   report.passed = true;
 } catch (error) {

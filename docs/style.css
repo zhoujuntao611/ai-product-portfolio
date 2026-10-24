@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Portfolio Sans"; font-style: normal; font-weight: 100 900; font-display: swap;
-  src: url("assets/fonts/noto-sans-sc-subset.woff2?v=20261024-studio") format("woff2");
+  src: url("assets/fonts/noto-sans-sc-subset.woff2?v=20261025") format("woff2");
 }
 :root {
   --paper: #fcfcfa; --ink: #242522; --muted: #64665f; --accent: #b13e28;

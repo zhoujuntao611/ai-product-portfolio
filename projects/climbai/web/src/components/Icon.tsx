@@ -33,7 +33,7 @@ export function Icon({ name, size = 20, style, className = '' }: { name: string;
 }
 
 export function Brand({ compact = false }: { compact?: boolean }) {
-  return <div className="brand"><svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#153b33"/><path d="m12 46 19-31 20 31H39L31 31 22 46Z" fill="#dce8a4"/><circle cx="42" cy="16" r="4" fill="#dd9561"/></svg>{!compact && <div><strong>Climb<span>AI</span></strong><small>你的攀岩训练伙伴</small></div>}</div>;
+  return <div className="brand"><svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#153b33"/><path d="m12 46 19-31 20 31H39L31 31 22 46Z" fill="#dce8a4"/><circle cx="42" cy="16" r="4" fill="#dd9561"/></svg>{!compact && <div><strong>Climb<span>AI</span></strong><small>训练计划原型</small></div>}</div>;
 }
 
 export function ClimbingArt() {
