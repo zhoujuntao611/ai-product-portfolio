@@ -52,8 +52,6 @@ jobs:
       - name: Build ClimbAI frontend
         working-directory: projects/climbai
         run: npm run build
-      - name: Verify ClimbAI Pages copy matches this build
-        run: node scripts/check-climbai-build.mjs
       - name: Install Panji offline verification dependencies
         working-directory: projects/panji
         run: npm ci

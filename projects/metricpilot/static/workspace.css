@@ -38,3 +38,6 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,te
 #askForm{position:relative}#askForm>.sr-only{width:1px;left:0;top:0}
 .kpi-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.finding{background:transparent;border:0;border-radius:0;padding:5px 0}.result-header h2{color:#343d2c}
 @media(max-width:760px){.kpi-grid{grid-template-columns:1fr 1fr}}
+
+/* Plain labels and readable help around import and analysis. */
+.help,.panel-caption,.guide-item p,.guide-note,.page-heading p,.topbar,.engine-badge,.steps li,.upload-footer,.privacy,.form-section .help,.examples>span,.chart-caption,.kpi small{font-size:12px;line-height:1.8}.drop-zone>span{font-size:12px}.query-summary{line-height:1.8}

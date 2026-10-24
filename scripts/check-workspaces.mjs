@@ -41,7 +41,7 @@ try{
   await check('SupportFlow loads workspace stylesheet',async()=>{assert.equal(await s.locator('.sidebar').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(245, 246, 248)');});
   async function ticket(example){await s.selectOption('#example',example);const response=s.waitForResponse(r=>r.url()===support+'/api/tickets'&&r.request().method()==='POST');await s.click('#generate');const data=await(await response).json();await s.waitForFunction(id=>document.querySelector('#ticket-id').textContent==='#'+id,data.id);return data;}
   await check('Unknown region blocks approval',async()=>{const data=await ticket('refund');assert.equal(data.result.can_approve,false);assert.equal(await s.locator('#approve').isDisabled(),true);});
-  await check('Invoice draft and exact supporting clauses',async()=>{const data=await ticket('invoice');assert.equal(data.result.status,'ready');await s.click('[data-tab=evidence]');assert.ok(await s.locator('#claims .claim-card').count()>0);assert.match(await s.locator('#claims').innerText(),/v1.4/);await s.click('[data-tab=draft]');});
+  await check('Invoice draft and exact supporting clauses',async()=>{const data=await ticket('invoice');assert.equal(data.result.status,'ready');await s.click('[data-tab=evidence]');assert.ok(await s.locator('#claims .claim-card').count()>0);assert.match(await s.locator('#claims').innerText(),/v1.4/);if(process.argv.includes('--update-previews')){await screenshot(s,'supportflow-citations');await fs.copyFile(path.join(output,'supportflow-citations.png'),path.join(root,'docs/assets/supportflow-citations.png'));}await s.click('[data-tab=draft]');});
   await fits(s,'supportflow');
   if(process.argv.includes('--update-previews'))await fs.copyFile(path.join(output,'supportflow.png'),path.join(root,'docs/assets/supportflow.png'));
   await check('Draft references open the exact clause in place',async()=>{
@@ -73,11 +73,13 @@ try{
   await s.click('[data-page=knowledge]');
   await check('Policy search and version history still work',async()=>{await s.fill('#knowledge-search','KB-002');await s.locator('#knowledge-list .source-card').first().getByRole('button',{name:'版本历史'}).click();await s.locator('#version-list .source-card').first().waitFor();await s.click('#close-versions');});
   await fits(s,'supportflow-knowledge');
+  if(process.argv.includes('--update-previews'))await fs.copyFile(path.join(output,'supportflow-knowledge.png'),path.join(root,'docs/assets/supportflow-policy.png'));
   await s.click('[data-page=about]');await fits(s,'supportflow-about');
 
   const m=await pageFor(metric);
   await m.waitForFunction(()=>typeof csrfToken==='string'&&csrfToken.length>10);
   await fits(m,'metricpilot-import');
+  if(process.argv.includes('--update-previews'))await fs.copyFile(path.join(output,'metricpilot-import.png'),path.join(root,'docs/assets/metricpilot-import.png'));
   await check('CSV preview and explicit mapping decisions',async()=>{
     await m.locator('#csvFile').setInputFiles(path.join(root,'projects/metricpilot/tests/fixtures/hand-check-orders.csv'));
     await m.locator('#mappingFields select').first().waitFor();assert.match(await m.locator('#previewCaption').innerText(),/9/);
@@ -86,6 +88,7 @@ try{
     await m.selectOption('#amountUnit','minor');assert.equal(await m.locator('#commitImport').isDisabled(),true);await m.selectOption('#amountUnit','major');await m.click('#checkImport');await m.waitForFunction(()=>!document.querySelector('#commitImport').disabled);
   });
   await fits(m,'metricpilot-mapping');
+  if(process.argv.includes('--update-previews'))await fs.copyFile(path.join(output,'metricpilot-mapping.png'),path.join(root,'docs/assets/metricpilot-mapping.png'));
   await m.click('#commitImport');await m.locator('#analysisView').waitFor({state:'visible'});
   await fits(m,'metricpilot-query');
   await m.fill('#start','2026-01-01');await m.fill('#end','2026-01-31');await m.selectOption('#refundBasis','order_date');await m.selectOption('#cancelled','exclude');await m.fill('#cancelledValues','cancelled');

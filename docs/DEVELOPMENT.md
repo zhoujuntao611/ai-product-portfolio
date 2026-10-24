@@ -1,30 +1,25 @@
 # 运行、验证与维护
 
-本仓库包含三个主项目和一个保留的早期原型。各项目有独立依赖，根目录的 Node.js 依赖仅用于检查个人主页；安装它们不会安装全部项目或连接模型服务。
+网站展示三个项目：攀迹、SupportFlow 和 MetricPilot。项目依赖独立，主页只需静态服务。GitHub Pages 不运行 Python 后端。
 
-## 从哪里体验
+## 启动应用
 
-- SupportFlow：[运行说明](../projects/supportflow/README.md)。默认规则模式，只需 Python 3.10+。
-- 攀迹：[运行说明](../projects/panji/README.md)。先做 Node.js 本地检查；手机预览需微信开发者工具及自己的小程序账号，云端能力需自己的环境。
-- MetricPilot：[运行说明](../projects/metricpilot/README.md)。Python 本机应用，支持导入 CSV。
-- ClimbAI：[早期浏览器演示](https://zhoujuntao611.github.io/ai-product-portfolio/climbai/)无需安装；[完整运行说明](../projects/climbai/README.md)分别介绍前端与后端。
-
-Windows 下根目录的 `start-projects.cmd` 启动 SupportFlow 和 MetricPilot；`stop-projects.cmd` 关闭启动器创建的服务。这个入口不启动微信小程序或 ClimbAI 后端。
-
-其他系统可以在两个终端、仓库根目录分别执行：
+Windows 下使用根目录的 `start-projects.cmd` 启动 SupportFlow 和 MetricPilot，`stop-projects.cmd` 关闭启动器创建的服务。也可在两个终端、仓库根目录分别执行：
 
 ```sh
 python projects/supportflow/server.py
 python projects/metricpilot/app.py
 ```
 
-本机地址分别为 `http://127.0.0.1:8765`、`http://127.0.0.1:8766`。GitHub Pages 只提供静态网页，不运行 Python 后端。
+本机地址分别为 `http://127.0.0.1:8765`、`http://127.0.0.1:8766`。默认模式只需 Python，不要求模型密钥。更多选项见 [SupportFlow 说明](../projects/supportflow/README.md)和 [MetricPilot 说明](../projects/metricpilot/README.md)。
 
-## 项目检查
+攀迹需要微信开发者工具及自己的小程序账号；云端功能需要自己的环境。运行与部署方式见 [攀迹说明](../projects/panji/README.md)。当前未公开发布。
 
-以下命令分别在所示项目目录运行。它们使用合成数据或模拟服务，不要求模型密钥，不验证真实用户效果。评测脚本会更新本地报告及耗时，检查完成后先审阅差异，不将无关时间戳重新提交。
+## 工程检查
 
-SupportFlow，目录 `projects/supportflow`：
+这些检查使用合成数据或模拟服务，不调用真实模型，也不验证用户效果。部分脚本更新本地报告及耗时，提交前应审阅差异，不将无关时间戳重新提交。
+
+在 `projects/supportflow`：
 
 ```sh
 python -m unittest discover -s tests -v
@@ -32,7 +27,7 @@ python evaluate.py
 python verification/review_regression.py
 ```
 
-MetricPilot，目录 `projects/metricpilot`：
+在 `projects/metricpilot`：
 
 ```sh
 python evaluate.py
@@ -40,28 +35,18 @@ python evaluate_tasks.py
 python verification/replay_20261019.py
 ```
 
-攀迹，目录 `projects/panji`，需要 Node.js 22+：
+在 `projects/panji`，需要 Node.js 22+：
 
 ```sh
 npm ci
 npm run verify
 ```
 
-ClimbAI，目录 `projects/climbai`，建议 Python 3.11 虚拟环境及 Node.js 22+。先创建并激活自己的虚拟环境，再执行：
+历史范围见 [SupportFlow 开发记录](../projects/supportflow/docs/ITERATION_EVIDENCE.md)、[MetricPilot 修改记录](../projects/metricpilot/docs/ITERATION-20261019.md)和 [攀迹验证说明](../projects/panji/docs/EVIDENCE.md)。最新执行结果以 [Actions](https://github.com/zhoujuntao611/ai-product-portfolio/actions/workflows/verify.yml) 为准。
 
-```sh
-python -m pip install -r requirements.txt
-python -m pytest tests/backend -q
-python -m backend.evaluate_knowledge --output verification/knowledge-retrieval-ci.json
-npm ci
-npm run build
-```
+## 网页与界面检查
 
-历史范围分别记录在 [SupportFlow 迭代](../projects/supportflow/docs/ITERATION_EVIDENCE.md)、[MetricPilot 迭代](../projects/metricpilot/docs/ITERATION-20261019.md)、[攀迹公开副本说明](../projects/panji/docs/EVIDENCE.md)和 [ClimbAI 验证](../projects/climbai/docs/VALIDATION.md)。最新执行是否成功以 [Actions](https://github.com/zhoujuntao611/ai-product-portfolio/actions/workflows/verify.yml) 为准，不将相互重叠的场景数量相加。
-
-## 个人主页与文档检查
-
-在仓库根目录，使用 Node.js 22+、Python 3.10+：
+在仓库根目录，需要 Node.js 22+、Python 3.10+：
 
 ```sh
 npm ci
@@ -70,37 +55,20 @@ npm run verify:site
 npm run check:workspaces
 ```
 
-Linux 若缺少浏览器系统依赖，使用 `npx playwright install --with-deps chromium`。本机也可以通过 `QA_BROWSER_PATH` 指定已有 Chromium 系浏览器的可执行文件；脚本默认使用 Playwright 安装的浏览器，不包含作者电脑路径。
+Linux 若缺少系统依赖，执行 `npx playwright install --with-deps chromium`。可以通过 `QA_BROWSER_PATH` 指定已有 Chromium 系浏览器；脚本不含作者电脑路径。
 
-- `npm run check:links`：离线检查 Git 跟踪及未忽略新文档的行内 Markdown 本地文件链接、静态 HTML 文件／锚点及指向本仓库主分支的源码链接。校验路径大小写；不访问外部 URL、不验证 Markdown 标题锚点。
-- `npm run check:site`：临时启动只绑定本机的静态服务，使用 `/ai-product-portfolio/` 路径模拟 Pages。检查首页与四篇复盘的 320／390／768／1440 宽度、图片、字体、页内锚点、脚本与资源错误、首屏项目入口、四部分目录跳转、当前阅读位置、键盘展开验证记录，以及无 JavaScript 时从首页进入案例并返回的完整路径，并运行 ClimbAI 的本地知识问答冒烟检查。
-- 报告和截图写入被忽略的 `verification/site-current/`；GitHub Actions 上传检查产物，保留 14 天。截图供审阅，不使用跨平台逐像素基线，也不代表审美或用户效果已达标。
+- `check:links` 检查本地文档、页面、锚点和本仓库源码链接，包含路径大小写；不请求外部网址。
+- `check:site` 在 Pages 项目路径下检查首页和三个项目页的 320／390／768／1440 宽度、图片、字体、阅读目录、截图放大、界面预览的键盘切换和无 JavaScript 阅读。另检查两个已撤下的旧路径能够跳转到攀迹。
+- `check:workspaces` 启动两个本地应用，使用临时数据库和合成数据，检查工单审核、政策版本、导出、CSV 导入和分析条件冲突。退出时关闭服务并清理临时数据。
 
-检查只访问本地网页，不调用模型或用户数据库。新增页面后应同步扩展检查范围。
+报告和截图位于被忽略的 `verification/site-current/` 与 `verification/workspaces-current/`；Actions 保留产物 14 天。需要刷新发布截图时执行 `node scripts/check-workspaces.mjs --update-previews`。普通检查不会覆盖网站截图。
 
-`check:workspaces` 自动启动 SupportFlow 与 MetricPilot，使用临时数据库、合成工单和九笔订单 CSV。检查工单审核、政策历史、导出、CSV 映射、口径冲突零查询，以及两套界面的四档屏宽。退出时关闭服务并清理临时数据。截图和报告在 `verification/workspaces-current/`，也由 Actions 保存。需要刷新主页产品截图时运行 `node scripts/check-workspaces.mjs --update-previews`；普通检查不会改写发布截图。
+## 发布内容
 
-2026-10-24 的页面调整、参考站与采用理由见 [设计记录](DESIGN_NOTES.md)。
+主页使用 `docs/index.html`、`docs/style.css` 和 `docs/home.css`；三个项目页位于 `docs/panji`、`docs/supportflow` 和 `docs/metricpilot`，共享 `docs/case.css`。
 
-## 防止演示源码与发布文件分叉
+`reading.js` 提示阅读位置，`interaction.js` 提供截图放大，`preview.js` 切换真实应用截图。无 JavaScript 时，正文、原图链接和全部界面截图仍可阅读。应用运行依赖与网站预览分开说明，按钮不伪装为在线应用入口。
 
-ClimbAI 前端源码位于 `projects/climbai/web`，构建输出为 `projects/climbai/dist`，Pages 使用已提交的 `docs/climbai`。
+ClimbAI 已撤下公开介绍和浏览器演示。两个旧网址只负责跳转到攀迹，静态演示资源已移除；源码与历史实验保留，不自动合并到攀迹。ClimbAI 的独立构建和后端检查仍验证归档源码，运行方式见 [原项目说明](../projects/climbai/README.md)。
 
-先在 ClimbAI 目录完成 `npm ci` 与 `npm run build`，再回到根目录执行：
-
-```sh
-npm run check:climbai-build
-```
-
-检查逐文件名和 SHA-256 比对两份产物。若有差异，审阅构建结果后同步到 `docs/climbai`，同时处理已经失效的旧哈希资源，并重新检查。脚本只报告差异，不自动删除或覆盖文件。Windows 和 Linux 工程 CI 都运行此检查。
-
-主页源码为 `docs/index.html`、`docs/style.css`；三个主项目复盘分别位于 `docs/panji`、`docs/supportflow`、`docs/metricpilot`，ClimbAI 早期复盘位于 `docs/climbai-notes`，共用 `docs/case.css`。首页和案例采用静态 HTML，阅读与导航不依赖 JavaScript；`docs/reading.js` 只为目录增加当前阅读位置提示；ClimbAI 仍使用其独立应用。若改字体或文案，注意[本地字体子集说明](assets/fonts/README.md)。
-
-## 维护约定
-
-- 攀岩方向以攀迹为主，ClimbAI 保留复现与兼容性维护，详见[项目演进](CLIMBING_EVOLUTION.md)。不合并用户数据或重新包装为两个独立主成果。
-- 发布前确认工程与网页检查通过，记录对应提交和截图日期。GitHub Pages 的发布成功与工程检查通过是不同状态，当前 Pages 发布没有以工程检查为强制前置条件。
-- 历史记录保留日期、范围及失败案例。模型实验见[原始实测索引](LIVE_PRACTICE_20261019.md)，需要自己的服务端配置，普通检查不执行这些脚本。
-- 不上传账号配置、密钥、真实记录或过期预览码。代码和第三方数据许可分别遵循各项目说明，本次没有改变授权范围。
-
-复盘全文另存于 [项目记录](PROJECT_NOTES.md)。修改页面文字时同步这份可复制文案；历史实验和验证文件保留当时的记录，不覆盖为新的展示文案。
+修改文案时同步 [项目介绍全文](PROJECT_NOTES.md)，并按 [字体说明](assets/fonts/README.md)更新自托管字体子集。历史实验报告保留原内容。发布前完成工程和网页检查，部署后确认正式页面与提交一致。
