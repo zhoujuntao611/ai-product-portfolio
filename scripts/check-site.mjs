@@ -100,6 +100,11 @@ try {
           const metric = await page.locator('#metricpilot').boundingBox();
           assert.equal(support.y, metric.y, 'Secondary projects share a row');
         }
+        for (const id of ['supportflow', 'metricpilot']) {
+          const title = await page.locator(`#${id} .entry-heading`).boundingBox();
+          const screen = await page.locator(`#${id} .project-cover`).boundingBox();
+          assert.ok(title.y < screen.y, 'Project purpose appears before its screenshot');
+        }
         // A project preview must appear within the first mobile viewport.
         const cover = await page.locator('#panji .project-cover').boundingBox();
         assert.ok(cover.y < 650, `First project too far down at ${width}`);
@@ -132,6 +137,19 @@ try {
         await page.keyboard.press('Enter');
         await page.locator('.image-viewer[open]').waitFor();
         assert.match(await page.locator('.image-viewer img').getAttribute('src'), /assets\//);
+        await page.locator('.image-viewer img').evaluate(image => image.decode());
+        await page.getByRole('button', {name:'原尺寸', exact:true}).click();
+        const zoom = await page.locator('.image-viewer img').evaluate(image => ({
+          width:image.getBoundingClientRect().width, natural:image.naturalWidth,
+          scroll:image.parentElement.scrollWidth, viewport:image.parentElement.clientWidth,
+        }));
+        assert.ok(Math.abs(zoom.width - zoom.natural) < 1, 'Original screenshot size is readable');
+        if (zoom.natural > zoom.viewport) assert.ok(zoom.scroll > zoom.viewport, 'Large screenshot can be panned');
+        if (width === 390 && pathname === 'supportflow/') {
+          await page.screenshot({path:path.join(output, 'supportflow-original-size-390.png')});
+        }
+        await page.getByRole('button', {name:'适应窗口', exact:true}).click();
+        assert.ok(await page.locator('.image-viewer img').evaluate(image => image.getBoundingClientRect().width <= image.parentElement.clientWidth));
         await page.keyboard.press('Escape');
         await page.locator('.image-viewer').waitFor({state:'hidden'});
       }

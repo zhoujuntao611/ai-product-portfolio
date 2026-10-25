@@ -67,7 +67,7 @@ Linux 若缺少系统依赖，执行 `npx playwright install --with-deps chromiu
 
 主页使用 `docs/index.html`、`docs/style.css` 和 `docs/home.css`；三个项目页位于 `docs/panji`、`docs/supportflow` 和 `docs/metricpilot`，共享 `docs/case.css`。
 
-`reading.js` 提示阅读位置，`interaction.js` 提供截图放大，`preview.js` 切换真实应用截图。无 JavaScript 时，正文、原图链接和全部界面截图仍可阅读。应用运行依赖与网站预览分开说明，按钮不伪装为在线应用入口。
+`reading.js` 提示阅读位置，`interaction.js` 提供截图放大、原尺寸查看和适应窗口切换，`preview.js` 切换真实应用截图。原尺寸下可以滚动查看细节。无 JavaScript 时，正文、原图链接和全部界面截图仍可阅读。应用运行依赖与网站预览分开说明，按钮不伪装为在线应用入口。
 
 ClimbAI 已撤下公开介绍和浏览器演示。两个旧网址只负责跳转到攀迹，静态演示资源已移除；源码与历史实验保留，不自动合并到攀迹。ClimbAI 的独立构建和后端检查仍验证归档源码，运行方式见 [原项目说明](../projects/climbai/README.md)。
 
