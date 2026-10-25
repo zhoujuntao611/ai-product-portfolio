@@ -19,6 +19,15 @@
 .phone-pair { height: 100%; display: flex; align-items: center; justify-content: center; gap: 26px; padding: 26px; }
 .phone-pair img { width: 43%; max-width: 180px; border: 3px solid white; border-radius: 11px; box-shadow: 0 5px 16px #243e2510; flex-shrink: 0; }
 .phone-pair img:last-child { transform: translateY(17px); }
+.oriel-entry { border-top: 1px solid var(--line); }
+.oriel-cover { background: #f5f2ec; padding: 24px 30px; }
+.oriel-flow-caption { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+.oriel-flow { list-style: none; margin: 0; padding: 0; }
+.oriel-flow li { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 14px; min-height: 42px; font-size: 15px; }
+.oriel-flow li + li { margin-top: 9px; }
+.oriel-flow-number { display: flex; align-items: center; justify-content: center; border: 1px solid #d7d4cb; border-radius: 50%; width: 28px; height: 28px; font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; position: relative; }
+.oriel-flow li:not(:last-child) .oriel-flow-number::after { content: ""; position: absolute; width: 1px; height: 21px; background: #d7d4cb; top: 28px; }
+.oriel-flow small { display: inline-block; font-size: 11px; color: var(--muted); margin-left: 10px; }
 .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 12px; }
 .compact .entry-heading { padding-top: 16px; border-top: 1px solid var(--line); margin-bottom: 20px; }
 .compact h3 { font-size: 27px; }
@@ -63,6 +72,10 @@
   .panji-cover { height: 286px; }
   .phone-pair { padding: 22px; gap: 24px; }
   .phone-pair img { width: 40%; max-width: 150px; }
+  .oriel-cover { padding: 20px; }
+  .oriel-flow-caption { margin-bottom: 12px; }
+  .oriel-flow li { font-size: 14px; gap: 12px; }
+  .oriel-flow small { font-size: 10px; margin-left: 7px; }
   .project-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 0; }
   .compact .entry-heading { padding-top: 23px; margin-bottom: 17px; }
   .compact h3 { font-size: 25px; }

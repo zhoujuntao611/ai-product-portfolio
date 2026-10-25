@@ -34,7 +34,7 @@ let browser;
 try {
   browser = await chromium.launch({headless:true,
     ...(process.env.QA_BROWSER_PATH ? {executablePath:process.env.QA_BROWSER_PATH} : {})});
-  for (const pathname of ['', 'panji/', 'supportflow/', 'metricpilot/']) {
+  for (const pathname of ['', 'panji/', 'oriel/', 'supportflow/', 'metricpilot/']) {
     for (const width of [320, 390, 768, 1440]) {
       const page = await browser.newPage({viewport:{width, height:900}, reducedMotion:'reduce'});
       const errors = [];
@@ -108,7 +108,7 @@ try {
         // A project preview must appear within the first mobile viewport.
         const cover = await page.locator('#panji .project-cover').boundingBox();
         assert.ok(cover.y < 650, `First project too far down at ${width}`);
-        for (const id of ['panji', 'supportflow', 'metricpilot']) {
+        for (const id of ['panji', 'oriel', 'supportflow', 'metricpilot']) {
           assert.equal(await page.locator(`#${id} .case-link`).getAttribute('href'), `${id}/`);
         }
       }
@@ -120,7 +120,7 @@ try {
         await page.keyboard.press('Enter');
         assert.equal(await page.locator('.development-notes details').first().evaluate(n => n.open), false);
       }
-      if (pathname && pathname !== 'panji/') {
+      if (pathname && pathname !== 'panji/' && pathname !== 'oriel/') {
         const tabs = page.locator('.preview-tabs [role=tab]');
         await tabs.first().focus();
         await page.keyboard.press('ArrowRight');
@@ -131,7 +131,7 @@ try {
         await page.keyboard.press('Home');
         assert.equal(await tabs.first().getAttribute('aria-selected'), 'true');
       }
-      if (pathname) {
+      if (pathname && pathname !== 'oriel/') {
         const image = page.locator('.screen-gallery a,.preview-panel:not([hidden]) a').first();
         await image.focus();
         await page.keyboard.press('Enter');
@@ -162,13 +162,14 @@ try {
     }
   }
   const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
-  for (const project of ['panji', 'supportflow', 'metricpilot']) {
+  for (const project of ['panji', 'oriel', 'supportflow', 'metricpilot']) {
     await nojs.goto(base);
     await nojs.locator(`#${project} .case-link`).click();
     await nojs.waitForURL(base + project + '/');
     assert.equal(await nojs.locator('h1').isVisible(), true);
-    assert.ok(await nojs.locator(`a[href*="/projects/${project}/docs/PRD.md"]`).count());
-    if (project !== 'panji') assert.equal(await nojs.locator('.preview-panel:visible').count(), 3);
+    const documentLink = project === 'oriel' ? '/projects/oriel/README.md' : `/projects/${project}/docs/PRD.md`;
+    assert.ok(await nojs.locator(`a[href*="${documentLink}"]`).count());
+    if (project !== 'panji' && project !== 'oriel') assert.equal(await nojs.locator('.preview-panel:visible').count(), 3);
     await nojs.locator('.case-nav a[href="#limits"]').click();
     await nojs.waitForURL(base + project + '/#limits');
     assert.equal(await nojs.locator('#limits-title').isVisible(), true);

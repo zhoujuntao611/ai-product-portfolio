@@ -1,6 +1,6 @@
 # 周俊涛的个人项目
 
-这里收录攀岩记录、客服回复和订单分析相关的个人项目，包括源码、产品文档和开发记录。开发借助 AI 编程工具完成。
+这里收录攀岩记录、开源维护、客服回复和订单分析相关的个人项目，包括产品文档、源码入口和开发记录。开发借助 AI 编程工具完成。
 
 [个人主页](https://zhoujuntao611.github.io/ai-product-portfolio/) · [运行与验证](docs/DEVELOPMENT.md)
 
@@ -11,6 +11,14 @@
 支持训练草稿、连续记录、线路历史和视频回看。当前为 0.2.2 开发预览，尚未公开发布；训练记录可存云端，视频与关联信息保存在当前设备。
 
 [查看项目](https://zhoujuntao611.github.io/ai-product-portfolio/panji/) · [源码与运行](projects/panji) · [验证范围](projects/panji/docs/EVIDENCE.md)
+
+## Oriel · 开源维护者 Agent
+
+面向飞书社区中的项目答疑与 Bug 反馈，通过 `/issue` 将有效问题沉淀为 Gitee Issue，再通过 `/fix` 启动修复与独立验证，交付带补丁和测试记录的 PR Candidate，由维护者审查并决定是否合入。
+
+Oriel 是面向维护者的产品层，Pico Runtime 提供任务调度、上下文、工具和评测底座。实现与评测位于外部 Pico 仓库的 `release/maintainer-profile` 分支；本仓库提供项目介绍与证据口径，不包含引擎源码。页面中的流程是示意，不是运行截图，实验结果也不代表线上社区采用效果。
+
+[查看项目](https://zhoujuntao611.github.io/ai-product-portfolio/oriel/) · [实现与评测](https://gitee.com/htxoffical/pico-harness/tree/release/maintainer-profile)
 
 ## SupportFlow · 客服回复助手
 
