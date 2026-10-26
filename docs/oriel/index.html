@@ -6,8 +6,8 @@
 <meta name="description" content="Oriel 是基于 Pico Runtime 的开源维护者 Agent：从飞书问题、Gitee Issue 到修复与独立验证，交付带补丁和测试证据的 PR Candidate。">
 <title>Oriel · 开源维护者 Agent｜周俊涛</title>
 <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261026a" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../style.css?v=20261026a">
+<link rel="preload" href="../assets/fonts/noto-sans-sc-subset.woff2?v=20261026b" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../style.css?v=20261026b">
 <link rel="stylesheet" href="../case.css?v=20261026a">
 <link rel="stylesheet" href="oriel.css?v=20261025oriel">
 <script defer src="../reading.js?v=20261025c"></script>
@@ -24,7 +24,7 @@
 <div class="product-heading">
 <p class="project-kind">开源维护者 Agent · 飞书 + Gitee</p>
 <h1>Oriel</h1>
-<p class="product-lead">把问题、补丁和验证证据交给维护者。</p>
+<p class="product-lead">在群里跟进 Bug，修复后整理补丁和测试记录。</p>
 <p class="product-description">社区成员在群里提问或反馈 Bug，维护者把有效问题转成 Issue，再启动修复与独立验证。Oriel 整理可审查的修复候选，维护者决定是否采纳。</p>
 <div class="project-actions"><a class="button primary" href="#preview">查看工作流程 ↓</a><a class="inline-link" href="https://gitee.com/htxoffical/pico-harness/tree/release/maintainer-profile" target="_blank" rel="noopener noreferrer">源码与接入 ↗</a></div>
 <p class="product-status"><span aria-hidden="true"></span>维护者 MVP · 基于 Pico Runtime · 当前页面为项目介绍</p>
@@ -46,15 +46,15 @@
 <div class="container reading-body">
 <section class="reading-section" id="background" aria-labelledby="background-title">
 <h2 id="background-title">维护者凭什么相信补丁修好了问题？</h2>
-<p class="section-intro">重复答疑占用时间，群聊反馈又容易缺少环境和复现步骤。即使 AI 给出代码，维护者仍要重新整理问题、检查补丁、确认测试。产品把这些环节连起来，让审查有据可依。</p>
+<p class="section-intro">重复答疑占用时间，群聊反馈又容易缺少环境和复现步骤。即使 AI 给出代码，维护者仍要重新整理问题、检查补丁、确认测试。Oriel 把问题、补丁和测试记录整理在一起，方便维护者检查。</p>
 <ol class="usage-flow">
 <li><span class="step-number">01</span><h3>成员留在熟悉的群聊里</h3><p>直接提问或描述问题。有效反馈由维护者通过 <code>/issue</code> 沉淀到固定 Gitee 仓库，关联原始消息，重复提交按来源去重。</p></li>
 <li><span class="step-number">02</span><h3>修复任务有固定起点</h3><p>维护者使用 <code>/fix</code> 触发任务，重新读取 Issue，锁定 Base Revision 和验收命令；同一 Issue 正在处理时，不重复启动修复。</p></li>
-<li><span class="step-number">03</span><h3>进度与结果回到原问题</h3><p>阶段进度回到飞书原消息或话题。通过验证才交付候选补丁；失败或受阻时交付诊断，保留人工判断空间。</p></li>
+<li><span class="step-number">03</span><h3>进度与结果回到原问题</h3><p>进度会回复到原来的飞书消息或话题。通过验证后提供候选补丁；失败或受阻时说明原因。</p></li>
 </ol>
 </section>
 <section class="reading-section" id="actions" aria-labelledby="actions-title">
-<h2 id="actions-title">修复和验收分开，结果带着证据交付。</h2>
+<h2 id="actions-title">在干净目录里重新应用补丁，再跑一遍测试。</h2>
 <div class="feature-list">
 <article><h3>两个独立工作目录</h3><p>Repair Worktree 负责修改。Verifier Worktree 从干净版本重新应用 Patch，再跑固定验收命令，减少修复环境残留对结果的影响。</p></article>
 <article><h3>一份可审查的候选包</h3><p>交付 <code>CANDIDATE.md</code> 与 <code>candidate.patch</code>，说明变更文件、基准版本、命令退出码和测试日志，方便维护者逐项核对。</p></article>
@@ -63,7 +63,7 @@
 <p class="scope-note">当前交付物是本地 PR Candidate。实际创建远程 PR、代码审查与合入由维护者完成；候选通过验收，也需要结合测试覆盖范围判断。</p>
 </section>
 <section class="reading-section development-section" id="decisions" aria-labelledby="decisions-title">
-<h2 id="decisions-title">用评测决定保留什么。</h2><div class="decision-summary"><h3>把验证证据交给审查者</h3><p>固定验收只覆盖已知条件。Agent 交付补丁和测试记录后，仍由维护者结合问题上下文审查，再决定是否创建 PR 与合入。</p></div>
+<h2 id="decisions-title">几次实验的结果</h2><div class="decision-summary"><h3>测试通过后仍需人工审查</h3><p>固定验收只覆盖已知条件。Agent 交付补丁和测试记录后，仍由维护者结合问题上下文审查，再决定是否创建 PR 与合入。</p></div>
 <div class="development-notes">
 <details><summary>Schema Token 少了 92.89%，为什么仍未得到正向结论？</summary><p>PicoBench 固定任务、模型、预算和 Verifier。作者提供的 Tool Disclosure 实验中，Schema Token 减少 92.89%，但通过数从 24 降到 23，延迟也上升，因此不认定为正向优化。成本需要结合验收成功数一起看。</p><p>这项结果来自作者提供的实验记录，公开仓库尚未附原始凭证。<a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/oriel/EVIDENCE.md" target="_blank" rel="noopener noreferrer">查看指标与证据范围 ↗</a></p></details>
 <details><summary>48 个任务通过数从 15 到 24，为什么 Skill 仍要人工激活？</summary><p>Runtime 侧的经验复用实验用版本管理、相关性选择、独立验证与失败回退约束候选 Skill。作者提供的受控 A/B 覆盖 6 类能力、48 个未见及干扰任务，通过数由 15/48 提升至 24/48，增加 18.75 个百分点；该集合中没有原本成功的任务在加入经验后失败。</p><p>混淆型负例仍有误选，因此候选保留人工确认。这是固定任务集合上的实验结果，原始凭证尚未公开，尚不能据此推断真实社区的修复成功率。把维护者 Candidate 进一步提炼为 Skill，仍属于后续接入计划。</p></details>

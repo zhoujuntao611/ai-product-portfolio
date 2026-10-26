@@ -36,7 +36,7 @@
 .tool-cover { background: #eff2f8; }
 .metric-cover { background: #f0f2e9; }
 .tool-cover img { width: 100%; }
-.work-note { font-size: 12px; color: var(--muted); margin-top: 28px; padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+.work-section { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
 .about-section { display: grid; grid-template-columns: 1fr 2.3fr; gap: 64px; padding: 40px 0 46px; scroll-margin-top: 30px; }
 .about-section h2 { font-size: 21px; line-height: 1.6; }
 .about-copy p { font-size: 15px; color: var(--muted); line-height: 2; }
@@ -81,7 +81,7 @@
   .compact h3 { font-size: 25px; }
   .compact .entry-description { min-height: 0; font-size: 14px; margin-top: 15px; }
   .compact .entry-copy .case-link { margin-top: 10px; }
-  .work-note { margin-top: 24px; padding-bottom: 28px; }
+  .work-section { padding-bottom: 28px; }
   .about-section { grid-template-columns: 1fr; gap: 15px; padding: 28px 0 30px; }
   .about-section h2 { font-size: 20px; }
   .about-copy p { font-size: 14px; }
