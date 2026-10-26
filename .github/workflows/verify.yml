@@ -93,8 +93,16 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - run: npm ci
-      - name: Install browser and system dependencies
-        run: npx playwright install --with-deps chromium
+      - name: Select preinstalled Chrome
+        shell: bash
+        run: |
+          browser_path="$(command -v google-chrome || command -v chromium || true)"
+          if [ -z "$browser_path" ]; then
+            echo "This runner image must include Chrome or Chromium." >&2
+            exit 1
+          fi
+          echo "QA_BROWSER_PATH=$browser_path" >> "$GITHUB_ENV"
+          "$browser_path" --version
       - name: Check local links and Pages behavior
         run: npm run verify:site
       - name: Check both local product interfaces
