@@ -1,94 +1,48 @@
-/* Keep the introduction short and the projects close to the first viewport. */
-.home-intro { padding: 52px 0 40px; max-width: 860px; }
-.home-intro h1 { font-size: clamp(32px, 4vw, 46px); line-height: 1.5; letter-spacing: -1.3px; }
-.intro-description { color: var(--muted); font-size: 17px; line-height: 1.9; margin-top: 12px; }
-.work-section, .project-entry { scroll-margin-top: 28px; }
-.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.section-heading h2 { font-size: 16px; }
-.section-heading > span { font-size: 12px; color: var(--muted); }
-.project-entry { min-width: 0; }
-.featured { display: grid; grid-template-columns: 1fr 1.32fr; gap: 64px; align-items: center; padding: 32px 0 40px; }
-.project-type { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-.project-entry h3 { font-size: 32px; letter-spacing: -.7px; line-height: 1.5; }
-.entry-lead { font-size: 20px; line-height: 1.65; margin-top: 8px; }
-.entry-description { font-size: 15px; color: var(--muted); line-height: 1.95; margin-top: 14px; max-width: 430px; }
-.entry-copy .case-link { margin-top: 16px; }
-.project-cover { display: flex; flex-direction: column; padding: 20px; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; transition: border-color .18s, box-shadow .18s; }
-.project-cover:hover { border-color: #a7b8ab; box-shadow: 0 5px 18px #273e2c0b; }
-.cover-caption { flex-shrink: 0; font-size: 12px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
-.project-cover img { border: 1px solid #dfe4e9; border-radius: 4px; box-shadow: 0 5px 14px #26394608; }
-.panji-cover { background: #eaf0e8; min-height: 354px; }
-.phone-pair { flex: 1; display: flex; align-items: center; justify-content: center; gap: 24px; }
-.phone-pair img { width: 43%; max-width: 155px; flex-shrink: 0; }
-.oriel-entry { border-top: 1px solid var(--line); }
-.oriel-cover { background: #f5f2ec; min-height: 354px; }
-.oriel-flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; flex: 1; align-content: center; }
-.oriel-flow li { display: grid; grid-template-columns: 28px minmax(0, 1fr); align-items: center; gap: 14px; min-height: 42px; font-size: 15px; }
-.oriel-flow-number { display: flex; align-items: center; justify-content: center; border: 1px solid #d7d4cb; border-radius: 50%; width: 28px; height: 28px; font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; position: relative; }
-.oriel-flow li:not(:last-child) .oriel-flow-number::after { content: ""; position: absolute; width: 1px; height: 21px; background: #d7d4cb; top: 28px; }
-.oriel-flow small { display: inline-block; font-size: 11px; color: var(--muted); margin-left: 10px; }
-.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 12px; }
-.compact .entry-heading { padding-top: 16px; border-top: 1px solid var(--line); margin-bottom: 20px; }
-.compact h3 { font-size: 27px; }
-.compact .entry-lead { font-size: 18px; margin-top: 4px; }
-.compact .entry-description { max-width: none; min-height: 3.9em; margin-top: 18px; }
-.compact .entry-copy .case-link { margin-top: 12px; }
-.tool-cover { background: #eff2f8; }
-.metric-cover { background: #f0f2e9; }
-.tool-cover img { width: 100%; }
-.work-section { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
-.about-section { display: grid; grid-template-columns: 1fr 2.3fr; gap: 64px; padding: 40px 0 46px; scroll-margin-top: 30px; }
-.about-section h2 { font-size: 21px; line-height: 1.6; }
-.about-copy p { font-size: 15px; color: var(--muted); line-height: 2; }
-.about-copy p + p { margin-top: 8px; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 0 28px; margin-top: 15px; }
-.email-link { min-width: 0; overflow-wrap: anywhere; }
-@media (max-width: 1000px) {
-  .featured { gap: 36px; grid-template-columns: 1fr 1.2fr; }
-  .panji-cover, .oriel-cover { min-height: 330px; }
-  .phone-pair { gap: 16px; }
-  .project-grid { gap: 28px; }
-  .about-section { gap: 36px; }
+.home-intro{padding:42px 0 34px;max-width:850px}
+.home-intro h1{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px 20px;font-size:30px;line-height:1.5;letter-spacing:-.6px}
+.home-intro h1 span{font-size:17px;letter-spacing:0;color:var(--accent);font-weight:500}
+.intro-positioning{font-size:34px;line-height:1.5;letter-spacing:-.7px;font-weight:550;margin-top:14px}
+.intro-description{color:var(--muted);font-size:15px;line-height:1.9;margin-top:14px;max-width:650px}
+.capabilities{list-style:none;padding:0;display:flex;gap:8px 20px;flex-wrap:wrap;margin:13px 0 0;font-size:12px;color:var(--muted)}
+.intro-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-top:20px}.intro-actions .button{padding:9px 16px;gap:12px}.intro-actions .inline-link{font-size:13px}
+.work-section,.project-entry{scroll-margin-top:24px}
+.section-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.section-heading h2{font-size:16px}.section-heading>span{font-size:12px;color:var(--muted)}
+.project-entry{min-width:0}.featured{display:grid;grid-template-columns:1.12fr 1fr;gap:60px;align-items:start;padding:32px 0 36px}
+.project-type{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.8}.featured-label{color:var(--accent);font-weight:550;margin-right:12px}
+.project-entry h3{font-size:31px;letter-spacing:-.6px;line-height:1.4}.entry-lead{font-size:19px;line-height:1.6;margin-top:5px}
+.entry-description{font-size:14px;line-height:1.95;color:var(--muted);margin-top:14px;max-width:480px}
+.entry-facts{margin:16px 0 0;display:grid;gap:12px;font-size:13px;line-height:1.9}
+.entry-facts>div{display:grid;grid-template-columns:4em minmax(0,1fr);gap:14px}.entry-facts dt{font-weight:550;color:var(--ink)}.entry-facts dd{margin:0;color:var(--muted)}
+.entry-facts a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;line-height:1.8}.entry-facts a:hover{text-decoration-color:var(--accent)}.entry-facts small{display:block;font-size:12px;line-height:1.85}
+.entry-links{display:flex;align-items:center;flex-wrap:wrap;gap:0 26px;margin-top:14px}.entry-links .case-link,.entry-links .inline-link{font-size:13px}
+.project-cover{display:flex;flex-direction:column;padding:18px;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:6px}.project-cover:hover{border-color:#9aafa0}
+.cover-caption{font-size:11px;line-height:1.8;color:var(--muted);margin-bottom:15px}.project-cover img{border:1px solid #dfe4e0;border-radius:3px}
+.oriel-cover{background:#f6f3ed;margin-top:4px;padding:24px 26px}
+.oriel-flow{list-style:none;padding:0;margin:5px 0 0;display:grid;gap:12px}.oriel-flow li{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;gap:16px;min-height:42px;font-size:15px}
+.oriel-flow-number{display:flex;align-items:center;justify-content:center;border:1px solid #d7d0c4;width:28px;height:28px;border-radius:50%;font-size:10px;color:var(--muted);position:relative;font-variant-numeric:tabular-nums}
+.oriel-flow li:not(:last-child) .oriel-flow-number:after{content:"";position:absolute;top:28px;height:27px;width:1px;background:#d7d0c4}
+.flow-footnote{font-size:12px;color:var(--muted);line-height:1.8;border-top:1px solid #e2dcd2;margin-top:22px;padding-top:16px}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:2px}
+.compact{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-direction:column}.compact h3{font-size:25px}.compact .entry-lead{font-size:16px;line-height:1.8;margin-top:5px}
+.compact .entry-heading{margin-bottom:17px}.compact .entry-description{min-height:5.85em}.compact .entry-links{margin-top:auto;padding-top:14px}.compact .entry-facts{gap:12px;margin-bottom:2px}.compact .entry-facts>div{display:block}.compact .entry-facts dt{margin-bottom:3px}
+.tool-cover{background:#eff2f8}.metric-cover{background:#f0f2e9}.tool-cover img{width:100%;aspect-ratio:1.44;object-fit:contain}
+.panji-cover{background:#eaf0e8}.phone-pair{display:flex;align-items:center;justify-content:center;gap:14px;aspect-ratio:1.44}.phone-pair img{width:38%;max-height:100%;object-fit:contain;border:0}
+.project-scope{font-size:12px;line-height:1.95;color:var(--muted);margin-top:30px;max-width:900px}.work-section{padding-bottom:34px;border-bottom:1px solid var(--line)}
+.about-section{display:grid;grid-template-columns:1fr 2.2fr;gap:50px;padding:36px 0 42px;scroll-margin-top:24px}.section-eyebrow{font-size:12px;line-height:1.8;color:var(--muted);margin-bottom:8px}.about-section h2{font-size:24px}
+.about-copy p{font-size:14px;line-height:2;color:var(--muted)}.about-copy p+p{margin-top:10px}.contact-links{display:flex;flex-wrap:wrap;gap:0 24px;margin-top:16px}.email-link{min-width:0;overflow-wrap:anywhere}
+@media(max-width:1000px){.featured{gap:32px;grid-template-columns:1.05fr 1fr}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.compact .entry-description{min-height:3.9em}.compact#panji{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.compact#panji .entry-heading{grid-column:1}.compact#panji .project-cover{grid-column:2;grid-row:1/span 4}.compact#panji .entry-description{margin-top:0}.compact#panji .phone-pair{aspect-ratio:auto;max-height:320px}.compact#panji .phone-pair img{max-height:280px;width:auto;max-width:43%}}
+@media(max-width:700px){
+ .home-intro{padding:24px 0 26px}.home-intro h1{font-size:29px;gap:6px 13px}.home-intro h1 span{font-size:15px}
+ .intro-positioning{font-size:23px;line-height:1.55;margin-top:12px;letter-spacing:-.3px}.desktop-break{display:none}.intro-description{font-size:14px;line-height:1.85;margin-top:10px}
+ .capabilities{margin-top:10px;font-size:11px;gap:6px 18px}.intro-actions{margin-top:15px;gap:5px 11px}.intro-actions .button{font-size:12px;min-height:44px;padding:8px 12px}.intro-actions .inline-link{font-size:12px}
+ .section-heading{gap:10px;padding-bottom:14px}.section-heading h2{font-size:14px}.section-heading>span{font-size:10px}
+ .featured{grid-template-columns:minmax(0,1fr);gap:0;padding:22px 0 28px}.featured .entry-copy{display:contents}.featured .entry-heading{order:0}.featured .project-cover{order:1;margin-top:16px}.featured .entry-description{order:2}.featured .entry-facts{order:3}.featured .entry-links{order:4}
+ .project-entry h3{font-size:28px}.entry-lead{font-size:17px}.entry-description{max-width:none;font-size:14px;margin-top:14px}.entry-facts{font-size:13px;gap:11px}.entry-facts>div{gap:12px}
+ .oriel-cover{padding:17px 20px}.cover-caption{margin-bottom:10px}.oriel-flow{gap:9px}.oriel-flow li{font-size:14px;min-height:36px;gap:13px}.oriel-flow li:not(:last-child) .oriel-flow-number:after{height:18px}.flow-footnote{margin-top:17px;padding-top:12px}
+ .project-grid{grid-template-columns:minmax(0,1fr);gap:28px}.compact,.compact#panji{display:flex;grid-column:auto;padding-top:22px;gap:0}.compact h3{font-size:25px}.compact .entry-heading{margin-bottom:15px}.compact .entry-description{min-height:0;margin-top:14px}.compact#panji .entry-description{margin-top:14px}
+ .compact .entry-facts>div{display:grid;grid-template-columns:4em minmax(0,1fr);gap:12px}.compact .entry-facts dt{margin:0}.compact .entry-links{margin-top:0}.compact .entry-facts{margin-top:14px}
+ .project-cover{padding:16px}.phone-pair{gap:24px;aspect-ratio:1.44}.compact#panji .phone-pair{aspect-ratio:1.44;max-height:none}.compact#panji .phone-pair img{width:38%;height:auto;max-height:100%;max-width:43%}
+ .project-scope{margin-top:25px;font-size:12px}.work-section{padding-bottom:28px}.about-section{grid-template-columns:1fr;gap:16px;padding:28px 0 30px}.about-section h2{font-size:22px}.section-eyebrow{margin-bottom:5px}.contact-links{gap:0 20px}
 }
-@media (max-width: 700px) {
-  .home-intro { padding: 30px 0 28px; }
-  .home-intro h1 { font-size: 32px; letter-spacing: -.8px; }
-  .intro-description { font-size: 15px; margin-top: 10px; }
-  .section-heading { padding-bottom: 14px; }
-  .section-heading h2 { font-size: 15px; }
-  .featured { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; padding: 24px 0 30px; }
-  .featured .entry-copy { display: contents; }
-  .featured .project-type { order: 0; }
-  .featured h3 { order: 1; }
-  .featured .entry-lead { order: 2; margin-bottom: 18px; }
-  .featured .project-cover { order: 3; }
-  .featured .entry-description { order: 4; margin-top: 15px; }
-  .featured .case-link { order: 5; justify-self: start; }
-  .project-entry h3 { font-size: 28px; }
-  .entry-lead { font-size: 19px; }
-  .entry-description { font-size: 14px; max-width: none; }
-  .entry-copy .case-link { margin-top: 12px; }
-  .project-type { font-size: 12px; margin-bottom: 5px; }
-  .project-cover { padding: 16px; }
-  .cover-caption { margin-bottom: 14px; }
-  .panji-cover, .oriel-cover { min-height: 0; }
-  .phone-pair { gap: 24px; }
-  .phone-pair img { width: 40%; max-width: 150px; }
-  .oriel-flow li { font-size: 14px; gap: 12px; }
-  .oriel-flow small { font-size: 10px; margin-left: 7px; }
-  .project-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 0; }
-  .compact .entry-heading { padding-top: 23px; margin-bottom: 17px; }
-  .compact h3 { font-size: 25px; }
-  .compact .entry-description { min-height: 0; font-size: 14px; margin-top: 15px; }
-  .compact .entry-copy .case-link { margin-top: 10px; }
-  .work-section { padding-bottom: 28px; }
-  .about-section { grid-template-columns: 1fr; gap: 15px; padding: 28px 0 30px; }
-  .about-section h2 { font-size: 20px; }
-  .about-copy p { font-size: 14px; }
-  .contact-links { gap: 0 24px; margin-top: 12px; }
-}
-@media (max-width: 360px) {
-  .home-intro h1 { font-size: 29px; }
-  .intro-description { font-size: 14px; }
-  .phone-pair { gap: 18px; }
-}
+@media(max-width:360px){.site-header nav{gap:11px}.home-intro h1{font-size:27px;gap:10px}.home-intro h1 span{font-size:14px}.intro-positioning{font-size:22px}.intro-actions{gap:4px 8px}.intro-actions .button{padding-inline:10px}.section-heading>span{max-width:115px;text-align:right}.entry-facts>div,.compact .entry-facts>div{gap:8px}}

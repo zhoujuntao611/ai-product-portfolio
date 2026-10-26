@@ -95,6 +95,9 @@ try {
       }
       if (!pathname) {
         assert.equal(await page.locator('a[href="climbai/"],a[href="climbai-notes/"]').count(), 0);
+        assert.deepEqual(await page.locator('.work-section article.project-entry').evaluateAll(nodes => nodes.map(node => node.id)),
+          ['oriel', 'supportflow', 'metricpilot', 'panji'], 'The lead project and supporting cases have a clear order');
+        assert.ok(await page.locator('.intro-actions a[href="profile/"]').isVisible());
         if (width === 1440) {
           const support = await page.locator('#supportflow').boundingBox();
           const metric = await page.locator('#metricpilot').boundingBox();
@@ -106,10 +109,11 @@ try {
           assert.ok(title.y < screen.y, 'Project purpose appears before its screenshot');
         }
         // A project preview must appear within the first mobile viewport.
-        const cover = await page.locator('#panji .project-cover').boundingBox();
-        assert.ok(cover.y < 650, `First project too far down at ${width}`);
+        const cover = await page.locator('#oriel .project-cover').boundingBox();
+        assert.ok(cover.y < 700, `Lead project too far down at ${width}`);
         for (const id of ['panji', 'oriel', 'supportflow', 'metricpilot']) {
           assert.equal(await page.locator(`#${id} .case-link`).getAttribute('href'), `${id}/`);
+          assert.equal(await page.locator(`#${id} .entry-facts > div`).count(), 3, 'Each project explains contribution, decision and evidence');
         }
       }
       if (pathname) {
@@ -161,7 +165,7 @@ try {
       await page.close();
     }
   }
-  const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}});
+  const nojs = await browser.newPage({javaScriptEnabled:false, viewport:{width:390, height:844}, reducedMotion:'reduce'});
   for (const project of ['panji', 'oriel', 'supportflow', 'metricpilot']) {
     await nojs.goto(base);
     await nojs.locator(`#${project} .case-link`).click();
@@ -173,12 +177,31 @@ try {
     await nojs.locator('.case-nav a[href="#limits"]').click();
     await nojs.waitForURL(base + project + '/#limits');
     assert.equal(await nojs.locator('#limits-title').isVisible(), true);
-    await nojs.getByRole('navigation').getByRole('link', {name:'全部项目'}).click();
+    await nojs.locator('.next-project a[href="../#work"]').click();
     await nojs.waitForURL(base + '#work');
     assert.equal(await nojs.locator('#work').isVisible(), true);
     report.checks.push({page:project, javascript:false, navigation:'home → case → home', passed:true});
   }
   await nojs.close();
+  const profile = await browser.newPage({viewport:{width:320, height:900}});
+  await profile.goto(base + 'profile/', {waitUntil:'networkidle'});
+  await profile.evaluate(() => document.fonts.ready);
+  assert.equal(await profile.locator('h1').count(), 1);
+  assert.equal(await profile.locator('.profile-project').count(), 4);
+  assert.equal(await profile.locator('#print-profile').isVisible(), true);
+  assert.ok(await profile.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+  // The button must invoke printing, rather than merely being visible.
+  await profile.evaluate(() => { window.print = () => { window.profilePrintRequested = true; }; });
+  await profile.locator('#print-profile').click();
+  await profile.waitForFunction(() => window.profilePrintRequested === true);
+  await profile.screenshot({path:path.join(output, 'profile-320.png'),fullPage:true});
+  const profileNoJs = await browser.newPage({javaScriptEnabled:false, viewport:{width:320,height:900}});
+  await profileNoJs.goto(base + 'profile/');
+  assert.equal(await profileNoJs.locator('#print-profile').isVisible(), false);
+  assert.equal(await profileNoJs.locator('.profile-project a[href="../oriel/"]').first().isVisible(), true);
+  await profileNoJs.close();
+  await profile.close();
+  report.checks.push({page:'profile/', mode:'mobile, print and no-JS navigation', passed:true});
   const motion = await browser.newPage({viewport:{width:768, height:900}, reducedMotion:'no-preference'});
   await motion.goto(base + 'panji/', {waitUntil:'networkidle'});
   await motion.locator('.case-nav a[href="#limits"]').click();
@@ -190,9 +213,11 @@ try {
   const retired = await browser.newPage();
   for (const slug of ['climbai/', 'climbai-notes/']) {
     await retired.goto(base + slug, {waitUntil:'networkidle'});
-    await retired.waitForURL(base + 'panji/');
-    assert.equal(await retired.locator('h1').innerText(), '\u6500\u8ff9');
-    report.checks.push({page:slug, mode:'retired route redirects to Panji', passed:true});
+    assert.equal(retired.url(), base + slug, 'The historical project must not silently become a different project');
+    assert.match(await retired.locator('h1').innerText(), /ClimbAI/);
+    assert.ok(await retired.locator('a[href="../panji/"]').isVisible());
+    assert.equal(await retired.locator('meta[http-equiv="refresh"]').count(), 0);
+    report.checks.push({page:slug, mode:'historical project distinguished from Panji', passed:true});
   }
   await retired.close();
   report.passed = true;

@@ -13,10 +13,19 @@
 .flow-outcomes i{display:inline-block;width:6px;height:6px;background:#52715c;border-radius:50%;margin:0 8px 1px 0}
 .human-review{font-size:12px;color:var(--ink);border-top:1px solid #e3ded4;margin-top:18px;padding:14px 0}
 .section-intro{max-width:800px;margin-bottom:27px}
+.case-oriel .role-note{margin-bottom:30px;max-width:800px;color:var(--ink)}
 .scope-note{margin-top:27px;padding:16px 20px;border-left:2px solid #ccb996;background:#faf8f4}
 .case-oriel code{font: .89em/1.7 Consolas,"SFMono-Regular",monospace;overflow-wrap:anywhere}
 .development-notes a{text-decoration:underline;color:var(--accent)}
 .development-notes details p+p{padding-top:0}
+.case-oriel .evidence-intro{padding:0;margin-bottom:25px}
+.experiment-results article{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+.experiment-results h3{font-size:17px}
+.experiment-results p{padding:0;margin-top:10px}
+.experiment-results p strong{font-weight:550;color:var(--ink)}
+.experiment-results p:last-child{margin-top:12px;font-size:13px}
+.case-oriel .appendix-title{margin:30px 0 12px;font-size:15px;color:var(--muted)}
+.case-oriel .development-section>h2{grid-row:1}
 .resource-copy .next-heading{margin-top:22px}
 @media(max-width:700px){
  .maintenance-flow{padding:21px 20px 0}
@@ -30,5 +39,7 @@
  .flow-outcomes{gap:8px 17px;padding-top:15px;font-size:11px}
  .human-review{font-size:11px;margin-top:15px;padding:13px 0}
  .section-intro{margin-bottom:22px}
+ .case-oriel .role-note{margin-bottom:24px}
+ .experiment-results article{padding-bottom:19px;margin-bottom:19px}
  .scope-note{padding:13px 15px;margin-top:22px}
 }
