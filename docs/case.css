@@ -18,6 +18,13 @@
 .gallery-hint { display: none; }
 .product-hero { padding-bottom: 28px; }
 .back-link { margin-bottom: 10px; }
+/* Keep the main design choice visible above optional development details. */
+.development-section { row-gap: 0; }
+.development-section > h2 { grid-column: 1; grid-row: 1 / span 2; }
+.decision-summary { grid-column: 2; margin-bottom: 20px; }
+.decision-summary h3 { font-size: 16px; }
+.decision-summary p { color: var(--ink); }
+.development-section > .development-notes { grid-column: 2; }
 @media (max-width: 600px) {
   .product-hero { padding-bottom: 22px; }
   .gallery-hint { display: block; font-size: 12px; color: var(--muted); margin-top: 10px; }
