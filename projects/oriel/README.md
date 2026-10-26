@@ -24,6 +24,16 @@ Oriel 是面向社区成员与维护者的产品名，基于 Pico Runtime。它�
 
 技术栈：Python、asyncio、Agent Runtime、Context Management、Tool Calling / MCP、Agent Evaluation、Tracing；长期记忆通过可选后端接口接入，当前发布不捆绑 Myna 实现。
 
+## 源码获取
+
+维护者功能位于 `release/maintainer-profile`。Gitee 网页偶尔要求验证码，可使用正常 Git 方式获取公开分支：
+
+```bash
+git clone --branch release/maintainer-profile --single-branch https://gitee.com/htxoffical/pico-harness.git
+```
+
+本文核对的源码快照为 `afdd62099b900a3c046dd96396268b7a8403d9c4`。安装和运行仍以上游接入文档为准。
+
 ## 运行与状态
 
 本目录保存作品集说明，不包含 Pico 引擎副本。安装、飞书配置和维护模式步骤以[维护者分支接入说明](https://gitee.com/htxoffical/pico-harness/blob/afdd62099b900a3c046dd96396268b7a8403d9c4/docs/onboarding/feishu.zh-CN.md)为准。开发借助 AI 编程工具；产品名与引擎名分开，不据此声称独立编写了全部底层代码。
