@@ -2,6 +2,9 @@
 *.cmd -text
 *.png -text
 
+# Keep the attributed upstream source snapshot byte-for-byte identical.
+projects/oriel/source/** -text
+
 # Compare the committed static demo with Vite output on every OS.
 docs/climbai/** text=auto eol=lf
 projects/climbai/web/** text=auto eol=lf

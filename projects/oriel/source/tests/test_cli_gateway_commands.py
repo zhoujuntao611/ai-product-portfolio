@@ -1,0 +1,931 @@
+"""CLI tests for ``pico gateway``.
+
+The ``gateway`` command spawns the agent loop, channel manager, cron service,
+and optional background services, then runs forever. Coverage includes startup
+smoke checks, configuration assembly, and deterministic shutdown ordering.
+"""
+
+from __future__ import annotations
+
+import asyncio
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import AsyncMock
+
+import pytest
+from typer.testing import CliRunner
+
+from pico.cli.commands import app
+from pico.config.loader import set_config_path
+
+runner = CliRunner()
+
+
+@pytest.fixture
+def tmp_config(tmp_path: Path) -> Path:
+    cfg = tmp_path / "config.json"
+    set_config_path(cfg)
+    yield cfg
+    set_config_path(None)  # type: ignore[arg-type]
+
+
+_CLEANUP_ORDER = [
+    "health_close",
+    "cron_stop",
+    "question_cancel",
+    "intake_quiesce",
+    "maintenance_close",
+    "spine_teardown",
+    "channel_stop_started",
+    "channel_stop_finished",
+    "agent_stop",
+    "runtime_close",
+]
+
+
+def _gateway_cleanup_dependencies(*, failures=()):
+    events: list[str] = []
+    errors = {name: RuntimeError(f"{name} failed") for name in failures}
+
+    def run_step(name: str) -> None:
+        events.append(name)
+        if error := errors.get(name):
+            raise error
+
+    async def quiesce_intake() -> None:
+        run_step("intake_quiesce")
+
+    async def stop_channels() -> None:
+        events.append("channel_stop_started")
+        events.append("channel_stop_finished")
+        if error := errors.get("channel_stop"):
+            raise error
+
+    async def teardown_spine() -> None:
+        run_step("spine_teardown")
+
+    async def close_runtime() -> None:
+        run_step("runtime_close")
+
+    dependencies = {
+        "health_server": SimpleNamespace(close=lambda: run_step("health_close")),
+        "cron": SimpleNamespace(stop=lambda: run_step("cron_stop")),
+        "question_broker": SimpleNamespace(cancel_all=lambda: run_step("question_cancel")),
+        "channels": SimpleNamespace(quiesce_intake=quiesce_intake, stop_all=stop_channels),
+        "maintenance": SimpleNamespace(close=lambda: run_step("maintenance_close")),
+        "gw_teardown": teardown_spine,
+        "agent": SimpleNamespace(stop=lambda: run_step("agent_stop")),
+        "runtime": SimpleNamespace(close=close_runtime),
+    }
+    return dependencies, events, errors
+
+
+def test_gateway_help_works() -> None:
+    """``pico gateway --help`` lists the documented options."""
+    r = runner.invoke(app, ["gateway", "--help"])
+    assert r.exit_code == 0
+    assert "Start the Pico gateway" in r.stdout
+    assert "--port" in r.stdout
+    assert "--workspace" in r.stdout
+    assert "--verbose" in r.stdout
+    assert "--config" in r.stdout
+
+
+def test_gateway_config_short_alias_removed() -> None:
+    """``-c`` no longer binds ``--config`` (UN-41); only the long form remains."""
+    bad = runner.invoke(app, ["gateway", "-c", "/tmp/whatever.json"])
+    assert bad.exit_code != 0
+
+    r = runner.invoke(app, ["gateway", "--help"])
+    assert r.exit_code == 0
+    assert "--config" in r.stdout
+
+
+def test_gateway_without_api_key_exits_with_error(tmp_config: Path) -> None:
+    """With no provider configured, gateway must exit non-zero — and crucially
+    must not raise a crash-class exception (NameError / AttributeError /
+    ImportError). Those would indicate a regression like a missing import.
+    """
+    from pico.config.loader import save_config
+    from pico.config.schema import Config
+
+    save_config(Config())
+
+    r = runner.invoke(app, ["gateway"])
+    if r.exception is not None:
+        assert not isinstance(r.exception, (NameError, AttributeError, ImportError)), (
+            f"Crash-class exception leaked through: {r.exception!r}"
+        )
+    assert r.exit_code != 0
+
+
+@pytest.mark.parametrize("channel_validation_fails", [False, True])
+def test_gateway_validates_channels_before_shared_runtime_assembly(
+    tmp_config: Path,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    channel_validation_fails: bool,
+) -> None:
+    from types import SimpleNamespace
+    from unittest.mock import MagicMock
+
+    from pico.cli import _runtime_assembly, gateway_commands
+    from pico.config.paths import RuntimePaths
+
+    workspace = tmp_path / "workspace"
+    workspace.mkdir()
+    config = MagicMock()
+    config.workspace_path = workspace
+    config.gateway.port = 18_790
+    config.gateway.log = SimpleNamespace(
+        rotation="10 MB",
+        retention=7,
+        level="INFO",
+        console_level="INFO",
+    )
+    for name in ("feishu", "qq", "wecom"):
+        getattr(config.channels, name).enabled = False
+    pico_config = MagicMock()
+    provider = object()
+    router = object()
+    cron_service = MagicMock()
+    cron_service.status.return_value = {"jobs": 0}
+    runtime = SimpleNamespace(
+        agent_loop=MagicMock(),
+        session_manager=object(),
+    )
+    calls: list[tuple[tuple, dict]] = []
+
+    monkeypatch.setattr(
+        gateway_commands,
+        "load_runtime_config",
+        lambda config_path, workspace_path: config,
+    )
+    monkeypatch.setattr(gateway_commands, "make_provider", lambda cfg: provider)
+    monkeypatch.setattr(
+        gateway_commands,
+        "print_deprecated_memory_window_notice",
+        lambda cfg: None,
+    )
+    monkeypatch.setattr(
+        gateway_commands,
+        "sync_workspace_templates",
+        lambda workspace_path: None,
+    )
+    monkeypatch.setattr(
+        "pico.cli._log_file.redirect_loguru_to_file",
+        lambda *args, **kwargs: tmp_path / "gateway.log",
+    )
+    monkeypatch.setattr(
+        "pico.cli._gateway_lock.acquire",
+        lambda **kwargs: object(),
+    )
+    monkeypatch.setattr(
+        "pico.config.pico.load_pico_config",
+        lambda: pico_config,
+    )
+    monkeypatch.setattr(
+        "pico.config.paths.get_cron_dir",
+        lambda: tmp_path / "cron",
+    )
+    monkeypatch.setattr(
+        "pico.proactive_engine.schedulers.cron.service.CronService",
+        lambda *args, **kwargs: cron_service,
+    )
+    monkeypatch.setattr(
+        gateway_commands,
+        "build_model_routing",
+        lambda cfg, initial_provider: (router, initial_provider),
+    )
+
+    def _assemble(*args, **kwargs):
+        calls.append((args, kwargs))
+        return runtime
+
+    monkeypatch.setattr(_runtime_assembly, "assemble_runtime", _assemble)
+
+    class _ChannelValidationFailure(RuntimeError):
+        pass
+
+    class _StopAfterAssembly(RuntimeError):
+        pass
+
+    channels = SimpleNamespace(enabled_channels=[], channels={})
+
+    def _build_channels(cfg):
+        if channel_validation_fails:
+            raise _ChannelValidationFailure
+        return channels
+
+    monkeypatch.setattr(
+        "pico.channels.manager.ChannelManager",
+        _build_channels,
+    )
+
+    def _stop_async_run(coro):
+        coro.close()
+        raise _StopAfterAssembly
+
+    monkeypatch.setattr(gateway_commands.asyncio, "run", _stop_async_run)
+
+    result = runner.invoke(
+        app,
+        ["gateway", "--config", str(tmp_config)],
+    )
+
+    expected_exception = _ChannelValidationFailure if channel_validation_fails else _StopAfterAssembly
+    assert isinstance(result.exception, expected_exception)
+    assert len(calls) == (0 if channel_validation_fails else 1)
+    if channel_validation_fails:
+        return
+    assert calls[0][0] == (config, pico_config)
+    assert calls[0][1] == {
+        "provider": provider,
+        "cron_service": cron_service,
+        "router": router,
+        "interactive": True,
+        "paths": RuntimePaths(
+            workspace=config.workspace_path,
+            state=config.workspace_path,
+        ),
+    }
+
+
+def test_gateway_refuses_second_instance(tmp_config: Path, monkeypatch) -> None:
+    """When the instance lock is already held, gateway exits 1 with a clear
+    message and never builds the agent/channel stack."""
+    from pico.config.loader import save_config
+    from pico.config.schema import Config
+
+    save_config(Config())
+
+    from pico.cli import _gateway_lock
+
+    def _raise(now: float):
+        raise _gateway_lock.GatewayAlreadyRunningError(
+            _gateway_lock.LockInfo(pid=4242, started_at=0.0, config_path=str(tmp_config))
+        )
+
+    monkeypatch.setattr(_gateway_lock, "acquire", _raise)
+
+    r = runner.invoke(app, ["gateway"])
+    assert r.exit_code == 1
+    assert "already running for this instance" in r.stdout
+    assert "4242" in r.stdout
+
+
+async def test_gateway_quiesces_intake_before_spine_and_stops_transports_afterward() -> None:
+    from pico.cli.gateway_commands import _cleanup_gateway
+
+    dependencies, events, _errors = _gateway_cleanup_dependencies()
+
+    await _cleanup_gateway(run_error=None, **dependencies)
+
+    assert events == _CLEANUP_ORDER
+
+
+async def test_gateway_attempts_every_cleanup_and_raises_the_first_failure() -> None:
+    from pico.cli.gateway_commands import _cleanup_gateway
+
+    failures = {
+        "health_close",
+        "cron_stop",
+        "question_cancel",
+        "intake_quiesce",
+        "channel_stop",
+        "maintenance_close",
+        "spine_teardown",
+        "agent_stop",
+        "runtime_close",
+    }
+    dependencies, events, errors = _gateway_cleanup_dependencies(failures=failures)
+
+    with pytest.raises(RuntimeError) as exc_info:
+        await _cleanup_gateway(run_error=None, **dependencies)
+
+    assert exc_info.value is errors["health_close"]
+    assert events == _CLEANUP_ORDER
+
+
+@pytest.mark.parametrize(
+    "run_error",
+    [RuntimeError("gateway run failed"), asyncio.CancelledError()],
+)
+async def test_gateway_preserves_run_failure_over_cleanup_failures(
+    run_error: BaseException,
+) -> None:
+    from pico.cli.gateway_commands import _cleanup_gateway
+
+    dependencies, events, _errors = _gateway_cleanup_dependencies(
+        failures={"health_close", "cron_stop", "runtime_close"}
+    )
+
+    with pytest.raises(BaseException) as exc_info:
+        await _cleanup_gateway(run_error=run_error, **dependencies)
+
+    assert exc_info.value is run_error
+    assert events == _CLEANUP_ORDER
+
+
+async def test_gateway_preserves_run_failure_over_cleanup_cancellation() -> None:
+    from pico.cli.gateway_commands import _cleanup_gateway
+
+    dependencies, events, _errors = _gateway_cleanup_dependencies()
+    run_error = RuntimeError("gateway run failed")
+
+    async def cancelled_quiesce() -> None:
+        events.append("intake_quiesce")
+        raise asyncio.CancelledError
+
+    dependencies["channels"].quiesce_intake = cancelled_quiesce
+
+    with pytest.raises(RuntimeError) as exc_info:
+        await _cleanup_gateway(run_error=run_error, **dependencies)
+
+    assert exc_info.value is run_error
+    assert events == _CLEANUP_ORDER
+
+
+async def test_gateway_cancellation_at_intake_barrier_finishes_barrier_before_spine() -> None:
+    from pico.channels.intake import Intake
+    from pico.channels.manager import ChannelManager
+    from pico.cli.gateway_commands import _cleanup_gateway
+
+    events: list[str] = []
+    barrier_started = asyncio.Event()
+    publish_cancelled = asyncio.Event()
+    release_publish = asyncio.Event()
+    intake = Intake("telegram", SimpleNamespace(allow_from=["*"]))
+
+    async def submit(req) -> None:
+        try:
+            await asyncio.Event().wait()
+        finally:
+            publish_cancelled.set()
+            await release_publish.wait()
+            events.append("publish_finished")
+
+    intake.set_submit(submit)
+    original_wait_idle = intake.wait_idle
+
+    async def observed_wait_idle() -> None:
+        barrier_started.set()
+        await original_wait_idle()
+
+    intake.wait_idle = observed_wait_idle  # type: ignore[method-assign]
+
+    class _Channel:
+        async def stop(self) -> None:
+            events.append("transport_stop")
+
+    channel = _Channel()
+    channel.intake = intake
+    channels = object.__new__(ChannelManager)
+    channels.channels = {"telegram": channel}
+    health_error = RuntimeError("health close failed")
+
+    def close_health() -> None:
+        events.append("health_close")
+        raise health_error
+
+    publish = asyncio.create_task(intake.publish("user", "c", "blocked"))
+    await asyncio.sleep(0)
+    cleanup = asyncio.create_task(
+        _cleanup_gateway(
+            run_error=None,
+            health_server=SimpleNamespace(close=close_health),
+            cron=SimpleNamespace(stop=lambda: events.append("cron_stop")),
+            question_broker=None,
+            channels=channels,
+            gw_teardown=lambda: events.append("spine_teardown"),
+            agent=SimpleNamespace(stop=lambda: events.append("agent_stop")),
+            runtime=SimpleNamespace(close=lambda: events.append("runtime_close")),
+        )
+    )
+    await barrier_started.wait()
+    cleanup.cancel()
+    await publish_cancelled.wait()
+    cleanup.cancel()
+    await asyncio.sleep(0)
+    assert "spine_teardown" not in events
+    release_publish.set()
+
+    try:
+        with pytest.raises(asyncio.CancelledError):
+            await cleanup
+    finally:
+        release_publish.set()
+        if not publish.done():
+            publish.cancel()
+        await asyncio.gather(publish, return_exceptions=True)
+
+    assert events.index("publish_finished") < events.index("spine_teardown")
+    assert events[-4:] == ["spine_teardown", "transport_stop", "agent_stop", "runtime_close"]
+
+
+async def test_maintenance_command_is_intercepted_before_the_shared_chat_lane(tmp_path: Path) -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.spine import ChatType, MediaOut, Origin, Source, Text, TurnRequest
+
+    submitted = []
+    delivered = []
+    report = tmp_path / "CANDIDATE.md"
+    patch = tmp_path / "candidate.patch"
+    report.write_text("report", encoding="utf-8")
+    patch.write_text("patch", encoding="utf-8")
+
+    async def deliver(event):
+        delivered.append(event)
+
+    class Maintenance:
+        async def handle(self, req, send):
+            assert req.text == "/fix #123"
+            await send("accepted")
+            await send("candidate ready", (report, patch))
+            return True
+
+        def is_maintainer(self, req):
+            return True
+
+    scheduler = SimpleNamespace(
+        submit=submitted.append,
+        has_inflight=lambda _cid: False,
+        cancel_conversation=lambda _cid: 0,
+    )
+    hub = SimpleNamespace(dispatch=deliver)
+    agent = SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=lambda _cid: None))
+    broker = SimpleNamespace(pending_req=lambda _cid: None)
+    dispatch = _build_inbound_dispatch(
+        scheduler=scheduler,
+        hub=hub,
+        agent=agent,
+        question_broker=broker,
+        maintenance=Maintenance(),
+    )
+    request = TurnRequest(
+        origin=Origin.USER,
+        source=Source("feishu", "oc_pico", "ou_owner", ChatType.GROUP),
+        text="/fix #123",
+    )
+
+    await dispatch(request)
+
+    assert submitted == []
+    assert [type(event) for event in delivered] == [Text, Text, MediaOut]
+    assert delivered[0].content == "accepted"
+    assert delivered[1].content == "candidate ready"
+    assert [media.path for media in delivered[2].media] == [str(report), str(patch)]
+
+
+async def test_maintenance_profile_limits_each_user_to_eight_new_agent_turns(tmp_path: Path) -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.config.pico import MaintenanceConfig
+    from pico.maintenance import MaintenanceCoordinator
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    submitted = []
+    delivered = []
+
+    async def deliver(event):
+        delivered.append(event)
+
+    maintenance = MaintenanceCoordinator(
+        MaintenanceConfig(enabled=True, allowed_chats=["oc_pico"], maintainers=["ou_owner"]),
+        state_dir=tmp_path,
+        runner=SimpleNamespace(),
+    )
+    scheduler = SimpleNamespace(
+        submit=submitted.append,
+        has_inflight=lambda _cid: False,
+        cancel_conversation=lambda _cid: 0,
+    )
+    dispatch = _build_inbound_dispatch(
+        scheduler=scheduler,
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=AsyncMock())),
+        question_broker=SimpleNamespace(pending_req=lambda _cid: None),
+        maintenance=maintenance,
+    )
+
+    for index in range(9):
+        await dispatch(
+            TurnRequest(
+                origin=Origin.USER,
+                source=Source(
+                    "feishu",
+                    "oc_pico",
+                    "ou_member",
+                    ChatType.GROUP,
+                    extras={"message_id": f"om_{index}"},
+                ),
+                text=f"question {index}",
+            )
+        )
+
+    assert len(submitted) == 8
+    assert [event.content for event in delivered] == [
+        "今天的 8 次 Pico AI 问答额度已用完，明天 00:00（北京时间）恢复。你仍然可以使用 /issue 提交问题。"
+    ]
+
+
+async def test_maintenance_profile_limits_each_chat_independently(tmp_path: Path) -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.config.pico import MaintenanceConfig
+    from pico.maintenance import MaintenanceCoordinator
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    submitted = []
+    delivered = []
+
+    async def deliver(event):
+        delivered.append(event)
+
+    maintenance = MaintenanceCoordinator(
+        MaintenanceConfig(
+            enabled=True,
+            allowed_chats=["oc_pico"],
+            maintainers=["ou_owner"],
+            max_daily_agent_turns_per_chat=2,
+        ),
+        state_dir=tmp_path,
+        runner=SimpleNamespace(),
+    )
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(
+            submit=submitted.append,
+            has_inflight=lambda _cid: False,
+            cancel_conversation=lambda _cid: 0,
+        ),
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=AsyncMock())),
+        question_broker=SimpleNamespace(pending_req=lambda _cid: None),
+        maintenance=maintenance,
+    )
+
+    for index, chat_id in enumerate(("oc_pico", "oc_pico", "oc_pico", "oc_other")):
+        await dispatch(
+            TurnRequest(
+                origin=Origin.USER,
+                source=Source(
+                    "feishu",
+                    chat_id,
+                    f"ou_member_{index}",
+                    ChatType.GROUP,
+                    extras={"message_id": f"om_chat_{index}"},
+                ),
+                text=f"question {index}",
+            )
+        )
+
+    assert [request.source.chat_id for request in submitted] == ["oc_pico", "oc_pico", "oc_other"]
+    assert [event.content for event in delivered] == [
+        "本群今天的 2 次 Pico AI 问答额度已用完，明天 00:00（北京时间）恢复。你仍然可以使用 /issue 提交问题。"
+    ]
+
+
+async def test_issue_command_does_not_consume_agent_turn_quota(tmp_path: Path) -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.config.pico import MaintenanceConfig
+    from pico.maintenance import MaintenanceCoordinator
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    submitted = []
+    delivered = []
+
+    async def deliver(event):
+        delivered.append(event)
+
+    maintenance = MaintenanceCoordinator(
+        MaintenanceConfig(
+            enabled=True,
+            allowed_chats=["oc_pico"],
+            maintainers=["ou_owner"],
+            max_daily_agent_turns_per_user=1,
+        ),
+        state_dir=tmp_path,
+        runner=SimpleNamespace(),
+    )
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(
+            submit=submitted.append,
+            has_inflight=lambda _cid: False,
+            cancel_conversation=lambda _cid: 0,
+        ),
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=AsyncMock())),
+        question_broker=SimpleNamespace(pending_req=lambda _cid: None),
+        maintenance=maintenance,
+    )
+
+    def request(text: str, message_id: str) -> TurnRequest:
+        return TurnRequest(
+            origin=Origin.USER,
+            source=Source(
+                "feishu",
+                "oc_pico",
+                "ou_owner",
+                ChatType.GROUP,
+                extras={"message_id": message_id},
+            ),
+            text=text,
+        )
+
+    await dispatch(request("/issue quota test", "om_issue"))
+    await dispatch(request("first question", "om_question_1"))
+    await dispatch(request("second question", "om_question_2"))
+
+    assert [turn.text for turn in submitted] == ["first question"]
+    assert delivered[-1].content.startswith("今天的 1 次 Pico AI 问答额度已用完")
+
+
+async def test_inflight_followup_does_not_start_or_consume_another_quoted_turn(tmp_path: Path) -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.config.pico import MaintenanceConfig
+    from pico.maintenance import MaintenanceCoordinator
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+    from pico.spine.turn import BusyPolicy
+
+    submitted = []
+    delivered = []
+    inflight = [False]
+
+    async def deliver(event):
+        delivered.append(event)
+
+    maintenance = MaintenanceCoordinator(
+        MaintenanceConfig(
+            enabled=True,
+            allowed_chats=["oc_pico"],
+            maintainers=["ou_owner"],
+            max_daily_agent_turns_per_user=1,
+        ),
+        state_dir=tmp_path,
+        runner=SimpleNamespace(),
+    )
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(
+            submit=submitted.append,
+            has_inflight=lambda _cid: inflight[0],
+            cancel_conversation=lambda _cid: 0,
+        ),
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=AsyncMock())),
+        question_broker=SimpleNamespace(pending_req=lambda _cid: None),
+        maintenance=maintenance,
+    )
+
+    def request(text: str, message_id: str) -> TurnRequest:
+        return TurnRequest(
+            origin=Origin.USER,
+            source=Source(
+                "feishu",
+                "oc_pico",
+                "ou_member",
+                ChatType.GROUP,
+                extras={"message_id": message_id},
+            ),
+            text=text,
+        )
+
+    await dispatch(request("first question", "om_first"))
+    inflight[0] = True
+    await dispatch(request("followup context", "om_followup"))
+    inflight[0] = False
+    await dispatch(request("second new question", "om_second"))
+
+    assert [turn.busy for turn in submitted] == [BusyPolicy.APPEND, BusyPolicy.INJECT]
+    assert delivered[-1].content.startswith("今天的 1 次 Pico AI 问答额度已用完")
+
+
+async def test_gateway_injects_only_the_matching_channel_maintenance_notifier() -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    feishu_notifier = object()
+    received = []
+
+    class Maintenance:
+        async def handle(self, req, send, notifier=None):
+            received.append(notifier)
+            return True
+
+        def is_maintainer(self, req):
+            return True
+
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(),
+        hub=SimpleNamespace(dispatch=AsyncMock()),
+        agent=SimpleNamespace(),
+        question_broker=SimpleNamespace(),
+        maintenance=Maintenance(),
+        maintenance_notifiers={"feishu": feishu_notifier},
+    )
+
+    await dispatch(
+        TurnRequest(
+            origin=Origin.USER,
+            source=Source("feishu", "oc_pico", "ou_owner", ChatType.GROUP),
+            text="/fix #123",
+        )
+    )
+
+    assert received == [feishu_notifier]
+
+
+def test_gateway_builds_maintenance_cards_only_for_the_feishu_adapter() -> None:
+    from pico.channels.adapters.feishu.maintenance_cards import FeishuMaintenanceNotifier
+    from pico.cli.gateway_commands import _build_maintenance_notifiers
+
+    feishu = SimpleNamespace(reply_card=AsyncMock(), update_card=AsyncMock(), reply=AsyncMock())
+    notifiers = _build_maintenance_notifiers({"feishu": feishu, "telegram": SimpleNamespace()})
+
+    assert set(notifiers) == {"feishu"}
+    assert isinstance(notifiers["feishu"], FeishuMaintenanceNotifier)
+
+
+async def test_maintenance_profile_blocks_public_restart_command() -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    delivered = []
+
+    async def deliver(event):
+        delivered.append(event)
+
+    class Maintenance:
+        async def handle(self, req, send):
+            return False
+
+        def is_maintainer(self, req):
+            return False
+
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(),
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(),
+        question_broker=SimpleNamespace(),
+        maintenance=Maintenance(),
+    )
+    request = TurnRequest(
+        origin=Origin.USER,
+        source=Source("feishu", "oc_pico", "ou_member", ChatType.GROUP),
+        text="/restart",
+    )
+
+    await dispatch(request)
+
+    assert delivered[0].content == "Only a configured Pico maintainer can use gateway control commands."
+
+
+def test_gateway_log_config_defaults() -> None:
+    from pico.config.schema import GatewayConfig
+
+    cfg = GatewayConfig()
+    log = cfg.log
+    assert not hasattr(cfg, "heartbeat")
+    assert log.rotation == "10 MB"
+    assert log.retention == 7
+    assert log.level == "INFO"
+    assert log.console_level == "INFO"
+
+
+def test_gateway_log_config_overrides_parse() -> None:
+    from pico.config.schema import GatewayConfig
+
+    cfg = GatewayConfig.model_validate(
+        {
+            "log": {
+                "rotation": "00:00",
+                "retention": "14 days",
+                "level": "DEBUG",
+                "console_level": "WARNING",
+            }
+        }
+    )
+    assert cfg.log.rotation == "00:00"
+    assert cfg.log.retention == "14 days"
+    assert cfg.log.level == "DEBUG"
+    assert cfg.log.console_level == "WARNING"
+
+
+def test_gateway_channels_excludes_tui_when_no_im_enabled() -> None:
+
+    from unittest.mock import MagicMock
+
+    from pico.cli.gateway_commands import _build_gateway_channels
+
+    cfg = MagicMock()
+    for name in ("feishu", "qq", "wecom"):
+        ch = MagicMock()
+        ch.enabled = False
+        setattr(cfg.channels, name, ch)
+    assert _build_gateway_channels(cfg) == set()
+
+
+def test_gateway_channels_excludes_tui_alongside_enabled_im() -> None:
+    from unittest.mock import MagicMock
+
+    from pico.cli.gateway_commands import _build_gateway_channels
+
+    cfg = MagicMock()
+    for name in ("feishu", "qq", "wecom"):
+        ch = MagicMock()
+        ch.enabled = name == "feishu"
+        setattr(cfg.channels, name, ch)
+    result = _build_gateway_channels(cfg)
+    assert "tui" not in result
+    assert "feishu" in result
+    assert "qq" not in result
+
+
+async def test_stop_dispatch_cancels_both_scheduler_and_subagents() -> None:
+    from pico.cli.gateway_commands import _build_inbound_dispatch
+    from pico.spine import ChatType, Origin, Source, TurnRequest
+
+    delivered = []
+
+    async def deliver(event):
+        delivered.append(event)
+
+    async def cancel_subagents(_cid):
+        return 3
+
+    dispatch = _build_inbound_dispatch(
+        scheduler=SimpleNamespace(cancel_conversation=lambda _cid: 2),
+        hub=SimpleNamespace(dispatch=deliver),
+        agent=SimpleNamespace(subagents=SimpleNamespace(cancel_by_session=cancel_subagents)),
+        question_broker=SimpleNamespace(),
+    )
+    request = TurnRequest(
+        origin=Origin.USER,
+        source=Source("feishu", "oc_pico", "ou_owner", ChatType.GROUP),
+        text="/stop",
+    )
+
+    await dispatch(request)
+
+    assert delivered[0].content == "Stopped 5 task(s)."
+
+
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+
+from types import SimpleNamespace
+
+from pico.cli.gateway_commands import build_model_routing
+from pico.config.schema import ModelEndpoint, RoutingConfig
+from pico.providers.per_model_provider import PerModelProvider
+from pico.routing.knn_router import KNNModelRouter
+from pico.routing.router import ModelRouter
+
+
+class _FakeProvider:
+    def get_default_model(self):
+        return "default-model"
+
+
+def _routing_config_obj(routing):
+    return SimpleNamespace(
+        routing=routing,
+        providers=SimpleNamespace(openrouter=SimpleNamespace(api_key="")),
+        agents=SimpleNamespace(defaults=SimpleNamespace(model="default-model")),
+    )
+
+
+def test_build_routing_disabled_returns_same_provider():
+    prov = _FakeProvider()
+    router, out = build_model_routing(_routing_config_obj(RoutingConfig(enabled=False)), prov)
+    assert router is None
+    assert out is prov
+
+
+def test_build_routing_knn_wraps_provider():
+    routing = RoutingConfig(
+        enabled=True,
+        backend="knn",
+        embedding_endpoint="http://e/embed",
+        models=[
+            ModelEndpoint(model="small", api_base="http://a/v1"),
+            ModelEndpoint(model="large", api_base="http://b/v1"),
+        ],
+    )
+    router, out = build_model_routing(_routing_config_obj(routing), _FakeProvider())
+    assert isinstance(router, KNNModelRouter)
+    assert isinstance(out, PerModelProvider)
+
+
+def test_build_routing_ecoclaw_with_key_keeps_provider():
+    routing = RoutingConfig(enabled=True, backend="ecoclaw", api_key="sk-or-x")
+    prov = _FakeProvider()
+    router, out = build_model_routing(_routing_config_obj(routing), prov)
+    assert isinstance(router, ModelRouter)
+    assert out is prov
+
+
+def test_build_routing_ecoclaw_no_key_disabled():
+    routing = RoutingConfig(enabled=True, backend="ecoclaw", api_key="")
+    prov = _FakeProvider()
+    router, out = build_model_routing(_routing_config_obj(routing), prov)
+    assert router is None
+    assert out is prov

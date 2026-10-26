@@ -6,6 +6,25 @@ on:
 permissions:
   contents: read
 jobs:
+  oriel:
+    name: Oriel maintenance and source integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - name: Verify complete source snapshot and licenses
+        run: python scripts/check-oriel-source.py
+      - name: Install locked runtime and test dependencies
+        working-directory: projects/oriel/source
+        run: uv sync --frozen --extra dev --dev
+      - name: Verify repair, clean replay and failure states
+        working-directory: projects/oriel/source
+        run: uv run --frozen --extra dev pytest tests/test_maintenance.py -q
+
   verify:
     strategy:
       matrix:

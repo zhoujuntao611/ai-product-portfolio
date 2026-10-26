@@ -22,9 +22,9 @@ ClimbAI 已退出主展示页面，保留代码和历史实测记录用于复现
 
 Pico Runtime 中有实际 MCP 连接与工具执行逻辑：导入 stdio、SSE 和 Streamable HTTP transport，初始化 Session，发现并注册工具，随后调用远端工具。
 
-[MCP 实现源码](https://gitee.com/htxoffical/pico-harness/blob/afdd62099b900a3c046dd96396268b7a8403d9c4/pico/agent/tools/mcp.py) · [维护者产品与运行时关系](../projects/oriel/README.md)
+[MCP 实现源码](https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/oriel/source/pico/agent/tools/mcp.py) · [维护者产品与运行时关系](../projects/oriel/README.md)
 
-Gitee 网页可能要求完成验证码；源码仓库可通过正常 Git 方式公开读取，获取步骤见 Oriel 产品说明。
+上述源码现已同步至本 GitHub 仓库，获取和验证步骤见 [Oriel 运行说明](../projects/oriel/RUNNING.md)，不依赖 Gitee 网页访问。
 
 ## Python 与 SQL
 
@@ -44,4 +44,4 @@ SupportFlow 保留固定问题集、冻结的对照版本、逐题预期和失�
 
 PicoBench 的成本实验使用 4 类负载、每类 3 个固定用例、每个重复 3 次，共 36 组配对。两组成功数相同，在此条件下比较单位成功任务的估算成本；它不是真实社区 Issue 修复率实验。
 
-[SupportFlow 回归与取舍记录](../projects/supportflow/docs/ITERATION_EVIDENCE.md) · [回归执行脚本](../projects/supportflow/verification/review_regression.py#L84) · [Oriel 成本口径](../projects/oriel/EVIDENCE.md) · [PicoBench 成本实验说明](https://gitee.com/htxoffical/pico-harness/blob/afdd62099b900a3c046dd96396268b7a8403d9c4/docs/evaluation/tokenwise-cost.md)
+[SupportFlow 回归与取舍记录](../projects/supportflow/docs/ITERATION_EVIDENCE.md) · [回归执行脚本](../projects/supportflow/verification/review_regression.py#L84) · [Oriel 成本口径](../projects/oriel/EVIDENCE.md) · [PicoBench 成本实验说明](https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/oriel/source/docs/evaluation/tokenwise-cost.md)

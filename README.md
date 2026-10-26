@@ -8,7 +8,7 @@
 
 记录到馆训练、线路尝试和卡点，把视频关联到对应记录。下次挑战同一条线路时，可以查看不同日期的尝试。
 
-支持训练草稿、连续记录、线路历史和视频回看。当前为 0.2.2 开发预览，尚未公开发布；训练记录可存云端，视频与关联信息保存在当前设备。
+支持训练草稿、连续记录、线路历史、视频回看，以及根据文字摘要生成 AI 复盘建议，用户确认后保存为下次目标。当前为 0.2.2 开发预览，尚未公开发布；训练记录可存云端，视频与关联信息保存在当前设备。
 
 [查看项目](https://zhoujuntao611.github.io/ai-product-portfolio/panji/) · [源码与运行](projects/panji) · [验证范围](projects/panji/docs/EVIDENCE.md)
 
@@ -16,9 +16,9 @@
 
 面向飞书社区中的项目答疑与 Bug 反馈，通过 `/issue` 将有效问题沉淀为 Gitee Issue，再通过 `/fix` 启动修复与独立验证，交付带补丁和测试记录的 PR Candidate，由维护者审查并决定是否合入。
 
-Oriel 是面向维护者的产品层，Pico Runtime 提供任务调度、上下文、工具和评测底座。实现与评测位于外部 Pico 仓库的 `release/maintainer-profile` 分支；本仓库提供项目介绍与证据口径，不包含引擎源码。页面中的流程是示意，不是运行截图，实验结果也不代表线上社区采用效果。
+我负责 Oriel 产品流程、Pico Runtime 和 PicoBench 的设计实现，开发使用 AI 编程工具。完整维护者分支源码已同步到本仓库，保留原有许可与署名，并附安装、修复、独立验收和文件导览。页面中的流程是示意，实验结果不代表线上社区采用效果。
 
-[查看项目](https://zhoujuntao611.github.io/ai-product-portfolio/oriel/) · [实现与评测](https://gitee.com/htxoffical/pico-harness/tree/release/maintainer-profile)
+[查看项目](https://zhoujuntao611.github.io/ai-product-portfolio/oriel/) · [完整源码](projects/oriel/source) · [流程与运行](projects/oriel/README.md) · [指标范围](projects/oriel/EVIDENCE.md)
 
 ## SupportFlow · 客服回复助手
 
@@ -45,6 +45,8 @@ Windows 可使用根目录 `start-projects.cmd` 启动两个本地网页应用�
 早期 ClimbAI 原型已退出公开展示，源码保留在 [projects/climbai](projects/climbai)，用于复现历史记录。
 
 ## 来源与许可
+
+Oriel / Pico 源码按随附 Apache-2.0 及第三方条款提供，保留 nanobot、hermes-agent / ink 等来源声明。见 [同步与许可](projects/oriel/SOURCE_PROVENANCE.md)。
 
 SupportFlow、MetricPilot、ClimbAI 代码按各自随附 MIT LICENSE 提供。攀迹代码用于公开展示，未授予统一开源许可；其中 OSM 数据子集适用独立的 ODbL，其他资料保留各自来源与权利。见 [攀迹来源与许可](projects/panji/README.md#数据来源与许可)。
 

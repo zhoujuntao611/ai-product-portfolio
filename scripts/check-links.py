@@ -48,6 +48,11 @@ def main():
     checked = 0
     errors = []
     for name in sorted(files):
+        # This fixed upstream tree is verified by check-oriel-source.py. Its
+        # original documentation may reference upstream-only files/templates.
+        # Links from our own pages into this tree are still checked via targets.
+        if name.startswith("projects/oriel/source/"):
+            continue
         if name.endswith(".md"):
             body = (ROOT / name).read_text(encoding="utf-8")
             body = re.sub(r"```[\s\S]*?```", "", body)
