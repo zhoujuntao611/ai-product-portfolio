@@ -24,6 +24,9 @@
 .decision-summary { grid-column: 2; margin-bottom: 20px; }
 .decision-summary h3 { font-size: 16px; }
 .decision-summary p { color: var(--ink); }
+.decision-summary p+p { margin-top: 12px; }
+.decision-summary+.decision-summary { padding-top: 20px; border-top: 1px solid var(--line); }
+.resource-copy p+h3 { margin-top: 22px; }
 .development-section > .development-notes { grid-column: 2; }
 @media (max-width: 600px) {
   .product-hero { padding-bottom: 22px; }
