@@ -2,7 +2,7 @@
 
 围绕用户任务，完成产品流程、方案取舍、原型实现与评测验证。项目覆盖开源维护 Agent、客服知识工作流、订单分析和攀岩训练记录；开发使用 AI 编程工具，个人职责、实现范围与验证结果分别说明。
 
-[作品主页](https://zhoujuntao611.github.io/ai-product-portfolio/) · [公开履历](docs/profile/) · [运行与验证](docs/DEVELOPMENT.md) · [本轮内容审阅](docs/PORTFOLIO_REVIEW_20261026.md)
+[作品主页](https://zhoujuntao611.github.io/ai-product-portfolio/) · [公开履历](https://zhoujuntao611.github.io/ai-product-portfolio/profile/) · [运行与验证](docs/DEVELOPMENT.md) · [本轮内容审阅](docs/PORTFOLIO_REVIEW_20261026.md)
 
 ## Oriel · 开源维护者 Agent
 

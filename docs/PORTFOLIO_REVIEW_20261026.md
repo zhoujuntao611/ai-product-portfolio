@@ -14,7 +14,7 @@
 - [仓库首页](../README.md)调整为 AI 产品经理实习方向，顺序统一为 Oriel、SupportFlow、MetricPilot、攀迹；各项目补充本人工作、一个代表性取舍、实现状态和验证材料。
 - Oriel 优先展示从问题沉淀、修复到独立验收的维护流程，并说明本地候选仍需维护者决定；[流程](../projects/oriel/WORKFLOW.md)、[源码](../projects/oriel/source/)与[指标边界](../projects/oriel/EVIDENCE.md)分别提供入口。
 - SupportFlow 将历史模拟回归与后续真实模型实测分开；MetricPilot 保留规则解析、口径确认与结果追溯定位；攀迹明确开发预览和原环境模型验证范围。
-- 公开履历入口指向[公开资料页](profile/)，不增加私人简历、开发环境资料或模型凭据。运行、历史 ClimbAI 状态、AI 协作和许可说明继续保留。
+- 公开履历入口指向[公开资料页](https://zhoujuntao611.github.io/ai-product-portfolio/profile/)，不增加私人简历、开发环境资料或模型凭据。运行、历史 ClimbAI 状态、AI 协作和许可说明继续保留。
 
 ## 需要纠正的三点
 
