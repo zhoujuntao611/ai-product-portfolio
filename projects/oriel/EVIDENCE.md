@@ -1,10 +1,10 @@
 # Oriel 指标与证据范围
 
-核对日期：2026-10-26（北京时间）。本次检查源码、实验说明与作品集链接，没有重新执行付费模型实验，也没有操作真实飞书群或 Gitee Issue。
+更新日期：2026-10-27（北京时间）。本轮增加维护验收能力与本地验证；历史模型实验仍仅核对公开说明，没有重新执行付费模型实验，也没有操作真实飞书群或 Gitee Issue。
 
-## 源码快照
+## 源码基线与本轮迭代
 
-维护者功能位于 `release/maintainer-profile`，核对版本为 `afdd62099b900a3c046dd96396268b7a8403d9c4`。来源仓库默认 `main` 分支主要展示 Runtime；本作品仓库已完整同步维护者分支的 1,197 个受版本管理文件，主要入口改为 GitHub 本地源码。参见 [来源与许可](SOURCE_PROVENANCE.md)、[运行步骤](RUNNING.md) 和 [完整流程](WORKFLOW.md)。
+维护者功能的上游基线来自 `release/maintainer-profile` 的 `afdd62099b900a3c046dd96396268b7a8403d9c4`，原始 1,197 文件清单保留在 [SOURCE_BASELINE_MANIFEST.json](SOURCE_BASELINE_MANIFEST.json)。当前 `source/` 已包含后续迭代，不再声明是该提交的原样导出；开发提交和逐文件校验见 [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json)，相对基线的改动见 [SOURCE_CHANGES.json](SOURCE_CHANGES.json)。参见 [来源与许可](SOURCE_PROVENANCE.md)、[运行步骤](RUNNING.md) 和 [完整流程](WORKFLOW.md)。
 
 本人负责 Oriel 产品流程、Pico Runtime 与 PicoBench 的设计实现，开发采用 AI 编程协作；第三方基础组件的许可与署名保留。职责与实验可复现程度分别说明。
 
@@ -16,6 +16,17 @@
 PR Candidate 为本地补丁及报告，不代表已经创建远程 Pull Request，也不代表维护者已采纳。
 
 飞书接入文档将 Candidate 到 Skill 列为后续流程；本次未发现维护任务自动调用 Skill / Evolver 的管线。Runtime 经验复用实验不能写成已经接通的维护业务闭环。
+
+## 2026-10-27 维护验收迭代
+
+- 可选 `regressionCommands` 在独立 Baseline 中逐条退出 `1`，在 Repair 与干净 Verifier 中逐条退出 `0`；原有验收仍须通过。基线已通过、退出其他码、超时或记录不完整时，不启动修复 Agent。退出 `1` 不自行证明失败来自目标缺陷，仍需维护者核对检查与日志。
+- 候选 manifest 升级为 `pico.maintenance.candidate.v2`，记录回归模式与三阶段退出码；未配置时明确标记未验证复现。Worktree 只分离工作目录，不等于安全隔离，也不防止补丁削弱测试。
+- 发布前复核发现验收命令自动改写源码可能使错误补丁被误判通过，已补充固定基线下的源码一致性检查及10项回归。Repair / Verifier 检查后源码必须仍与候选补丁一致，包含候选新增文件；普通未跟踪缓存可以保留。
+- SQLite 的 Proposal / Job 唯一约束冲突分支补充 `rollback()`，避免幂等返回后遗留写事务，影响后续配额或其他连接。
+
+2026-10-27 Windows 合并检查为 **138 passed、4 deselected**，含33项新增回归验收、4项事务回归及现有维护和配置检查。排除的两项 shell 测试另以真实 Git-for-Windows shell 适配路径验证通过；两项 POSIX 权限检查仍需 Linux。新增测试使用真实 Git、SQLite 与 Python 子进程，Windows 仅适配固定 Python 检查命令。完整范围见[验证摘要](source/docs/examples/maintenance-iteration-verification.json)。本机记录与 GitHub 当前提交的 CI 结果分别解释，后者以对应提交的 [Actions](https://github.com/zhoujuntao611/ai-product-portfolio/actions/workflows/verify.yml) 为准。
+
+五种离线演示使用确定性编辑夹具，验证成功、未复现、执行异常、修复无效和干净验证失败的编排与证据，不调用真实模型，不能推算模型修复率或社区采纳率。[迭代与验证细节](source/docs/onboarding/maintenance-regression.zh-CN.md) · [演示入口](source/scripts/demo_maintenance_regression.py) · [学习指南](source/docs/onboarding/oriel-tech-stack.zh-CN.md)
 
 ## 仓库有实验说明的指标
 

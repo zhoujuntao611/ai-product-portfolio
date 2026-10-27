@@ -18,12 +18,39 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - name: Verify complete source snapshot and licenses
         run: python scripts/check-oriel-source.py
+      - name: Verify source provenance checks reject invalid snapshots
+        run: python -m unittest discover -s scripts -p test_oriel_source_integrity.py -v
       - name: Install locked runtime and test dependencies
         working-directory: projects/oriel/source
         run: uv sync --frozen --extra dev --dev
-      - name: Verify repair, clean replay and failure states
+      - name: Verify maintenance, regression evidence, transactions and configuration
         working-directory: projects/oriel/source
-        run: uv run --frozen --extra dev pytest tests/test_maintenance.py -q
+        run: >-
+          uv run --frozen --extra dev pytest
+          tests/test_maintenance.py tests/test_maintenance_regression.py
+          tests/test_maintenance_store_transactions.py
+          tests/test_config_pico_loader.py tests/test_config_cfg1.py
+          tests/test_config_loader.py -q
+          --junitxml=.pico/evidence/maintenance-tests.xml
+      - name: Verify deterministic maintenance demo with the production shell
+        working-directory: projects/oriel/source
+        run: uv run --frozen --extra dev python scripts/demo_maintenance_regression.py
+      - name: Check changed maintenance Python files
+        working-directory: projects/oriel/source
+        run: >-
+          uv run --frozen --extra dev ruff check
+          pico/config/pico.py pico/maintenance/factory.py
+          pico/maintenance/runner.py pico/maintenance/store.py
+          tests/test_maintenance_regression.py tests/test_maintenance_store_transactions.py
+          scripts/demo_maintenance_regression.py
+      - name: Save maintenance test and candidate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: oriel-maintenance-evidence
+          path: projects/oriel/source/.pico/evidence/
+          if-no-files-found: ignore
+          retention-days: 14
 
   verify:
     strategy:

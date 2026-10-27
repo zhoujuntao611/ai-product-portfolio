@@ -2,8 +2,9 @@
 *.cmd -text
 *.png -text
 
-# Keep the attributed upstream source snapshot byte-for-byte identical.
+# Preserve exported source bytes and the anchored upstream baseline on every OS.
 projects/oriel/source/** -text
+projects/oriel/SOURCE_BASELINE_MANIFEST.json -text
 
 # Compare the committed static demo with Vite output on every OS.
 docs/climbai/** text=auto eol=lf

@@ -16,25 +16,31 @@ Oriel 的当前交付终点是可审查的本地 PR Candidate。以下将产品�
 
 ## 3. 锁定修复任务
 
-维护者发送 `/fix` 引用原问题或指定 Issue。重新读取 Issue 后，固定仓库、Base Revision 和验收命令；同一 Issue 已排队、运行或已有 Candidate 时不重复启动。Issue 正文作为问题数据传入独立 Session。
+维护者发送 `/fix` 引用原问题或指定 Issue。重新读取 Issue 后，确认仓库及配置的验收和可选回归命令；同一 Issue 已排队、运行或已有 Candidate 时不重复启动。Issue 正文作为问题数据传入独立 Session。Base Commit 在 Runner 实际执行时解析锁定，不承诺排队时已经冻结远程分支。
 
 产物是持久化 Job、固定 Base Commit 和待执行的验收条件。进度通过原飞书消息或话题回传。
 
 [任务模型](source/pico/maintenance/models.py) · [任务协调](source/pico/maintenance/coordinator.py)
 
-## 4. 在 Repair Worktree 复现、修改与检查
+2026-10-27 同时修复了持久化去重的事务边界：Proposal 或 Job 插入遇到唯一约束冲突时，先回滚失败事务，再返回已有对象，避免后续配额事务无法开始或其他连接被写锁阻塞。[SQLite 事务回归测试](source/tests/test_maintenance_store_transactions.py)
 
-Runner 从固定提交创建独立工作目录，运行修复 Agent，保存 Agent 日志，再执行验收命令。无修改、Agent 非正常退出或检查失败均保留诊断，不提前标记成功。
+## 4. 可选基线复现，再在 Repair Worktree 修改与检查
 
-[修复执行器](source/pico/maintenance/runner.py)
+2026-10-27 新增可选 `maintenance.regressionCommands`。配置后，Runner 先在第三份独立 Baseline Worktree 执行固定回归命令，每条均须退出 `1`；任一已通过、退出其他码、超时或缺少记录，任务受阻且不启动修复 Agent。
+
+随后从相同提交创建 Repair，运行修复 Agent，保存日志，再执行原验收与可选回归。原验收必须全部通过，每条回归必须退出 `0`。无修改、Agent 非正常退出或检查失败均保留诊断，不提前标记成功。
+
+未配置回归命令时，保留原有 Repair / Verifier 路径，明确标记未验证缺陷复现。退出 `1` 也可能来自普通 Python 异常，维护者仍需核对日志，确认失败来自目标检查；系统不会自行理解失败原因。[修复执行器](source/pico/maintenance/runner.py) · [配置与边界](source/docs/onboarding/maintenance-regression.zh-CN.md)
 
 ## 5. 在干净 Verifier Worktree 重放补丁
 
-从相同 Base Commit 创建另一份干净目录，重新应用 Patch，执行同一组固定验收命令，保存退出码与日志。验证目录不继承修复目录的未提交状态，避免依赖修复环境中的残留文件。
+从相同 Base Commit 创建另一份干净目录，重新应用 Patch，执行同一组固定验收及已配置的回归命令，全部须退出 `0`，保存退出码与日志。验证目录不继承修复目录的未提交状态，避免依赖修复环境中的残留文件。
 
-验收只覆盖预先定义的命令与条件，不能保证解决所有未知问题。维护流程测试涵盖成功候选，以及“修复检查通过但干净验证失败”的情况。
+补丁导出和一致性比较均相对锁定的 Base Commit；Repair 与 Verifier 检查后源码必须仍与候选补丁一致，候选新增文件也参与核对。若验收自动改写代码或自行提交修改来移动 HEAD，不能因此把错误候选标记成功。
 
-[重放与失败路径测试](source/tests/test_maintenance.py)
+验收只覆盖预先定义的命令与条件，不能保证解决所有未知问题，也不能自动识别补丁削弱了所引用的测试。Worktree 分离工作目录，不构成安全容器。维护流程测试涵盖成功候选，以及“修复检查通过但干净验证失败”等情况。
+
+[重放与失败路径测试](source/tests/test_maintenance.py) · [三阶段回归测试](source/tests/test_maintenance_regression.py)
 
 ## 6. 交付候选与终态
 
@@ -42,7 +48,7 @@ Runner 从固定提交创建独立工作目录，运行修复 Agent，保存 Age
 - `verification_failed`：检查或补丁重放未通过，提供诊断。
 - `blocked`：缺少前提、无修改或被中断等，说明原因。
 
-候选包包含 `manifest.json`（Issue、基准版本、变更文件、命令、退出码和终态）、Agent 日志与检查日志。飞书终态回复关联原 Issue 和消息。Gateway 重启后未完成任务按受阻处理。
+候选包的 `manifest.json` 使用 `pico.maintenance.candidate.v2`，保留 Issue、基准版本、变更文件、命令、退出码和终态，新增回归模式、状态与三阶段记录。未执行的阶段不伪造成功；严格限制 v1 的外部读取程序需支持 v2。Agent 日志与检查日志随包保留，飞书终态回复关联原 Issue 和消息。Gateway 重启后未完成任务按受阻处理。
 
 维护者检查补丁和测试范围，决定是否创建 PR 及合入。候选数、通过数与采纳数分别记录。
 

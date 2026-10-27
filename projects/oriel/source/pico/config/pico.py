@@ -539,6 +539,7 @@ class MaintenanceConfig(_Base):
     allowed_chats: list[str] = Field(default_factory=list)
     maintainers: list[str] = Field(default_factory=list)
     acceptance_commands: list[str] = Field(default_factory=list)
+    regression_commands: list[str] = Field(default_factory=list)
     runner_config: str = ""
     issue_tracker: Literal["local", "gitee"] = "local"
     issue_repository: str = ""
@@ -553,6 +554,14 @@ class MaintenanceConfig(_Base):
     max_daily_agent_turns_per_chat: int = Field(default=500, ge=1)
     max_daily_fix_jobs: int = Field(default=3, ge=1)
     quota_timezone: str = "Asia/Shanghai"
+
+    @field_validator("acceptance_commands", "regression_commands")
+    @classmethod
+    def validate_check_commands(cls, value: list[str]) -> list[str]:
+        commands = [command.strip() for command in value]
+        if any(not command for command in commands):
+            raise ValueError("check commands must be non-empty")
+        return commands
 
     @field_validator("quota_timezone")
     @classmethod

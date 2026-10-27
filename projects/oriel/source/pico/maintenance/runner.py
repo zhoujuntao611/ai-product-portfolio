@@ -51,11 +51,13 @@ class GitMaintenanceRunner:
         command_timeout_seconds: int,
         agent_environment: dict[str, str] | None = None,
         check_container_image: str = "",
+        regression_commands: Sequence[str] = (),
     ) -> None:
         self.repository = repository.resolve()
         self.base_ref = base_ref
         self.state_dir = state_dir.resolve()
-        self.acceptance_commands = tuple(acceptance_commands)
+        self.acceptance_commands = self._validated_commands(acceptance_commands, required=True)
+        self.regression_commands = self._validated_commands(regression_commands, required=False)
         self.agent_command = agent_command
         self.agent_timeout_seconds = agent_timeout_seconds
         self.command_timeout_seconds = command_timeout_seconds
@@ -70,13 +72,14 @@ class GitMaintenanceRunner:
         run_root = self.state_dir / "runs" / job.job_id
         repair = run_root / "repair"
         verify = run_root / "verify"
+        baseline = run_root / "baseline"
         candidate = self.state_dir / "candidates" / job.job_id
         candidate.mkdir(parents=True, exist_ok=True)
         base_commit = await self._git_text("rev-parse", "--verify", f"{self.base_ref}^{{commit}}")
         issue_ref, issue_error = await self._validated_issue_ref(job)
         if issue_error:
             manifest = {
-                "schema": "pico.maintenance.candidate.v1",
+                "schema": "pico.maintenance.candidate.v2",
                 "job_id": job.job_id,
                 "issue": job.issue_ref,
                 "issue_summary": job.issue_summary,
@@ -98,7 +101,7 @@ class GitMaintenanceRunner:
         await self._emit_progress(progress, "base locked")
         job = replace(job, issue_ref=issue_ref)
         manifest: dict = {
-            "schema": "pico.maintenance.candidate.v1",
+            "schema": "pico.maintenance.candidate.v2",
             "job_id": job.job_id,
             "issue": job.issue_ref,
             "issue_summary": job.issue_summary,
@@ -109,12 +112,31 @@ class GitMaintenanceRunner:
             "repair_checks": [],
             "verification_checks": [],
         }
+        manifest.update(self._regression_manifest())
+        manifest["checks_source_unchanged"] = {"repair": None, "verify": None}
         patch_path = candidate / "candidate.patch"
         changed_files: tuple[str, ...] = ()
         state = MaintenanceState.BLOCKED
         detail = ""
-        repair_added = verify_added = False
+        repair_added = verify_added = baseline_added = False
         try:
+            if self.regression_commands:
+                await self._prepare_worktree(baseline, base_commit)
+                baseline_added = True
+                await self._emit_progress(progress, "baseline reproduction")
+                baseline_checks = await self._run_regression_checks(baseline, candidate, phase="baseline")
+                manifest["baseline_regression_checks"] = [asdict(item) for item in baseline_checks]
+                if len(baseline_checks) != len(self.regression_commands) or any(
+                    item.exit_code not in (0, 1) for item in baseline_checks
+                ):
+                    manifest["regression_evidence"]["status"] = "baseline_error"
+                    detail = "Baseline regression command had an infrastructure or execution error (expected exit 1)"
+                    return self._finish(candidate, manifest, state, base_commit, changed_files, detail)
+                if any(item.exit_code == 0 for item in baseline_checks):
+                    manifest["regression_evidence"]["status"] = "baseline_not_reproduced"
+                    detail = "Issue was not reproduced: every baseline regression command must exit with 1"
+                    return self._finish(candidate, manifest, state, base_commit, changed_files, detail)
+                manifest["regression_evidence"]["status"] = "baseline_reproduced"
             await self._prepare_worktree(repair, base_commit)
             repair_added = True
             await self._emit_progress(progress, "reproducing and editing")
@@ -132,9 +154,9 @@ class GitMaintenanceRunner:
                 return self._finish(candidate, manifest, state, base_commit, changed_files, detail)
 
             await self._run_exec(("git", "add", "-N", "--", "."), cwd=repair, timeout=30)
-            patch = await self._git_bytes("-C", str(repair), "diff", "--binary", "HEAD")
+            patch = await self._git_bytes("-C", str(repair), "diff", "--binary", base_commit)
             patch_path.write_bytes(patch)
-            names = await self._git_text("-C", str(repair), "diff", "--name-only", "HEAD")
+            names = await self._git_text("-C", str(repair), "diff", "--name-only", base_commit)
             changed_files = tuple(line for line in names.splitlines() if line)
             if not patch or not changed_files:
                 detail = "Agent produced no patch"
@@ -149,7 +171,30 @@ class GitMaintenanceRunner:
             await self._emit_progress(progress, "repair checks")
             repair_checks = await self._run_checks(repair, candidate, phase="repair")
             manifest["repair_checks"] = [asdict(item) for item in repair_checks]
-            if any(item.exit_code != 0 for item in repair_checks):
+            repair_regression_failed = False
+            if self.regression_commands:
+                repair_regressions = await self._run_regression_checks(repair, candidate, phase="repair")
+                manifest["repair_regression_checks"] = [asdict(item) for item in repair_regressions]
+                repair_regression_failed = len(repair_regressions) != len(self.regression_commands) or any(
+                    item.exit_code != 0 for item in repair_regressions
+                )
+            # Checks may install dependencies or generate untracked caches, but
+            # the source they verified must still be exactly the exported patch.
+            repair_unchanged = await self._git_bytes("-C", str(repair), "diff", "--binary", base_commit) == patch
+            manifest["checks_source_unchanged"]["repair"] = repair_unchanged
+            if not repair_unchanged or repair_regression_failed:
+                if self.regression_commands:
+                    manifest["regression_evidence"]["status"] = "repair_failed"
+                state = MaintenanceState.VERIFICATION_FAILED
+                detail = (
+                    "Repair checks modified candidate source files"
+                    if not repair_unchanged
+                    else "Repair worktree regression checks failed"
+                )
+                return self._finish(candidate, manifest, state, base_commit, changed_files, detail)
+            if len(repair_checks) != len(self.acceptance_commands) or any(
+                item.exit_code != 0 for item in repair_checks
+            ):
                 state = MaintenanceState.VERIFICATION_FAILED
                 detail = "Repair worktree checks failed"
                 return self._finish(candidate, manifest, state, base_commit, changed_files, detail)
@@ -158,7 +203,7 @@ class GitMaintenanceRunner:
             verify_added = True
             await self._emit_progress(progress, "clean verification")
             apply_receipt = await self._run_exec(
-                ("git", "apply", "--binary", str(patch_path)),
+                ("git", "apply", "--binary", "--index", str(patch_path)),
                 cwd=verify,
                 timeout=60,
             )
@@ -171,7 +216,30 @@ class GitMaintenanceRunner:
 
             verification_checks = await self._run_checks(verify, candidate, phase="verify")
             manifest["verification_checks"] = [asdict(item) for item in verification_checks]
-            if any(item.exit_code != 0 for item in verification_checks):
+            regression_failed = False
+            if self.regression_commands:
+                verification_regressions = await self._run_regression_checks(verify, candidate, phase="verify")
+                manifest["verification_regression_checks"] = [asdict(item) for item in verification_regressions]
+                regression_failed = len(verification_regressions) != len(self.regression_commands) or any(
+                    item.exit_code != 0 for item in verification_regressions
+                )
+                manifest["regression_evidence"]["status"] = "verification_failed" if regression_failed else "verified"
+            # --index above keeps candidate additions in the comparison too.
+            # Compare the whole tracked diff so edits outside changed_files are
+            # also rejected; ordinary untracked test/build output is allowed.
+            verify_unchanged = await self._git_bytes("-C", str(verify), "diff", "--binary", base_commit) == patch
+            manifest["checks_source_unchanged"]["verify"] = verify_unchanged
+            if not verify_unchanged:
+                if self.regression_commands:
+                    manifest["regression_evidence"]["status"] = "verification_failed"
+                state = MaintenanceState.VERIFICATION_FAILED
+                detail = "Clean verifier checks modified candidate source files"
+            elif regression_failed:
+                state = MaintenanceState.VERIFICATION_FAILED
+                detail = "Clean verifier regression checks failed"
+            elif len(verification_checks) != len(self.acceptance_commands) or any(
+                item.exit_code != 0 for item in verification_checks
+            ):
                 state = MaintenanceState.VERIFICATION_FAILED
                 detail = "Clean verifier checks failed"
             else:
@@ -188,6 +256,8 @@ class GitMaintenanceRunner:
                 await self._remove_worktree(verify)
             if repair_added:
                 await self._remove_worktree(repair)
+            if baseline_added:
+                await self._remove_worktree(baseline)
             if run_root.exists():
                 shutil.rmtree(run_root, ignore_errors=True)
 
@@ -211,8 +281,26 @@ class GitMaintenanceRunner:
         )
 
     async def _run_checks(self, worktree: Path, candidate: Path, *, phase: str) -> list[CommandReceipt]:
+        return await self._run_check_commands(
+            worktree, candidate, phase=phase, commands=self.acceptance_commands, log_prefix=f"{phase}-check"
+        )
+
+    async def _run_regression_checks(self, worktree: Path, candidate: Path, *, phase: str) -> list[CommandReceipt]:
+        return await self._run_check_commands(
+            worktree, candidate, phase=phase, commands=self.regression_commands, log_prefix=f"{phase}-regression-check"
+        )
+
+    async def _run_check_commands(
+        self,
+        worktree: Path,
+        candidate: Path,
+        *,
+        phase: str,
+        commands: Sequence[str],
+        log_prefix: str,
+    ) -> list[CommandReceipt]:
         receipts: list[CommandReceipt] = []
-        for index, command in enumerate(self.acceptance_commands, start=1):
+        for index, command in enumerate(commands, start=1):
             argv: tuple[str, ...]
             inherit_env = False
             if self.check_container_image:
@@ -230,7 +318,7 @@ class GitMaintenanceRunner:
                 display=command,
                 inherit_env=inherit_env,
             )
-            log_name = f"{phase}-check-{index}.log"
+            log_name = f"{log_prefix}-{index}.log"
             (candidate / log_name).write_text(receipt.log, encoding="utf-8")
             receipts.append(CommandReceipt(receipt.command, receipt.exit_code, log_name))
         return receipts
@@ -282,6 +370,9 @@ class GitMaintenanceRunner:
         changed_files: tuple[str, ...],
         detail: str,
     ) -> MaintenanceOutcome:
+        for key, value in self._regression_manifest().items():
+            manifest.setdefault(key, value)
+        manifest.setdefault("checks_source_unchanged", {"repair": None, "verify": None})
         manifest.update(
             {
                 "state": state.value,
@@ -303,6 +394,26 @@ class GitMaintenanceRunner:
                 f"Verifier exit: `{verifier_exit}`"
             )
         checks = "\n".join(check_lines) or "- none"
+        regression_lines = []
+        for index, command in enumerate(self.regression_commands):
+            exits = []
+            for key, label in (
+                ("baseline_regression_checks", "Baseline"),
+                ("repair_regression_checks", "Repair"),
+                ("verification_regression_checks", "Verifier"),
+            ):
+                receipts = manifest[key]
+                code = receipts[index]["exit_code"] if index < len(receipts) else "not run"
+                exits.append(f"{label} exit: `{code}`")
+            regression_lines.append(f"- `{command}`; " + "; ".join(exits))
+        regression_checks = "\n".join(regression_lines) or "- not configured; issue reproduction was not verified"
+        evidence = manifest["regression_evidence"]
+        consistency_lines = []
+        for phase in ("repair", "verify"):
+            unchanged = manifest["checks_source_unchanged"][phase]
+            result = "not run" if unchanged is None else str(unchanged).lower()
+            consistency_lines.append(f"- {phase}: source still matches candidate patch: `{result}`")
+        consistency = "\n".join(consistency_lines)
         issue_display = (
             f"[{manifest['issue']}]({manifest['issue']})"
             if str(manifest["issue"]).startswith("https://")
@@ -315,9 +426,14 @@ class GitMaintenanceRunner:
             f"- Base revision: `{base_commit}`\n"
             f"- State: `{state.value}`\n"
             f"- Changed files: {', '.join(changed_files) or 'none'}\n"
-            f"- Patch: `candidate.patch`\n"
+            f"- Patch: {'`candidate.patch`' if (candidate / 'candidate.patch').is_file() else 'not produced'}\n"
             f"- Verdict: {detail}\n\n"
-            f"## Checks\n\n{checks}\n",
+            f"## Checks\n\n{checks}\n\n"
+            f"## Regression evidence\n\n"
+            f"- Mode: `{evidence['mode']}`\n"
+            f"- Status: `{evidence['status']}`\n"
+            f"- Scope: {evidence['explanation']}\n\n{regression_checks}\n"
+            f"\n## Candidate source consistency\n\n{consistency}\n",
             encoding="utf-8",
         )
         return MaintenanceOutcome(
@@ -327,6 +443,31 @@ class GitMaintenanceRunner:
             changed_files=changed_files,
             detail=detail,
         )
+
+    def _regression_manifest(self) -> dict:
+        configured = bool(self.regression_commands)
+        return {
+            "regression_evidence": {
+                "mode": "red_green" if configured else "acceptance_only",
+                "status": "pending" if configured else "not_configured",
+                "explanation": (
+                    "Each fixed regression command must exit 1 on the clean base, then 0 in repair and clean verifier. "
+                    "This evidence covers only the configured commands; it does not prove all issue behavior."
+                    if configured
+                    else "Only configured acceptance checks are required. Issue reproduction was not verified."
+                ),
+            },
+            "baseline_regression_checks": [],
+            "repair_regression_checks": [],
+            "verification_regression_checks": [],
+        }
+
+    @staticmethod
+    def _validated_commands(commands: Sequence[str], *, required: bool) -> tuple[str, ...]:
+        normalized = tuple(command.strip() for command in commands)
+        if (required and not normalized) or any(not command for command in normalized):
+            raise ValueError("Maintenance check commands must be non-empty; acceptance commands are required")
+        return normalized
 
     async def _validated_issue_ref(self, job: MaintenanceJob) -> tuple[str, str]:
         issue_ref = job.issue_ref

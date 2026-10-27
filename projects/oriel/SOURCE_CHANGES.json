@@ -1,0 +1,170 @@
+{
+  "schema": 1,
+  "upstream_base_commit": "afdd62099b900a3c046dd96396268b7a8403d9c4",
+  "development_commit": "b5bfa817c383a07818fa1ad4435fcd6fcaa16e2b",
+  "baseline_manifest_sha256": "c21e3fffbe87eef73eb98bb2e6d38740b60c8990a006eb49e54df83249108dda",
+  "changes": [
+    {
+      "path": "README.zh-CN.md",
+      "status": "modified",
+      "before": {
+        "path": "README.zh-CN.md",
+        "mode": "100644",
+        "git_blob": "dacc8fc035177f7e498964562a054bedbef81597",
+        "bytes": 7057,
+        "sha256": "ff3966cb4ef300e29c221b1fbc77986f5bfd586e2f1e39f9728d222fb516f38b"
+      },
+      "after": {
+        "path": "README.zh-CN.md",
+        "mode": "100644",
+        "git_blob": "b92eda9e931ab654c64d29bf56fdf7d5ea726739",
+        "bytes": 7206,
+        "sha256": "5ba9286496f7179e3709bb1ef66d14f53df619376f363a5528f99db8556f7b26"
+      }
+    },
+    {
+      "path": "docs/examples/maintenance-iteration-verification.json",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "docs/examples/maintenance-iteration-verification.json",
+        "mode": "100644",
+        "git_blob": "908dc021c345e58bedd5155e4b52f9b33ebb7308",
+        "bytes": 6208,
+        "sha256": "ab012d01ab6cdb92697de0cdcea73db702e9b2953277aab33fafeaf25f3f6682"
+      }
+    },
+    {
+      "path": "docs/onboarding/maintenance-regression.zh-CN.md",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "docs/onboarding/maintenance-regression.zh-CN.md",
+        "mode": "100644",
+        "git_blob": "96e45c06df35440ce6d055c6e8d24519edf38f21",
+        "bytes": 12203,
+        "sha256": "c82339bec3cd48b82cc9406a7db2e21671a4623ce29531e0d4b03e5924dcd41d"
+      }
+    },
+    {
+      "path": "docs/onboarding/oriel-tech-stack.zh-CN.md",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "docs/onboarding/oriel-tech-stack.zh-CN.md",
+        "mode": "100644",
+        "git_blob": "0617d03cdb50110ce4fafba644473f18f2933aea",
+        "bytes": 37055,
+        "sha256": "d7cc7e648f028efa4012da5e6ea67ccfa88b49fa649770c83d91b89a22443e97"
+      }
+    },
+    {
+      "path": "pico/config/pico.py",
+      "status": "modified",
+      "before": {
+        "path": "pico/config/pico.py",
+        "mode": "100644",
+        "git_blob": "0e84c7af87240e30fb71293258692fa865759b0a",
+        "bytes": 29029,
+        "sha256": "c971102e9d94a4d7a1b0304c3fe068af1567a365fdbda63c60b2f590d5fdde2e"
+      },
+      "after": {
+        "path": "pico/config/pico.py",
+        "mode": "100644",
+        "git_blob": "05325ac708de8c82f3239705a86c7417cd0e5656",
+        "bytes": 29448,
+        "sha256": "f1fea9e49774ec635602f4f29c35abf0f1b48381e8d462fd3cfb86a16e5fd8fc"
+      }
+    },
+    {
+      "path": "pico/maintenance/factory.py",
+      "status": "modified",
+      "before": {
+        "path": "pico/maintenance/factory.py",
+        "mode": "100644",
+        "git_blob": "de8cbb25ba27a469bb6dc0ad673ab667c329123c",
+        "bytes": 4989,
+        "sha256": "c3789a27b8dadcdd3fa81982943b1989c3791da6ac2542b6769795a669f684a7"
+      },
+      "after": {
+        "path": "pico/maintenance/factory.py",
+        "mode": "100644",
+        "git_blob": "2b31dd4280d4e88396b3747bbc717b379331614a",
+        "bytes": 5115,
+        "sha256": "826bc596b5f187c0143e134aed2364675226ccf93e32a1af70bf246f4083ac4e"
+      }
+    },
+    {
+      "path": "pico/maintenance/runner.py",
+      "status": "modified",
+      "before": {
+        "path": "pico/maintenance/runner.py",
+        "mode": "100644",
+        "git_blob": "868bb2a7a827c3c43b620331de15d17186c3b7be",
+        "bytes": 17634,
+        "sha256": "df3a9b61f0b11835535dbe29c7b9e60d150531c0fbe6be8130528bd8d2166eb0"
+      },
+      "after": {
+        "path": "pico/maintenance/runner.py",
+        "mode": "100644",
+        "git_blob": "e06a49021b5954626df396ca6a65a158b713579d",
+        "bytes": 26256,
+        "sha256": "aa0d9757ecd79ffbc57475652c8556951933399d2b86551d1455e05506d60ec8"
+      }
+    },
+    {
+      "path": "pico/maintenance/store.py",
+      "status": "modified",
+      "before": {
+        "path": "pico/maintenance/store.py",
+        "mode": "100644",
+        "git_blob": "638bccbc5965ad97eb233f9616140bc12c77a139",
+        "bytes": 17956,
+        "sha256": "b91d54485bc9d725623f502c2a1e556e3e566a85c2d3a4eedc06e78fa7a45c08"
+      },
+      "after": {
+        "path": "pico/maintenance/store.py",
+        "mode": "100644",
+        "git_blob": "35c25acda440c0c7711bee30e440b9b5d4f92e21",
+        "bytes": 18190,
+        "sha256": "1d403e80b8e2bd0cd84c81c61427f7d0e033ea3eb35991ced925ee11c864fc34"
+      }
+    },
+    {
+      "path": "scripts/demo_maintenance_regression.py",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "scripts/demo_maintenance_regression.py",
+        "mode": "100644",
+        "git_blob": "a965ae94cfbfc6f0074c21d08230f53bbe0c28c0",
+        "bytes": 7260,
+        "sha256": "7fdc11588d3f57258137ef89d10f4c49aeb8c4892f61e9cf2a3e5a029b823abe"
+      }
+    },
+    {
+      "path": "tests/test_maintenance_regression.py",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "tests/test_maintenance_regression.py",
+        "mode": "100644",
+        "git_blob": "b0a7209faeb09f8cd9ce6ffc3049be29c6ac0c8d",
+        "bytes": 18305,
+        "sha256": "acd754fbf3185e65e89e7ff5c703bd91cc7e97a0bdb64c729e8b3a9d7efea2c1"
+      }
+    },
+    {
+      "path": "tests/test_maintenance_store_transactions.py",
+      "status": "added",
+      "before": null,
+      "after": {
+        "path": "tests/test_maintenance_store_transactions.py",
+        "mode": "100644",
+        "git_blob": "a51f09438535e22e96c3a6e06baa1f2ee76308c3",
+        "bytes": 4886,
+        "sha256": "662c8ae1755ed2f7e470911a2251bbef3ff2ba4a97bc0bb166469beeb96c1946"
+      }
+    }
+  ]
+}

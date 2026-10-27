@@ -1,0 +1,193 @@
+{
+  "schema": "oriel.maintenance.iteration-verification.v2",
+  "verified_date": "2026-10-27",
+  "upstream_base_commit": "afdd62099b900a3c046dd96396268b7a8403d9c4",
+  "development_branch": "codex/oriel-regression-evidence",
+  "publication": {
+    "stage_at_recording": "prepublication_validation",
+    "target_repository": "https://github.com/zhoujuntao611/ai-product-portfolio",
+    "github_ci": "See the workflow run for the published commit; local results are separate."
+  },
+  "environment": {
+    "platform": "win32",
+    "python": "3.12.14",
+    "dependencies": "uv sync --frozen --extra dev --dev",
+    "verification_only_extra": "tzdata==2026.5"
+  },
+  "pytest": {
+    "tests": 138,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 4,
+    "scope": [
+      "tests/test_maintenance_regression.py",
+      "tests/test_maintenance_store_transactions.py",
+      "tests/test_maintenance.py",
+      "tests/test_config_pico_loader.py",
+      "tests/test_config_cfg1.py",
+      "tests/test_config_loader.py"
+    ],
+    "local_junit_path": ".pico/evidence/maintenance-release-20261027.xml",
+    "excluded_platform_tests": [
+      "test_runner_replays_patch_and_writes_candidate_packet",
+      "test_runner_keeps_patch_but_fails_closed_when_clean_verifier_fails",
+      "test_factory_rejects_world_readable_gitee_token",
+      "test_factory_uses_private_runner_home_and_never_requires_github_credentials"
+    ]
+  },
+  "additional_shell_verification": {
+    "passed": 2,
+    "scope": "The two excluded shell tests were also run with real Git-for-Windows sh.exe replacing only the executable path. This is separate from production Linux CI.",
+    "local_junit_path": ".pico/evidence/production-shell-adapter-20261027.xml"
+  },
+  "review_findings_resolved": [
+    {
+      "finding": "Acceptance checks could mutate incorrect candidate source into a passing state after patch export.",
+      "resolution": "Compare the whole tracked source diff against the exact candidate patch after Repair and Verifier checks, always relative to pinned base_commit. Include new files in the Verifier index.",
+      "additional_regression_cases": 10
+    }
+  ],
+  "static_checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "git_diff_check": "passed"
+  },
+  "offline_demo": {
+    "scenario_count": 5,
+    "all_expectations_passed": true,
+    "local_report_path": ".pico/evidence/maintenance-regression/run-jx91v4ch/report.json",
+    "results": [
+      {
+        "scenario": "correct_fix",
+        "state": "candidate_ready",
+        "regression_status": "verified",
+        "exit_codes": {
+          "baseline": [
+            1
+          ],
+          "repair": [
+            0
+          ],
+          "verify": [
+            0
+          ]
+        },
+        "agent_calls": 1,
+        "original_repository_unchanged": true,
+        "worktrees_cleaned": true,
+        "expectation_passed": true,
+        "stages": [
+          "base locked",
+          "baseline reproduction",
+          "reproducing and editing",
+          "repair checks",
+          "clean verification"
+        ],
+        "candidate": "correct_fix\\state\\candidates\\pm_correct_fix"
+      },
+      {
+        "scenario": "unrelated_change",
+        "state": "verification_failed",
+        "regression_status": "repair_failed",
+        "exit_codes": {
+          "baseline": [
+            1
+          ],
+          "repair": [
+            1
+          ],
+          "verify": []
+        },
+        "agent_calls": 1,
+        "original_repository_unchanged": true,
+        "worktrees_cleaned": true,
+        "expectation_passed": true,
+        "stages": [
+          "base locked",
+          "baseline reproduction",
+          "reproducing and editing",
+          "repair checks"
+        ],
+        "candidate": "unrelated_change\\state\\candidates\\pm_unrelated_change"
+      },
+      {
+        "scenario": "already_green",
+        "state": "blocked",
+        "regression_status": "baseline_not_reproduced",
+        "exit_codes": {
+          "baseline": [
+            0
+          ],
+          "repair": [],
+          "verify": []
+        },
+        "agent_calls": 0,
+        "original_repository_unchanged": true,
+        "worktrees_cleaned": true,
+        "expectation_passed": true,
+        "stages": [
+          "base locked",
+          "baseline reproduction"
+        ],
+        "candidate": "already_green\\state\\candidates\\pm_already_green"
+      },
+      {
+        "scenario": "probe_error",
+        "state": "blocked",
+        "regression_status": "baseline_error",
+        "exit_codes": {
+          "baseline": [
+            2
+          ],
+          "repair": [],
+          "verify": []
+        },
+        "agent_calls": 0,
+        "original_repository_unchanged": true,
+        "worktrees_cleaned": true,
+        "expectation_passed": true,
+        "stages": [
+          "base locked",
+          "baseline reproduction"
+        ],
+        "candidate": "probe_error\\state\\candidates\\pm_probe_error"
+      },
+      {
+        "scenario": "clean_verifier_failure",
+        "state": "verification_failed",
+        "regression_status": "verification_failed",
+        "exit_codes": {
+          "baseline": [
+            1
+          ],
+          "repair": [
+            0
+          ],
+          "verify": [
+            1
+          ]
+        },
+        "agent_calls": 1,
+        "original_repository_unchanged": true,
+        "worktrees_cleaned": true,
+        "expectation_passed": true,
+        "stages": [
+          "base locked",
+          "baseline reproduction",
+          "reproducing and editing",
+          "repair checks",
+          "clean verification"
+        ],
+        "candidate": "clean_verifier_failure\\state\\candidates\\pm_clean_verifier_failure"
+      }
+    ]
+  },
+  "limits": [
+    "No live model, Feishu or Gitee call was made.",
+    "Deterministic editor fixtures do not measure model repair quality or community adoption.",
+    "Windows tests adapt only fixed Python check commands; Linux CI uses the production shell.",
+    "Exit 1 alone cannot identify the cause of a failed assertion.",
+    "Worktrees and patch consistency are not a security boundary and do not detect every weakened test."
+  ]
+}

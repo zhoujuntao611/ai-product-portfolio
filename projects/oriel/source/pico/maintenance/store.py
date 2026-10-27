@@ -235,6 +235,9 @@ class MaintenanceStore:
             self._connection.commit()
             return IssueProposal(proposal_id, source_message_id, summary, chat_id, sender_id), True
         except sqlite3.IntegrityError:
+            # A rejected INSERT still opens a transaction. End it before the
+            # duplicate lookup so later quota transactions and writers work.
+            self._connection.rollback()
             row = self._connection.execute(
                 "SELECT * FROM issue_proposals WHERE source_message_id = ?",
                 (source_message_id,),
@@ -339,6 +342,7 @@ class MaintenanceStore:
                 True,
             )
         except sqlite3.IntegrityError:
+            self._connection.rollback()
             row = self._connection.execute(
                 "SELECT * FROM maintenance_jobs WHERE source_message_id = ?",
                 (source_message_id,),

@@ -43,7 +43,7 @@ def build_maintenance_coordinator(
         problems.append("allowedChats")
     if not config.maintainers:
         problems.append("maintainers")
-    if not config.acceptance_commands:
+    if not config.acceptance_commands or any(not command.strip() for command in config.acceptance_commands):
         problems.append("acceptanceCommands")
     if runner_config is None or not runner_config.is_file():
         problems.append("runnerConfig")
@@ -115,6 +115,7 @@ def build_maintenance_coordinator(
         base_ref=config.base_ref,
         state_dir=state_dir,
         acceptance_commands=config.acceptance_commands,
+        regression_commands=config.regression_commands,
         agent_command=agent_command,
         agent_timeout_seconds=config.agent_timeout_seconds,
         command_timeout_seconds=config.command_timeout_seconds,

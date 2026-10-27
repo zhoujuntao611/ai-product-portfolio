@@ -14,6 +14,8 @@
 [快速开始](#从安装到第一条真实回复) ·
 [首次使用指南](docs/onboarding/README.zh-CN.md) ·
 [飞书接入](docs/onboarding/feishu.zh-CN.md) ·
+[Oriel 技术栈学习](docs/onboarding/oriel-tech-stack.zh-CN.md) ·
+[维护回归验收迭代](docs/onboarding/maintenance-regression.zh-CN.md) ·
 [Agent 安装契约](docs/onboarding/agent-install.md) ·
 [English](README.md)
 
