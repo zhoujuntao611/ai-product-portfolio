@@ -1,5 +1,7 @@
 # Oriel · 开源维护者 Agent
 
+面向开源维护者，解决群聊反馈难跟进、AI 修复结果难验收的问题。
+
 社区成员在飞书提问或反馈 Bug，维护者通过 `/issue` 整理为 Gitee Issue，再通过 `/fix` 启动复现、修改与独立验证。最终交付补丁和测试记录，由维护者审查是否采纳。
 
 [项目主页](https://zhoujuntao611.github.io/ai-product-portfolio/oriel/) · [完整源码](source/) · [完整流程](WORKFLOW.md) · [安装与验证](RUNNING.md) · [技术栈学习指南](source/docs/onboarding/oriel-tech-stack.zh-CN.md) · [实验与验证](EVIDENCE.md)

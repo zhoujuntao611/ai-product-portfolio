@@ -6,8 +6,8 @@
 <meta name="description" content="周俊涛，北航信息与通信工程硕士，寻找 AI 产品经理实习。查看 Oriel、SupportFlow、MetricPilot 与攀迹的产品取舍、本人工作、源码和验证记录。">
 <title>周俊涛｜AI 产品经理实习作品集</title>
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261027clear" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261027clear">
+<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261027purpose" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=20261027purpose">
 <link rel="stylesheet" href="home.css?v=20261026refine">
 </head>
 <body class="portfolio" id="top">
@@ -30,7 +30,7 @@
 <article class="project-entry featured" id="oriel" aria-labelledby="oriel-title">
 <div class="entry-copy">
 <div class="entry-heading"><p class="project-type"><span class="featured-label">主打项目</span> 维护者 MVP · 受控评测</p><h3 id="oriel-title">Oriel</h3><p class="entry-lead">开源维护者 Agent</p></div>
-<p class="entry-description">面向开源维护者，把群聊 Bug 反馈整理成 Issue，生成补丁后独立重跑验收，再交由维护者决定是否采纳。</p>
+<p class="entry-description">面向开源维护者，解决群聊反馈难跟进、AI 修复结果难验收的问题。</p>
 <dl class="entry-facts">
 <div><dt>我的工作</dt><dd>定义维护流程，设计实现 Pico Runtime 与 PicoBench，建立修复候选的回归验收机制。</dd></div>
 <div><dt>关键取舍</dt><dd>配置回归检查后，先复现问题，再在干净环境重放补丁；由维护者审查并决定合入。</dd></div>
@@ -45,7 +45,7 @@
 <article class="project-entry compact" id="supportflow" aria-labelledby="supportflow-title">
 <div class="entry-heading"><p class="project-type">本地原型 · 规则流程 / 可选模型</p><h3 id="supportflow-title">SupportFlow</h3><p class="entry-lead">客服回复与审核</p></div>
 <a class="project-cover tool-cover support-cover" href="supportflow/" aria-label="查看 SupportFlow 客服工作台"><p class="cover-caption">应用截图 · 示例政策与工单</p><img src="assets/supportflow.png?v=20261025c" alt="客户问题、引用原文、待审核草稿并排展示" width="1440" height="1000" loading="lazy"></a>
-<p class="entry-description">面向需要查政策、拟回复的客服，让回复依据与审核决定留在同一处。</p>
+<p class="entry-description">面向一线客服，解决政策难查找、回复依据难核对的问题。</p>
 <dl class="entry-facts"><div><dt>我的工作</dt><dd>资料维护、逐问题检索、引用核对和人工审核流程设计。</dd></div><div><dt>关键取舍</dt><dd>申请期限与到账时间分开核对；缺少对应资料时先澄清，再由客服审核。</dd></div><div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/RESULTS.md" target="_blank" rel="noopener noreferrer">固定 26 项合成回归：14/26 → 26/26 ↗</a><small>DeepSeek 接入与对照记录见项目详情。</small></dd></div></dl>
 <div class="entry-links"><a class="case-link" href="supportflow/">查看产品案例 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">源码 ↗</a></div>
 </article>
@@ -53,7 +53,7 @@
 <article class="project-entry compact" id="metricpilot" aria-labelledby="metricpilot-title">
 <div class="entry-heading"><p class="project-type">本地原型 · 规则解析与受约束计算</p><h3 id="metricpilot-title">MetricPilot</h3><p class="entry-lead">订单分析与口径确认</p></div>
 <a class="project-cover tool-cover metric-cover" href="metricpilot/" aria-label="查看 MetricPilot 订单分析工具"><p class="cover-caption">应用截图 · 示例订单</p><img src="assets/metricpilot.png?v=20261025c" alt="订单收入、退款、渠道比较与计算依据" width="1440" height="1000" loading="lazy"></a>
-<p class="entry-description">面向需要核对收入与退款的运营，让一份订单表能被导入、检查和复算。</p>
+<p class="entry-description">面向运营人员，解决订单分析口径不一致、结果难复核的问题。</p>
 <dl class="entry-facts"><div><dt>我的工作</dt><dd>CSV 接入、字段匹配、异常处理、指标定义与报告流程设计。</dd></div><div><dt>关键取舍</dt><dd>按订单日或退款日会得出不同退款额。口径冲突时先确认，再执行查询。</dd></div><div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/metricpilot/docs/ITERATION-20261019.md" target="_blank" rel="noopener noreferrer">示例订单、计算依据与失败复盘 ↗</a></dd></div></dl>
 <div class="entry-links"><a class="case-link" href="metricpilot/">查看产品案例 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/metricpilot" target="_blank" rel="noopener noreferrer">源码 ↗</a></div>
 </article>
@@ -61,7 +61,7 @@
 <article class="project-entry compact" id="panji" aria-labelledby="panji-title">
 <div class="entry-heading"><p class="project-type">微信小程序 · 开发预览</p><h3 id="panji-title">攀迹</h3><p class="entry-lead">训练记录与 AI 文字复盘</p></div>
 <a class="project-cover panji-cover" href="panji/" aria-label="查看攀迹训练记录小程序"><p class="cover-caption">开发者工具截图 · 示例记录</p><div class="phone-pair"><img src="assets/panji/quick-record.png" alt="攀迹：记录到馆训练与感受" width="500" height="859" loading="lazy"><img src="assets/panji/route-project.png" alt="攀迹：回看同一线路的历次尝试" width="500" height="859" loading="lazy"></div></a>
-<p class="entry-description">面向想回看训练、确定下次练什么的攀岩者，连接记录、视频、复盘与下次目标。</p>
+<p class="entry-description">面向攀岩者，解决训练记录难回看、下次训练目标不清晰的问题。</p>
 <dl class="entry-facts"><div><dt>我的工作</dt><dd>定义产品范围、训练与复盘流程，并根据手机操作反馈调整交互。</dd></div><div><dt>关键取舍</dt><dd>程序算训练事实，模型提建议，用户确认后设为目标；训练记录上云，视频留本机。</dd></div><div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/panji/docs/EVIDENCE.md" target="_blank" rel="noopener noreferrer">混元文字复盘与 3 类合成场景开发检查 ↗</a></dd></div></dl>
 <div class="entry-links"><a class="case-link" href="panji/">查看产品案例 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/panji" target="_blank" rel="noopener noreferrer">源码 ↗</a></div>
 </article>
