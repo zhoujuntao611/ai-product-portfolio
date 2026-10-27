@@ -6,8 +6,8 @@
 <meta name="description" content="周俊涛，北航信息与通信工程硕士，寻找 AI 产品经理实习。查看 Oriel、SupportFlow、MetricPilot 与攀迹的产品取舍、本人工作、源码和验证记录。">
 <title>周俊涛｜AI 产品经理实习作品集</title>
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261026refine" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=20261026refine">
+<link rel="preload" href="assets/fonts/noto-sans-sc-subset.woff2?v=20261027clear" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=20261027clear">
 <link rel="stylesheet" href="home.css?v=20261026refine">
 </head>
 <body class="portfolio" id="top">
@@ -25,16 +25,16 @@
 <div class="intro-actions"><a class="button primary" href="#oriel">查看主打项目 ↓</a><a class="button" href="profile/">履历概览</a><a class="inline-link" href="mailto:zhou_jun_tao@163.com">联系我 ↗</a></div>
 </section>
 <section class="work-section" id="work" aria-labelledby="work-title">
-<div class="section-heading"><h2 id="work-title">项目与产品判断</h2><span>个人项目 · AI 协作开发</span></div>
+<div class="section-heading"><h2 id="work-title">项目与产品判断</h2></div>
 
 <article class="project-entry featured" id="oriel" aria-labelledby="oriel-title">
 <div class="entry-copy">
 <div class="entry-heading"><p class="project-type"><span class="featured-label">主打项目</span> 维护者 MVP · 受控评测</p><h3 id="oriel-title">Oriel</h3><p class="entry-lead">开源维护者 Agent</p></div>
 <p class="entry-description">面向开源维护者，把群聊 Bug 反馈整理成 Issue，生成补丁后独立重跑验收，再交由维护者决定是否采纳。</p>
 <dl class="entry-facts">
-<div><dt>我的工作</dt><dd>产品流程、Pico Runtime 与 PicoBench 的设计实现，采用 AI 编程协作。</dd></div>
-<div><dt>关键取舍</dt><dd>补丁必须在干净环境重新通过验收；系统只交付修复候选，保留人工合入决定。</dd></div>
-<div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/oriel/EVIDENCE.md" target="_blank" rel="noopener noreferrer">固定用例成本对照、会话调度测试与 Skill 受控评测 ↗</a></dd></div>
+<div><dt>我的工作</dt><dd>定义维护流程，设计实现 Pico Runtime 与 PicoBench，建立修复候选的回归验收机制。</dd></div>
+<div><dt>关键取舍</dt><dd>配置回归检查后，先复现问题，再在干净环境重放补丁；由维护者审查并决定合入。</dd></div>
+<div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/oriel/EVIDENCE.md" target="_blank" rel="noopener noreferrer">修复回归验收、成本对照与会话调度实验 ↗</a></dd></div>
 </dl>
 <div class="entry-links"><a class="case-link" href="oriel/">查看产品案例 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/oriel/source" target="_blank" rel="noopener noreferrer">源码 ↗</a></div>
 </div>
@@ -46,7 +46,7 @@
 <div class="entry-heading"><p class="project-type">本地原型 · 规则流程 / 可选模型</p><h3 id="supportflow-title">SupportFlow</h3><p class="entry-lead">客服回复与审核</p></div>
 <a class="project-cover tool-cover support-cover" href="supportflow/" aria-label="查看 SupportFlow 客服工作台"><p class="cover-caption">应用截图 · 示例政策与工单</p><img src="assets/supportflow.png?v=20261025c" alt="客户问题、引用原文、待审核草稿并排展示" width="1440" height="1000" loading="lazy"></a>
 <p class="entry-description">面向需要查政策、拟回复的客服，让回复依据与审核决定留在同一处。</p>
-<dl class="entry-facts"><div><dt>我的工作</dt><dd>资料维护、逐问题检索、引用核对和人工审核流程设计。</dd></div><div><dt>关键取舍</dt><dd>申请期限与到账时间分开核对；缺少对应资料时先澄清，再由客服审核。</dd></div><div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/RESULTS.md" target="_blank" rel="noopener noreferrer">固定 26 项合成回归：14/26 → 26/26 ↗</a><small>历史真实模型接入实验另列。</small></dd></div></dl>
+<dl class="entry-facts"><div><dt>我的工作</dt><dd>资料维护、逐问题检索、引用核对和人工审核流程设计。</dd></div><div><dt>关键取舍</dt><dd>申请期限与到账时间分开核对；缺少对应资料时先澄清，再由客服审核。</dd></div><div><dt>验证证据</dt><dd><a href="https://github.com/zhoujuntao611/ai-product-portfolio/blob/main/projects/supportflow/docs/RESULTS.md" target="_blank" rel="noopener noreferrer">固定 26 项合成回归：14/26 → 26/26 ↗</a><small>DeepSeek 接入与对照记录见项目详情。</small></dd></div></dl>
 <div class="entry-links"><a class="case-link" href="supportflow/">查看产品案例 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio/tree/main/projects/supportflow" target="_blank" rel="noopener noreferrer">源码 ↗</a></div>
 </article>
 
@@ -67,6 +67,6 @@
 </article>
 </div>
 </section>
-<section class="about-section" id="about" aria-labelledby="about-title"><div><p class="section-eyebrow">背景与工作方式</p><h2 id="about-title">关于我</h2></div><div class="about-copy"><p>我是周俊涛，目前在北京航空航天大学读信息与通信工程硕士，寻找 AI 产品经理实习。</p><p>做项目时，我先拆解用户任务，明确核心流程、异常处理和人工确认机制，再通过原型、失败案例和固定测试条件验证方案。开发过程中结合 AI 编程工具完成实现与迭代。</p><div class="contact-links"><a class="inline-link" href="profile/">查看履历概览 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="inline-link email-link" href="mailto:zhou_jun_tao@163.com">zhou_jun_tao@163.com</a></div></div></section>
+<section class="about-section" id="about" aria-labelledby="about-title"><div><p class="section-eyebrow">背景与工作方式</p><h2 id="about-title">关于我</h2></div><div class="about-copy"><p>我是周俊涛，目前在北京航空航天大学读信息与通信工程硕士，寻找 AI 产品经理实习。</p><p>做项目时，我先拆解用户任务，明确核心流程、异常处理和人工确认机制，再通过原型、失败案例和固定测试条件验证方案。</p><div class="contact-links"><a class="inline-link" href="profile/">查看履历概览 ↗</a><a class="inline-link" href="https://github.com/zhoujuntao611/ai-product-portfolio" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a><a class="inline-link email-link" href="mailto:zhou_jun_tao@163.com">zhou_jun_tao@163.com</a></div></div></section>
 </main><footer class="site-footer container"><span>周俊涛 · AI 产品作品集</span><a href="#top">回到顶部 ↑</a></footer>
 </body></html>
